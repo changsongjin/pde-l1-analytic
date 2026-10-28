@@ -1,0 +1,1153 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "solver": "精确 LARS-Lasso 同伦路径（lasso_exact.py），每个 λ 做 KKT 检查",
+  "cole_hopf": {
+    "k": [
+      0.0,
+      -5.0,
+      -10.0,
+      -15.0
+    ],
+    "x0": [
+      0.0,
+      1.0,
+      0.4,
+      0.2
+    ],
+    "nu": 0.1,
+    "x": [
+      -1.0,
+      3.0,
+      161
+    ],
+    "t": [
+      0.0,
+      1.0,
+      41
+    ],
+    "fd_check_max_abs": 7.951648939297229e-08
+  },
+  "cases": [
+    {
+      "name": "反问题 KdV 双孤子（旧数据，不改）",
+      "library": [
+        "u u_x  [真项, 系数 -6]",
+        "u_xxx  [真项, 系数 -1]",
+        "1",
+        "u",
+        "u_x",
+        "u_xx",
+        "u^2",
+        "u^2 u_x"
+      ],
+      "diagnosis": {
+        "exact_equation_relative_residual": 2.213931189788945e-13,
+        "n_rows": 1440,
+        "singular_values_normalized": [
+          1.9156362465165593,
+          1.6193472835933553,
+          1.018873046793544,
+          0.5674479651908659,
+          0.5616622009327421,
+          0.13506320831775034,
+          0.10686014194610235,
+          0.053170286201257216
+        ],
+        "rank": 8,
+        "n_columns": 8,
+        "identifiable": true,
+        "exact_null_vectors_physical": [],
+        "irrepresentable_plain_l1": {
+          "1": 0.02046936539272699,
+          "u": 0.0013766850070488991,
+          "u_x": 2.771351818851019,
+          "u_xx": 0.07605266125535987,
+          "u^2": 0.040492323128653834,
+          "u^2 u_x": 0.03585664442373345
+        },
+        "irrepresentable_ridge_adaptive_l1": {
+          "1": 0.0001130315323998091,
+          "u": 1.2477131558951837e-05,
+          "u_x": 2.969257027196129,
+          "u_xx": 0.0012999505569765437,
+          "u^2": 0.00010354036303068473,
+          "u^2 u_x": 0.06506735413684375
+        },
+        "irrepresentable_note": "无噪声时，某列的值 > 1，则所有足够小的 λ 下 L1 都会选上这一列。与求解器无关。"
+      },
+      "plain_l1_exact_path": {
+        "frequency": {
+          "u u_x  [真项, 系数 -6]": 35,
+          "u_xxx  [真项, 系数 -1]": 26,
+          "1": 0,
+          "u": 0,
+          "u_x": 39,
+          "u_xx": 21,
+          "u^2": 0,
+          "u^2 u_x": 0
+        },
+        "max_relative_kkt_violation": 4.536942093626621e-10,
+        "samples": [
+          {
+            "lambda_over_lambda_max": 1.0,
+            "relative_residual": 1.0,
+            "u_x_normalized": 0.0
+          },
+          {
+            "lambda_over_lambda_max": 0.028942661247167503,
+            "relative_residual": 0.13289360548432208,
+            "u_x_normalized": -58.06207282110148
+          },
+          {
+            "lambda_over_lambda_max": 0.0008376776400682916,
+            "relative_residual": 0.011743147806852856,
+            "u_x_normalized": -5.306773698997195
+          },
+          {
+            "lambda_over_lambda_max": 2.424462017082326e-05,
+            "relative_residual": 0.00033987794894610815,
+            "u_x_normalized": -0.1535921534799786
+          },
+          {
+            "lambda_over_lambda_max": 1e-06,
+            "relative_residual": 1.4018695548865988e-05,
+            "u_x_normalized": -0.006335102479093087
+          }
+        ],
+        "note": "精确同伦解。无噪声时残差和 u_x 系数都随 λ 线性趋零，λ_min = 1e-6 λ_max 时残差约 1e-6 量级，所以旧的 1e-8 残差门槛在这条路径上本来就到不了。"
+      },
+      "irl1": {
+        "ratio": 0.001,
+        "eps": 1e-08,
+        "history": [
+          {
+            "iter": 0,
+            "support": [
+              0,
+              1,
+              4,
+              5
+            ],
+            "kkt": 2.892072772948091e-13,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]",
+              "u_x",
+              "u_xx"
+            ]
+          },
+          {
+            "iter": 1,
+            "support": [
+              0,
+              1
+            ],
+            "kkt": 6.762159437248616e-15,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ]
+          },
+          {
+            "iter": 2,
+            "support": [
+              0,
+              1
+            ],
+            "kkt": 7.267555855846655e-15,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ]
+          }
+        ],
+        "final_frequency": {
+          "u u_x  [真项, 系数 -6]": 39,
+          "u_xxx  [真项, 系数 -1]": 31,
+          "1": 0,
+          "u": 0,
+          "u_x": 0,
+          "u_xx": 0,
+          "u^2": 0,
+          "u^2 u_x": 0
+        },
+        "max_relative_kkt_violation_on_path": 7.215183367398935e-12,
+        "support_names": [
+          "u u_x  [真项, 系数 -6]",
+          "u_xxx  [真项, 系数 -1]"
+        ],
+        "passed_support": true,
+        "refit_physical": {
+          "u u_x  [真项, 系数 -6]": -6.000000000000005,
+          "u_xxx  [真项, 系数 -1]": -1.0000000000000007
+        },
+        "refit_relative_residual": 2.2139373135543388e-13,
+        "rule": "最终权重下 40 个 λ（λ_max 到 1e-6 λ_max）上 |β|>1e-5 次数过半。阈值不放宽。"
+      },
+      "irl1_sensitivity": {
+        "n_settings": 20,
+        "n_passed": 12,
+        "settings": [
+          {
+            "ratio": 0.1,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.01,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.01,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.01,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.01,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.001,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -6]",
+              "u_xxx  [真项, 系数 -1]"
+            ],
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "反问题 粘性 Burgers Cole–Hopf 激波合并（新数据）",
+      "library": [
+        "u u_x  [真项, 系数 -1]",
+        "u_xx  [真项, 系数 0.1]",
+        "1",
+        "u",
+        "u^2",
+        "u^3",
+        "u_x",
+        "u_xxx",
+        "u^2 u_x",
+        "u u_xx"
+      ],
+      "diagnosis": {
+        "exact_equation_relative_residual": 1.499513980056971e-16,
+        "n_rows": 6601,
+        "singular_values_normalized": [
+          2.2097386862934445,
+          1.5286603676324233,
+          1.3007394960318654,
+          0.84474253747049,
+          0.5614890535035955,
+          0.19739273171653177,
+          0.13508919549306075,
+          0.03784599299107759,
+          0.02868364446167209,
+          0.001103836857915038
+        ],
+        "rank": 10,
+        "n_columns": 10,
+        "identifiable": true,
+        "exact_null_vectors_physical": [],
+        "irrepresentable_plain_l1": {
+          "1": 0.5987769632940251,
+          "u": 0.32516688291529106,
+          "u^2": 0.15707894711579798,
+          "u^3": 0.08154063724755536,
+          "u_x": 1.3867316606783273,
+          "u_xxx": 0.6522088619330683,
+          "u^2 u_x": 0.6869473774392807,
+          "u u_xx": 0.48269181979259645
+        },
+        "irrepresentable_ridge_adaptive_l1": {
+          "1": 0.033242212694747315,
+          "u": 0.007998585187182529,
+          "u^2": 0.0004769783235425724,
+          "u^3": 0.004221457128638055,
+          "u_x": 1.0543085129368737,
+          "u_xxx": 0.03097981150035131,
+          "u^2 u_x": 0.30663287406424977,
+          "u u_xx": 0.2751436628882695
+        },
+        "irrepresentable_note": "无噪声时，某列的值 > 1，则所有足够小的 λ 下 L1 都会选上这一列。与求解器无关。"
+      },
+      "plain_l1_exact_path": {
+        "frequency": {
+          "u u_x  [真项, 系数 -1]": 39,
+          "u_xx  [真项, 系数 0.1]": 31,
+          "1": 0,
+          "u": 0,
+          "u^2": 0,
+          "u^3": 0,
+          "u_x": 39,
+          "u_xxx": 0,
+          "u^2 u_x": 0,
+          "u u_xx": 0
+        },
+        "max_relative_kkt_violation": 3.697434539075425e-10,
+        "samples": [
+          {
+            "lambda_over_lambda_max": 1.0,
+            "relative_residual": 1.0,
+            "u_x_normalized": 0.0
+          },
+          {
+            "lambda_over_lambda_max": 0.028942661247167503,
+            "relative_residual": 0.07686833112091952,
+            "u_x_normalized": -68.80461299709482
+          },
+          {
+            "lambda_over_lambda_max": 0.0008376776400682914,
+            "relative_residual": 0.002224774068269363,
+            "u_x_normalized": -1.991388606219567
+          },
+          {
+            "lambda_over_lambda_max": 2.424462017082326e-05,
+            "relative_residual": 6.43908822108996e-05,
+            "u_x_normalized": -0.057636085843471296
+          },
+          {
+            "lambda_over_lambda_max": 1e-06,
+            "relative_residual": 2.655883317355321e-06,
+            "u_x_normalized": -0.002377273204929378
+          }
+        ],
+        "note": "精确同伦解。无噪声时残差和 u_x 系数都随 λ 线性趋零，λ_min = 1e-6 λ_max 时残差约 1e-6 量级，所以旧的 1e-8 残差门槛在这条路径上本来就到不了。"
+      },
+      "irl1": {
+        "ratio": 0.001,
+        "eps": 1e-08,
+        "history": [
+          {
+            "iter": 0,
+            "support": [
+              0,
+              1,
+              6
+            ],
+            "kkt": 5.184722943294688e-13,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]",
+              "u_x"
+            ]
+          },
+          {
+            "iter": 1,
+            "support": [
+              0,
+              1
+            ],
+            "kkt": 3.009603192519902e-15,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ]
+          },
+          {
+            "iter": 2,
+            "support": [
+              0,
+              1
+            ],
+            "kkt": 2.461486016854122e-15,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ]
+          }
+        ],
+        "final_frequency": {
+          "u u_x  [真项, 系数 -1]": 39,
+          "u_xx  [真项, 系数 0.1]": 31,
+          "1": 0,
+          "u": 0,
+          "u^2": 0,
+          "u^3": 0,
+          "u_x": 0,
+          "u_xxx": 0,
+          "u^2 u_x": 0,
+          "u u_xx": 0
+        },
+        "max_relative_kkt_violation_on_path": 7.796723893343943e-12,
+        "support_names": [
+          "u u_x  [真项, 系数 -1]",
+          "u_xx  [真项, 系数 0.1]"
+        ],
+        "passed_support": true,
+        "refit_physical": {
+          "u u_x  [真项, 系数 -1]": -1.0000000000000007,
+          "u_xx  [真项, 系数 0.1]": 0.1000000000000001
+        },
+        "refit_relative_residual": 5.917563835745243e-16,
+        "rule": "最终权重下 40 个 λ（λ_max 到 1e-6 λ_max）上 |β|>1e-5 次数过半。阈值不放宽。"
+      },
+      "irl1_sensitivity": {
+        "n_settings": 20,
+        "n_passed": 16,
+        "settings": [
+          {
+            "ratio": 0.1,
+            "eps": 1e-08,
+            "n_iter": 2,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 1e-06,
+            "n_iter": 2,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 0.0001,
+            "n_iter": 2,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 0.01,
+            "n_iter": 2,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.01,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.01,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.01,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.01,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "粘性 Burgers 两条行波（旧数据，不改；设计阵秩亏 2）",
+      "library": [
+        "u u_x  [真项, 系数 -1]",
+        "u_xx  [真项, 系数 0.1]",
+        "1",
+        "u",
+        "u^2",
+        "u^3",
+        "u_x",
+        "u_xxx",
+        "u^2 u_x",
+        "u u_xx"
+      ],
+      "diagnosis": {
+        "exact_equation_relative_residual": 1.001893609591856e-16,
+        "n_rows": 9922,
+        "singular_values_normalized": [
+          2.2140866542375157,
+          1.51928493973652,
+          1.277486514373656,
+          0.8448937984582012,
+          0.6206178183404815,
+          0.2085435940071047,
+          0.1164185704357304,
+          0.039573270676639974,
+          1.570312601821209e-15,
+          9.524935432091796e-16
+        ],
+        "rank": 8,
+        "n_columns": 10,
+        "identifiable": false,
+        "exact_null_vectors_physical": [
+          {
+            "u u_x  [真项, 系数 -1]": -0.9790048390879814,
+            "u_xx  [真项, 系数 0.1]": 0.09860032260586557,
+            "u": -0.06998386970672008,
+            "u^2": 0.104975804560079,
+            "u^3": -0.034991934853359545,
+            "u_x": 0.3123381724213179,
+            "u_xxx": 0.006666666666666663,
+            "u^2 u_x": 1.0,
+            "u u_xx": -0.1999999999999998
+          },
+          {
+            "u u_x  [真项, 系数 -1]": 0.23989171135598078,
+            "u_xx  [真项, 系数 0.1]": -0.01732250446893193,
+            "u": -0.666666666666673,
+            "u^2": 1.0,
+            "u^3": -0.33333333333333165,
+            "u_x": -0.21329723711865983,
+            "u_xxx": -0.0002659447423732639,
+            "u^2 u_x": -0.03989171135598503,
+            "u u_xx": 0.00797834227119757
+          }
+        ],
+        "irrepresentable_plain_l1": {
+          "1": 0.5980553693757985,
+          "u": 0.2641755175297676,
+          "u^2": 0.09752909201555313,
+          "u^3": 0.03474842203044171,
+          "u_x": 1.521740727015896,
+          "u_xxx": 0.8132228956726851,
+          "u^2 u_x": 0.6304557761217071,
+          "u u_xx": 0.2584728191400197
+        },
+        "irrepresentable_ridge_adaptive_l1": {
+          "1": 0.017170956102715015,
+          "u": 0.0036540529671286463,
+          "u^2": 0.004028417267817092,
+          "u^3": 0.0010092715467712717,
+          "u_x": 1.1484834581915895,
+          "u_xxx": 0.13614946898389946,
+          "u^2 u_x": 0.5424656600765131,
+          "u u_xx": 0.005462183814903112
+        },
+        "irrepresentable_note": "无噪声时，某列的值 > 1，则所有足够小的 λ 下 L1 都会选上这一列。与求解器无关。"
+      },
+      "plain_l1_exact_path": {
+        "frequency": {
+          "u u_x  [真项, 系数 -1]": 36,
+          "u_xx  [真项, 系数 0.1]": 31,
+          "1": 0,
+          "u": 0,
+          "u^2": 0,
+          "u^3": 0,
+          "u_x": 39,
+          "u_xxx": 0,
+          "u^2 u_x": 0,
+          "u u_xx": 0
+        },
+        "max_relative_kkt_violation": 2.97794316823205e-09,
+        "samples": [
+          {
+            "lambda_over_lambda_max": 1.0,
+            "relative_residual": 1.0,
+            "u_x_normalized": 0.0
+          },
+          {
+            "lambda_over_lambda_max": 0.028942661247167503,
+            "relative_residual": 0.10484545263712977,
+            "u_x_normalized": -58.721586325752
+          },
+          {
+            "lambda_over_lambda_max": 0.0008376776400682916,
+            "relative_residual": 0.0030345064189705737,
+            "u_x_normalized": -1.699558980914697
+          },
+          {
+            "lambda_over_lambda_max": 2.4244620170823262e-05,
+            "relative_residual": 8.78266913248006e-05,
+            "u_x_normalized": -0.04918975984634608
+          },
+          {
+            "lambda_over_lambda_max": 1e-06,
+            "relative_residual": 3.622522869947333e-06,
+            "u_x_normalized": -0.00202889380456583
+          }
+        ],
+        "note": "精确同伦解。无噪声时残差和 u_x 系数都随 λ 线性趋零，λ_min = 1e-6 λ_max 时残差约 1e-6 量级，所以旧的 1e-8 残差门槛在这条路径上本来就到不了。"
+      },
+      "irl1": {
+        "ratio": 0.001,
+        "eps": 1e-08,
+        "history": [
+          {
+            "iter": 0,
+            "support": [
+              0,
+              1,
+              6
+            ],
+            "kkt": 2.9854535782419276e-12,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]",
+              "u_x"
+            ]
+          },
+          {
+            "iter": 1,
+            "support": [
+              0,
+              1
+            ],
+            "kkt": 2.4112368760775656e-14,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ]
+          },
+          {
+            "iter": 2,
+            "support": [
+              0,
+              1
+            ],
+            "kkt": 2.0221468088417943e-14,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ]
+          }
+        ],
+        "final_frequency": {
+          "u u_x  [真项, 系数 -1]": 39,
+          "u_xx  [真项, 系数 0.1]": 34,
+          "1": 0,
+          "u": 0,
+          "u^2": 0,
+          "u^3": 0,
+          "u_x": 0,
+          "u_xxx": 0,
+          "u^2 u_x": 0,
+          "u u_xx": 0
+        },
+        "max_relative_kkt_violation_on_path": 8.436276662371261e-12,
+        "support_names": [
+          "u u_x  [真项, 系数 -1]",
+          "u_xx  [真项, 系数 0.1]"
+        ],
+        "passed_support": true,
+        "refit_physical": {
+          "u u_x  [真项, 系数 -1]": -1.0,
+          "u_xx  [真项, 系数 0.1]": 0.10000000000000013
+        },
+        "refit_relative_residual": 6.134506051998068e-16,
+        "rule": "最终权重下 40 个 λ（λ_max 到 1e-6 λ_max）上 |β|>1e-5 次数过半。阈值不放宽。"
+      },
+      "irl1_sensitivity": {
+        "n_settings": 20,
+        "n_passed": 16,
+        "settings": [
+          {
+            "ratio": 0.1,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.1,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u_x"
+            ],
+            "passed": false
+          },
+          {
+            "ratio": 0.01,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.01,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.01,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.01,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.001,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 0.0001,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 1e-08,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 1e-06,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 0.0001,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          },
+          {
+            "ratio": 1e-05,
+            "eps": 0.01,
+            "n_iter": 3,
+            "support_names": [
+              "u u_x  [真项, 系数 -1]",
+              "u_xx  [真项, 系数 0.1]"
+            ],
+            "passed": true
+          }
+        ]
+      }
+    }
+  ]
+}
