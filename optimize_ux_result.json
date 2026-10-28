@@ -1,0 +1,129 @@
+[
+  {
+    "library": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]",
+      "1",
+      "u",
+      "u^2",
+      "u^3",
+      "u_x",
+      "u_xxx",
+      "u^2 u_x",
+      "u u_xx"
+    ],
+    "n_rows": 9922,
+    "lambda_max": 4206.69397480994,
+    "n_lambda": 40,
+    "n_lambda_residual_leq_1e-8": 0,
+    "best_relative_residual_on_path": 2.0602875341754217e-06,
+    "frequency_at_1e-5": {
+      "u u_x  [真项, 系数 -1]": 39,
+      "u_xx  [真项, 系数 0.1]": 33,
+      "1": 0,
+      "u": 0,
+      "u^2": 0,
+      "u^3": 0,
+      "u_x": 37,
+      "u_xxx": 0,
+      "u^2 u_x": 0,
+      "u u_xx": 0
+    },
+    "rule": "相对残差 <= 1e-8 的 λ 里取 L1 目标最小；归一化 |系数| < 1e-3 的列丢掉。1e-5 只计数。",
+    "stopped": true,
+    "passed_support": false,
+    "reason": "没有任何 λ 的相对残差 <= 1e-8，不选支撑",
+    "name": "反问题 粘性 Burgers",
+    "speeds": [
+      0.5,
+      1.0
+    ],
+    "exact_equation_relative_residual": 1.001893609591856e-16,
+    "true_support": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]"
+    ]
+  },
+  {
+    "library": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]",
+      "1",
+      "u",
+      "u^2",
+      "u^3",
+      "u_x",
+      "u_xxx",
+      "u^2 u_x",
+      "u u_xx"
+    ],
+    "n_rows": 4961,
+    "lambda_max": 159.14451069553374,
+    "n_lambda": 40,
+    "n_lambda_residual_leq_1e-8": 0,
+    "best_relative_residual_on_path": 1.0000000038173015e-06,
+    "frequency_at_1e-5": {
+      "u u_x  [真项, 系数 -1]": 0,
+      "u_xx  [真项, 系数 0.1]": 0,
+      "1": 0,
+      "u": 0,
+      "u^2": 0,
+      "u^3": 0,
+      "u_x": 39,
+      "u_xxx": 0,
+      "u^2 u_x": 0,
+      "u u_xx": 0
+    },
+    "rule": "相对残差 <= 1e-8 的 λ 里取 L1 目标最小；归一化 |系数| < 1e-3 的列丢掉。1e-5 只计数。",
+    "stopped": true,
+    "passed_support": false,
+    "reason": "没有任何 λ 的相对残差 <= 1e-8，不选支撑",
+    "name": "反问题 粘性 Burgers",
+    "speeds": [
+      0.5
+    ],
+    "exact_equation_relative_residual": 1.0005872511976626e-16,
+    "true_support": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]"
+    ]
+  },
+  {
+    "library": [
+      "u u_x  [真项, 系数 -6]",
+      "u_xxx  [真项, 系数 -1]",
+      "1",
+      "u",
+      "u_x",
+      "u_xx",
+      "u^2",
+      "u^2 u_x"
+    ],
+    "n_rows": 1440,
+    "lambda_max": 2537.9511821628307,
+    "n_lambda": 40,
+    "n_lambda_residual_leq_1e-8": 0,
+    "best_relative_residual_on_path": 1.605111057756471e-05,
+    "frequency_at_1e-5": {
+      "u u_x  [真项, 系数 -6]": 39,
+      "u_xxx  [真项, 系数 -1]": 26,
+      "1": 0,
+      "u": 0,
+      "u_x": 39,
+      "u_xx": 0,
+      "u^2": 0,
+      "u^2 u_x": 0
+    },
+    "rule": "相对残差 <= 1e-8 的 λ 里取 L1 目标最小；归一化 |系数| < 1e-3 的列丢掉。1e-5 只计数。",
+    "stopped": true,
+    "passed_support": false,
+    "reason": "没有任何 λ 的相对残差 <= 1e-8，不选支撑",
+    "name": "反问题 KdV 双孤子",
+    "exact_equation_relative_residual": 2.2139292656353817e-13,
+    "true_support": [
+      "u u_x  [真项, 系数 -6]",
+      "u_xxx  [真项, 系数 -1]"
+    ],
+    "derivative": "沿用 redo_two.py 的解析导数"
+  }
+]
