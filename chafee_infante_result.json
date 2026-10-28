@@ -1,0 +1,101 @@
+{
+  "defaults": {
+    "pde": "u_t = u_xx + u - u^3",
+    "source": "DLGA-PDE / SGA-PDE 测过 Chafee-Infante。PDF 未打开。系数用标准形式，不是原文核对值。",
+    "exact": "u = tanh(x/sqrt(2))，不随时间变化",
+    "domain_x": [
+      -6.0,
+      6.0
+    ],
+    "domain_t": [
+      0.0,
+      1.0
+    ],
+    "n_x_pde": 41,
+    "n_t": 11,
+    "n_x_ic": 81,
+    "block_scale": "每个残差块除以 sqrt(行数)，PDE / 边界 / 初值三块总权重相同",
+    "column_normalize": true,
+    "ridge_alpha": 0.01,
+    "adaptive_gamma": 1.0,
+    "adaptive_eps": 1e-08,
+    "lambda_path": "40 个，从 lambda_max 几何降到 lambda_max * 1e-6",
+    "fit_tol": 1e-06,
+    "support_tol": 1e-05,
+    "gn_max_iter": 30,
+    "gn_tol": 1e-10,
+    "cd_max_iter": 5000,
+    "cd_tol": 1e-10,
+    "solver": "自适应 L1：先岭回归（Gauss-Newton）得权重，再加权 L1。u^3 在每步线性化。不是序贯阈值。",
+    "starts": "先只从零出发。若停在错的盆地，结果里会写明，不偷偷换起点。",
+    "no_solution_samples": true,
+    "ic_bc": "初值和两端边界用 tanh(x/sqrt(2)) 的精确值，不是内部采样"
+  },
+  "rows": {
+    "pde": 390,
+    "bc": 22,
+    "ic": 81
+  },
+  "library": [
+    "tanh(x/sqrt(2))  [真项]",
+    "tanh(x)",
+    "tanh(x/2)",
+    "tanh((x-t)/sqrt(2))",
+    "sech^2(x/sqrt(2))",
+    "1",
+    "x",
+    "sin(pi x/6)",
+    "exp(-(x/2)^2)"
+  ],
+  "derivative_check_max_abs": 2.7679769309951752e-08,
+  "exact_solution_relative_residual": 1.600148352302133e-16,
+  "selection_rule": "相对残差 <= 1e-6 的 λ 里，支撑最短；一样短则取更大的 λ",
+  "lambda": 7.793865207588699e-07,
+  "lambda_max": 0.5468985056305885,
+  "relative_residual_l1": 9.149819195895298e-07,
+  "relative_residual_refit": 1.600148352302133e-16,
+  "support_indices": [
+    0
+  ],
+  "support_names": [
+    "tanh(x/sqrt(2))  [真项]"
+  ],
+  "passed_support": true,
+  "refit_coefficient_of_true_term": 1.0,
+  "coefficient_back_to_1": true,
+  "n_lambda_true_support": 39,
+  "xi_adaptive_l1_physical": [
+    0.9999994125395352,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "xi_refit_physical": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "beta_ridge_physical": [
+    0.3095999433569129,
+    0.3005286771258167,
+    0.23224721824515435,
+    0.05801927618610759,
+    -0.0109358552300155,
+    0.0001111902686569544,
+    0.01532741068099374,
+    0.058398700429921624,
+    0.009114157189315894
+  ],
+  "started_from_zero_only": true
+}
