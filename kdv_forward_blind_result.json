@@ -1,0 +1,427 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "pde": "u_t + 6 u u_x + u_xxx = 0",
+  "library": [
+    "2 sech^2(x-4t)  c=4  [真项]",
+    "(c/2) sech^2  c=1",
+    "(c/2) sech^2  c=2",
+    "(c/2) sech^2  c=9",
+    "2 sech^2(x-2t)  形状不属于 c=2",
+    "sech^2(x)  静止",
+    "1",
+    "x",
+    "tanh(x-4t)",
+    "exp(-((x-4t)/2)^2)"
+  ],
+  "derivative_check_max_abs": 8.636464977751501e-05,
+  "exact_solution_relative_residual": 7.535768246292596e-16,
+  "starts": "30 个随机起点，种子 0，N(0, median(列尺度)²)。不用真解位置。",
+  "multistart_relative_residuals_sorted": [
+    1.6536699817548497e-14,
+    1.7092157658585875e-14,
+    1.771782715825048e-14,
+    1.9081177331927153e-14,
+    1.954125555538643e-14,
+    1.9967412233805692e-14,
+    2.4795939844274573e-14,
+    0.3605537165318267,
+    0.3605537165318267,
+    0.3605537165318268,
+    0.3605537165318268,
+    0.3605537165318268,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.36055371653182683,
+    0.3605537165318269
+  ],
+  "multistart_n_below_1e-8": 7,
+  "x_star_physical": [
+    1.0000000000000016,
+    -8.828989196108266e-15,
+    -1.3281421799356543e-15,
+    -1.1894412109727467e-17,
+    -1.1162999609660276e-15,
+    2.2312953100561364e-15,
+    8.489842063531839e-16,
+    -2.1067058123743278e-16,
+    -1.1385898150002204e-15,
+    3.1706179038518815e-16
+  ],
+  "irl1": {
+    "ratio": 0.001,
+    "eps": 1e-08,
+    "history": [
+      {
+        "iter": 0,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]",
+          "(c/2) sech^2  c=1",
+          "exp(-((x-4t)/2)^2)"
+        ],
+        "relative_residual": 0.0023200744239002973
+      },
+      {
+        "iter": 1,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "relative_residual": 0.00014699263286851
+      },
+      {
+        "iter": 2,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "relative_residual": 0.00014699263287004893
+      }
+    ]
+  },
+  "frequency": {
+    "2 sech^2(x-4t)  c=4  [真项]": 39,
+    "(c/2) sech^2  c=1": 0,
+    "(c/2) sech^2  c=2": 0,
+    "(c/2) sech^2  c=9": 0,
+    "2 sech^2(x-2t)  形状不属于 c=2": 0,
+    "sech^2(x)  静止": 0,
+    "1": 0,
+    "x": 0,
+    "tanh(x-4t)": 0,
+    "exp(-((x-4t)/2)^2)": 0
+  },
+  "support_names": [
+    "2 sech^2(x-4t)  c=4  [真项]"
+  ],
+  "passed_support": true,
+  "refit_physical": {
+    "2 sech^2(x-4t)  c=4  [真项]": 1.0
+  },
+  "refit_relative_residual": 7.535768246292596e-16,
+  "path": [
+    {
+      "lambda_over_max": 1.0,
+      "relative_residual": 1.0,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.7017038286703828,
+      "relative_residual": 0.9943998669052359,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.4923882631706739,
+      "relative_residual": 0.0739647147995973,
+      "picked": "multistart_x*"
+    },
+    {
+      "lambda_over_max": 0.3455107294592219,
+      "relative_residual": 0.051555531854266576,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.24244620170823283,
+      "relative_residual": 0.036011207688468466,
+      "picked": "multistart_x*"
+    },
+    {
+      "lambda_over_max": 0.17012542798525887,
+      "relative_residual": 0.02518927790250084,
+      "picked": "multistart_x*"
+    },
+    {
+      "lambda_over_max": 0.11937766417144363,
+      "relative_residual": 0.017636583959548407,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.08376776400682916,
+      "relative_residual": 0.012356717096343756,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.05878016072274912,
+      "relative_residual": 0.008661489552006608,
+      "picked": "multistart_x*"
+    },
+    {
+      "lambda_over_max": 0.04124626382901352,
+      "relative_residual": 0.006073258478192225,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.028942661247167503,
+      "relative_residual": 0.0042593994248582775,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.020309176209047347,
+      "relative_residual": 0.002987741634884656,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.014251026703029978,
+      "relative_residual": 0.0020959712937736476,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.01,
+      "relative_residual": 0.0014704862435273257,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.007017038286703823,
+      "relative_residual": 0.0010317155234516734,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0049238826317067365,
+      "relative_residual": 0.0007238946072744877,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.003455107294592218,
+      "relative_residual": 0.0005079280546251072,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0024244620170823282,
+      "relative_residual": 0.00035639952353472195,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0017012542798525892,
+      "relative_residual": 0.00025007926133781895,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0011937766417144358,
+      "relative_residual": 0.00017547780942863973,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0008376776400682916,
+      "relative_residual": 0.0001231315966961577,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0005878016072274912,
+      "relative_residual": 8.640099998975327e-05,
+      "picked": "multistart_x*"
+    },
+    {
+      "lambda_over_max": 0.00041246263829013477,
+      "relative_residual": 6.062746303911326e-05,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0002894266124716749,
+      "relative_residual": 4.2542301637999646e-05,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0002030917620904735,
+      "relative_residual": 2.9851986978478576e-05,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.00014251026703029977,
+      "relative_residual": 2.0947199901745742e-05,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 0.0001,
+      "relative_residual": 1.4698703954806857e-05,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 7.017038286703822e-05,
+      "relative_residual": 1.0314123836968986e-05,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 4.9238826317067314e-05,
+      "relative_residual": 7.237453780811909e-06,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 3.455107294592218e-05,
+      "relative_residual": 5.078545871419745e-06,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 2.424462017082326e-05,
+      "relative_residual": 3.5636335260377077e-06,
+      "picked": "multistart_x*"
+    },
+    {
+      "lambda_over_max": 1.7012542798525893e-05,
+      "relative_residual": 2.500614525740927e-06,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 1.1937766417144358e-05,
+      "relative_residual": 1.7546904122749082e-06,
+      "picked": "multistart_x*"
+    },
+    {
+      "lambda_over_max": 8.376776400682907e-06,
+      "relative_residual": 1.2312727925262063e-06,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 5.878016072274912e-06,
+      "relative_residual": 8.639887439870606e-07,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 4.124626382901348e-06,
+      "relative_residual": 6.062641634956082e-07,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 2.894266124716752e-06,
+      "relative_residual": 4.2541786292402446e-07,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 2.030917620904735e-06,
+      "relative_residual": 2.985173261269826e-07,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 1.4251026703029963e-06,
+      "relative_residual": 2.0947074792001494e-07,
+      "picked": "warm_chain"
+    },
+    {
+      "lambda_over_max": 1e-06,
+      "relative_residual": 1.469864214187042e-07,
+      "picked": "multistart_x*"
+    }
+  ],
+  "rule": "最终权重下 40 个 λ 上 |ξ|>1e-5 次数过半。阈值不放宽。",
+  "limitation": "波速预先离散成列（c=1,2,4,9 等），不是连续搜索。",
+  "seed_check": {
+    "n_passed": 10,
+    "n": 10,
+    "runs": [
+      {
+        "seed": 0,
+        "multistart_n_below_1e-8": 7,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 1,
+        "multistart_n_below_1e-8": 1,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 2,
+        "multistart_n_below_1e-8": 1,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 3,
+        "multistart_n_below_1e-8": 7,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 4,
+        "multistart_n_below_1e-8": 2,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 5,
+        "multistart_n_below_1e-8": 6,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 6,
+        "multistart_n_below_1e-8": 10,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 7,
+        "multistart_n_below_1e-8": 1,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 8,
+        "multistart_n_below_1e-8": 5,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      },
+      {
+        "seed": 9,
+        "multistart_n_below_1e-8": 2,
+        "support_names": [
+          "2 sech^2(x-4t)  c=4  [真项]"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "irl1_ratio_check": [
+    {
+      "ratio": 0.01,
+      "support_names": [
+        "2 sech^2(x-4t)  c=4  [真项]"
+      ],
+      "passed": true
+    },
+    {
+      "ratio": 0.001,
+      "support_names": [
+        "2 sech^2(x-4t)  c=4  [真项]"
+      ],
+      "passed": true
+    },
+    {
+      "ratio": 0.0001,
+      "support_names": [
+        "2 sech^2(x-4t)  c=4  [真项]"
+      ],
+      "passed": true
+    }
+  ]
+}
