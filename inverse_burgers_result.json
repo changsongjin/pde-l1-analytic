@@ -1,0 +1,294 @@
+{
+  "defaults": {
+    "pde": "u_t = -u u_x + nu u_xx",
+    "nu": 0.1,
+    "speeds": [
+      0.5,
+      1.0
+    ],
+    "front_x0": 0.0,
+    "domain_x": [
+      -1.0,
+      2.0
+    ],
+    "domain_t": [
+      0.0,
+      1.0
+    ],
+    "n_x": 121,
+    "n_t": 41,
+    "exact": "u = c (1 - tanh(c/(2 nu) (x - x0 - c t)))",
+    "why_two_waves": "单条行波精确满足 u_t + c u_x = 0，只有一项，短于真方程。两条不同波速不再有共同的平流系数。",
+    "derivatives": "解析式，不用数值差分",
+    "column_normalize": true,
+    "ridge_alpha": 0.01,
+    "adaptive_gamma": 1.0,
+    "adaptive_eps": 1e-08,
+    "lambda_path": "50 个，从 lambda_max 几何降到 lambda_max * 1e-6",
+    "fit_tol": 1e-08,
+    "support_tol": 1e-05,
+    "stability": "支撑改为入选频率过半。分母是全部 50 个 λ，不是残差达标的那些。阈值不放宽。",
+    "cd_max_iter": 8000,
+    "cd_tol": 1e-12,
+    "solver": "自适应 L1：岭回归得权重，再加权 L1。系统对系数是线性的。不是序贯阈值。",
+    "plain_l1": "权重全为 1 的普通 L1 只作对照，不参与通过与否"
+  },
+  "library": [
+    "u u_x  [真项, 系数 -1]",
+    "u_xx  [真项, 系数 0.1]",
+    "1",
+    "u",
+    "u^2",
+    "u^3",
+    "u_x",
+    "u_xxx",
+    "u^2 u_x",
+    "u u_xx"
+  ],
+  "derivative_check_max_abs": 0.00021356726910263827,
+  "two_waves": {
+    "speeds": [
+      0.5,
+      1.0
+    ],
+    "n_rows": 9922,
+    "exact_equation_relative_residual": 1.001893609591856e-16,
+    "selection_rule": "全部 50 个 λ 上，|系数| > 1e-5 的次数过半才进入支撑。单个 λ 的最短支撑只作记录。",
+    "single_lambda_rule": "没有任何 λ 达到 1e-8，退而取相对残差最小的 λ",
+    "single_lambda_support_names": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]",
+      "u_x"
+    ],
+    "lambda": 0.00420669397480994,
+    "lambda_max": 4206.69397480994,
+    "relative_residual_l1": 2.0602875341080364e-06,
+    "relative_residual_refit": 8.596045333245904e-16,
+    "support_indices": [
+      0,
+      1,
+      6
+    ],
+    "support_names": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]",
+      "u_x"
+    ],
+    "passed_support": false,
+    "refit_coefficients_physical": [
+      -0.9999999999999998,
+      0.10000000000000016,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.1796119636642288e-16,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "l1_coefficients_physical": [
+      -0.9999918652607361,
+      0.09999896924773498,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -6.503129910006768e-06,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "refit_of_true_terms": {
+      "u u_x  [真项, 系数 -1]": -0.9999999999999998,
+      "u_xx  [真项, 系数 0.1]": 0.10000000000000016
+    },
+    "coefficient_back": false,
+    "n_lambda_true_support": 0,
+    "selection_frequency": {
+      "u u_x  [真项, 系数 -1]": 49,
+      "u_xx  [真项, 系数 0.1]": 41,
+      "1": 0,
+      "u": 0,
+      "u^2": 0,
+      "u^3": 0,
+      "u_x": 46,
+      "u_xxx": 0,
+      "u^2 u_x": 0,
+      "u u_xx": 0
+    },
+    "plain_l1_frequency": {
+      "u u_x  [真项, 系数 -1]": 45,
+      "u_xx  [真项, 系数 0.1]": 38,
+      "1": 0,
+      "u": 0,
+      "u^2": 0,
+      "u^3": 0,
+      "u_x": 49,
+      "u_xxx": 0,
+      "u^2 u_x": 0,
+      "u u_xx": 0
+    },
+    "plain_l1_rule": "没有任何 λ 达到 1e-8，退而取相对残差最小的 λ",
+    "plain_l1_support_names": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]",
+      "u_x"
+    ],
+    "plain_l1_passed_support": false,
+    "plain_l1_refit_physical": [
+      -0.9999999999999998,
+      0.10000000000000016,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.1796119636642288e-16,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "beta_ridge_physical": [
+      -0.37309979531480564,
+      0.08585846228116195,
+      -0.01227941209521492,
+      0.005861576407086949,
+      0.010465420526110688,
+      -0.004786717919866147,
+      -0.28991339965142626,
+      0.0017977353238860772,
+      -0.24110487142886777,
+      -0.0014015624505958864
+    ],
+    "names": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]",
+      "1",
+      "u",
+      "u^2",
+      "u^3",
+      "u_x",
+      "u_xxx",
+      "u^2 u_x",
+      "u u_xx"
+    ]
+  },
+  "one_wave_contrast": {
+    "speeds": [
+      0.5
+    ],
+    "n_rows": 4961,
+    "exact_equation_relative_residual": 1.0005872511976626e-16,
+    "selection_rule": "全部 50 个 λ 上，|系数| > 1e-5 的次数过半才进入支撑。单个 λ 的最短支撑只作记录。",
+    "single_lambda_rule": "没有任何 λ 达到 1e-8，退而取相对残差最小的 λ",
+    "single_lambda_support_names": [
+      "u_x"
+    ],
+    "lambda": 0.00015914451069553372,
+    "lambda_max": 159.14451069553374,
+    "relative_residual_l1": 1.0000000038173015e-06,
+    "relative_residual_refit": 0.0,
+    "support_indices": [
+      6
+    ],
+    "support_names": [
+      "u_x"
+    ],
+    "passed_support": false,
+    "refit_coefficients_physical": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "l1_coefficients_physical": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.4999994999999981,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "refit_of_true_terms": {
+      "u u_x  [真项, 系数 -1]": 0.0,
+      "u_xx  [真项, 系数 0.1]": 0.0
+    },
+    "coefficient_back": false,
+    "n_lambda_true_support": 0,
+    "selection_frequency": {
+      "u u_x  [真项, 系数 -1]": 0,
+      "u_xx  [真项, 系数 0.1]": 0,
+      "1": 0,
+      "u": 0,
+      "u^2": 0,
+      "u^3": 0,
+      "u_x": 49,
+      "u_xxx": 0,
+      "u^2 u_x": 0,
+      "u u_xx": 0
+    },
+    "plain_l1_frequency": {
+      "u u_x  [真项, 系数 -1]": 0,
+      "u_xx  [真项, 系数 0.1]": 0,
+      "1": 0,
+      "u": 0,
+      "u^2": 0,
+      "u^3": 0,
+      "u_x": 49,
+      "u_xxx": 0,
+      "u^2 u_x": 0,
+      "u u_xx": 0
+    },
+    "plain_l1_rule": "没有任何 λ 达到 1e-8，退而取相对残差最小的 λ",
+    "plain_l1_support_names": [
+      "u_x"
+    ],
+    "plain_l1_passed_support": false,
+    "plain_l1_refit_physical": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "beta_ridge_physical": [
+      -0.2822439368113165,
+      0.06356950171916431,
+      0.002416584468951136,
+      0.03080847760918994,
+      -0.006742571454429349,
+      -0.024935679190960208,
+      -0.2329001391339282,
+      0.0030204424615719685,
+      -0.30842319852132377,
+      -0.009634358800732408
+    ],
+    "names": [
+      "u u_x  [真项, 系数 -1]",
+      "u_xx  [真项, 系数 0.1]",
+      "1",
+      "u",
+      "u^2",
+      "u^3",
+      "u_x",
+      "u_xxx",
+      "u^2 u_x",
+      "u u_xx"
+    ]
+  }
+}
