@@ -1,0 +1,111 @@
+[
+  {
+    "name": "反问题 平流扩散",
+    "pde": "u_t = -0.4 u_x + 0.05 u_xx",
+    "exact": "两个高斯，σ0=0.5 和 0.9，σ²(t)=σ0²+2νt，中心 x=ct",
+    "exact_equation_relative_residual": 1.3527481834671857e-16,
+    "derivative": "解析式",
+    "library": [
+      "u_x  [真项, 系数 -0.4]",
+      "u_xx  [真项, 系数 0.05]",
+      "1",
+      "u",
+      "u^2",
+      "u u_x",
+      "u_xxx"
+    ],
+    "n_rows": 5922,
+    "frequency": {
+      "u_x  [真项, 系数 -0.4]": 39,
+      "u_xx  [真项, 系数 0.05]": 31,
+      "1": 0,
+      "u": 0,
+      "u^2": 0,
+      "u u_x": 0,
+      "u_xxx": 0
+    },
+    "support_indices": [
+      0,
+      1
+    ],
+    "support_names": [
+      "u_x  [真项, 系数 -0.4]",
+      "u_xx  [真项, 系数 0.05]"
+    ],
+    "passed_support": true,
+    "refit_physical": [
+      -0.3999999999999997,
+      0.049999999999999954,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "refit_relative_residual": 8.611796009751841e-16,
+    "n_lambda": 40,
+    "rule": "40 个 λ 上入选次数过半。阈值 1e-5。自适应 L1。",
+    "stopped": false,
+    "refit_of_true_terms": {
+      "u_x  [真项, 系数 -0.4]": -0.3999999999999997,
+      "u_xx  [真项, 系数 0.05]": 0.049999999999999954
+    }
+  },
+  {
+    "name": "反问题 KdV 双孤子",
+    "pde": "u_t = -6 u u_x - u_xxx",
+    "exact": "振幅参数 1 和 2，u = 2 ∂xx log τ",
+    "exact_equation_relative_residual": 2.2139292656353817e-13,
+    "derivative": "τ 的幂级数求导，不是差分",
+    "library": [
+      "u u_x  [真项, 系数 -6]",
+      "u_xxx  [真项, 系数 -1]",
+      "1",
+      "u",
+      "u_x",
+      "u_xx",
+      "u^2",
+      "u^2 u_x"
+    ],
+    "n_rows": 1440,
+    "frequency": {
+      "u u_x  [真项, 系数 -6]": 39,
+      "u_xxx  [真项, 系数 -1]": 26,
+      "1": 0,
+      "u": 0,
+      "u_x": 39,
+      "u_xx": 0,
+      "u^2": 0,
+      "u^2 u_x": 0
+    },
+    "support_indices": [
+      0,
+      1,
+      4
+    ],
+    "support_names": [
+      "u u_x  [真项, 系数 -6]",
+      "u_xxx  [真项, 系数 -1]",
+      "u_x"
+    ],
+    "passed_support": false,
+    "refit_physical": [
+      -6.000000000000381,
+      -1.0000000000000626,
+      0.0,
+      0.0,
+      2.535471832487701e-13,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "refit_relative_residual": 2.2122335112938435e-13,
+    "n_lambda": 40,
+    "rule": "40 个 λ 上入选次数过半。阈值 1e-5。自适应 L1。",
+    "stopped": false,
+    "refit_of_true_terms": {
+      "u u_x  [真项, 系数 -6]": -6.000000000000381,
+      "u_xxx  [真项, 系数 -1]": -1.0000000000000626
+    }
+  }
+]
