@@ -1,0 +1,321 @@
+\documentclass{article}
+\usepackage[preprint]{neurips_2026}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{Selecting Closed-Form PDE Solutions and\\Governing Terms with $\ell_1$-Sparse Libraries}
+
+\author{%
+  Author names withheld for internal review
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+When a partial differential equation (PDE) is given but its analytical solution is unknown, the solution can be posed as a linear combination of many candidate functions whose coefficients are fitted to the PDE residual and the initial and boundary data. An $\ell_1$ penalty then drives most coefficients to zero, and the surviving terms and coefficients form a closed-form solution. We study this forward problem together with its inverse counterpart, in which exact solution samples are given and a sparse combination of differential terms is sought. On five forward problems (heat, wave, viscous Burgers, Korteweg--de Vries (KdV) and Chafee--Infante) and five inverse problems, the selected support equals the true terms and refitted coefficients agree with the exact values to $10^{-15}$. Two results address the main obstacles. In the inverse Burgers and KdV problems, plain Lasso retains a spurious $u_x$ column at every small penalty; we show with an exact homotopy solver that this follows from a violated irrepresentable condition (2.77 for KdV, 1.39 and 1.52 for Burgers) rather than from solver error, and iteratively reweighted $\ell_1$ removes the column in two rounds. In the forward problem we replace solution-specific columns by one generic library, polynomials in $\tanh\theta$ with $\theta = k(x - x_0 - ct)$, in which the wave parameters $(k, c, x_0)$ are searched continuously. The same library yields $2 - 2\tanh^2\theta$ for KdV, $0.5 - 0.5\tanh\theta$ for Burgers and $\tanh\theta$ for Chafee--Infante, with the wave parameters recovered exactly, while two cases whose solutions the library cannot represent are rejected by a residual gate.
+\end{abstract}
+
+\section{Introduction}
+
+Finding an analytical solution of a nonlinear PDE usually requires a guess of its functional form, followed by substitution and algebra. The question we study is whether this guess can be replaced by a search: write down many candidate functions with unknown coefficients, fit them to the PDE and its initial and boundary data, and let an $\ell_1$ penalty decide which terms survive. If the solution is a sparse combination of the candidates, the surviving terms and their fitted coefficients give the closed form.
+
+Sparse regression over candidate libraries is established for the inverse direction. SINDy~\citep{brunton2016sindy} and PDE-FIND~\citep{rudy2017pdefind} identify governing equations from data by regressing $u_t$ on a library of terms such as $u$, $u_x$, $u u_x$ and $u_{xx}$, and related work uses $\ell_1$ minimization~\citep{schaeffer2017learning}, learned differential operators~\citep{long2018pdenet,both2019deepmod} or genetic search~\citep{xu2020dlga,chen2021sga}. The forward direction, in which the PDE is known and its solution is sought as a sparse expansion, has received less attention; neural solvers~\citep{raissi2019pinn,weinan2017deepritz} approximate solutions but do not return a closed form. We treat both directions with the same machinery: a library, an $\ell_1$ penalty, a support rule and a refit.
+
+Two difficulties appear in practice. In the inverse problems for viscous Burgers and the KdV two-soliton, plain $\ell_1$ selection keeps the true terms but also a small $u_x$ coefficient at every penalty level we tried. The same behaviour appears in the public PySINDy KdV example~\citep{desilva2020pysindy}. In the forward problem, a library that already contains the true solution as one column, for example $2\sech^2(x-4t)$ for KdV, reduces the task to choosing among prepared candidates and does not test whether the method can find an unknown solution.
+
+This paper makes the following contributions.
+\begin{itemize}
+\item We formulate forward and inverse closed-form identification as $\ell_1$-penalized least squares over candidate libraries, with a fixed support rule (selection frequency over a $\lambda$ path) and a refit restricted to the selected support.
+\item We explain the spurious $u_x$ term in inverse Burgers and KdV. An exact LARS homotopy solver~\citep{efron2004lars} reproduces the term with Karush--Kuhn--Tucker (KKT) residuals below $5\times 10^{-9}$, and the irrepresentable condition~\citep{zhao2006consistency} for the $u_x$ column equals 2.77 (KdV) and 1.39 and 1.52 (Burgers), above the threshold of 1, while every other wrong column lies below 1. Iteratively reweighted $\ell_1$~\citep{candes2008irl1} with weights from the previous $\ell_1$ solution removes $u_x$ in two rounds on all three data sets.
+\item We replace solution-specific forward libraries with one generic library of $\tanh$ powers and three distractor functions in a travelling-wave variable whose parameters are optimized continuously. The same library recovers the exact solutions of KdV, Burgers and Chafee--Infante, including wave speed, width and position, for all five random seeds tested, and a residual gate rejects two cases whose solutions lie outside the library.
+\end{itemize}
+
+\section{Problem formulation}
+\label{sec:formulation}
+
+\paragraph{Forward problem.}
+Let $\mathcal{N}[u] = 0$ be a PDE on $\Omega\times[0,T]$ with initial data $u(x,0)=g(x)$ and boundary data $u|_{\partial\Omega} = h$. We seek
+\begin{equation}
+u(x,t) = \sum_{j=1}^{p} \xi_j\, \phi_j(x,t;\, \pi),
+\label{eq:ansatz}
+\end{equation}
+where $\phi_j$ are candidate functions, $\xi\in\R^p$ are linear coefficients and $\pi$ collects nonlinear parameters inside the candidates. The solution is never sampled in the interior. The residual vector stacks three blocks,
+\begin{equation}
+r(\xi,\pi) = \Bigl[\tfrac{1}{\sqrt{n_{\mathrm{pde}}}}\,\mathcal{N}[u](X_{\mathrm{pde}}),\;
+\tfrac{1}{\sqrt{n_{\mathrm{bc}}}}\,(u - h)(X_{\mathrm{bc}}),\;
+\tfrac{1}{\sqrt{n_{\mathrm{ic}}}}\,(u - g)(X_{\mathrm{ic}})\Bigr],
+\label{eq:residual}
+\end{equation}
+evaluated on collocation points $X_{\mathrm{pde}}$ and on boundary and initial points. Each block is divided by the square root of its number of rows, so the three blocks carry equal total weight. All derivatives of $\phi_j$ are analytic. We minimize
+\begin{equation}
+\tfrac12 \|r(\xi,\pi)\|_2^2 + \lambda \sum_j w_j |\xi_j|
+\label{eq:forward-objective}
+\end{equation}
+over normalized coefficients, where each column is scaled by its root-mean-square size in the linearized residual. For a nonlinear PDE, $r$ is quadratic or cubic in $\xi$. We solve~\eqref{eq:forward-objective} by Gauss--Newton: each step linearizes $r$, solves the resulting weighted Lasso exactly, and accepts the step by a backtracking line search on the full objective.
+
+\paragraph{Inverse problem.}
+Given exact samples of a solution and its derivatives on a grid, we seek coefficients $\beta$ such that
+\begin{equation}
+u_t = \Theta(u)\,\beta, \qquad \Theta(u) = [\,u u_x,\ u_{xx},\ 1,\ u,\ u^2,\ \dots\,],
+\label{eq:inverse}
+\end{equation}
+with $\beta$ sparse. This is a linear weighted Lasso, $\min_\beta \tfrac12\|u_t - \Theta\beta\|_2^2 + \lambda\sum_j w_j|\beta_j|$, on column-normalized $\Theta$.
+
+\paragraph{Support rule and refit.}
+In both directions the support is decided by $\ell_1$ alone. We solve on 40 geometrically spaced values of $\lambda$ from $\lambda_{\max}$ (the smallest value with an all-zero solution) down to $10^{-6}\lambda_{\max}$, and a column enters the support if its normalized coefficient exceeds $10^{-5}$ in more than half of these values. Coefficients are then refitted by unpenalized least squares on the selected columns only. The refit reports coefficients and never adds or removes a column. A case passes when the selected support equals the true one.
+
+\section{Method}
+\label{sec:method}
+
+\subsection{Exact homotopy solver}
+\label{sec:lars}
+Every Lasso subproblem is solved by the LARS--Lasso homotopy~\citep{efron2004lars}, which computes the whole piecewise-linear solution path in closed form, with weights handled by rescaling columns. Solutions at intermediate $\lambda$ are obtained by linear interpolation between knots and are exact up to rounding. We report the relative KKT violation $\max_j |a_j^\top r - \lambda w_j \operatorname{sign}\beta_j|/\lambda$ on the support and $\max_j(|a_j^\top r| - \lambda w_j)_+/\lambda$ off the support. This removes coordinate-descent convergence as an explanation for any selected term.
+
+\subsection{Irrepresentable condition}
+\label{sec:irrep}
+Let $S$ be the true support and $s = \operatorname{sign}(\beta_S)$. With noise-free data that satisfy the true equation exactly, the Lasso solution restricted to $S$ is $\beta_S(\lambda) = \beta_S^\star - \lambda (A_S^\top A_S)^{-1} W_S s$, and the residual equals $\lambda A_S (A_S^\top A_S)^{-1} W_S s$. A column $j\notin S$ stays at zero only if
+\begin{equation}
+\eta_j \;=\; \bigl| a_j^\top A_S (A_S^\top A_S)^{-1} W_S s \bigr| \,/\, w_j \;<\; 1 .
+\label{eq:irrep}
+\end{equation}
+This is the irrepresentable condition~\citep{zhao2006consistency}. If $\eta_j > 1$, column $j$ enters at every sufficiently small $\lambda$, regardless of the solver. Both the residual and the spurious coefficient then scale linearly with $\lambda$, so the residual at the end of a path that stops at $10^{-6}\lambda_{\max}$ is of order $10^{-6}$ relative to the data, far above the $10^{-13}$ residual of the true equation.
+
+\subsection{Iteratively reweighted $\ell_1$}
+\label{sec:irl1}
+Round 0 uses $w_j = 1$, which is plain Lasso. Round $m+1$ uses $w_j = 1/(|\beta_j^{(m)}| + \varepsilon)$, where $\beta^{(m)}$ is the $\ell_1$ solution of round $m$ at $\lambda = 10^{-3}\lambda_{\max}(w)$ and $\varepsilon = 10^{-8}$~\citep{candes2008irl1}. The iteration stops when the support repeats. The final weights are then used on the full 40-point path with the support rule above. Weights come only from previous $\ell_1$ solutions; ridge regression is not used because it spreads weight onto correlated columns and gives the spurious column a small penalty. A spurious column whose round-0 coefficient is small receives a large weight and is removed in the next round, while true terms with $O(1)$ coefficients keep weights near one.
+
+\subsection{Generic forward library with continuous wave parameters}
+\label{sec:generic}
+For travelling-wave problems we use the variable $\theta = k(x - x_0 - ct)$ with unknown $\pi = (k, c, x_0)$, $k > 0$, and the library
+\begin{equation}
+\{\,1,\ \tanh\theta,\ \tanh^2\theta,\ \tanh^3\theta,\ \tanh^4\theta,\ \sech\theta,\ e^{-\theta^2},\ \theta\,\}.
+\label{eq:generic-library}
+\end{equation}
+The first five functions are the basis of the tanh method for travelling waves~\citep{malfliet1992tanh}; the last three are distractors that are not polynomials in $\tanh\theta$. No column equals any of the target solutions. Derivatives of $\tanh^n\theta$ are computed exactly as polynomials in $T=\tanh\theta$ through $\mathrm{d}/\mathrm{d}\theta = (1 - T^2)\,\mathrm{d}/\mathrm{d}T$, and $u_t = -c\,u_x$, $\partial_x^m u = k^m \partial_\theta^m u$.
+
+Algorithm~\ref{alg:generic} has three stages. Stage A locates $\pi$ by unpenalized Levenberg--Marquardt over all eight coefficients and $(\log k, c, x_0)$ from 40 random starts drawn from generic ranges, $k \in [0.1, 10]$ log-uniform, $c \in [-8, 8]$ and $x_0$ uniform on the domain. The coefficients of each start are initialized by linear least squares on the initial and boundary data alone, and the parameter Jacobian is computed by central differences. The best start is then continued for up to 3000 further iterations from where it stopped. If the best relative residual exceeds $10^{-8}$, the library is declared not to contain an exact solution and no support is reported. Stage B fixes $\pi$ and selects the coefficient support with the reweighted $\ell_1$ procedure of Section~\ref{sec:irl1}. Stage C refits the selected coefficients jointly with $\pi$.
+
+\begin{algorithm}[t]
+\caption{Generic-library forward selection}
+\label{alg:generic}
+\begin{algorithmic}
+\STATE \textbf{Input:} PDE $\mathcal{N}$, initial and boundary data, library~\eqref{eq:generic-library}, gate $\tau = 10^{-8}$
+\STATE \textbf{Stage A:} for 40 random $\pi^{(0)}$: $\xi^{(0)} \leftarrow$ least squares on initial/boundary data; $(\xi,\pi) \leftarrow$ LM on $\|r\|^2$ (300 iterations)
+\STATE \quad continue the best start for up to 3000 iterations; $\rho \leftarrow \|r\|/\|r(0)\|$
+\STATE \textbf{if} $\rho > \tau$ \textbf{then return} ``no exact solution in library''
+\STATE \textbf{Stage B:} fix $\pi^\star$; reweighted $\ell_1$ on $\xi$; support $S$ by the 40-point frequency rule
+\STATE \textbf{Stage C:} LM on $(\xi_S, \pi)$ with $\xi_{S^c} = 0$
+\STATE \textbf{Output:} $S$, $\xi_S$, $\pi$
+\end{algorithmic}
+\end{algorithm}
+
+\section{Experiments}
+\label{sec:experiments}
+
+All experiments use exact data in double precision. Scripts and result files are listed in Appendix~\ref{app:repro}. Results were produced with Python 3.12.10 and NumPy 2.2.5.
+
+\subsection{Forward problems with solution-specific columns}
+\label{sec:forward-discrete}
+
+We first use libraries in which the true solution appears as one column among distractors. Table~\ref{tab:forward-discrete} summarizes the five equations. For heat, wave, Burgers and Chafee--Infante, adaptive $\ell_1$ starting from zero selects only the true column. For KdV, the quadratic residual has a spurious basin: starting from zero stops at relative residual 0.36 with all ten columns nonzero. We therefore use 30 random starts scaled only by the column norms; 7 of the 30 reach residual below $10^{-8}$, and reweighted $\ell_1$ on the best start selects the true column alone in 39 of 40 $\lambda$ values. Ten different random seeds and $\lambda$ ratios $10^{-2}$, $10^{-3}$ and $10^{-4}$ all pass. In these libraries the wave speed is discretized, so the experiment tests selection among prepared candidates rather than the discovery of an unknown parameter.
+
+\begin{table}[t]
+\caption{Forward problems with solution-specific libraries. ``True-only $\lambda$'' counts the $\lambda$ values on the 40-point path (50 for heat) at which the support equals the true column. All refitted coefficients equal 1.}
+\label{tab:forward-discrete}
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+PDE & Exact solution & Columns & True-only $\lambda$ & Refit residual & Start \\
+\midrule
+$u_t = u_{xx}$ & $e^{-\pi^2 t}\sin\pi x$ & 14 & 49/50 & $1.8\times10^{-16}$ & zero \\
+$u_{tt} = u_{xx}$ & $\sin\pi x\cos\pi t$ & 8 & 39/40 & $4.1\times10^{-16}$ & zero \\
+$u_t + uu_x = 0.1u_{xx}$ & $0.5(1-\tanh 2.5(x-0.3-0.5t))$ & 10 & 39/40 & $4.2\times10^{-16}$ & zero \\
+$u_t = u_{xx} + u - u^3$ & $\tanh(x/\sqrt2)$ & 9 & 39/40 & $1.6\times10^{-16}$ & zero \\
+$u_t + 6uu_x + u_{xxx} = 0$ & $2\sech^2(x-4t)$ & 10 & 39/40 & $7.5\times10^{-16}$ & 30 random \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{Forward problems with a generic library}
+\label{sec:forward-generic}
+
+Table~\ref{tab:forward-generic} reports Algorithm~\ref{alg:generic} on three positive cases and two negative controls. The true solutions are combinations of library columns: $2\sech^2\theta = 2 - 2\tanh^2\theta$ for KdV, $0.5(1-\tanh\theta)$ for Burgers and $\tanh\theta$ for Chafee--Infante. The negative controls are KdV with the $\tanh^2\theta$ column removed, and KdV with initial and boundary data of a two-soliton solution $u = 2(\ln F)_{xx}$, $F = 1 + e^{\eta_1} + e^{\eta_2} + A_{12}e^{\eta_1+\eta_2}$, with $\eta_i = k_i x - k_i^3 t + \delta_i$, $(k_1,k_2) = (2,1)$, $(\delta_1,\delta_2)=(12,0)$ and $A_{12} = ((k_1-k_2)/(k_1+k_2))^2$. Neither solution is a sparse combination of~\eqref{eq:generic-library} in a single wave variable.
+
+\begin{table}[t]
+\caption{Generic-library forward selection. Hits: random starts (of 40, seed 0) whose stage-A residual is below $10^{-8}$ before continuation. Seeds: independent runs of the whole algorithm that select the true support. Parameter errors are absolute errors after the stage-C refit.}
+\label{tab:forward-generic}
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+Case & Selected support and coefficients & Hits & Seeds & $\max|\Delta(k,c,x_0)|$ & Verdict \\
+\midrule
+KdV & $2\cdot 1 - 2\tanh^2\theta$ & 13/40 & 5/5 & $8.9\times10^{-16}$ & pass \\
+Burgers & $0.5\cdot 1 - 0.5\tanh\theta$ & 1/40 & 5/5 & $0$ & pass \\
+Chafee--Infante & $1\cdot\tanh\theta$ & 10/40 & 5/5 & $5.2\times10^{-18}$ & pass \\
+KdV without $\tanh^2$ & none (residual 0.178) & 0/40 & -- & -- & rejected \\
+KdV two-soliton & none (residual 0.306) & 0/40 & -- & -- & rejected \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+All three positive cases select the true support, and the stage-C refit recovers $(k,c,x_0) = (1,4,0)$ for KdV, $(2.5, 0.5, 0.3)$ for Burgers and $(1/\sqrt2, 0, 0)$ for Chafee--Infante to rounding error. The reweighting history shows what $\ell_1$ removes. In round 0, KdV keeps $\{1, \tanh^2\theta, \sech\theta, e^{-\theta^2}\}$, Burgers keeps $\{1, \tanh\theta, \sech\theta, \theta\}$ and Chafee--Infante keeps $\{\tanh\theta, \tanh^3\theta, \sech\theta, e^{-\theta^2}\}$; from round 1 onward only the true columns remain. On the final path, the true columns are selected in 36 to 39 of 40 $\lambda$ values and every distractor in none. The $\lambda$ ratios $10^{-2}$, $10^{-3}$ and $10^{-4}$ all pass for all three equations. The two negative controls stop at relative residuals of 0.178 and 0.306, seven orders of magnitude above the gate, so the algorithm reports that the library contains no exact solution instead of returning an approximate one. Figure~\ref{fig:gate} shows all 40 stage-A residuals for each case. Every positive case has at least one start below $2\times10^{-10}$, whereas for the negative controls every start remains above $0.1$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/gate.pdf}
+\caption{Stage-A relative residuals of the 40 random starts (seed 0), sorted per case. The best start of each case includes the continuation step. Starts below the dashed gate count as reaching an exact solution. Burgers starts 2 to 6 stop just above the gate at about $4\times10^{-8}$, the shift-compensated configurations discussed below.}
+\label{fig:gate}
+\end{figure}
+
+\paragraph{Weak identifiability of the position parameter.}
+Stage A is the expensive and fragile part. For Burgers only 1 of 40 starts reaches the gate within 300 iterations at seed 0. In the first version of the algorithm, without the continuation step, two of five seeds failed with best residuals $1.9\times10^{-8}$ and $2.5\times10^{-8}$. Inspection showed that these runs had the correct $k$ and $c$ and differed only in $x_0$, by about 0.01. The cause is that the tanh library can absorb a small shift: $\tanh(\theta + \epsilon) \approx \tanh\theta + \epsilon(1 - \tanh^2\theta)$, so an error in $x_0$ is compensated by small changes in the constant and $\tanh^2\theta$ coefficients. For seed 3, $x_0 = 0.2895$ gives $\epsilon = -0.026$, and the fitted constant and $\tanh^2$ coefficients are $0.513$ and $-0.013$, as the expansion predicts. The residual is therefore nearly flat along $x_0$. Continuing the best start lowers the residual to $4\times10^{-11}$ for both seeds while $x_0$ still lies between 0.297 and 0.303. Sparsity resolves the remaining ambiguity. At seed 0, stage A ends with $x_0 = 0.2970$; once $\ell_1$ selects $\{1, \tanh\theta\}$, the refit on this support places $x_0$ at 0.3 to rounding error. All five seeds select the same support; the refit was evaluated for seed 0. The continuation changes no rule other than the iteration count, and it leaves the KdV and Chafee--Infante results unchanged. The full run takes about 36 minutes on a desktop CPU.
+
+\subsection{Inverse problems}
+\label{sec:inverse}
+
+Table~\ref{tab:inverse} lists the five inverse problems. For heat and wave, data from two Fourier modes are needed, because a single mode satisfies a shorter equation; with two modes, $\ell_1$ selects $u_{xx}$ alone with coefficient 1. For advection--diffusion, two Gaussians with initial widths 0.5 and 0.9 and variance $\sigma^2(t) = \sigma_0^2 + 2\nu t$ give the support $\{u_x, u_{xx}\}$ with refitted coefficients $-0.4$ and $0.05$.
+
+\begin{table}[t]
+\caption{Inverse problems. Columns: library size. The last two rows use reweighted $\ell_1$; the others use adaptive $\ell_1$. Coefficients are after refit.}
+\label{tab:inverse}
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllc}
+\toprule
+Equation & Data & Selected support (coefficients) & Columns \\
+\midrule
+$u_t = u_{xx}$ & two modes & $u_{xx}$ (1) & 7 \\
+$u_{tt} = u_{xx}$ & two modes & $u_{xx}$ (1) & 7 \\
+$u_t = -0.4u_x + 0.05u_{xx}$ & two Gaussians & $u_x$ ($-0.4$), $u_{xx}$ (0.05) & 7 \\
+$u_t = -uu_x + 0.1u_{xx}$ & Cole--Hopf, three merging shocks & $uu_x$ ($-1$), $u_{xx}$ (0.1) & 10 \\
+$u_t = -6uu_x - u_{xxx}$ & two-soliton & $uu_x$ ($-6$), $u_{xxx}$ ($-1$) & 8 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\paragraph{The spurious $u_x$ term.}
+For Burgers and the KdV two-soliton, plain $\ell_1$ selects the true terms and $u_x$. The exact homotopy solver reproduces this with maximal relative KKT violations of $4.5\times10^{-10}$ (KdV) and $3.7\times10^{-10}$ (Burgers), and $u_x$ is selected at 39 of 40 $\lambda$ values in both cases. Figure~\ref{fig:inverse-path} shows that once the true terms are active, the normalized $u_x$ coefficient decreases exactly in proportion to $\lambda$ and never reaches zero. Table~\ref{tab:irrep} gives $\eta_j$ from~\eqref{eq:irrep} with unit weights. Only $u_x$ violates the condition.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/inverse_path.pdf}
+\caption{Normalized $u_x$ coefficient along the exact plain-$\ell_1$ homotopy path (40 values of $\lambda$, read from left to right as $\lambda$ decreases). After the true terms enter, the coefficient scales linearly with $\lambda$, as predicted by $\eta_{u_x} > 1$. Under reweighted $\ell_1$ the $u_x$ coefficient is exactly zero at all 40 values (not shown on the log axis).}
+\label{fig:inverse-path}
+\end{figure} This explains both observations from the earlier experiments: the selection does not depend on the solver, and the residual along the path decreases in proportion to $\lambda$ and therefore cannot reach $10^{-8}$ before $\lambda = 10^{-6}\lambda_{\max}$.
+
+\begin{table}[t]
+\caption{Irrepresentable values $\eta_j$ (Eq.~\ref{eq:irrep}, unit weights) for the off-support columns. Values above 1 imply selection at all sufficiently small $\lambda$.}
+\label{tab:irrep}
+\centering
+\small
+\begin{tabular}{lcccccccc}
+\toprule
+Data & $1$ & $u$ & $u^2$ & $u^3$ & $u_x$ & $u_{xx}$ or $u_{xxx}$ & $u^2u_x$ & $uu_{xx}$ \\
+\midrule
+KdV two-soliton & 0.020 & 0.001 & 0.040 & -- & \textbf{2.771} & 0.076 & 0.036 & -- \\
+Burgers, Cole--Hopf & 0.599 & 0.325 & 0.157 & 0.082 & \textbf{1.387} & 0.652 & 0.687 & 0.483 \\
+Burgers, two waves & 0.598 & 0.264 & 0.098 & 0.035 & \textbf{1.522} & 0.813 & 0.630 & 0.258 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Reweighting.}
+With the procedure of Section~\ref{sec:irl1}, round 0 selects $\{uu_x, u_{xxx}, u_x, u_{xx}\}$ for KdV and $\{uu_x, u_{xx}, u_x\}$ for Burgers. Round 1 removes every extra column, and round 2 repeats the support. On the final 40-point path $u_x$ is selected at none of the $\lambda$ values; the true terms are selected at 39 and 31 values (KdV) and 39 and 31 values (Burgers, Cole--Hopf). The maximal relative KKT violation on the path is below $8.5\times 10^{-12}$. Refitted coefficients are $-6$ and $-1$ for KdV and $-1$ and $0.1$ for Burgers, with relative errors near $10^{-15}$. The Cole--Hopf data are a full-rank replacement for an earlier two-wave Burgers data set whose library has rank 8 of 10 (Appendix~\ref{app:rank}).
+
+\paragraph{Sensitivity to the round-0 penalty.}
+The reweighting requires the round-0 solution to contain the true terms. We vary the $\lambda$ ratio over $\{10^{-1},\dots,10^{-5}\}$ and $\varepsilon$ over $\{10^{-8},10^{-6},10^{-4},10^{-2}\}$ (Table~\ref{tab:sensitivity}). At ratio $10^{-1}$ round 0 misses at least one true term, and the reweighting converges to the wrong support $\{u_x\}$ (KdV and two-wave Burgers) or $\{uu_x, u_x\}$ (Cole--Hopf Burgers). KdV also fails at $10^{-2}$. All smaller ratios pass for every $\varepsilon$, and the outcome never depends on $\varepsilon$. The ratio $10^{-3}$ used throughout was chosen during exploration.
+
+\begin{table}[t]
+\caption{Reweighted $\ell_1$ outcome by round-0 ratio $\lambda/\lambda_{\max}$. Each cell aggregates four values of $\varepsilon$; the result was identical across $\varepsilon$.}
+\label{tab:sensitivity}
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Data & $10^{-1}$ & $10^{-2}$ & $10^{-3}$ & $10^{-4}$ & $10^{-5}$ & Passed \\
+\midrule
+KdV two-soliton & fail & fail & pass & pass & pass & 12/20 \\
+Burgers, Cole--Hopf & fail & pass & pass & pass & pass & 16/20 \\
+Burgers, two waves & fail & pass & pass & pass & pass & 16/20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+\label{sec:discussion}
+
+The experiments separate two roles. The $\ell_1$ penalty decides which library terms are needed, and in both directions it does so reliably once the data determine a unique sparse answer and the true terms are reachable from round 0. The difficult parts lie outside the penalty. In the inverse problems, correlated columns violate the irrepresentable condition, and plain Lasso cannot avoid the spurious term no matter how accurately it is solved; reweighting with weights from the previous $\ell_1$ solution removes it. In the forward problems, the hard step is locating the nonlinear wave parameters, a nonconvex search that succeeds in 1 to 13 of 40 random starts depending on the equation. Sparsity also contributes to this step: the shift ambiguity of the tanh library leaves $x_0$ poorly determined by least squares, and the sparse support pins it down.
+
+The residual gate makes failures visible. With exact data, a correct closed form reaches relative residuals of $2\times10^{-10}$ or below in stage A and $10^{-14}$ or below after the refit, while the two negative controls stall above $0.1$. A user can therefore distinguish a closed-form solution from an approximation that merely fits well.
+
+The evaluated setting has clear boundaries. All data are noise-free. The generic library covers single travelling waves; the two-soliton solution requires a library built on two wave variables or on $\ln F$, which we have not tested. The round-0 ratio for reweighting was fixed after exploration, and Table~\ref{tab:sensitivity} shows that ratios of $10^{-2}$ or larger can fail. Stage A has low hit rates for Burgers and accounts for most of the 36-minute runtime.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Writing a candidate expansion with many coefficients and letting an $\ell_1$ penalty remove most of them recovers exact closed forms for five forward and five inverse PDE problems in our tests. A single generic tanh library with continuous wave parameters suffices for the KdV soliton, the viscous Burgers front and the Chafee--Infante kink, and a residual gate rejects data that the library cannot represent. In the inverse direction, the spurious $u_x$ term of plain Lasso is a consequence of the irrepresentable condition, and iteratively reweighted $\ell_1$ removes it without relaxing the support threshold.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\appendix
+
+\section{Rank-deficient Burgers data}
+\label{app:rank}
+The earlier Burgers inverse data consist of two $\tanh$ travelling waves. The normalized library of ten columns has numerical rank 8: its two smallest singular values are $1.6\times10^{-15}$ and $9.5\times10^{-16}$, against $4.0\times10^{-2}$ for the next one. The two null vectors define two further exact equations in the library, each with more nonzero terms than the true equation. The minimum-$\ell_1$ solution is still the true equation, and reweighted $\ell_1$ selects $\{uu_x, u_{xx}\}$ with coefficients $-1$ and $0.1$ (Tables~\ref{tab:irrep} and~\ref{tab:sensitivity}). Because a correct selection on such data could depend on the degeneracy, the main text uses the Cole--Hopf data instead~\citep{hopf1950,cole1951}: $u = -2\nu\,\partial_x \ln\varphi$ with $\varphi = \sum_{i=1}^{4}\exp(k_i(x - x_{0,i}) + \nu k_i^2 t)$, $\nu = 0.1$, $k = (0,-5,-10,-15)$ and $x_0 = (0, 1, 0.4, 0.2)$, on a $161\times 41$ grid over $[-1,3]\times[0,1]$. Its library has full rank 10 with smallest singular value $1.1\times10^{-3}$. All derivatives are computed from cumulants of $k$ under the weights $\propto \exp(\cdot)$, and $u_t$ is derived from $\varphi_t = \nu\varphi_{xx}$ rather than from the Burgers equation; a finite-difference check agrees to $8\times10^{-8}$.
+
+\section{Experimental details}
+\label{app:details}
+
+\paragraph{Forward grids.} Generic-library experiments use $n_x$ spatial points, $n_t$ time points and $n_{\mathrm{ic}}$ initial points as follows: KdV, $x\in[-8,12]$, $t\in[0,1]$, $(49, 17, 97)$; Burgers, $x\in[0,1]$, $t\in[0,0.8]$, $(41,21,81)$; Chafee--Infante, $x\in[-6,6]$, $t\in[0,1]$, $(41,11,81)$; two-soliton, $x\in[-15,20]$, $t\in[0,3]$, $(71,25,141)$. Collocation points exclude the boundary and the initial line. The finite-difference check of the analytic library derivatives agrees to $2.1\times10^{-7}$, and the two-soliton formula satisfies KdV to $5.5\times10^{-5}$ under a step-$10^{-3}$ difference check.
+
+\paragraph{Inverse data.} Heat and wave use the first two Fourier modes (3402 rows each). Advection--diffusion uses two Gaussians with $\sigma_0 \in \{0.5, 0.9\}$, speed 0.4 and $\nu=0.05$ (5922 rows; true-equation residual $1.4\times10^{-16}$). The KdV two-soliton has amplitude parameters 1 and 2, with derivatives from a power-series expansion of $\tau$ in $u = 2\partial_{xx}\ln\tau$ (1440 rows; true-equation residual $2.2\times10^{-13}$). Burgers Cole--Hopf has 6601 rows and true-equation residual $1.5\times10^{-16}$.
+
+\paragraph{Solvers.} Levenberg--Marquardt uses Marquardt diagonal scaling, an initial damping of $10^{-3}$, and a central-difference Jacobian in $(\log k, c, x_0)$ with step $10^{-6}(1+|\pi_i|)$. Gauss--Newton for the penalized forward objective runs at most 40 iterations per $\lambda$, with two candidate starts at each $\lambda$ (the previous solution on the path and the stage-A solution), keeping the one with smaller penalized objective.
+
+\section{Reproducibility}
+\label{app:repro}
+
+\begin{center}
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{ll}
+\toprule
+Script & Content \\
+\midrule
+\texttt{tier1\_heat.py}, \texttt{batch5.py} & forward heat and wave; inverse heat and wave \\
+\texttt{tier2\_burgers.py}, \texttt{chafee\_infante.py} & forward Burgers and Chafee--Infante, solution-specific columns \\
+\texttt{kdv\_forward\_blind.py} & forward KdV from random starts with reweighted $\ell_1$ \\
+\texttt{redo\_two.py} & inverse advection--diffusion \\
+\texttt{inverse\_irl1.py}, \texttt{lasso\_exact.py} & irrepresentable diagnosis, exact homotopy, reweighted $\ell_1$ \\
+\texttt{forward\_generic\_v2.py} & generic-library forward selection (Table~\ref{tab:forward-generic}) \\
+\texttt{paper/make\_figures.py} & Figures~\ref{fig:inverse-path} and~\ref{fig:gate} \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+Each script writes a JSON file with the same stem. The first version \texttt{forward\_generic.py} differs from \texttt{forward\_generic\_v2.py} only in the absence of the continuation step.
+
+\end{document}

@@ -9,7 +9,7 @@ Python：`D:\Miniconda3\envs\py312\python.exe`（NumPy 2.2.5）
 
 > **2026-10-28 更新：10 条全部通过（本机 py312 复核）。** 用户选了 A。新脚本 `inverse_irl1.py`（反问题 Burgers / KdV）、`kdv_forward_blind.py`（KdV 正问题盲搜），公共求解器 `lasso_exact.py`。详见第 4、5、8 节。
 >
-> **同日追加：通用库正问题** `forward_generic.py`：三个方程共用一个 tanh 幂次库，波参数连续搜索，全部选对；两个反例被门槛正确拦下。Burgers 多起点收敛慢（种子 3/5），已诊断为平移近似可被吸收、LM 步数不够，不是错盆地。**下一步见第 11 节：明天加延长迭代后整体重跑。** 这些在分支 `exp/generic-library`。
+> **同日追加：通用库正问题** `forward_generic.py`：三个方程共用一个 tanh 幂次库，波参数连续搜索，全部选对；两个反例被门槛正确拦下。Burgers 多起点收敛慢（种子 3/5），已诊断为平移近似可被吸收、LM 步数不够，不是错盆地。**10-29 已加延长迭代整体重跑（`forward_generic_v2.py`）：三个正例种子全部 5/5，两个反例都被拦下。** 这些在分支 `exp/generic-library`。下一步见第 11 节。
 
 ---
 
@@ -130,7 +130,23 @@ Python：`D:\Miniconda3\envs\py312\python.exe`（NumPy 2.2.5）
 
 - **不是错盆地。** 三个种子前 5 名起点的 \(k,c\) 全对，只有 \(x_0\) 偏约 0.01。
 - **原因：tanh 幂次库能近似吸收平移。** \(\tanh(\theta+\varepsilon)\approx\tanh\theta+\varepsilon(1-\tanh^2\theta)\)，所以 \(x_0\) 偏一点可以由常数项和 tanh² 项补偿（种子 3：\(x_0\) 偏 −0.0105 → \(\varepsilon=-0.026\)，常数 0.513、tanh² −0.013，与公式吻合）。残差沿 \(x_0\) 几乎是平的，LM 走得慢，300 步不够。
-- **可写进论文的观察：** 种子 0 只用最小二乘时 \(x_0\) 停在 0.297；L1 选出 {1, tanh} 后在支撑上重拟合，\(x_0\) 精确回到 0.3。即稀疏性帮助唯一确定位置参数。目前只在种子 0 上看到，种子 3、4 延长迭代后再走 L1 是否通过**尚未跑**。
+- **可写进论文的观察：** 只用最小二乘时 \(x_0\) 停在 0.297 / 0.2977 / 0.3023；L1 选出 {1, tanh} 后在支撑上重拟合，\(x_0\) 精确回到 0.3。即稀疏性帮助唯一确定位置参数。v2 里 5 个种子都是这样。
+
+### 2026-10-29 v2：加延长迭代后整体重跑（**正问题主结果用这个**）
+
+`forward_generic_v2.py` → `forward_generic_v2_result.json`，本机 py312 约 36 分钟。只改一处：多起点 LM 后，对残差最小的那个结果原地继续 LM 最多 3000 步。门槛、IRL1、λ 路径、阈值、重拟合与 v1 完全相同（v2 直接 import v1 的函数）。
+
+| 情形 | v1 | v2 |
+| --- | --- | --- |
+| KdV | 通过，种子 5/5，λ 比例 3/3 | 同左（延长迭代后残差不变，\(7\times10^{-11}\)） |
+| Burgers | 通过，种子 **3/5**，λ 比例 3/3 | 通过，种子 **5/5**，λ 比例 3/3 |
+| Chafee–Infante | 通过，种子 5/5，λ 比例 3/3 | 同左 |
+| 反例 KdV 删 tanh² | 拦下（0.178） | 拦下（0.178） |
+| 反例 KdV 双孤子 | 拦下（0.306） | 拦下（0.306） |
+
+Burgers 延长迭代前后的最好残差：种子 1 \(3.4\times10^{-9}\to3.7\times10^{-11}\)，种子 3 \(1.9\times10^{-8}\to4.2\times10^{-11}\)，种子 4 \(2.5\times10^{-8}\to4.3\times10^{-11}\)，其余基本不变。5 个种子的支撑都是 {1, tanh}。
+
+仍有的限制：多起点命中率仍低（Burgers 原始命中 1–2/40，靠最好的那一个延长迭代过门槛）；只覆盖单一行波，双孤子需要另设库；运行慢。
 
 ### 写作 skill（本地已克隆，**不要推进 GitHub**）
 
@@ -208,6 +224,7 @@ D:\Miniconda3\envs\py312\python.exe optimize_ux.py
 D:\Miniconda3\envs\py312\python.exe inverse_irl1.py
 D:\Miniconda3\envs\py312\python.exe kdv_forward_blind.py
 D:\Miniconda3\envs\py312\python.exe forward_generic.py
+D:\Miniconda3\envs\py312\python.exe forward_generic_v2.py
 ```
 
 每条脚本把 JSON 写到同目录。重跑会覆盖对应 JSON。已通过的不要为了「再看一眼」去改脚本。
@@ -227,13 +244,12 @@ D:\Miniconda3\envs\py312\python.exe forward_generic.py
 
 用户选了 A，已完成，10 条全部通过。之后用户问「徐刚老师是否满意」，结论是要补「库里不含真解」的实验，已做（`forward_generic.py`，见第 5 节），只剩 Burgers 参数搜索的收敛问题。
 
-**明天先做（用户说要整体重跑）：**
+2026-10-29 已完成延长迭代的整体重跑（`forward_generic_v2.py`），三个正例种子全部 5/5，两个反例都被拦下，见第 5 节。
 
-1. 写新脚本（例如 `forward_generic_v2.py`，`forward_generic.py` 不改）：多起点 LM 之后，**只对残差最小的那个结果**继续 LM（例如 3000 步）。门槛 \(10^{-8}\)、IRL1、阈值 \(10^{-5}\) 全部不变，不加任何新信息。
-2. 整体重跑（本机约 30 分钟以上，用后台运行），看 Burgers 种子是否 5/5。
-3. 把结果写回本文件第 4、5 节。
+**论文初稿已写（2026-10-29）：** `paper/main.tex` + `paper/refs.bib`，英文，NeurIPS 2026 模板 preprint 模式（用户选 CCF-A 会议式，未指定会议，按 ccf-paper-writer 默认用 NeurIPS），8 页，编译无报错无溢出，PDF 在 `paper/main.pdf`。编译：在 `paper/` 下 `latexmk -pdf -outdir=build main.tex`。用户已定：λ 比例写「固定 1e-3 + 敏感性表」；Burgers 两行波秩亏数据放附录 A。
+待补：作者姓名和单位（现为占位）；目标会议与页数限制；是否加图（目前只有表）；导师审阅意见。所有数字取自各结果 JSON，没有新跑实验。
 
-**之后再和用户确认，然后写论文：**
+**以下几点已按用户选择写进论文：**
 
 - IRL1 第 0 轮 \(\lambda\) 比例的选取规则怎么写。
 - 主结果用 Burgers Cole–Hopf 新数据，旧两行波数据（秩亏）放附录还是正文。
