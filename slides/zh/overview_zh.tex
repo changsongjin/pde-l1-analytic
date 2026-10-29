@@ -1,0 +1,84 @@
+\documentclass[border=4pt]{standalone}
+\usepackage[fontset=windows]{ctex}
+\xeCJKsetup{CJKglue=\hskip 0pt}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+\definecolor{ink}{HTML}{0B0B0B}\definecolor{inkB}{HTML}{52514E}\definecolor{inkM}{HTML}{8A8984}
+\definecolor{keep}{HTML}{2A78D6}\definecolor{paleK}{HTML}{CDE2FB}\definecolor{paleG}{HTML}{F0EFEC}
+\definecolor{warn}{HTML}{EB6834}\definecolor{paleW}{HTML}{FBE3D8}
+\newcommand{\sech}{\operatorname{sech}}
+\begin{document}
+% 背景图：正问题与反问题共用「候选库 + L1」的思路。系数取自实验结果。
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2mm]},
+  box/.style={draw=inkB, rounded corners=2pt, align=center, inner sep=4pt, fill=white},
+  given/.style={box, minimum width=2.9cm, minimum height=1.55cm},
+  result/.style={box, draw=keep, line width=0.8pt, minimum width=3.3cm, minimum height=1.55cm},
+  solver/.style={box, fill=paleG, minimum width=1.75cm, minimum height=1.0cm},
+  cell/.style={draw, rounded corners=1.5pt, minimum width=1.32cm, minimum height=0.52cm, inner sep=1pt, font=\scriptsize},
+  on/.style={cell, draw=keep, fill=paleK, text=ink, line width=0.7pt},
+  off/.style={cell, draw=inkM, fill=paleG, text=inkM},
+  coef/.style={font=\scriptsize\bfseries, text=keep},
+  zero/.style={font=\scriptsize, text=inkM},
+  lab/.style={font=\footnotesize\bfseries, anchor=west, text=ink},
+]
+% ---------------- 正问题 ----------------
+\node[lab] at (-1.5, 1.55) {(a) 正问题：已知 PDE，求解析解};
+\node[given] (fg) at (0, 0) {$u_t + 6uu_x + u_{xxx} = 0$\\[1pt] 初值和边界数据\\[1pt]\textcolor{inkB}{不用解的内部采样}};
+\begin{scope}[shift={(2.45, 0.42)}]
+  \node[on]  (f1) at (0.66, 0)      {$1$};
+  \node[off] (f2) at (2.0, 0)       {$\tanh\theta$};
+  \node[on]  (f3) at (3.34, 0)      {$\tanh^2\theta$};
+  \node[off] (f4) at (4.68, 0)      {$\tanh^3\theta$};
+  \node[off] (f5) at (0.66, -0.84)  {$\tanh^4\theta$};
+  \node[off] (f6) at (2.0, -0.84)   {$\sech\theta$};
+  \node[off] (f7) at (3.34, -0.84)  {$e^{-\theta^2}$};
+  \node[off] (f8) at (4.68, -0.84)  {$\theta$};
+  \node[coef] at (0.66, 0.42) {$2$};
+  \node[zero] at (2.0, 0.42) {$0$};
+  \node[coef] at (3.34, 0.42) {$-2$};
+  \node[zero] at (4.68, 0.42) {$0$};
+  \foreach \x in {0.66, 2.0, 3.34, 4.68} \node[zero] at (\x, -1.26) {$0$};
+\end{scope}
+\node[font=\scriptsize, text=inkB] (fth) at (5.12, -1.45) {$u=\sum_j \xi_j\,\phi_j(\theta)$,\quad $\theta = k(x - x_0 - ct)$,\quad $(k,c,x_0)$ 连续搜索};
+\node[solver] (fs) at (8.95, 0) {$\ell_1$ 惩罚\\ + 残差门槛};
+\node[result] (fr) at (11.95, 0) {$u = 2 - 2\tanh^2\theta$\\[1pt] $= 2\,\sech^2(x - 4t)$\\[1pt]\textcolor{inkB}{$k=1,\ c=4,\ x_0=0$}};
+\draw[->, inkB, line width=0.7pt] (fg.east) -- ++(0.32,0);
+\draw[->, inkB, line width=0.7pt] (7.62, 0) -- (fs.west);
+\draw[->, inkB, line width=0.7pt] (fs.east) -- (fr.west);
+
+% ---------------- 反问题 ----------------
+\node[lab] at (-1.5, -2.3) {(b) 反问题：已知解的采样，求方程};
+\node[given] (ig) at (0, -3.85) {$u(x,t)$ 及其导数的采样\\[1pt]\textcolor{inkB}{（KdV 双孤子）}};
+\begin{scope}[shift={(2.45, -3.43)}]
+  \node[on]  at (0.66, 0)      {$uu_x$};
+  \node[on]  at (2.0, 0)       {$u_{xxx}$};
+  \node[off] at (3.34, 0)      {$1$};
+  \node[off] at (4.68, 0)      {$u$};
+  \node[off] at (0.66, -0.84)  {$u_x$};
+  \node[off] at (2.0, -0.84)   {$u_{xx}$};
+  \node[off] at (3.34, -0.84)  {$u^2$};
+  \node[off] at (4.68, -0.84)  {$u^2u_x$};
+  \node[coef] at (0.66, 0.42) {$-6$};
+  \node[coef] at (2.0, 0.42) {$-1$};
+  \node[zero] at (3.34, 0.42) {$0$};
+  \node[zero] at (4.68, 0.42) {$0$};
+  \foreach \x in {0.66, 2.0, 3.34, 4.68} \node[zero] at (\x, -1.26) {$0$};
+\end{scope}
+\node[font=\scriptsize, text=inkB] at (5.12, -5.3) {$u_t = \Theta(u)\,\beta$};
+\node[solver] (is) at (8.95, -3.85) {重加权\\ $\ell_1$};
+\node[result] (ir) at (11.95, -3.85) {$u_t = -6uu_x - u_{xxx}$\\[1pt]\textcolor{inkB}{普通 $\ell_1$ 还会多留 $u_x$}};
+\draw[->, inkB, line width=0.7pt] (ig.east) -- ++(0.32,0);
+\draw[->, inkB, line width=0.7pt] (7.62, -3.85) -- (is.west);
+\draw[->, inkB, line width=0.7pt] (is.east) -- (ir.west);
+
+% 图例
+\node[on, minimum width=0.5cm, minimum height=0.32cm] (lk) at (8.4, -5.35) {};
+\node[anchor=west, font=\scriptsize] at (lk.east) {保留};
+\node[off, minimum width=0.5cm, minimum height=0.32cm] (lz) at (10.15, -5.35) {};
+\node[anchor=west, font=\scriptsize] at (lz.east) {被 $\ell_1$ 压成 0};
+\end{tikzpicture}
+
+\end{document}
