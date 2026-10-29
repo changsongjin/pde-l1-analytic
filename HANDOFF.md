@@ -246,7 +246,10 @@ D:\Miniconda3\envs\py312\python.exe forward_generic_v2.py
 
 2026-10-29 已完成延长迭代的整体重跑（`forward_generic_v2.py`），三个正例种子全部 5/5，两个反例都被拦下，见第 5 节。
 
-**下一步和用户确认，然后写论文：**
+**论文初稿已写（2026-10-29）：** `paper/main.tex` + `paper/refs.bib`，英文，NeurIPS 2026 模板 preprint 模式（用户选 CCF-A 会议式，未指定会议，按 ccf-paper-writer 默认用 NeurIPS），8 页，编译无报错无溢出，PDF 在 `paper/main.pdf`。编译：在 `paper/` 下 `latexmk -pdf -outdir=build main.tex`。用户已定：λ 比例写「固定 1e-3 + 敏感性表」；Burgers 两行波秩亏数据放附录 A。
+待补：作者姓名和单位（现为占位）；目标会议与页数限制；是否加图（目前只有表）；导师审阅意见。所有数字取自各结果 JSON，没有新跑实验。
+
+**以下几点已按用户选择写进论文：**
 
 - IRL1 第 0 轮 \(\lambda\) 比例的选取规则怎么写。
 - 主结果用 Burgers Cole–Hopf 新数据，旧两行波数据（秩亏）放附录还是正文。
