@@ -11,6 +11,16 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{inkB}{HTML}{52514E}
+\definecolor{inkM}{HTML}{8A8984}
+\definecolor{keep}{HTML}{2A78D6}
+\definecolor{paleK}{HTML}{CDE2FB}
+\definecolor{paleG}{HTML}{F0EFEC}
+\definecolor{warn}{HTML}{EB6834}
+\definecolor{paleW}{HTML}{FBE3D8}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
@@ -46,6 +56,15 @@ This paper makes the following contributions.
 \item We explain the spurious $u_x$ term in inverse Burgers and KdV. An exact LARS homotopy solver~\citep{efron2004lars} reproduces the term with Karush--Kuhn--Tucker (KKT) residuals below $5\times 10^{-9}$, and the irrepresentable condition~\citep{zhao2006consistency} for the $u_x$ column equals 2.77 (KdV) and 1.39 and 1.52 (Burgers), above the threshold of 1, while every other wrong column lies below 1. Iteratively reweighted $\ell_1$~\citep{candes2008irl1} with weights from the previous $\ell_1$ solution removes $u_x$ in two rounds on all three data sets.
 \item We replace solution-specific forward libraries with one generic library of $\tanh$ powers and three distractor functions in a travelling-wave variable whose parameters are optimized continuously. The same library recovers the exact solutions of KdV, Burgers and Chafee--Infante, including wave speed, width and position, for all five random seeds tested, and a residual gate rejects two cases whose solutions lie outside the library.
 \end{itemize}
+
+Figure~\ref{fig:overview} illustrates both directions on KdV. In the forward direction the PDE and its initial and boundary data are given, and $\ell_1$ selects two of eight generic candidates, which combine into the soliton $2\sech^2(x-4t)$. In the inverse direction samples of the two-soliton solution are given, and $\ell_1$ selects the two terms of the equation.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/overview.tex}}
+\caption{Closed-form selection with a candidate library and an $\ell_1$ penalty, shown on KdV. (a) Forward problem: the solution is expanded in the generic library~\eqref{eq:generic-library} with continuous wave parameters, and $\ell_1$ keeps $1$ and $\tanh^2\theta$ with coefficients $2$ and $-2$. (b) Inverse problem: $u_t$ is regressed on differential terms, and reweighted $\ell_1$ keeps $uu_x$ and $u_{xxx}$ with coefficients $-6$ and $-1$. Coefficients are the refitted values reported in Section~\ref{sec:experiments}; all other coefficients are exactly zero.}
+\label{fig:overview}
+\end{figure}
 
 \section{Problem formulation}
 \label{sec:formulation}
@@ -110,7 +129,14 @@ For travelling-wave problems we use the variable $\theta = k(x - x_0 - ct)$ with
 \end{equation}
 The first five functions are the basis of the tanh method for travelling waves~\citep{malfliet1992tanh}; the last three are distractors that are not polynomials in $\tanh\theta$. No column equals any of the target solutions. Derivatives of $\tanh^n\theta$ are computed exactly as polynomials in $T=\tanh\theta$ through $\mathrm{d}/\mathrm{d}\theta = (1 - T^2)\,\mathrm{d}/\mathrm{d}T$, and $u_t = -c\,u_x$, $\partial_x^m u = k^m \partial_\theta^m u$.
 
-Algorithm~\ref{alg:generic} has three stages. Stage A locates $\pi$ by unpenalized Levenberg--Marquardt over all eight coefficients and $(\log k, c, x_0)$ from 40 random starts drawn from generic ranges, $k \in [0.1, 10]$ log-uniform, $c \in [-8, 8]$ and $x_0$ uniform on the domain. The coefficients of each start are initialized by linear least squares on the initial and boundary data alone, and the parameter Jacobian is computed by central differences. The best start is then continued for up to 3000 further iterations from where it stopped. If the best relative residual exceeds $10^{-8}$, the library is declared not to contain an exact solution and no support is reported. Stage B fixes $\pi$ and selects the coefficient support with the reweighted $\ell_1$ procedure of Section~\ref{sec:irl1}. Stage C refits the selected coefficients jointly with $\pi$.
+Algorithm~\ref{alg:generic} and Figure~\ref{fig:flowchart} describe the three stages; the inverse problem uses Stage B alone. Stage A locates $\pi$ by unpenalized Levenberg--Marquardt over all eight coefficients and $(\log k, c, x_0)$ from 40 random starts drawn from generic ranges, $k \in [0.1, 10]$ log-uniform, $c \in [-8, 8]$ and $x_0$ uniform on the domain. The coefficients of each start are initialized by linear least squares on the initial and boundary data alone, and the parameter Jacobian is computed by central differences. The best start is then continued for up to 3000 further iterations from where it stopped. If the best relative residual exceeds $10^{-8}$, the library is declared not to contain an exact solution and no support is reported. Stage B fixes $\pi$ and selects the coefficient support with the reweighted $\ell_1$ procedure of Section~\ref{sec:irl1}. Stage C refits the selected coefficients jointly with $\pi$.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/flowchart.tex}}
+\caption{Algorithm flowchart. Stage A finds the wave parameters by unpenalized multistart Levenberg--Marquardt (LM) and stops if the residual gate fails. Stage B decides the support by $\ell_1$ alone: plain $\ell_1$, reweighting until the support repeats, and the selection-frequency rule on a 40-point $\lambda$ path. Stage C refits coefficients and wave parameters on the selected support. The inverse problem enters at Stage B with the linear regression $u_t = \Theta(u)\beta$.}
+\label{fig:flowchart}
+\end{figure}
 
 \begin{algorithm}[t]
 \caption{Generic-library forward selection}
