@@ -179,7 +179,14 @@ KdV two-soliton & none (residual 0.306) & 0/40 & -- & -- & rejected \\
 \end{tabular}}
 \end{table}
 
-All three positive cases select the true support, and the stage-C refit recovers $(k,c,x_0) = (1,4,0)$ for KdV, $(2.5, 0.5, 0.3)$ for Burgers and $(1/\sqrt2, 0, 0)$ for Chafee--Infante to rounding error. The reweighting history shows what $\ell_1$ removes. In round 0, KdV keeps $\{1, \tanh^2\theta, \sech\theta, e^{-\theta^2}\}$, Burgers keeps $\{1, \tanh\theta, \sech\theta, \theta\}$ and Chafee--Infante keeps $\{\tanh\theta, \tanh^3\theta, \sech\theta, e^{-\theta^2}\}$; from round 1 onward only the true columns remain. On the final path, the true columns are selected in 36 to 39 of 40 $\lambda$ values and every distractor in none. The $\lambda$ ratios $10^{-2}$, $10^{-3}$ and $10^{-4}$ all pass for all three equations. The two negative controls stop at relative residuals of 0.178 and 0.306, seven orders of magnitude above the gate, so the algorithm reports that the library contains no exact solution instead of returning an approximate one.
+All three positive cases select the true support, and the stage-C refit recovers $(k,c,x_0) = (1,4,0)$ for KdV, $(2.5, 0.5, 0.3)$ for Burgers and $(1/\sqrt2, 0, 0)$ for Chafee--Infante to rounding error. The reweighting history shows what $\ell_1$ removes. In round 0, KdV keeps $\{1, \tanh^2\theta, \sech\theta, e^{-\theta^2}\}$, Burgers keeps $\{1, \tanh\theta, \sech\theta, \theta\}$ and Chafee--Infante keeps $\{\tanh\theta, \tanh^3\theta, \sech\theta, e^{-\theta^2}\}$; from round 1 onward only the true columns remain. On the final path, the true columns are selected in 36 to 39 of 40 $\lambda$ values and every distractor in none. The $\lambda$ ratios $10^{-2}$, $10^{-3}$ and $10^{-4}$ all pass for all three equations. The two negative controls stop at relative residuals of 0.178 and 0.306, seven orders of magnitude above the gate, so the algorithm reports that the library contains no exact solution instead of returning an approximate one. Figure~\ref{fig:gate} shows all 40 stage-A residuals for each case. Every positive case has at least one start below $2\times10^{-10}$, whereas for the negative controls every start remains above $0.1$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/gate.pdf}
+\caption{Stage-A relative residuals of the 40 random starts (seed 0), sorted per case. The best start of each case includes the continuation step. Starts below the dashed gate count as reaching an exact solution. Burgers starts 2 to 6 stop just above the gate at about $4\times10^{-8}$, the shift-compensated configurations discussed below.}
+\label{fig:gate}
+\end{figure}
 
 \paragraph{Weak identifiability of the position parameter.}
 Stage A is the expensive and fragile part. For Burgers only 1 of 40 starts reaches the gate within 300 iterations at seed 0. In the first version of the algorithm, without the continuation step, two of five seeds failed with best residuals $1.9\times10^{-8}$ and $2.5\times10^{-8}$. Inspection showed that these runs had the correct $k$ and $c$ and differed only in $x_0$, by about 0.01. The cause is that the tanh library can absorb a small shift: $\tanh(\theta + \epsilon) \approx \tanh\theta + \epsilon(1 - \tanh^2\theta)$, so an error in $x_0$ is compensated by small changes in the constant and $\tanh^2\theta$ coefficients. For seed 3, $x_0 = 0.2895$ gives $\epsilon = -0.026$, and the fitted constant and $\tanh^2$ coefficients are $0.513$ and $-0.013$, as the expansion predicts. The residual is therefore nearly flat along $x_0$. Continuing the best start lowers the residual to $4\times10^{-11}$ for both seeds while $x_0$ still lies between 0.297 and 0.303. Sparsity resolves the remaining ambiguity. At seed 0, stage A ends with $x_0 = 0.2970$; once $\ell_1$ selects $\{1, \tanh\theta\}$, the refit on this support places $x_0$ at 0.3 to rounding error. All five seeds select the same support; the refit was evaluated for seed 0. The continuation changes no rule other than the iteration count, and it leaves the KdV and Chafee--Infante results unchanged. The full run takes about 36 minutes on a desktop CPU.
@@ -209,7 +216,14 @@ $u_t = -6uu_x - u_{xxx}$ & two-soliton & $uu_x$ ($-6$), $u_{xxx}$ ($-1$) & 8 \\
 \end{table}
 
 \paragraph{The spurious $u_x$ term.}
-For Burgers and the KdV two-soliton, plain $\ell_1$ selects the true terms and $u_x$. The exact homotopy solver reproduces this with maximal relative KKT violations of $4.5\times10^{-10}$ (KdV) and $3.7\times10^{-10}$ (Burgers), and $u_x$ is selected at 39 of 40 $\lambda$ values in both cases. Table~\ref{tab:irrep} gives $\eta_j$ from~\eqref{eq:irrep} with unit weights. Only $u_x$ violates the condition. This explains both observations from the earlier experiments: the selection does not depend on the solver, and the residual along the path decreases in proportion to $\lambda$ and therefore cannot reach $10^{-8}$ before $\lambda = 10^{-6}\lambda_{\max}$.
+For Burgers and the KdV two-soliton, plain $\ell_1$ selects the true terms and $u_x$. The exact homotopy solver reproduces this with maximal relative KKT violations of $4.5\times10^{-10}$ (KdV) and $3.7\times10^{-10}$ (Burgers), and $u_x$ is selected at 39 of 40 $\lambda$ values in both cases. Figure~\ref{fig:inverse-path} shows that once the true terms are active, the normalized $u_x$ coefficient decreases exactly in proportion to $\lambda$ and never reaches zero. Table~\ref{tab:irrep} gives $\eta_j$ from~\eqref{eq:irrep} with unit weights. Only $u_x$ violates the condition.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/inverse_path.pdf}
+\caption{Normalized $u_x$ coefficient along the exact plain-$\ell_1$ homotopy path (40 values of $\lambda$, read from left to right as $\lambda$ decreases). After the true terms enter, the coefficient scales linearly with $\lambda$, as predicted by $\eta_{u_x} > 1$. Under reweighted $\ell_1$ the $u_x$ coefficient is exactly zero at all 40 values (not shown on the log axis).}
+\label{fig:inverse-path}
+\end{figure} This explains both observations from the earlier experiments: the selection does not depend on the solver, and the residual along the path decreases in proportion to $\lambda$ and therefore cannot reach $10^{-8}$ before $\lambda = 10^{-6}\lambda_{\max}$.
 
 \begin{table}[t]
 \caption{Irrepresentable values $\eta_j$ (Eq.~\ref{eq:irrep}, unit weights) for the off-support columns. Values above 1 imply selection at all sufficiently small $\lambda$.}
@@ -297,6 +311,7 @@ Script & Content \\
 \texttt{redo\_two.py} & inverse advection--diffusion \\
 \texttt{inverse\_irl1.py}, \texttt{lasso\_exact.py} & irrepresentable diagnosis, exact homotopy, reweighted $\ell_1$ \\
 \texttt{forward\_generic\_v2.py} & generic-library forward selection (Table~\ref{tab:forward-generic}) \\
+\texttt{paper/make\_figures.py} & Figures~\ref{fig:inverse-path} and~\ref{fig:gate} \\
 \bottomrule
 \end{tabular}}
 \end{center}
