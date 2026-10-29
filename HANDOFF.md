@@ -247,7 +247,10 @@ D:\Miniconda3\envs\py312\python.exe forward_generic_v2.py
 2026-10-29 已完成延长迭代的整体重跑（`forward_generic_v2.py`），三个正例种子全部 5/5，两个反例都被拦下，见第 5 节。
 
 **论文初稿已写（2026-10-29）：** `paper/main.tex` + `paper/refs.bib`，英文，NeurIPS 2026 模板 preprint 模式（用户选 CCF-A 会议式，未指定会议，按 ccf-paper-writer 默认用 NeurIPS），8 页，编译无报错无溢出，PDF 在 `paper/main.pdf`。编译：在 `paper/` 下 `latexmk -pdf -outdir=build main.tex`。用户已定：λ 比例写「固定 1e-3 + 敏感性表」；Burgers 两行波秩亏数据放附录 A。
-待补：作者姓名和单位（现为占位）；目标会议与页数限制；是否加图（目前只有表）；导师审阅意见。所有数字取自各结果 JSON，没有新跑实验。
+待补：作者姓名和单位（现为占位）；目标会议与页数限制；导师审阅意见。所有数字取自各结果 JSON，没有新跑实验。
+已加 4 张图（10 页）：引言后的背景示意图 `paper/figures/overview.tex`、方法里的算法流程图 `paper/figures/flowchart.tex`（都是 TikZ，随论文编译），以及 `paper/make_figures.py` 生成的 `inverse_path.pdf`、`gate.pdf`。
+
+**PPT（2026-10-29）：** `slides/PDE_L1_进展汇报.pptx`，中文，13 页，带演讲者备注。生成：`cd slides; npm install; $env:PPTX_SKILL=<pptx skill 目录>; $env:NODE_PATH="$PWD\node_modules"; node build_deck.js`。图片在 `slides/img/`（TikZ 图用 `slides/fig_standalone.tex` 单独编译后转 PNG）。本机没有 LibreOffice，用 PowerPoint COM 导出 PDF 检查版面；skill 自带的 validate.py 在本机加载不了自己的 schema 文件（每个部件都报同一个错，包括没动过的），所以没用它的结果。
 
 **以下几点已按用户选择写进论文：**
 
