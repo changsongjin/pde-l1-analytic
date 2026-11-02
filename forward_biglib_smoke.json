@@ -1,0 +1,714 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "sympy": "1.14.0",
+  "library": [
+    "1",
+    "tanh θ",
+    "tanh² θ",
+    "tanh³ θ",
+    "tanh⁴ θ",
+    "sech θ",
+    "sech² θ",
+    "sech³ θ",
+    "sech⁴ θ",
+    "tanh θ sech θ",
+    "tanh θ sech² θ",
+    "tanh θ sech³ θ",
+    "1/(1+e^θ)",
+    "1/(1+e^θ)²",
+    "e^(−θ²)",
+    "θ e^(−θ²)",
+    "sin θ",
+    "cos θ",
+    "sin² θ",
+    "sin θ cos θ",
+    "1/(1+θ²)",
+    "θ/(1+θ²)",
+    "1/(1+θ²)²",
+    "θ",
+    "θ²",
+    "arctan θ",
+    "arctan e^θ"
+  ],
+  "small_library": [
+    "1",
+    "tanh θ",
+    "tanh² θ",
+    "tanh³ θ",
+    "tanh⁴ θ",
+    "sech θ",
+    "e^(−θ²)",
+    "θ"
+  ],
+  "library_derivative_check": 1.2898929710731882e-08,
+  "gate": 1e-08,
+  "n_starts": 40,
+  "polish_iter": 3000,
+  "search": {
+    "k": [
+      0.1,
+      10.0
+    ],
+    "c": [
+      -8.0,
+      8.0
+    ],
+    "x0": "计算域"
+  },
+  "solution_tol": 1e-06,
+  "selection": "IRL1 λ 路径上的支撑中，残差过门槛（1e-8）且项数最少者；p 固定在第一步的 p*",
+  "cases": {
+    "kdv": {
+      "pde": "u_t + 6 u u_x + u_xxx = 0",
+      "F": "6*u*ux + ut + uxxx",
+      "exact": "2/cosh(4*t - x)**2",
+      "x": [
+        -8.0,
+        12.0
+      ],
+      "t": [
+        0.0,
+        1.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "mkdv": {
+      "pde": "u_t + 6 u² u_x + u_xxx = 0",
+      "F": "6*u**2*ux + ut + uxxx",
+      "exact": "1/cosh(t - x)",
+      "x": [
+        -10.0,
+        10.0
+      ],
+      "t": [
+        0.0,
+        2.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "burgers": {
+      "pde": "u_t + u u_x = 0.1 u_xx",
+      "F": "u*ux + ut - uxx/10",
+      "exact": "tanh(5*t/4 - 5*x/2 + 3/4)/2 + 1/2",
+      "x": [
+        0.0,
+        1.0
+      ],
+      "t": [
+        0.0,
+        0.8
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "fisher": {
+      "pde": "u_t = u_xx + u (1 − u)",
+      "F": "-u*(1 - u) + ut - uxx",
+      "exact": "(exp(sqrt(6)*(-5*sqrt(6)*t/6 + x)/6) + 1)**(-2)",
+      "x": [
+        -15.0,
+        25.0
+      ],
+      "t": [
+        0.0,
+        4.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "chafee_infante": {
+      "pde": "u_t = u_xx + u − u³",
+      "F": "u**3 - u + ut - uxx",
+      "exact": "tanh(sqrt(2)*x/2)",
+      "x": [
+        -6.0,
+        6.0
+      ],
+      "t": [
+        0.0,
+        1.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "bbm": {
+      "pde": "u_t + u_x + u u_x − u_xxt = 0",
+      "F": "u*ux + ut + ux - uxxt",
+      "exact": "3/cosh(sqrt(2)*(-2*t + x)/4)**2",
+      "x": [
+        -20.0,
+        30.0
+      ],
+      "t": [
+        0.0,
+        5.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "boussinesq": {
+      "pde": "u_tt − u_xx − 3 (u²)_xx − u_xxxx = 0",
+      "F": "-6*u*uxx + utt - 6*ux**2 - uxx - uxxxx",
+      "exact": "3/(2*cosh(sqrt(3)*(-2*t + x)/2)**2)",
+      "x": [
+        -10.0,
+        14.0
+      ],
+      "t": [
+        0.0,
+        2.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "kdv_burgers": {
+      "pde": "u_t + u u_x − u_xx + 0.1 u_xxx = 0",
+      "F": "u*ux + ut - uxx + uxxx/10",
+      "exact": "-6*tanh(t/2 - x)**2/5 + 12*tanh(t/2 - x)/5 + 17/10",
+      "x": [
+        -8.0,
+        10.0
+      ],
+      "t": [
+        0.0,
+        4.0
+      ],
+      "minimal": 3,
+      "kind": "positive"
+    },
+    "kuramoto_sivashinsky": {
+      "pde": "u_t + u u_x + u_xx + u_xxxx = 0",
+      "F": "u*ux + ut + uxx + uxxxx",
+      "exact": "165*sqrt(209)*tanh(sqrt(209)*(-t + x)/38)**3/361 - 135*sqrt(209)*tanh(sqrt(209)*(-t + x)/38)/361 + 1",
+      "x": [
+        -20.0,
+        25.0
+      ],
+      "t": [
+        0.0,
+        4.0
+      ],
+      "minimal": 3,
+      "kind": "positive"
+    },
+    "klein_gordon": {
+      "pde": "u_tt − u_xx + u = 0",
+      "F": "u + utt - uxx",
+      "exact": "-sin(sqrt(2)*t - x)",
+      "x": [
+        0.0,
+        12.566370614359172
+      ],
+      "t": [
+        0.0,
+        2.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "sine_gordon": {
+      "pde": "u_tt − u_xx + sin u = 0",
+      "F": "utt - uxx + sin(u)",
+      "exact": "4*atan(exp(2*sqrt(3)*(-t/2 + x)/3))",
+      "x": [
+        -8.0,
+        8.0
+      ],
+      "t": [
+        0.0,
+        3.0
+      ],
+      "minimal": 1,
+      "kind": "positive"
+    },
+    "kdv_two_soliton": {
+      "pde": "KdV，双孤子初边值",
+      "F": "6*u*ux + ut + uxxx",
+      "exact": "kdv_two",
+      "x": [
+        -15.0,
+        20.0
+      ],
+      "t": [
+        0.0,
+        3.0
+      ],
+      "grid": [
+        71,
+        25,
+        141
+      ],
+      "kind": "negative"
+    },
+    "burgers_cole_hopf": {
+      "pde": "Burgers，Cole–Hopf 三激波合并",
+      "F": "u*ux + ut - uxx/10",
+      "exact": "cole_hopf",
+      "x": [
+        -1.0,
+        3.0
+      ],
+      "t": [
+        0.0,
+        1.0
+      ],
+      "kind": "negative"
+    },
+    "sine_gordon_no_arctan": {
+      "pde": "sine-Gordon，库删掉 arctan e^θ",
+      "F": "utt - uxx + sin(u)",
+      "exact": "4*atan(exp(2*sqrt(3)*(-t/2 + x)/3))",
+      "x": [
+        -8.0,
+        8.0
+      ],
+      "t": [
+        0.0,
+        3.0
+      ],
+      "drop": [
+        "arctan e^θ"
+      ],
+      "kind": "negative"
+    }
+  },
+  "runs": [
+    {
+      "case": "kdv",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 7.279164885944469e-12,
+      "stage_a_params": {
+        "k": 2.0000000000006386,
+        "c": 3.9999999999999867,
+        "x0": -7.70407059892206e-11
+      },
+      "time_stage_a_s": 211.33897089998936,
+      "n_sparse_refits": 3,
+      "time_select_s": 21.04399440000998,
+      "best_sparse_residual": 1.3438136622075174e-15,
+      "rejected": false,
+      "support": [
+        "sech² θ"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "sech² θ": 1.9999999999999996
+      },
+      "params": {
+        "k": 0.9999999999999999,
+        "c": 3.999999999999999,
+        "x0": -5.178885326130474e-17
+      },
+      "relative_residual": 1.3438136622075174e-15,
+      "solution_rel_error": 5.752332930375792e-16,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 0.5,
+      "time_s": 232.38298939999368
+    },
+    {
+      "case": "mkdv",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 3.5810169171941404e-07,
+      "stage_a_params": {
+        "k": 1.0000320733553147,
+        "c": 1.00000000211325,
+        "x0": 0.08351571403335185
+      },
+      "time_stage_a_s": 201.17507589999877,
+      "n_sparse_refits": 1,
+      "time_select_s": 10.853478900011396,
+      "best_sparse_residual": 4.63124600849697e-16,
+      "rejected": false,
+      "support": [
+        "sech θ"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "sech θ": 1.0
+      },
+      "params": {
+        "k": 1.0,
+        "c": 1.0,
+        "x0": -2.3569177157578657e-18
+      },
+      "relative_residual": 4.63124600849697e-16,
+      "solution_rel_error": 0.0,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 1.0,
+      "time_s": 212.02857939999376
+    },
+    {
+      "case": "burgers",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 2.1046234254514075e-06,
+      "stage_a_params": {
+        "k": 0.8899016399321585,
+        "c": 0.5000000139045845,
+        "x0": -0.06933246451965921
+      },
+      "time_stage_a_s": 114.21365820000938,
+      "n_sparse_refits": 16,
+      "time_select_s": 83.70672159999958,
+      "best_sparse_residual": 1.0546680892444319e-16,
+      "rejected": false,
+      "support": [
+        "1/(1+e^θ)"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "1/(1+e^θ)": 1.0
+      },
+      "params": {
+        "k": 4.999999999999999,
+        "c": 0.5,
+        "x0": 0.3
+      },
+      "relative_residual": 1.0546680892444319e-16,
+      "solution_rel_error": 1.0197959191899053e-16,
+      "correct": true,
+      "start_rank": 1,
+      "scale": 2.0,
+      "time_s": 197.92040960000304
+    },
+    {
+      "case": "fisher",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 1.2836926753259292e-07,
+      "stage_a_params": {
+        "k": 0.40823722317596317,
+        "c": 2.041241452499479,
+        "x0": -0.20352230925962164
+      },
+      "time_stage_a_s": 138.47283600000083,
+      "n_sparse_refits": 1,
+      "time_select_s": 6.751064000010956,
+      "best_sparse_residual": 1.5585964150167653e-16,
+      "rejected": false,
+      "support": [
+        "1/(1+e^θ)²"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "1/(1+e^θ)²": 1.0
+      },
+      "params": {
+        "k": 0.40824829046386296,
+        "c": 2.0412414523193156,
+        "x0": 1.7558456921458977e-16
+      },
+      "relative_residual": 1.5585964150167653e-16,
+      "solution_rel_error": 1.828837395012587e-16,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 1.0,
+      "time_s": 145.22392519999994
+    },
+    {
+      "case": "chafee_infante",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 1.886951668290636e-06,
+      "stage_a_params": {
+        "k": 1.4143803583923098,
+        "c": 9.313644142415001e-07,
+        "x0": 0.4159307611025495
+      },
+      "time_stage_a_s": 134.3303270000033,
+      "n_sparse_refits": 7,
+      "time_select_s": 49.98415509999904,
+      "best_sparse_residual": 2.747536265847117e-17,
+      "rejected": false,
+      "support": [
+        "tanh θ"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "tanh θ": 1.0
+      },
+      "params": {
+        "k": 0.7071067811865476,
+        "c": -1.0023511411346922e-19,
+        "x0": -1.7248666864840623e-18
+      },
+      "relative_residual": 2.747536265847117e-17,
+      "solution_rel_error": 1.4264679308100602e-19,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 0.5,
+      "time_s": 184.31450820001191
+    },
+    {
+      "case": "bbm",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 2.0601734719794136e-11,
+      "stage_a_params": {
+        "k": 0.7071067811916016,
+        "c": 2.0000000000017697,
+        "x0": -1.972629279594289e-08
+      },
+      "time_stage_a_s": 203.99831090000225,
+      "n_sparse_refits": 5,
+      "time_select_s": 46.01186090000556,
+      "best_sparse_residual": 2.0292821686517158e-16,
+      "rejected": false,
+      "support": [
+        "sech² θ"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "sech² θ": 3.0
+      },
+      "params": {
+        "k": 0.3535533905932738,
+        "c": 2.0,
+        "x0": -1.89759877936581e-16
+      },
+      "relative_residual": 2.0292821686517158e-16,
+      "solution_rel_error": 1.4617593592385215e-16,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 0.5,
+      "time_s": 250.01019800000358
+    },
+    {
+      "case": "boussinesq",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 4.444220783280342e-07,
+      "stage_a_params": {
+        "k": 0.8660055024553412,
+        "c": 2.0000000007980447,
+        "x0": -0.031119142222555497
+      },
+      "time_stage_a_s": 340.7239402999985,
+      "n_sparse_refits": 1,
+      "time_select_s": 10.062458999993396,
+      "best_sparse_residual": 8.724707208133433e-16,
+      "rejected": false,
+      "support": [
+        "sech² θ"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "sech² θ": 1.5
+      },
+      "params": {
+        "k": 0.8660254037844387,
+        "c": 2.0,
+        "x0": 4.80551597248614e-19
+      },
+      "relative_residual": 8.724707208133433e-16,
+      "solution_rel_error": 1.9484913491776335e-16,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 1.0,
+      "time_s": 350.78641820000485
+    },
+    {
+      "case": "kdv_burgers",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 1.4305228108056088e-10,
+      "stage_a_params": {
+        "k": 2.0000000022941946,
+        "c": 0.5000000000362572,
+        "x0": 4.298452973678919e-07
+      },
+      "time_stage_a_s": 191.68120979999367,
+      "n_sparse_refits": 48,
+      "time_select_s": 366.0308590000059,
+      "best_sparse_residual": 0.0028674326228577264,
+      "rejected": true,
+      "time_s": 557.7120974999998
+    },
+    {
+      "case": "kuramoto_sivashinsky",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 4.3737652775784495e-05,
+      "stage_a_params": {
+        "k": 0.27230196059696754,
+        "c": 1.0000000398316717,
+        "x0": 0.0007456086882879218
+      },
+      "time_stage_a_s": 271.59381560000475,
+      "n_sparse_refits": 33,
+      "time_select_s": 368.602361000012,
+      "best_sparse_residual": 0.0031691287591614605,
+      "rejected": true,
+      "time_s": 640.1962031000003
+    },
+    {
+      "case": "klein_gordon",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 4.679547934238216e-12,
+      "stage_a_params": {
+        "k": 1.00000000000258,
+        "c": 1.4142135623727394,
+        "x0": 9.263103584248938
+      },
+      "time_stage_a_s": 124.9641518999997,
+      "n_sparse_refits": 1,
+      "time_select_s": 2.0100851000024704,
+      "best_sparse_residual": 5.289909395143423e-16,
+      "rejected": false,
+      "support": [
+        "sin θ"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "sin θ": -1.0
+      },
+      "params": {
+        "k": 1.0,
+        "c": 1.4142135623730951,
+        "x0": 9.42477796076938
+      },
+      "relative_residual": 5.289909395143423e-16,
+      "solution_rel_error": 5.919772498617441e-16,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 1.0,
+      "time_s": 126.97426129999803
+    },
+    {
+      "case": "sine_gordon",
+      "kind": "positive",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 1.0288788519188227e-07,
+      "stage_a_params": {
+        "k": 1.1550521941310072,
+        "c": 0.49999999999125244,
+        "x0": -0.2804987726657783
+      },
+      "time_stage_a_s": 140.12503569999535,
+      "n_sparse_refits": 1,
+      "time_select_s": 7.567677300001378,
+      "best_sparse_residual": 1.0039670652213669e-16,
+      "rejected": false,
+      "support": [
+        "arctan e^θ"
+      ],
+      "n_terms": 1,
+      "coefficients": {
+        "arctan e^θ": 4.0
+      },
+      "params": {
+        "k": 1.1547005383792515,
+        "c": 0.5,
+        "x0": -5.907372377999392e-17
+      },
+      "relative_residual": 1.0039670652213669e-16,
+      "solution_rel_error": 7.864126686031812e-17,
+      "correct": true,
+      "start_rank": 0,
+      "scale": 1.0,
+      "time_s": 147.69273460000113
+    },
+    {
+      "case": "kdv_two_soliton",
+      "kind": "negative",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 0.23459645478545632,
+      "stage_a_params": {
+        "k": 0.5610536894759205,
+        "c": 3.9529420300124274,
+        "x0": -6.096847476362246
+      },
+      "time_stage_a_s": 293.6794343000074,
+      "n_sparse_refits": 69,
+      "time_select_s": 819.5277560999966,
+      "best_sparse_residual": 0.27932283007333264,
+      "rejected": true,
+      "time_s": 1113.2072287000046
+    },
+    {
+      "case": "burgers_cole_hopf",
+      "kind": "negative",
+      "library": "big",
+      "library_size": 27,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 0.11281135201730824,
+      "stage_a_params": {
+        "k": 13.37146826457958,
+        "c": -8.842852863972204e-09,
+        "x0": -0.2720243833505525
+      },
+      "time_stage_a_s": 103.65760669999872,
+      "n_sparse_refits": 74,
+      "time_select_s": 345.3500308999937,
+      "best_sparse_residual": 0.13558128298601604,
+      "rejected": true,
+      "time_s": 449.0076771000022
+    },
+    {
+      "case": "sine_gordon_no_arctan",
+      "kind": "negative",
+      "library": "big",
+      "library_size": 26,
+      "seed": 0,
+      "mode": "main",
+      "stage_a_relative_residual": 5.787534175094504e-07,
+      "stage_a_params": {
+        "k": 1.1562141035150677,
+        "c": 0.49999999784882243,
+        "x0": -0.3930428541078119
+      },
+      "time_stage_a_s": 90.45675589999883,
+      "n_sparse_refits": 26,
+      "time_select_s": 163.34742679999908,
+      "best_sparse_residual": 0.004056116006395924,
+      "rejected": true,
+      "time_s": 253.8042049999931
+    }
+  ],
+  "wall_time_s": 1334.0167248249054
+}
