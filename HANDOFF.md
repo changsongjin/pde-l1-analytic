@@ -148,6 +148,51 @@ Burgers 延长迭代前后的最好残差：种子 1 \(3.4\times10^{-9}\to3.7\ti
 
 仍有的限制：多起点命中率仍低（Burgers 原始命中 1–2/40，靠最好的那一个延长迭代过门槛）；只覆盖单一行波，双孤子需要另设库；运行慢。
 
+### 2026-10-29 噪声误差分析 + 遗传算法对比（导师意见：加高斯噪声、和遗传算法比）
+
+**论文还没改，等用户确认结果。** 噪声 = σ·std(u)·N(0,1)。图在 `figures_noise/`，由 `noise_figures.py` 只读 JSON 生成。
+
+**反问题** `noise_inverse.py` → `noise_inverse_result.json`（5 个方程 × 9 个噪声水平 × 20 个种子，约 5 分钟）：
+
+- 强形式（Savitzky–Golay 求导）不行：1% 噪声时 \(u_{xx}\) 误差 45%。改用**弱形式**（weak SINDy，测试函数 \((1-s^2)^6\)，库列为 \(\partial_x^k(u^m)\)，不对噪声数据求导）。
+- 判据：BIC 在无噪声时 RSS→0 会多选项，改用 MSTLS 判据 \(L(S)=\lVert A(w_S-w_{LS})\rVert/\lVert Aw_{LS}\rVert+\lvert S\rvert/p\)。所有方法共用同一判据，只比「怎么产生候选支撑」：L1（LARS 路径）、IRL1、STRidge、自写 GA（种群 40、60 代）、穷举（≤6 项，判据上界）。
+- 结果（选对率）：IRL1 在 5 个方程上到 5% 噪声全部 1.00；7% 时 Burgers 0.75、KdV 0.75（GA 0.90、穷举 0.90/1.00）；10% 时 heat/Burgers/KdV 所有方法（含穷举）都失败，是数据本身不够。普通 L1 在 Burgers（有噪声）和 KdV（任何噪声包括无噪声）总多留 \(u_x\)，与不可表示条件一致。STRidge 在 Burgers 2–3% 就开始掉。
+- 系数相对误差在 2–3% 以内随噪声线性增长（斜率 1），之后超线性；KdV 有约 \(3\times10^{-4}\) 的求积误差下限。
+- 代价：IRL1 中位数约 15 次判据评估、0.003 s；自写 GA 约 450 次、0.09 s；穷举 4096 次。GA 在 KdV 上有 1–2/20 个种子卡在 \(\{u_x\}\)（搜索失败，穷举是对的）。
+
+**正问题** `noise_forward.py` → `noise_forward_result.json`（初边值加噪声，σ = 0.1%、1%、5%、10%，5 个种子，约 100 分钟）：
+
+- 门槛改为差异原理：3 × 噪声本身的相对残差（\(3\sqrt2\,\sigma\,\mathrm{std}(u_{ic})/\lVert\text{数据}\rVert\)），假定 σ 已知。支撑用与反问题同型的判据在 λ 路径上的支撑里挑。
+- 三个正例（KdV、Burgers、Chafee–Infante）在所有噪声下 5/5 选对，系数和波参数误差都随 σ 线性（KdV 10% 时系数误差 0.5%）。论文原来的「过半」规则在噪声下会掉（Burgers 5% 时 0/5），所以噪声下要用判据选支撑。
+- 正例的残差 / 噪声水平稳定在 0.88–1.10。反例：删 tanh² 在 σ ≥ 5% 被放过（比值 2.5–2.9 和 1.5–1.8，门槛是 3），双孤子在 10% 被放过（比值约 2.5）。**门槛倍数 3 太松**；事后按已存残差算，倍数 1.5 时只剩删 tanh² 在 10% 放过 2/5。改不改倍数要用户定（图 `figures_noise/forward_gate.png`）。
+
+**SGA-PDE 对比** `sga_compare.py` → `sga_compare_result.json`：代码克隆在 `external/SGA-PDE/`（已加入 `.gitignore`，代码未改；只在运行器里补了两处新版 NumPy 兼容）。数据：SGA 自带的 Burgers、KdV、Chafee–Infante + 我们的 Burgers、KdV；噪声 0、1%、5%，种子 0–2。SGA 用论文默认参数（种群 20、深度 4、宽度 5、100 代），单进程单线程。第一次跑每次限 1 小时，9 次里 8 次超时（无噪声 KdV 跑完 100 代用了 41 分钟），改为每代写一次当前最优方程、每次限 30 分钟、超时取最后一代并记录代数（跑完约 2 小时，35 次里多数超时，到达代数中位数 47、最少 24）。SGA 选出的项用余弦相似度（≥ 0.9）归到常见候选项，集合等于真项才算对。
+
+结果（图 `figures_noise/sga_compare.png`）：
+
+| 数据 | 噪声 | SGA-PDE | IRL1 | 自写 GA | 穷举 |
+| --- | --- | --- | --- | --- | --- |
+| 无噪声，5 组数据 | 0 | 3/5（Burgers ×2、C–I 对；两组 KdV 都错） | 5/5 | 5/5 | 5/5 |
+| 1% 噪声，5 组 × 3 种子 | 1% | 0/15 | 15/15 | 15/15 | 15/15 |
+| 5% 噪声，5 组 × 3 种子 | 5% | 0/15 | 6/15 | 7/15 | 7/15 |
+
+- 5% 时我们失败的是 C–I（SGA 数据）、我们的 Burgers 和 KdV：这三组网格较小（为了让 SGA 跑得动），弱形式测试函数少；穷举也错，说明是数据不够，不是 IRL1 的问题。在大网格（`noise_inverse.py`）上 5% 全对。
+- SGA 在有噪声时选出的多是含 \(x\) 的项或单项（如 \(2.8u\)、\(x u_x\)），原因是有限差分在噪声上求导误差大，与我们强形式失败的原因相同。
+- **补跑 SGA-PDE 论文另两个方程**（`sga_compare_extra.py` → `sga_compare_extra_result.json`，网格 100×251，测试函数半宽 (10, 20)，同样 0 / 1% / 5% 噪声、30 分钟预算）。本文方法跑两版库：基础库（13 列）和加 4 个含 x 项（x u、u/x、x u_x、u_x/x）的扩展库（17 列）。
+
+  | 方程 | 噪声 | SGA-PDE | L1 | IRL1 | 自写 GA | 穷举 |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | PDE_compound \(u_t=(uu_x)_x\)（两版库结果相同） | 0 | 0/1（\(0.469(u^2)_{xx}-0.085u_x^2\)，结构对但多一项） | 1/1 | 1/1 | 1/1 | 1/1 |
+  | | 1% | 0/3 | 3/3 | 3/3 | 3/3 | 3/3 |
+  | | 5% | 0/3 | 0/3 | 0/3 | 0/3 | 0/3 |
+  | PDE_divide \(u_t=-u_x/x+0.25u_{xx}\)，基础库 | 全部 | — | 0 | 0 | 0 | 0（真项不在库里，预期） |
+  | PDE_divide，扩展库 | 0 | 0/1（跑满 100 代，\(-2.86u+\dots\)） | 0/1 | 1/1 | 1/1 | 1/1 |
+  | | 1% | 0/3 | 0/3 | **0/3** | **3/3** | 3/3 |
+  | | 5% | 0/3 | 0/3 | 0/3 | 0/3 | 0/3 |
+
+  PDE_divide 1% 是**第一个 GA 明显好于 IRL1 的情形**：扩展库里含 x 的列彼此高度相关（u/x 与 u、x u 等），L1 的不可表示条件更难满足。5% 时所有方法都错，网格小、数据不够。
+- **公平性注意**：SGA-PDE 论文处理噪声时用了神经网络去噪 / 元数据（`use_metadata`），默认关闭，我们没开；SGA 时间预算 30 分钟（多数没跑满 100 代）；KdV 在 SGA 论文中报告能找到，我们在 30 分钟预算内没有找到。写论文时要如实说明这三点。
+
 ### 写作 skill（本地已克隆，**不要推进 GitHub**）
 
 - Nature：`skills/nature-skills`，写作用 `skills/nature-skills/skills/nature-writing/SKILL.md`。仓库 https://github.com/Yuan1z0825/nature-skills
@@ -201,6 +246,8 @@ https://pysindy.readthedocs.io/en/latest/examples/10_PDEFIND_examples/example.ht
 2. 残差 \(\le 10^{-8}\) 再取最短 / 最小 L1 目标：整条路径最好残差是 \(2\times10^{-6}\)（Burgers）和 \(1.6\times10^{-5}\)（KdV），门槛过不去，按规则不报支撑。
 3. 丢掉归一化 \(\lvert\xi\rvert<10^{-3}\)：Burgers 末端 \(u_x\) 是 \(7.2\times10^{-4}\) 可以盖住，但门槛没过不能算通过；KdV 末端是 \(7.2\times10^{-3}\)，规则盖不住。
 4. 单条行波 / 单孤子：存在更短等价方程 \(u_t+c u_x=0\)，L1 只会留 \(u_x\)。这是预期失败，不是 bug。
+5. 噪声反问题用强形式（Savitzky–Golay 求导）：1% 噪声 \(u_{xx}\) 误差 45%，改弱形式。
+6. 噪声反问题用 BIC 选支撑：无噪声时 RSS→0，log 项主导，多选项，改 MSTLS 判据。
 
 2026-10-28 已做（见 `inverse_irl1.py`）：
 
@@ -225,7 +272,14 @@ D:\Miniconda3\envs\py312\python.exe inverse_irl1.py
 D:\Miniconda3\envs\py312\python.exe kdv_forward_blind.py
 D:\Miniconda3\envs\py312\python.exe forward_generic.py
 D:\Miniconda3\envs\py312\python.exe forward_generic_v2.py
+D:\Miniconda3\envs\py312\python.exe noise_inverse.py
+D:\Miniconda3\envs\py312\python.exe noise_forward.py
+D:\Miniconda3\envs\py312\python.exe sga_compare.py
+D:\Miniconda3\envs\py312\python.exe sga_compare_extra.py
+D:\Miniconda3\envs\py312\python.exe noise_figures.py
 ```
+
+`sga_compare.py` 需要先 `git clone https://github.com/YuntianChen/SGA-PDE external/SGA-PDE`，跑 35 次 SGA，8 进程并行约 2 小时。
 
 每条脚本把 JSON 写到同目录。重跑会覆盖对应 JSON。已通过的不要为了「再看一眼」去改脚本。
 

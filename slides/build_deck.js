@@ -17,7 +17,8 @@ const THEME = {
 const HEX = { blue: "2A78D6", paleBlue: "DCEAFB", soft: "F3F6FA", grid: "D9DDE3", muted: "6B6A66", okText: "13865E", badText: "C2410C" };
 const MATH = "Cambria Math";
 const IMG = (f) => path.join(__dirname, "img", f);
-const SIZE = { overview: [1828, 908], flowchart: [1908, 795], gate: [2024, 807], inverse: [1551, 801] };
+const SIZE = { overview: [1828, 908], flowchart: [1908, 795], gate: [2024, 807], inverse: [1551, 801],
+  nInv: [3427, 923], nFwd: [1517, 1286], nSga: [3434, 880] }; // n* 由 make_noise_figures_zh.py 生成
 
 const pres = new pptxgen();
 pres.layout = "LAYOUT_WIDE"; // 13.33 x 7.5
@@ -78,7 +79,7 @@ section("开场");
 {
   const s = pres.addSlide({ masterName: "TITLE_DARK", sectionTitle: sectionName });
   s.addText("用 L1 稀疏库求 PDE 的解析解", { placeholder: "title" });
-  s.addText("先设出很多候选项和系数，让 L1 把大部分系数压成 0\n正问题与反问题 · 进展汇报 · 2026-10-29", { placeholder: "body" });
+  s.addText("先设出很多候选项和系数，让 L1 把大部分系数压成 0\n正问题与反问题 · 进展汇报 · 2026-10-30", { placeholder: "body" });
   const items = ["1", "tanh θ", "tanh² θ", "tanh³ θ", "tanh⁴ θ", "sech θ", "e^(−θ²)", "θ"];
   const coef = ["2", "0", "−2", "0", "0", "0", "0", "0"];
   items.forEach((t, i) => {
@@ -97,16 +98,17 @@ section("开场");
     ["背景", "老师的想法、相关工作、两个方向"],
     ["方法", "L1 选项规则、两个难点和修法、算法流程"],
     ["结果", "实验设置、通用库结果、门槛与反例、汇总"],
+    ["补充实验", "加高斯噪声的误差分析、与遗传算法比较"],
     ["总结", "局限与下一步"],
   ];
   parts.forEach(([h, d], i) => {
-    const x = 0.6 + i * 3.08;
-    card(s, x, 1.7, 2.85, 3.7, i === 0 ? HEX.paleBlue : HEX.soft, "agenda-" + i);
-    T(s, String(i + 1).padStart(2, "0"), { x: x + 0.3, y: 2.0, w: 2.3, h: 1.0, fontSize: 48, bold: true, color: C.accent1 });
-    T(s, h, { x: x + 0.3, y: 3.2, w: 2.3, h: 0.6, fontSize: 24, bold: true, color: C.text2 });
-    T(s, d, { x: x + 0.3, y: 4.0, w: 2.3, h: 1.8, fontSize: 15 });
+    const x = 0.6 + i * 2.45;
+    card(s, x, 1.7, 2.25, 3.7, i === 3 ? HEX.paleBlue : HEX.soft, "agenda-" + i);
+    T(s, String(i + 1).padStart(2, "0"), { x: x + 0.25, y: 2.0, w: 1.8, h: 1.0, fontSize: 44, bold: true, color: C.accent1 });
+    T(s, h, { x: x + 0.25, y: 3.2, w: 1.85, h: 0.6, fontSize: 22, bold: true, color: C.text2 });
+    T(s, d, { x: x + 0.25, y: 4.0, w: 1.8, h: 1.8, fontSize: 14 });
   });
-  s.addNotes("先讲老师的想法和已有工作，再讲方法里遇到的两个难点，然后是结果，最后是局限和下一步。");
+  s.addNotes("先讲老师的想法和已有工作，再讲方法里遇到的两个难点和结果；第四部分是按老师意见补的噪声实验和遗传算法比较；最后是局限和下一步。");
 }
 
 // ---------- 3 出发点 ----------
@@ -135,7 +137,7 @@ section("开场");
   const s = content("相关工作：多数做的是“从数据反推方程”", "背景");
   const cols = [
     ["稀疏回归识别方程", "已知数据，求方程", ["SINDy（Brunton 等，PNAS 2016）", "PDE-FIND（Rudy 等，Sci. Adv. 2017）", "Schaeffer 2017：L1 稀疏回归", "PDE-Net（ICML 2018）、DeepMoD"]],
-    ["遗传算法识别方程", "已知数据，求方程", ["DLGA-PDE（Xu 等，2020）", "SGA-PDE（Chen 等，2021）", "均出自张东晓、陈云天组"]],
+    ["遗传算法识别方程", "已知数据，求方程", ["DLGA-PDE（Xu 等，2020）", "SGA-PDE（Chen 等，PRR 2022）", "均出自张东晓、陈云天组"]],
     ["神经网络求解", "已知方程，求数值解", ["PINN（Raissi 等，JCP 2019）", "Deep Ritz（E、Yu）", "给出数值近似，不给闭式解"]],
   ];
   cols.forEach(([h, sub, items], i) => {
@@ -377,14 +379,117 @@ section("开场");
   s.addNotes("选出的项都等于真项，重拟合系数和真值一致到 1e-15。数据全部是精确解，没有噪声。");
 }
 
-// ---------- 16 局限与下一步 ----------
+// ---------- 16 补充实验：加噪声要改两处 ----------
+{
+  const s = content("加噪声后，反问题改了两处", "补充实验");
+  const cards = [
+    ["弱形式：不对噪声数据求导", "∫φ ∂ₓᵏ(uᵐ) = (−1)ᵏ ∫(∂ₓᵏφ) uᵐ", "φ = (1 − s²)⁶ 的“小鼓包”，导数解析计算；积分把噪声平均掉。直接差分求导时 1% 噪声 uₓₓ 误差已达 45%"],
+    ["统一判据：只比谁能产生正确组合", "L(S) = ‖A(w_S − w_LS)‖/‖A w_LS‖ + |S|/p", "前一项：少了真项会变大；后一项：多了假项会变大。所有方法共用，比较才公平。BIC 在无噪声时会多选项，已弃用"],
+  ];
+  cards.forEach(([h, f, d], i) => {
+    const x = 0.6 + i * 6.15;
+    card(s, x, 1.5, 5.95, 3.5, i === 0 ? HEX.paleBlue : HEX.soft, "noise-change-" + i);
+    badge(s, x + 0.3, 1.8, i + 1, C.accent1);
+    T(s, h, { x: x + 0.95, y: 1.83, w: 4.8, h: 0.45, fontSize: 19, bold: true, color: C.text2 });
+    T(s, f, { x: x + 0.3, y: 2.6, w: 5.4, h: 0.7, fontSize: 19, fontFace: MATH, color: C.accent1 });
+    T(s, d, { x: x + 0.3, y: 3.45, w: 5.4, h: 1.4, fontSize: 16 });
+  });
+  card(s, 0.6, 5.3, 12.1, 1.05, "FDEEE7", "noise-def");
+  T(s, [
+    { text: "噪声：", options: { bold: true, color: C.accent2 } },
+    { text: "u + σ·std(u)·N(0,1)，σ 取 0～10%；反问题 5 个方程 × 9 个噪声 × 20 个种子，正问题初边值加噪声 0.1%～10% × 5 个种子。" },
+  ], { x: 0.9, y: 5.4, w: 11.5, h: 0.85, fontSize: 16, color: C.text2, valign: "middle" });
+  s.addNotes("候选库仍然是 13 列 ∂ₓᵏ(uᵐ)，所以 Burgers 的 uuₓ 写成 ½(u²)ₓ。选项仍由 L1 / 加权 L1 的 λ 路径产生，判据只在路径上的组合里挑。");
+}
+
+// ---------- 17 反问题噪声结果 ----------
+{
+  const s = content("反问题：加权 L1 到 5% 噪声全部选对", "补充实验");
+  img(s, "nInv", "noise_inverse_zh.png", 0.6, 1.35, 12.1, "反问题各方法选对率随噪声变化");
+  [["5 / 5", "个方程到 5% 噪声全部选对（加权 L1）"], ["0.12%", "Burgers 1% 噪声时的系数误差；2～3% 以内与噪声成正比"], ["10%", "热方程、Burgers、KdV 连穷举都错：数据信息不够"]].forEach(([v, l], i) => {
+    const x = 0.6 + i * 4.1;
+    card(s, x, 4.85, 3.8, 1.85, HEX.soft, "inv-stat-" + i);
+    T(s, v, { x: x + 0.3, y: 5.0, w: 3.3, h: 0.8, fontSize: 34, bold: true, color: C.accent1, valign: "middle" });
+    T(s, l, { x: x + 0.3, y: 5.85, w: 3.3, h: 0.75, fontSize: 14, color: C.text2 });
+  });
+  s.addNotes("普通 L1 在 Burgers（有噪声）和 KdV（任何噪声）上一直是 0，总多留 uₓ，和前面不可表示条件的分析一致。STRidge 在 Burgers 2～3% 就开始掉。7% 时加权 L1 在 Burgers、KdV 上降到 0.75，遗传算法 0.90。");
+}
+
+// ---------- 18 正问题噪声结果 ----------
+{
+  const s = content("正问题：真解全部找对，残差门槛需要收紧", "补充实验");
+  img(s, "nFwd", "noise_forward_zh.png", 0.8, 1.3, 5.9, "正问题残差与噪声水平之比");
+  caption(s, "有噪声时残差到不了 10⁻⁸，门槛改为“噪声带来的残差 × 3”（差异原理，假定噪声大小已知）", 0.6, 6.4, 7.4);
+  const ok = (t) => ({ text: t, options: { color: HEX.okText, bold: true, align: "center" } });
+  const bad = (t) => ({ text: t, options: { color: HEX.badText, bold: true, align: "center" } });
+  const rows = [
+    head(["情形", "1%", "5%", "10%"]),
+    ["3 个真解", ok("5/5 对"), ok("5/5 对"), ok("5/5 对")],
+    ["删 tanh²", ok("拒绝"), bad("放过"), bad("放过")],
+    ["双孤子", ok("拒绝"), ok("拒绝"), bad("放过")],
+  ];
+  s.addTable(rows, { ...tableOpts(7.6, 1.5, 5.1, [1.8, 1.1, 1.1, 1.1]), rowH: 0.5, objectName: "fwd-noise-table" });
+  T(s, "10% 噪声时 KdV 系数误差 0.5%；系数和波参数误差都与噪声成正比", { x: 7.6, y: 3.7, w: 5.1, h: 0.7, fontSize: 15 });
+  card(s, 7.6, 4.6, 5.1, 1.65, HEX.paleBlue, "gate-decision");
+  T(s, [
+    { text: "待定：门槛倍数\n", options: { bold: true, color: C.accent1 } },
+    { text: "真解残差稳定在噪声的 0.88～1.10 倍；改成 1.5 倍后只剩“删 tanh²”在 10% 时放过 2/5，真解仍全部通过" },
+  ], { x: 7.85, y: 4.72, w: 4.65, h: 1.45, fontSize: 14, color: C.text2 });
+  s.addNotes("选项规则也改用反问题的判据：论文原来的“过半”规则在噪声下会失效，Burgers 5% 时 0/5。1.5 倍是用已存残差事后算的，还没重跑。");
+}
+
+// ---------- 19 与自写遗传算法 ----------
+{
+  const s = content("与遗传算法比：准确率打平，L1 便宜约 30 倍", "补充实验");
+  T(s, "自写遗传算法：同一个判据，只比搜索方式", { x: 0.6, y: 1.45, w: 7.0, h: 0.45, fontSize: 18, bold: true, color: C.text2 });
+  T(s, "每个个体是一串 0/1（每位对应库里一项）；种群 40，跑 60 代；锦标赛选择、均匀交叉、按位变异，保留最好的 2 个。", { x: 0.6, y: 1.95, w: 7.0, h: 0.9, fontSize: 15 });
+  const rows = [
+    head(["", "加权 L1", "自写遗传算法"]),
+    ["5% 噪声以内", "5 个方程全对", "KdV 偶尔卡在 {uₓ}（1～2/20）"],
+    ["7% 噪声 Burgers / KdV", "0.75 / 0.75", "0.90 / 0.90"],
+    ["每次评估判据次数", "约 15", "约 450"],
+    ["耗时（中位数）", "0.003 s", "0.09 s"],
+    ["结果", "固定", "随种子变化"],
+  ];
+  s.addTable(rows, { ...tableOpts(0.6, 3.0, 7.0, [2.4, 1.9, 2.7]), rowH: 0.5, objectName: "ga-table" });
+  card(s, 8.0, 1.5, 4.7, 5.2, HEX.paleBlue, "ga-takeaway");
+  T(s, "怎么看", { x: 8.3, y: 1.75, w: 4.1, h: 0.45, fontSize: 19, bold: true, color: C.accent1 });
+  T(s, [
+    { text: "低噪声下两者一样准，L1 计算量小 30 倍、结果确定", options: { bullet: true, breakLine: true } },
+    { text: "高噪声或库里项很相似时，遗传算法搜得更广，更接近穷举", options: { bullet: true, breakLine: true } },
+    { text: "库只有 13 项时穷举也可行；库变大后穷举不可行，L1 的优势会更明显（尚未用大库验证）", options: { bullet: true, breakLine: true } },
+    { text: "建议：L1 定支撑为主，遗传算法作对照", options: { bullet: true, bold: true } },
+  ], { x: 8.3, y: 2.35, w: 4.15, h: 4.2, fontSize: 15, paraSpaceAfter: 10, color: C.text2 });
+  s.addNotes("穷举是所有不超过 6 项的组合，共 4096 个，作为判据的上界。遗传算法卡在 {uₓ} 是搜索失败：同一判据下穷举是对的。");
+}
+
+// ---------- 20 与 SGA-PDE ----------
+{
+  const s = content("与 SGA-PDE 比：有噪声时它全错，我们 1% 噪声全对", "补充实验");
+  img(s, "nSga", "noise_sga_zh.png", 0.6, 1.35, 12.1, "与 SGA-PDE 的选对率对比");
+  caption(s, "SGA-PDE 论文的 5 个方程全部跑了；C–I = Chafee–Infante；divide* = uₜ = −uₓ/x + 0.25uₓₓ，需在库里加 4 个含 x 的项", 0.6, 4.5, 12.1);
+  const notes = [
+    ["SGA-PDE 是什么", "不预设候选库，用遗传算法进化符号树，有限差分求导。默认参数：种群 20、深度 4、100 代，每次限时 30 分钟"],
+    ["我们的局限", "uₓ/x 不在基础库里时所有方法都找不到；1% 噪声的 divide* 上只有遗传算法和穷举对，加权 L1 错"],
+    ["公平性", "SGA 论文报告这些方程都能找到，我们未复现：关了它的神经网络去噪，30 分钟内多数只跑到 24～94 代"],
+  ];
+  notes.forEach(([h, d], i) => {
+    const x = 0.6 + i * 4.1;
+    card(s, x, 5.0, 3.8, 1.75, i === 2 ? "FDEEE7" : HEX.soft, "sga-note-" + i);
+    T(s, h, { x: x + 0.25, y: 5.1, w: 3.3, h: 0.4, fontSize: 15, bold: true, color: i === 2 ? C.accent2 : C.accent1 });
+    T(s, d, { x: x + 0.25, y: 5.5, w: 3.35, h: 1.2, fontSize: 12 });
+  });
+  s.addNotes("同一份带噪声数据同时给两边。SGA 无噪声时 Burgers、Chafee–Infante 对，两组 KdV 都没找到；1% 和 5% 噪声下 0/36。5% 时我们失败的几组网格较小，连穷举也错；大网格上 5% 全对。论文里写成“不去噪、30 分钟预算下”的比较。");
+}
+
+// ---------- 21 局限与下一步 ----------
 {
   section("总结");
   const s = pres.addSlide({ masterName: "TITLE_DARK", sectionTitle: sectionName });
   s.addText("局限与下一步", { isTextBox: true, x: 0.8, y: 0.8, w: 11.7, h: 0.9, fontSize: 40, bold: true, color: C.background1, margin: 0 });
   const cols = [
-    ["目前的局限", ["数据都没有噪声", "通用库只覆盖单一行波，双孤子需要另设库", "λ 比例 10⁻³ 是探索中选的，10⁻² 以上可能失败", "Burgers 多起点命中率低：40 个起点只有 1～2 个找到解"]],
-    ["下一步", ["加噪声测试", "设计多波（ln F 或两个波变量）的候选库", "确定作者、目标会议和页数", "导师审阅论文后修改"]],
+    ["目前的局限", ["候选库必须包含真项（uₓ/x 需另加）", "通用库只覆盖单一行波，双孤子需要另设库", "正问题噪声门槛假定噪声大小已知", "高噪声或库项相似时，加权 L1 不如遗传算法"]],
+    ["下一步", ["确定正问题噪声门槛倍数（3 或 1.5）", "论文加入噪声与遗传算法比较两节", "设计多波（ln F 或两个波变量）的候选库", "确定作者、目标会议和页数"]],
   ];
   cols.forEach(([h, items], i) => {
     const x = 0.8 + i * 6.1;
