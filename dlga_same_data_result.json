@@ -1,0 +1,370 @@
+{
+  "datasets": [
+    "sga_burgers",
+    "sga_kdv",
+    "sga_chafee_infante",
+    "ours_burgers",
+    "ours_kdv"
+  ],
+  "noise": [
+    0.0,
+    0.05
+  ],
+  "stride": 4,
+  "config": {
+    "generations": 30,
+    "pop_size": 40,
+    "surrogate_max_epochs": 500,
+    "surrogate_patience": 80,
+    "max_modules": 4,
+    "max_module_length": 4,
+    "epsilon": 0.001,
+    "library": [
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx"
+    ]
+  },
+  "cases": {
+    "sga_burgers": {
+      "true_strong": {
+        "u ux": -1.0,
+        "uxx": 0.1
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "u_xxx",
+                "mul(u_xx,u_xxx)",
+                "u_xx",
+                "u*u_x"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 1,
+              "equation": "u_t = -0.9795*u*u_x + 0.002931*u_xx*u_xxx + 0.1358*u_xx - 0.001542*u_xxx",
+              "score": 0.15805753455500632,
+              "time_s": 13.959521599928848,
+              "normalized_support": [
+                "u_xxx",
+                "mul(u_xx,u_xxx)",
+                "u_xx",
+                "u*u_x"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "u*u_x",
+                "u_xx",
+                "mul(u,u_xxx)"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxx"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 1,
+              "equation": "u_t = -0.9998*u*u_x - 0.01447*u*u_xxx + 0.1391*u_xx",
+              "score": 0.12306784715165393,
+              "time_s": 11.557483599986881,
+              "normalized_support": [
+                "u*u_x",
+                "u_xx",
+                "mul(u,u_xxx)"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    },
+    "sga_kdv": {
+      "true_strong": {
+        "u ux": -1.0,
+        "uxxx": -0.0025
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "u*u_x",
+                "u_xxx",
+                "mul(u_x,u_xx)",
+                "mul(mul(u,u_x),u_x)"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxxx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 1,
+              "equation": "u_t = -0.001702*u*u_x**2 - 0.6537*u*u_x - 0.0004998*u_x*u_xx - 0.001435*u_xxx",
+              "score": 0.4328674307102676,
+              "time_s": 15.447055699885823,
+              "normalized_support": [
+                "u*u_x",
+                "u_xxx",
+                "mul(u_x,u_xx)",
+                "mul(u*u_x,u_x)"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "u_xx",
+                "mul(u_x,u_xx)",
+                "u_xxx",
+                "u*u_x"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxxx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 1,
+              "equation": "u_t = -0.6291*u*u_x - 0.0004934*u_x*u_xx - 0.0008262*u_xx - 0.001347*u_xxx",
+              "score": 0.45184354693541134,
+              "time_s": 18.63635449996218,
+              "normalized_support": [
+                "u_xx",
+                "mul(u_x,u_xx)",
+                "u_xxx",
+                "u*u_x"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    },
+    "sga_chafee_infante": {
+      "true_strong": {
+        "uxx": 1.0,
+        "u": -1.0,
+        "u^3": 1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "mul(u,u)",
+                "u",
+                "u_xx"
+              ],
+              "true_support": [
+                "u",
+                "u^3",
+                "uxx"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 2,
+              "equation": "u_t = 3.685*u**2 - 4.251*u + 1.068*u_xx",
+              "score": 0.16042209461912213,
+              "time_s": 13.948830899898894,
+              "normalized_support": [
+                "u**2",
+                "u",
+                "u_xx"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "mul(u_xx,u_xx)",
+                "u_xx",
+                "mul(u_x,u_xxx)",
+                "u_x"
+              ],
+              "true_support": [
+                "u",
+                "u^3",
+                "uxx"
+              ],
+              "exact": false,
+              "extra": 4,
+              "missed": 3,
+              "equation": "u_t = -0.1041*u_x*u_xxx + 0.5161*u_x + 0.1444*u_xx**2 + 0.6109*u_xx",
+              "score": 0.07813708932727753,
+              "time_s": 14.73966959991958,
+              "normalized_support": [
+                "mul(u_xx,u_xx)",
+                "u_xx",
+                "mul(u_x,u_xxx)",
+                "u_x"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    },
+    "ours_burgers": {
+      "true_strong": {
+        "u ux": -1.0,
+        "uxx": 0.1
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxx"
+              ],
+              "exact": true,
+              "extra": 1,
+              "missed": 1,
+              "equation": "u_t = -1.002*u*u_x + 0.1282*u_xx",
+              "score": 0.0114926358602944,
+              "time_s": 8.8478864999488,
+              "normalized_support": [
+                "u*u_x",
+                "u_xx"
+              ]
+            }
+          ],
+          "exact_rate": 1.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "u_xx",
+                "u*u_x"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxx"
+              ],
+              "exact": true,
+              "extra": 1,
+              "missed": 1,
+              "equation": "u_t = -1.01*u*u_x + 0.1309*u_xx",
+              "score": 0.010034186054665297,
+              "time_s": 9.010217300034128,
+              "normalized_support": [
+                "u_xx",
+                "u*u_x"
+              ]
+            }
+          ],
+          "exact_rate": 1.0
+        }
+      ]
+    },
+    "ours_kdv": {
+      "true_strong": {
+        "u ux": -6.0,
+        "uxxx": -1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "u*u_x",
+                "u_xxx",
+                "mul(mul(u_x,u_x),u_x)"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxxx"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 1,
+              "equation": "u_t = -4.905*u*u_x - 0.7027*u_x**3 - 0.96*u_xxx",
+              "score": 0.016756938594244195,
+              "time_s": 10.99568699998781,
+              "normalized_support": [
+                "u*u_x",
+                "u_xxx",
+                "mul(mul(u_x,u_x),u_x)"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "support": [
+                "mul(mul(u,u),u_x)",
+                "mul(u_x,u_xx)",
+                "u_xxx",
+                "u_x"
+              ],
+              "true_support": [
+                "u*u_x",
+                "uxxx"
+              ],
+              "exact": false,
+              "extra": 4,
+              "missed": 2,
+              "equation": "u_t = -2.448*u**2*u_x - 1.223*u_x*u_xx - 1.434*u_x - 0.3726*u_xxx",
+              "score": 0.011765502866456121,
+              "time_s": 11.76241329999175,
+              "normalized_support": [
+                "mul(u**2,u_x)",
+                "mul(u_x,u_xx)",
+                "u_xxx",
+                "u_x"
+              ]
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    }
+  }
+}

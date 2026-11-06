@@ -1,0 +1,96 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "algorithm": "DLGA-PDE via sail-kd",
+  "config": {
+    "library": [
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx"
+    ],
+    "generations": 30,
+    "pop_size": 40,
+    "surrogate_max_epochs": 500,
+    "surrogate_patience": 80,
+    "max_modules": 4,
+    "max_module_length": 4,
+    "epsilon": 0.001,
+    "stride": 4
+  },
+  "noise": [
+    0.0,
+    0.05
+  ],
+  "n_seeds": 1,
+  "cases": {
+    "heat": {
+      "pde": "u_t = u_xx",
+      "true": {
+        "u_xx": 1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u",
+                "mul(mul(mul(u,u),u),u_xx)"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 1,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_t = -0.3488*u**3*u_xx - 10.57*u",
+              "best_expression": "add(u, mul(mul(mul(u, u), u), u_xx))",
+              "score": 0.01974947179513303,
+              "time_s": 10.10973470006138,
+              "surrogate": {
+                "epochs": 500,
+                "patience": 80
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "mul(mul(mul(u,u),u),u_xx)",
+                "u"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 1,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_t = -0.334*u**3*u_xx - 10.58*u",
+              "best_expression": "add(mul(mul(mul(u, u), u), u_xx), u)",
+              "score": 0.019424346232156484,
+              "time_s": 8.399177800049074,
+              "surrogate": {
+                "epochs": 500,
+                "patience": 80
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    }
+  }
+}

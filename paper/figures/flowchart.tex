@@ -1,0 +1,41 @@
+% 算法流程图：通用库正问题三步；反问题从第二步进入。
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2mm]},
+  proc/.style={draw=inkB, rounded corners=2pt, fill=white, align=center, text width=2.55cm, minimum height=1.25cm, inner sep=3pt},
+  core/.style={proc, draw=keep, fill=paleK, line width=0.7pt},
+  io/.style={proc, fill=paleG},
+  stop/.style={proc, draw=warn, fill=paleW, text width=2.3cm},
+  gate/.style={draw=inkB, diamond, aspect=1.7, fill=white, align=center, inner sep=1pt, font=\scriptsize},
+  arr/.style={->, inkB, line width=0.7pt},
+  tag/.style={font=\scriptsize\bfseries, text=inkB},
+]
+% 第一行：第一步 A
+\node[io]   (in)  at (0, 0)    {PDE, initial and\\ boundary data,\\ generic library};
+\node[proc, text width=2.95cm] (a1)  at (3.35, 0) {40 random starts\\ $k\in[0.1,10]$\\ $c\in[-8,8]$, $x_0\in\Omega$\\ LM on $\|r\|^2$};
+\node[proc] (a2)  at (6.7, 0)  {continue best start\\ (up to 3000\\ LM iterations)};
+\node[gate] (g)   at (10.05, 0) {relative\\ residual\\ $\le 10^{-8}$?};
+\node[stop] (no)  at (13.35, 0) {report: library\\ contains no exact\\ solution};
+\node[tag] at (5.0, 0.95) {Stage A: locate $(k, c, x_0)$};
+
+% 第二行：第二步 B（从右往左）
+\node[core] (b0)  at (10.05, -2.55) {round 0: plain $\ell_1$\\ at $\lambda = 10^{-3}\lambda_{\max}$};
+\node[core] (b1)  at (6.7, -2.55)   {reweight\\ $w_j = 1/(|\beta_j|+\varepsilon)$\\ and re-solve $\ell_1$};
+\node[core] (b2)  at (3.35, -2.55)  {40-point $\lambda$ path:\\ keep columns with\\ $|\beta_j|>10^{-5}$ in $>20$};
+\node[proc] (c)   at (0, -2.55)     {Stage C: refit\\ $\xi_S$ and $(k,c,x_0)$\\ on support $S$};
+\node[io]   (out) at (0, -4.6)      {closed-form\\ solution $S$, $\xi_S$,\\ $(k,c,x_0)$};
+\node[io]   (inv) at (10.05, -4.6)  {inverse problem:\\ $\Theta(u)$ and $u_t$\\ (no Stage A)};
+\node[tag] at (6.7, -1.45) {Stage B: select support with $\ell_1$ only};
+
+\draw[arr] (in) -- (a1);
+\draw[arr] (a1) -- (a2);
+\draw[arr] (a2) -- (g);
+\draw[arr] (g) -- node[above, font=\scriptsize] {no} (no);
+\draw[arr] (g) -- node[right, font=\scriptsize] {yes, fix $(k,c,x_0)$} (b0);
+\draw[arr] (b0) -- (b1);
+\draw[arr] ([xshift=0.45cm]b1.south) to[out=-75, in=-105, looseness=4] node[below, font=\scriptsize] {until support repeats} ([xshift=-0.45cm]b1.south);
+\draw[arr] (b1) -- (b2);
+\draw[arr] (b2) -- (c);
+\draw[arr] (c) -- (out);
+\draw[arr] (inv) -- (b0);
+\end{tikzpicture}

@@ -1,0 +1,430 @@
+{
+  "generated_by": "benchmark_compare.py",
+  "scope": {
+    "baseline_cases": [
+      "heat",
+      "wave",
+      "advection_diffusion",
+      "burgers",
+      "kdv"
+    ],
+    "noise_seeds": 3,
+    "support_rule": "set equality after canonical weak names",
+    "high_noise_policy": "report rate curves; no universal pass gate"
+  },
+  "gml1_maxlib": {
+    "heat": {
+      "0.0": {
+        "GML1": 1.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.03": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.07": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.1": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      }
+    },
+    "wave": {
+      "0.0": {
+        "GML1": 1.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.01": {
+        "GML1": 0.3333333333333333,
+        "GML1_IRL1": 0.3333333333333333
+      },
+      "0.03": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.07": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.1": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      }
+    },
+    "advection_diffusion": {
+      "0.0": {
+        "GML1": 1.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.03": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.07": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.6666666666666666
+      },
+      "0.1": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.3333333333333333
+      }
+    },
+    "burgers": {
+      "0.0": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.03": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.07": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      },
+      "0.1": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      }
+    },
+    "kdv": {
+      "0.0": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.03": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0
+      },
+      "0.07": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.3333333333333333
+      },
+      "0.1": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0
+      }
+    }
+  },
+  "pde_find_stridge": {
+    "heat": {
+      "0.0": 1.0,
+      "0.01": 0.0,
+      "0.03": 1.0,
+      "0.05": 0.0,
+      "0.07": 0.0,
+      "0.1": 0.0
+    },
+    "wave": {
+      "0.0": 1.0,
+      "0.01": 1.0,
+      "0.03": 1.0,
+      "0.05": 1.0,
+      "0.07": 0.3333333333333333,
+      "0.1": 0.0
+    },
+    "advection_diffusion": {
+      "0.0": 1.0,
+      "0.01": 1.0,
+      "0.03": 0.0,
+      "0.05": 0.0,
+      "0.07": 0.0,
+      "0.1": 0.0
+    },
+    "burgers": {
+      "0.0": 1.0,
+      "0.01": 1.0,
+      "0.03": 0.0,
+      "0.05": 0.0,
+      "0.07": 0.0,
+      "0.1": 0.0
+    },
+    "kdv": {
+      "0.0": 1.0,
+      "0.01": 1.0,
+      "0.03": 0.6666666666666666,
+      "0.05": 0.0,
+      "0.07": 0.0,
+      "0.1": 0.0
+    }
+  },
+  "dlga_budgeted": {
+    "heat": {
+      "0.0": {
+        "exact_rate": 0.0,
+        "equations": [
+          "u_t = -0.3488*u**3*u_xx - 10.57*u"
+        ]
+      },
+      "0.05": {
+        "exact_rate": 0.0,
+        "equations": [
+          "u_t = -0.334*u**3*u_xx - 10.58*u"
+        ]
+      }
+    },
+    "wave": {
+      "0.0": {
+        "exact_rate": 0.0,
+        "equations": [
+          "u_tt = 0.1048*u*u_xx**2 - 14.54*u - 0.0003609*u_xx*u_xxx**2 + 0.03608*u_xx"
+        ]
+      },
+      "0.05": {
+        "exact_rate": 0.0,
+        "equations": [
+          "u_tt = -0.9454*u**2*u_xx + 0.706*u*u_x**2 - 14.95*u - 0.0002359*u_xxx**2"
+        ]
+      }
+    },
+    "advection_diffusion": {
+      "0.0": {
+        "exact_rate": 1.0,
+        "equations": [
+          "u_t = -0.4007*u_x + 0.03888*u_xx"
+        ]
+      },
+      "0.05": {
+        "exact_rate": 0.0,
+        "equations": [
+          "u_t = -0.02472*u - 0.4009*u_x + 0.03693*u_xx"
+        ]
+      }
+    },
+    "burgers": {
+      "0.0": {
+        "exact_rate": 1.0,
+        "equations": [
+          "u_t = -1.004*u*u_x + 0.1214*u_xx"
+        ]
+      },
+      "0.05": {
+        "exact_rate": 1.0,
+        "equations": [
+          "u_t = -1.003*u*u_x + 0.1218*u_xx"
+        ]
+      }
+    },
+    "kdv": {
+      "0.0": {
+        "exact_rate": 0.0,
+        "equations": [
+          "u_t = -0.3889*u*u_x*u_xx - 6.038*u*u_x + 0.1763*u_x - 0.872*u_xxx"
+        ]
+      },
+      "0.05": {
+        "exact_rate": 0.0,
+        "equations": [
+          "u_t = -3.991*u_x"
+        ]
+      }
+    }
+  },
+  "sga_existing": {
+    "sga_burgers": {
+      "0.0": 1.0,
+      "0.01": 0.0,
+      "0.05": 0.0
+    },
+    "sga_kdv": {
+      "0.0": 0.0,
+      "0.01": 0.0,
+      "0.05": 0.0
+    },
+    "sga_chafee_infante": {
+      "0.0": 1.0,
+      "0.01": 0.0,
+      "0.05": 0.0
+    },
+    "ours_burgers": {
+      "0.0": 1.0,
+      "0.01": 0.0,
+      "0.05": 0.0
+    },
+    "ours_kdv": {
+      "0.0": 0.0,
+      "0.01": 0.0,
+      "0.05": 0.0
+    },
+    "sga_compound": {
+      "0.0": 0.0,
+      "0.01": 0.0,
+      "0.05": 0.0
+    },
+    "sga_divide": {
+      "0.0": 0.0,
+      "0.01": 0.0,
+      "0.05": 0.0
+    }
+  },
+  "same_data_comparison": {
+    "sga_burgers": {
+      "0.0": {
+        "GML1": 1.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 1.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.6666666666666666,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      }
+    },
+    "sga_kdv": {
+      "0.0": {
+        "GML1": 1.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 1.0,
+        "SGA-PDE": 0.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0,
+        "PDE-FIND_STRidge": 0.3333333333333333,
+        "SGA-PDE": 0.0
+      }
+    },
+    "sga_chafee_infante": {
+      "0.0": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 1.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      }
+    },
+    "ours_burgers": {
+      "0.0": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 1.0,
+        "SGA-PDE": 1.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      }
+    },
+    "ours_kdv": {
+      "0.0": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 1.0,
+        "SGA-PDE": 0.0
+      },
+      "0.01": {
+        "GML1": 0.0,
+        "GML1_IRL1": 1.0,
+        "PDE-FIND_STRidge": 1.0,
+        "SGA-PDE": 0.0
+      },
+      "0.05": {
+        "GML1": 0.0,
+        "GML1_IRL1": 0.0,
+        "PDE-FIND_STRidge": 0.0,
+        "SGA-PDE": 0.0
+      }
+    }
+  },
+  "same_data_dlga": {
+    "sga_burgers": {
+      "0.0": 0.0,
+      "0.05": 0.0
+    },
+    "sga_kdv": {
+      "0.0": 0.0,
+      "0.05": 0.0
+    },
+    "sga_chafee_infante": {
+      "0.0": 0.0,
+      "0.05": 0.0
+    },
+    "ours_burgers": {
+      "0.0": 1.0,
+      "0.05": 1.0
+    },
+    "ours_kdv": {
+      "0.0": 0.0,
+      "0.05": 0.0
+    }
+  },
+  "nonpoly_extension": {
+    "kdv_noiseless": {
+      "GML1": 0.0,
+      "GML1_IRL1": 0.0,
+      "PDE-FIND_STRidge": 0.0
+    },
+    "result_file": "gml1_kdv_nonpoly_result.json"
+  }
+}

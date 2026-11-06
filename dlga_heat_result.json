@@ -1,0 +1,96 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "algorithm": "DLGA-PDE via sail-kd",
+  "config": {
+    "library": [
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx"
+    ],
+    "generations": 5,
+    "pop_size": 20,
+    "surrogate_max_epochs": 100,
+    "surrogate_patience": 20,
+    "max_modules": 4,
+    "max_module_length": 4,
+    "epsilon": 0.001,
+    "stride": 4
+  },
+  "noise": [
+    0.0,
+    0.05
+  ],
+  "n_seeds": 1,
+  "cases": {
+    "heat": {
+      "pde": "u_t = u_xx",
+      "true": {
+        "u_xx": 1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "mul(u_x,u_xxx)"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_t = 0.03026*u_x*u_xxx + 0.7539*u_xx",
+              "best_expression": "add(u_xx, mul(u_x, u_xxx))",
+              "score": 0.183207624806631,
+              "time_s": 4.2081706000026315,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "mul(u_x,u_xxx)"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_t = 0.03041*u_x*u_xxx + 0.7544*u_xx",
+              "best_expression": "add(u_xx, mul(u_x, u_xxx))",
+              "score": 0.1798802826198434,
+              "time_s": 2.4054811999667436,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    }
+  }
+}

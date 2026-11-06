@@ -1,0 +1,273 @@
+{
+  "date": "2026-11-06",
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "scope": "checkpoint audit; no new benchmark campaign",
+  "serialization": {
+    "scripts_checked": [
+      "benchmark_compare.py",
+      "dlga_compare.py",
+      "dlga_same_data_compare.py",
+      "gml1_maxlib_compare.py",
+      "library_effect_audit.py",
+      "maxlib_first.py",
+      "maxlib_irl1.py",
+      "outlier_gamma_sensitivity.py",
+      "outlier_l1_compare.py",
+      "point_outlier_probe.py",
+      "same_data_compare.py",
+      "stability_pareto_summary.py"
+    ],
+    "json_checked": [
+      "benchmark_compare_result.json",
+      "dlga_advection_budgeted_result.json",
+      "dlga_advection_result.json",
+      "dlga_burgers_budgeted_result.json",
+      "dlga_burgers_result.json",
+      "dlga_compare_all_result.json",
+      "dlga_compare_budgeted_all_result.json",
+      "dlga_compare_result.json",
+      "dlga_heat_budgeted_result.json",
+      "dlga_heat_result.json",
+      "dlga_kdv_budgeted_result.json",
+      "dlga_kdv_result.json",
+      "dlga_same_data_result.json",
+      "dlga_wave_budgeted_result.json",
+      "dlga_wave_result.json",
+      "gml1_advection_result.json",
+      "gml1_burgers_result.json",
+      "gml1_heat_result.json",
+      "gml1_kdv_nonpoly_result.json",
+      "gml1_kdv_result.json",
+      "gml1_maxlib_compare_all_result.json",
+      "gml1_maxlib_compare_result.json",
+      "gml1_wave_result.json",
+      "library_effect_audit_result.json",
+      "library_effect_selection_adv_burgers_kdv.json",
+      "library_effect_selection_adv_burgers_kdv_result.json",
+      "library_effect_selection_heat_wave.json",
+      "library_effect_selection_heat_wave_result.json",
+      "maxlib_first_result.json",
+      "maxlib_irl1_result.json",
+      "outlier_gamma_sensitivity_result.json",
+      "outlier_l1_compare_result.json",
+      "outlier_l1_kdv_gamma2_result.json",
+      "outlier_l1_kdv_smoke_result.json",
+      "point_outlier_probe_result.json",
+      "same_data_compare_result.json",
+      "stability_pareto_summary_result.json"
+    ],
+    "syntax_or_parse_errors": [],
+    "nonstandard_nonfinite_json": [
+      {
+        "file": "gml1_maxlib_compare_all_result.json",
+        "error": "non-finite JSON token: -Infinity"
+      },
+      {
+        "file": "gml1_maxlib_compare_result.json",
+        "error": "non-finite JSON token: -Infinity"
+      },
+      {
+        "file": "gml1_wave_result.json",
+        "error": "non-finite JSON token: -Infinity"
+      }
+    ]
+  },
+  "coefficient_check": {
+    "case": "heat sigma=0",
+    "stored_evaluator_relative_error": 0.41421356237307805,
+    "physical_coefficient_from_raw_design": 0.9999999975894939,
+    "physical_relative_error": 2.4105061280366158e-09,
+    "status": "confirmed normalized-versus-physical coefficient mismatch; support unaffected"
+  },
+  "dlga_label_check": {
+    "mixed_true_support_aliases": [
+      {
+        "case": "sga_burgers",
+        "sigma": 0.0,
+        "true_support": [
+          "u*u_x",
+          "uxx"
+        ],
+        "reported_support": [
+          "u_xxx",
+          "mul(u_xx,u_xxx)",
+          "u_xx",
+          "u*u_x"
+        ]
+      },
+      {
+        "case": "sga_burgers",
+        "sigma": 0.05,
+        "true_support": [
+          "u*u_x",
+          "uxx"
+        ],
+        "reported_support": [
+          "u*u_x",
+          "u_xx",
+          "mul(u,u_xxx)"
+        ]
+      },
+      {
+        "case": "sga_kdv",
+        "sigma": 0.0,
+        "true_support": [
+          "u*u_x",
+          "uxxx"
+        ],
+        "reported_support": [
+          "u*u_x",
+          "u_xxx",
+          "mul(u_x,u_xx)",
+          "mul(mul(u,u_x),u_x)"
+        ]
+      },
+      {
+        "case": "sga_kdv",
+        "sigma": 0.05,
+        "true_support": [
+          "u*u_x",
+          "uxxx"
+        ],
+        "reported_support": [
+          "u_xx",
+          "mul(u_x,u_xx)",
+          "u_xxx",
+          "u*u_x"
+        ]
+      },
+      {
+        "case": "sga_chafee_infante",
+        "sigma": 0.0,
+        "true_support": [
+          "u",
+          "u^3",
+          "uxx"
+        ],
+        "reported_support": [
+          "mul(u,u)",
+          "u",
+          "u_xx"
+        ]
+      },
+      {
+        "case": "sga_chafee_infante",
+        "sigma": 0.05,
+        "true_support": [
+          "u",
+          "u^3",
+          "uxx"
+        ],
+        "reported_support": [
+          "mul(u_xx,u_xx)",
+          "u_xx",
+          "mul(u_x,u_xxx)",
+          "u_x"
+        ]
+      },
+      {
+        "case": "ours_burgers",
+        "sigma": 0.0,
+        "true_support": [
+          "u*u_x",
+          "uxx"
+        ],
+        "reported_support": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      {
+        "case": "ours_burgers",
+        "sigma": 0.05,
+        "true_support": [
+          "u*u_x",
+          "uxx"
+        ],
+        "reported_support": [
+          "u_xx",
+          "u*u_x"
+        ]
+      },
+      {
+        "case": "ours_kdv",
+        "sigma": 0.0,
+        "true_support": [
+          "u*u_x",
+          "uxxx"
+        ],
+        "reported_support": [
+          "u*u_x",
+          "u_xxx",
+          "mul(mul(u_x,u_x),u_x)"
+        ]
+      },
+      {
+        "case": "ours_kdv",
+        "sigma": 0.05,
+        "true_support": [
+          "u*u_x",
+          "uxxx"
+        ],
+        "reported_support": [
+          "mul(mul(u,u),u_x)",
+          "mul(u_x,u_xx)",
+          "u_xxx",
+          "u_x"
+        ]
+      }
+    ],
+    "status": "source and saved JSON differ; re-evaluate original expressions with one symbolic canonicalizer"
+  },
+  "rank_definitions": [
+    {
+      "case": "heat",
+      "columns": 113,
+      "machine_rank": 107,
+      "effective_rank_relative_1e-6": 87,
+      "truncated_condition_relative_1e-6": 849036.4196839194
+    },
+    {
+      "case": "wave",
+      "columns": 114,
+      "machine_rank": 109,
+      "effective_rank_relative_1e-6": 105,
+      "truncated_condition_relative_1e-6": 344652.49429187237
+    },
+    {
+      "case": "advection_diffusion",
+      "columns": 113,
+      "machine_rank": 113,
+      "effective_rank_relative_1e-6": 84,
+      "truncated_condition_relative_1e-6": 739203.5560495204
+    },
+    {
+      "case": "burgers",
+      "columns": 113,
+      "machine_rank": 109,
+      "effective_rank_relative_1e-6": 67,
+      "truncated_condition_relative_1e-6": 983926.2126711808
+    },
+    {
+      "case": "kdv",
+      "columns": 113,
+      "machine_rank": 113,
+      "effective_rank_relative_1e-6": 77,
+      "truncated_condition_relative_1e-6": 921451.1263588498
+    }
+  ],
+  "publication_blockers": [
+    "Current coefficient-error summaries compare normalized coefficients to physical truth.",
+    "Saved DLGA support aliases and source code are inconsistent; rankings need re-evaluation.",
+    "LazyL1 verifies omitted-column KKT gaps, but does not independently certify all active-column stationarity conditions.",
+    "MSTLS complexity |S|/p changes when library p changes, confounding a library-size experiment.",
+    "Effective rank at 1e-6 and a truncated condition number do not prove sparse non-identifiability.",
+    "Current Pareto summary compares only selected models and pools different seed datasets; no common-data validation frontier yet.",
+    "Outlier gamma=2 was selected with benchmark truth; sensitivity with one seed is exploratory, not held-out validation.",
+    "Row-error weights in code mean gamma/lambda=gamma_weight, not an independently fixed gamma.",
+    "DLGA baseline field() uses only the first trajectory; it is not the same multitrajectory input as the weak baseline.",
+    "Three noise seeds are a pilot; final curves need uncertainty intervals and a larger paired design."
+  ],
+  "release_status": "exploratory checkpoint; not submission-ready evidence"
+}

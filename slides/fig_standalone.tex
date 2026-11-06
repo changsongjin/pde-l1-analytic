@@ -1,0 +1,17 @@
+% 把论文里的两张 TikZ 图单独编译成 PDF，供 PPT 使用。用法：pdflatex "\def\FIG{overview}\input{fig_standalone}"
+\documentclass[border=4pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{inkB}{HTML}{52514E}
+\definecolor{inkM}{HTML}{8A8984}
+\definecolor{keep}{HTML}{2A78D6}
+\definecolor{paleK}{HTML}{CDE2FB}
+\definecolor{paleG}{HTML}{F0EFEC}
+\definecolor{warn}{HTML}{EB6834}
+\definecolor{paleW}{HTML}{FBE3D8}
+\newcommand{\sech}{\operatorname{sech}}
+\begin{document}
+\input{../paper/figures/\FIG.tex}
+\end{document}

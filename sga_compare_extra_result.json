@@ -1,0 +1,1909 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "noise": [
+    0.0,
+    0.01,
+    0.05
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "sga_params": {
+    "num": 20,
+    "depth": 4,
+    "width": 5,
+    "p_var": 0.5,
+    "p_mute": 0.3,
+    "p_cro": 0.5,
+    "p_rep": 1,
+    "gens": 100
+  },
+  "sga_timeout_s": 1800,
+  "half_width": [
+    10,
+    20
+  ],
+  "libraries": {
+    "base": [
+      "1",
+      "u",
+      "u^2",
+      "u^3",
+      "u_x",
+      "(u^2)_x",
+      "(u^3)_x",
+      "u_xx",
+      "(u^2)_xx",
+      "(u^3)_xx",
+      "u_xxx",
+      "(u^2)_xxx",
+      "(u^3)_xxx"
+    ],
+    "extended": [
+      "1",
+      "u",
+      "u^2",
+      "u^3",
+      "u_x",
+      "(u^2)_x",
+      "(u^3)_x",
+      "u_xx",
+      "(u^2)_xx",
+      "(u^3)_xx",
+      "u_xxx",
+      "(u^2)_xxx",
+      "(u^3)_xxx",
+      "x u",
+      "u/x",
+      "x u_x",
+      "u_x/x"
+    ]
+  },
+  "truth": {
+    "sga_compound": {
+      "weak": {
+        "(u^2)_xx": 0.5
+      },
+      "strong": [
+        {
+          "(u ux)_x": 1.0
+        },
+        {
+          "u uxx": 1.0,
+          "ux^2": 1.0
+        }
+      ]
+    },
+    "sga_divide": {
+      "weak": {
+        "u_x/x": -1.0,
+        "u_xx": 0.25
+      },
+      "strong": [
+        {
+          "ux/x": -1.0,
+          "uxx": 0.25
+        }
+      ]
+    }
+  },
+  "runs": {
+    "sga_compound|0.0|0": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.0016898000030778348,
+            "calls": 15
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.0007377000001724809,
+            "calls": 4
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.07764169999427395,
+            "calls": 431
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.15805120000004536,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.004854600003454834,
+            "calls": 35
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.0008479000025545247,
+            "calls": 4
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.08948230000532931,
+            "calls": 580
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0011101752990729796,
+            "time_s": 0.881511399995361,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 73",
+      "sga_raw": {
+        "concise": "0.4691(( ^2 u) d^2 x) + -0.0848( ^2 ux)",
+        "aic": -0.12570743593992884,
+        "generations": 73,
+        "time_s": 1734.4335597999961,
+        "terms": [
+          {
+            "sga_term": "(( ^2 u) d^2 x)",
+            "maps_to": "other",
+            "cos": 0.7632130824125187,
+            "coef": 0.0
+          },
+          {
+            "sga_term": "( ^2 ux)",
+            "maps_to": "ux^2",
+            "cos": 1.0000000000000002,
+            "coef": -0.08478121150299753
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "other",
+          "ux^2"
+        ],
+        "coef_rel_err": null,
+        "extra": 2,
+        "missed": 1
+      }
+    },
+    "sga_compound|0.01|0": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.0019296000027679838,
+            "calls": 19
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.002043300002696924,
+            "calls": 13
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.09254950000467943,
+            "calls": 430
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.15695009999762988,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.00419770000007702,
+            "calls": 34
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.002455100002407562,
+            "calls": 14
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.12125789999845438,
+            "calls": 605
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.005886208061935516,
+            "time_s": 0.9367425000018557,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 56",
+      "sga_raw": {
+        "concise": "-2.1522( ^2 (u * (x + 0)))",
+        "aic": 2.2487253515719194,
+        "generations": 56,
+        "time_s": 1720.3039827999964,
+        "terms": [
+          {
+            "sga_term": "( ^2 (u * (x + 0)))",
+            "maps_to": "u^2",
+            "cos": 0.9746162297906296,
+            "coef": -4.907890888545707
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u^2"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 1
+      }
+    },
+    "sga_compound|0.01|1": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.005378699999710079,
+            "calls": 17
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.004821099995751865,
+            "calls": 11
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.11826830000063637,
+            "calls": 424
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.17625650000263704,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.003997700005129445,
+            "calls": 27
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.005503699998371303,
+            "calls": 12
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.10894910000206437,
+            "calls": 617
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008753489639742984,
+            "time_s": 0.9739284999959636,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 56",
+      "sga_raw": {
+        "concise": "-2.1542( ^2 ((0 + u) * x))",
+        "aic": 2.268084320465748,
+        "generations": 56,
+        "time_s": 1721.9209913000013,
+        "terms": [
+          {
+            "sga_term": "( ^2 ((0 + u) * x))",
+            "maps_to": "u^2",
+            "cos": 0.9746158772589394,
+            "coef": -4.912404194239907
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u^2"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 1
+      }
+    },
+    "sga_compound|0.01|2": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 0.0019256000014138408,
+            "calls": 18
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 0.001618199996300973,
+            "calls": 12
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 0.08628860000317218,
+            "calls": 422
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 0.19979590000002645,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 0.003015000002051238,
+            "calls": 30
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 0.0018820000041159801,
+            "calls": 12
+          },
+          "GA": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 0.09997469999507302,
+            "calls": 604
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_xx"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.009957860620103842,
+            "time_s": 1.1200688000026275,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 55",
+      "sga_raw": {
+        "concise": "-2.1536( ^2 (x * u))",
+        "aic": 2.2299604503911166,
+        "generations": 55,
+        "time_s": 1665.926889800001,
+        "terms": [
+          {
+            "sga_term": "( ^2 (x * u))",
+            "maps_to": "u^2",
+            "cos": 0.9746177962715082,
+            "coef": -4.910905109923494
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u^2"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 1
+      }
+    },
+    "sga_compound|0.05|0": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0032374000002164394,
+            "calls": 24
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "u^3"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.002158800001780037,
+            "calls": 13
+          },
+          "GA": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.08482209999783663,
+            "calls": 451
+          },
+          "Exhaustive": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.18806819999736035,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0062933999943197705,
+            "calls": 35
+          },
+          "IRL1": {
+            "support": [
+              "u^3",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.00628129999677185,
+            "calls": 14
+          },
+          "GA": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.08621430000494001,
+            "calls": 571
+          },
+          "Exhaustive": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.9769060999969952,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 52",
+      "sga_raw": {
+        "concise": "-2.6088u",
+        "aic": 6.891816686202695,
+        "generations": 52,
+        "time_s": 1715.4234140000044,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 0.9999999999999981,
+            "coef": -2.6088237797528646
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 1
+      }
+    },
+    "sga_compound|0.05|1": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0019893999997293577,
+            "calls": 21
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "u^3"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.002659400000993628,
+            "calls": 16
+          },
+          "GA": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.13886449999699835,
+            "calls": 450
+          },
+          "Exhaustive": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.25327730000572046,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.00743499999953201,
+            "calls": 29
+          },
+          "IRL1": {
+            "support": [
+              "u^3",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.00839059999998426,
+            "calls": 16
+          },
+          "GA": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.20046320000255946,
+            "calls": 592
+          },
+          "Exhaustive": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 1.2758032000056119,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 46",
+      "sga_raw": {
+        "concise": "-2.6102u",
+        "aic": 6.917957352157274,
+        "generations": 46,
+        "time_s": 1630.4675070000012,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 1.0000000000000022,
+            "coef": -2.6101573888210483
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 1
+      }
+    },
+    "sga_compound|0.05|2": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.001850299995567184,
+            "calls": 20
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "u^3"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.001995600003283471,
+            "calls": 13
+          },
+          "GA": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.08188979999977164,
+            "calls": 435
+          },
+          "Exhaustive": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.22708179999608546,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0036517000044113956,
+            "calls": 33
+          },
+          "IRL1": {
+            "support": [
+              "u^3",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0032872000010684133,
+            "calls": 16
+          },
+          "GA": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.1426839000050677,
+            "calls": 576
+          },
+          "Exhaustive": {
+            "support": [
+              "u^2"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 1,
+            "coef_rel_err": 1.0,
+            "time_s": 0.8930404000057024,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 52",
+      "sga_raw": {
+        "concise": "-2.6112u",
+        "aic": 6.868175643781148,
+        "generations": 52,
+        "time_s": 1631.4511086999992,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 1.0000000000000007,
+            "coef": -2.611194157949654
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 1
+      }
+    },
+    "sga_divide|0.0|0": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u",
+              "u_xxx"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.4015606668756395,
+              "u_xxx": 0.025158937832530887
+            },
+            "time_s": 0.0023013999962131493,
+            "calls": 25
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "(u^3)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9405890740988547,
+              "(u^3)_x": -0.4011256448845078
+            },
+            "time_s": 0.002598700004455168,
+            "calls": 13
+          },
+          "GA": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9142449963422936,
+              "(u^2)_x": -0.3375438838277915
+            },
+            "time_s": 0.07638089999818476,
+            "calls": 440
+          },
+          "Exhaustive": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9142449963422936,
+              "(u^2)_x": -0.3375438838277915
+            },
+            "time_s": 0.1538981000048807,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 1,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0019893999997293577,
+            "calls": 20
+          },
+          "IRL1": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0003166672881468232,
+            "time_s": 0.000785700001870282,
+            "calls": 5
+          },
+          "GA": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0003166672881468232,
+            "time_s": 0.08213109999633161,
+            "calls": 618
+          },
+          "Exhaustive": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0003166672881468232,
+            "time_s": 0.8683515000011539,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "ok",
+      "sga_raw": {
+        "concise": "-2.8603u + -0.294(( ^2 ux) * ((u / x) * ux))",
+        "aic": -4.144091076215041,
+        "generations": 100,
+        "time_s": 180.01039899999887,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 1.0000000000000027,
+            "coef": -2.8603452970739376
+          },
+          {
+            "sga_term": "(( ^2 ux) * ((u / x) * ux))",
+            "maps_to": "other",
+            "cos": 0.8365514864199501,
+            "coef": -0.0
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u",
+          "other"
+        ],
+        "coef_rel_err": null,
+        "extra": 2,
+        "missed": 2
+      }
+    },
+    "sga_divide|0.01|0": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.961250629759779
+            },
+            "time_s": 0.001693699996394571,
+            "calls": 17
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "(u^3)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9390200250971827,
+              "(u^3)_x": -0.40224946816460994
+            },
+            "time_s": 0.002020799998717848,
+            "calls": 13
+          },
+          "GA": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.912889601605124,
+              "(u^2)_x": -0.33832801341340485
+            },
+            "time_s": 0.08441229999880306,
+            "calls": 452
+          },
+          "Exhaustive": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.912889601605124,
+              "(u^2)_x": -0.33832801341340485
+            },
+            "time_s": 0.163723999998183,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^3)_x",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0027835000000777654,
+            "calls": 26
+          },
+          "IRL1": {
+            "support": [
+              "(u^3)_x",
+              "x u",
+              "u_x/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 0.7530907927487263,
+            "time_s": 0.0025492999993730336,
+            "calls": 16
+          },
+          "GA": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0061794089295505875,
+            "time_s": 0.1015075999966939,
+            "calls": 645
+          },
+          "Exhaustive": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.0061794089295505875,
+            "time_s": 1.2941651000001002,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 56",
+      "sga_raw": {
+        "concise": "-2.8829u",
+        "aic": -0.7010640756604425,
+        "generations": 56,
+        "time_s": 1756.253439299995,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 1.000000000000002,
+            "coef": -2.8828714700202527
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 2
+      }
+    },
+    "sga_divide|0.01|1": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.91726493561992,
+              "(u^2)_x": -0.33648661950976805
+            },
+            "time_s": 0.0015994999994290993,
+            "calls": 17
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "(u^3)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9434524525324055,
+              "(u^3)_x": -0.39961887404709906
+            },
+            "time_s": 0.0018344999989494681,
+            "calls": 12
+          },
+          "GA": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.91726493561992,
+              "(u^2)_x": -0.33648661950976805
+            },
+            "time_s": 0.08311810000304831,
+            "calls": 458
+          },
+          "Exhaustive": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.91726493561992,
+              "(u^2)_x": -0.33648661950976805
+            },
+            "time_s": 0.3082907999996678,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^3)_x",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0031579999995301478,
+            "calls": 28
+          },
+          "IRL1": {
+            "support": [
+              "(u^3)_x",
+              "x u",
+              "u_x/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 0.753150572951345,
+            "time_s": 0.0035433000011835247,
+            "calls": 14
+          },
+          "GA": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008699634488802219,
+            "time_s": 0.1174507999967318,
+            "calls": 670
+          },
+          "Exhaustive": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.008699634488802219,
+            "time_s": 1.0029914000042481,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 67",
+      "sga_raw": {
+        "concise": "-2.8827u",
+        "aic": -0.7142965292637187,
+        "generations": 67,
+        "time_s": 1753.1777195999966,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 0.9999999999999979,
+            "coef": -2.882664029431637
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 2
+      }
+    },
+    "sga_divide|0.01|2": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.914869310394691,
+              "(u^2)_x": -0.3370119069961155
+            },
+            "time_s": 0.001914300002681557,
+            "calls": 19
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "(u^3)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.941103487868429,
+              "(u^3)_x": -0.400461973086513
+            },
+            "time_s": 0.0021350999959395267,
+            "calls": 14
+          },
+          "GA": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.914869310394691,
+              "(u^2)_x": -0.3370119069961155
+            },
+            "time_s": 0.07264460000442341,
+            "calls": 450
+          },
+          "Exhaustive": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.914869310394691,
+              "(u^2)_x": -0.3370119069961155
+            },
+            "time_s": 0.1594394999992801,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^3)_x",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0024469999989378266,
+            "calls": 24
+          },
+          "IRL1": {
+            "support": [
+              "(u^3)_x",
+              "x u",
+              "u_x/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 0.7554002092329837,
+            "time_s": 0.0028707000019494444,
+            "calls": 17
+          },
+          "GA": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.013363027048736964,
+            "time_s": 0.09640609999769367,
+            "calls": 654
+          },
+          "Exhaustive": {
+            "support": [
+              "u_xx",
+              "u_x/x"
+            ],
+            "exact": true,
+            "extra": 0,
+            "missed": 0,
+            "coef_rel_err": 0.013363027048736964,
+            "time_s": 1.1060174999947776,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 91",
+      "sga_raw": {
+        "concise": "-2.8839u",
+        "aic": -0.7251599466810097,
+        "generations": 91,
+        "time_s": 1773.525406199995,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 0.9999999999999996,
+            "coef": -2.883947731331998
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 2
+      }
+    },
+    "sga_divide|0.05|0": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.907449629388355,
+              "(u^2)_x": -0.3413395684180228
+            },
+            "time_s": 0.004388100001960993,
+            "calls": 20
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "(u^3)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.93269493706692,
+              "(u^3)_x": -0.4063824585776168
+            },
+            "time_s": 0.007019700002274476,
+            "calls": 15
+          },
+          "GA": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.907449629388355,
+              "(u^2)_x": -0.3413395684180228
+            },
+            "time_s": 0.09500089999346528,
+            "calls": 453
+          },
+          "Exhaustive": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.907449629388355,
+              "(u^2)_x": -0.3413395684180228
+            },
+            "time_s": 0.14867539999977453,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^3)_x",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0027208000028622337,
+            "calls": 27
+          },
+          "IRL1": {
+            "support": [
+              "(u^3)_x",
+              "x u",
+              "u_x/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 0.7510375505556103,
+            "time_s": 0.003063899996050168,
+            "calls": 13
+          },
+          "GA": {
+            "support": [
+              "(u^2)_x",
+              "x u"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.10656619999645045,
+            "calls": 755
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_x",
+              "x u"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.9385312999947928,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 71",
+      "sga_raw": {
+        "concise": "-2.8766u",
+        "aic": 4.796867746174728,
+        "generations": 71,
+        "time_s": 1767.3624689000062,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 1.0,
+            "coef": -2.876598420100695
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 2
+      }
+    },
+    "sga_divide|0.05|1": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9294028380219257,
+              "(u^2)_x": -0.33206995068514694
+            },
+            "time_s": 0.0019459000031929463,
+            "calls": 19
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "(u^3)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.955005248044229,
+              "(u^3)_x": -0.3931844515326534
+            },
+            "time_s": 0.0030219999971450306,
+            "calls": 14
+          },
+          "GA": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9294028380219257,
+              "(u^2)_x": -0.33206995068514694
+            },
+            "time_s": 0.1368607000040356,
+            "calls": 446
+          },
+          "Exhaustive": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9294028380219257,
+              "(u^2)_x": -0.33206995068514694
+            },
+            "time_s": 0.16761810000025434,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^3)_x",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0037278999952832237,
+            "calls": 33
+          },
+          "IRL1": {
+            "support": [
+              "(u^3)_x",
+              "x u",
+              "u_x/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 1,
+            "coef_rel_err": 0.7516489514270281,
+            "time_s": 0.0033611999970162287,
+            "calls": 17
+          },
+          "GA": {
+            "support": [
+              "(u^3)_x",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.09450359999755165,
+            "calls": 677
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_x",
+              "x u"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.9751318999988143,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 75",
+      "sga_raw": {
+        "concise": "-2.8759u",
+        "aic": 4.808311969853748,
+        "generations": 75,
+        "time_s": 1707.0848855000004,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 1.0000000000000038,
+            "coef": -2.8758539466184674
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 2
+      }
+    },
+    "sga_divide|0.05|2": {
+      "ours": {
+        "base": {
+          "L1": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.917324169003235,
+              "(u^2)_x": -0.33471460790037866
+            },
+            "time_s": 0.0022099999987403862,
+            "calls": 19
+          },
+          "IRL1": {
+            "support": [
+              "u",
+              "(u^3)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.9430657288748137,
+              "(u^3)_x": -0.39751406229626796
+            },
+            "time_s": 0.0054183000029297546,
+            "calls": 14
+          },
+          "GA": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.917324169003235,
+              "(u^2)_x": -0.33471460790037866
+            },
+            "time_s": 0.09905820000130916,
+            "calls": 459
+          },
+          "Exhaustive": {
+            "support": [
+              "u",
+              "(u^2)_x"
+            ],
+            "exact": false,
+            "coef_rel_err": null,
+            "coefficients": {
+              "u": -2.917324169003235,
+              "(u^2)_x": -0.33471460790037866
+            },
+            "time_s": 0.1890008000045782,
+            "calls": 4096
+          }
+        },
+        "extended": {
+          "L1": {
+            "support": [
+              "(u^3)_x",
+              "u/x"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.004076199998962693,
+            "calls": 27
+          },
+          "IRL1": {
+            "support": [
+              "(u^2)_x",
+              "x u"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.0030329000001074746,
+            "calls": 16
+          },
+          "GA": {
+            "support": [
+              "(u^2)_x",
+              "x u"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.09847499999887077,
+            "calls": 676
+          },
+          "Exhaustive": {
+            "support": [
+              "(u^2)_x",
+              "x u"
+            ],
+            "exact": false,
+            "extra": 2,
+            "missed": 2,
+            "coef_rel_err": 1.0,
+            "time_s": 0.9000407000057749,
+            "calls": 21778
+          }
+        }
+      },
+      "sga_status": "timeout at generation 84",
+      "sga_raw": {
+        "concise": "-2.8818u",
+        "aic": 4.772863129831384,
+        "generations": 84,
+        "time_s": 1737.1008987000023,
+        "terms": [
+          {
+            "sga_term": "u",
+            "maps_to": "u",
+            "cos": 0.9999999999999998,
+            "coef": -2.881755987153339
+          }
+        ]
+      },
+      "sga": {
+        "exact": false,
+        "support": [
+          "u"
+        ],
+        "coef_rel_err": null,
+        "extra": 1,
+        "missed": 2
+      }
+    }
+  }
+}

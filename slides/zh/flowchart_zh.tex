@@ -1,0 +1,54 @@
+\documentclass[border=4pt]{standalone}
+\usepackage[fontset=windows]{ctex}
+\xeCJKsetup{CJKglue=\hskip 0pt}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+\definecolor{ink}{HTML}{0B0B0B}\definecolor{inkB}{HTML}{52514E}\definecolor{inkM}{HTML}{8A8984}
+\definecolor{keep}{HTML}{2A78D6}\definecolor{paleK}{HTML}{CDE2FB}\definecolor{paleG}{HTML}{F0EFEC}
+\definecolor{warn}{HTML}{EB6834}\definecolor{paleW}{HTML}{FBE3D8}
+\newcommand{\sech}{\operatorname{sech}}
+\begin{document}
+% 算法流程图：通用库正问题三步；反问题从第二步进入。
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2mm]},
+  proc/.style={draw=inkB, rounded corners=2pt, fill=white, align=center, minimum width=2.55cm, minimum height=1.25cm, inner sep=3pt},
+  core/.style={proc, draw=keep, fill=paleK, line width=0.7pt},
+  io/.style={proc, fill=paleG},
+  stop/.style={proc, draw=warn, fill=paleW, minimum width=2.3cm},
+  gate/.style={draw=inkB, diamond, aspect=1.7, fill=white, align=center, inner sep=1pt, font=\scriptsize},
+  arr/.style={->, inkB, line width=0.7pt},
+  tag/.style={font=\scriptsize\bfseries, text=inkB},
+]
+% 第一行：第一步 A
+\node[io]   (in)  at (0, 0)    {PDE、初边值\\ 通用候选库};
+\node[proc, minimum width=2.95cm] (a1)  at (3.35, 0) {40 个随机起点\\ $k\in[0.1,10]$\\ $c\in[-8,8]$, $x_0\in\Omega$\\ LM 最小化 $\|r\|^2$};
+\node[proc] (a2)  at (6.7, 0)  {最好的起点\\ 继续迭代\\（至多 3000 步）};
+\node[gate] (g)   at (10.05, 0) {相对残差\\ $\le 10^{-8}$？};
+\node[stop] (no)  at (13.35, 0) {报告：\\ 库中没有\\ 精确解};
+\node[tag] at (5.0, 0.95) {第一步：找波参数 $(k, c, x_0)$};
+
+% 第二行：第二步 B（从右往左）
+\node[core] (b0)  at (10.05, -2.55) {第 0 轮：普通 $\ell_1$\\ $\lambda = 10^{-3}\lambda_{\max}$};
+\node[core] (b1)  at (6.7, -2.55)   {改权重\\ $w_j = 1/(|\beta_j|+\varepsilon)$\\ 再解 $\ell_1$};
+\node[core] (b2)  at (3.35, -2.55)  {40 个 $\lambda$ 上\\ $|\beta_j|>10^{-5}$\\ 超过 20 次的项保留};
+\node[proc] (c)   at (0, -2.55)     {第三步：在支撑 $S$ 上\\ 重拟合 $\xi_S$\\ 和 $(k,c,x_0)$};
+\node[io]   (out) at (0, -4.6)      {解析解\\ $S$、$\xi_S$、$(k,c,x_0)$};
+\node[io]   (inv) at (10.05, -4.6)  {反问题：\\ $\Theta(u)$ 和 $u_t$\\（跳过第一步）};
+\node[tag] at (6.7, -1.45) {第二步：只用 $\ell_1$ 选项};
+
+\draw[arr] (in) -- (a1);
+\draw[arr] (a1) -- (a2);
+\draw[arr] (a2) -- (g);
+\draw[arr] (g) -- node[above, font=\scriptsize] {否} (no);
+\draw[arr] (g) -- node[right, font=\scriptsize] {是，固定 $(k,c,x_0)$} (b0);
+\draw[arr] (b0) -- (b1);
+\draw[arr] ([xshift=0.45cm]b1.south) to[out=-75, in=-105, looseness=4] node[below, font=\scriptsize] {直到支撑不再变化} ([xshift=-0.45cm]b1.south);
+\draw[arr] (b1) -- (b2);
+\draw[arr] (b2) -- (c);
+\draw[arr] (c) -- (out);
+\draw[arr] (inv) -- (b0);
+\end{tikzpicture}
+
+\end{document}
