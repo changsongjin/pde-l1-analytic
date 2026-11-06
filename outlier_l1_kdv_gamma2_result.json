@@ -1,0 +1,416 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "method": "joint weighted L1: min 0.5||A beta + e - b||^2 + lambda||beta||_1 + gamma||e||_1",
+  "support_tol": 1e-05,
+  "layers": [
+    "L13"
+  ],
+  "fractions": [
+    0.0,
+    0.05
+  ],
+  "amplitudes_rms": [
+    10.0
+  ],
+  "n_seeds": 1,
+  "gamma_weight": 2.0,
+  "rows": [
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "sigma": 0.0,
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "seed": 0,
+      "n_rows": 231,
+      "library_size": 13,
+      "true_support": [
+        "(u^2)_x",
+        "u_xxx"
+      ],
+      "outlier_rows": [],
+      "baseline_GML1": {
+        "support": [
+          "u_x"
+        ],
+        "exact": false,
+        "extra": 1,
+        "missed": 2,
+        "coef_rel_err": 1.0,
+        "criterion_calls": 6
+      },
+      "joint_L1": {
+        "lambda": 2.010661941423545e-14,
+        "score": 0.15384615384783537,
+        "beta_support": [
+          5,
+          10
+        ],
+        "error_support": [],
+        "l1_residual": 1.6815249719052561e-12,
+        "n_knots": 269,
+        "gamma_weight": 2.0,
+        "method": "joint_L1",
+        "time_s": 0.2808200999861583,
+        "beta_metrics": {
+          "support": [
+            5,
+            10
+          ],
+          "true_count": 2,
+          "extra": 0,
+          "missed": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 13
+        },
+        "error_metrics": {
+          "support": [],
+          "true_count": 0,
+          "extra": 0,
+          "missed": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n": 231
+        },
+        "refit_relative_residual": 6.034230828524073e-07
+      },
+      "joint_IRL1": {
+        "lambda": 8.326672684688674e-16,
+        "score": 0.1538467572692367,
+        "beta_support": [
+          5,
+          10
+        ],
+        "error_support": [],
+        "l1_residual": 6.03423082841273e-07,
+        "n_knots": 3,
+        "gamma_weight": 2.0,
+        "method": "joint_IRL1",
+        "outer": [
+          {
+            "iter": 0,
+            "lambda": 0.0009898732095519394,
+            "beta_support": [
+              4,
+              5,
+              10,
+              11
+            ],
+            "error_support": []
+          },
+          {
+            "iter": 1,
+            "lambda": 0.0014974235702216604,
+            "beta_support": [
+              5,
+              10
+            ],
+            "error_support": []
+          },
+          {
+            "iter": 2,
+            "lambda": 0.001612481889521985,
+            "beta_support": [
+              5,
+              10
+            ],
+            "error_support": []
+          }
+        ],
+        "time_s": 0.26942819997202605,
+        "beta_metrics": {
+          "support": [
+            5,
+            10
+          ],
+          "true_count": 2,
+          "extra": 0,
+          "missed": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 13
+        },
+        "error_metrics": {
+          "support": [],
+          "true_count": 0,
+          "extra": 0,
+          "missed": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "n": 231
+        },
+        "refit_relative_residual": 6.034230828524073e-07
+      },
+      "weak_data": {
+        "x": [
+          -10.0,
+          12.0,
+          441
+        ],
+        "t": [
+          0.0,
+          1.2,
+          241
+        ],
+        "rows": 231
+      }
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "sigma": 0.0,
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "seed": 0,
+      "n_rows": 231,
+      "library_size": 13,
+      "true_support": [
+        "(u^2)_x",
+        "u_xxx"
+      ],
+      "outlier_rows": [
+        36,
+        38,
+        49,
+        89,
+        94,
+        100,
+        114,
+        129,
+        133,
+        164,
+        181,
+        183
+      ],
+      "baseline_GML1": {
+        "support": [
+          "u_x"
+        ],
+        "exact": false,
+        "extra": 1,
+        "missed": 2,
+        "coef_rel_err": 1.0,
+        "criterion_calls": 15
+      },
+      "joint_L1": {
+        "lambda": 2.4065814083039564e-14,
+        "score": 0.20579420579475255,
+        "beta_support": [
+          5,
+          10
+        ],
+        "error_support": [
+          36,
+          38,
+          49,
+          89,
+          94,
+          100,
+          114,
+          129,
+          133,
+          164,
+          181,
+          183
+        ],
+        "l1_residual": 5.467302416076817e-13,
+        "n_knots": 272,
+        "gamma_weight": 2.0,
+        "method": "joint_L1",
+        "time_s": 0.3600720999529585,
+        "beta_metrics": {
+          "support": [
+            5,
+            10
+          ],
+          "true_count": 2,
+          "extra": 0,
+          "missed": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 13
+        },
+        "error_metrics": {
+          "support": [
+            36,
+            38,
+            49,
+            89,
+            94,
+            100,
+            114,
+            129,
+            133,
+            164,
+            181,
+            183
+          ],
+          "true_count": 12,
+          "extra": 0,
+          "missed": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 231
+        },
+        "refit_relative_residual": 2.438585791355369e-07
+      },
+      "joint_IRL1": {
+        "lambda": 7.91033905045424e-16,
+        "score": 0.20579444965278493,
+        "beta_support": [
+          5,
+          10
+        ],
+        "error_support": [
+          36,
+          38,
+          49,
+          89,
+          94,
+          100,
+          114,
+          129,
+          133,
+          164,
+          181,
+          183
+        ],
+        "l1_residual": 2.4385857913500805e-07,
+        "n_knots": 15,
+        "gamma_weight": 2.0,
+        "method": "joint_IRL1",
+        "outer": [
+          {
+            "iter": 0,
+            "lambda": 0.000828364247765901,
+            "beta_support": [
+              4,
+              5,
+              10,
+              11
+            ],
+            "error_support": [
+              36,
+              38,
+              49,
+              89,
+              94,
+              100,
+              114,
+              129,
+              133,
+              164,
+              181,
+              183
+            ]
+          },
+          {
+            "iter": 1,
+            "lambda": 0.0012810026296131002,
+            "beta_support": [
+              5,
+              10
+            ],
+            "error_support": [
+              36,
+              38,
+              49,
+              89,
+              94,
+              100,
+              114,
+              129,
+              133,
+              164,
+              181,
+              183
+            ]
+          },
+          {
+            "iter": 2,
+            "lambda": 0.0013659689324306624,
+            "beta_support": [
+              5,
+              10
+            ],
+            "error_support": [
+              36,
+              38,
+              49,
+              89,
+              94,
+              100,
+              114,
+              129,
+              133,
+              164,
+              181,
+              183
+            ]
+          }
+        ],
+        "time_s": 0.40642939996905625,
+        "beta_metrics": {
+          "support": [
+            5,
+            10
+          ],
+          "true_count": 2,
+          "extra": 0,
+          "missed": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 13
+        },
+        "error_metrics": {
+          "support": [
+            36,
+            38,
+            49,
+            89,
+            94,
+            100,
+            114,
+            129,
+            133,
+            164,
+            181,
+            183
+          ],
+          "true_count": 12,
+          "extra": 0,
+          "missed": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 231
+        },
+        "refit_relative_residual": 2.438585791355369e-07
+      },
+      "weak_data": {
+        "x": [
+          -10.0,
+          12.0,
+          441
+        ],
+        "t": [
+          0.0,
+          1.2,
+          241
+        ],
+        "rows": 231
+      }
+    }
+  ],
+  "wall_time_s": 2.8559058000100777,
+  "outlier_scope": "sparse contamination was injected in weak-equation right-hand-side rows; point anomalies in raw u(x,t) are a separate follow-up"
+}

@@ -1,0 +1,6463 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "method": "GML-L1: grammar-closed maximal weak library + KKT-certified lazy L1 column generation",
+  "solver": "exact L1 via LARS on active columns; IRL1 uses w=1/(|beta|+eps); STRidge is PDE-FIND control",
+  "grammar": {
+    "max_power": 8,
+    "max_derivative": 6,
+    "trig_frequency": 3,
+    "trig_derivative": 4,
+    "coordinate_max_degree": 2,
+    "coordinate_power": {
+      "1": 8,
+      "2": 4
+    },
+    "coordinate_derivative": {
+      "1": 4,
+      "2": 3
+    },
+    "exp_scale": 2,
+    "inverse_power": 2,
+    "include_nonpoly": true,
+    "n_generated_terms": 167,
+    "terms": [
+      "1",
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx",
+      "u_xxxx",
+      "u_xxxxx",
+      "u_xxxxxx",
+      "u^2",
+      "(u^2)_x",
+      "(u^2)_xx",
+      "(u^2)_xxx",
+      "(u^2)_xxxx",
+      "(u^2)_xxxxx",
+      "(u^2)_xxxxxx",
+      "u^3",
+      "(u^3)_x",
+      "(u^3)_xx",
+      "(u^3)_xxx",
+      "(u^3)_xxxx",
+      "(u^3)_xxxxx",
+      "(u^3)_xxxxxx",
+      "u^4",
+      "(u^4)_x",
+      "(u^4)_xx",
+      "(u^4)_xxx",
+      "(u^4)_xxxx",
+      "(u^4)_xxxxx",
+      "(u^4)_xxxxxx",
+      "u^5",
+      "(u^5)_x",
+      "(u^5)_xx",
+      "(u^5)_xxx",
+      "(u^5)_xxxx",
+      "(u^5)_xxxxx",
+      "(u^5)_xxxxxx",
+      "u^6",
+      "(u^6)_x",
+      "(u^6)_xx",
+      "(u^6)_xxx",
+      "(u^6)_xxxx",
+      "(u^6)_xxxxx",
+      "(u^6)_xxxxxx",
+      "u^7",
+      "(u^7)_x",
+      "(u^7)_xx",
+      "(u^7)_xxx",
+      "(u^7)_xxxx",
+      "(u^7)_xxxxx",
+      "(u^7)_xxxxxx",
+      "u^8",
+      "(u^8)_x",
+      "(u^8)_xx",
+      "(u^8)_xxx",
+      "(u^8)_xxxx",
+      "(u^8)_xxxxx",
+      "(u^8)_xxxxxx",
+      "sin(u)",
+      "(sin(u))_x",
+      "(sin(u))_xx",
+      "(sin(u))_xxx",
+      "(sin(u))_xxxx",
+      "sin(2u)",
+      "(sin(2u))_x",
+      "(sin(2u))_xx",
+      "(sin(2u))_xxx",
+      "(sin(2u))_xxxx",
+      "sin(3u)",
+      "(sin(3u))_x",
+      "(sin(3u))_xx",
+      "(sin(3u))_xxx",
+      "(sin(3u))_xxxx",
+      "cos(u)",
+      "(cos(u))_x",
+      "(cos(u))_xx",
+      "(cos(u))_xxx",
+      "(cos(u))_xxxx",
+      "cos(2u)",
+      "(cos(2u))_x",
+      "(cos(2u))_xx",
+      "(cos(2u))_xxx",
+      "(cos(2u))_xxxx",
+      "cos(3u)",
+      "(cos(3u))_x",
+      "(cos(3u))_xx",
+      "(cos(3u))_xxx",
+      "(cos(3u))_xxxx",
+      "x u",
+      "(x u)_x",
+      "(x u)_xx",
+      "(x u)_xxx",
+      "(x u)_xxxx",
+      "x u^2",
+      "(x u^2)_x",
+      "(x u^2)_xx",
+      "(x u^2)_xxx",
+      "(x u^2)_xxxx",
+      "x u^3",
+      "(x u^3)_x",
+      "(x u^3)_xx",
+      "(x u^3)_xxx",
+      "(x u^3)_xxxx",
+      "x u^4",
+      "(x u^4)_x",
+      "(x u^4)_xx",
+      "(x u^4)_xxx",
+      "(x u^4)_xxxx",
+      "x u^5",
+      "(x u^5)_x",
+      "(x u^5)_xx",
+      "(x u^5)_xxx",
+      "(x u^5)_xxxx",
+      "x u^6",
+      "(x u^6)_x",
+      "(x u^6)_xx",
+      "(x u^6)_xxx",
+      "(x u^6)_xxxx",
+      "x u^7",
+      "(x u^7)_x",
+      "(x u^7)_xx",
+      "(x u^7)_xxx",
+      "(x u^7)_xxxx",
+      "x u^8",
+      "(x u^8)_x",
+      "(x u^8)_xx",
+      "(x u^8)_xxx",
+      "(x u^8)_xxxx",
+      "x^2 u",
+      "(x^2 u)_x",
+      "(x^2 u)_xx",
+      "(x^2 u)_xxx",
+      "x^2 u^2",
+      "(x^2 u^2)_x",
+      "(x^2 u^2)_xx",
+      "(x^2 u^2)_xxx",
+      "x^2 u^3",
+      "(x^2 u^3)_x",
+      "(x^2 u^3)_xx",
+      "(x^2 u^3)_xxx",
+      "x^2 u^4",
+      "(x^2 u^4)_x",
+      "(x^2 u^4)_xx",
+      "(x^2 u^4)_xxx",
+      "exp(-1u)",
+      "(exp(-1u))_x",
+      "(exp(-1u))_xx",
+      "(exp(-1u))_xxx",
+      "exp(-2u)",
+      "(exp(-2u))_x",
+      "(exp(-2u))_xx",
+      "(exp(-2u))_xxx",
+      "exp(1u)",
+      "(exp(1u))_x",
+      "(exp(1u))_xx",
+      "(exp(1u))_xxx",
+      "exp(2u)",
+      "(exp(2u))_x",
+      "(exp(2u))_xx",
+      "(exp(2u))_xxx",
+      "(1+u^2)^(-1)",
+      "((1+u^2)^(-1))_x",
+      "((1+u^2)^(-1))_xx",
+      "((1+u^2)^(-1))_xxx",
+      "(1+u^2)^(-2)",
+      "((1+u^2)^(-2))_x",
+      "((1+u^2)^(-2))_xx",
+      "((1+u^2)^(-2))_xxx"
+    ],
+    "weak_form_note": "D_x^k(x^a f(u)) is evaluated by moving derivatives to the test function; derivative products are a later jet-library extension."
+  },
+  "noise": [
+    0.0
+  ],
+  "n_seeds": 1,
+  "support_tol": 1e-05,
+  "cases": {
+    "kdv": {
+      "pde": "u_t = -6 u u_x - u_xxx",
+      "true": {
+        "(u^2)_x": -3.0,
+        "u_xxx": -1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -6 u u_x - u_xxx",
+              "sigma": 0.0,
+              "seed": 0,
+              "library_size": 167,
+              "valid_library_size": 167,
+              "n_rows": 231,
+              "library": [
+                "1",
+                "u",
+                "u_x",
+                "u_xx",
+                "u_xxx",
+                "u_xxxx",
+                "u_xxxxx",
+                "u_xxxxxx",
+                "u^2",
+                "(u^2)_x",
+                "(u^2)_xx",
+                "(u^2)_xxx",
+                "(u^2)_xxxx",
+                "(u^2)_xxxxx",
+                "(u^2)_xxxxxx",
+                "u^3",
+                "(u^3)_x",
+                "(u^3)_xx",
+                "(u^3)_xxx",
+                "(u^3)_xxxx",
+                "(u^3)_xxxxx",
+                "(u^3)_xxxxxx",
+                "u^4",
+                "(u^4)_x",
+                "(u^4)_xx",
+                "(u^4)_xxx",
+                "(u^4)_xxxx",
+                "(u^4)_xxxxx",
+                "(u^4)_xxxxxx",
+                "u^5",
+                "(u^5)_x",
+                "(u^5)_xx",
+                "(u^5)_xxx",
+                "(u^5)_xxxx",
+                "(u^5)_xxxxx",
+                "(u^5)_xxxxxx",
+                "u^6",
+                "(u^6)_x",
+                "(u^6)_xx",
+                "(u^6)_xxx",
+                "(u^6)_xxxx",
+                "(u^6)_xxxxx",
+                "(u^6)_xxxxxx",
+                "u^7",
+                "(u^7)_x",
+                "(u^7)_xx",
+                "(u^7)_xxx",
+                "(u^7)_xxxx",
+                "(u^7)_xxxxx",
+                "(u^7)_xxxxxx",
+                "u^8",
+                "(u^8)_x",
+                "(u^8)_xx",
+                "(u^8)_xxx",
+                "(u^8)_xxxx",
+                "(u^8)_xxxxx",
+                "(u^8)_xxxxxx",
+                "sin(u)",
+                "(sin(u))_x",
+                "(sin(u))_xx",
+                "(sin(u))_xxx",
+                "(sin(u))_xxxx",
+                "sin(2u)",
+                "(sin(2u))_x",
+                "(sin(2u))_xx",
+                "(sin(2u))_xxx",
+                "(sin(2u))_xxxx",
+                "sin(3u)",
+                "(sin(3u))_x",
+                "(sin(3u))_xx",
+                "(sin(3u))_xxx",
+                "(sin(3u))_xxxx",
+                "cos(u)",
+                "(cos(u))_x",
+                "(cos(u))_xx",
+                "(cos(u))_xxx",
+                "(cos(u))_xxxx",
+                "cos(2u)",
+                "(cos(2u))_x",
+                "(cos(2u))_xx",
+                "(cos(2u))_xxx",
+                "(cos(2u))_xxxx",
+                "cos(3u)",
+                "(cos(3u))_x",
+                "(cos(3u))_xx",
+                "(cos(3u))_xxx",
+                "(cos(3u))_xxxx",
+                "x u",
+                "(x u)_x",
+                "(x u)_xx",
+                "(x u)_xxx",
+                "(x u)_xxxx",
+                "x u^2",
+                "(x u^2)_x",
+                "(x u^2)_xx",
+                "(x u^2)_xxx",
+                "(x u^2)_xxxx",
+                "x u^3",
+                "(x u^3)_x",
+                "(x u^3)_xx",
+                "(x u^3)_xxx",
+                "(x u^3)_xxxx",
+                "x u^4",
+                "(x u^4)_x",
+                "(x u^4)_xx",
+                "(x u^4)_xxx",
+                "(x u^4)_xxxx",
+                "x u^5",
+                "(x u^5)_x",
+                "(x u^5)_xx",
+                "(x u^5)_xxx",
+                "(x u^5)_xxxx",
+                "x u^6",
+                "(x u^6)_x",
+                "(x u^6)_xx",
+                "(x u^6)_xxx",
+                "(x u^6)_xxxx",
+                "x u^7",
+                "(x u^7)_x",
+                "(x u^7)_xx",
+                "(x u^7)_xxx",
+                "(x u^7)_xxxx",
+                "x u^8",
+                "(x u^8)_x",
+                "(x u^8)_xx",
+                "(x u^8)_xxx",
+                "(x u^8)_xxxx",
+                "x^2 u",
+                "(x^2 u)_x",
+                "(x^2 u)_xx",
+                "(x^2 u)_xxx",
+                "x^2 u^2",
+                "(x^2 u^2)_x",
+                "(x^2 u^2)_xx",
+                "(x^2 u^2)_xxx",
+                "x^2 u^3",
+                "(x^2 u^3)_x",
+                "(x^2 u^3)_xx",
+                "(x^2 u^3)_xxx",
+                "x^2 u^4",
+                "(x^2 u^4)_x",
+                "(x^2 u^4)_xx",
+                "(x^2 u^4)_xxx",
+                "exp(-1u)",
+                "(exp(-1u))_x",
+                "(exp(-1u))_xx",
+                "(exp(-1u))_xxx",
+                "exp(-2u)",
+                "(exp(-2u))_x",
+                "(exp(-2u))_xx",
+                "(exp(-2u))_xxx",
+                "exp(1u)",
+                "(exp(1u))_x",
+                "(exp(1u))_xx",
+                "(exp(1u))_xxx",
+                "exp(2u)",
+                "(exp(2u))_x",
+                "(exp(2u))_xx",
+                "(exp(2u))_xxx",
+                "(1+u^2)^(-1)",
+                "((1+u^2)^(-1))_x",
+                "((1+u^2)^(-1))_xx",
+                "((1+u^2)^(-1))_xxx",
+                "(1+u^2)^(-2)",
+                "((1+u^2)^(-2))_x",
+                "((1+u^2)^(-2))_xx",
+                "((1+u^2)^(-2))_xxx"
+              ],
+              "methods": {
+                "GML1": {
+                  "support": [
+                    "u_x",
+                    "(u^7)_xxxxx",
+                    "(sin(3u))_x",
+                    "(sin(3u))_xxx",
+                    "(cos(u))_x",
+                    "(x u)_x",
+                    "(x^2 u)_xxx",
+                    "(exp(-1u))_xx",
+                    "(exp(-1u))_xxx",
+                    "(exp(-2u))_xx",
+                    "((1+u^2)^(-1))_xxx"
+                  ],
+                  "exact": false,
+                  "extra": 11,
+                  "missed": 2,
+                  "coef_rel_err": 1.0,
+                  "time_s": 0.20045140001457185,
+                  "criterion_calls": 20,
+                  "path_support_count": 24
+                },
+                "GML1_IRL1": {
+                  "support": [
+                    "u_x",
+                    "(sin(3u))_x",
+                    "(sin(3u))_xxx",
+                    "(exp(-1u))_x",
+                    "((1+u^2)^(-1))_xxx"
+                  ],
+                  "exact": false,
+                  "extra": 5,
+                  "missed": 2,
+                  "coef_rel_err": 1.0,
+                  "time_s": 0.03457510005682707,
+                  "criterion_calls": 5,
+                  "path_support_count": 24
+                },
+                "PDE-FIND_STRidge": {
+                  "support": [
+                    "u_xxx",
+                    "(u^2)_x",
+                    "(u^3)_x",
+                    "(cos(u))_x"
+                  ],
+                  "exact": false,
+                  "extra": 2,
+                  "missed": 0,
+                  "coef_rel_err": 0.40436466331815946,
+                  "time_s": 0.11585719999857247,
+                  "criterion_calls": 31
+                }
+              },
+              "traces": {
+                "GML1": [
+                  {
+                    "lambda": 0.9898732095519395,
+                    "support": [],
+                    "history": [
+                      {
+                        "active": 12,
+                        "added": 0,
+                        "max_omitted_gap": -0.02025396367633059
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.5428877038724771,
+                    "support": [
+                      2
+                    ],
+                    "history": [
+                      {
+                        "active": 12,
+                        "added": 0,
+                        "max_omitted_gap": -0.004514409308289169
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.2977422322090493,
+                    "support": [
+                      2,
+                      73,
+                      88
+                    ],
+                    "history": [
+                      {
+                        "active": 14,
+                        "added": 2,
+                        "max_omitted_gap": 0.009210517510383709
+                      },
+                      {
+                        "active": 14,
+                        "added": 0,
+                        "max_omitted_gap": -0.0096086540179941
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.16329424337385834,
+                    "support": [
+                      2,
+                      73,
+                      88
+                    ],
+                    "history": [
+                      {
+                        "active": 14,
+                        "added": 0,
+                        "max_omitted_gap": -0.0030114421597562113
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.08955736551447284,
+                    "support": [
+                      2,
+                      73,
+                      88,
+                      160
+                    ],
+                    "history": [
+                      {
+                        "active": 15,
+                        "added": 1,
+                        "max_omitted_gap": 0.0007065113690944841
+                      },
+                      {
+                        "active": 15,
+                        "added": 0,
+                        "max_omitted_gap": -0.004747337746625668
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.04911698999413036,
+                    "support": [
+                      2,
+                      73,
+                      88,
+                      160
+                    ],
+                    "history": [
+                      {
+                        "active": 15,
+                        "added": 0,
+                        "max_omitted_gap": -0.0025996628083591877
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.026937803409297887,
+                    "support": [
+                      2,
+                      3,
+                      73,
+                      88,
+                      145,
+                      160
+                    ],
+                    "history": [
+                      {
+                        "active": 16,
+                        "added": 1,
+                        "max_omitted_gap": 0.0026709843359359157
+                      },
+                      {
+                        "active": 16,
+                        "added": 0,
+                        "max_omitted_gap": -0.0014880188767966013
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.01477381355422426,
+                    "support": [
+                      2,
+                      3,
+                      73,
+                      88,
+                      130,
+                      145,
+                      160
+                    ],
+                    "history": [
+                      {
+                        "active": 17,
+                        "added": 1,
+                        "max_omitted_gap": 0.0019399434253685004
+                      },
+                      {
+                        "active": 17,
+                        "added": 0,
+                        "max_omitted_gap": -0.0007245540072760969
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.00810257479493089,
+                    "support": [
+                      2,
+                      70,
+                      73,
+                      88,
+                      130,
+                      145,
+                      149,
+                      160,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 25,
+                        "added": 8,
+                        "max_omitted_gap": 0.0052498869071621705
+                      },
+                      {
+                        "active": 25,
+                        "added": 0,
+                        "max_omitted_gap": -2.907972010878293e-05
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.004443789551457936,
+                    "support": [
+                      2,
+                      48,
+                      68,
+                      70,
+                      73,
+                      88,
+                      130,
+                      145,
+                      146,
+                      149,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 28,
+                        "added": 8,
+                        "max_omitted_gap": 0.0023858492519048145
+                      },
+                      {
+                        "active": 29,
+                        "added": 1,
+                        "max_omitted_gap": 0.0001382918463485091
+                      },
+                      {
+                        "active": 29,
+                        "added": 0,
+                        "max_omitted_gap": -0.0001835654149578876
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.0024371593076809276,
+                    "support": [
+                      2,
+                      3,
+                      55,
+                      68,
+                      70,
+                      88,
+                      130,
+                      144,
+                      145,
+                      146,
+                      149,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 28,
+                        "added": 5,
+                        "max_omitted_gap": 0.0001732411066961586
+                      },
+                      {
+                        "active": 28,
+                        "added": 0,
+                        "max_omitted_gap": -9.861213076767543e-05
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.001336639690569291,
+                    "support": [
+                      2,
+                      3,
+                      5,
+                      55,
+                      68,
+                      70,
+                      76,
+                      88,
+                      130,
+                      144,
+                      146,
+                      148,
+                      149,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 27,
+                        "added": 2,
+                        "max_omitted_gap": 5.26123593612704e-05
+                      },
+                      {
+                        "active": 27,
+                        "added": 0,
+                        "max_omitted_gap": -3.897898658658397e-05
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.0007330688875259491,
+                    "support": [
+                      2,
+                      4,
+                      5,
+                      12,
+                      55,
+                      68,
+                      70,
+                      76,
+                      88,
+                      130,
+                      146,
+                      148,
+                      149,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 28,
+                        "added": 1,
+                        "max_omitted_gap": 5.010884833692977e-05
+                      },
+                      {
+                        "active": 28,
+                        "added": 0,
+                        "max_omitted_gap": -7.760942001019825e-06
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.0004020455158185907,
+                    "support": [
+                      2,
+                      4,
+                      5,
+                      55,
+                      68,
+                      70,
+                      76,
+                      83,
+                      87,
+                      88,
+                      136,
+                      140,
+                      145,
+                      146,
+                      148,
+                      149,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 36,
+                        "added": 8,
+                        "max_omitted_gap": 0.00012964750736182582
+                      },
+                      {
+                        "active": 38,
+                        "added": 2,
+                        "max_omitted_gap": 2.848853127588116e-05
+                      },
+                      {
+                        "active": 38,
+                        "added": 0,
+                        "max_omitted_gap": -4.483991709448832e-06
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.00022049850913106051,
+                    "support": [
+                      2,
+                      4,
+                      5,
+                      55,
+                      68,
+                      70,
+                      76,
+                      83,
+                      87,
+                      88,
+                      136,
+                      140,
+                      145,
+                      146,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 34,
+                        "added": 2,
+                        "max_omitted_gap": 1.7117487356144758e-05
+                      },
+                      {
+                        "active": 34,
+                        "added": 0,
+                        "max_omitted_gap": -2.187165466578276e-06
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 0.00012093056784883591,
+                    "support": [
+                      2,
+                      4,
+                      5,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      87,
+                      88,
+                      140,
+                      141,
+                      145,
+                      146,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 34,
+                        "added": 1,
+                        "max_omitted_gap": 2.330966257107425e-05
+                      },
+                      {
+                        "active": 34,
+                        "added": 0,
+                        "max_omitted_gap": -2.3209133286784795e-06
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 6.632336108698835e-05,
+                    "support": [
+                      4,
+                      5,
+                      55,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      87,
+                      88,
+                      140,
+                      141,
+                      145,
+                      146,
+                      147,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 3,
+                        "max_omitted_gap": 1.4710224142110715e-05
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -9.099890465233385e-07
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 3.637449409295384e-05,
+                    "support": [
+                      4,
+                      5,
+                      9,
+                      55,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      87,
+                      88,
+                      106,
+                      140,
+                      141,
+                      145,
+                      146,
+                      147,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 2,
+                        "max_omitted_gap": 1.0580185174119037e-06
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -2.432769490518511e-07
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 1.994928783514124e-05,
+                    "support": [
+                      4,
+                      5,
+                      9,
+                      55,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      87,
+                      88,
+                      140,
+                      141,
+                      145,
+                      146,
+                      147,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 1,
+                        "max_omitted_gap": 5.805147445284053e-07
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -1.3342323670851794e-07
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 1.0941020488485793e-05,
+                    "support": [
+                      4,
+                      5,
+                      9,
+                      55,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      87,
+                      88,
+                      140,
+                      141,
+                      145,
+                      146,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 1,
+                        "max_omitted_gap": 3.183625881362406e-07
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -7.317488454049802e-08
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 6.000511412673113e-06,
+                    "support": [
+                      4,
+                      5,
+                      9,
+                      55,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      87,
+                      88,
+                      140,
+                      141,
+                      145,
+                      146,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 1,
+                        "max_omitted_gap": 1.7458742495799268e-07
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -4.013217838570523e-08
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 3.2909304256867818e-06,
+                    "support": [
+                      4,
+                      5,
+                      9,
+                      55,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      88,
+                      140,
+                      146,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 1,
+                        "max_omitted_gap": 9.573513614743219e-08
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -2.2010181906226936e-08
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 1.8048833377497577e-06,
+                    "support": [
+                      4,
+                      5,
+                      9,
+                      55,
+                      68,
+                      70,
+                      73,
+                      76,
+                      83,
+                      88,
+                      140,
+                      146,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 1,
+                        "max_omitted_gap": 5.248925616166949e-08
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -1.2071324148972992e-08
+                      }
+                    ]
+                  },
+                  {
+                    "lambda": 9.898732095519393e-07,
+                    "support": [
+                      4,
+                      5,
+                      9,
+                      55,
+                      68,
+                      70,
+                      73,
+                      83,
+                      88,
+                      140,
+                      146,
+                      149,
+                      152,
+                      162
+                    ],
+                    "history": [
+                      {
+                        "active": 37,
+                        "added": 1,
+                        "max_omitted_gap": 2.877141406401971e-08
+                      },
+                      {
+                        "active": 37,
+                        "added": 0,
+                        "max_omitted_gap": -6.620440591871575e-09
+                      }
+                    ]
+                  }
+                ],
+                "GML1_IRL1": {
+                  "outer": [
+                    {
+                      "iter": 0,
+                      "lambda": 0.0009898732095519394,
+                      "support": [
+                        2,
+                        3,
+                        5,
+                        55,
+                        68,
+                        70,
+                        76,
+                        88,
+                        130,
+                        144,
+                        146,
+                        148,
+                        149,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 20,
+                          "added": 8,
+                          "max_omitted_gap": 0.001989174084690685
+                        },
+                        {
+                          "active": 28,
+                          "added": 8,
+                          "max_omitted_gap": 0.0022213935308242807
+                        },
+                        {
+                          "active": 36,
+                          "added": 8,
+                          "max_omitted_gap": 0.003618682212009865
+                        },
+                        {
+                          "active": 40,
+                          "added": 4,
+                          "max_omitted_gap": 0.0007196430935536124
+                        },
+                        {
+                          "active": 40,
+                          "added": 0,
+                          "max_omitted_gap": -1.9045807205155885e-05
+                        }
+                      ]
+                    },
+                    {
+                      "iter": 1,
+                      "lambda": 0.0006365934370485562,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        88,
+                        144,
+                        146,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 4,
+                          "max_omitted_gap": 0.04549757836824592
+                        },
+                        {
+                          "active": 19,
+                          "added": 3,
+                          "max_omitted_gap": 0.02421534932722018
+                        },
+                        {
+                          "active": 19,
+                          "added": 0,
+                          "max_omitted_gap": -0.011996495287033672
+                        }
+                      ]
+                    },
+                    {
+                      "iter": 2,
+                      "lambda": 0.0007433110116353901,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 15,
+                          "added": 3,
+                          "max_omitted_gap": 0.04481566084465051
+                        },
+                        {
+                          "active": 17,
+                          "added": 2,
+                          "max_omitted_gap": 0.026910920412751387
+                        },
+                        {
+                          "active": 17,
+                          "added": 0,
+                          "max_omitted_gap": -0.021253151284671874
+                        }
+                      ]
+                    },
+                    {
+                      "iter": 3,
+                      "lambda": 0.0008221714236943358,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 14,
+                          "added": 2,
+                          "max_omitted_gap": 0.04445269750655243
+                        },
+                        {
+                          "active": 16,
+                          "added": 2,
+                          "max_omitted_gap": 0.029586550866488738
+                        },
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -82217.1137127029
+                        }
+                      ]
+                    }
+                  ],
+                  "path": [
+                    {
+                      "lambda": 0.900132095935337,
+                      "support": [],
+                      "history": [
+                        {
+                          "active": 12,
+                          "added": 0,
+                          "max_omitted_gap": -2.5102555034309937
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.4936699387646317,
+                      "support": [
+                        2
+                      ],
+                      "history": [
+                        {
+                          "active": 12,
+                          "added": 0,
+                          "max_omitted_gap": -1.3558496621358054
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.2707491595293394,
+                      "support": [
+                        2
+                      ],
+                      "history": [
+                        {
+                          "active": 12,
+                          "added": 0,
+                          "max_omitted_gap": -0.7227254089787796
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.14849011784935437,
+                      "support": [
+                        2
+                      ],
+                      "history": [
+                        {
+                          "active": 12,
+                          "added": 0,
+                          "max_omitted_gap": -0.3754936941029164
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.08143816637231625,
+                      "support": [
+                        2
+                      ],
+                      "history": [
+                        {
+                          "active": 12,
+                          "added": 0,
+                          "max_omitted_gap": -0.18505735682090507
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.04466408295812325,
+                      "support": [
+                        2
+                      ],
+                      "history": [
+                        {
+                          "active": 12,
+                          "added": 0,
+                          "max_omitted_gap": -0.08061413633238151
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.024495643693277554,
+                      "support": [
+                        2
+                      ],
+                      "history": [
+                        {
+                          "active": 12,
+                          "added": 0,
+                          "max_omitted_gap": -0.023333123361309584
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.013434431431416568,
+                      "support": [
+                        2,
+                        68
+                      ],
+                      "history": [
+                        {
+                          "active": 13,
+                          "added": 1,
+                          "max_omitted_gap": 0.0080821703422456
+                        },
+                        {
+                          "active": 13,
+                          "added": 0,
+                          "max_omitted_gap": -0.07311855714373837
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.007368001843322224,
+                      "support": [
+                        2,
+                        68
+                      ],
+                      "history": [
+                        {
+                          "active": 13,
+                          "added": 0,
+                          "max_omitted_gap": -0.029365406450863635
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.004040919144240664,
+                      "support": [
+                        2,
+                        68
+                      ],
+                      "history": [
+                        {
+                          "active": 13,
+                          "added": 0,
+                          "max_omitted_gap": -9.202910496603628e-05
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.0022162083937438248,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 15,
+                          "added": 2,
+                          "max_omitted_gap": 0.015962710490522575
+                        },
+                        {
+                          "active": 15,
+                          "added": 0,
+                          "max_omitted_gap": -0.07542039068191862
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.0012154610050787173,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 15,
+                          "added": 0,
+                          "max_omitted_gap": -0.03638288605282774
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.0006666094483882434,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 15,
+                          "added": 0,
+                          "max_omitted_gap": -0.013302798655399236
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.0003655963908539368,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 15,
+                          "added": 0,
+                          "max_omitted_gap": -0.0006447172653213339
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.00020050829061693507,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 1,
+                          "max_omitted_gap": 0.006297501874441885
+                        },
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -20050.80587815537
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 0.00010996709927092084,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -10996.694672171068
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 6.0310538206938404e-05,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -6031.042914156741
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 3.3076811545691284e-05,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -3307.6699195671895
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 1.8140701352642062e-05,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -1814.0584982315236
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 9.949116320089104e-06,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -994.8990950062378
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 5.45650984636528e-06,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -545.6379047624448
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 2.9925773049173335e-06,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -299.2443528843537
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 1.6412540576412179e-06,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -164.11186486739953
+                        }
+                      ]
+                    },
+                    {
+                      "lambda": 9.00132095935337e-07,
+                      "support": [
+                        2,
+                        68,
+                        70,
+                        144,
+                        162
+                      ],
+                      "history": [
+                        {
+                          "active": 16,
+                          "added": 0,
+                          "max_omitted_gap": -89.99957914213375
+                        }
+                      ]
+                    }
+                  ],
+                  "weights": [
+                    100000000.0,
+                    100000000.0,
+                    1.0996977155040244,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    3.4606153689732455,
+                    100000000.0,
+                    12.28584080995753,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    34.718374947303,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    5.800748563591337,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0,
+                    100000000.0
+                  ]
+                }
+              },
+              "true": {
+                "(u^2)_x": -3.0,
+                "u_xxx": -1.0
+              }
+            }
+          ],
+          "GML1": {
+            "exact_rate": 0.0,
+            "mean_extra": 11.0,
+            "mean_missed": 2.0,
+            "coef_rel_err_median": 1.0,
+            "mean_time_s": 0.20045140001457185,
+            "mean_criterion_calls": 20.0,
+            "supports": {
+              "u_x + (u^7)_xxxxx + (sin(3u))_x + (sin(3u))_xxx + (cos(u))_x + (x u)_x + (x^2 u)_xxx + (exp(-1u))_xx + (exp(-1u))_xxx + (exp(-2u))_xx + ((1+u^2)^(-1))_xxx": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.0,
+            "mean_extra": 5.0,
+            "mean_missed": 2.0,
+            "coef_rel_err_median": 1.0,
+            "mean_time_s": 0.03457510005682707,
+            "mean_criterion_calls": 5.0,
+            "supports": {
+              "u_x + (sin(3u))_x + (sin(3u))_xxx + (exp(-1u))_x + ((1+u^2)^(-1))_xxx": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "mean_extra": 2.0,
+            "mean_missed": 0.0,
+            "coef_rel_err_median": 0.40436466331815946,
+            "mean_time_s": 0.11585719999857247,
+            "mean_criterion_calls": 31.0,
+            "supports": {
+              "u_xxx + (u^2)_x + (u^3)_x + (cos(u))_x": 1
+            }
+          }
+        }
+      ]
+    }
+  },
+  "external_reference": {
+    "sga_compare_result.json": {
+      "python": "3.12.10",
+      "numpy": "2.2.5",
+      "noise": [
+        0.0,
+        0.01,
+        0.05
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "sga_params": {
+        "num": 20,
+        "depth": 4,
+        "width": 5,
+        "p_var": 0.5,
+        "p_mute": 0.3,
+        "p_cro": 0.5,
+        "p_rep": 1,
+        "gens": 100
+      },
+      "sga_source": "github.com/YuntianChen/SGA-PDE（2022-06 版本，代码未改）",
+      "judge": "SGA 选出的项按余弦相似度归到常见候选项（< 0.9 记为 other），集合等于真项才算选对",
+      "runs": {
+        "sga_burgers|0.0|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 2.6085662637134923e-06,
+              "time_s": 0.0024635000008856878,
+              "calls": 4
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 2.6085662637134923e-06,
+              "time_s": 0.0005631000003631925,
+              "calls": 2
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 2.6085662637134923e-06,
+              "time_s": 0.06665659999998752,
+              "calls": 423
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 2.6085662637134923e-06,
+              "time_s": 0.14236150000033376,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 24",
+          "sga_raw": {
+            "concise": "-1.0011(u * ux) + 0.1024(u d^2 x)",
+            "aic": -25.060595979940796,
+            "generations": 24,
+            "time_s": 1604.9199203999997,
+            "terms": [
+              {
+                "sga_term": "(u * ux)",
+                "maps_to": "u ux",
+                "cos": 1.0000000000000013,
+                "coef": -1.0010726245045585
+              },
+              {
+                "sga_term": "(u d^2 x)",
+                "maps_to": "uxx",
+                "cos": 0.9988822657851163,
+                "coef": 0.10708512247408414
+              }
+            ]
+          },
+          "sga": {
+            "exact": true,
+            "support": [
+              "u ux",
+              "uxx"
+            ],
+            "coef_rel_err": 0.007130292635639356,
+            "extra": 0,
+            "missed": 0
+          }
+        },
+        "sga_burgers|0.01|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.22475381244765194,
+              "time_s": 0.0013312999999470776,
+              "calls": 14
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0021190860243435576,
+              "time_s": 0.0017788999994081678,
+              "calls": 12
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0021190860243435576,
+              "time_s": 0.08086529999854974,
+              "calls": 433
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0021190860243435576,
+              "time_s": 0.14496700000017881,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 33",
+          "sga_raw": {
+            "concise": "0.0063(x * ((x d^2 x) - (u * x)))",
+            "aic": -7.005002547319416,
+            "generations": 33,
+            "time_s": 1743.8873583000004,
+            "terms": [
+              {
+                "sga_term": "(x * ((x d^2 x) - (u * x)))",
+                "maps_to": "other",
+                "cos": 0.8250539664662139,
+                "coef": 0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_burgers|0.01|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.22446265921326858,
+              "time_s": 0.0015038000001368346,
+              "calls": 15
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.002362948377845699,
+              "time_s": 0.0017668000000412576,
+              "calls": 12
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.002362948377845699,
+              "time_s": 0.07420950000050652,
+              "calls": 433
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.002362948377845699,
+              "time_s": 0.1516706999991584,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 28",
+          "sga_raw": {
+            "concise": "-0.0063((( ^3 x) / x) * u)",
+            "aic": -7.001743467178697,
+            "generations": 28,
+            "time_s": 1744.0292989999998,
+            "terms": [
+              {
+                "sga_term": "((( ^3 x) / x) * u)",
+                "maps_to": "other",
+                "cos": 0.8248858654222139,
+                "coef": -0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_burgers|0.01|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.22467861533151953,
+              "time_s": 0.0014169000005495036,
+              "calls": 16
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0017736443999794588,
+              "time_s": 0.001874199999292614,
+              "calls": 16
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0017736443999794588,
+              "time_s": 0.07867020000048797,
+              "calls": 446
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0017736443999794588,
+              "time_s": 0.15026939999916067,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 42",
+          "sga_raw": {
+            "concise": "-0.0064(u * ((ux + ux) + ( ^2 x)))",
+            "aic": -7.022408629678138,
+            "generations": 42,
+            "time_s": 1782.5918815000005,
+            "terms": [
+              {
+                "sga_term": "(u * ((ux + ux) + ( ^2 x)))",
+                "maps_to": "other",
+                "cos": 0.8227469650741878,
+                "coef": -0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_burgers|0.05|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.22473055502740308,
+              "time_s": 0.0016464000000269152,
+              "calls": 15
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.006715174201193184,
+              "time_s": 0.002494200000001001,
+              "calls": 13
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.006715174201193184,
+              "time_s": 0.07742899999902875,
+              "calls": 449
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.006715174201193184,
+              "time_s": 0.1456460999997944,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 31",
+          "sga_raw": {
+            "concise": "0.0056(u * ((u * x) - (x * x)))",
+            "aic": -1.4726544314168026,
+            "generations": 31,
+            "time_s": 1719.3629388999998,
+            "terms": [
+              {
+                "sga_term": "(u * ((u * x) - (x * x)))",
+                "maps_to": "other",
+                "cos": 0.8039864224306731,
+                "coef": 0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_burgers|0.05|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.22340138862015493,
+              "time_s": 0.0013088999985484406,
+              "calls": 14
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.017982233630300545,
+              "time_s": 0.0019434999994700775,
+              "calls": 15
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.017982233630300545,
+              "time_s": 0.06910570000036387,
+              "calls": 449
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.017982233630300545,
+              "time_s": 0.13655669999934616,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 47",
+          "sga_raw": {
+            "concise": "",
+            "aic": -1.475776505659177,
+            "generations": 47,
+            "time_s": 1737.2156656000006,
+            "terms": []
+          },
+          "sga": {
+            "exact": false,
+            "support": [],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "sga_burgers|0.05|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.224375251588915,
+              "time_s": 0.00119760000052338,
+              "calls": 13
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.012614137902396978,
+              "time_s": 0.0017642999991949182,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.012614137902396978,
+              "time_s": 0.09859590000087337,
+              "calls": 440
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.012614137902396978,
+              "time_s": 0.1409033999989333,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 31",
+          "sga_raw": {
+            "concise": "-0.0065(u * ((ux + ux) + ( ^2 x)))",
+            "aic": -1.470406078145348,
+            "generations": 31,
+            "time_s": 1686.3586394000013,
+            "terms": [
+              {
+                "sga_term": "(u * ((ux + ux) + ( ^2 x)))",
+                "maps_to": "other",
+                "cos": 0.8183610307787453,
+                "coef": -0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_kdv|0.0|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x",
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 2.8715188474026403e-06,
+              "time_s": 0.0011362000004737638,
+              "calls": 5
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 5.9212999343113444e-05,
+              "time_s": 0.0007088999991538003,
+              "calls": 3
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 5.9212999343113444e-05,
+              "time_s": 0.0725851999995939,
+              "calls": 440
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 5.9212999343113444e-05,
+              "time_s": 0.13866009999946982,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 94",
+          "sga_raw": {
+            "concise": "",
+            "aic": 3.472652883163068,
+            "generations": 94,
+            "time_s": 1764.3907978999996,
+            "terms": []
+          },
+          "sga": {
+            "exact": false,
+            "support": [],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "sga_kdv|0.01|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.0013299676924447266,
+              "time_s": 0.0016942000002018176,
+              "calls": 17
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0010750118932691159,
+              "time_s": 0.0019375000010768417,
+              "calls": 12
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0010750118932691159,
+              "time_s": 0.16519289999996545,
+              "calls": 444
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0010750118932691159,
+              "time_s": 0.307877199998984,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 27",
+          "sga_raw": {
+            "concise": "-0.3641(ux * x)",
+            "aic": 4.382307882845845,
+            "generations": 27,
+            "time_s": 1545.704347500001,
+            "terms": [
+              {
+                "sga_term": "(ux * x)",
+                "maps_to": "x ux",
+                "cos": 1.0000000000000049,
+                "coef": -0.3640748369576792
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "x ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_kdv|0.01|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.0042213675207682655,
+              "time_s": 0.0016735999997763429,
+              "calls": 14
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004968482445871615,
+              "time_s": 0.00232990000040445,
+              "calls": 15
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004968482445871615,
+              "time_s": 0.10902340000029653,
+              "calls": 421
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004968482445871615,
+              "time_s": 0.19872539999960281,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 41",
+          "sga_raw": {
+            "concise": "-0.3655(ux * x)",
+            "aic": 4.373560586022642,
+            "generations": 41,
+            "time_s": 1773.0164380999995,
+            "terms": [
+              {
+                "sga_term": "(ux * x)",
+                "maps_to": "x ux",
+                "cos": 1.000000000000004,
+                "coef": -0.36554176869180116
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "x ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_kdv|0.01|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.0013713412342623845,
+              "time_s": 0.0014592999996239087,
+              "calls": 14
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0006672794016559457,
+              "time_s": 0.001938499999596388,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0006672794016559457,
+              "time_s": 0.11315819999981613,
+              "calls": 422
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.0006672794016559457,
+              "time_s": 0.2191008999998303,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 33",
+          "sga_raw": {
+            "concise": "-0.3647(x * ux)",
+            "aic": 4.38432122065129,
+            "generations": 33,
+            "time_s": 1670.1301747999987,
+            "terms": [
+              {
+                "sga_term": "(x * ux)",
+                "maps_to": "x ux",
+                "cos": 0.9999999999999986,
+                "coef": -0.36465028999566734
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "x ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_kdv|0.05|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.05072053936138033,
+              "time_s": 0.003098199998930795,
+              "calls": 13
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.047157370231755986,
+              "time_s": 0.007062999999106978,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.047157370231755986,
+              "time_s": 0.09407400000054622,
+              "calls": 438
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.047157370231755986,
+              "time_s": 0.2180024000008416,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 27",
+          "sga_raw": {
+            "concise": "0.061((x + u) * (u - (ux + u)))",
+            "aic": 8.825976228255687,
+            "generations": 27,
+            "time_s": 1611.3993654999995,
+            "terms": [
+              {
+                "sga_term": "((x + u) * (u - (ux + u)))",
+                "maps_to": "u ux",
+                "cos": 0.902088700527772,
+                "coef": -0.06941993661050423
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 1
+          }
+        },
+        "sga_kdv|0.05|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.06458306911757782,
+              "time_s": 0.002195300001403666,
+              "calls": 17
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.06540898270386744,
+              "time_s": 0.004844400000365567,
+              "calls": 15
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.06540898270386744,
+              "time_s": 0.10091209999882267,
+              "calls": 435
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.06540898270386744,
+              "time_s": 0.22542630000134523,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 48",
+          "sga_raw": {
+            "concise": "-0.1205((u * x) * (ux * u))",
+            "aic": 8.821917217162959,
+            "generations": 48,
+            "time_s": 1680.2692671999994,
+            "terms": [
+              {
+                "sga_term": "((u * x) * (ux * u))",
+                "maps_to": "other",
+                "cos": 0.899770994666128,
+                "coef": -0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_kdv|0.05|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.03867882479268914,
+              "time_s": 0.0033963000005314825,
+              "calls": 13
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.039346145388338034,
+              "time_s": 0.006069200000638375,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.039346145388338034,
+              "time_s": 0.10703629999989062,
+              "calls": 431
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.039346145388338034,
+              "time_s": 0.16881829999874753,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 32",
+          "sga_raw": {
+            "concise": "-0.06(ux * (x + u))",
+            "aic": 8.8367234702547,
+            "generations": 32,
+            "time_s": 1667.5123127000006,
+            "terms": [
+              {
+                "sga_term": "(ux * (x + u))",
+                "maps_to": "u ux",
+                "cos": 0.9015574113317955,
+                "coef": -0.06808863888588255
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 1
+          }
+        },
+        "sga_chafee_infante|0.0|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx",
+                "(u^3)_xx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 7.235763774960128e-05,
+              "time_s": 0.002060400000118534,
+              "calls": 12
+            },
+            "IRL1": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00018896706939134844,
+              "time_s": 0.00134520000028715,
+              "calls": 5
+            },
+            "GA": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00018896706939134844,
+              "time_s": 0.08669130000089353,
+              "calls": 456
+            },
+            "Exhaustive": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00018896706939134844,
+              "time_s": 0.16334610000012617,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 53",
+          "sga_raw": {
+            "concise": "-1.0008u + 1.0002(u d^2 x) + 1.0004( ^3 u)",
+            "aic": -11.804011776646167,
+            "generations": 53,
+            "time_s": 1753.1523099999995,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000009,
+                "coef": -1.0007631437708153
+              },
+              {
+                "sga_term": "(u d^2 x)",
+                "maps_to": "uxx",
+                "cos": 0.9999998018773106,
+                "coef": 1.0004563311978851
+              },
+              {
+                "sga_term": "( ^3 u)",
+                "maps_to": "u^3",
+                "cos": 1.000000000000002,
+                "coef": 1.0004003506798873
+              }
+            ]
+          },
+          "sga": {
+            "exact": true,
+            "support": [
+              "u",
+              "uxx",
+              "u^3"
+            ],
+            "coef_rel_err": 0.0005630000722272703,
+            "extra": 0,
+            "missed": 0
+          }
+        },
+        "sga_chafee_infante|0.01|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "u^3",
+                "u_x",
+                "u_xx",
+                "u_xxx"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 0,
+              "coef_rel_err": 0.029829268173218296,
+              "time_s": 0.0018572000008134637,
+              "calls": 17
+            },
+            "IRL1": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.020626965596843128,
+              "time_s": 0.0025069999992410885,
+              "calls": 15
+            },
+            "GA": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.020626965596843128,
+              "time_s": 0.09357049999925948,
+              "calls": 461
+            },
+            "Exhaustive": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.020626965596843128,
+              "time_s": 0.156944399999702,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 46",
+          "sga_raw": {
+            "concise": "0.087( ^3 (x * u))",
+            "aic": 7.9929323508994345,
+            "generations": 46,
+            "time_s": 1651.2735756000002,
+            "terms": [
+              {
+                "sga_term": "( ^3 (x * u))",
+                "maps_to": "u^3",
+                "cos": 0.9383577739425133,
+                "coef": 0.5073076773476178
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u^3"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "sga_chafee_infante|0.01|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "u^3",
+                "u_x",
+                "u_xx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.02681151910906255,
+              "time_s": 0.0023373999993054895,
+              "calls": 18
+            },
+            "IRL1": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.022227282361848094,
+              "time_s": 0.003143199999612989,
+              "calls": 20
+            },
+            "GA": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.022227282361848094,
+              "time_s": 0.08607599999959348,
+              "calls": 462
+            },
+            "Exhaustive": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.022227282361848094,
+              "time_s": 0.16960889999973006,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 45",
+          "sga_raw": {
+            "concise": "2.7882u",
+            "aic": 8.836978112052698,
+            "generations": 45,
+            "time_s": 1704.019333100001,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000033,
+                "coef": 2.7881659050730336
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "sga_chafee_infante|0.01|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "u^3",
+                "(u^3)_x",
+                "u_xx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 0.04146859305447995,
+              "time_s": 0.003009300000485382,
+              "calls": 31
+            },
+            "IRL1": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.038926435660826215,
+              "time_s": 0.004154000000198721,
+              "calls": 19
+            },
+            "GA": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.038926435660826215,
+              "time_s": 0.07751979999920877,
+              "calls": 485
+            },
+            "Exhaustive": {
+              "support": [
+                "u",
+                "u^3",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.038926435660826215,
+              "time_s": 0.15447020000101475,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 67",
+          "sga_raw": {
+            "concise": "0.0866( ^3 (u * x))",
+            "aic": 8.011598260221037,
+            "generations": 67,
+            "time_s": 1764.9373113000001,
+            "terms": [
+              {
+                "sga_term": "( ^3 (u * x))",
+                "maps_to": "u^3",
+                "cos": 0.9383218396725269,
+                "coef": 0.5049017231813394
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u^3"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "sga_chafee_infante|0.05|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u^3"
+              ],
+              "exact": false,
+              "extra": 0,
+              "missed": 2,
+              "coef_rel_err": 0.8793771960883073,
+              "time_s": 0.003567300000213436,
+              "calls": 22
+            },
+            "IRL1": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.840965705112163,
+              "time_s": 0.0030946000006224494,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "u^3",
+                "u_xx"
+              ],
+              "exact": false,
+              "extra": 0,
+              "missed": 1,
+              "coef_rel_err": 0.6758587405880514,
+              "time_s": 0.08319630000005418,
+              "calls": 419
+            },
+            "Exhaustive": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.840965705112163,
+              "time_s": 0.14917760000025737,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 73",
+          "sga_raw": {
+            "concise": "2.8036u",
+            "aic": 13.168258497289301,
+            "generations": 73,
+            "time_s": 1648.941685599999,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 0.9999999999999982,
+                "coef": 2.8036433009494957
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "sga_chafee_infante|0.05|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u^3"
+              ],
+              "exact": false,
+              "extra": 0,
+              "missed": 2,
+              "coef_rel_err": 0.8800694378876488,
+              "time_s": 0.002892099999371567,
+              "calls": 22
+            },
+            "IRL1": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.8487723480833969,
+              "time_s": 0.002846200000931276,
+              "calls": 16
+            },
+            "GA": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.8487723480833969,
+              "time_s": 0.0861616000001959,
+              "calls": 526
+            },
+            "Exhaustive": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.8487723480833969,
+              "time_s": 0.23229039999932866,
+              "calls": 4096
+            }
+          },
+          "sga_status": "ok",
+          "sga_raw": {
+            "concise": "2.7615u",
+            "aic": 13.153303964485108,
+            "generations": 100,
+            "time_s": 334.55304760000035,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000002,
+                "coef": 2.761521254246729
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "sga_chafee_infante|0.05|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u^3"
+              ],
+              "exact": false,
+              "extra": 0,
+              "missed": 2,
+              "coef_rel_err": 0.8801858425325368,
+              "time_s": 0.002457799999319832,
+              "calls": 20
+            },
+            "IRL1": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.8459046280020943,
+              "time_s": 0.0035492000006343005,
+              "calls": 18
+            },
+            "GA": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.8459046280020943,
+              "time_s": 0.07779650000156835,
+              "calls": 416
+            },
+            "Exhaustive": {
+              "support": [
+                "u^2",
+                "u^3",
+                "u_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 2,
+              "coef_rel_err": 0.8459046280020943,
+              "time_s": 0.1700142000008782,
+              "calls": 4096
+            }
+          },
+          "sga_status": "ok",
+          "sga_raw": {
+            "concise": "2.7755u",
+            "aic": 13.19410628992018,
+            "generations": 100,
+            "time_s": 300.6839423000001,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000029,
+                "coef": 2.775458111110886
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "ours_burgers|0.0|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u",
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "coef_rel_err": 4.0933947599238595e-05,
+              "time_s": 0.0016196000015042955,
+              "calls": 15
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00025649023096317925,
+              "time_s": 0.0008455999995931052,
+              "calls": 4
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00025649023096317925,
+              "time_s": 0.0944699000010587,
+              "calls": 442
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00025649023096317925,
+              "time_s": 0.17218680000041786,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 44",
+          "sga_raw": {
+            "concise": "-1.0006((ux - (x d^2 x)) * u) + 0.101((u / (x d x)) d^2 x)",
+            "aic": -16.189703408467118,
+            "generations": 44,
+            "time_s": 1585.1394894999994,
+            "terms": [
+              {
+                "sga_term": "((ux - (x d^2 x)) * u)",
+                "maps_to": "u ux",
+                "cos": 0.999999999999997,
+                "coef": -1.0005894227264875
+              },
+              {
+                "sga_term": "((u / (x d x)) d^2 x)",
+                "maps_to": "uxx",
+                "cos": 0.9998826894536593,
+                "coef": 0.1024528914984281
+              }
+            ]
+          },
+          "sga": {
+            "exact": true,
+            "support": [
+              "u ux",
+              "uxx"
+            ],
+            "coef_rel_err": 0.002510196208172889,
+            "extra": 0,
+            "missed": 0
+          }
+        },
+        "ours_burgers|0.01|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.5380582451192192,
+              "time_s": 0.0018430000000080327,
+              "calls": 18
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.005328716542436919,
+              "time_s": 0.002761800000371295,
+              "calls": 15
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.005328716542436919,
+              "time_s": 0.0797536999998556,
+              "calls": 438
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.005328716542436919,
+              "time_s": 0.15845730000000913,
+              "calls": 4096
+            }
+          },
+          "sga_status": "ok",
+          "sga_raw": {
+            "concise": "-0.342((( ^2 u) + u) d x)",
+            "aic": 2.7160141440556766,
+            "generations": 100,
+            "time_s": 318.16468689999965,
+            "terms": [
+              {
+                "sga_term": "((( ^2 u) + u) d x)",
+                "maps_to": "u ux",
+                "cos": 0.9956132181152879,
+                "coef": -0.8597376898739854
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 1
+          }
+        },
+        "ours_burgers|0.01|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.5373718399592033,
+              "time_s": 0.001923099998748512,
+              "calls": 19
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.001578515445586159,
+              "time_s": 0.0019731000011233846,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.001578515445586159,
+              "time_s": 0.08006899999963935,
+              "calls": 444
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.001578515445586159,
+              "time_s": 0.22915040000043518,
+              "calls": 4096
+            }
+          },
+          "sga_status": "ok",
+          "sga_raw": {
+            "concise": "-0.4256(( ^2 u) d x)",
+            "aic": 2.98002551251616,
+            "generations": 100,
+            "time_s": 493.32473279999977,
+            "terms": [
+              {
+                "sga_term": "(( ^2 u) d x)",
+                "maps_to": "u ux",
+                "cos": 0.9999522963971444,
+                "coef": -0.8502736315667372
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 1
+          }
+        },
+        "ours_burgers|0.01|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.5441683216275859,
+              "time_s": 0.001735900001222035,
+              "calls": 16
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00045825102639328964,
+              "time_s": 0.002670199999556644,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00045825102639328964,
+              "time_s": 0.08532910000030824,
+              "calls": 468
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.00045825102639328964,
+              "time_s": 0.1512256999994861,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 79",
+          "sga_raw": {
+            "concise": "-0.4274(( ^2 u) d x)",
+            "aic": 3.009629319915205,
+            "generations": 79,
+            "time_s": 1749.4401381000007,
+            "terms": [
+              {
+                "sga_term": "(( ^2 u) d x)",
+                "maps_to": "u ux",
+                "cos": 0.9999489399264342,
+                "coef": -0.8540282152000608
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 1
+          }
+        },
+        "ours_burgers|0.05|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.5459439282539296,
+              "time_s": 0.002082900000459631,
+              "calls": 20
+            },
+            "IRL1": {
+              "support": [
+                "u_x",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.5459439282539296,
+              "time_s": 0.0035874000004696427,
+              "calls": 19
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.7586653408828704,
+              "time_s": 0.07306389999939711,
+              "calls": 470
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.7586653408828704,
+              "time_s": 0.1403454999999667,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 93",
+          "sga_raw": {
+            "concise": "0.0731( ^2 (ux - u))",
+            "aic": 8.18475028556534,
+            "generations": 93,
+            "time_s": 1731.5260113999993,
+            "terms": [
+              {
+                "sga_term": "( ^2 (ux - u))",
+                "maps_to": "other",
+                "cos": 0.8911780448371361,
+                "coef": 0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "ours_burgers|0.05|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.5430627182945137,
+              "time_s": 0.001702899999145302,
+              "calls": 17
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.7905694953941729,
+              "time_s": 0.0023603000008733943,
+              "calls": 16
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.7905694953941729,
+              "time_s": 0.07461370000055467,
+              "calls": 489
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.7905694953941729,
+              "time_s": 0.14920750000055705,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 80",
+          "sga_raw": {
+            "concise": "",
+            "aic": 8.304465128434012,
+            "generations": 80,
+            "time_s": 1769.9682101999988,
+            "terms": []
+          },
+          "sga": {
+            "exact": false,
+            "support": [],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "ours_burgers|0.05|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x",
+                "(u^2)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.5741621939252679,
+              "time_s": 0.001934800000526593,
+              "calls": 21
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "(u^2)_xx"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.20765998505883498,
+              "time_s": 0.002562400000897469,
+              "calls": 17
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.7946586127603177,
+              "time_s": 0.07809119999910763,
+              "calls": 468
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "coef_rel_err": 0.7946586127603177,
+              "time_s": 0.16584159999911208,
+              "calls": 4096
+            }
+          },
+          "sga_status": "ok",
+          "sga_raw": {
+            "concise": "0.0655( ^2 ((u * x) - (ux - u)))",
+            "aic": 8.150417672398442,
+            "generations": 100,
+            "time_s": 910.1561595999992,
+            "terms": [
+              {
+                "sga_term": "( ^2 ((u * x) - (ux - u)))",
+                "maps_to": "other",
+                "cos": 0.8454913086877835,
+                "coef": 0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "ours_kdv|0.0|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.0015611999988323078,
+              "calls": 9
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004335762278677722,
+              "time_s": 0.0009377999995194841,
+              "calls": 5
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004335762278677722,
+              "time_s": 0.06903710000005958,
+              "calls": 517
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004335762278677722,
+              "time_s": 0.14962919999925361,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 30",
+          "sga_raw": {
+            "concise": "-39422914739.9826(((ux * x) * 0) / x)",
+            "aic": -3.8567690789434055,
+            "generations": 30,
+            "time_s": 1652.7305757000013,
+            "terms": [
+              {
+                "sga_term": "(((ux * x) * 0) / x)",
+                "maps_to": "ux",
+                "cos": 0.9997330941096725,
+                "coef": -3.9401873132871965
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "ours_kdv|0.01|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.002058500000202912,
+              "calls": 17
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.007402900886759842,
+              "time_s": 0.002185900000768015,
+              "calls": 13
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.007402900886759842,
+              "time_s": 0.08710439999958908,
+              "calls": 523
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.007402900886759842,
+              "time_s": 0.14034600000013597,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 36",
+          "sga_raw": {
+            "concise": "-39214381180.1888((u * 0) d x)",
+            "aic": -1.3191733529326402,
+            "generations": 36,
+            "time_s": 1779.6981714000012,
+            "terms": [
+              {
+                "sga_term": "((u * 0) d x)",
+                "maps_to": "ux",
+                "cos": 1.0000000000000004,
+                "coef": -3.921438118018884
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "ours_kdv|0.01|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.0016672000001562992,
+              "calls": 18
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.007666168426436826,
+              "time_s": 0.002490099999704398,
+              "calls": 17
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.007666168426436826,
+              "time_s": 0.07283680000000459,
+              "calls": 519
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.007666168426436826,
+              "time_s": 0.16038920000028156,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 47",
+          "sga_raw": {
+            "concise": "-3.913((ux * (0 + x)) / x)",
+            "aic": -1.3095542217208962,
+            "generations": 47,
+            "time_s": 1745.9825784999994,
+            "terms": [
+              {
+                "sga_term": "((ux * (0 + x)) / x)",
+                "maps_to": "ux",
+                "cos": 1.0000000000000033,
+                "coef": -3.9130133303191443
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "ours_kdv|0.01|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.0013606999982584966,
+              "calls": 14
+            },
+            "IRL1": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004621210477875863,
+              "time_s": 0.0019606999994721264,
+              "calls": 15
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004621210477875863,
+              "time_s": 0.07433690000107163,
+              "calls": 528
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.004621210477875863,
+              "time_s": 0.14449559999957273,
+              "calls": 4096
+            }
+          },
+          "sga_status": "ok",
+          "sga_raw": {
+            "concise": "3.9182(x / ((0 * u) - (x / ux)))",
+            "aic": -1.3446825070849302,
+            "generations": 100,
+            "time_s": 1111.1286923000007,
+            "terms": [
+              {
+                "sga_term": "(x / ((0 * u) - (x / ux)))",
+                "maps_to": "ux",
+                "cos": 0.9997175804081951,
+                "coef": -3.9159759043684095
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "ours_kdv|0.05|0": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.001877899998362409,
+              "calls": 17
+            },
+            "IRL1": {
+              "support": [
+                "u_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.002294100000653998,
+              "calls": 17
+            },
+            "GA": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.07622209999863117,
+              "calls": 418
+            },
+            "Exhaustive": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.14269860000058543,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 32",
+          "sga_raw": {
+            "concise": "",
+            "aic": 4.444408488045846,
+            "generations": 32,
+            "time_s": 1747.1997845000005,
+            "terms": []
+          },
+          "sga": {
+            "exact": false,
+            "support": [],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        },
+        "ours_kdv|0.05|1": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.001789299998563365,
+              "calls": 16
+            },
+            "IRL1": {
+              "support": [
+                "u_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.002308999999513617,
+              "calls": 14
+            },
+            "GA": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.04011150959443728,
+              "time_s": 0.07059729999855335,
+              "calls": 494
+            },
+            "Exhaustive": {
+              "support": [
+                "(u^2)_x",
+                "u_xxx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "coef_rel_err": 0.04011150959443728,
+              "time_s": 0.13927950000106648,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 70",
+          "sga_raw": {
+            "concise": "-3.4066((u - (ux * 0)) d x)",
+            "aic": 4.465962858120724,
+            "generations": 70,
+            "time_s": 1758.5611876999992,
+            "terms": [
+              {
+                "sga_term": "((u - (ux * 0)) d x)",
+                "maps_to": "ux",
+                "cos": 0.9999999999999974,
+                "coef": -3.406640489771197
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "ux"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "ours_kdv|0.05|2": {
+          "ours": {
+            "L1": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.0017900999991979916,
+              "calls": 16
+            },
+            "IRL1": {
+              "support": [
+                "u_x",
+                "(u^3)_x"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.002541899999414454,
+              "calls": 15
+            },
+            "GA": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.08300989999952435,
+              "calls": 419
+            },
+            "Exhaustive": {
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "coef_rel_err": 1.0,
+              "time_s": 0.16513780000059342,
+              "calls": 4096
+            }
+          },
+          "sga_status": "timeout at generation 74",
+          "sga_raw": {
+            "concise": "",
+            "aic": 4.425608059755577,
+            "generations": 74,
+            "time_s": 1766.3215032999997,
+            "terms": []
+          },
+          "sga": {
+            "exact": false,
+            "support": [],
+            "coef_rel_err": null,
+            "extra": 0,
+            "missed": 2
+          }
+        }
+      }
+    },
+    "sga_compare_extra_result.json": {
+      "python": "3.12.10",
+      "numpy": "2.2.5",
+      "noise": [
+        0.0,
+        0.01,
+        0.05
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "sga_params": {
+        "num": 20,
+        "depth": 4,
+        "width": 5,
+        "p_var": 0.5,
+        "p_mute": 0.3,
+        "p_cro": 0.5,
+        "p_rep": 1,
+        "gens": 100
+      },
+      "sga_timeout_s": 1800,
+      "half_width": [
+        10,
+        20
+      ],
+      "libraries": {
+        "base": [
+          "1",
+          "u",
+          "u^2",
+          "u^3",
+          "u_x",
+          "(u^2)_x",
+          "(u^3)_x",
+          "u_xx",
+          "(u^2)_xx",
+          "(u^3)_xx",
+          "u_xxx",
+          "(u^2)_xxx",
+          "(u^3)_xxx"
+        ],
+        "extended": [
+          "1",
+          "u",
+          "u^2",
+          "u^3",
+          "u_x",
+          "(u^2)_x",
+          "(u^3)_x",
+          "u_xx",
+          "(u^2)_xx",
+          "(u^3)_xx",
+          "u_xxx",
+          "(u^2)_xxx",
+          "(u^3)_xxx",
+          "x u",
+          "u/x",
+          "x u_x",
+          "u_x/x"
+        ]
+      },
+      "truth": {
+        "sga_compound": {
+          "weak": {
+            "(u^2)_xx": 0.5
+          },
+          "strong": [
+            {
+              "(u ux)_x": 1.0
+            },
+            {
+              "u uxx": 1.0,
+              "ux^2": 1.0
+            }
+          ]
+        },
+        "sga_divide": {
+          "weak": {
+            "u_x/x": -1.0,
+            "u_xx": 0.25
+          },
+          "strong": [
+            {
+              "ux/x": -1.0,
+              "uxx": 0.25
+            }
+          ]
+        }
+      },
+      "runs": {
+        "sga_compound|0.0|0": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.0016898000030778348,
+                "calls": 15
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.0007377000001724809,
+                "calls": 4
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.07764169999427395,
+                "calls": 431
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.15805120000004536,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.004854600003454834,
+                "calls": 35
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.0008479000025545247,
+                "calls": 4
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.08948230000532931,
+                "calls": 580
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0011101752990729796,
+                "time_s": 0.881511399995361,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 73",
+          "sga_raw": {
+            "concise": "0.4691(( ^2 u) d^2 x) + -0.0848( ^2 ux)",
+            "aic": -0.12570743593992884,
+            "generations": 73,
+            "time_s": 1734.4335597999961,
+            "terms": [
+              {
+                "sga_term": "(( ^2 u) d^2 x)",
+                "maps_to": "other",
+                "cos": 0.7632130824125187,
+                "coef": 0.0
+              },
+              {
+                "sga_term": "( ^2 ux)",
+                "maps_to": "ux^2",
+                "cos": 1.0000000000000002,
+                "coef": -0.08478121150299753
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "other",
+              "ux^2"
+            ],
+            "coef_rel_err": null,
+            "extra": 2,
+            "missed": 1
+          }
+        },
+        "sga_compound|0.01|0": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.0019296000027679838,
+                "calls": 19
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.002043300002696924,
+                "calls": 13
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.09254950000467943,
+                "calls": 430
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.15695009999762988,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.00419770000007702,
+                "calls": 34
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.002455100002407562,
+                "calls": 14
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.12125789999845438,
+                "calls": 605
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.005886208061935516,
+                "time_s": 0.9367425000018557,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 56",
+          "sga_raw": {
+            "concise": "-2.1522( ^2 (u * (x + 0)))",
+            "aic": 2.2487253515719194,
+            "generations": 56,
+            "time_s": 1720.3039827999964,
+            "terms": [
+              {
+                "sga_term": "( ^2 (u * (x + 0)))",
+                "maps_to": "u^2",
+                "cos": 0.9746162297906296,
+                "coef": -4.907890888545707
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u^2"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 1
+          }
+        },
+        "sga_compound|0.01|1": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.005378699999710079,
+                "calls": 17
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.004821099995751865,
+                "calls": 11
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.11826830000063637,
+                "calls": 424
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.17625650000263704,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.003997700005129445,
+                "calls": 27
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.005503699998371303,
+                "calls": 12
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.10894910000206437,
+                "calls": 617
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008753489639742984,
+                "time_s": 0.9739284999959636,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 56",
+          "sga_raw": {
+            "concise": "-2.1542( ^2 ((0 + u) * x))",
+            "aic": 2.268084320465748,
+            "generations": 56,
+            "time_s": 1721.9209913000013,
+            "terms": [
+              {
+                "sga_term": "( ^2 ((0 + u) * x))",
+                "maps_to": "u^2",
+                "cos": 0.9746158772589394,
+                "coef": -4.912404194239907
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u^2"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 1
+          }
+        },
+        "sga_compound|0.01|2": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 0.0019256000014138408,
+                "calls": 18
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 0.001618199996300973,
+                "calls": 12
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 0.08628860000317218,
+                "calls": 422
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 0.19979590000002645,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 0.003015000002051238,
+                "calls": 30
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 0.0018820000041159801,
+                "calls": 12
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 0.09997469999507302,
+                "calls": 604
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_xx"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.009957860620103842,
+                "time_s": 1.1200688000026275,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 55",
+          "sga_raw": {
+            "concise": "-2.1536( ^2 (x * u))",
+            "aic": 2.2299604503911166,
+            "generations": 55,
+            "time_s": 1665.926889800001,
+            "terms": [
+              {
+                "sga_term": "( ^2 (x * u))",
+                "maps_to": "u^2",
+                "cos": 0.9746177962715082,
+                "coef": -4.910905109923494
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u^2"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 1
+          }
+        },
+        "sga_compound|0.05|0": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0032374000002164394,
+                "calls": 24
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "u^3"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.002158800001780037,
+                "calls": 13
+              },
+              "GA": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.08482209999783663,
+                "calls": 451
+              },
+              "Exhaustive": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.18806819999736035,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0062933999943197705,
+                "calls": 35
+              },
+              "IRL1": {
+                "support": [
+                  "u^3",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.00628129999677185,
+                "calls": 14
+              },
+              "GA": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.08621430000494001,
+                "calls": 571
+              },
+              "Exhaustive": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.9769060999969952,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 52",
+          "sga_raw": {
+            "concise": "-2.6088u",
+            "aic": 6.891816686202695,
+            "generations": 52,
+            "time_s": 1715.4234140000044,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 0.9999999999999981,
+                "coef": -2.6088237797528646
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 1
+          }
+        },
+        "sga_compound|0.05|1": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0019893999997293577,
+                "calls": 21
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "u^3"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.002659400000993628,
+                "calls": 16
+              },
+              "GA": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.13886449999699835,
+                "calls": 450
+              },
+              "Exhaustive": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.25327730000572046,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.00743499999953201,
+                "calls": 29
+              },
+              "IRL1": {
+                "support": [
+                  "u^3",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.00839059999998426,
+                "calls": 16
+              },
+              "GA": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.20046320000255946,
+                "calls": 592
+              },
+              "Exhaustive": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 1.2758032000056119,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 46",
+          "sga_raw": {
+            "concise": "-2.6102u",
+            "aic": 6.917957352157274,
+            "generations": 46,
+            "time_s": 1630.4675070000012,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000022,
+                "coef": -2.6101573888210483
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 1
+          }
+        },
+        "sga_compound|0.05|2": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.001850299995567184,
+                "calls": 20
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "u^3"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.001995600003283471,
+                "calls": 13
+              },
+              "GA": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.08188979999977164,
+                "calls": 435
+              },
+              "Exhaustive": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.22708179999608546,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0036517000044113956,
+                "calls": 33
+              },
+              "IRL1": {
+                "support": [
+                  "u^3",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0032872000010684133,
+                "calls": 16
+              },
+              "GA": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.1426839000050677,
+                "calls": 576
+              },
+              "Exhaustive": {
+                "support": [
+                  "u^2"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 1,
+                "coef_rel_err": 1.0,
+                "time_s": 0.8930404000057024,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 52",
+          "sga_raw": {
+            "concise": "-2.6112u",
+            "aic": 6.868175643781148,
+            "generations": 52,
+            "time_s": 1631.4511086999992,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000007,
+                "coef": -2.611194157949654
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 1
+          }
+        },
+        "sga_divide|0.0|0": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u",
+                  "u_xxx"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.4015606668756395,
+                  "u_xxx": 0.025158937832530887
+                },
+                "time_s": 0.0023013999962131493,
+                "calls": 25
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "(u^3)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9405890740988547,
+                  "(u^3)_x": -0.4011256448845078
+                },
+                "time_s": 0.002598700004455168,
+                "calls": 13
+              },
+              "GA": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9142449963422936,
+                  "(u^2)_x": -0.3375438838277915
+                },
+                "time_s": 0.07638089999818476,
+                "calls": 440
+              },
+              "Exhaustive": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9142449963422936,
+                  "(u^2)_x": -0.3375438838277915
+                },
+                "time_s": 0.1538981000048807,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 1,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0019893999997293577,
+                "calls": 20
+              },
+              "IRL1": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0003166672881468232,
+                "time_s": 0.000785700001870282,
+                "calls": 5
+              },
+              "GA": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0003166672881468232,
+                "time_s": 0.08213109999633161,
+                "calls": 618
+              },
+              "Exhaustive": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0003166672881468232,
+                "time_s": 0.8683515000011539,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "ok",
+          "sga_raw": {
+            "concise": "-2.8603u + -0.294(( ^2 ux) * ((u / x) * ux))",
+            "aic": -4.144091076215041,
+            "generations": 100,
+            "time_s": 180.01039899999887,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000027,
+                "coef": -2.8603452970739376
+              },
+              {
+                "sga_term": "(( ^2 ux) * ((u / x) * ux))",
+                "maps_to": "other",
+                "cos": 0.8365514864199501,
+                "coef": -0.0
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u",
+              "other"
+            ],
+            "coef_rel_err": null,
+            "extra": 2,
+            "missed": 2
+          }
+        },
+        "sga_divide|0.01|0": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.961250629759779
+                },
+                "time_s": 0.001693699996394571,
+                "calls": 17
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "(u^3)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9390200250971827,
+                  "(u^3)_x": -0.40224946816460994
+                },
+                "time_s": 0.002020799998717848,
+                "calls": 13
+              },
+              "GA": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.912889601605124,
+                  "(u^2)_x": -0.33832801341340485
+                },
+                "time_s": 0.08441229999880306,
+                "calls": 452
+              },
+              "Exhaustive": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.912889601605124,
+                  "(u^2)_x": -0.33832801341340485
+                },
+                "time_s": 0.163723999998183,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^3)_x",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0027835000000777654,
+                "calls": 26
+              },
+              "IRL1": {
+                "support": [
+                  "(u^3)_x",
+                  "x u",
+                  "u_x/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 0.7530907927487263,
+                "time_s": 0.0025492999993730336,
+                "calls": 16
+              },
+              "GA": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0061794089295505875,
+                "time_s": 0.1015075999966939,
+                "calls": 645
+              },
+              "Exhaustive": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.0061794089295505875,
+                "time_s": 1.2941651000001002,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 56",
+          "sga_raw": {
+            "concise": "-2.8829u",
+            "aic": -0.7010640756604425,
+            "generations": 56,
+            "time_s": 1756.253439299995,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.000000000000002,
+                "coef": -2.8828714700202527
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_divide|0.01|1": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.91726493561992,
+                  "(u^2)_x": -0.33648661950976805
+                },
+                "time_s": 0.0015994999994290993,
+                "calls": 17
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "(u^3)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9434524525324055,
+                  "(u^3)_x": -0.39961887404709906
+                },
+                "time_s": 0.0018344999989494681,
+                "calls": 12
+              },
+              "GA": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.91726493561992,
+                  "(u^2)_x": -0.33648661950976805
+                },
+                "time_s": 0.08311810000304831,
+                "calls": 458
+              },
+              "Exhaustive": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.91726493561992,
+                  "(u^2)_x": -0.33648661950976805
+                },
+                "time_s": 0.3082907999996678,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^3)_x",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0031579999995301478,
+                "calls": 28
+              },
+              "IRL1": {
+                "support": [
+                  "(u^3)_x",
+                  "x u",
+                  "u_x/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 0.753150572951345,
+                "time_s": 0.0035433000011835247,
+                "calls": 14
+              },
+              "GA": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008699634488802219,
+                "time_s": 0.1174507999967318,
+                "calls": 670
+              },
+              "Exhaustive": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.008699634488802219,
+                "time_s": 1.0029914000042481,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 67",
+          "sga_raw": {
+            "concise": "-2.8827u",
+            "aic": -0.7142965292637187,
+            "generations": 67,
+            "time_s": 1753.1777195999966,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 0.9999999999999979,
+                "coef": -2.882664029431637
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_divide|0.01|2": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.914869310394691,
+                  "(u^2)_x": -0.3370119069961155
+                },
+                "time_s": 0.001914300002681557,
+                "calls": 19
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "(u^3)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.941103487868429,
+                  "(u^3)_x": -0.400461973086513
+                },
+                "time_s": 0.0021350999959395267,
+                "calls": 14
+              },
+              "GA": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.914869310394691,
+                  "(u^2)_x": -0.3370119069961155
+                },
+                "time_s": 0.07264460000442341,
+                "calls": 450
+              },
+              "Exhaustive": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.914869310394691,
+                  "(u^2)_x": -0.3370119069961155
+                },
+                "time_s": 0.1594394999992801,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^3)_x",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0024469999989378266,
+                "calls": 24
+              },
+              "IRL1": {
+                "support": [
+                  "(u^3)_x",
+                  "x u",
+                  "u_x/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 0.7554002092329837,
+                "time_s": 0.0028707000019494444,
+                "calls": 17
+              },
+              "GA": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.013363027048736964,
+                "time_s": 0.09640609999769367,
+                "calls": 654
+              },
+              "Exhaustive": {
+                "support": [
+                  "u_xx",
+                  "u_x/x"
+                ],
+                "exact": true,
+                "extra": 0,
+                "missed": 0,
+                "coef_rel_err": 0.013363027048736964,
+                "time_s": 1.1060174999947776,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 91",
+          "sga_raw": {
+            "concise": "-2.8839u",
+            "aic": -0.7251599466810097,
+            "generations": 91,
+            "time_s": 1773.525406199995,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 0.9999999999999996,
+                "coef": -2.883947731331998
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_divide|0.05|0": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.907449629388355,
+                  "(u^2)_x": -0.3413395684180228
+                },
+                "time_s": 0.004388100001960993,
+                "calls": 20
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "(u^3)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.93269493706692,
+                  "(u^3)_x": -0.4063824585776168
+                },
+                "time_s": 0.007019700002274476,
+                "calls": 15
+              },
+              "GA": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.907449629388355,
+                  "(u^2)_x": -0.3413395684180228
+                },
+                "time_s": 0.09500089999346528,
+                "calls": 453
+              },
+              "Exhaustive": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.907449629388355,
+                  "(u^2)_x": -0.3413395684180228
+                },
+                "time_s": 0.14867539999977453,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^3)_x",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0027208000028622337,
+                "calls": 27
+              },
+              "IRL1": {
+                "support": [
+                  "(u^3)_x",
+                  "x u",
+                  "u_x/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 0.7510375505556103,
+                "time_s": 0.003063899996050168,
+                "calls": 13
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_x",
+                  "x u"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.10656619999645045,
+                "calls": 755
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_x",
+                  "x u"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.9385312999947928,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 71",
+          "sga_raw": {
+            "concise": "-2.8766u",
+            "aic": 4.796867746174728,
+            "generations": 71,
+            "time_s": 1767.3624689000062,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0,
+                "coef": -2.876598420100695
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_divide|0.05|1": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9294028380219257,
+                  "(u^2)_x": -0.33206995068514694
+                },
+                "time_s": 0.0019459000031929463,
+                "calls": 19
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "(u^3)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.955005248044229,
+                  "(u^3)_x": -0.3931844515326534
+                },
+                "time_s": 0.0030219999971450306,
+                "calls": 14
+              },
+              "GA": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9294028380219257,
+                  "(u^2)_x": -0.33206995068514694
+                },
+                "time_s": 0.1368607000040356,
+                "calls": 446
+              },
+              "Exhaustive": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9294028380219257,
+                  "(u^2)_x": -0.33206995068514694
+                },
+                "time_s": 0.16761810000025434,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^3)_x",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0037278999952832237,
+                "calls": 33
+              },
+              "IRL1": {
+                "support": [
+                  "(u^3)_x",
+                  "x u",
+                  "u_x/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 1,
+                "coef_rel_err": 0.7516489514270281,
+                "time_s": 0.0033611999970162287,
+                "calls": 17
+              },
+              "GA": {
+                "support": [
+                  "(u^3)_x",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.09450359999755165,
+                "calls": 677
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_x",
+                  "x u"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.9751318999988143,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 75",
+          "sga_raw": {
+            "concise": "-2.8759u",
+            "aic": 4.808311969853748,
+            "generations": 75,
+            "time_s": 1707.0848855000004,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 1.0000000000000038,
+                "coef": -2.8758539466184674
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        },
+        "sga_divide|0.05|2": {
+          "ours": {
+            "base": {
+              "L1": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.917324169003235,
+                  "(u^2)_x": -0.33471460790037866
+                },
+                "time_s": 0.0022099999987403862,
+                "calls": 19
+              },
+              "IRL1": {
+                "support": [
+                  "u",
+                  "(u^3)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.9430657288748137,
+                  "(u^3)_x": -0.39751406229626796
+                },
+                "time_s": 0.0054183000029297546,
+                "calls": 14
+              },
+              "GA": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.917324169003235,
+                  "(u^2)_x": -0.33471460790037866
+                },
+                "time_s": 0.09905820000130916,
+                "calls": 459
+              },
+              "Exhaustive": {
+                "support": [
+                  "u",
+                  "(u^2)_x"
+                ],
+                "exact": false,
+                "coef_rel_err": null,
+                "coefficients": {
+                  "u": -2.917324169003235,
+                  "(u^2)_x": -0.33471460790037866
+                },
+                "time_s": 0.1890008000045782,
+                "calls": 4096
+              }
+            },
+            "extended": {
+              "L1": {
+                "support": [
+                  "(u^3)_x",
+                  "u/x"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.004076199998962693,
+                "calls": 27
+              },
+              "IRL1": {
+                "support": [
+                  "(u^2)_x",
+                  "x u"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.0030329000001074746,
+                "calls": 16
+              },
+              "GA": {
+                "support": [
+                  "(u^2)_x",
+                  "x u"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.09847499999887077,
+                "calls": 676
+              },
+              "Exhaustive": {
+                "support": [
+                  "(u^2)_x",
+                  "x u"
+                ],
+                "exact": false,
+                "extra": 2,
+                "missed": 2,
+                "coef_rel_err": 1.0,
+                "time_s": 0.9000407000057749,
+                "calls": 21778
+              }
+            }
+          },
+          "sga_status": "timeout at generation 84",
+          "sga_raw": {
+            "concise": "-2.8818u",
+            "aic": 4.772863129831384,
+            "generations": 84,
+            "time_s": 1737.1008987000023,
+            "terms": [
+              {
+                "sga_term": "u",
+                "maps_to": "u",
+                "cos": 0.9999999999999998,
+                "coef": -2.881755987153339
+              }
+            ]
+          },
+          "sga": {
+            "exact": false,
+            "support": [
+              "u"
+            ],
+            "coef_rel_err": null,
+            "extra": 1,
+            "missed": 2
+          }
+        }
+      }
+    }
+  }
+}

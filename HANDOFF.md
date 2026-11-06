@@ -37,7 +37,6 @@ Python：`D:\Miniconda3\envs\py312\python.exe`（NumPy 2.2.5）
 5. **单模态反问题会有更短等价方程。** 热方程、波动、平流扩散必须用两个模态。单条 Burgers 行波精确满足 \(u_t+c u_x=0\)，比真方程更短，只作对照，不要求通过。
 6. **已有脚本不改。** 重做写新脚本。
 7. **不清楚先问用户。** 需要 skill 可以下载。遇到问题向用户汇报。
-8. 用户曾把国防科技大学校外登录账号发在群里。**全组不得写入命令、网址或文件，也不得用来登录。不要复述密码。**
 
 ---
 
@@ -315,3 +314,95 @@ D:\Miniconda3\envs\py312\python.exe noise_figures.py
 **运行环境备注：** Claude 桌面端这次可以直接在本机用 PowerShell 调 `D:\Miniconda3\envs\py312\python.exe` 跑。长任务放后台。Claude 自己的临时目录对 PowerShell 不可见，临时代码用标准输入传给 Python（`$code | python -`）。
 
 遗传算法怎么接到 L1 前面，等用户补充思路。
+
+---
+
+## 12. 2026-11-03 新指示
+
+用户原话，按这个标准做后续实验，不要再把「高噪声下选错」本身当成失败：
+
+- 噪声大到一定程度后，方程选错是正常现象。没有一份数据是完全无误差、完全符合某个式子的。牛顿力学也只是近似。
+- 要比较的是哪个算法更耐噪声。
+- 进一步的问题：能否对付 outlier。还没做实验。
+- 终极问题是从数据里找近似因果关系。要优化的是结构简单和数据一致性的折中，不是残差必须到机器精度。
+
+方法不限定 PDE。候选项残差对系数线性时，常微分方程和代数关系也可以用同一套库加 L1。开普勒三定律不是微分方程；写成 \(F=ma\)、力按 \(1/r^2\) 之后才是常微分方程，那是反问题。
+
+## 13. 2026-11-05 最大库与方法对照实验
+
+新增实验文件：`gml1_maxlib_compare.py`、`gml1_spec.md`、`dlga_compare.py`、`benchmark_compare.py`，结果见 `gml1_*_result.json`、`dlga_*_budgeted_result.json` 和 `benchmark_compare_result.json`。旧脚本没有修改。
+
+### 13.1 GML-L1 最大库
+
+新方法是弱形式语法闭包库 + KKT 列生成。默认核心库包含 113 个生成项：(u^m)（(m\le8)）及 (x^a u^m) 的有限阶空间导数（(a\le2)），最高空间导数阶 6。每个固定 \(\lambda\) 先在活动列上求精确 L1，再加入违反全库 KKT 条件的候选列；KKT 扫描结束后才认定是全库 L1 解。IRL1 仍然只求加权 L1。`--nonpoly` 的 (sin,cos,exp) 和有理函数只作扩展实验。
+
+### 13.2 五个已通过反问题的噪声曲线
+
+使用 heat、wave、advection-diffusion、Burgers、KdV，噪声为 0、1%、3%、5%、7%、10%，每个非零水平 3 个种子。主要结果：
+
+- 无噪声时 GML1-IRL1 五个方程都选对；普通 GML1 在 Burgers/KdV 中保留 (u_x)，与原先不可表示条件一致。
+- advection-diffusion 的 IRL1 在 1%–5% 为 1.00，7% 为 0.67，10% 为 0.33。
+- Burgers 的 IRL1 在 0%–3% 为 1.00，5% 以上开始失败。
+- KdV 的 IRL1 在 0%–5% 为 1.00，7% 为 0.33，10% 为 0。
+- heat 在当前最大库下从 1% 开始出现 (u_{xxxx})、(u_{xxxxxx}) 等混淆；wave 在 1% 仍有部分正确，3% 后显著下降。
+
+这说明大库下的失败有两类：算法没有压掉近相关项，以及数据本身不能区分高阶项。高噪声按用户新指示只比较耐噪声曲线，不把所有错误都归为算法错误。
+
+### 13.3 对照方法
+
+- `PDE-FIND_STRidge`：在相同弱形式矩阵上运行 STRidge，作为 PDE-FIND 的稀疏回归对照。经典 PDE-FIND 不是 L1，而是岭回归加硬阈值。
+- SGA-PDE：使用已有 `sga_compare_result.json` 和 `sga_compare_extra_result.json`。已有结果中，SGA 在 Burgers/KdV 的 1%、5% 噪声多数未选对；原实验有 30 分钟单次预算和超时记录。
+- DLGA-PDE：通过 KD 的神经 surrogate + 遗传搜索做了 30 代、40 个体、500 个 surrogate epoch、4 倍网格下采样的预算对照。Burgers 在 0%/5% 选对，advection-diffusion 只在 0% 选对；heat、wave、KdV 在该预算下未选对。此结果是记录预算的可复现实验，不与弱形式 L1 直接比较单次运行时间。
+
+方法定义和论文链接见 `method_comparison.md`。总表以 `benchmark_compare_result.json` 为准。
+
+### 13.4 同一项目数据的直接比较
+
+新增 `same_data_compare.py` → `same_data_compare_result.json`：直接读取 `sga_compare.py` 的 SGA-PDE 原始数据、同一噪声生成函数和同一测试函数窗口，重跑 GML1、IRL1、PDE-FIND/STRidge，并读取同一次 SGA 运行结果。
+
+新增 `dlga_same_data_compare.py` → `dlga_same_data_result.json`：在同一批原始场数据上运行 DLGA，使用 4 倍网格下采样、30 代、40 个体、500 个 surrogate epoch。
+
+同数据结果显示：SGA Burgers 无噪声选对，但 1% 和 5% 失败；SGA KdV 在三档噪声都没有稳定选对；Chafee–Infante 只在无噪声选对。GML1-IRL1 在 SGA Burgers 的 1% 噪声为 1.00、5% 为 0.67；在 SGA KdV 的 1% 为 1.00、5% 为 0。Chafee–Infante 的最大多项式库在当前单轨迹数据上即使无噪声也不可辨识，不能把这个结果写成单纯的算法失败。DLGA 的同数据预算对照中，`ours_burgers` 0%/5% 选对，SGA 原始三组和 KdV 同数据预算下均未选对。
+
+## 14. 2026-11-06 库效应审计与 outlier 第一轮
+
+按最终技术路线新增实验，旧脚本和旧结果没有修改。
+
+### 14.1 L13/L43/L113 库效应
+
+`library_effect_audit.py` → `library_effect_audit_result.json`：在同一弱形式数据链上记录 L13、历史 L43、当前 113 项多项式库和二者并集 L121 的设计矩阵秩、条件数、列相关性及真支撑残差。历史 L43 含 `sin/cos`，当前 L113 不含，因此二者不是严格嵌套；报告额外保留 L121 并集，避免混淆库效应和命名差异。
+
+`library_effect_selection_heat_wave_result.json`、`library_effect_selection_adv_burgers_kdv_result.json`：五个基准反问题在 0% 和 5% 噪声下跑 GML1、GML1-IRL1、PDE-FIND/STRidge。无噪声时各层通常能选真支撑；扩大库后 heat/wave 在 5% 更早出现高阶项，Burgers/KdV 的普通 L1 在无噪声也会受 `u_x` 不可表示条件影响。L113 的相对秩（阈值 (10^{-6})）为 heat 87/113、wave 105/114、advection-diffusion 84/113、Burgers 67/113、KdV 77/113，最大列相关普遍接近 1。
+
+### 14.2 弱方程行 outlier
+
+`outlier_l1_compare.py` → `outlier_l1_compare_result.json`：实现
+
+\[
+\min_{\beta,e}\tfrac12\lVert A\beta+e-b\rVert_2^2
++\lambda\lVert\beta\rVert_1+\gamma\lVert e\rVert_1,
+\]
+
+并提供联合普通 L1 与联合 IRL1。异常直接注入弱方程行，比例 0/1/5/10%，幅度 5/10 倍行 RMS，L13/L113、3 个种子；当前主跑固定 `gamma=2`。L13 上五个方程在这组行异常中联合 IRL1 都保留真 PDE 支撑并找回异常行；L113 在 heat 的 10% 和 KdV 的 5%/10% 开始下降，符合大库近相关性的限制。`outlier_gamma_sensitivity.py` → `outlier_gamma_sensitivity_result.json` 显示小规模扫描中 KdV 需要 `gamma>=2` 才能恢复真支撑，当前结果已记录这个敏感性。
+
+### 14.3 原始场点 outlier 的边界
+
+`point_outlier_probe.py` → `point_outlier_probe_result.json`：把异常注入原始 `u(x,t)` 网格，再构造弱形式矩阵。一个原始点会污染多个弱测试行并同时改变 A、b；L13 的 0.01% 点异常已使 Burgers 支撑失败，0.1% 时 heat/Burgers/KdV 基本都失败。因此弱行模型的成功不能写成传感器点异常已经解决。若继续做 raw-field outlier，需要单独建模设计矩阵污染或使用鲁棒测试函数/行权重。
+
+### 14.4 稳定性与复杂度—一致性汇总
+
+`stability_pareto_summary.py` → `stability_pareto_summary_result.json`：从上述选择结果汇总跨种子支撑稳定性、选对率、平均复杂度，并对联合 outlier 模型给出“重拟合残差—结构复杂度”非支配点。复杂度只用于汇报候选结构，不改 L1/IRL1 产生的支撑。
+
+## 15. 2026-11-06 上传前复核与结论更正
+
+本节优先于第 13、14 节中尚未审计的指标和推断。当前上传为探索性检查点，详见 `CHECKPOINT_STATUS.md`；新技术方案由用户确认后再上传，下一轮实验暂不启动。
+
+`publication_checkpoint_audit.py` → `publication_checkpoint_audit_result.json`：检查了相关脚本语法和 JSON，可读性检查通过，但三个 GML1 JSON 含非标准 `-Infinity`。旧文件按约定保留，后续新文件须使用有限标准 JSON。
+
+已确认两项指标问题：`G.support_eval` 将归一化系数与物理真系数比较，相关系数误差不能用作论文证据；已存 DLGA 支撑混用 `uxx`、`u_xx` 等名称，且 `dlga_compare.field` 只使用第一条轨迹，故旧总表尚不支持严格同输入的算法排名。
+
+第 14 节列出的 87/113 等是相对阈值 `1e-6` 下的有效秩，条件数也经过截断。advection-diffusion 与 KdV 在机器精度阈值下均为 113/113；因此不能仅凭这些有效秩把失败判为“数据不可辨识”。求解器 KKT、支撑竞争、验证轨迹和选模规则仍需区分。
+
+现有 `|S|/p` 复杂度惩罚会随候选库大小变化，库效应与判据效应尚有混淆。现有 Pareto 汇总跨噪声种子合并最终模型，也不是同一验证数据上整条候选路径的前沿。
+
+outlier 代码实际沿固定相对权重 `rho=gamma/lambda` 搜索；`gamma_weight=2` 是探索性取值。弱方程行异常与原始场点异常必须分开报告，不将初步支撑恢复推断为普适 outlier 能力。投稿前先完成这些审计与公平评价，再正式重跑；不靠提高支撑阈值修补结果。

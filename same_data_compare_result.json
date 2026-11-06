@@ -1,0 +1,500 @@
+{
+  "datasets": [
+    "sga_burgers",
+    "sga_kdv",
+    "sga_chafee_infante",
+    "ours_burgers",
+    "ours_kdv"
+  ],
+  "noise": [
+    0.0,
+    0.01,
+    0.05
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "data_source": "sga_compare.load_dataset; C.noisy; same fields and weak test windows as SGA-PDE comparison",
+  "library_size": 113,
+  "cases": {
+    "sga_burgers": {
+      "pde": {
+        "u ux": -1.0,
+        "uxx": 0.1
+      },
+      "true_weak": {
+        "(u^2)_x": -0.5,
+        "u_xx": 0.1
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "GML1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xx + (u^2)_x": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xx + (u^2)_x": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + u^3 + (u^4)_x + x u^2 + (x u^3)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 1.0
+          }
+        },
+        {
+          "sigma": 0.01,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u + u_xx + (u^2)_x + (u^2)_xxx + x^2 u + x^2 u^3 + (x^2 u^4)_x": 1,
+              "u + (u^2)_x + (u^2)_xxx + x u^2 + x^2 u": 1,
+              "u + u_xx + (u^2)_x + (u^2)_xxx + (x u^2)_xx + x^2 u + x^2 u^3": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xx + (u^2)_x": 3
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + u^3 + u^5": 1,
+              "u + (u^2)_x + (u^3)_xx + (u^5)_xx": 1,
+              "u_xxxx + (u^2)_x + (u^4)_x + (u^4)_xxx + u^5 + x u^4 + (x u^5)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        },
+        {
+          "sigma": 0.05,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u + (u^2)_x": 2,
+              "u + (u^2)_x + x u^2": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.6666666666666666,
+            "supports": {
+              "u_xx + (u^2)_x": 2,
+              "u + (u^2)_x": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + u^3 + u^7 + (x u^4)_xxxx + x u^6 + (x u^6)_xx + (x u^6)_xxxx + x u^8 + (x u^8)_xx + (x u^8)_xxxx + (x^2 u^4)_x": 1,
+              "(u^2)_x + (u^4)_x + (x u^3)_x + (x u^5)_x": 1,
+              "(u^2)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        }
+      ]
+    },
+    "sga_kdv": {
+      "pde": {
+        "u ux": -1.0,
+        "uxxx": -0.0025
+      },
+      "true_weak": {
+        "(u^2)_x": -0.5,
+        "u_xxx": -0.0025
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "GML1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        },
+        {
+          "sigma": 0.01,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "1 + u_xx + u_xxx + (u^2)_x + (u^2)_xxxx + (u^8)_xxxxx + (x u)_x + x u^2 + (x u^2)_x + (x^2 u^2)_x": 1,
+              "1 + u_xx + u_xxx + (u^2)_x + (u^2)_xxxx + (x u)_x + x u^2 + (x u^2)_x + x^2 u^2 + (x^2 u^2)_x": 1,
+              "1 + u_xx + u_xxx + (u^2)_x + (u^2)_xxxx + (u^8)_xxxxx + (x u)_x + x u^2 + (x u^2)_x + x^2 u^2 + (x^2 u^2)_x": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 3
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_xxx + u_xxxxx + (u^2)_x + (u^2)_xxx": 3
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        },
+        {
+          "sigma": 0.05,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "1 + u_xx + u_xxx + u_xxxxx + (u^2)_x + (u^2)_xx + (u^2)_xxxxx + (u^8)_xxxxx + (x u)_x + x u^2 + (x u^2)_x + x u^8 + (x^2 u)_x + (x^2 u^2)_x + (x^2 u^2)_xxx": 1,
+              "1 + u_x + u_xx + u_xxx + u_xxxxx + (u^2)_x + (u^2)_xx + (u^2)_xxxx + (u^8)_xxxxx + (x u)_x + x u^2 + (x u^2)_x + x u^8 + (x^2 u^2)_x + (x^2 u^2)_xxx": 1,
+              "1 + u_xx + u_xxx + u_xxxx + u_xxxxx + (u^2)_x + (u^2)_xxxx + (u^8)_xxxxx + (x u)_x + x u^2 + (x u^2)_x + x u^8 + (x^2 u)_x + (x^2 u^2)_x + (x^2 u^2)_xxx": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_xxx + u_xxxxx + (u^2)_x + (u^2)_xxx": 3
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.3333333333333333,
+            "supports": {
+              "u_xxx + u_xxxxx + (u^2)_x + (u^6)_x + (x u^5)_x": 1,
+              "u_xxx + (u^2)_x": 1,
+              "u_xxx + u_xxxxx + (u^2)_x + (u^2)_xxx + (u^2)_xxxxx + (u^3)_xxxxx + (u^4)_xxxx + (u^4)_xxxxx + (u^5)_x + (u^5)_xxxx + (u^5)_xxxxx + (u^6)_xx + (u^6)_xxx + (u^6)_xxxxx + (u^6)_xxxxxx + (u^7)_xx + (u^7)_xxx + (u^7)_xxxxxx + (x u^3)_xxx + (x u^5)_x + (x u^7)_xx + (x u^8)_xx + (x u^8)_xxxx + (x^2 u^3)_xxx + (x^2 u^4)_xxx": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        }
+      ]
+    },
+    "sga_chafee_infante": {
+      "pde": {
+        "uxx": 1.0,
+        "u": -1.0,
+        "u^3": 1.0
+      },
+      "true_weak": {
+        "u_xx": 1.0,
+        "u": -1.0,
+        "u^3": 1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u + u_xx + u^3 + (u^3)_xxxxxx + u^4 + (u^4)_xxxxxx + x u^4 + x^2 u + (x^2 u^2)_xxx": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_xx + (u^4)_xxxxxx + (x u)_xx": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_xx + (u^2)_xxxxxx + u^3 + (u^3)_xxxxxx + (u^4)_xxxxxx": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 1.0
+          }
+        },
+        {
+          "sigma": 0.01,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + (u^3)_xx + u^4 + u^5 + (x u)_xx + (x u^2)_xx": 1,
+              "u_xx + u_xxxx + (u^2)_xxxx + (u^3)_xx + (u^3)_xxx + u^4 + (u^4)_xx + (x u)_xx + x u^5 + x^2 u^4": 1,
+              "u_xx + u_xxxx + (u^3)_xx + u^4 + (x u)_xx + x u^5 + x^2 u^4": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_xx + u_xxxx + u^3 + u^4 + (u^4)_xx + x^2 u": 1,
+              "u_xx + u_xxxx + u^3 + u^4 + (u^4)_xx + (x u)_xx": 1,
+              "u_xx + u_xxxx + u^3 + u^4 + (u^4)_xx": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + (x u)_x + x u^2 + (x u^2)_x + x^2 u + (x^2 u)_xx + x^2 u^3": 1,
+              "u + (u^2)_x + (u^3)_xx + (x u)_x + (x u^2)_x + (x u^2)_xx + x u^3 + (x u^3)_x + (x u^4)_xx + (x u^5)_xx + x^2 u + (x^2 u)_xx + x^2 u^3 + (x^2 u^3)_x + (x^2 u^3)_xx": 1,
+              "(u^2)_x + (x u)_x + (x u^2)_x + x u^3 + x^2 u + (x^2 u)_xx": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        },
+        {
+          "sigma": 0.05,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + (u^2)_xx + (u^3)_xx + u^4 + u^5 + (x u)_xxx + (x u^3)_xxxx + (x u^8)_x": 1,
+              "1 + u_x + (u^2)_xxxx + (u^3)_xx + (u^3)_xxxx + u^4 + u^5 + (x u)_xx + (x u^2)_xx": 1,
+              "1 + u_x + (u^2)_xxxx + (u^3)_xx + (u^3)_xxxx + u^4 + u^5 + (x u^2)_xx": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + (u^2)_xx + u^3 + (x u^3)_xxxx + x^2 u + (x^2 u^2)_x": 1,
+              "u_x + u^3 + (u^3)_xxxx + u^4 + (x u^2)_xx + x^2 u + (x^2 u^2)_x": 1,
+              "1 + u_x + (u^3)_xx + u^4 + (x^2 u)_x + (x^2 u^2)_x": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + x u^3 + x^2 u + (x^2 u^2)_x": 1,
+              "(u^2)_x + u^3 + (x u^2)_x + x^2 u": 1,
+              "u + u^3 + (u^3)_x + (u^3)_xx + u^4 + (u^5)_x + (x u)_x + x u^2 + (x u^2)_xx + x u^3 + (x u^3)_xx + (x u^5)_xx + (x u^6)_xx + x^2 u + (x^2 u^3)_xx + x^2 u^4 + (x^2 u^4)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        }
+      ]
+    },
+    "ours_burgers": {
+      "pde": {
+        "u ux": -1.0,
+        "uxx": 0.1
+      },
+      "true_weak": {
+        "(u^2)_x": -0.5,
+        "u_xx": 0.1
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_xx + u_xxxxxx + (u^2)_x": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xx + (u^2)_x": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xx + (u^2)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 1.0
+          }
+        },
+        {
+          "sigma": 0.01,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + u_xx + (u^2)_x + (u^2)_xx + (u^6)_xxx + (x^2 u)_xx": 1,
+              "u_x + u_xx + (u^2)_x + (u^2)_xx + (x^2 u)_xx": 1,
+              "u_x + u_xx + (u^2)_x + (u^2)_xx + (u^4)_xxx + (x^2 u^2)_xx + (x^2 u^4)_xxx": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xx + (u^2)_x": 3
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_xx + (u^2)_x + (u^3)_x + (u^4)_x + x u^7 + x u^8 + x^2 u^2 + x^2 u^4": 1,
+              "u^2 + (u^2)_x + u^3 + (u^3)_x + u^7 + u^8": 1,
+              "u_xx + (u^2)_x + u^7 + u^8": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        },
+        {
+          "sigma": 0.05,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + (u^2)_x + (u^3)_xx + (u^6)_xxx": 1,
+              "u_x + (u^2)_x + (u^3)_xx + (u^7)_xxx": 1,
+              "u_x + (u^2)_x + (u^2)_xx + (u^4)_xxx + (x^2 u^3)_xx": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + (u^2)_x + (u^2)_xxx + (u^8)_x": 1,
+              "u_xx + (u^2)_x + (u^2)_xxx + (u^8)_x": 1,
+              "(u^2)_x + (u^2)_xxx + (u^7)_x + (x^2 u^2)_xx": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + (u^4)_x + (x u^2)_x + (x u^3)_x + (x u^4)_xxx + (x u^5)_xxx + (x u^6)_xxx + (x^2 u^2)_x + (x^2 u^3)_x": 1,
+              "u^3 + (u^3)_x + (u^5)_x + (u^6)_x + u^8 + (x^2 u^2)_x + (x^2 u^3)_x + (x^2 u^4)_x": 1,
+              "(u^2)_x + (u^3)_x + u^5 + u^6": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        }
+      ]
+    },
+    "ours_kdv": {
+      "pde": {
+        "u ux": -6.0,
+        "uxxx": -1.0
+      },
+      "true_weak": {
+        "(u^2)_x": -3.0,
+        "u_xxx": -1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + u_xxx + (u^2)_x + (x u)_x + (x^2 u)_xxx": 1
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        },
+        {
+          "sigma": 0.01,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u + u_x + u_xx + u_xxx + (u^2)_x + (u^2)_xxx + (x u)_x + (x u)_xxx + (x u)_xxxx + (x^2 u)_xxx": 3
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 3
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 1.0,
+            "supports": {
+              "u_xxx + (u^2)_x": 3
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        },
+        {
+          "sigma": 0.05,
+          "n": 3,
+          "GML1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + (x u)_x": 3
+            }
+          },
+          "GML1_IRL1": {
+            "exact_rate": 0.0,
+            "supports": {
+              "u_x + u_xxx + (u^2)_x": 1,
+              "u_xxx + u_xxxxx + (u^2)_x + (u^2)_xxx": 1,
+              "u_x + u_xxx + (u^2)_x + (x u)_x + (x^2 u^2)_x": 1
+            }
+          },
+          "PDE-FIND_STRidge": {
+            "exact_rate": 0.0,
+            "supports": {
+              "(u^2)_x + (u^2)_xxx + (u^3)_xxx": 1,
+              "(u^2)_x + (x u)_x + (x u^2)_x": 1,
+              "(u^2)_xxx + (u^4)_x": 1
+            }
+          },
+          "SGA-PDE": {
+            "exact_rate": 0.0
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "algorithm": "DLGA-PDE via sail-kd",
+  "config": {
+    "library": [
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx"
+    ],
+    "generations": 30,
+    "pop_size": 40,
+    "surrogate_max_epochs": 500,
+    "surrogate_patience": 80,
+    "max_modules": 4,
+    "max_module_length": 4,
+    "epsilon": 0.001,
+    "stride": 4
+  },
+  "noise": [
+    0.0,
+    0.05
+  ],
+  "n_seeds": 1,
+  "cases": {
+    "burgers": {
+      "pde": "u_t = -u u_x + 0.1 u_xx",
+      "true": {
+        "(u^2)_x": -0.5,
+        "u_xx": 0.1
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -u u_x + 0.1 u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "true_support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -1.004*u*u_x + 0.1214*u_xx",
+              "best_expression": "add(mul(u, u_x), u_xx)",
+              "score": 0.01057482762108727,
+              "time_s": 12.637512799934484,
+              "surrogate": {
+                "epochs": 500,
+                "patience": 80
+              }
+            }
+          ],
+          "exact_rate": 1.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -u u_x + 0.1 u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "u*u_x"
+              ],
+              "exact": true,
+              "extra": 0,
+              "missed": 0,
+              "true_support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -1.003*u*u_x + 0.1218*u_xx",
+              "best_expression": "add(u_xx, mul(u, u_x))",
+              "score": 0.010936472234203454,
+              "time_s": 10.976905199931934,
+              "surrogate": {
+                "epochs": 500,
+                "patience": 80
+              }
+            }
+          ],
+          "exact_rate": 1.0
+        }
+      ]
+    }
+  }
+}

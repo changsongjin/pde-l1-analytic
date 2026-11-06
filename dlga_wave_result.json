@@ -1,0 +1,100 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "algorithm": "DLGA-PDE via sail-kd",
+  "config": {
+    "library": [
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx"
+    ],
+    "generations": 5,
+    "pop_size": 20,
+    "surrogate_max_epochs": 100,
+    "surrogate_patience": 20,
+    "max_modules": 4,
+    "max_module_length": 4,
+    "epsilon": 0.001,
+    "stride": 4
+  },
+  "noise": [
+    0.0,
+    0.05
+  ],
+  "n_seeds": 1,
+  "cases": {
+    "wave": {
+      "pde": "u_tt = u_xx",
+      "true": {
+        "u_xx": 1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_tt = u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_xxx",
+                "mul(mul(mul(u_xx,u_xx),u_xxx),u_xxx)",
+                "u_xx",
+                "u"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_tt = -4.389*u - 8.518e-7*u_xx**2*u_xxx**2 + 0.2005*u_xx + 0.0006323*u_xxx",
+              "best_expression": "add(add(add(u_xxx, mul(mul(mul(u_xx, u_xx), u_xxx), u_xxx)), u_xx), u)",
+              "score": 0.1129185798387879,
+              "time_s": 4.602715300046839,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_tt = u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_xxx",
+                "mul(mul(mul(u_xx,u_xx),u_xxx),u_xxx)",
+                "u_xx",
+                "u"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_tt = -4.361*u - 8.84e-7*u_xx**2*u_xxx**2 + 0.2019*u_xx + 0.0006419*u_xxx",
+              "best_expression": "add(add(add(u_xxx, mul(mul(mul(u_xx, u_xx), u_xxx), u_xxx)), u_xx), u)",
+              "score": 0.11171902212217069,
+              "time_s": 2.861632199957967,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    }
+  }
+}

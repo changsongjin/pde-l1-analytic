@@ -1,0 +1,5599 @@
+{
+  "support_complexity": "sum_j [1 + derivative_order + power + 2*coordinate_degree + nonpolynomial_penalty] + error_count",
+  "stability": [
+    {
+      "case": "advection_diffusion",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x",
+        "u_xx",
+        "(x u)_x",
+        "(x u^2)_x"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 1.6666666666666667,
+      "mean_missed": 0.0,
+      "mean_complexity": 16.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u",
+        "u_x",
+        "u^2",
+        "(u^2)_x",
+        "u^3",
+        "(u^3)_x",
+        "u^4",
+        "(u^4)_x",
+        "(u^5)_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 8.666666666666666,
+      "mean_missed": 1.3333333333333333,
+      "mean_complexity": 71.66666666666667
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx",
+        "(u^3)_x",
+        "(sin(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 17.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x",
+        "u_xx",
+        "(x u)_x",
+        "(x u^2)_x",
+        "(sin(u))_x"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 2.6666666666666665,
+      "mean_missed": 0.0,
+      "mean_complexity": 21.333333333333332
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.6666666666666666,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 0.6666666666666666,
+      "mean_missed": 0.6666666666666666,
+      "mean_complexity": 8.333333333333334
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u^2",
+        "(u^2)_x",
+        "u^3",
+        "(u^3)_x",
+        "u^4",
+        "(u^4)_x",
+        "u^5",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 17.666666666666668,
+      "mean_missed": 2.0,
+      "mean_complexity": 136.33333333333334
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.3333333333333333,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 0.0,
+      "mean_missed": 0.6666666666666666,
+      "mean_complexity": 4.333333333333333
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_x",
+        "u_xx",
+        "(sin(u))_x",
+        "(x u)_x",
+        "(x u^2)_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 2.6666666666666665,
+      "mean_missed": 0.0,
+      "mean_complexity": 21.333333333333332
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "(sin(u))_x",
+        "(sin(u))_xx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 1.6666666666666667,
+      "mean_missed": 1.6666666666666667,
+      "mean_complexity": 10.333333333333334
+    },
+    {
+      "case": "advection_diffusion",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u",
+        "u^2",
+        "u^3",
+        "u^5",
+        "(sin(u))_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 5.0,
+      "mean_missed": 1.3333333333333333,
+      "mean_complexity": 34.333333333333336
+    },
+    {
+      "case": "burgers",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 11.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x",
+        "(u^2)_x",
+        "(u^2)_xx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 2.6666666666666665,
+      "mean_missed": 1.0,
+      "mean_complexity": 19.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 14.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "(u^2)_x",
+        "(u^2)_xx",
+        "(u^3)_x",
+        "(u^3)_xx",
+        "(u^4)_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 4.666666666666667,
+      "mean_missed": 1.3333333333333333,
+      "mean_complexity": 33.666666666666664
+    },
+    {
+      "case": "burgers",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 13.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x",
+        "(u^4)_x",
+        "(u^5)_x",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 3.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 26.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_x",
+        "(u^2)_x",
+        "(x^2 u)_xx",
+        "(x^2 u^3)_xxx",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 3.6666666666666665,
+      "mean_missed": 1.0,
+      "mean_complexity": 27.666666666666668
+    },
+    {
+      "case": "burgers",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 1.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 13.333333333333334
+    },
+    {
+      "case": "burgers",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_x",
+        "(u^3)_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 6.0,
+      "mean_missed": 2.0,
+      "mean_complexity": 37.666666666666664
+    },
+    {
+      "case": "burgers",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "(u^2)_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 11.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "(u^2)_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "(u^2)_x",
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 7.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.6666666666666666,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "(u^2)_x",
+        "u_xx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 0.0,
+      "mean_missed": 0.3333333333333333,
+      "mean_complexity": 6.666666666666667
+    },
+    {
+      "case": "burgers",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u^2",
+        "u^3",
+        "(u^2)_x",
+        "(u^3)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 3.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 16.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 8.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "(u^2)_x",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 12.0
+    },
+    {
+      "case": "burgers",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.3333333333333333,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_xx",
+        "(u^2)_x",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 1.3333333333333333,
+      "mean_missed": 0.6666666666666666,
+      "mean_complexity": 11.666666666666666
+    },
+    {
+      "case": "burgers",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "1",
+        "u",
+        "u_x",
+        "u^5",
+        "cos(u)"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 4.333333333333333,
+      "mean_missed": 2.0,
+      "mean_complexity": 16.666666666666668
+    },
+    {
+      "case": "heat",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u",
+        "u_xx",
+        "u_xxxx",
+        "u_xxxxxx",
+        "(x u)_xxxx"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 5.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 36.0
+    },
+    {
+      "case": "heat",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx",
+        "u_xxxxxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 18.0
+    },
+    {
+      "case": "heat",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u",
+        "u^2",
+        "x u",
+        "x u^2",
+        "(x u^2)_x",
+        "x^2 u",
+        "(x^2 u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 7.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 34.0
+    },
+    {
+      "case": "heat",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx",
+        "u_xxxxxx",
+        "(x u)_xxxx",
+        "sin(u)"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 6.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 42.666666666666664
+    },
+    {
+      "case": "heat",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx",
+        "u_xxxxxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 18.0
+    },
+    {
+      "case": "heat",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u",
+        "u^2",
+        "(u^4)_x",
+        "u^5",
+        "(u^7)_xx",
+        "(u^7)_xxxxxx",
+        "(u^8)_xxxxxx",
+        "x u^2",
+        "(x u^2)_x",
+        "(x u^3)_xx",
+        "x u^4",
+        "x u^5",
+        "(x u^6)_xx",
+        "(x^2 u^2)_x",
+        "(x^2 u^3)_x",
+        "(x^2 u^3)_xx",
+        "x^2 u^4"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 15.333333333333334,
+      "mean_missed": 0.3333333333333333,
+      "mean_complexity": 113.0
+    },
+    {
+      "case": "heat",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.6666666666666666,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 0.3333333333333333,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.666666666666667
+    },
+    {
+      "case": "heat",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "heat",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx",
+        "sin(u)"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 2.3333333333333335,
+      "mean_missed": 0.0,
+      "mean_complexity": 15.333333333333334
+    },
+    {
+      "case": "heat",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 10.0
+    },
+    {
+      "case": "heat",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u",
+        "u_xx",
+        "u_xxxx",
+        "u^2",
+        "u^3",
+        "u^4",
+        "u^5",
+        "u^6"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 5.0,
+      "mean_missed": 0.3333333333333333,
+      "mean_complexity": 29.333333333333332
+    },
+    {
+      "case": "kdv",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x",
+        "u_xxx",
+        "(u^2)_x",
+        "(x u)_x",
+        "(x^2 u)_xxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 3.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 26.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 9.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 9.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x",
+        "(x u)_x"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 4.666666666666667,
+      "mean_missed": 1.3333333333333333,
+      "mean_complexity": 28.666666666666668
+    },
+    {
+      "case": "kdv",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 9.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_x",
+        "(u^2)_xxx",
+        "(u^3)_x",
+        "(x u)_x",
+        "(x u^3)_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 5.0,
+      "mean_missed": 1.6666666666666667,
+      "mean_complexity": 34.666666666666664
+    },
+    {
+      "case": "kdv",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^2)_x",
+        "(u^3)_x",
+        "(x u)_x",
+        "(x^2 u)_xxx",
+        "(sin(u))_xxx",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 5.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 40.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(sin(u))_xxx",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 17.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 9.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x",
+        "u_xx",
+        "(x u)_x",
+        "(x^2 u)_xxx",
+        "(sin(u))_xx",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 5.333333333333333,
+      "mean_missed": 2.0,
+      "mean_complexity": 27.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "u_xxxxx",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 17.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_x",
+        "(u^2)_xxx",
+        "(u^3)_x",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 4.666666666666667,
+      "mean_missed": 1.3333333333333333,
+      "mean_complexity": 33.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 2.0,
+      "mean_complexity": 3.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "(u^2)_x",
+        "u_xxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 9.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "(u^2)_x",
+        "u_xxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 9.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 2.0,
+      "mean_complexity": 3.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.3333333333333333,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_x",
+        "(u^3)_x"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 1.3333333333333333,
+      "mean_missed": 1.3333333333333333,
+      "mean_complexity": 8.333333333333334
+    },
+    {
+      "case": "kdv",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "(u^3)_x",
+        "(u^2)_xxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 2.0,
+      "mean_complexity": 11.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^2)_x",
+        "(u^3)_x",
+        "(sin(u))_xxx",
+        "(cos(u))_x",
+        "(cos(u))_xxx",
+        "(x u)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 5.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 38.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(sin(u))_xxx",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 17.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^2)_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 9.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 2.0,
+      "mean_complexity": 3.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xxx",
+        "(u^3)_x",
+        "(cos(u))_x"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 2.0,
+      "mean_missed": 1.0,
+      "mean_complexity": 15.0
+    },
+    {
+      "case": "kdv",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "(u^2)_xxx",
+        "(u^5)_x"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 3.0,
+      "mean_missed": 1.6666666666666667,
+      "mean_complexity": 21.666666666666668
+    },
+    {
+      "case": "wave",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L113",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx",
+        "u^3",
+        "x^2 u^3"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 2.3333333333333335,
+      "mean_missed": 0.0,
+      "mean_complexity": 18.0
+    },
+    {
+      "case": "wave",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 1.3333333333333333,
+      "mean_missed": 0.0,
+      "mean_complexity": 12.666666666666666
+    },
+    {
+      "case": "wave",
+      "layer": "L113",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L121_union",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx",
+        "u^3",
+        "x^2 u^3",
+        "(sin(u))_xx"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 3.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 23.333333333333332
+    },
+    {
+      "case": "wave",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 1.3333333333333333,
+      "mean_missed": 0.0,
+      "mean_complexity": 12.666666666666666
+    },
+    {
+      "case": "wave",
+      "layer": "L121_union",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.3333333333333333,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 6.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 58.0
+    },
+    {
+      "case": "wave",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L13",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L13",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "GML1_IRL1",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L43",
+      "sigma": 0.0,
+      "method": "PDE-FIND_STRidge",
+      "n": 1,
+      "exact_rate": 1.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 0.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 4.0
+    },
+    {
+      "case": "wave",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1",
+      "n": 3,
+      "exact_rate": 0.3333333333333333,
+      "modal_stability": 0.3333333333333333,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 3,
+      "mean_extra": 1.6666666666666667,
+      "mean_missed": 0.0,
+      "mean_complexity": 14.0
+    },
+    {
+      "case": "wave",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "GML1_IRL1",
+      "n": 3,
+      "exact_rate": 0.0,
+      "modal_stability": 1.0,
+      "modal_support": [
+        "u_xx",
+        "u_xxxx"
+      ],
+      "unique_supports": 1,
+      "mean_extra": 1.0,
+      "mean_missed": 0.0,
+      "mean_complexity": 10.0
+    },
+    {
+      "case": "wave",
+      "layer": "L43",
+      "sigma": 0.05,
+      "method": "PDE-FIND_STRidge",
+      "n": 3,
+      "exact_rate": 0.6666666666666666,
+      "modal_stability": 0.6666666666666666,
+      "modal_support": [
+        "u_xx"
+      ],
+      "unique_supports": 2,
+      "mean_extra": 0.6666666666666666,
+      "mean_missed": 0.0,
+      "mean_complexity": 10.0
+    }
+  ],
+  "outlier_pareto": [
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.625483922139274e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.625483922139274e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.3141355073531032e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.3141355073531032e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.1690229499773862e-08,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.1690229499773862e-08,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 7.12760680129539e-09,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 7.12760680129539e-09,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 8.89248051602439e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 8.89248051602439e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 5.074176277000832e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.074176277000832e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.7942404379603833e-08,
+          "complexity": 7,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.625483922139274e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.625483922139274e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.3141355073531032e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.3141355073531032e-08,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.1690229499773862e-08,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.1690229499773862e-08,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 7.12760680129539e-09,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 7.12760680129539e-09,
+          "complexity": 19,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 8.89248051602439e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 8.89248051602439e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -0.4 u_x + 0.05 u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 5.074176277000832e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.074176277000832e-09,
+          "complexity": 30,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 6.03423082853922e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 5.43293486166097e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.43293486166097e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 4.3786966981844866e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 4.3786966981844866e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.0495689530897994e-07,
+          "complexity": 29,
+          "beta_f1": 0.6666666666666666,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            4,
+            9,
+            58
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.9039675068767933e-07,
+          "complexity": 21,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.0373219134674626e-07,
+          "complexity": 36,
+          "beta_f1": 0.5714285714285715,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            4,
+            9,
+            58,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 6.329312265005456e-08,
+          "complexity": 29,
+          "beta_f1": 0.6666666666666666,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            4,
+            9,
+            58
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 2.3761968632763113e-07,
+          "complexity": 21,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 6.313784817365197e-08,
+          "complexity": 36,
+          "beta_f1": 0.5714285714285715,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            4,
+            9,
+            58,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 2.896924368271618e-07,
+          "complexity": 32,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 7.79344882938728e-08,
+          "complexity": 47,
+          "beta_f1": 0.5714285714285715,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            4,
+            9,
+            58,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.6570375212049365e-07,
+          "complexity": 32,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            4,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 4.457844075217974e-08,
+          "complexity": 47,
+          "beta_f1": 0.5714285714285715,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            2,
+            4,
+            9,
+            58,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 6.034230828524073e-07,
+          "complexity": 9,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 5.432934861651909e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.432934861651909e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 4.3786966982015935e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 4.3786966982015935e-07,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.903967506887554e-07,
+          "complexity": 21,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 3.903967506887554e-07,
+          "complexity": 21,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 2.3761968633144212e-07,
+          "complexity": 21,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 2.3761968633144212e-07,
+          "complexity": 21,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 2.896924368269583e-07,
+          "complexity": 32,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 2.896924368269583e-07,
+          "complexity": 32,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -6 u u_x - u_xxx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.6570375212021548e-07,
+          "complexity": 32,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.6570375212021548e-07,
+          "complexity": 32,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 3.954168707971322e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.3981383472840684e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 3.3981383472840684e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 2.6177039271397465e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 2.6177039271397465e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 2.2867881845236137e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 2.2867881845236137e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.428191256837916e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.428191256837916e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 2.035230391103256e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 2.035230391103256e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.1520438009687387e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.1520438009687387e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 3.954168708030161e-07,
+          "complexity": 8,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 3.398138347273556e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 3.398138347273556e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 2.617703927113058e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 2.617703927113058e-07,
+          "complexity": 10,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 2.286788184504988e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 2.286788184504988e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.4281912568499237e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.4281912568499237e-07,
+          "complexity": 17,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 2.0352303911252877e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 2.0352303911252877e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = -u u_x + 0.1 u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.1520438009665425e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.1520438009665425e-07,
+          "complexity": 25,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            5,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.3481958795486508e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.3481958795486508e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.0299947216891442e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.0299947216891442e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 9.211581644741654e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 9.211581644741654e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 5.7033413218971544e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.7033413218971544e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 7.726522201745254e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 7.726522201745254e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 4.43526838999282e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 4.43526838999282e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.55861494556412e-07,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.3481958795486508e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.3481958795486508e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.0299947216891442e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.0299947216891442e-07,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 9.211581644741654e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 9.211581644741654e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 5.7033413218971544e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.7033413218971544e-08,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 6.741559466558594e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 6.741559466558594e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_t = u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 3.9431199773063834e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 3.9431199773063834e-08,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.2940559527369164e-13,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.2940559527369164e-13,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 0.3493358080261996,
+          "complexity": 5,
+          "beta_f1": 1.0,
+          "error_f1": 0.6666666666666666,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 9.937141995189466e-14,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 8.868981908352448e-14,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 8.868981908352448e-14,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 5.5250101568058705e-14,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.5250101568058705e-14,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 6.950860414156993e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 6.950860414156993e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L113",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 4.027025377914439e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 4.027025377914439e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.0,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 0,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 1.4575775180228692e-13,
+          "complexity": 4,
+          "beta_f1": 1.0,
+          "error_f1": 0.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 1,
+          "residual": 1.2940559527369164e-13,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 1,
+          "residual": 1.2940559527369164e-13,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 0.3493358080261996,
+          "complexity": 5,
+          "beta_f1": 1.0,
+          "error_f1": 0.6666666666666666,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.01,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 0.5363140061620528,
+          "complexity": 5,
+          "beta_f1": 1.0,
+          "error_f1": 0.6666666666666666,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 9.937141995189466e-14,
+          "complexity": 6,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 0.24608257571454503,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 0.9333333333333333,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 8.868981908352448e-14,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.05,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 0.30658591697189164,
+          "complexity": 11,
+          "beta_f1": 1.0,
+          "error_f1": 0.9333333333333333,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 5.5250101568058705e-14,
+          "complexity": 12,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 5.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 6.950860414156993e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 6.950860414156993e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "case": "u_tt = u_xx",
+      "layer": "L13",
+      "fraction": 0.1,
+      "amplitude_rms": 10.0,
+      "pareto": [
+        {
+          "method": "joint_L1",
+          "seed": 2,
+          "residual": 4.027025377914439e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        },
+        {
+          "method": "joint_IRL1",
+          "seed": 2,
+          "residual": 4.027025377914439e-14,
+          "complexity": 20,
+          "beta_f1": 1.0,
+          "error_f1": 1.0,
+          "beta_support_indices": [
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "The current Pareto summary is a diagnostic layer; support generation still comes from L1/IRL1, never from refit coefficients."
+}

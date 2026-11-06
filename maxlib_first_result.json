@@ -1,0 +1,55 @@
+{
+  "forward": {
+    "name": "正问题 KdV 孤子，最大库",
+    "library_size_before_drop": 43,
+    "count_note": "按族逐项生成是 43 列，不是口头说的 35。差在 tanh^a sech^b、a+b=5 的乘积。",
+    "library_size": 43,
+    "dropped_dependent_columns": [
+      "cos² θ",
+      "sech² θ",
+      "sech⁴ θ",
+      "tanh θ sech² θ",
+      "tanh² θ sech² θ"
+    ],
+    "exact_pde_relative_residual": 1.144728180413732e-05,
+    "frequency": {
+      "sech^2 θ": 38,
+      "sech^3 θ": 30
+    },
+    "support_names": [
+      "sech^2 θ",
+      "sech^3 θ"
+    ],
+    "passed_support": false,
+    "note": "波速和尺度已知并写进 θ。只看初值和边界能不能唯一选出 sech²。PDE 残差只核对真解。"
+  },
+  "inverse": {
+    "name": "反问题 Burgers 两条轨迹，最大库",
+    "library_size": 43,
+    "count_note": "按幂次、导数阶和函数族逐项生成是 43 列，不是口头说的 56。",
+    "n_rows": 96,
+    "exact_equation_relative_residual": 0.00011547215012510174,
+    "true_terms": {
+      "(u^2)_x": -0.5,
+      "u_xx": 0.1
+    },
+    "frequency": {
+      "u_x": 39,
+      "u_xx": 29,
+      "(u^2)_x": 33,
+      "(u^2)_xx": 32,
+      "(u^3)_x": 32,
+      "sin u": 6,
+      "(cos u)_x": 1
+    },
+    "support_names": [
+      "u_x",
+      "u_xx",
+      "(u^2)_x",
+      "(u^2)_xx",
+      "(u^3)_x"
+    ],
+    "passed_support": false,
+    "note": "两条不同波速。弱形式沿用 noise_inverse.py。无噪声。"
+  }
+}

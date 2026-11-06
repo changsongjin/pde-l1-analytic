@@ -1,0 +1,55 @@
+{
+  "forward": {
+    "name": "正问题 KdV 孤子，43 列，迭代重加权精确 L1",
+    "library_size": 43,
+    "exact_pde_relative_residual": 1.7611675797044921e-16,
+    "analytic_third_derivative_check": 2.6861443525483253e-05,
+    "iterations": 2,
+    "final_kkt": 8.200194480767057e-13,
+    "best_relative_residual": 9.99999999593657e-07,
+    "frequency": {
+      "sech^2 θ": 39
+    },
+    "support_names": [
+      "sech^2 θ"
+    ],
+    "passed_support": true,
+    "note": "43 列都不删。选择只用初值和两端边界，对系数线性。PDE 残差用解析导数核对真解。"
+  },
+  "inverse": {
+    "name": "反问题 Burgers 两条轨迹，43 列，迭代重加权精确 L1",
+    "library_size": 43,
+    "grid": {
+      "x": [
+        -1.0,
+        2.0,
+        641
+      ],
+      "t": [
+        0.0,
+        1.0,
+        161
+      ],
+      "half": [
+        24,
+        16
+      ],
+      "test_power": 14
+    },
+    "n_rows": 450,
+    "exact_equation_relative_residual": 7.037426958065043e-11,
+    "stopped": false,
+    "iterations": 3,
+    "final_kkt": 1.1820162680874584e-13,
+    "best_relative_residual": 3.0301459632277015e-06,
+    "frequency": {
+      "u_xx": 34,
+      "(u^2)_x": 39
+    },
+    "support_names": [
+      "u_xx",
+      "(u^2)_x"
+    ],
+    "passed_support": false
+  }
+}

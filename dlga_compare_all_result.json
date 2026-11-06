@@ -1,0 +1,379 @@
+{
+  "algorithm": "DLGA-PDE via sail-kd",
+  "cases": {
+    "heat": {
+      "pde": "u_t = u_xx",
+      "true": {
+        "u_xx": 1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "mul(u_x,u_xxx)"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_t = 0.03026*u_x*u_xxx + 0.7539*u_xx",
+              "best_expression": "add(u_xx, mul(u_x, u_xxx))",
+              "score": 0.183207624806631,
+              "time_s": 4.2081706000026315,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "mul(u_x,u_xxx)"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_t = 0.03041*u_x*u_xxx + 0.7544*u_xx",
+              "best_expression": "add(u_xx, mul(u_x, u_xxx))",
+              "score": 0.1798802826198434,
+              "time_s": 2.4054811999667436,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    },
+    "wave": {
+      "pde": "u_tt = u_xx",
+      "true": {
+        "u_xx": 1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_tt = u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_xxx",
+                "mul(mul(mul(u_xx,u_xx),u_xxx),u_xxx)",
+                "u_xx",
+                "u"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_tt = -4.389*u - 8.518e-7*u_xx**2*u_xxx**2 + 0.2005*u_xx + 0.0006323*u_xxx",
+              "best_expression": "add(add(add(u_xxx, mul(mul(mul(u_xx, u_xx), u_xxx), u_xxx)), u_xx), u)",
+              "score": 0.1129185798387879,
+              "time_s": 4.602715300046839,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_tt = u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_xxx",
+                "mul(mul(mul(u_xx,u_xx),u_xxx),u_xxx)",
+                "u_xx",
+                "u"
+              ],
+              "exact": false,
+              "extra": 3,
+              "missed": 0,
+              "true_support": [
+                "u_xx"
+              ],
+              "equation": "u_tt = -4.361*u - 8.84e-7*u_xx**2*u_xxx**2 + 0.2019*u_xx + 0.0006419*u_xxx",
+              "best_expression": "add(add(add(u_xxx, mul(mul(mul(u_xx, u_xx), u_xxx), u_xxx)), u_xx), u)",
+              "score": 0.11171902212217069,
+              "time_s": 2.861632199957967,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    },
+    "advection_diffusion": {
+      "pde": "u_t = -0.4 u_x + 0.05 u_xx",
+      "true": {
+        "u_x": -0.4,
+        "u_xx": 0.05
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -0.4 u_x + 0.05 u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_x",
+                "mul(u_x,u_x)",
+                "mul(u_x,u_xxx)"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 1,
+              "true_support": [
+                "u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -0.216*u_x**2 - 0.01067*u_x*u_xxx - 0.3882*u_x",
+              "best_expression": "add(add(u_x, mul(u_x, u_x)), mul(u_x, u_xxx))",
+              "score": 0.3096883550517879,
+              "time_s": 4.540555499959737,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -0.4 u_x + 0.05 u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_x",
+                "u",
+                "mul(u_xxx,u_xxx)"
+              ],
+              "exact": false,
+              "extra": 2,
+              "missed": 1,
+              "true_support": [
+                "u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -0.1096*u - 0.4012*u_x - 8.065e-5*u_xxx**2",
+              "best_expression": "add(add(u_x, u), mul(u_xxx, u_xxx))",
+              "score": 0.3079118839508136,
+              "time_s": 2.992030099965632,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    },
+    "burgers": {
+      "pde": "u_t = -u u_x + 0.1 u_xx",
+      "true": {
+        "(u^2)_x": -0.5,
+        "u_xx": 0.1
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -u u_x + 0.1 u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "true_support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -1.621*u_x - 0.04742*u_xx",
+              "best_expression": "add(u_xx, u_x)",
+              "score": 0.05646716897842113,
+              "time_s": 5.3851136999437585,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -u u_x + 0.1 u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "true_support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -1.621*u_x - 0.04786*u_xx",
+              "best_expression": "add(u_xx, u_x)",
+              "score": 0.057716626166422286,
+              "time_s": 3.533026200020686,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    },
+    "kdv": {
+      "pde": "u_t = -6 u u_x - u_xxx",
+      "true": {
+        "(u^2)_x": -3.0,
+        "u_xxx": -1.0
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -6 u u_x - u_xxx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "true_support": [
+                "u*u_x",
+                "u_xxx"
+              ],
+              "equation": "u_t = -5.04*u_x",
+              "best_expression": "u_x",
+              "score": 0.36788670904598875,
+              "time_s": 6.862311000004411,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -6 u u_x - u_xxx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 2,
+              "true_support": [
+                "u*u_x",
+                "u_xxx"
+              ],
+              "equation": "u_t = -5.048*u_x",
+              "best_expression": "u_x",
+              "score": 0.3595866835871658,
+              "time_s": 5.238844899926335,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    }
+  },
+  "config": {
+    "library": [
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx"
+    ],
+    "generations": 5,
+    "pop_size": 20,
+    "surrogate_max_epochs": 100,
+    "surrogate_patience": 20,
+    "max_modules": 4,
+    "max_module_length": 4,
+    "epsilon": 0.001,
+    "stride": 4
+  },
+  "noise": [
+    0.0,
+    0.05
+  ],
+  "n_seeds": 1
+}

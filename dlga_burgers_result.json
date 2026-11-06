@@ -1,0 +1,99 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "algorithm": "DLGA-PDE via sail-kd",
+  "config": {
+    "library": [
+      "u",
+      "u_x",
+      "u_xx",
+      "u_xxx"
+    ],
+    "generations": 5,
+    "pop_size": 20,
+    "surrogate_max_epochs": 100,
+    "surrogate_patience": 20,
+    "max_modules": 4,
+    "max_module_length": 4,
+    "epsilon": 0.001,
+    "stride": 4
+  },
+  "noise": [
+    0.0,
+    0.05
+  ],
+  "n_seeds": 1,
+  "cases": {
+    "burgers": {
+      "pde": "u_t = -u u_x + 0.1 u_xx",
+      "true": {
+        "(u^2)_x": -0.5,
+        "u_xx": 0.1
+      },
+      "rows": [
+        {
+          "sigma": 0.0,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -u u_x + 0.1 u_xx",
+              "sigma": 0.0,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "true_support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -1.621*u_x - 0.04742*u_xx",
+              "best_expression": "add(u_xx, u_x)",
+              "score": 0.05646716897842113,
+              "time_s": 5.3851136999437585,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        },
+        {
+          "sigma": 0.05,
+          "n": 1,
+          "raw": [
+            {
+              "case": "u_t = -u u_x + 0.1 u_xx",
+              "sigma": 0.05,
+              "seed": 0,
+              "support": [
+                "u_xx",
+                "u_x"
+              ],
+              "exact": false,
+              "extra": 1,
+              "missed": 1,
+              "true_support": [
+                "u*u_x",
+                "u_xx"
+              ],
+              "equation": "u_t = -1.621*u_x - 0.04786*u_xx",
+              "best_expression": "add(u_xx, u_x)",
+              "score": 0.057716626166422286,
+              "time_s": 3.533026200020686,
+              "surrogate": {
+                "epochs": 100,
+                "patience": 20
+              }
+            }
+          ],
+          "exact_rate": 0.0
+        }
+      ]
+    }
+  }
+}
