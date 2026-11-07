@@ -1,0 +1,334 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "wave",
+    "sigma": 0.05,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/wave_sigma_0p05_seed_1000/selection_manifest.json",
+    "sha256": "16ada33f839dd11db6a6d0c56f670943bcfe7c088ba638cf52eedc7e7b0c4ea5"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_L1/reconciled_0001_result.json",
+      "sha256": "a4b45d9649b7f670bda665eaea6f8c66071b1c641c17d26b46bb1296ea249bfa"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "ca1e32cd849cb7abebebd6b5750d187f2cbb866b97999b56640914dabd03af49"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_L1/method_result.json",
+      "sha256": "bfe6807bef5a0bbf9bb216f58311ae2b9351ac78d6a6b0cde367248fcecc4c71"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "0aa9a08a47beba888e7b1dffcf8c8495e0a0f317e019d64df7e2428f5c33b8b5"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_L1/reconciled_0001_result.json",
+      "sha256": "1081464cedca3350189f24c599934c1c83bc0035b8a08877fca815f4fac5f18a"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "63aeed5599ce64e9b9e306a655eb07aa77b23e7cc21c8b5eefec34c6b1a54626"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/wave_sigma_0p05_seed_1000/test_evaluation_result.json",
+    "sha256": "ee4f559c15c4188b1602ceae0710e340c5eedcc6431e626a06291d31dfe8cb2f"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.14633765579919752
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.14633765579919752
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "complexity": 8,
+      "validation_error": 0.12228686844565649
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.14633765579919752
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u"
+      ],
+      "complexity": 4,
+      "validation_error": 0.1458286282080046
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.14633765579919752
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.14633765579919752
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 4,
+      "support": [
+        "u_xxxx",
+        "u_xx",
+        "u_xx^3",
+        "t u_xx",
+        "x u_xxxx"
+      ],
+      "complexity": 29,
+      "validation_error": 0.1220009490850452
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.14633765579919752
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "complexity": 8,
+      "validation_error": 0.12228686844565649
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/selection_manifest.json",
+      "sha256": "16ada33f839dd11db6a6d0c56f670943bcfe7c088ba638cf52eedc7e7b0c4ea5"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/test_evaluation_result.json",
+      "sha256": "ee4f559c15c4188b1602ceae0710e340c5eedcc6431e626a06291d31dfe8cb2f"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/fit_matrices.json",
+      "sha256": "b1183f532eae7d58b1037d6b92f3bba96866b55894db03d107ab2bf3dec12455"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/fit_matrices.npz",
+      "sha256": "0aa7a17175dd3033692074ec655abae6207efd3615ca563080c0e4d263aaf25c"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/test_matrices.json",
+      "sha256": "5b47404930f1fadd1626c0cc5fdb576373d013fa2196afb489c1cca04ad54ff3"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/test_matrices.npz",
+      "sha256": "f7ce038f47a1a6903df6a231fb6dd7f88bdb3fa3e98ce843cbca63f1cfa22ac4"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_L1/reconciled_0001_result.json",
+      "sha256": "a4b45d9649b7f670bda665eaea6f8c66071b1c641c17d26b46bb1296ea249bfa"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "ca1e32cd849cb7abebebd6b5750d187f2cbb866b97999b56640914dabd03af49"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_L1/method_result.json",
+      "sha256": "bfe6807bef5a0bbf9bb216f58311ae2b9351ac78d6a6b0cde367248fcecc4c71"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "0aa9a08a47beba888e7b1dffcf8c8495e0a0f317e019d64df7e2428f5c33b8b5"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_L1/reconciled_0001_result.json",
+      "sha256": "1081464cedca3350189f24c599934c1c83bc0035b8a08877fca815f4fac5f18a"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "63aeed5599ce64e9b9e306a655eb07aa77b23e7cc21c8b5eefec34c6b1a54626"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_L1/job.json",
+      "sha256": "643b9ab2e16ac8645ae5b1f5a503b4bc05b755945a31226536c62f769a998c60"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "00e8ff7147e15f5fcae117e39c27af85082a449a7ef69299cbdd72e80973411f"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_L1/job.json",
+      "sha256": "282ab1c2f64451127746423a67c02879986bf271d3785d54510235b9230458f6"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "3c2e7e058ceaeb666aa0ec420186aaa8ad8eed80ac875cbe433c6711d9deeb90"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_L1/job.json",
+      "sha256": "c8e7db46e861ad02a8d4eeeaa629322412885160d45231a270703bde497a6e89"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "9e0737e33b26f1aa5104708016a43b6b704f480119b37c15078f83d4037edd77"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_L1/numeric_evidence/20261106T140942378192Z/continued_path_result.json",
+      "sha256": "4e997bb582d7f67ad19bb06368af040587f818fbeba41636bf66e5777942cb2c"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "d4af0876cfd928d40d69347d2d418f81f2ade1a669d69e8e5365b3d20d87fe19"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_L1/path_result.json",
+      "sha256": "4da3139d78f13a239a0fd6e90bd53fb741f51f3582d186b875f6bfb77cd4aa3d"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "2c504ffcb940c99b631dbc16ec8748fdc24a1575d4177da9946e86f8986f0b5a"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_L1/numeric_evidence/20261106T140942378192Z/continued_path_result.json",
+      "sha256": "66e7593a91807ab14b87abf42ae19fafce78888ab73dbe4ff9cd5f9f7b26c2be"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "36971fa4c6b9cd94d0d880e552b1a45567d3805e29a437028f0c14eb46146e61"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.14899479993619025,
+    "fit_matrix": {
+      "action": "cache_load",
+      "seconds": 0.13928590004798025,
+      "metadata": {
+        "file": "stage3_campaign/wave_sigma_0p05_seed_1000/fit_matrices.json",
+        "sha256": "b1183f532eae7d58b1037d6b92f3bba96866b55894db03d107ab2bf3dec12455"
+      },
+      "npz": {
+        "file": "stage3_campaign/wave_sigma_0p05_seed_1000/fit_matrices.npz",
+        "sha256": "0aa7a17175dd3033692074ec655abae6207efd3615ca563080c0e4d263aaf25c"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 1.0923094000900164,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 28.599057400017045,
+      "metadata": {
+        "file": "stage3_campaign/wave_sigma_0p05_seed_1000/test_matrices.json",
+        "sha256": "5b47404930f1fadd1626c0cc5fdb576373d013fa2196afb489c1cca04ad54ff3"
+      },
+      "npz": {
+        "file": "stage3_campaign/wave_sigma_0p05_seed_1000/test_matrices.npz",
+        "sha256": "f7ce038f47a1a6903df6a231fb6dd7f88bdb3fa3e98ce843cbca63f1cfa22ac4"
+      }
+    },
+    "test_evaluation": 0.03549799998290837
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

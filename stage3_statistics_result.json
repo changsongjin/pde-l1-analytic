@@ -1,0 +1,23 @@
+{
+  "stage": "3_frozen_statistics_synthetic_verification",
+  "all_checks_passed": true,
+  "checks": {
+    "frozen_protocol": true,
+    "frozen_seed_and_noise_grid": true,
+    "frozen_bootstrap_settings": true,
+    "incomplete_or_unpaired_sets_rejected": true,
+    "exact_endpoints": true,
+    "exact_binomial_enumerated_coverage_ge95": true,
+    "paired_interval_enumerated_coverage_ge95": true,
+    "shared_clean_and_degenerate_auc": true,
+    "identical_curves_have_zero_paired_bootstrap_variation": true,
+    "multiple_crossings_and_no_extrapolation": true
+  },
+  "minimum_enumerated_binomial_coverage": 0.9586105346679684,
+  "minimum_enumerated_paired_coverage": 0.9784889986332085,
+  "source_sha256": "805a90108ccbc862e4a9d32a9cab0a1d7f17b8952da322308e737bedf1852539",
+  "protocol_sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb",
+  "created_utc": "2026-11-06T13:16:15.074316+00:00",
+  "formal_outcomes_read": false,
+  "scope": "Synthetic implementation checks of predeclared rules; finite-grid coverage checks complement the frozen interval construction, not a new statistical method."
+}

@@ -1,0 +1,122 @@
+{
+  "stage": 2,
+  "component": "development field generation",
+  "rows": [
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "seed": 0,
+      "file": "stage2_data\\heat_sigma_0p0_seed_0.npz",
+      "npz_sha256": "709a807aac83a60fdbc2d77febe5958de5aeb479b8b2997c9c19ca0e7b291f53",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "file": "stage2_data\\heat_sigma_0p01_seed_0.npz",
+      "npz_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "seed": 0,
+      "file": "stage2_data\\wave_sigma_0p0_seed_0.npz",
+      "npz_sha256": "e630640d266ef2b102bfb33264b593fcd83d5dc5deccd9a2c7efd1bade9458bd",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "seed": 0,
+      "file": "stage2_data\\wave_sigma_0p01_seed_0.npz",
+      "npz_sha256": "fa9ed684a9f3dd567a4514e889384997d6951c1f353896f01d2877e8684bfd41",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "seed": 0,
+      "file": "stage2_data\\advection_diffusion_sigma_0p0_seed_0.npz",
+      "npz_sha256": "d329a39d7d12aa0726983faeeae11a6abcf48bf2d593b7c96fca057fc690362f",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "seed": 0,
+      "file": "stage2_data\\advection_diffusion_sigma_0p01_seed_0.npz",
+      "npz_sha256": "98baafeb1b86f70309703ca2e48662e787e88f3137df5aa4be87fbe9b6c3ebc9",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "seed": 0,
+      "file": "stage2_data\\burgers_sigma_0p0_seed_0.npz",
+      "npz_sha256": "87d2807c2b24808052c506048acbc9ffe67bc08577cc7fb1f0a7a9b6837ff02d",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "seed": 0,
+      "file": "stage2_data\\burgers_sigma_0p01_seed_0.npz",
+      "npz_sha256": "a56536c5b1a5a3a3df570d720f07235f470884df837fea9562841fa887507a90",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "seed": 0,
+      "file": "stage2_data\\kdv_sigma_0p0_seed_0.npz",
+      "npz_sha256": "be7b214f517f238249cbece17478e03a4912ded4ebc091cdfe3ff8baa0addf2b",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "seed": 0,
+      "file": "stage2_data\\kdv_sigma_0p01_seed_0.npz",
+      "npz_sha256": "4cb4d8022b20738a44a85cc2e384f0c5b141d6d1c28ce5cdff3d3402aebf7df7",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "seed": 0,
+      "file": "stage2_data\\logheat_sigma_0p0_seed_0.npz",
+      "npz_sha256": "aa199713aec4c80ab3d1f0bef32a92fc7f0cc6401059e95729e656059eebb6cd",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.01,
+      "seed": 0,
+      "file": "stage2_data\\logheat_sigma_0p01_seed_0.npz",
+      "npz_sha256": "33bfb9a02a56942bcfa0c42acef7b77af081de995f88adb804abd348976078e0",
+      "train_trajectories": 4,
+      "validation_trajectories": 2
+    }
+  ],
+  "kdv_generalization_vs_original_max_abs": 1.1813466871402056e-14,
+  "all_checks_passed": true,
+  "test_data_generated": false,
+  "limits": [
+    "This is data preparation, not an identifiability or noise robustness result.",
+    "Six trajectories do not establish universal identifiability or narrow confidence intervals.",
+    "Initial-condition changes alone are not evidence of causal identification."
+  ]
+}

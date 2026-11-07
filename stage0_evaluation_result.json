@@ -1,0 +1,357 @@
+{
+  "phase": 0,
+  "all_checks_passed": true,
+  "checks": {
+    "canonical_alias_product_derivative": true,
+    "derivative_scale_preserved": true,
+    "compound_column_not_split": true,
+    "unknown_syntax_rejected": true,
+    "empty_metrics_explicit": true,
+    "heat_physical_coefficient": true,
+    "scale_prediction_identity": true,
+    "ls_readout_never_changes_support": true,
+    "false_coefficient_in_error": true,
+    "scalar_equivalent_coefficient_error": true,
+    "fixed_complexity": true,
+    "common_data_pareto": true,
+    "cross_seed_pareto_rejected": true,
+    "hash_layout_and_shape": true,
+    "split_disjoint_and_equal_inputs": true,
+    "split_leakage_rejected": true,
+    "missing_trajectory_rejected": true,
+    "nonfinite_output_rejected": true,
+    "historical_dlga_terms_supported": true
+  },
+  "support_tolerance": 1e-05,
+  "heat_scale_reproduction": {
+    "old_coefficient_relative_error": 0.41421356237307805,
+    "physical_coefficient": 0.9999999975894939,
+    "corrected_physical_relative_error": 2.4105061280366158e-09,
+    "diagnostic_reuses_training_rows": true
+  },
+  "dlga_label_reaudit": [
+    {
+      "case": "sga_burgers",
+      "sigma": 0.0,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u_xx*u_xxx",
+          "u_xxx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx",
+          "u_xx*u_xxx",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "sga_burgers",
+      "sigma": 0.05,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "extra": [
+          "u*u_xxx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u*u_xxx",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "sga_kdv",
+      "sigma": 0.0,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u*u_x^2",
+          "u_x*u_xx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u*u_x^2",
+          "u_x*u_xx",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "sga_kdv",
+      "sigma": 0.05,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u_x*u_xx",
+          "u_xx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_x*u_xx",
+          "u_xx",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "sga_chafee_infante",
+      "sigma": 0.0,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u^2"
+        ],
+        "missed": [
+          "u^3"
+        ],
+        "support_canonical": [
+          "u",
+          "u^2",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u",
+          "u^3",
+          "u_xx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "sga_chafee_infante",
+      "sigma": 0.05,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.25,
+        "recall": 0.3333333333333333,
+        "f1": 0.2857142857142857,
+        "extra": [
+          "u_x",
+          "u_x*u_xxx",
+          "u_xx^2"
+        ],
+        "missed": [
+          "u",
+          "u^3"
+        ],
+        "support_canonical": [
+          "u_x",
+          "u_x*u_xxx",
+          "u_xx",
+          "u_xx^2"
+        ],
+        "true_support_canonical": [
+          "u",
+          "u^3",
+          "u_xx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "ours_burgers",
+      "sigma": 0.0,
+      "old_exact": true,
+      "canonical_metrics": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "ours_burgers",
+      "sigma": 0.05,
+      "old_exact": true,
+      "canonical_metrics": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "ours_kdv",
+      "sigma": 0.0,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "extra": [
+          "u_x^3"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_x^3",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "status": "label_audit_only"
+    },
+    {
+      "case": "ours_kdv",
+      "sigma": 0.05,
+      "old_exact": false,
+      "canonical_metrics": {
+        "exact": false,
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1": 0.3333333333333333,
+        "extra": [
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx"
+        ],
+        "missed": [
+          "u*u_x"
+        ],
+        "support_canonical": [
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "status": "label_audit_only"
+    }
+  ],
+  "historical_raw_input_contract": [
+    {
+      "case": "heat",
+      "weak_pipeline_trajectories": 2,
+      "historical_dlga_trajectories": 1,
+      "same_full_raw_trajectory_input": false,
+      "strict_ranking_eligible": false,
+      "reason": "first trajectory only"
+    },
+    {
+      "case": "wave",
+      "weak_pipeline_trajectories": 2,
+      "historical_dlga_trajectories": 1,
+      "same_full_raw_trajectory_input": false,
+      "strict_ranking_eligible": false,
+      "reason": "first trajectory only"
+    },
+    {
+      "case": "advection_diffusion",
+      "weak_pipeline_trajectories": 2,
+      "historical_dlga_trajectories": 1,
+      "same_full_raw_trajectory_input": false,
+      "strict_ranking_eligible": false,
+      "reason": "first trajectory only"
+    },
+    {
+      "case": "burgers",
+      "weak_pipeline_trajectories": 1,
+      "historical_dlga_trajectories": 1,
+      "same_full_raw_trajectory_input": true,
+      "strict_ranking_eligible": false,
+      "reason": "single trajectory agrees in count only; historical noise arrays/stride not shared"
+    },
+    {
+      "case": "kdv",
+      "weak_pipeline_trajectories": 1,
+      "historical_dlga_trajectories": 1,
+      "same_full_raw_trajectory_input": true,
+      "strict_ranking_eligible": false,
+      "reason": "single trajectory agrees in count only; historical noise arrays/stride not shared"
+    }
+  ],
+  "metric_conventions": {
+    "both_supports_empty_f1": 1,
+    "empty_prediction_nonempty_truth_precision": 0,
+    "empty_truth_recall": 1,
+    "coefficient_error": "union of canonical predicted and true columns",
+    "validation": "held-out equation residual; trajectory rollout is a separate future metric",
+    "complexity": "fixed symbolic expression cost, independent of library size",
+    "canonicalization": "exact scalar aliases only; constrained sums remain individual columns"
+  },
+  "limitations": [
+    "Historical DLGA results remain ineligible for strict same-input rankings.",
+    "No native DLGA training rerun in this evaluation repair.",
+    "Manifest validation is for whole trajectories; buffered block footprints need separate checks.",
+    "Polynomial canonicalizer explicitly rejects nonpolynomial functions; later extension needs a declared parser.",
+    "This script validates metrics, not scientific recovery or a held-out benchmark."
+  ]
+}

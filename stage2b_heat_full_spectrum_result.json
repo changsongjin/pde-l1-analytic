@@ -1,0 +1,275 @@
+{
+  "stage": "2b_dynamic_validation_preparation",
+  "all_checks_passed": true,
+  "scope": "numerical self-checks and frozen evaluation protocol only; no research-candidate comparison executed",
+  "checks": {
+    "clean_diffusion_exact_all_resolved_modes": true,
+    "no_six_mode_truncation": true,
+    "dst_parseval_and_roundtrip": true,
+    "frozen_reconstruction_retains_every_mode": true,
+    "unsupported_zero_readout_not_silently_removed": true,
+    "affine_modal_solution_matches_independent_expm": true,
+    "log_parseval_error_matches_direct_full_grid_error": true,
+    "equilibrium_no_catastrophic_large_exp_cancellation": true,
+    "zero_growth_forcing_limit": true,
+    "unstable_growth_uses_finite_log_error_no_overflow": true,
+    "bounded_growth_not_confused_with_high_frequency_illposedness": true
+  },
+  "diagnostics": {
+    "clean_diffusion_max_absolute_field_error": 5.551115123125783e-16,
+    "forced_model_reference_error": {
+      "status": "finite",
+      "relative_error": 2.7008469571098844e-16,
+      "log_relative_error": -35.84779607626571
+    },
+    "parseval_direct_error": 0.0018911288966494623,
+    "unstable_numerical_fixture": {
+      "status": "supported_full_resolved_spectral_forecast",
+      "operator": {
+        "status": "supported",
+        "physical_coefficients": {
+          "u_xx": 1.0,
+          "u_xxxx": 0.001
+        },
+        "original_selected_support": [
+          "u_xx",
+          "u_xxxx"
+        ],
+        "growth_polynomial_in_k_squared": [
+          0.0,
+          -1.0,
+          0.001,
+          -0.0
+        ],
+        "constant_forcing": 0.0,
+        "boundary_realization": "dirichlet_laplacian_polynomial",
+        "higher_order_boundary_assumption": "powers of the Dirichlet Laplacian; u=0 alone is insufficient to define a general fourth/sixth-order PDE"
+      },
+      "initialization_scheme": "raw_all_modes",
+      "initialization": {
+        "mode_indices": [
+          1,
+          63
+        ],
+        "mode_count": 63,
+        "no_hard_mode_cutoff": true,
+        "gain_min": 1.0,
+        "gain_max": 1.0,
+        "boundary_observations": [
+          0.0,
+          3.2454378138678035e-16
+        ],
+        "boundary_handling": "known homogeneous boundary values enforced; noisy endpoint observations retained in future scoring",
+        "smoothing_rule": "identity",
+        "regularization_length": 0.0,
+        "fit_information": "initial observations and spatial grid only; no PDE truth, selected model, future observations, or noise-level tuning",
+        "forecast_role": "separate frozen initialization ablation, never a per-method optimization"
+      },
+      "prepared_initial_hash": "d1c76a5175aac8455e39530c7ff0a93c6ab485f27e9e4de5ca8d812655b808f7",
+      "raw_observation_hash": "ef68a80ee4fc8fb28ba77314237d04e59dfa7b6ee35d7ca240a5b7b133562404",
+      "spectrum": {
+        "continuum_classification": "unbounded_high_frequency_growth",
+        "continuum_max_growth_rate": null,
+        "continuum_max_growth_status": "unbounded",
+        "positive_growth_bands": [
+          {
+            "k_lower": 31.622776601683793,
+            "k_upper": null
+          }
+        ],
+        "resolved_mode_count": 63,
+        "resolved_mode_indices": [
+          1,
+          63
+        ],
+        "largest_resolved_wavenumber": 197.92033717615698,
+        "resolved_positive_growth_modes": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ],
+        "resolved_max_growth_rate": 1495309.1522361664,
+        "resolved_min_growth_rate": -249.7313880807387,
+        "resolved_max_log_amplification_at_horizon": 29906.18304472333,
+        "interpretation": "bounded-frequency/zero-order growth is not by itself ill-posedness; unbounded positive high-frequency rates are a distinct continuum issue"
+      },
+      "error_metric": {
+        "status": "above_float64_range_use_log",
+        "relative_error": null,
+        "log_relative_error": 27986.23187862563
+      },
+      "metric_domain": "all future time rows and all observed spatial nodes; t0 excluded",
+      "metric_method": "signed log-domain modal propagation and orthonormal Parseval identity, including boundary observation errors",
+      "first_sampled_modal_float64_overflow_time": 0.001,
+      "maximum_modal_log_absolute_amplitude": 27989.36263800442,
+      "maximum_modal_amplitude_status": "finite_log_value",
+      "prediction_field_safe_to_materialize": false,
+      "prediction_array_returned": false,
+      "decayed_modal_values_below_float64_subnormal_count": 0,
+      "underflow_policy": "all modal logs retained in score; only optional real-valued materialization may round negligible decayed amplitudes to zero",
+      "modes_dropped": 0,
+      "mode_count": 63,
+      "frequency_cutoff_applied": false,
+      "boundary_hypothesis": "dirichlet_laplacian_polynomial",
+      "future_data_used_for_fit": false,
+      "whole_library_comparison_policy": "report supported/unsupported coverage separately; do not exclude unsupported candidates to select a preferred model",
+      "continuum_claim": "This is the full finite observed-grid spectral realization, not proof that an unstable continuum PDE is well posed."
+    },
+    "finite_band_fixture": {
+      "continuum_classification": "high_frequency_damped_with_finite_band_growth",
+      "continuum_max_growth_rate": 10531.179335421031,
+      "continuum_max_growth_status": "finite",
+      "positive_growth_bands": [
+        {
+          "k_lower": 7.16356768303938,
+          "k_upper": 44.14389310029773
+        }
+      ],
+      "resolved_mode_count": 63,
+      "resolved_mode_indices": [
+        1,
+        63
+      ],
+      "largest_resolved_wavenumber": 197.92033717615698,
+      "resolved_positive_growth_modes": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "resolved_max_growth_rate": 10297.51189245018,
+      "resolved_min_growth_rate": -570443733.899929,
+      "resolved_max_log_amplification_at_horizon": 205.9502378490036,
+      "interpretation": "bounded-frequency/zero-order growth is not by itself ill-posedness; unbounded positive high-frequency rates are a distinct continuum issue"
+    },
+    "frozen_initial_reconstruction": {
+      "mode_indices": [
+        1,
+        63
+      ],
+      "mode_count": 63,
+      "no_hard_mode_cutoff": true,
+      "gain_min": 0.0006828755358399501,
+      "gain_max": 0.9999071120806635,
+      "boundary_observations": [
+        0.0,
+        3.2454378138678035e-16
+      ],
+      "boundary_handling": "known homogeneous boundary values enforced; noisy endpoint observations retained in future scoring",
+      "smoothing_rule": "gain(k)=1/(1+(2*dx*k)^4)",
+      "regularization_length": 0.03125,
+      "fit_information": "initial observations and spatial grid only; no PDE truth, selected model, future observations, or noise-level tuning",
+      "forecast_role": "separate frozen initialization ablation, never a per-method optimization"
+    }
+  },
+  "python_dependency_versions": {
+    "numpy": "2.2.5",
+    "scipy": "1.15.3"
+  },
+  "source_sha256": "843a57fe89b7ee43a8075fcf9854452ed3eec79d488d4ee2eac1cf6877ff6226",
+  "supported_candidate_terms": [
+    "1",
+    "u",
+    "u_xx",
+    "u_xxxx",
+    "u_xxxxxx"
+  ],
+  "initialization_schemes": [
+    "raw_all_modes",
+    "frozen_tikhonov_dx2"
+  ],
+  "boundary_realization": "dirichlet_laplacian_polynomial",
+  "all_resolved_modes_used": true,
+  "new_validation_data_generated": false,
+  "final_test_data_generated_or_used": false,
+  "reserved_final_test_ids": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "reserved_final_test_noise_seeds": ">=1000",
+  "proposed_development_holdout_ids_pending_root_coordination": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "method_comparison_started": false,
+  "gate_policy": "research comparisons require root confirmation that numerical tail gate is resolved and common holdout/protocol are frozen",
+  "limits": [
+    "Odd derivatives, variable coefficients, nonlinear terms, and unprovided boundary realizations are unsupported, not failed algorithms.",
+    "Reporting only supported candidates is a coverage analysis; it must not silently change selection over the complete library.",
+    "High-order sine propagation assumes powers of the Dirichlet Laplacian, not merely u=0 as the only boundary condition.",
+    "Frozen IC smoothing attenuates every mode continuously; it does not remove noise bias or make an ill-posed continuum operator well posed.",
+    "No model-specific or truth-tuned initial reconstruction is allowed; raw and frozen reconstruction are separate identical-input ablations.",
+    "Full observed-grid dynamics still represent a finite spectral discretization; continuum high-frequency behavior is reported separately.",
+    "The score compares future noisy observations, excludes initialization rows, and includes boundary measurement discrepancies."
+  ],
+  "primary_implementation_references": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.dst.html",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.logsumexp.html"
+  ]
+}

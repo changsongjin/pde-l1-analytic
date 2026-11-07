@@ -1,0 +1,1624 @@
+{
+  "stage": "2a_development_diagnosis",
+  "read_only_solver_runs": 0,
+  "all_sources_execution_complete": true,
+  "diagnosis_complete_for_readable_snapshot_rows": true,
+  "research_stage_complete": false,
+  "sources": [
+    {
+      "file": "stage2a_heat_pilot_result.json",
+      "sha256_of_snapshot": "8bd2159f774b8c078b69e9a546832347b6ef3332d607f205a05c44e49989e241",
+      "source_execution_complete": true,
+      "source_all_numerical_checks_passed": true,
+      "status": "complete_campaign_snapshot",
+      "recorded_dataset_rows": 1,
+      "analyzed_dataset_rows": 1
+    },
+    {
+      "file": "stage2a_heat_noise_pilot_result.json",
+      "sha256_of_snapshot": "56c827eeb1cf9b8ef5af4c66eefe7f5cb51cb9a6fa583cff08b138a895d754fe",
+      "source_execution_complete": true,
+      "source_all_numerical_checks_passed": false,
+      "status": "complete_campaign_snapshot",
+      "recorded_dataset_rows": 2,
+      "analyzed_dataset_rows": 2
+    }
+  ],
+  "records": [
+    {
+      "source": "stage2a_heat_pilot_result.json",
+      "dataset_id": "heat:sigma=0.0:seed=0:validation=d0e9cc2a6823a8c67f2752dede0ff0c46dfa0da8f493658ddb0b6b13426b76f8",
+      "case": "heat",
+      "sigma": 0.0,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "709a807aac83a60fdbc2d77febe5958de5aeb479b8b2997c9c19ca0e7b291f53",
+      "solver_input_hashes": {
+        "A": "c755aa09994a9db6f15603cf7974e2e2f04145f1ad2bacdff712611db6c0b698",
+        "b": "0101275d93aee90fa0193e0579442487b1359d19ea124ea6f8c32dde156cc34c"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 2,
+      "time_s": {
+        "solver_with_worker_startup": 5.1640322000021115,
+        "fixed_support_validation": 0.0015836999518796802
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.12524870003107935,
+        "matrix_build_recorded_source_sum": 20.915378900012,
+        "symbolic_metadata_this_run": 3.803403400001116,
+        "truth_evaluation": 0.007892800029367208,
+        "dataset_total": 25.4511116000358
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.634943111551852e-10,
+        "max_relative_dual_gap_among_returned_points": 7.788477005543257e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 2.3348687159359477e-13,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 2.3688042666639946e-13
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 2.300478260522379e-13
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.015000000000233486,
+        "ls_physical_coefficients": {
+          "u_xx": 1.0000000000000469
+        },
+        "physical_coef_rel_error_union": 4.6851411639181606e-14,
+        "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05,
+        3.674661940736688e-05,
+        2.0153376859417352e-05,
+        1.105295141126022e-05,
+        6.061898993497572e-06,
+        3.324597932270945e-06,
+        1.8233480008684424e-06,
+        1e-06
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 2.3348687159359477e-13,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 2.3688042666639946e-13
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 2.300478260522379e-13
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.015000000000233486,
+          "ls_physical_coefficients": {
+            "u_xx": 1.0000000000000469
+          },
+          "physical_coef_rel_error_union": 4.6851411639181606e-14,
+          "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_pilot_result.json",
+      "dataset_id": "heat:sigma=0.0:seed=0:validation=d0e9cc2a6823a8c67f2752dede0ff0c46dfa0da8f493658ddb0b6b13426b76f8",
+      "case": "heat",
+      "sigma": 0.0,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "709a807aac83a60fdbc2d77febe5958de5aeb479b8b2997c9c19ca0e7b291f53",
+      "solver_input_hashes": {
+        "A": "c755aa09994a9db6f15603cf7974e2e2f04145f1ad2bacdff712611db6c0b698",
+        "b": "0101275d93aee90fa0193e0579442487b1359d19ea124ea6f8c32dde156cc34c"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 2,
+      "time_s": {
+        "solver_with_worker_startup": 5.170553000061773,
+        "fixed_support_validation": 0.0006440998986363411
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.12524870003107935,
+        "matrix_build_recorded_source_sum": 20.915378900012,
+        "symbolic_metadata_this_run": 3.803403400001116,
+        "truth_evaluation": 0.007892800029367208,
+        "dataset_total": 25.4511116000358
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.101156813805552e-10,
+        "max_relative_dual_gap_among_returned_points": 1.1012321454748506e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 2,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 2.3348687159359477e-13,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 2.3688042666639946e-13
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 2.300478260522379e-13
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.015000000000233486,
+        "ls_physical_coefficients": {
+          "u_xx": 1.0000000000000469
+        },
+        "physical_coef_rel_error_union": 4.6851411639181606e-14,
+        "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05,
+        3.674661940736688e-05,
+        2.0153376859417352e-05,
+        1.105295141126022e-05,
+        6.061898993497572e-06,
+        3.324597932270945e-06,
+        1.8233480008684424e-06,
+        1e-06
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 2.3348687159359477e-13,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 2.3688042666639946e-13
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 2.300478260522379e-13
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.015000000000233486,
+          "ls_physical_coefficients": {
+            "u_xx": 1.0000000000000469
+          },
+          "physical_coef_rel_error_union": 4.6851411639181606e-14,
+          "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_pilot_result.json",
+      "dataset_id": "heat:sigma=0.0:seed=0:validation=d0e9cc2a6823a8c67f2752dede0ff0c46dfa0da8f493658ddb0b6b13426b76f8",
+      "case": "heat",
+      "sigma": 0.0,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "709a807aac83a60fdbc2d77febe5958de5aeb479b8b2997c9c19ca0e7b291f53",
+      "solver_input_hashes": {
+        "A": "37fc96eb3750d2ac23d8f8cfe9650a332ee464fce04cdb372c52ded70dfae372",
+        "b": "0101275d93aee90fa0193e0579442487b1359d19ea124ea6f8c32dde156cc34c"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 2,
+      "time_s": {
+        "solver_with_worker_startup": 5.350355600006878,
+        "fixed_support_validation": 0.00316469999961555
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.12524870003107935,
+        "matrix_build_recorded_source_sum": 20.915378900012,
+        "symbolic_metadata_this_run": 3.803403400001116,
+        "truth_evaluation": 0.007892800029367208,
+        "dataset_total": 25.4511116000358
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.634943111551852e-10,
+        "max_relative_dual_gap_among_returned_points": 7.788477005543257e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 2.3348687159359477e-13,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 2.3688042666639946e-13
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 2.300478260522379e-13
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.015000000000233486,
+        "ls_physical_coefficients": {
+          "u_xx": 1.0000000000000469
+        },
+        "physical_coef_rel_error_union": 4.6851411639181606e-14,
+        "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05,
+        3.674661940736688e-05,
+        2.0153376859417352e-05,
+        1.105295141126022e-05,
+        6.061898993497572e-06,
+        3.324597932270945e-06,
+        1.8233480008684424e-06,
+        1e-06
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 2.3348687159359477e-13,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 2.3688042666639946e-13
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 2.300478260522379e-13
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.015000000000233486,
+          "ls_physical_coefficients": {
+            "u_xx": 1.0000000000000469
+          },
+          "physical_coef_rel_error_union": 4.6851411639181606e-14,
+          "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_pilot_result.json",
+      "dataset_id": "heat:sigma=0.0:seed=0:validation=d0e9cc2a6823a8c67f2752dede0ff0c46dfa0da8f493658ddb0b6b13426b76f8",
+      "case": "heat",
+      "sigma": 0.0,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "709a807aac83a60fdbc2d77febe5958de5aeb479b8b2997c9c19ca0e7b291f53",
+      "solver_input_hashes": {
+        "A": "37fc96eb3750d2ac23d8f8cfe9650a332ee464fce04cdb372c52ded70dfae372",
+        "b": "0101275d93aee90fa0193e0579442487b1359d19ea124ea6f8c32dde156cc34c"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 2,
+      "time_s": {
+        "solver_with_worker_startup": 5.522104899981059,
+        "fixed_support_validation": 0.0030900000128895044
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.12524870003107935,
+        "matrix_build_recorded_source_sum": 20.915378900012,
+        "symbolic_metadata_this_run": 3.803403400001116,
+        "truth_evaluation": 0.007892800029367208,
+        "dataset_total": 25.4511116000358
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.101156813805552e-10,
+        "max_relative_dual_gap_among_returned_points": 1.1012321454748506e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 2,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 2.3348687159359477e-13,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 2.3688042666639946e-13
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 2.300478260522379e-13
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.015000000000233486,
+        "ls_physical_coefficients": {
+          "u_xx": 1.0000000000000469
+        },
+        "physical_coef_rel_error_union": 4.6851411639181606e-14,
+        "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05,
+        3.674661940736688e-05,
+        2.0153376859417352e-05,
+        1.105295141126022e-05,
+        6.061898993497572e-06,
+        3.324597932270945e-06,
+        1.8233480008684424e-06,
+        1e-06
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 2.3348687159359477e-13,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 2.3688042666639946e-13
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 2.300478260522379e-13
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.015000000000233486,
+          "ls_physical_coefficients": {
+            "u_xx": 1.0000000000000469
+          },
+          "physical_coef_rel_error_union": 4.6851411639181606e-14,
+          "physical_coef_rel_error_true_only": 4.6851411639181606e-14
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "2815da436abf46386598ae94d676b05a22a93f5773dfbff2e91049e22e5b213f",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 12,
+      "time_s": {
+        "solver_with_worker_startup": 4.039897800073959,
+        "fixed_support_validation": 0.0024228000547736883
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.08514670003205538,
+        "matrix_build_recorded_source_sum": 14.835848399903625,
+        "symbolic_metadata_this_run": 1.9722239000257105,
+        "truth_evaluation": 2.0060978999827057,
+        "dataset_total": 41.7624639000278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.685311006110764e-10,
+        "max_relative_dual_gap_among_returned_points": 1.3321064176899688e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.11390933506446624,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12518038340698331
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.10139302165207595
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.12890933506446622,
+        "ls_physical_coefficients": {
+          "u_xx": 0.996609870973223
+        },
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "2815da436abf46386598ae94d676b05a22a93f5773dfbff2e91049e22e5b213f",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 2,
+      "time_s": {
+        "solver_with_worker_startup": 4.0499477999983355,
+        "fixed_support_validation": 0.0006905000191181898
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.08514670003205538,
+        "matrix_build_recorded_source_sum": 14.835848399903625,
+        "symbolic_metadata_this_run": 1.9722239000257105,
+        "truth_evaluation": 2.0060978999827057,
+        "dataset_total": 41.7624639000278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.415490158738746e-10,
+        "max_relative_dual_gap_among_returned_points": 6.685932399119107e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.11390933506446624,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12518038340698331
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.10139302165207595
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.12890933506446622,
+        "ls_physical_coefficients": {
+          "u_xx": 0.996609870973223
+        },
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05,
+        3.674661940736688e-05,
+        2.0153376859417352e-05,
+        1.105295141126022e-05,
+        6.061898993497572e-06,
+        3.324597932270945e-06,
+        1.8233480008684424e-06,
+        1e-06
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "0f9086f60dd6aabe69cf3a9a0ea1b364abf66491900849905ea36a2eedcdf2d0",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 20,
+      "time_s": {
+        "solver_with_worker_startup": 23.55230580002535,
+        "fixed_support_validation": 0.20089969993568957
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.08514670003205538,
+        "matrix_build_recorded_source_sum": 14.835848399903625,
+        "symbolic_metadata_this_run": 1.9722239000257105,
+        "truth_evaluation": 2.0060978999827057,
+        "dataset_total": 41.7624639000278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 3.0903084673639816e-09,
+        "max_relative_dual_gap_among_returned_points": 8.020312844162575e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.11390933506446624,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12518038340698331
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.10139302165207595
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.12890933506446622,
+        "ls_physical_coefficients": {
+          "u_xx": 0.996609870973223
+        },
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "0f9086f60dd6aabe69cf3a9a0ea1b364abf66491900849905ea36a2eedcdf2d0",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 3,
+      "time_s": {
+        "solver_with_worker_startup": 5.5974392999196425,
+        "fixed_support_validation": 0.0017948000459000468
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 0.08514670003205538,
+        "matrix_build_recorded_source_sum": 14.835848399903625,
+        "symbolic_metadata_this_run": 1.9722239000257105,
+        "truth_evaluation": 2.0060978999827057,
+        "dataset_total": 41.7624639000278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.1478452859423085e-10,
+        "max_relative_dual_gap_among_returned_points": 1.0009650200282575e-12,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xxxx",
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.06169735754828016,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.06753200781169988
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.055249939165587805
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.10169735754828016,
+        "ls_physical_coefficients": {
+          "u_xxxx": 7.523326953619905e-05,
+          "u_xx": 1.0097628104664669
+        },
+        "physical_coef_rel_error_union": 0.00976310034000472,
+        "physical_coef_rel_error_true_only": 0.009762810466466876
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.05221197751618608,
+        "selected_minus_true_complexity": 5,
+        "selected_minus_true_fixed_score": -0.027211977516186064,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.05:seed=0:validation=41e2ebb4968f814a868bc07c9ce5282eca15e440998763977ceae4d71740b37e",
+      "case": "heat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "solver_input_hashes": {
+        "A": "42d01719f89874f770656025f0f2c0d514f3d98f073b3816000b9fd03a610773",
+        "b": "0ac27b4bae8fc5dbb65f2a8ba25d9ade3822919f7d6ade77783ded2908dc55d1"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 14,
+      "time_s": {
+        "solver_with_worker_startup": 3.8500064000254497,
+        "fixed_support_validation": 0.006798499962314963
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 16.82504969998263,
+        "matrix_build_recorded_source_sum": 16.11186569998972,
+        "symbolic_metadata_this_run": 0.0001564000267535448,
+        "truth_evaluation": 3.706793999997899,
+        "dataset_total": 156.2658097000094
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 5.765576472509769e-10,
+        "max_relative_dual_gap_among_returned_points": 3.4547830888880555e-14,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 3,
+        "support": [
+          "u_xx",
+          "u^2",
+          "u^3"
+        ],
+        "exact": false,
+        "f1": 0.5,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "extra": [
+          "u^2",
+          "u^3"
+        ],
+        "missed": [],
+        "validation_error": 0.4827206118677436,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.5282511851912586
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.4324223208715853
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.5227206118677437,
+        "ls_physical_coefficients": {
+          "u_xx": 0.8032085046516073,
+          "u^2": -2.207168808991379,
+          "u^3": -2.9713884513054687
+        },
+        "physical_coef_rel_error_union": 3.706679156951326,
+        "physical_coef_rel_error_true_only": 0.1967914953483927
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.5108269074111179,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.5514299366044698
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.4667047071616103
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.5258269074111179,
+          "ls_physical_coefficients": {
+            "u_xx": 0.8655608369929179
+          },
+          "physical_coef_rel_error_union": 0.13443916300708214,
+          "physical_coef_rel_error_true_only": 0.13443916300708214
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.028106295543374293,
+        "selected_minus_true_complexity": 5,
+        "selected_minus_true_fixed_score": -0.003106295543374271,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.05:seed=0:validation=41e2ebb4968f814a868bc07c9ce5282eca15e440998763977ceae4d71740b37e",
+      "case": "heat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "solver_input_hashes": {
+        "A": "42d01719f89874f770656025f0f2c0d514f3d98f073b3816000b9fd03a610773",
+        "b": "0ac27b4bae8fc5dbb65f2a8ba25d9ade3822919f7d6ade77783ded2908dc55d1"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 5,
+      "time_s": {
+        "solver_with_worker_startup": 4.680163700017147,
+        "fixed_support_validation": 0.0010433000279590487
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 16.82504969998263,
+        "matrix_build_recorded_source_sum": 16.11186569998972,
+        "symbolic_metadata_this_run": 0.0001564000267535448,
+        "truth_evaluation": 3.706793999997899,
+        "dataset_total": 156.2658097000094
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 7.966370114271627e-11,
+        "max_relative_dual_gap_among_returned_points": 6.6458325810581824e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 5,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xx",
+          "u"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "extra": [
+          "u"
+        ],
+        "missed": [],
+        "validation_error": 0.48758838686775885,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.522801566629104
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.44962583549742907
+          }
+        ],
+        "complexity": 4,
+        "fixed_score": 0.5075883868677589,
+        "ls_physical_coefficients": {
+          "u_xx": 0.8173026735710973,
+          "u": -2.7170984413448522
+        },
+        "physical_coef_rel_error_union": 2.723233785968971,
+        "physical_coef_rel_error_true_only": 0.18269732642890268
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.5108269074111179,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.5514299366044698
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.4667047071616103
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.5258269074111179,
+          "ls_physical_coefficients": {
+            "u_xx": 0.8655608369929179
+          },
+          "physical_coef_rel_error_union": 0.13443916300708214,
+          "physical_coef_rel_error_true_only": 0.13443916300708214
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.023238520543359065,
+        "selected_minus_true_complexity": 1,
+        "selected_minus_true_fixed_score": -0.01823852054335906,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.05:seed=0:validation=41e2ebb4968f814a868bc07c9ce5282eca15e440998763977ceae4d71740b37e",
+      "case": "heat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "solver_input_hashes": {
+        "A": "e402c99e5dd015a9fe695f6d0279052e3aa27691e7719a5ccca4bd75271e0ddc",
+        "b": "0ac27b4bae8fc5dbb65f2a8ba25d9ade3822919f7d6ade77783ded2908dc55d1"
+      },
+      "n_columns": 1158,
+      "path_status": "budget_exhausted",
+      "all_requested_solutions_certified": false,
+      "path_point_status_counts": {
+        "certified": 22,
+        "budget_exhausted": 2
+      },
+      "n_candidates": 21,
+      "time_s": {
+        "solver_with_worker_startup": 120.04764650005382,
+        "fixed_support_validation": 0.24451459990814328
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 16.82504969998263,
+        "matrix_build_recorded_source_sum": 16.11186569998972,
+        "symbolic_metadata_this_run": 0.0001564000267535448,
+        "truth_evaluation": 3.706793999997899,
+        "dataset_total": 156.2658097000094
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.573086090023972e-09,
+        "max_relative_dual_gap_among_returned_points": 3.69277226649672e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": null,
+      "partial_path_exploratory_best_only": {
+        "candidate_id": 2,
+        "support": [
+          "u_xxxx",
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.2950091342212856,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.3198283679591348
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.26790034265857404
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.3350091342212856,
+        "ls_physical_coefficients": {
+          "u_xxxx": 7.328998598385309e-05,
+          "u_xx": 0.9749595555919504
+        },
+        "physical_coef_rel_error_union": 0.025040551662746376,
+        "physical_coef_rel_error_true_only": 0.025040444408049645
+      },
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.5108269074111179,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.5514299366044698
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.4667047071616103
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.5258269074111179,
+          "ls_physical_coefficients": {
+            "u_xx": 0.8655608369929179
+          },
+          "physical_coef_rel_error_union": 0.13443916300708214,
+          "physical_coef_rel_error_true_only": 0.13443916300708214
+        }
+      ],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "numerical_or_budget_incomplete",
+      "classification_meaning": "At least one requested lambda is unfinished or uncertified; no primary selection.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    },
+    {
+      "source": "stage2a_heat_noise_pilot_result.json",
+      "dataset_id": "heat:sigma=0.05:seed=0:validation=41e2ebb4968f814a868bc07c9ce5282eca15e440998763977ceae4d71740b37e",
+      "case": "heat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "solver_input_hashes": {
+        "A": "e402c99e5dd015a9fe695f6d0279052e3aa27691e7719a5ccca4bd75271e0ddc",
+        "b": "0ac27b4bae8fc5dbb65f2a8ba25d9ade3822919f7d6ade77783ded2908dc55d1"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 4,
+      "time_s": {
+        "solver_with_worker_startup": 6.592997599975206,
+        "fixed_support_validation": 0.003388599958270788
+      },
+      "dataset_time_s": {
+        "matrix_load_or_build_this_run": 16.82504969998263,
+        "matrix_build_recorded_source_sum": 16.11186569998972,
+        "symbolic_metadata_this_run": 0.0001564000267535448,
+        "truth_evaluation": 3.706793999997899,
+        "dataset_total": 156.2658097000094
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 7.854797911999026e-11,
+        "max_relative_dual_gap_among_returned_points": 3.450804535687434e-14,
+        "fallback_points": 0,
+        "outer_iteration_count": 5,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 3,
+        "support": [
+          "u_xxxxxx",
+          "u_xxxx",
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "extra": [
+          "u_xxxx",
+          "u_xxxxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.21331777542825633,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.23192863913501097
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.1929198097041926
+          }
+        ],
+        "complexity": 15,
+        "fixed_score": 0.2883177754282563,
+        "ls_physical_coefficients": {
+          "u_xxxxxx": 4.323662401899191e-09,
+          "u_xxxx": 0.00014719489857436554,
+          "u_xx": 1.0046534122886577
+        },
+        "physical_coef_rel_error_union": 0.004655739712056001,
+        "physical_coef_rel_error_true_only": 0.004653412288657677
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.5108269074111179,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.5514299366044698
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.4667047071616103
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.5258269074111179,
+          "ls_physical_coefficients": {
+            "u_xx": 0.8655608369929179
+          },
+          "physical_coef_rel_error_union": 0.13443916300708214,
+          "physical_coef_rel_error_true_only": 0.13443916300708214
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.29750913198286155,
+        "selected_minus_true_complexity": 12,
+        "selected_minus_true_fixed_score": -0.2375091319828616,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support"
+    }
+  ],
+  "skipped_dataset_rows": [],
+  "classification_counts_descriptive_only": {
+    "selected_true_support": 7,
+    "validation_complexity_tradeoff": 4,
+    "numerical_or_budget_incomplete": 1
+  },
+  "duplicate_observation_keys": [],
+  "unique_noise_seeds_observed": [
+    0
+  ],
+  "limits": [
+    "Development diagnostics only; no final-test observations or confidence intervals.",
+    "One-seed cases do not support a definite noise-robustness ranking.",
+    "True support is used for diagnosis only; alpha and saved selections are never changed.",
+    "A true support missing from this finite lambda path is not proof of non-identifiability.",
+    "A score tradeoff may reflect data/preprocessing/validation error as well as structural complexity.",
+    "Weak equation residuals are not trajectory rollout errors.",
+    "Duplicate source observations are shown explicitly and must not count as independent replicates."
+  ],
+  "classification_self_checks_passed": true,
+  "all_checks_passed": true
+}

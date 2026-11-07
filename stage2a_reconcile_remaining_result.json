@@ -1,0 +1,170 @@
+{
+  "all_checks_passed": true,
+  "reconciliation_integrity_passed": true,
+  "all_baseline_paths_numerically_complete": false,
+  "output": "D:\\03_项目代码\\PDE\\stage2a_other_cases_reconciled_result.json",
+  "rows": [
+    {
+      "case": "wave",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "numerically_complete": true,
+      "certified_points": 24,
+      "requested_points": 24,
+      "primary_selected_candidate_id": 1,
+      "selected_support": [
+        "u_xx"
+      ],
+      "timing": {
+        "original_attempt_status": "budget_exhausted",
+        "original_path_seconds": 120.05164600000717,
+        "previous_interface_failure_seconds": 5.85394359997008,
+        "continuation_attempts": [
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v2_result.json",
+            "additional_attempt_elapsed_s": 27.580942700151354,
+            "source_reported_v2_historical_total_s": 153.4865323001286,
+            "source_reported_v3_retry_seconds": 0.0,
+            "resolved_cumulative_historical_total_s": 153.4865323001286
+          },
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v3_result.json",
+            "additional_attempt_elapsed_s": 0.0,
+            "source_reported_v2_historical_total_s": 153.4865323001286,
+            "source_reported_v3_retry_seconds": 0.0,
+            "resolved_cumulative_historical_total_s": 153.4865323001286
+          }
+        ],
+        "historical_solver_cost_total_s": 153.4865323001286,
+        "total_new_numerical_work_s": 33.434886300121434,
+        "interpretation": "Sum of all historical attempts; not one fresh-path timing."
+      }
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "numerically_complete": false,
+      "certified_points": 22,
+      "requested_points": 24,
+      "primary_selected_candidate_id": null,
+      "selected_support": null,
+      "timing": {
+        "original_attempt_status": "budget_exhausted",
+        "original_path_seconds": 120.03172940004151,
+        "previous_interface_failure_seconds": 6.754917199956253,
+        "continuation_attempts": [
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v2_result.json",
+            "additional_attempt_elapsed_s": 24.67738130001817,
+            "source_reported_v2_historical_total_s": 151.46402790001594,
+            "source_reported_v3_retry_seconds": 0.0,
+            "resolved_cumulative_historical_total_s": 151.46402790001594
+          },
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v3_result.json",
+            "additional_attempt_elapsed_s": 18.836166400113143,
+            "source_reported_v2_historical_total_s": 151.46402790001594,
+            "source_reported_v3_retry_seconds": 18.836166400113143,
+            "resolved_cumulative_historical_total_s": 170.30019430012908
+          }
+        ],
+        "historical_solver_cost_total_s": 170.30019430012908,
+        "total_new_numerical_work_s": 50.268464900087565,
+        "interpretation": "Sum of all historical attempts; not one fresh-path timing."
+      }
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "numerically_complete": true,
+      "certified_points": 24,
+      "requested_points": 24,
+      "primary_selected_candidate_id": 1,
+      "selected_support": [
+        "u_x"
+      ],
+      "timing": {
+        "original_attempt_status": "budget_exhausted",
+        "original_path_seconds": 120.03717579995282,
+        "previous_interface_failure_seconds": 5.315132100018673,
+        "continuation_attempts": [
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v2_result.json",
+            "additional_attempt_elapsed_s": 12.259326500003226,
+            "source_reported_v2_historical_total_s": 137.61163439997472,
+            "source_reported_v3_retry_seconds": 0.0,
+            "resolved_cumulative_historical_total_s": 137.61163439997472
+          },
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v3_result.json",
+            "additional_attempt_elapsed_s": 0.0,
+            "source_reported_v2_historical_total_s": 137.61163439997472,
+            "source_reported_v3_retry_seconds": 0.0,
+            "resolved_cumulative_historical_total_s": 137.61163439997472
+          }
+        ],
+        "historical_solver_cost_total_s": 137.61163439997472,
+        "total_new_numerical_work_s": 17.5744586000219,
+        "interpretation": "Sum of all historical attempts; not one fresh-path timing."
+      }
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "numerically_complete": true,
+      "certified_points": 24,
+      "requested_points": 24,
+      "primary_selected_candidate_id": 3,
+      "selected_support": [
+        "u_xxxx",
+        "u_xx",
+        "u_x u_xxxx",
+        "u u_x^2 u_xx^2",
+        "u^2 u_xx",
+        "t^2 u_xx",
+        "x u"
+      ],
+      "timing": {
+        "original_attempt_status": "budget_exhausted",
+        "original_path_seconds": 120.02480430004653,
+        "previous_interface_failure_seconds": 6.6904345999937505,
+        "continuation_attempts": [
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v2_result.json",
+            "additional_attempt_elapsed_s": 14.797522500040941,
+            "source_reported_v2_historical_total_s": 141.51276140008122,
+            "source_reported_v3_retry_seconds": 0.0,
+            "resolved_cumulative_historical_total_s": 141.51276140008122
+          },
+          {
+            "source": "D:\\03_项目代码\\PDE\\stage2a_retry_remaining_v3_result.json",
+            "additional_attempt_elapsed_s": 4.055991699919105,
+            "source_reported_v2_historical_total_s": 141.51276140008122,
+            "source_reported_v3_retry_seconds": 4.055991699919105,
+            "resolved_cumulative_historical_total_s": 145.56875310000032
+          }
+        ],
+        "historical_solver_cost_total_s": 145.56875310000032,
+        "total_new_numerical_work_s": 25.543948799953796,
+        "interpretation": "Sum of all historical attempts; not one fresh-path timing."
+      }
+    }
+  ],
+  "source_files_unchanged": true,
+  "successful_methods_unchanged": true,
+  "unaffected_rows_unchanged": true,
+  "elapsed_s": 15.442224700003862,
+  "no_solver_rerun": true,
+  "pass_meaning": "Reconciliation integrity, not universal numerical completion or paper readiness."
+}

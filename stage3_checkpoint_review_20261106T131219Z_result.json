@@ -1,0 +1,2141 @@
+{
+  "stage": "3_read_only_checkpoint_review",
+  "all_checks_passed": true,
+  "created_utc": "2026-11-06T13:12:19.011406+00:00",
+  "index": {
+    "file": "stage3_campaign_result.json",
+    "sha256": "719c90cceb45d9449d3505dad39a31ece4220252f18628ddf92536e4b2529243"
+  },
+  "source": {
+    "file": "stage3_checkpoint_review.py",
+    "sha256": "e5db541c46e2f50e62278f20626983db87fde13b75981052ad9caf9099326126"
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "checked_datasets": [
+    {
+      "dataset": {
+        "case": "heat",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "wave",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "advection_diffusion",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "burgers",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "kdv",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "logheat",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "heat",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "wave",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "advection_diffusion",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "burgers",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "kdv",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "status": "complete",
+      "checked_methods": 6
+    },
+    {
+      "dataset": {
+        "case": "logheat",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "status": "batch_budget_checkpoint",
+      "checked_methods": 1
+    }
+  ],
+  "completed_datasets": 11,
+  "pending_datasets_with_methods": 1,
+  "complete_method_paths": 67,
+  "certified_final_points": 1608,
+  "certified_points_including_outer": 1698,
+  "selected_rows": [
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 1.9044616625568038e-13
+    },
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 1.9044616625568038e-13
+    },
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 1.9044616625568038e-13
+    },
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 1.9044616625568038e-13
+    },
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 1.9044616625568038e-13
+    },
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 1.9044616625568038e-13
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 3.2083809641633508e-15
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 3.2083809641633508e-15
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 3.2083809641633508e-15
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 3.2083809641633508e-15
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 3.2083809641633508e-15
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 3.2083809641633508e-15
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.3638315086328764e-15
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.3638315086328764e-15
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.3638315086328764e-15
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.3638315086328764e-15
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.3638315086328764e-15
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.3638315086328764e-15
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x",
+        "u u_x",
+        "D_x^1(exp(1u))",
+        "D_x^2(exp(1u))"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.5714285714285714,
+        "extra": [
+          "NP:exp:1:Dx1",
+          "NP:exp:1:Dx2",
+          "u_x"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "NP:exp:1:Dx1",
+          "NP:exp:1:Dx2",
+          "u*u_x",
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.973651161181685e-12
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.958531985059375e-12
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u^2*u_x",
+          "u_x"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u^2*u_x",
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.971745842271815e-12
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.958531985059375e-12
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u^2*u_x",
+          "u_x"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u^2*u_x",
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.971745842271815e-12
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 5.958531985059375e-12
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_x",
+        "D_x^1(cos(1u))"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "NP:cos:1:Dx1",
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "support_canonical": [
+          "NP:cos:1:Dx1",
+          "u_x"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.36670265393552187
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_x u_xx",
+        "D_x^3(sin(3u))",
+        "D_x^1(cos(1u))",
+        "D_x^3(exp(-1u))"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "NP:cos:1:Dx1",
+          "NP:exp:-1:Dx3",
+          "NP:sin:3:Dx3",
+          "u_x*u_xx"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "support_canonical": [
+          "NP:cos:1:Dx1",
+          "NP:exp:-1:Dx3",
+          "NP:sin:3:Dx3",
+          "u_x*u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.08504239236270779
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.5714285714285714,
+        "extra": [
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 1.8508529789498528e-10
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 2.1023061295466388e-10
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_x",
+        "u_x^3"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "u_x",
+          "u_x^3"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "support_canonical": [
+          "u_x",
+          "u_x^3"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.22269306881965478
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 2.1023061295466388e-10
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "D_x^2(sin(2u))",
+        "D_x^2(exp(1u))"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "NP:exp:1:Dx2",
+          "NP:sin:2:Dx2"
+        ],
+        "missed": [
+          "u_x^2",
+          "u_xx"
+        ],
+        "support_canonical": [
+          "NP:exp:1:Dx2",
+          "NP:sin:2:Dx2"
+        ],
+        "true_support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.11365879122133628
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u u_xx",
+        "D_x^2(exp(1u))"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "NP:exp:1:Dx2",
+          "u*u_xx"
+        ],
+        "missed": [
+          "u_x^2",
+          "u_xx"
+        ],
+        "support_canonical": [
+          "NP:exp:1:Dx2",
+          "u*u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.011620448737067477
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x^2"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 8.60797543776303e-08
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x^2"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 8.60797543776303e-08
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x^2"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 8.60797543776303e-08
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x^2"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x^2",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 8.60797543776303e-08
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.08032567976634139
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u_xx",
+          "u_xxxx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.043281513762888454
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.08032567976634139
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.08032567976634139
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.08032567976634139
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u_xx",
+          "u_xxxx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.043281513762888454
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.02536111155325258
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.02536111155325258
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.02536111155325258
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.02536111155325258
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.02536111155325258
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.02536111155325258
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.04529225284010628
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.04529225284010628
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.04529225284010628
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.04529225284010628
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.04529225284010628
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.04529225284010628
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_x"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "support_canonical": [
+          "u_x"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.42371626075224933
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.03145244763276092
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_x"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "support_canonical": [
+          "u_x"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.42371626075224933
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.03145244763276092
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_x"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "support_canonical": [
+          "u_x"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.42371626075224933
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xx"
+        ]
+      },
+      "test_weak_error": 0.03145244763276092
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "L1",
+      "support": [
+        "u_x",
+        "D_x^1(cos(1u))"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "NP:cos:1:Dx1",
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "support_canonical": [
+          "NP:cos:1:Dx1",
+          "u_x"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.36645636897048156
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1212",
+      "method": "IRL1_original",
+      "support": [
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "D_x^1(cos(1u))",
+        "D_x^3((1+u^2)^(-1))"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "NP:cos:1:Dx1",
+          "NP:inverse_quadratic:1:Dx3",
+          "u_x*u_xx",
+          "u_x*u_xx^2"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "support_canonical": [
+          "NP:cos:1:Dx1",
+          "NP:inverse_quadratic:1:Dx3",
+          "u_x*u_xx",
+          "u_x*u_xx^2"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.08741135237210369
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "L1",
+      "support": [
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "extra": [
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx",
+          "u_xx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx",
+          "u_xx",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.018518735392207806
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J18",
+      "method": "IRL1_original",
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.018597816796950627
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "L1",
+      "support": [
+        "u_x",
+        "u_x^3"
+      ],
+      "truth": {
+        "exact": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "extra": [
+          "u_x",
+          "u_x^3"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "support_canonical": [
+          "u_x",
+          "u_x^3"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.22275015796118247
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "noise_seed": 1000,
+      "library": "J1158",
+      "method": "IRL1_original",
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "truth": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ],
+        "true_support_canonical": [
+          "u*u_x",
+          "u_xxx"
+        ]
+      },
+      "test_weak_error": 0.018597816796950627
+    }
+  ],
+  "completion_by_case_noise": [
+    {
+      "case": "heat",
+      "sigma": 0,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 1,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 20,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "wave",
+      "sigma": 0,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 1,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 20,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 1,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 20,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "burgers",
+      "sigma": 0,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 1,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 20,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "kdv",
+      "sigma": 0,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 1,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 20,
+      "formal_noise_interval_eligible": false
+    },
+    {
+      "case": "logheat",
+      "sigma": 0,
+      "completed_six_method_seeds": [
+        1000
+      ],
+      "planned_seeds": 1,
+      "formal_noise_interval_eligible": false
+    }
+  ],
+  "formal_grid_complete": false,
+  "no_new_observations_or_solver_calls": true,
+  "no_saved_campaign_artifact_modified": true,
+  "elapsed_s": 14.568541700020432,
+  "scope": "Certificates recomputed with frozen primitives; scores/readouts and test residuals recomputed from saved matrices. Dynamics, source formula accuracy and full field-to-matrix reconstruction are covered by prior development checks, not revalidated here.",
+  "inference_limit": "Only complete 20-seed paired sets qualify for formal noise intervals. No algorithm ranking from an incomplete grid; clean cases are deterministic single runs."
+}

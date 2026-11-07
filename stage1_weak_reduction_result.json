@@ -1,0 +1,196 @@
+{
+  "stage": 1,
+  "all_checks_passed": true,
+  "checks": {
+    "all_1158_exact_formal_identities": true,
+    "independent_sympy_chain_rule": true,
+    "boundary_flux_zero": true,
+    "smooth_integral_refinement": true,
+    "same_weak_target": true,
+    "all_columns_preserved": true,
+    "paired_noise_same_input_target": true,
+    "pure_sixth_derivative_matches_weak": true
+  },
+  "identity_count": 1158,
+  "max_reconstructed_order": 3,
+  "max_test_function_derivative": 6,
+  "largest_bound_combination": 13,
+  "sympy_probe_names": [
+    "u_xxx^2",
+    "u u_xxxxxx",
+    "u^4 u_xx u_xxxx",
+    "x t u^2 u_x u_xxxxx",
+    "x^2 u_xxxxxx",
+    "x^2 u^5 u_x"
+  ],
+  "smooth_integral_refinement": [
+    {
+      "nx": 129,
+      "half": [
+        12,
+        10
+      ],
+      "relative_column_differences": [
+        0.0,
+        0.0082853269398109,
+        0.0003267110983024528,
+        0.020357615571896432,
+        112.51038722154642,
+        6.849659275320333e-06
+      ],
+      "same_target_exact": true
+    },
+    {
+      "nx": 257,
+      "half": [
+        24,
+        10
+      ],
+      "relative_column_differences": [
+        0.0,
+        0.0005789906376719798,
+        6.166121150826658e-06,
+        0.0020810448641084742,
+        7.264169062243073,
+        2.1796602737128654e-08
+      ],
+      "same_target_exact": true
+    },
+    {
+      "nx": 513,
+      "half": [
+        48,
+        10
+      ],
+      "relative_column_differences": [
+        0.0,
+        3.7321127455961405e-05,
+        9.085278192733659e-08,
+        7.651037265763206e-05,
+        0.29516825152648796,
+        1.0304511818589652e-10
+      ],
+      "same_target_exact": true
+    }
+  ],
+  "paired_noise_fixture": {
+    "sigma": 0.01,
+    "seed": 6031,
+    "input_hash": "8e47e9ca6c1e85dfed0d4d1f0695dd621b980c566d5bb88fb6591220a6c3b9cb",
+    "full_jet_v1": {
+      "median": 0.4157536249789041,
+      "q90": 37.15551504349422,
+      "maximum": 241.11540146543908,
+      "columns_with_nonvanishing_clean_reference": 1158,
+      "near_zero_clean_columns": 0,
+      "near_zero_reference_policy": "excluded only from relative diagnostic, retained in matrices",
+      "frobenius_relative": 120.4860645493832
+    },
+    "reduced_jet_v2": {
+      "median": 0.4157536249789041,
+      "q90": 43.285420347446696,
+      "maximum": 328.9421051755804,
+      "columns_with_nonvanishing_clean_reference": 1158,
+      "near_zero_clean_columns": 0,
+      "near_zero_reference_policy": "excluded only from relative diagnostic, retained in matrices",
+      "frobenius_relative": 0.6146539858278995
+    },
+    "v1_clean_and_noisy_seconds": 2.1259610999841243,
+    "v2_clean_and_noisy_seconds": 2.723986899945885,
+    "v2_metadata": {
+      "input_observation_hash": "495e25c4faf70c4c32a5def14c2ebc3065bb3916a2c221ab02e856c2264c536d",
+      "raw_shape": [
+        101,
+        201
+      ],
+      "rows": 117,
+      "columns": 1158,
+      "target_order": 1,
+      "target_source": "original_observations_weak_time_derivative",
+      "half": [
+        12,
+        10
+      ],
+      "stride": [
+        12,
+        10
+      ],
+      "test_power": 8,
+      "reconstruction": {
+        "window": 31,
+        "polyorder": 8,
+        "max_order": 3,
+        "spatial_reconstruction_halo": 15,
+        "dx": 0.031415926535897754,
+        "temporal_reconstruction": "none",
+        "zeroth_jet": "local_polynomial_smoothing",
+        "input_shape": [
+          101,
+          201
+        ],
+        "jet_shape": [
+          4,
+          101,
+          171
+        ],
+        "moment_max_absolute_error": 4.618527782440651e-14,
+        "moment_max_scaled_error_by_order": [
+          4.440892098500626e-16,
+          6.8833827526759706e-15,
+          5.10702591327572e-15,
+          4.618527782440651e-14
+        ],
+        "dimensionless_design_condition": 512.6894492591421
+      },
+      "raw_footprint_half_x": 27,
+      "raw_footprint_half_t": 10,
+      "center_x_indices": [
+        27,
+        39,
+        51,
+        63,
+        75,
+        87,
+        99,
+        111,
+        123,
+        135,
+        147,
+        159,
+        171
+      ],
+      "center_t_indices": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90
+      ],
+      "boundary_policy": "discard reconstruction plus weak halo; bump derivatives vanish at endpoints",
+      "preprocessing": "exact_IBP_to_spatial_order_at_most_3_plus_raw_pure_weak_powers",
+      "max_reconstructed_order": 3,
+      "max_test_function_derivative": 6,
+      "largest_bound_combination": 13,
+      "free_columns_unchanged": true,
+      "evaluated_integral_cache_hits": 925,
+      "evaluated_integral_cache_misses": 1367,
+      "integral_cache_max_vectors": 128,
+      "matrix_hash": "f66d0905a7723491521711e53be2b5208867a4acf0616257de7358c739066f84",
+      "target_hash": "8f1fdf608c172bef0d3d27be4bda79f9030743ad617bf8e006c6327b9bae6a50"
+    }
+  },
+  "method_scope": "exact weak integration by parts preprocessing; same canonical columns and L1 threshold",
+  "boundary_assumptions": "compact polynomial bump power8, derivatives through order5 vanish at x endpoints",
+  "termination": "D<=6 and highest r>3 implies unique factor; remaining derivative budget<=2, so other factors cannot exceed3; main order lowers each step",
+  "limitations": [
+    "Remaining products of reconstructed order<=3 jets still amplify noise and may be biased.",
+    "Pure raw u powers also have nonlinear observation-noise bias.",
+    "One smooth trajectory/noise seed is a preprocessing diagnostic, not algorithm ranking or final robustness evidence.",
+    "No analytical derivatives are used in either matrix-construction function.",
+    "Relative per-column perturbations exclude near-zero clean reference norms only from that diagnostic, never from fitting."
+  ]
+}

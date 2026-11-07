@@ -1,0 +1,255 @@
+{
+  "stage": "3_formal_observations",
+  "case": "burgers",
+  "sigma": 0.01,
+  "seed": 1000,
+  "role": "test",
+  "trajectory_ids": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "source_sha256": {
+    "gml1_maxlib_compare.py": "2b3fcfb623e3e2888a83c87dd1443816e921f93ecb75be101ffd1c5c0a730f1d",
+    "inverse_burgers.py": "8681efadb4444d5a7ff507651c2c7833d6f2ecfe7f7af198d985b239902f8880",
+    "inverse_irl1.py": "b6c42667fd8c23ebfb42320fe0c88e36b0b50e1695129c0836d29bbe13923396",
+    "lasso_exact.py": "714a4fb3f4192d13654a44a93eeac003302b85610a3b715a3da6830a86889093",
+    "library_effect_audit.py": "49662a4cd52a858c1edc6495e4fba84ff48ba753c19afc39244b3d07590e06ca",
+    "maxlib_first.py": "1bac4409850cfcd2fef98acfd2d751be058da5c5cf0eb06e2128723e5cc6b4a4",
+    "maxlib_irl1.py": "3dffd3a2db384805405e4508071f455460cc3ec6aca0cfb773622c63589b36d5",
+    "noise_inverse.py": "d7041dab4ec38dd2e00f135635f0761c62e3011391355bf5a29d34ec06b4c195",
+    "noise_inverse_biglib.py": "ae09b180c0b086ba8ac43f1abbe90a9cd0de7425c99071c72b5365c46d48b219",
+    "redo_two.py": "0923afdf5a4e73f6461c9b3da60e7f97c96f0af2fd677a7e9df2d86ba4df6ab7",
+    "stage0_data_bundle.py": "18845ff7841868451b592c057e66c608a3ef38e01b5b062bd78a558b9dace2a3",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage2_field_check.py": "b9973cc7e9f37e92716ca8221bac2185767b300601f3c151efeb49285c5339e5",
+    "stage2_identifiability.py": "6df16402211adf8b2883135cf64273f8f82f0cdec7810f8f36fd95e605ef04f0",
+    "stage2a_baseline.py": "d7c8ef9c2fc8f75161e268d69c43001b8da8065ea65837f9f9df6e6a2ba6b3f8",
+    "stage2a_clarabel_probe.py": "a5ffb21ae8eb7480c456cf90d86fb3bb9eb468ec6ded3a1dfebf0a73217ecd7a",
+    "stage2a_l1_paths.py": "f4c680117d14e4d5d5b2ac1ee43b660acaf2f660c244612448f5adbc6ab368a9",
+    "stage2a_reconcile_remaining.py": "85d95e1ae2fc746830db10128f809d4f93d3b1c02516dc9d98420c741d481b86",
+    "stage2a_retry_remaining_v3.py": "8939024eb79db040704b75b2c2cd8be261c25776a870f23c5ab1bd069ce2ea8d",
+    "stage2a_retry_remaining_v4.py": "896b0e5d821c7e189ecf6e00c4fb13014e16b090ab3140bfaaccde72ee9ede0e",
+    "stage2a_solver_polish.py": "180575a91a4997dc32d4ad35e906d4e9d2de70ea1a205817f424c1f6e221e5cd",
+    "stage2b_compare.py": "2ff1b4d7e80891641e7bd762781a47d993b12966d1a4c38d52463f796692f3bc",
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_heat_dynamic_compare.py": "878e76064f4e074d29baf0a2d7532787465230d9553976aa82c655f79fe85802",
+    "stage2b_heat_full_spectrum.py": "843a57fe89b7ee43a8075fcf9854452ed3eec79d488d4ee2eac1cf6877ff6226",
+    "stage2b_numerical_retry.py": "39308c9a5e4f8e545a63a892b8673042eaf65d6d608f779ffea81decc7cd1298",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2b_smoothed_irl1.py": "596b67be74539a8fe3fffbabca329e8239e9b9d8d0b6ad98fc57b2980e41987d",
+    "stage2c_extended_matrices.py": "087dee6f0940dcaf3a6ddc641186382f8b1102135af05a534e7d64ff8e0ada33",
+    "stage2c_numerical_retry.py": "1a822cda1184c493b58f0835cbf781a3193cb55ee0aa7871e8ef1cb746117c94",
+    "stage3_campaign.py": "1d85114a3d185cd000add6b217dc08a3f4fb90784100c95db0592cec3dfa6b58",
+    "stage3_campaign_preflight.py": "87d746ddb578d1dca0f94d49ca8a60407abfa402ae36d17848128e9308547a9f",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe",
+    "stage3_data_v2.py": "f12043f27dacae8746cef4879c7769ea11cdd037f26609e1749218df285b41d4",
+    "stage3_freeze.py": "fe38edde0ea0ef8bd31e1e0447d207f8190118168957e128a97ce67227ab512e"
+  },
+  "target": "u_t",
+  "selection_manifest": {
+    "file": "stage3_campaign\\burgers_sigma_0p01_seed_1000\\selection_manifest.json",
+    "sha256": "7e515409b157992d1d8cf04a53433d2e790c52d83b09c9d573757956eb410aa7"
+  },
+  "numpy_version": "2.2.5",
+  "trajectories": [
+    {
+      "trajectory_id": 6,
+      "split": "test",
+      "parameters": {
+        "ks": [
+          0.0,
+          -3.1185040992247477,
+          -6.8512282837065985,
+          -7.352356578337266
+        ],
+        "x0s": [
+          0.0,
+          0.6075082936779943,
+          0.17958922178179876,
+          0.4018944654410428
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 0.6420139475211789
+    },
+    {
+      "trajectory_id": 7,
+      "split": "test",
+      "parameters": {
+        "ks": [
+          0.0,
+          -4.637425465590914,
+          -12.097327359291388,
+          -15.176344899011868
+        ],
+        "x0s": [
+          0.0,
+          0.39933053573313215,
+          1.1326392356999297,
+          1.0013335511584567
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.3121302600648068
+    },
+    {
+      "trajectory_id": 8,
+      "split": "test",
+      "parameters": {
+        "ks": [
+          0.0,
+          -5.645071989967993,
+          -5.927644098669965,
+          -7.706392627795753
+        ],
+        "x0s": [
+          0.0,
+          1.0683900236372308,
+          0.31181465780248463,
+          0.8307828638512162
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 0.6545490089044441
+    },
+    {
+      "trajectory_id": 9,
+      "split": "test",
+      "parameters": {
+        "ks": [
+          0.0,
+          -12.017197340326513,
+          -14.281145265082339,
+          -15.56810584586271
+        ],
+        "x0s": [
+          0.0,
+          0.5626794399402071,
+          0.9315413629808376,
+          0.3635677072940562
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.2989811340876054
+    },
+    {
+      "trajectory_id": 10,
+      "split": "test",
+      "parameters": {
+        "ks": [
+          0.0,
+          -4.064994438935106,
+          -4.74629673821706,
+          -15.317733633417246
+        ],
+        "x0s": [
+          0.0,
+          0.390964416987436,
+          0.1416780382342957,
+          0.7745104536512423
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.420100105912283
+    },
+    {
+      "trajectory_id": 11,
+      "split": "test",
+      "parameters": {
+        "ks": [
+          0.0,
+          -9.036758793898837,
+          -10.164668447544862,
+          -12.00373970488324
+        ],
+        "x0s": [
+          0.0,
+          1.004591949438157,
+          1.0208999936172254,
+          0.40168655704595724
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 0.9176616359277708
+    }
+  ],
+  "noise_model": "additive Gaussian sigma*std(clean trajectory), paired standard noise across sigma",
+  "noise_seed_sequence": "[20261106, frozen case index, noise seed, trajectory_id]",
+  "normalization": "none; fit normalization from training matrices only",
+  "clean_values_saved": false,
+  "analytical_derivatives_returned": false,
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        321
+      ],
+      "sha256": "78cb2757a51478b594a6deb0a39b2bacc3c084609b336d35ea0ff3f7ac9eeab7"
+    },
+    "t": {
+      "shape": [
+        161
+      ],
+      "sha256": "f81cbe1b11630c98dd7803b40d5fa922d21c62294923c0388217e80151085376"
+    },
+    "u_0": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "b99e123d45791279fb010e9dab893abbeb41a2fbc8317bc56e779b5ac3b49c9b"
+    },
+    "u_1": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "a980b90edc1f4b1ab96833172541370373d939707fc027af77a7a33a3a1c0211"
+    },
+    "u_2": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "233e8781bb325d67fe77ee175ea02179f4e9a5f3255ac062fbd20ca6e3dffda5"
+    },
+    "u_3": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "af5324485b77d56c4efe4ab3ba569dbc9b92483a2e1f7e3f89240dff749da44a"
+    },
+    "u_4": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "4bb7f6bf31387889e14020920cc456bb93a7633e038e9a125cffc7e66d2a0e63"
+    },
+    "u_5": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "c2b784c45acab29891f1f9343802884adfe9c5c7757c83c359f1a954c6ede060"
+    }
+  },
+  "npz_sha256": "4d4a6968f1bd8c8d7a26c7a8c53e26725582921725f8f1b221ad17b517bf1af3"
+}

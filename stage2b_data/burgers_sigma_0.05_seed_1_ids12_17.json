@@ -1,0 +1,198 @@
+{
+  "case": "burgers",
+  "sigma": 0.05,
+  "seed": 1,
+  "source_hashes": {
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966"
+  },
+  "target": "u_t",
+  "trajectories": [
+    {
+      "trajectory_id": 12,
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -3.8760172047332597,
+          -5.75753890303987,
+          -6.133577442522611
+        ],
+        "x0s": [
+          0.0,
+          0.7422674157176256,
+          0.8675906287859196,
+          0.10897110976863793
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 0.5055748497595651
+    },
+    {
+      "trajectory_id": 13,
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -4.49464621143024,
+          -8.606822331996533,
+          -10.96099425937094
+        ],
+        "x0s": [
+          0.0,
+          0.8105568359297559,
+          0.7085696544035628,
+          0.27233630940208164
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 0.8807077678712754
+    },
+    {
+      "trajectory_id": 14,
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -4.425701619099369,
+          -11.093408216755176,
+          -12.89184688753963
+        ],
+        "x0s": [
+          0.0,
+          0.24867689549302618,
+          1.1829827621865974,
+          0.8176558106040218
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.0393067680026404
+    },
+    {
+      "trajectory_id": 15,
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -4.76941383942637,
+          -7.641605676068515,
+          -15.82979982713319
+        ],
+        "x0s": [
+          0.0,
+          1.0079737836544491,
+          0.3030623744548342,
+          0.5379391284846706
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.4721862791415914
+    },
+    {
+      "trajectory_id": 16,
+      "split": "validation",
+      "parameters": {
+        "ks": [
+          0.0,
+          -3.04079144893204,
+          -12.576675584500483,
+          -14.489822342935756
+        ],
+        "x0s": [
+          0.0,
+          1.1707415256151046,
+          0.771623086131438,
+          0.4789103580804779
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.2359188636528595
+    },
+    {
+      "trajectory_id": 17,
+      "split": "validation",
+      "parameters": {
+        "ks": [
+          0.0,
+          -3.77608397717664,
+          -12.02394191960827,
+          -15.698401940972094
+        ],
+        "x0s": [
+          0.0,
+          0.21595513969484198,
+          0.8416306363675067,
+          1.0410785108424414
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.3734277932654906
+    }
+  ],
+  "role": "independent_development_replication",
+  "noise_model": "Gaussian sigma*std(clean trajectory) added to observed u",
+  "test_data_generated_or_used": false,
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        321
+      ],
+      "sha256": "78cb2757a51478b594a6deb0a39b2bacc3c084609b336d35ea0ff3f7ac9eeab7"
+    },
+    "t": {
+      "shape": [
+        161
+      ],
+      "sha256": "f81cbe1b11630c98dd7803b40d5fa922d21c62294923c0388217e80151085376"
+    },
+    "u_0": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "f17693980d759988b10b748fe24a1cd48a2a098c95f91e5a937e4a2538fd76fa"
+    },
+    "u_1": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "689e2df6c6ed2bf8da0d506d4e23f8390e089395177fd3ddc93130c9a0f619e9"
+    },
+    "u_2": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "aae5cea0b3d3aff01c2e95afc18a0d97ae9d43e6e84b40e4e32a1818f42b43bd"
+    },
+    "u_3": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "3822ff2c8db593a40265cd4b12efa6dd8f61e198fb64ff9f0157910c77a02733"
+    },
+    "u_4": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "79914e7b21e602421e189bc933ea284c200ddf7b9954e5c94b55530c393b4bda"
+    },
+    "u_5": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "f8eb2d36388c02c006bd2ef624ac862a5966290a4ccd97eae0b8154396ab6624"
+    }
+  },
+  "npz_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce"
+}

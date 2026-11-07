@@ -1,0 +1,146 @@
+{
+  "stage": "2b_postselection_noise_mechanism",
+  "rows": [
+    {
+      "method": "L1",
+      "status": "diagnosed",
+      "support": [
+        "u_xx"
+      ],
+      "coefficients": [
+        0.996609870973223
+      ],
+      "original_validation_weak_error": 0.11390933506446624,
+      "complexity": 3,
+      "trajectories": [
+        {
+          "trajectory_id": 4,
+          "kernel_sha256": "4bf6cbc45f7d1746b1f311cd755b99618f76b7e49011c895d3eb6b919ec1066a",
+          "rows": 195,
+          "raw_noise_variance": 1.0152191250545349e-05,
+          "clean_relative_residual": 0.003390129026857399,
+          "noise_expected_squared_relative_residual": 0.013814814457814715,
+          "expected_squared_relative_residual": 0.013826307432633458,
+          "root_expected_squared_relative_residual": 0.11758531980070241,
+          "actual_observed_residual_with_clean_denominator": 0.12535208832605582
+        },
+        {
+          "trajectory_id": 5,
+          "kernel_sha256": "4bf6cbc45f7d1746b1f311cd755b99618f76b7e49011c895d3eb6b919ec1066a",
+          "rows": 195,
+          "raw_noise_variance": 7.314547276451706e-06,
+          "clean_relative_residual": 0.0033901290268844955,
+          "noise_expected_squared_relative_residual": 0.010600530778019562,
+          "expected_squared_relative_residual": 0.010612023752838488,
+          "root_expected_squared_relative_residual": 0.10301467736608452,
+          "actual_observed_residual_with_clean_denominator": 0.10127781528805194
+        }
+      ],
+      "aggregate_root_expected_squared_relative_residual": 0.11054033468709949,
+      "aggregate_clean_relative_residual": 0.0033901290268709473
+    },
+    {
+      "method": "IRL1_original",
+      "status": "diagnosed",
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "coefficients": [
+        7.523326953619905e-05,
+        1.0097628104664669
+      ],
+      "original_validation_weak_error": 0.06169735754828016,
+      "complexity": 8,
+      "trajectories": [
+        {
+          "trajectory_id": 4,
+          "kernel_sha256": "8f746fe349c68b7c3f9becbf96ce5f8b5052ae00db1cbe9700df281bedf54242",
+          "rows": 195,
+          "raw_noise_variance": 1.0152191250545349e-05,
+          "clean_relative_residual": 0.010026362685195998,
+          "noise_expected_squared_relative_residual": 0.003746532225705662,
+          "expected_squared_relative_residual": 0.0038470601744007523,
+          "root_expected_squared_relative_residual": 0.06202467391611787,
+          "actual_observed_residual_with_clean_denominator": 0.06762463876249752
+        },
+        {
+          "trajectory_id": 5,
+          "kernel_sha256": "8f746fe349c68b7c3f9becbf96ce5f8b5052ae00db1cbe9700df281bedf54242",
+          "rows": 195,
+          "raw_noise_variance": 7.314547276451706e-06,
+          "clean_relative_residual": 0.009530806080324866,
+          "noise_expected_squared_relative_residual": 0.002874829067788821,
+          "expected_squared_relative_residual": 0.0029656653323295785,
+          "root_expected_squared_relative_residual": 0.05445792258551164,
+          "actual_observed_residual_with_clean_denominator": 0.055187162216049905
+        }
+      ],
+      "aggregate_root_expected_squared_relative_residual": 0.0583640536063523,
+      "aggregate_clean_relative_residual": 0.009781723090433713
+    }
+  ],
+  "checks": [
+    {
+      "method": "L1",
+      "trajectory": 4,
+      "kernel_vs_weak_relative_difference": 6.195187758233098e-15,
+      "impulse_center_correct": true,
+      "analytic_noise_energy": 4.162189397197574e-06,
+      "MC_mean": 4.174027386277556e-06,
+      "MC_standard_error": 4.1400111551980064e-08,
+      "MC_128_whole_fields_agree_within_6_SE": true,
+      "passed": true
+    },
+    {
+      "method": "L1",
+      "trajectory": 5,
+      "kernel_vs_weak_relative_difference": 5.230101393959982e-15,
+      "impulse_center_correct": true,
+      "analytic_noise_energy": 2.998813789851751e-06,
+      "MC_mean": 2.972876100913408e-06,
+      "MC_standard_error": 2.791846675650371e-08,
+      "MC_128_whole_fields_agree_within_6_SE": true,
+      "passed": true
+    },
+    {
+      "method": "IRL1_original",
+      "trajectory": 4,
+      "kernel_vs_weak_relative_difference": 8.798328824636939e-15,
+      "impulse_center_correct": true,
+      "analytic_noise_energy": 1.12877206955683e-06,
+      "MC_mean": 1.1306803523390568e-06,
+      "MC_standard_error": 1.1981905345842769e-08,
+      "MC_128_whole_fields_agree_within_6_SE": true,
+      "passed": true
+    },
+    {
+      "method": "IRL1_original",
+      "trajectory": 5,
+      "kernel_vs_weak_relative_difference": 7.35194896535685e-15,
+      "impulse_center_correct": true,
+      "analytic_noise_energy": 8.132684327305352e-07,
+      "MC_mean": 8.217643518961993e-07,
+      "MC_standard_error": 8.165412577360664e-09,
+      "MC_128_whole_fields_agree_within_6_SE": true,
+      "passed": true
+    }
+  ],
+  "source_file": "stage2a_heat_reconciled_result.json",
+  "source_sha256": "3daaf4bbfbda91dee1f18ee3271c89e5b5352a5e728712f9c3f188903e0634e3",
+  "source_script_sha256": "f69fea28b30e750d4078132623a676f5cd6527fa2a5e3df80f6281d9ddd030ea",
+  "raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+  "all_checks_passed": true,
+  "no_coefficients_support_or_selection_changed": true,
+  "final_test_data_used": false,
+  "noise_expectation": "iid zero-mean raw noise; variance sigma^2*std(clean)^2",
+  "normalization": "fixed clean target energy per trajectory; NOT expectation of noisy ratio score",
+  "row_dependence": "overlap is allowed for trace expectation; no independent-row confidence intervals",
+  "truth_access": "clean field is used only for this post-selection diagnostic, never fit or selection",
+  "limits": [
+    "Selected operators are conditioned on the original validation selection; not an independent method comparison.",
+    "This analytic linear-kernel noise calculation does not apply unchanged to nonlinear jet products.",
+    "No noise-corrected selection score or new hyperparameter is introduced here.",
+    "The squared weak residual can favor a kernel with lower noise gain; this alone does not establish dynamic accuracy."
+  ]
+}

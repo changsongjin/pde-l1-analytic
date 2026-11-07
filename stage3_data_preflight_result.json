@@ -1,0 +1,257 @@
+{
+  "stage": "3_data_preflight_only",
+  "all_checks_passed": true,
+  "checks": {
+    "all36_old_parameter_recipes_exactly_equal": true,
+    "draft_and_invalid_requests_rejected_without_generation": true,
+    "missing_selection_manifest_rejected": true,
+    "six_complete_selected_models_required": true,
+    "selected_model_digest_binds_coefficients": true,
+    "synthetic_only_standard_noise_paired_across_sigma": true,
+    "small_synthetic_bundle_roundtrip": true,
+    "formal_bundle_inventory_unchanged": true
+  },
+  "source_sha256": {
+    "inverse_irl1.py": "b6c42667fd8c23ebfb42320fe0c88e36b0b50e1695129c0836d29bbe13923396",
+    "redo_two.py": "0923afdf5a4e73f6461c9b3da60e7f97c96f0af2fd677a7e9df2d86ba4df6ab7",
+    "stage0_data_bundle.py": "18845ff7841868451b592c057e66c608a3ef38e01b5b062bd78a558b9dace2a3",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe"
+  },
+  "draft_protocol_sha256": "a9935951c10ca7598c97b2db61acaacf698e4939aadbcede46c57a44d5b4380e",
+  "parameter_equivalence": [
+    {
+      "case": "heat",
+      "trajectory_id": 0,
+      "identical": true
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 1,
+      "identical": true
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 2,
+      "identical": true
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 3,
+      "identical": true
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 4,
+      "identical": true
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 5,
+      "identical": true
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 0,
+      "identical": true
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 1,
+      "identical": true
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 2,
+      "identical": true
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 3,
+      "identical": true
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 4,
+      "identical": true
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 5,
+      "identical": true
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 0,
+      "identical": true
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 1,
+      "identical": true
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 2,
+      "identical": true
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 3,
+      "identical": true
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 4,
+      "identical": true
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 5,
+      "identical": true
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 0,
+      "identical": true
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 1,
+      "identical": true
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 2,
+      "identical": true
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 3,
+      "identical": true
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 4,
+      "identical": true
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 5,
+      "identical": true
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 0,
+      "identical": true
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 1,
+      "identical": true
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 2,
+      "identical": true
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 3,
+      "identical": true
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 4,
+      "identical": true
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 5,
+      "identical": true
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 0,
+      "identical": true
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 1,
+      "identical": true
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 2,
+      "identical": true
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 3,
+      "identical": true
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 4,
+      "identical": true
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 5,
+      "identical": true
+    }
+  ],
+  "guard_rejections": [
+    "draft_not_frozen",
+    "invalid_request_0",
+    "invalid_request_1",
+    "invalid_request_2",
+    "invalid_request_3",
+    "invalid_request_4",
+    "invalid_request_5",
+    "invalid_request_6",
+    "invalid_request_7",
+    "invalid_request_8"
+  ],
+  "selection_header_rejections": [
+    "status",
+    "numerically_complete",
+    "primary_selected",
+    "certified_final_points",
+    "outer_all_certified",
+    "missing_identity",
+    "duplicate_identity"
+  ],
+  "formal_or_test_observations_generated": false,
+  "test_parameters_instantiated": false,
+  "formal_noise_seeds_sampled": false,
+  "synthetic_noise_seed": 17,
+  "formal_bundles_before": [],
+  "formal_bundles_after": [],
+  "interfaces": {
+    "fit": "get_fit_bundle(case,sigma,seed) -> x,t,list6observations,manifest (IDs0..5)",
+    "test": "get_test_bundle(case,sigma,seed,selection_manifest_path) -> x,t,list6observations,manifest (IDs6..11)",
+    "protocol": "load_frozen_protocol() -> validated protocol dict",
+    "model_digest_keys": [
+      "layer",
+      "method",
+      "status",
+      "numerically_complete",
+      "primary_selected",
+      "requested_final_points",
+      "certified_final_points",
+      "outer_all_certified",
+      "support",
+      "physical_coefficients",
+      "trainfit_provenance"
+    ]
+  },
+  "limits": [
+    "Preflight does not freeze the protocol or authorize any formal execution.",
+    "Holdout creation requires all six selected models and their saved complete24-point/outer certification records.",
+    "The gateway verifies saved certification/selection provenance; numerical certification itself belongs to the frozen solver/reviewer.",
+    "Test-family parameter formulas are only checked for equality on old IDs0..5; no IDs6..11 parameters are inspected here.",
+    "No formal field-generation or test-release positive integration test is performed before root freezes and starts the campaign."
+  ]
+}

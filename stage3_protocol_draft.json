@@ -1,0 +1,502 @@
+{
+  "stage": "3_systematic_noise_protocol_draft",
+  "schema_version": 1,
+  "status": "draft_not_frozen",
+  "is_frozen": false,
+  "execution_authorized": false,
+  "created_utc": "2026-11-06T11:48:00Z",
+  "purpose": "Recommendation to root for the user-selected maximum-library then systematic-noise work; not a test-generation or experiment-start command.",
+  "author_role": "certified_l1 independent protocol preparation",
+  "source_review_sha256": {
+    "stage2b_batch_checkpoint_result.json": "a3bd819ad2b71179bb7e3d1442b6f4f95e98ca664ee99ed401d4f28d29626b7e",
+    "stage2b_complete_diagnosis_result.json": "9d9d45f2cb221114aefbce369b85beefbe3fba989977d1adb6a59e79839527ac",
+    "stage2b_protocol_result.json": "2a94272f3ed1e17dc28d8adb6b95bab4232b6a90bac8b9e30ffd742b752c6b0e",
+    "stage1_nonpolynomial_result.json": "d37e494c678b3b1c1f6a399dea9f9effe027fe52f033bf0e8130cb591dea22d4",
+    "stage1_nonpolynomial_curved_check_result.json": "510cbbba87ebdacc531cb8383989171b1a6eaaf82ccd7ebf80d04858a73e832e",
+    "stage1_extended_evaluation_result.json": "f33e1eb5c404760f7a9f6a0fda7f7df643519f96b0d36ab576cb29c4b0f7e716",
+    "stage2c_extended_matrices_result.json": "54afa3628a27ae5e1c69f46a7afb994cf5dfbb079637d2c7bda58985657c09ab",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f",
+    "stage2c_extended_matrices.py": "087dee6f0940dcaf3a6ddc641186382f8b1102135af05a534e7d64ff8e0ada33",
+    "stage2c_maximum_library_pilot.py": "a04e6c6343b71206f459fa56a7c7f8163aa3f4c3d7e18e66ed1e742d29452472"
+  },
+  "readiness": {
+    "stage2b_numerical_selection_review_passed": true,
+    "declared_54_nonpolynomial_preprocessing_passed": true,
+    "maximum_library_pilot": "in progress; no outcome assumed",
+    "required_before_formal_freeze": [
+      "Finish/reconcile the declared maximum-library development pilot and retain every incomplete numerical point.",
+      "Independently verify the new role-aware data gateway, identical raw inputs, matrix subsets and split guards without generating formal/test observations.",
+      "Finish and hash formal runner, selector, retry policy, metrics, model-sealing contract and supported-dynamics evaluators.",
+      "Root reviews this draft and the executable contracts; create a separately named immutable frozen protocol before any formal-seed run.",
+      "Only then explicitly start the authorized stage-3 batch; this draft itself is not authorization."
+    ]
+  },
+  "scientific_scope": {
+    "question": "How do ordinary L1 and original IRL1 trade structure simplicity against held-out equation consistency as observation noise and the declared library size increase?",
+    "cases": [
+      "heat",
+      "wave",
+      "advection_diffusion",
+      "burgers",
+      "kdv",
+      "logheat"
+    ],
+    "primary_methods": [
+      "L1",
+      "IRL1_original"
+    ],
+    "archived_not_primary": {
+      "method": "IRL1_smoothed",
+      "reason": "The epsilon-relative .01 development ablation yielded the same selected support as original IRL1 in all 12 examined pairs. Preserve this negative result; no claimed superiority."
+    },
+    "primary_library": "J1212",
+    "control_libraries": [
+      "J18",
+      "J1158"
+    ],
+    "actual_columns": {
+      "ordinary": {
+        "J18": 18,
+        "J1158": 1158,
+        "J1212": 1212
+      },
+      "wave": {
+        "J18": 19,
+        "J1158": 1159,
+        "J1212": 1213
+      }
+    },
+    "nesting": "One cached maximum matrix per observed trajectory; J1158 is its unchanged polynomial/nuisance prefix, J18 the frozen polynomial subset plus wave u_t. No separate noise or row construction per library.",
+    "true_support_coverage": "All six true PDE structures already lie in the polynomial library, including logheat u_xx and u_x^2.",
+    "nonpolynomial_claim_boundary": "The 54 extra sin/cos/exp/inverse-quadratic weak columns test resistance to additional distracting function families. This experiment cannot establish recovery of a true nonpolynomial PDE term.",
+    "not_automatically_added": [
+      "new nonpolynomial-truth PDE cases",
+      "raw-field outlier study",
+      "new L1 variants",
+      "native external comparator experiments",
+      "causal-identification claims"
+    ],
+    "generality": "Finite declared grammar; not every possible differential-equation term. Six selected PDEs are not iid samples of all PDEs."
+  },
+  "planned_grid": {
+    "noise_fractions": [
+      0,
+      0.01,
+      0.03,
+      0.05,
+      0.07,
+      0.1
+    ],
+    "nonzero_noise_fractions": [
+      0.01,
+      0.03,
+      0.05,
+      0.07,
+      0.1
+    ],
+    "noise_seeds": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019
+    ],
+    "seeds_per_nonzero_level": 20,
+    "clean_policy": "One deterministic zero-noise dataset per PDE, tagged noise_seed=1000 for task identity only. Never count 20 identical clean fields as independent trials.",
+    "dataset_count": 606,
+    "nonzero_datasets": 600,
+    "clean_datasets": 6,
+    "methods_per_dataset": 6,
+    "method_run_count": 3636,
+    "requested_final_lambda_points": 87264,
+    "seed_count_rule": "Exactly 20 planned paired seeds initially; no adding seeds or stopping early because a favorable support curve or p-value appears. A larger fixed N requires a new pre-outcome protocol version."
+  },
+  "noise_and_data_contract": {
+    "observation": "u_observed = u_clean + sigma * std(u_clean_trajectory) * Z, Z iid standard normal on the complete raw field.",
+    "noise_rng": "NumPy SeedSequence([20261106, case_index_in_frozen_case_order, noise_seed, trajectory_id]); sigma is deliberately absent.",
+    "paired_noise": "For a fixed case/seed/trajectory, all noise levels scale the same Z; all libraries and methods read the exact same saved raw arrays and hashes.",
+    "clean_access": "Clean values are available to the synthetic data generator only for generation/noise scale. No analytic derivatives, clean coefficients, or clean noise corrections enter fitting or selection.",
+    "split_ids": {
+      "train": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "validation": [
+        4,
+        5
+      ],
+      "heldout_test": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "prior_replication_not_test": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "parameter_generation": "Same frozen family, RNG rule and draw order as stage2_data.trajectory_parameters, generalized in NEW code; no test parameter instantiated during preflight.",
+    "seed_role_clarification": "1000..1019 become formal replication seed identifiers shared by fit and test roles. A seed number alone does not make observations held out: trajectory identity, data-role separation and sealed-model timing do.",
+    "reuse_scope": "Train/validation initial conditions 0..5 were seen during method development. New-noise support replication is conditional on these fixed previously seen initial conditions.",
+    "test_scope": "Test IDs6..11 supply six independent-from-development initial conditions. Across the 20 noise seeds they remain the SAME six fixed initial conditions, not 120 independent IC samples.",
+    "old_guards": "Do not edit or bypass old stage2_data guards. New role-aware stage3_data API must reject test access unless its frozen-protocol and sealed-dataset manifest checks pass.",
+    "storage": "Separate fit/validation and final-test bundles. One maximum matrix plus reusable subset indices; cache supplemental columns without duplicating polynomial blocks per method.",
+    "preservation": "Keep full raw arrays, x/t, noise/matrix/target hashes, parameter provenance, role and preprocessing/source hashes. No outlier clipping or seed rejection based on selected structure."
+  },
+  "method_and_selection": {
+    "fixed_objective": "0.5*||A beta-b||_2^2 + lambda*sum_j(w_j*abs(beta_j)); all w_j strictly positive.",
+    "normalization": "Training observations/matrices only; reuse current equal-trajectory-response stacking and training column/target scaling, including existing documented numerical floors.",
+    "ordinary_L1_weights": "all ones",
+    "original_IRL1": {
+      "outer_relative_lambda": 0.001,
+      "epsilon": 1e-8,
+      "max_outer_iterations": 8,
+      "stop": "same 1e-5 support as previous outer solution, after applying the last weight update",
+      "final_weights": "include the last outer update"
+    },
+    "final_lambda_grid": {
+      "count": 24,
+      "ratios": "geomspace(1,1e-6,24)",
+      "scale": "lambda_max=max(abs(A.T@b)/weights) for the current fixed weights",
+      "per_library_scale": "same normalization/rule; each library has its own lambda_max"
+    },
+    "support_threshold": 0.00001,
+    "fixed_support_readout": "Training-only least squares on the L1-selected support, with no term deletion. Freeze these physical coefficients before test evaluation.",
+    "primary_score": "validation_relative_weak_equation_residual + 0.005*symbolic_complexity",
+    "alpha": 0.005,
+    "alpha_sensitivity": [
+      0,
+      0.001,
+      0.005,
+      0.01,
+      0.05
+    ],
+    "complexity": "Use the frozen stage1_extended_evaluation expression costs; polynomial costs unchanged and independent of total library size.",
+    "tiebreak": [
+      "lowest primary score",
+      "lowest complexity",
+      "lowest validation error",
+      "lexicographic support indices"
+    ],
+    "pareto": "Per dataset and on identical validation observations; keep the full candidate frontier and alpha sensitivity, but only alpha=.005 chooses the primary model.",
+    "truth_rule": "Truth metrics describe selected structures after selection. True support must not tune weights, alpha, lambda, feature families, solver rescue order or retry budget.",
+    "unavailable_path": "Any unfinished/uncertified requested final lambda or outer solve makes the entire method path ineligible for a primary selected model."
+  },
+  "numerical_contract": {
+    "full_column_KKT_scaled_abs": 1e-8,
+    "full_column_KKT_relative_to_penalty": 0.00001,
+    "dual_gap_relative": 1e-9,
+    "original_roundoff_allowance": "Preserve stage0_l1_solver rule exactly.",
+    "alternative_dual": "The already root-reviewed exact feasible-dual rule may certify the SAME primal objective and full-column KKT. Preserve old false certificate, saved q, exact all-column feasibility and exact stable-gap identity; never relabel old certify_l1 as passed.",
+    "no_threshold_polishing": "1e-5 is support reporting only. Numerical polishing may use true same-objective proximal/bound-constrained optimization, never report-threshold deletion or LS deletion.",
+    "fixed_weight_path": "Build one candidate LARS path per weights vector, certify every requested lambda and repair only failing points.",
+    "initial_path_wall_seconds": 120,
+    "fixed_point_retry_wall_seconds": 120,
+    "max_threads": 1,
+    "retry_policy": "Deterministic queue keyed by dataset/library/method/outer-or-lambda. Use the frozen same-objective rescue stack, preserve certified points, record every unsuccessful attempt and cost. After two 120s retry calls for a point in a batch, checkpoint it as numerically pending; do not loosen tolerance.",
+    "IRL1_dependency": "An unfinished outer fixed-weight solve must be completed at its recorded lambda/weights before advancing the weight update; final weights cannot be guessed.",
+    "missingness": "Numerical incompletion is not a statistical support failure. Report planned/completed/paired-complete/missing denominators explicitly. Main comparisons require complete matched seed sets; incomplete sets are descriptive partial results, not an algorithm ranking.",
+    "formal_inference_eligibility": "A declared noise-level comparison requires all 20 planned seeds complete for every compared method/library. Do not present binomial or paired probability intervals from a numerically selected subset as the unconditional noise experiment; incomplete subsets receive descriptive counts and explicit missingness only."
+  },
+  "heldout_release_and_model_manifest": {
+    "global_freeze": "Before any formal outcomes, lock protocol, statistical rules, all source hashes, library order, selection rule, numerical rescue policy and dynamic initialization schemes.",
+    "sealing_unit": "One (case,sigma,noise_seed) dataset, containing all three libraries times both methods.",
+    "recommended_manifest": {
+      "stage": "stage3_sealed_dataset_selection",
+      "schema_version": 1,
+      "sealed": true,
+      "dataset": {
+        "case": "frozen case name",
+        "sigma": "frozen noise level",
+        "noise_seed": "1000..1019; clean uses1000 once"
+      },
+      "protocol": {
+        "file": "stage3_protocol_result.json",
+        "sha256": "SHA256 of exact frozen protocol bytes"
+      },
+      "source_sha256": "exact mapping required by frozen protocol",
+      "fit_bundle_sha256": "SHA256 of shared observed fit bundle",
+      "train_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "validation_ids": [
+        4,
+        5
+      ],
+      "models": "Exactly six distinct (library,method) records, ALL status='selected', each with model hash, support, frozen training-only physical coefficients, primary candidate and certified path hash. Every one of its 24 final lambda points and all outer points must be certified. No unavailable model may unlock test access.",
+      "no_test_data_used": true
+    },
+    "per_dataset_sequence": [
+      "Generate/read only IDs0..5 for the frozen formal seed; build shared maximum matrices.",
+      "Fit all six library-method paths and finish same-objective numerical continuation until all 24 final points and all outer solves are certified. Any partial path leaves the dataset pending with no test access.",
+      "Select on IDs4..5 for each of the six complete paths, freeze physical coefficients from training-only readouts, and seal the six selected model records together.",
+      "Verify global frozen source/protocol hashes and the immutable complete six-record manifest.",
+      "Only now generate that dataset's test IDs6..11, then evaluate the sealed models without fitting or reselection.",
+      "Save test-access audit and immutable results. All six model records stay fixed; no test-driven restart, replacement or status change."
+    ],
+    "staged_release_reason": "Per-dataset sealing permits <=2h resumable execution; all 3636 runs need not finish before the first sealed dataset is evaluated.",
+    "post_release_rule": "No test result may alter future lambda/alpha/epsilon, preprocessing, library, method, initialization filter, statistical summaries or model availability. A statistical/source-contract change after any test release starts a new development version; already viewed test observations are no longer unseen evidence.",
+    "test_does_not_create_support": "Support/F1 are properties of the frozen selected model, not a structure re-selected or re-fitted from test data.",
+    "strict_gate": true,
+    "partial_policy": "No sealed-unavailable exception in the first formal protocol. A partial dataset waits for same-objective continuation before its test trajectories can be generated; sustained blocking is reported to root rather than weakening this gate."
+  },
+  "evaluation_and_statistics": {
+    "primary": "Exact canonical support recovery rate versus frozen noise level for L1 and original IRL1 on J1212, conditional on the fixed train/validation ICs.",
+    "library_controls": "J18/J1158 use the same datasets, noise templates, preprocessing rows and selector. Report each library's curve; do not pool their rows as independent trials.",
+    "secondary_structure": [
+      "precision",
+      "recall",
+      "F1",
+      "extra terms",
+      "missed terms",
+      "symbolic complexity",
+      "selected support stability",
+      "training-only physical coefficient error after selection"
+    ],
+    "heldout_weak_error": "For each frozen model compute each test trajectory's ||A_test*c_physical-b_test||/||b_test|| using the same frozen weak construction; aggregate the six test errors as sqrt(mean(error_i^2)) per seed. No test normalization is used to refit any coefficient.",
+    "dynamics": "Use the existing full-spectrum evaluator only where the frozen selected heat structure is supported (constant-coefficient even linear terms, optional forcing, declared boundary realization). Evaluate both predeclared raw and fixed-smoothed initial states, with all resolved modes retained. Unsupported structures are reported with coverage and reason, not removed or scored as failures.",
+    "uncertainty_unit": "A noise-seed-level experiment/whole trajectory bundle. Weak rows overlap; different methods/libraries/noise levels and six test trajectories within a seed are not independent repetitions.",
+    "test_uncertainty_scope": "Test prediction intervals over the 20 seeds are conditional on the same fixed six test ICs and the fixed train/validation ICs. Per-test-trajectory distributions are descriptive, not IC-population confidence intervals.",
+    "recovery_rate_CI": {
+      "level": 0.95,
+      "method": "scipy.stats.binomtest(successes,n).proportion_ci(confidence_level=.95,method='exact')",
+      "scope": "Pointwise conditional-noise interval; n counts independent seeds, never weak rows."
+    },
+    "paired_binary_difference_CI": {
+      "difference": "P(IRL1 correct,L1 wrong)-P(L1 correct,IRL1 wrong); estimate (n_plus-n_minus)/n.",
+      "method": "Compute exact binomial intervals for n_plus/n and n_minus/n at confidence_level=.975 each; return [L_plus-U_minus,U_plus-L_minus].",
+      "justification": "Bonferroni gives at least .95 joint coverage of the two discordance probabilities without requiring their independence. Their difference is the paired recovery-rate difference.",
+      "scope": "Conservative pointwise interval for a predeclared comparison, not a simultaneous guarantee across all case/noise/library comparisons."
+    },
+    "continuous_summaries": "Report per-seed values, median and quartiles for F1/error/complexity and paired differences; no independent-weak-row standard errors.",
+    "noise_curve_summary": "Per seed, trapezoid-integrate exact-support indicators on [0,.01,.03,.05,.07,.10] and divide by .10. The deterministic clean endpoint is shared without being counted as a new random repetition. Average per-seed areas; report paired method differences.",
+    "AUC_uncertainty": {
+      "method": "Paired whole-seed basic bootstrap",
+      "resamples": 9999,
+      "rng_seed": 2026110701,
+      "level": 0.95,
+      "rule": "Resample complete seed-level noise curves with the same indices across methods/libraries. If resampled variation is zero, label it degenerate conditional evidence, not proof of zero population uncertainty."
+    },
+    "threshold_summary": "Report a 50% crossing only when the observed frozen-grid curve crosses 0.5; report bracket/crossings if nonmonotone, with no extrapolated universal noise threshold.",
+    "across_PDE_summary": "Any equal-weight six-case macro summary is descriptive for these named PDEs; do not treat them as iid draws from a PDE population.",
+    "multiplicity": "No automatic significance stars or universal ranking from many pointwise intervals. A confirmatory simultaneous testing family would need a separate pre-outcome specification.",
+    "zero_noise_CI": "No binomial seed interval for repeated deterministic zero-noise aliases."
+  },
+  "execution_and_cost": {
+    "total_initial_wall_cap_seconds": 436320,
+    "total_initial_wall_cap_hours": 121.2,
+    "estimate_meaning": "Arithmetic worst-case sum of 3636 initial 120s caps, excluding preprocessing, retries and evaluation; not a runtime forecast.",
+    "forecast": "Estimate actual staged cost from completed maximum-library pilot timing and failure rates before freezing the full schedule; do not promise completion in one two-hour batch.",
+    "per_batch_hard_limit_seconds": 7200,
+    "recommended_scheduler_cutoff_seconds": 6600,
+    "finalization_reserve_seconds": 300,
+    "concurrency": "One numerical worker. No competing independent heavy solve during a path's wall budget.",
+    "order": "Clean datasets first, then seed-major nonzero-noise datasets in frozen noise/case order. Within each dataset schedule J1212 methods first, then J18/J1158 controls; seal only after all six paths are complete and all six primary models selected.",
+    "before_starting_work": "Require enough remaining batch time for the operation's hard budget plus the finalization reserve; cache-building stages must also checkpoint and obey the global deadline.",
+    "checkpoint": "Atomic finite JSON snapshots after each point/outer iteration/attempt and task; resume the exact source/data/model hashes without rerunning certified paths.",
+    "cost_fields": [
+      "raw generation",
+      "preprocessing build versus cache load",
+      "path build",
+      "per-lambda certification",
+      "every solver retry including failure/timeouts",
+      "worker startup",
+      "training LS/validation evaluation",
+      "test weak/dynamic evaluation",
+      "independent audit",
+      "wall elapsed"
+    ],
+    "reused_data": "Shared preprocessing is recorded once and its reuse stated; it is not silently zero-cost for end-to-end comparisons. Historical costs remain separately attributable.",
+    "ranking_limit": "Equal initial budgets plus explicit same-objective continuation establish numerical comparability, not a strict fixed-budget speed ranking."
+  },
+  "source_review_findings": [
+    "stage2c_extended_matrices appends the 54 columns and independently checks unchanged original polynomial blocks and weak targets.",
+    "stage2c_maximum_library_pilot uses ordinary/original IRL1, 24 lambda ratios, alpha=.005 and support1e-5; it is a development pilot only.",
+    "The current polynomial and supplement APIs are guarded development data loaders, not formal heldout gateways; new stage3 code and tests are needed without changing them.",
+    "Nonlinear transforms f(observed u) can be noise biased. No bias correction is introduced in this protocol; its effect remains part of the declared observation/preprocessing task."
+  ],
+  "primary_source_verification": [
+    {
+      "purpose": "Installed SciPy1.15.3 exact binomial interval API",
+      "url": "https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.stats.binomtest.html"
+    },
+    {
+      "purpose": "Installed SciPy1.15.3 paired bootstrap uses common resampled indices; basic interval and rng API",
+      "url": "https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.stats.bootstrap.html"
+    }
+  ],
+  "formal_or_test_data_generated": false,
+  "new_solver_calls": 0,
+  "recommendation": "Root reviews/finalizes after the maximum-library pilot and independent protocol/data-gateway review. Do not treat this draft as a frozen final-test gate.",
+  "lambda_ratios": [
+    1,
+    0.5484416576121018,
+    0.30078825180430996,
+    0.16496480740980207,
+    0.09047357242349298,
+    0.04961947603002903,
+    0.027213387683753087,
+    0.014924955450518298,
+    0.008185467307069028,
+    0.004489251258218608,
+    0.0024620924014946257,
+    0.0013503140378698735,
+    0.0007405684692262443,
+    0.00040615859883769796,
+    0.00022275429519995587,
+    0.00012216773489967918,
+    0.0000670018750350959,
+    0.00003674661940736688,
+    0.000020153376859417352,
+    0.00001105295141126022,
+    0.000006061898993497572,
+    0.000003324597932270945,
+    0.0000018233480008684424,
+    0.000001
+  ],
+  "cases": [
+    "heat",
+    "wave",
+    "advection_diffusion",
+    "burgers",
+    "kdv",
+    "logheat"
+  ],
+  "noise_levels": [
+    0,
+    0.01,
+    0.03,
+    0.05,
+    0.07,
+    0.1
+  ],
+  "noise_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "libraries": [
+    "J18",
+    "J1158",
+    "J1212"
+  ],
+  "methods": [
+    "L1",
+    "IRL1_original"
+  ],
+  "fit_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "train_ids": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "validation_ids": [
+    4,
+    5
+  ],
+  "test_ids": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "selection_alpha": 0.005,
+  "support_threshold": 0.00001,
+  "initial_path_budget_s": 120,
+  "retry_point_budget_s": 120,
+  "max_batch_seconds": 7200,
+  "source_sha256": {},
+  "source_sha256_state": "Empty only because draft; immutable frozen protocol must contain all implemented audited source hashes.",
+  "source_sha256_required": [
+    "stage3_data.py",
+    "stage3_campaign.py",
+    "stage2_data.py",
+    "stage0_data_bundle.py",
+    "stage0_evaluation.py",
+    "inverse_irl1.py",
+    "redo_two.py",
+    "stage1_grammar.py",
+    "stage1_jet_preprocess.py",
+    "stage1_weak_reduction.py",
+    "stage1_weak_reduction_v2.py",
+    "stage1_nonpolynomial.py",
+    "stage1_extended_evaluation.py",
+    "stage2_identifiability.py",
+    "stage2c_extended_matrices.py",
+    "stage2a_l1_paths.py",
+    "stage0_l1_solver.py",
+    "lasso_exact.py",
+    "stage2a_baseline.py",
+    "stage2b_compare.py",
+    "stage2b_heat_dynamic_compare.py",
+    "stage2b_heat_full_spectrum.py",
+    "stage2a_clarabel_probe.py",
+    "stage2a_solver_polish.py",
+    "stage2a_retry_remaining_v3.py",
+    "stage2a_retry_remaining_v4.py"
+  ],
+  "freeze_interface": {
+    "filename": "stage3_protocol_result.json",
+    "required_status": "frozen",
+    "required_is_frozen": true,
+    "required_execution_authorized": true,
+    "source_mapping": "source_sha256; include the full transitive numerical/generator/evaluator/stats dependencies and any new formal scripts before sealing.",
+    "load_frozen_protocol_return": "dict; rejects draft, missing sources, changed hashes or incompatible fixed grids before any formal parameters/observations are instantiated."
+  }
+}

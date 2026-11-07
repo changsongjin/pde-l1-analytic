@@ -1,0 +1,333 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "heat",
+    "sigma": 0.03,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/heat_sigma_0p03_seed_1000/selection_manifest.json",
+    "sha256": "6bfcc4aca9222ae0339c6ebd27c6b14884410d926123e63e8b1a90726bb4b9df"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+      "sha256": "45853cfb4ff36ae3e1a30545881b81f5acd810974db4746dadc64a1219bdc47e"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "efe249b554f11fc7767efcc6f92993e8f555bcd06785dc76f60a2565e96a63af"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "4f2b7e0ee9c782cf4e9de52f0f106b717b716f00195501b4a1c675f6c4b949a8"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "f2b28da605c6f1f4884b2446e15bfabd0e0d47b71d4cce8b752c6d4835663f4b"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+      "sha256": "4ce8732b6dcfc3e014f3bc2d219a2395b91623811addbc5ab2d81c911ec77ac0"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "523973debc6a7498f495b4fdee84b52ec79698369faea225cd8090735fd29b6d"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/heat_sigma_0p03_seed_1000/test_evaluation_result.json",
+    "sha256": "06e465ccefdd08ecff89f400d585715417df304c1b36e0b3b205f22acf97e6aa"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.3173863488615925
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.3173863488615925
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "complexity": 8,
+      "validation_error": 0.16799178733247305
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 3,
+      "support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx"
+      ],
+      "complexity": 15,
+      "validation_error": 0.12613797807265878
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.3173863488615925
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.3173863488615925
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.3173863488615925
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.3173863488615925
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "complexity": 8,
+      "validation_error": 0.16799178733247305
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 3,
+      "support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx"
+      ],
+      "complexity": 15,
+      "validation_error": 0.12613797807265878
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/selection_manifest.json",
+      "sha256": "6bfcc4aca9222ae0339c6ebd27c6b14884410d926123e63e8b1a90726bb4b9df"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/test_evaluation_result.json",
+      "sha256": "06e465ccefdd08ecff89f400d585715417df304c1b36e0b3b205f22acf97e6aa"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/fit_matrices.json",
+      "sha256": "147df282d87ffdaa48b72f783f399a3482df4c4f5f940a27ec0c002c69ed1088"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/fit_matrices.npz",
+      "sha256": "283ddf26bdb68c97602ae42762644e79278490bf94ce39018bf8a35c76510646"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/test_matrices.json",
+      "sha256": "d64b6956f84696b2784711bc45e94af6b158b1db29777097958cc79932e19abd"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/test_matrices.npz",
+      "sha256": "e3d03db83027fe15c5f6dc7454a60fff9c8e1ba2314c779d1d27d5b6f785dd50"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+      "sha256": "45853cfb4ff36ae3e1a30545881b81f5acd810974db4746dadc64a1219bdc47e"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "efe249b554f11fc7767efcc6f92993e8f555bcd06785dc76f60a2565e96a63af"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "4f2b7e0ee9c782cf4e9de52f0f106b717b716f00195501b4a1c675f6c4b949a8"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "f2b28da605c6f1f4884b2446e15bfabd0e0d47b71d4cce8b752c6d4835663f4b"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+      "sha256": "4ce8732b6dcfc3e014f3bc2d219a2395b91623811addbc5ab2d81c911ec77ac0"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "523973debc6a7498f495b4fdee84b52ec79698369faea225cd8090735fd29b6d"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_L1/job.json",
+      "sha256": "0db806b81b4755281bd0e2c027fb9c239f615e7b0635e90545fb7a246812aaa3"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "cb1d30048d544f0e44d5e45cb852ec1fad8d6ecc659eedd7107fe10d8b09b4e4"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_L1/job.json",
+      "sha256": "444c1209df4c20176beed215908e8eb292978977a828a08c70fca558713fd036"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "16484ef74d8edbc288444acbe50260f7275edc84230c933bef8cac7719fd845f"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_L1/job.json",
+      "sha256": "3699d9bb7f5e82fe9ce6baeed085f62cbce5a7a0bcf211dbcaa609c3a7ad1369"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "1e91a9f3d2b7b356297032114a7f9d17730350dedcc3879c8ce34d4842cfc564"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_L1/numeric_evidence/20261106T140942378192Z/continued_path_result.json",
+      "sha256": "3164ce9e4a99f71db38242b87776fa6dc9fffd82c1333dafa8a3cc03aadb442c"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "ce66d03f0ddd12161ce04f38de72557c3977f531c79a0e5ff3bb359f6bccdb02"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_L1/path_result.json",
+      "sha256": "631224702dcbfa28e5a42f3d7e84ccf771579666e876e7a186a38c08457a3098"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "15c37a018ca76f613f40385087d64222f54a8cc264e1b9468396b651ebac9492"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_L1/numeric_evidence/20261106T140942378192Z/continued_path_result.json",
+      "sha256": "35954260601670b02a84707109f9af439d1b286b484751d79994006ffe299b00"
+    },
+    {
+      "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "99ba0e8c83cf33a3056c1425f794801d600b54c95e88939c4f68bf070b21d1f5"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.15440800006035715,
+    "fit_matrix": {
+      "action": "cache_load",
+      "seconds": 0.1390089999185875,
+      "metadata": {
+        "file": "stage3_campaign/heat_sigma_0p03_seed_1000/fit_matrices.json",
+        "sha256": "147df282d87ffdaa48b72f783f399a3482df4c4f5f940a27ec0c002c69ed1088"
+      },
+      "npz": {
+        "file": "stage3_campaign/heat_sigma_0p03_seed_1000/fit_matrices.npz",
+        "sha256": "283ddf26bdb68c97602ae42762644e79278490bf94ce39018bf8a35c76510646"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 1.463152899988927,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 17.30971049994696,
+      "metadata": {
+        "file": "stage3_campaign/heat_sigma_0p03_seed_1000/test_matrices.json",
+        "sha256": "d64b6956f84696b2784711bc45e94af6b158b1db29777097958cc79932e19abd"
+      },
+      "npz": {
+        "file": "stage3_campaign/heat_sigma_0p03_seed_1000/test_matrices.npz",
+        "sha256": "e3d03db83027fe15c5f6dc7454a60fff9c8e1ba2314c779d1d27d5b6f785dd50"
+      }
+    },
+    "test_evaluation": 1.1632822999963537
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

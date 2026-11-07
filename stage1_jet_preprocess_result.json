@@ -1,0 +1,188 @@
+{
+  "stage": 1,
+  "all_checks_passed": true,
+  "checks": {
+    "all_jet_moments": true,
+    "degree8_polynomial_all_orders": true,
+    "fourier_refinement_129_to257": true,
+    "sixth_derivative_clean_accuracy": true,
+    "same_jet_pipeline_small_library": true,
+    "same_centers_pure_weak_clean_agreement": true,
+    "finite_noise_diagnostic": true
+  },
+  "frozen_protocol": {
+    "window": 31,
+    "polyorder": 8,
+    "max_order": 6,
+    "test_power": 8,
+    "derivatives_from": "observations only",
+    "time_reconstruction": "none; original observations in weak target",
+    "hyperparameter_selection": "fixed before benchmark results; no truth-tuned changes"
+  },
+  "moments": {
+    "moment_max_absolute_error": 1.7280399333685637e-11,
+    "moment_max_scaled_error_by_order": [
+      4.440892098500626e-16,
+      6.8833827526759706e-15,
+      5.10702591327572e-15,
+      4.618527782440651e-14,
+      3.979039320256561e-13,
+      2.1600499167107046e-12,
+      1.7280399333685637e-11
+    ],
+    "dimensionless_design_condition": 512.6894492591421
+  },
+  "polynomial_relative_errors_by_order": [
+    4.3851348524230076e-16,
+    8.11576904788389e-15,
+    1.5234339575515288e-14,
+    1.087095487730251e-13,
+    4.207612651423947e-13,
+    1.8124353481188675e-12,
+    1.738763595043311e-11
+  ],
+  "fourier_refinement": [
+    {
+      "n_x": 129,
+      "relative_errors_by_order": [
+        1.7932077990328224e-09,
+        3.8826754564269986e-07,
+        3.352568696667218e-07,
+        4.629147015030248e-05,
+        3.80463879804334e-05,
+        0.00231112980400725,
+        0.0018473930264313984
+      ]
+    },
+    {
+      "n_x": 257,
+      "relative_errors_by_order": [
+        1.820864218336706e-12,
+        1.5364326208603426e-09,
+        1.3591450386101974e-09,
+        7.380651894646211e-07,
+        6.137139853149565e-07,
+        0.00014853287096030815,
+        0.00011859579715763362
+      ]
+    },
+    {
+      "n_x": 513,
+      "relative_errors_by_order": [
+        1.905005077904488e-15,
+        5.783656164428126e-12,
+        5.578012530991143e-12,
+        1.1315844134382202e-08,
+        9.812516912572578e-09,
+        9.318204231563394e-06,
+        7.4771905328751165e-06
+      ]
+    }
+  ],
+  "weak_comparisons": [
+    {
+      "derivative_order": 0,
+      "jet_vs_pure_weak_relative_difference": 2.4316024726982114e-11
+    },
+    {
+      "derivative_order": 1,
+      "jet_vs_pure_weak_relative_difference": 5.888367856426062e-08
+    },
+    {
+      "derivative_order": 2,
+      "jet_vs_pure_weak_relative_difference": 1.3695783074199575e-05
+    }
+  ],
+  "same_jet_pipeline_fixture": {
+    "input_observation_hash": "484e483ed8567d50e508a17f67c7a94e392782e0acb8295d9919cfd6f1994b6b",
+    "raw_shape": [
+      101,
+      201
+    ],
+    "rows": 117,
+    "columns": 8,
+    "target_order": 1,
+    "target_source": "original_observations_weak_time_derivative",
+    "half": [
+      12,
+      10
+    ],
+    "stride": [
+      12,
+      10
+    ],
+    "test_power": 8,
+    "reconstruction": {
+      "window": 31,
+      "polyorder": 8,
+      "max_order": 2,
+      "spatial_reconstruction_halo": 15,
+      "dx": 0.031415926535897754,
+      "temporal_reconstruction": "none",
+      "zeroth_jet": "local_polynomial_smoothing",
+      "input_shape": [
+        101,
+        201
+      ],
+      "jet_shape": [
+        3,
+        101,
+        171
+      ],
+      "moment_max_absolute_error": 6.8833827526759706e-15,
+      "moment_max_scaled_error_by_order": [
+        4.440892098500626e-16,
+        6.8833827526759706e-15,
+        4.884981308350689e-15
+      ],
+      "dimensionless_design_condition": 512.6894492591421
+    },
+    "raw_footprint_half_x": 27,
+    "raw_footprint_half_t": 10,
+    "center_x_indices": [
+      27,
+      39,
+      51,
+      63,
+      75,
+      87,
+      99,
+      111,
+      123,
+      135,
+      147,
+      159,
+      171
+    ],
+    "center_t_indices": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90
+    ],
+    "boundary_policy": "discard reconstruction halo plus weak halo",
+    "matrix_hash": "c33fc61fe620a6c53531745181ae83bb81c1f7e4c121fb1634bd7e8688e16031",
+    "target_hash": "21f1957bc6097c2fd2a82692ccca93abfe2f05ab03731b115919a850a854bf74"
+  },
+  "sigma_1pct_jet_relative_perturbations": [
+    0.00408919786873395,
+    0.04320337683461177,
+    0.6308128657434319,
+    5.32798080800969,
+    81.6615877208126,
+    302.0994678636175,
+    4937.914646040127
+  ],
+  "interpretation": "Higher derivative noise amplification is a preprocessing limitation, not an L1 optimization failure.",
+  "limitations": [
+    "Fixed 31-point window has grid-dependent physical bandwidth.",
+    "Products of reconstructed noisy jets are biased; weak integration does not automatically remove that bias.",
+    "Clean synthetic accuracy does not establish support recovery under noise.",
+    "Validation equation residual is separate from integrating a learned PDE on a held-out initial condition."
+  ]
+}

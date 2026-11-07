@@ -1,0 +1,216 @@
+{
+  "case": "heat",
+  "sigma": 0.01,
+  "seed": 1,
+  "source_hashes": {
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966"
+  },
+  "target": "u_t",
+  "trajectories": [
+    {
+      "trajectory_id": 12,
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.387950193350744,
+          0.28265564545819954,
+          0.48435327084079993,
+          -0.20883324441365594,
+          0.28238486926328255,
+          -0.3921690353633886
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.1470245574024024
+    },
+    {
+      "trajectory_id": 13,
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          -0.908817611217705,
+          -0.34215973234454056,
+          -0.37679558832139187,
+          -0.46142235818061544,
+          0.34698299569478147,
+          0.3471103811848573
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.2512552578882342
+    },
+    {
+      "trajectory_id": 14,
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          -0.611143659186604,
+          -0.6171778365075242,
+          0.3052297181008318,
+          -0.40065616453986047,
+          0.41568876894862317,
+          -0.2822130263670848
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.262457062426664
+    },
+    {
+      "trajectory_id": 15,
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          -0.5248128197056621,
+          0.6540712051714883,
+          0.2109616845881224,
+          -0.2533422065723533,
+          0.443171919691816,
+          0.25856540952768603
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.24732346983131998
+    },
+    {
+      "trajectory_id": 16,
+      "split": "validation",
+      "parameters": {
+        "cos_coefficients": [
+          -0.8419458773272492,
+          0.3936619409808377,
+          -0.5302434095888272,
+          0.48133526670437193,
+          -0.4393176814900906,
+          -0.29335043173072944
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.24156118060223666
+    },
+    {
+      "trajectory_id": 17,
+      "split": "validation",
+      "parameters": {
+        "cos_coefficients": [
+          0.7313920010890684,
+          -0.6749673628539955,
+          -0.40841785905853645,
+          -0.47870375823386924,
+          0.21712325046826458,
+          -0.40083342281657147
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.2966982090214869
+    }
+  ],
+  "role": "independent_development_replication",
+  "noise_model": "Gaussian sigma*std(clean trajectory) added to observed u",
+  "test_data_generated_or_used": false,
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        257
+      ],
+      "sha256": "7c2da848e1a65232b381a0ab7027160ef8a69a27b4db90535d6a0d98b9a9aabe"
+    },
+    "t": {
+      "shape": [
+        129
+      ],
+      "sha256": "480e2c3cbf595bcb1d4334f21c9594e9cb46328a103f29c3b9c2bddd9d57bb78"
+    },
+    "u_0": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "56c367474b58df4808191792ae339e7fd4849773f85f61c8599271d968efba2e"
+    },
+    "u_1": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "cc2f9d97489f7335824ba2eba8c642ebf76ff023b18e5bc312e244f9cef652ca"
+    },
+    "u_2": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "17c1bf4f3b3227c97d2efb51cfa2e789b67776e89d81be79443aeae9aacf0a37"
+    },
+    "u_3": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "2d53db59bec7f974c885061b32fb53239dfa168e2e2a85b1f2838145cb0f4a04"
+    },
+    "u_4": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "830af0ced41685225a5752e26ffac107a0c7e136f2669e32bbe4c6c940ab99d0"
+    },
+    "u_5": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "3019cfa01dee4f0f9a7aa60dde5f635f7dc05d1f98bff9ffb14594e7c8a838e5"
+    }
+  },
+  "npz_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a"
+}

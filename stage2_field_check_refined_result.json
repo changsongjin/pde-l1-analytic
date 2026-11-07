@@ -1,0 +1,3145 @@
+{
+  "stage": 2,
+  "component": "refined independent field correctness diagnostics",
+  "date": "2026-11-06",
+  "python": "3.12.10",
+  "numpy": "2.2.5",
+  "sympy": "1.14.0",
+  "all_checks_passed": true,
+  "failures": [],
+  "field_checks": [
+    {
+      "case": "heat",
+      "trajectory_id": 0,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 9.67443847357011e-06,
+          "maximum_absolute_residual": 0.0014906233274203373,
+          "target_rms": 22.283587142595465,
+          "rhs_rms": 22.283421736790515,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 1.548524143302497e-07,
+          "maximum_absolute_residual": 2.3865477373874455e-05,
+          "target_rms": 22.28358562674332,
+          "rhs_rms": 22.283582982522592,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 2.4342499237171077e-09,
+          "maximum_absolute_residual": 3.751773434146344e-07,
+          "target_rms": 22.283585603162095,
+          "rhs_rms": 22.283585561607975,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025161666285514233,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 1,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 7.7373720912881e-06,
+          "maximum_absolute_residual": 0.0010677293988123893,
+          "target_rms": 16.81243679688322,
+          "rhs_rms": 16.812344568064788,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 1.236797733524981e-07,
+          "maximum_absolute_residual": 1.7052615930879256e-05,
+          "target_rms": 16.81243612592713,
+          "rhs_rms": 16.81243465425141,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 1.9435309450657784e-09,
+          "maximum_absolute_residual": 2.6791327911723783e-07,
+          "target_rms": 16.81243611548544,
+          "rhs_rms": 16.81243609236985,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025118747323191274,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 2,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 1.1386001632276709e-05,
+          "maximum_absolute_residual": 0.0012680723865301502,
+          "target_rms": 15.880820756091278,
+          "rhs_rms": 15.880702279535601,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 1.8251662229491599e-07,
+          "maximum_absolute_residual": 2.034025725805577e-05,
+          "target_rms": 15.880819537676429,
+          "rhs_rms": 15.880817641402562,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 2.870099740593496e-09,
+          "maximum_absolute_residual": 3.199064479986191e-07,
+          "target_rms": 15.880819518724852,
+          "rhs_rms": 15.880819488917796,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025207266196567373,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 3,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 7.9927074347522e-06,
+          "maximum_absolute_residual": 0.0012389058207986636,
+          "target_rms": 19.150593861797553,
+          "rhs_rms": 19.150476092269468,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 1.278305448419908e-07,
+          "maximum_absolute_residual": 1.9794312152043858e-05,
+          "target_rms": 19.15059294394155,
+          "rhs_rms": 19.150591063773092,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 2.0089983833971847e-09,
+          "maximum_absolute_residual": 3.1100464070732414e-07,
+          "target_rms": 19.150592929659446,
+          "rhs_rms": 19.150592900123506,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025135392478674784,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 4,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 1.2496600378889193e-05,
+          "maximum_absolute_residual": 0.0014411822519377893,
+          "target_rms": 16.19997205127793,
+          "rhs_rms": 16.1998236928585,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 2.0034651371967955e-07,
+          "maximum_absolute_residual": 2.310982885944668e-05,
+          "target_rms": 16.199970349264078,
+          "rhs_rms": 16.19996797168311,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 3.150608424367299e-09,
+          "maximum_absolute_residual": 3.634537932839521e-07,
+          "target_rms": 16.199970322793373,
+          "rhs_rms": 16.199970285407538,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002521172421973017,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "heat",
+      "trajectory_id": 5,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 1.2158548497231696e-05,
+          "maximum_absolute_residual": 0.0014709658636320455,
+          "target_rms": 16.2263398767988,
+          "rhs_rms": 16.226191213419256,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 1.9490730517019833e-07,
+          "maximum_absolute_residual": 2.3568862133060975e-05,
+          "target_rms": 16.22633819142617,
+          "rhs_rms": 16.22633580943437,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 3.0649185626230617e-09,
+          "maximum_absolute_residual": 3.7056722135275777e-07,
+          "target_rms": 16.226338165214475,
+          "rhs_rms": 16.226338127762876,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002520793138523808,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 0,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.01,
+          "relative_residual": 1.1151928846536058e-05,
+          "maximum_absolute_residual": 0.0021952008065682094,
+          "target_rms": 76.2864872377665,
+          "rhs_rms": 76.2858832244382,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.005,
+          "relative_residual": 1.7862645865098047e-07,
+          "maximum_absolute_residual": 3.5110352314404736e-05,
+          "target_rms": 76.2864897435401,
+          "rhs_rms": 76.28648009773619,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.0025,
+          "relative_residual": 2.8085199529349168e-09,
+          "maximum_absolute_residual": 5.519824810562568e-07,
+          "target_rms": 76.28648978283559,
+          "rhs_rms": 76.28648963129024,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025184163130733046,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 1,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.01,
+          "relative_residual": 1.1788631704068237e-05,
+          "maximum_absolute_residual": 0.0035436861760445026,
+          "target_rms": 127.91334051480145,
+          "rhs_rms": 127.91205283185808,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.005,
+          "relative_residual": 1.888031000334546e-07,
+          "maximum_absolute_residual": 5.6695800026318466e-05,
+          "target_rms": 127.91334586646175,
+          "rhs_rms": 127.91332526954838,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.0025,
+          "relative_residual": 2.9684077803964293e-09,
+          "maximum_absolute_residual": 8.910770361580944e-07,
+          "target_rms": 127.91334595040206,
+          "rhs_rms": 127.9133456266777,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002518025717413868,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 2,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.01,
+          "relative_residual": 1.2909274898089355e-05,
+          "maximum_absolute_residual": 0.0036322436515092704,
+          "target_rms": 119.23751998315313,
+          "rhs_rms": 119.23627386709609,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.005,
+          "relative_residual": 2.0688179753380444e-07,
+          "maximum_absolute_residual": 5.8119483753671375e-05,
+          "target_rms": 119.23752516587662,
+          "rhs_rms": 119.23750522069375,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.0025,
+          "relative_residual": 3.2530741173872284e-09,
+          "maximum_absolute_residual": 9.136740004578314e-07,
+          "target_rms": 119.23752524716637,
+          "rhs_rms": 119.23752493364212,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025199510763139,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 3,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.01,
+          "relative_residual": 1.5826177884261734e-05,
+          "maximum_absolute_residual": 0.003536399514302957,
+          "target_rms": 104.60135368375826,
+          "rhs_rms": 104.59990365840595,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.005,
+          "relative_residual": 2.53757736492831e-07,
+          "maximum_absolute_residual": 5.6638328089775314e-05,
+          "target_rms": 104.60135972290618,
+          "rhs_rms": 104.6013364852486,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.0025,
+          "relative_residual": 3.990534834487954e-09,
+          "maximum_absolute_residual": 8.905558388505597e-07,
+          "target_rms": 104.60135981763473,
+          "rhs_rms": 104.60135945225538,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025214773040408713,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 4,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.01,
+          "relative_residual": 1.4846540809318463e-05,
+          "maximum_absolute_residual": 0.002417051103122958,
+          "target_rms": 78.12394358414578,
+          "rhs_rms": 78.12301447475573,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.005,
+          "relative_residual": 2.3804365326984796e-07,
+          "maximum_absolute_residual": 3.873633872331084e-05,
+          "target_rms": 78.12394745206437,
+          "rhs_rms": 78.12393256825531,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.0025,
+          "relative_residual": 3.743460624016228e-09,
+          "maximum_absolute_residual": 6.091128881280383e-07,
+          "target_rms": 78.1239475127419,
+          "rhs_rms": 78.12394727872932,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002521436253801719,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "wave",
+      "trajectory_id": 5,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.01,
+          "relative_residual": 1.439723866384727e-05,
+          "maximum_absolute_residual": 0.0024743676721072916,
+          "target_rms": 84.7082755499596,
+          "rhs_rms": 84.70721778095367,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.005,
+          "relative_residual": 2.3073353131726823e-07,
+          "maximum_absolute_residual": 3.962984490613053e-05,
+          "target_rms": 84.70827995188759,
+          "rhs_rms": 84.70826301256021,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.0025,
+          "relative_residual": 3.628177325048425e-09,
+          "maximum_absolute_residual": 6.231137774648232e-07,
+          "target_rms": 84.70828002093896,
+          "rhs_rms": 84.70827975462772,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002520050830413124,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 0,
+      "levels": [
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 1.9715887416688375e-05,
+          "maximum_absolute_residual": 1.3463846181616113e-05,
+          "target_rms": 0.13931225729510632,
+          "rhs_rms": 0.1393123773544138,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 3.250602029548855e-07,
+          "maximum_absolute_residual": 2.2395014820375536e-07,
+          "target_rms": 0.13931225729508884,
+          "rhs_rms": 0.13931225929303437,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 5.148124236714519e-09,
+          "maximum_absolute_residual": 3.554684879780723e-09,
+          "target_rms": 0.13931225729508803,
+          "rhs_rms": 0.13931225732679756,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002611155221122294,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 1,
+      "levels": [
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 3.2657810330406646e-05,
+          "maximum_absolute_residual": 5.805699032701561e-05,
+          "target_rms": 0.3582238995658728,
+          "rhs_rms": 0.3582190498547358,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 5.400457509013341e-07,
+          "maximum_absolute_residual": 9.752117900996282e-07,
+          "target_rms": 0.3582238995658314,
+          "rhs_rms": 0.35822382096077643,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 8.560222509126947e-09,
+          "maximum_absolute_residual": 1.5518544338455342e-08,
+          "target_rms": 0.3582238995658198,
+          "rhs_rms": 0.3582238983264038,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002621186914407668,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 2,
+      "levels": [
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 6.782932162413533e-07,
+          "maximum_absolute_residual": 1.9869517492443478e-07,
+          "target_rms": 0.11233785681674165,
+          "rhs_rms": 0.11233784521051393,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 1.0770561641304316e-08,
+          "maximum_absolute_residual": 3.1564511004944507e-09,
+          "target_rms": 0.11233785681674162,
+          "rhs_rms": 0.11233785663355808,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 1.6894682749515471e-10,
+          "maximum_absolute_residual": 4.949876619697591e-11,
+          "target_rms": 0.11233785681673822,
+          "rhs_rms": 0.112337856813874,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002490763927012935,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 3,
+      "levels": [
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 2.337018227385907e-06,
+          "maximum_absolute_residual": 1.553061754894225e-06,
+          "target_rms": 0.15838524425095735,
+          "rhs_rms": 0.15838530025116246,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 3.7844497181326164e-08,
+          "maximum_absolute_residual": 2.537366936006258e-08,
+          "target_rms": 0.15838524425095674,
+          "rhs_rms": 0.15838524518073974,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 5.966460455275649e-10,
+          "maximum_absolute_residual": 4.008917087183761e-10,
+          "target_rms": 0.15838524425095665,
+          "rhs_rms": 0.1583852442657075,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025530226445642605,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 4,
+      "levels": [
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 4.103611295055166e-05,
+          "maximum_absolute_residual": 5.305136047278891e-05,
+          "target_rms": 0.2020444424992656,
+          "rhs_rms": 0.20204291964422935,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 6.841612068578616e-07,
+          "maximum_absolute_residual": 8.964922861842695e-07,
+          "target_rms": 0.20204444249929424,
+          "rhs_rms": 0.20204441757663327,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 1.0866968773347237e-08,
+          "maximum_absolute_residual": 1.428724144547644e-08,
+          "target_rms": 0.2020444424992869,
+          "rhs_rms": 0.20204444210528988,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00026481476904115865,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "advection_diffusion",
+      "trajectory_id": 5,
+      "levels": [
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 3.0249934608990486e-06,
+          "maximum_absolute_residual": 1.6021855563375098e-06,
+          "target_rms": 0.16277108580167898,
+          "rhs_rms": 0.16277094189212846,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 4.861337382181974e-08,
+          "maximum_absolute_residual": 2.575346813582513e-08,
+          "target_rms": 0.16277108580167893,
+          "rhs_rms": 0.16277108349791067,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 7.649350998821202e-10,
+          "maximum_absolute_residual": 4.0526815237029723e-10,
+          "target_rms": 0.16277108580167743,
+          "rhs_rms": 0.16277108576546323,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002528716540282293,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 0,
+      "levels": [
+        {
+          "hx": 0.04,
+          "ht": 0.01,
+          "relative_residual": 0.00018899297870502167,
+          "maximum_absolute_residual": 0.002029922165729836,
+          "target_rms": 2.577074393866619,
+          "rhs_rms": 2.57729491862242,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.02,
+          "ht": 0.005,
+          "relative_residual": 3.476679665258177e-06,
+          "maximum_absolute_residual": 3.757579487206897e-05,
+          "target_rms": 2.577074270792513,
+          "rhs_rms": 2.577078468372223,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.01,
+          "ht": 0.0025,
+          "relative_residual": 5.662996941301327e-08,
+          "maximum_absolute_residual": 6.117235438196644e-07,
+          "target_rms": 2.5770742688264274,
+          "rhs_rms": 2.577074337767005,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00029964059935475566,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 1,
+      "levels": [
+        {
+          "hx": 0.04,
+          "ht": 0.01,
+          "relative_residual": 5.73835869291057e-05,
+          "maximum_absolute_residual": 0.00044048040072475203,
+          "target_rms": 1.3051535838479622,
+          "rhs_rms": 1.3051532558986907,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.02,
+          "ht": 0.005,
+          "relative_residual": 1.0283537561193121e-06,
+          "maximum_absolute_residual": 8.029108505169802e-06,
+          "target_rms": 1.305153583788337,
+          "rhs_rms": 1.3051535780412127,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.01,
+          "ht": 0.0025,
+          "relative_residual": 1.66567522384731e-08,
+          "maximum_absolute_residual": 1.3062525727747243e-07,
+          "target_rms": 1.3051535837874868,
+          "rhs_rms": 1.305153583690791,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00029027032170456004,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 2,
+      "levels": [
+        {
+          "hx": 0.04,
+          "ht": 0.01,
+          "relative_residual": 0.0006919853672309337,
+          "maximum_absolute_residual": 0.01715104718547167,
+          "target_rms": 3.9294835490098206,
+          "rhs_rms": 3.9281153136846854,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.02,
+          "ht": 0.005,
+          "relative_residual": 1.4966960623814819e-05,
+          "maximum_absolute_residual": 0.00037705497976858737,
+          "target_rms": 3.9294868331332253,
+          "rhs_rms": 3.9294588834204163,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.01,
+          "ht": 0.0025,
+          "relative_residual": 2.5626563709690105e-07,
+          "maximum_absolute_residual": 6.47723346602902e-06,
+          "target_rms": 3.9294868867625916,
+          "rhs_rms": 3.9294864170294117,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0003703338961087865,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 3,
+      "levels": [
+        {
+          "hx": 0.04,
+          "ht": 0.01,
+          "relative_residual": 0.00011438623312368726,
+          "maximum_absolute_residual": 0.0012473900279816874,
+          "target_rms": 1.467038352837529,
+          "rhs_rms": 1.4669953130645386,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.02,
+          "ht": 0.005,
+          "relative_residual": 2.0091129525815037e-06,
+          "maximum_absolute_residual": 2.3597410903519744e-05,
+          "target_rms": 1.4670383395200022,
+          "rhs_rms": 1.467037546574346,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.01,
+          "ht": 0.0025,
+          "relative_residual": 3.240127380888475e-08,
+          "maximum_absolute_residual": 3.8789119649607073e-07,
+          "target_rms": 1.4670383393099637,
+          "rhs_rms": 1.4670383264155031,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00028326200561083997,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 4,
+      "levels": [
+        {
+          "hx": 0.04,
+          "ht": 0.01,
+          "relative_residual": 0.0005419394488022107,
+          "maximum_absolute_residual": 0.00615931932406788,
+          "target_rms": 1.7240009474836968,
+          "rhs_rms": 1.7247333739903687,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.02,
+          "ht": 0.005,
+          "relative_residual": 1.0288785459495222e-05,
+          "maximum_absolute_residual": 0.00012142009432203338,
+          "target_rms": 1.7240000544998577,
+          "rhs_rms": 1.7240136630568965,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.01,
+          "ht": 0.0025,
+          "relative_residual": 1.6878726408076165e-07,
+          "maximum_absolute_residual": 2.0429306655245227e-06,
+          "target_rms": 1.7240000401485631,
+          "rhs_rms": 1.724000261904145,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0003114504110262015,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "burgers",
+      "trajectory_id": 5,
+      "levels": [
+        {
+          "hx": 0.04,
+          "ht": 0.01,
+          "relative_residual": 0.00036449735721168425,
+          "maximum_absolute_residual": 0.005353857067285972,
+          "target_rms": 3.0977468498736593,
+          "rhs_rms": 3.0975591717709303,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.02,
+          "ht": 0.005,
+          "relative_residual": 7.108478260040903e-06,
+          "maximum_absolute_residual": 0.00010890992244938502,
+          "target_rms": 3.097746906128557,
+          "rhs_rms": 3.09774269456915,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.01,
+          "ht": 0.0025,
+          "relative_residual": 1.1790372947554094e-07,
+          "maximum_absolute_residual": 1.8277859599180601e-06,
+          "target_rms": 3.09774690703061,
+          "rhs_rms": 3.097746834885653,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0003234693671786146,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 0,
+      "levels": [
+        {
+          "hx": 0.2,
+          "ht": 0.02,
+          "relative_residual": 0.020303265367634302,
+          "maximum_absolute_residual": 0.19813971995278123,
+          "target_rms": 2.356204599581636,
+          "rhs_rms": 2.3728937729125668,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 0.0015410879625559336,
+          "maximum_absolute_residual": 0.015269426754837667,
+          "target_rms": 2.356206991764365,
+          "rhs_rms": 2.3573821706164293,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 0.00010104136320909969,
+          "maximum_absolute_residual": 0.0010150061504918817,
+          "target_rms": 2.3562070298800437,
+          "rhs_rms": 2.3562829596498562,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 6.390703327893152e-06,
+          "maximum_absolute_residual": 6.449248626072546e-05,
+          "target_rms": 2.35620703047848,
+          "rhs_rms": 2.356211817052316,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00125,
+          "relative_residual": 4.006226435983586e-07,
+          "maximum_absolute_residual": 4.048212020268949e-06,
+          "target_rms": 2.3562070304877953,
+          "rhs_rms": 2.3562073302246906,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 1.9731931605297162e-05,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check plus two refined KdV steps",
+      "successive_error_ratios": [
+        13.174631079436127,
+        15.252050384224672,
+        15.810679674033686,
+        15.951927406030764
+      ]
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 1,
+      "levels": [
+        {
+          "hx": 0.2,
+          "ht": 0.02,
+          "relative_residual": 0.03305971169845601,
+          "maximum_absolute_residual": 0.4031317016943383,
+          "target_rms": 2.809867913185385,
+          "rhs_rms": 2.830571911443127,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 0.0027410405822105356,
+          "maximum_absolute_residual": 0.033682148869544015,
+          "target_rms": 2.809881672053,
+          "rhs_rms": 2.8117948316688572,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 0.0001843311312215593,
+          "maximum_absolute_residual": 0.0022712581218513606,
+          "target_rms": 2.80988191137032,
+          "rhs_rms": 2.8100154141871303,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 1.1735086800208001e-05,
+          "maximum_absolute_residual": 0.00014470745032912902,
+          "target_rms": 2.809881915211672,
+          "rhs_rms": 2.8098905001056065,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00125,
+          "relative_residual": 7.36875792373913e-07,
+          "maximum_absolute_residual": 9.08808454624932e-06,
+          "target_rms": 2.809881915272077,
+          "rhs_rms": 2.8098824558823905,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 2.2289238305980976e-05,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check plus two refined KdV steps",
+      "successive_error_ratios": [
+        12.061007747573996,
+        14.870198886350375,
+        15.707692184968932,
+        15.925461145089788
+      ]
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 2,
+      "levels": [
+        {
+          "hx": 0.2,
+          "ht": 0.02,
+          "relative_residual": 0.015726952359747644,
+          "maximum_absolute_residual": 0.2836835237432682,
+          "target_rms": 2.5422333391555383,
+          "rhs_rms": 2.553797005258053,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 0.0012075485323229638,
+          "maximum_absolute_residual": 0.021938928458514972,
+          "target_rms": 2.5422358363570505,
+          "rhs_rms": 2.542882548480761,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 7.977755159133842e-05,
+          "maximum_absolute_residual": 0.0014465026425485306,
+          "target_rms": 2.542235873221602,
+          "rhs_rms": 2.5422742804995444,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 5.057251671147048e-06,
+          "maximum_absolute_residual": 9.162249502026043e-05,
+          "target_rms": 2.5422358737883037,
+          "rhs_rms": 2.542238239163416,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00125,
+          "relative_residual": 3.1720936281167465e-07,
+          "maximum_absolute_residual": 5.745973222559542e-06,
+          "target_rms": 2.5422358737971438,
+          "rhs_rms": 2.5422360211991193,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 2.016979231294401e-05,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check plus two refined KdV steps",
+      "successive_error_ratios": [
+        13.023867727695938,
+        15.136445130688486,
+        15.774882639614388,
+        15.942945776633676
+      ]
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 3,
+      "levels": [
+        {
+          "hx": 0.2,
+          "ht": 0.02,
+          "relative_residual": 0.01577562280332401,
+          "maximum_absolute_residual": 0.15933457423537067,
+          "target_rms": 1.991823623926905,
+          "rhs_rms": 1.991825870303237,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 0.0011997761511113756,
+          "maximum_absolute_residual": 0.01227776107921219,
+          "target_rms": 1.9918235982255836,
+          "rhs_rms": 1.9917745176196542,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 7.883948676424005e-05,
+          "maximum_absolute_residual": 0.0008095590757868365,
+          "target_rms": 1.9918235976360656,
+          "rhs_rms": 1.9918198688126116,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 4.989928796040493e-06,
+          "maximum_absolute_residual": 5.1282732884239124e-05,
+          "target_rms": 1.991823597626099,
+          "rhs_rms": 1.9918233550762297,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00125,
+          "relative_residual": 3.128268242448142e-07,
+          "maximum_absolute_residual": 3.216081994494857e-06,
+          "target_rms": 1.9918235976259353,
+          "rhs_rms": 1.9918235824536124,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 1.982976064684431e-05,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check plus two refined KdV steps",
+      "successive_error_ratios": [
+        13.14880512394812,
+        15.217959938008743,
+        15.799721796992204,
+        15.951089898017951
+      ]
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 4,
+      "levels": [
+        {
+          "hx": 0.2,
+          "ht": 0.02,
+          "relative_residual": 0.014166310698329338,
+          "maximum_absolute_residual": 0.16291959840806403,
+          "target_rms": 2.017359598513796,
+          "rhs_rms": 2.0210758438060177,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 0.0010805796989772282,
+          "maximum_absolute_residual": 0.012935722309829867,
+          "target_rms": 2.0173598383991247,
+          "rhs_rms": 2.017600263912511,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 7.114098431996125e-05,
+          "maximum_absolute_residual": 0.0008603279979819689,
+          "target_rms": 2.0173598421013716,
+          "rhs_rms": 2.0173750684613,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 4.505144838695568e-06,
+          "maximum_absolute_residual": 5.4620669802663e-05,
+          "target_rms": 2.0173598421589904,
+          "rhs_rms": 2.0173607974564582,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00125,
+          "relative_residual": 2.824714698369091e-07,
+          "maximum_absolute_residual": 3.4264691253227397e-06,
+          "target_rms": 2.017359842159832,
+          "rhs_rms": 2.0173599018618447,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 1.9939663604174764e-05,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check plus two refined KdV steps",
+      "successive_error_ratios": [
+        13.109917493117623,
+        15.189271125589858,
+        15.791053754569099,
+        15.949026077914024
+      ]
+    },
+    {
+      "case": "kdv",
+      "trajectory_id": 5,
+      "levels": [
+        {
+          "hx": 0.2,
+          "ht": 0.02,
+          "relative_residual": 0.0287130849700495,
+          "maximum_absolute_residual": 0.44797581878651194,
+          "target_rms": 3.1020888196074425,
+          "rhs_rms": 3.116534165232789,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.1,
+          "ht": 0.01,
+          "relative_residual": 0.002365474966470345,
+          "maximum_absolute_residual": 0.037248462995796316,
+          "target_rms": 3.102097504042162,
+          "rhs_rms": 3.103239774648255,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.05,
+          "ht": 0.005,
+          "relative_residual": 0.00015877717329101522,
+          "maximum_absolute_residual": 0.002507789280417505,
+          "target_rms": 3.1020976494144676,
+          "rhs_rms": 3.102175068219882,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.025,
+          "ht": 0.0025,
+          "relative_residual": 1.0103600106630848e-05,
+          "maximum_absolute_residual": 0.0001597101425439007,
+          "target_rms": 3.1020976517269294,
+          "rhs_rms": 3.102102598366142,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00125,
+          "relative_residual": 6.343705810827959e-07,
+          "maximum_absolute_residual": 1.00303577763583e-05,
+          "target_rms": 3.102097651763066,
+          "rhs_rms": 3.102097962606911,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 2.2093431679128356e-05,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check plus two refined KdV steps",
+      "successive_error_ratios": [
+        12.138401537554156,
+        14.89807960074196,
+        15.714910686816676,
+        15.926968254715078
+      ]
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 0,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 6.246456531457895e-05,
+          "maximum_absolute_residual": 0.001729628095677782,
+          "target_rms": 3.4899173646861246,
+          "rhs_rms": 3.489867814495338,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 1.1417411865369686e-06,
+          "maximum_absolute_residual": 3.0645438847898276e-05,
+          "target_rms": 3.4899157751356045,
+          "rhs_rms": 3.489915172593473,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 1.85352140368407e-08,
+          "maximum_absolute_residual": 4.94867496314555e-07,
+          "target_rms": 3.4899157511824757,
+          "rhs_rms": 3.4899157423620792,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002967316580767859,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 1,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 0.0001791866519404308,
+          "maximum_absolute_residual": 0.006471162172005052,
+          "target_rms": 3.3231921218502465,
+          "rhs_rms": 3.3235097537646134,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 3.1153613078116822e-06,
+          "maximum_absolute_residual": 0.00011246898410632866,
+          "target_rms": 3.323191638021597,
+          "rhs_rms": 3.323197211670799,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 4.977454614784922e-08,
+          "maximum_absolute_residual": 1.7961340788019697e-06,
+          "target_rms": 3.3231916306915,
+          "rhs_rms": 3.3231917199073884,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.0002777804351431064,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 2,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 4.622165261880022e-05,
+          "maximum_absolute_residual": 0.0011332785290347758,
+          "target_rms": 3.0275449037558464,
+          "rhs_rms": 3.0275065773835164,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 8.087662475467527e-07,
+          "maximum_absolute_residual": 1.994258560511497e-05,
+          "target_rms": 3.02754441623763,
+          "rhs_rms": 3.0275437807536094,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 1.3001286584599593e-08,
+          "maximum_absolute_residual": 3.207286791706565e-07,
+          "target_rms": 3.027544408772414,
+          "rhs_rms": 3.027544398667314,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00028128130103490597,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 3,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 0.0003498580507015856,
+          "maximum_absolute_residual": 0.014651445409825214,
+          "target_rms": 3.9033682369215823,
+          "rhs_rms": 3.9041933505384345,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 5.769296988588617e-06,
+          "maximum_absolute_residual": 0.00023963660756010086,
+          "target_rms": 3.903366785503735,
+          "rhs_rms": 3.9033803900647484,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 9.043600258211606e-08,
+          "maximum_absolute_residual": 3.7438808497824994e-06,
+          "target_rms": 3.9033667635584575,
+          "rhs_rms": 3.9033669767584946,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00025849341583182323,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 4,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 7.924668062655644e-05,
+          "maximum_absolute_residual": 0.004416738716614077,
+          "target_rms": 4.999170166342967,
+          "rhs_rms": 4.99898281768597,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 1.454721735307028e-06,
+          "maximum_absolute_residual": 8.071329171954744e-05,
+          "target_rms": 4.999164124973477,
+          "rhs_rms": 4.999160974324078,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 2.3762413749455298e-08,
+          "maximum_absolute_residual": 1.3145581796436545e-06,
+          "target_rms": 4.9991640343514785,
+          "rhs_rms": 4.999163984243812,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00029985374228396703,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    },
+    {
+      "case": "logheat",
+      "trajectory_id": 5,
+      "levels": [
+        {
+          "hx": 0.025,
+          "ht": 0.0005,
+          "relative_residual": 2.086727600637841e-05,
+          "maximum_absolute_residual": 0.0005176070363432927,
+          "target_rms": 3.771625596449017,
+          "rhs_rms": 3.7715989779878405,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.0125,
+          "ht": 0.00025,
+          "relative_residual": 3.027047259867444e-07,
+          "maximum_absolute_residual": 8.582042588134442e-06,
+          "target_rms": 3.7716237509835056,
+          "rhs_rms": 3.7716235395867774,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        },
+        {
+          "hx": 0.00625,
+          "ht": 0.000125,
+          "relative_residual": 4.671560279571164e-09,
+          "maximum_absolute_residual": 1.3794252584631295e-07,
+          "target_rms": 3.771623723022642,
+          "rhs_rms": 3.77162372078696,
+          "normalization": "max(||time derivative||_2,||PDE spatial RHS||_2,1e-14)"
+        }
+      ],
+      "fine_over_coarse_error_ratio": 0.00022387015335126773,
+      "convergence_or_numerical_floor": true,
+      "passed": true,
+      "source": "first check, unchanged"
+    }
+  ],
+  "finite_difference_protocol": {
+    "offsets": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "weights": {
+      "1": [
+        -0.016666666666666666,
+        0.15,
+        -0.75,
+        0.0,
+        0.75,
+        -0.15,
+        0.016666666666666666
+      ],
+      "2": [
+        0.011111111111111112,
+        -0.15,
+        1.5,
+        -2.7222222222222223,
+        1.5,
+        -0.15,
+        0.011111111111111112
+      ],
+      "3": [
+        0.125,
+        -1.0,
+        1.625,
+        0.0,
+        -1.625,
+        1.0,
+        -0.125
+      ]
+    },
+    "levels": [
+      1.0,
+      0.5,
+      0.25
+    ],
+    "finest_relative_tolerance": 0.0001,
+    "convergence_floor": 1e-07,
+    "comparison": "finest<=coarsest/4 OR finest<=numerical floor",
+    "reference": "independent temporal and spatial finite differences of field values only",
+    "levels_by_case": {
+      "heat": [
+        1.0,
+        0.5,
+        0.25
+      ],
+      "wave": [
+        1.0,
+        0.5,
+        0.25
+      ],
+      "advection_diffusion": [
+        1.0,
+        0.5,
+        0.25
+      ],
+      "burgers": [
+        1.0,
+        0.5,
+        0.25
+      ],
+      "kdv": [
+        1.0,
+        0.5,
+        0.25,
+        0.125,
+        0.0625
+      ],
+      "logheat": [
+        1.0,
+        0.5,
+        0.25
+      ]
+    }
+  },
+  "distinct_initial_conditions": {
+    "heat": {
+      "parameter_sets_distinct": true,
+      "minimum_pairwise_initial_field_distance": 0.7041921493312867,
+      "pairwise": [
+        {
+          "ids": [
+            0,
+            1
+          ],
+          "relative_initial_field_distance": 0.8474636265836469
+        },
+        {
+          "ids": [
+            0,
+            2
+          ],
+          "relative_initial_field_distance": 1.2918344528240413
+        },
+        {
+          "ids": [
+            0,
+            3
+          ],
+          "relative_initial_field_distance": 1.109751145769435
+        },
+        {
+          "ids": [
+            0,
+            4
+          ],
+          "relative_initial_field_distance": 1.4200024349295322
+        },
+        {
+          "ids": [
+            0,
+            5
+          ],
+          "relative_initial_field_distance": 1.0151577891453618
+        },
+        {
+          "ids": [
+            1,
+            2
+          ],
+          "relative_initial_field_distance": 1.1016503272850533
+        },
+        {
+          "ids": [
+            1,
+            3
+          ],
+          "relative_initial_field_distance": 0.7770369896155417
+        },
+        {
+          "ids": [
+            1,
+            4
+          ],
+          "relative_initial_field_distance": 1.6162169261222177
+        },
+        {
+          "ids": [
+            1,
+            5
+          ],
+          "relative_initial_field_distance": 1.1626325047631187
+        },
+        {
+          "ids": [
+            2,
+            3
+          ],
+          "relative_initial_field_distance": 0.9640292696361127
+        },
+        {
+          "ids": [
+            2,
+            4
+          ],
+          "relative_initial_field_distance": 1.8377420393688713
+        },
+        {
+          "ids": [
+            2,
+            5
+          ],
+          "relative_initial_field_distance": 0.7041921493312867
+        },
+        {
+          "ids": [
+            3,
+            4
+          ],
+          "relative_initial_field_distance": 1.668517325325819
+        },
+        {
+          "ids": [
+            3,
+            5
+          ],
+          "relative_initial_field_distance": 0.9123563949979148
+        },
+        {
+          "ids": [
+            4,
+            5
+          ],
+          "relative_initial_field_distance": 1.8318727825311312
+        }
+      ],
+      "interpretation": "distinct initial conditions; not a proof of statistical independence or identifiability"
+    },
+    "wave": {
+      "parameter_sets_distinct": true,
+      "minimum_pairwise_initial_field_distance": 0.72039191422677,
+      "pairwise": [
+        {
+          "ids": [
+            0,
+            1
+          ],
+          "relative_initial_field_distance": 1.3902715718944234
+        },
+        {
+          "ids": [
+            0,
+            2
+          ],
+          "relative_initial_field_distance": 1.8009896327575932
+        },
+        {
+          "ids": [
+            0,
+            3
+          ],
+          "relative_initial_field_distance": 1.7233303251041385
+        },
+        {
+          "ids": [
+            0,
+            4
+          ],
+          "relative_initial_field_distance": 0.72039191422677
+        },
+        {
+          "ids": [
+            0,
+            5
+          ],
+          "relative_initial_field_distance": 1.23298271240119
+        },
+        {
+          "ids": [
+            1,
+            2
+          ],
+          "relative_initial_field_distance": 1.0159994925236433
+        },
+        {
+          "ids": [
+            1,
+            3
+          ],
+          "relative_initial_field_distance": 0.7901312314043606
+        },
+        {
+          "ids": [
+            1,
+            4
+          ],
+          "relative_initial_field_distance": 1.5056779466302408
+        },
+        {
+          "ids": [
+            1,
+            5
+          ],
+          "relative_initial_field_distance": 1.3108377401767466
+        },
+        {
+          "ids": [
+            2,
+            3
+          ],
+          "relative_initial_field_distance": 0.7673483394550636
+        },
+        {
+          "ids": [
+            2,
+            4
+          ],
+          "relative_initial_field_distance": 1.8367757298836738
+        },
+        {
+          "ids": [
+            2,
+            5
+          ],
+          "relative_initial_field_distance": 1.355285329097731
+        },
+        {
+          "ids": [
+            3,
+            4
+          ],
+          "relative_initial_field_distance": 1.9303837488546682
+        },
+        {
+          "ids": [
+            3,
+            5
+          ],
+          "relative_initial_field_distance": 1.1343121078352743
+        },
+        {
+          "ids": [
+            4,
+            5
+          ],
+          "relative_initial_field_distance": 1.2690171439966644
+        }
+      ],
+      "interpretation": "distinct initial conditions; not a proof of statistical independence or identifiability"
+    },
+    "advection_diffusion": {
+      "parameter_sets_distinct": true,
+      "minimum_pairwise_initial_field_distance": 0.12800187601532476,
+      "pairwise": [
+        {
+          "ids": [
+            0,
+            1
+          ],
+          "relative_initial_field_distance": 0.5044603078028859
+        },
+        {
+          "ids": [
+            0,
+            2
+          ],
+          "relative_initial_field_distance": 0.5298160723958539
+        },
+        {
+          "ids": [
+            0,
+            3
+          ],
+          "relative_initial_field_distance": 0.2467449573277881
+        },
+        {
+          "ids": [
+            0,
+            4
+          ],
+          "relative_initial_field_distance": 0.5211086022998905
+        },
+        {
+          "ids": [
+            0,
+            5
+          ],
+          "relative_initial_field_distance": 0.2189830906793502
+        },
+        {
+          "ids": [
+            1,
+            2
+          ],
+          "relative_initial_field_distance": 0.7191888926950877
+        },
+        {
+          "ids": [
+            1,
+            3
+          ],
+          "relative_initial_field_distance": 0.4102471024148178
+        },
+        {
+          "ids": [
+            1,
+            4
+          ],
+          "relative_initial_field_distance": 0.7654279273999647
+        },
+        {
+          "ids": [
+            1,
+            5
+          ],
+          "relative_initial_field_distance": 0.3897455592984681
+        },
+        {
+          "ids": [
+            2,
+            3
+          ],
+          "relative_initial_field_distance": 0.48091592220888474
+        },
+        {
+          "ids": [
+            2,
+            4
+          ],
+          "relative_initial_field_distance": 0.30298082885863536
+        },
+        {
+          "ids": [
+            2,
+            5
+          ],
+          "relative_initial_field_distance": 0.5786490017850332
+        },
+        {
+          "ids": [
+            3,
+            4
+          ],
+          "relative_initial_field_distance": 0.5099824095912624
+        },
+        {
+          "ids": [
+            3,
+            5
+          ],
+          "relative_initial_field_distance": 0.12800187601532476
+        },
+        {
+          "ids": [
+            4,
+            5
+          ],
+          "relative_initial_field_distance": 0.5894814489164548
+        }
+      ],
+      "interpretation": "distinct initial conditions; not a proof of statistical independence or identifiability"
+    },
+    "burgers": {
+      "parameter_sets_distinct": true,
+      "minimum_pairwise_initial_field_distance": 0.0951951797047457,
+      "pairwise": [
+        {
+          "ids": [
+            0,
+            1
+          ],
+          "relative_initial_field_distance": 0.4476114956828591
+        },
+        {
+          "ids": [
+            0,
+            2
+          ],
+          "relative_initial_field_distance": 0.44238463545480805
+        },
+        {
+          "ids": [
+            0,
+            3
+          ],
+          "relative_initial_field_distance": 0.4108766900107423
+        },
+        {
+          "ids": [
+            0,
+            4
+          ],
+          "relative_initial_field_distance": 0.32680283814249106
+        },
+        {
+          "ids": [
+            0,
+            5
+          ],
+          "relative_initial_field_distance": 0.0951951797047457
+        },
+        {
+          "ids": [
+            1,
+            2
+          ],
+          "relative_initial_field_distance": 0.34927251009365456
+        },
+        {
+          "ids": [
+            1,
+            3
+          ],
+          "relative_initial_field_distance": 0.14253613259989037
+        },
+        {
+          "ids": [
+            1,
+            4
+          ],
+          "relative_initial_field_distance": 0.32228783434737174
+        },
+        {
+          "ids": [
+            1,
+            5
+          ],
+          "relative_initial_field_distance": 0.4510888602155841
+        },
+        {
+          "ids": [
+            2,
+            3
+          ],
+          "relative_initial_field_distance": 0.24288840836310216
+        },
+        {
+          "ids": [
+            2,
+            4
+          ],
+          "relative_initial_field_distance": 0.19128610559553458
+        },
+        {
+          "ids": [
+            2,
+            5
+          ],
+          "relative_initial_field_distance": 0.4184731181843295
+        },
+        {
+          "ids": [
+            3,
+            4
+          ],
+          "relative_initial_field_distance": 0.22580743780688264
+        },
+        {
+          "ids": [
+            3,
+            5
+          ],
+          "relative_initial_field_distance": 0.4290713562615197
+        },
+        {
+          "ids": [
+            4,
+            5
+          ],
+          "relative_initial_field_distance": 0.30835129629738656
+        }
+      ],
+      "interpretation": "distinct initial conditions; not a proof of statistical independence or identifiability"
+    },
+    "kdv": {
+      "parameter_sets_distinct": true,
+      "minimum_pairwise_initial_field_distance": 0.24100172101656014,
+      "pairwise": [
+        {
+          "ids": [
+            0,
+            1
+          ],
+          "relative_initial_field_distance": 0.42271974270338447
+        },
+        {
+          "ids": [
+            0,
+            2
+          ],
+          "relative_initial_field_distance": 0.7921976801962939
+        },
+        {
+          "ids": [
+            0,
+            3
+          ],
+          "relative_initial_field_distance": 0.24100172101656014
+        },
+        {
+          "ids": [
+            0,
+            4
+          ],
+          "relative_initial_field_distance": 0.8106862133794056
+        },
+        {
+          "ids": [
+            0,
+            5
+          ],
+          "relative_initial_field_distance": 0.9704151703485712
+        },
+        {
+          "ids": [
+            1,
+            2
+          ],
+          "relative_initial_field_distance": 0.535556637118625
+        },
+        {
+          "ids": [
+            1,
+            3
+          ],
+          "relative_initial_field_distance": 0.29217424675707065
+        },
+        {
+          "ids": [
+            1,
+            4
+          ],
+          "relative_initial_field_distance": 1.0208500235065314
+        },
+        {
+          "ids": [
+            1,
+            5
+          ],
+          "relative_initial_field_distance": 0.7725054950583147
+        },
+        {
+          "ids": [
+            2,
+            3
+          ],
+          "relative_initial_field_distance": 0.6152123734765473
+        },
+        {
+          "ids": [
+            2,
+            4
+          ],
+          "relative_initial_field_distance": 1.1654681263436741
+        },
+        {
+          "ids": [
+            2,
+            5
+          ],
+          "relative_initial_field_distance": 0.3002280404595851
+        },
+        {
+          "ids": [
+            3,
+            4
+          ],
+          "relative_initial_field_distance": 0.9467433254930089
+        },
+        {
+          "ids": [
+            3,
+            5
+          ],
+          "relative_initial_field_distance": 0.8321528318819956
+        },
+        {
+          "ids": [
+            4,
+            5
+          ],
+          "relative_initial_field_distance": 1.2185143961311735
+        }
+      ],
+      "interpretation": "distinct initial conditions; not a proof of statistical independence or identifiability"
+    },
+    "logheat": {
+      "parameter_sets_distinct": true,
+      "minimum_pairwise_initial_field_distance": 0.5632640196547671,
+      "pairwise": [
+        {
+          "ids": [
+            0,
+            1
+          ],
+          "relative_initial_field_distance": 1.5568707839171425
+        },
+        {
+          "ids": [
+            0,
+            2
+          ],
+          "relative_initial_field_distance": 1.207253375830077
+        },
+        {
+          "ids": [
+            0,
+            3
+          ],
+          "relative_initial_field_distance": 1.5414068628208368
+        },
+        {
+          "ids": [
+            0,
+            4
+          ],
+          "relative_initial_field_distance": 1.7293369289613487
+        },
+        {
+          "ids": [
+            0,
+            5
+          ],
+          "relative_initial_field_distance": 1.4811446645852742
+        },
+        {
+          "ids": [
+            1,
+            2
+          ],
+          "relative_initial_field_distance": 1.4039129662664462
+        },
+        {
+          "ids": [
+            1,
+            3
+          ],
+          "relative_initial_field_distance": 0.5632640196547671
+        },
+        {
+          "ids": [
+            1,
+            4
+          ],
+          "relative_initial_field_distance": 1.3339088111575257
+        },
+        {
+          "ids": [
+            1,
+            5
+          ],
+          "relative_initial_field_distance": 1.3693996549071121
+        },
+        {
+          "ids": [
+            2,
+            3
+          ],
+          "relative_initial_field_distance": 1.3427864115645203
+        },
+        {
+          "ids": [
+            2,
+            4
+          ],
+          "relative_initial_field_distance": 1.4717390906698313
+        },
+        {
+          "ids": [
+            2,
+            5
+          ],
+          "relative_initial_field_distance": 1.238975865966281
+        },
+        {
+          "ids": [
+            3,
+            4
+          ],
+          "relative_initial_field_distance": 1.211783546734068
+        },
+        {
+          "ids": [
+            3,
+            5
+          ],
+          "relative_initial_field_distance": 1.0480246753159803
+        },
+        {
+          "ids": [
+            4,
+            5
+          ],
+          "relative_initial_field_distance": 1.0215111302300341
+        }
+      ],
+      "interpretation": "distinct initial conditions; not a proof of statistical independence or identifiability"
+    }
+  },
+  "logheat_positivity": [
+    {
+      "trajectory_id": 0,
+      "analytic_w_lower_bound_for_t_nonnegative": 0.44999999999999996,
+      "minimum_sampled_positive_heat_field": 0.6927948794672999,
+      "identity": "u=log(w), w_t=w_xx -> u_t=u_xx+u_x^2"
+    },
+    {
+      "trajectory_id": 1,
+      "analytic_w_lower_bound_for_t_nonnegative": 0.44999999999999996,
+      "minimum_sampled_positive_heat_field": 0.6154504114860584,
+      "identity": "u=log(w), w_t=w_xx -> u_t=u_xx+u_x^2"
+    },
+    {
+      "trajectory_id": 2,
+      "analytic_w_lower_bound_for_t_nonnegative": 0.44999999999999996,
+      "minimum_sampled_positive_heat_field": 0.6340080739731004,
+      "identity": "u=log(w), w_t=w_xx -> u_t=u_xx+u_x^2"
+    },
+    {
+      "trajectory_id": 3,
+      "analytic_w_lower_bound_for_t_nonnegative": 0.44999999999999996,
+      "minimum_sampled_positive_heat_field": 0.45000000000000007,
+      "identity": "u=log(w), w_t=w_xx -> u_t=u_xx+u_x^2"
+    },
+    {
+      "trajectory_id": 4,
+      "analytic_w_lower_bound_for_t_nonnegative": 0.44999999999999996,
+      "minimum_sampled_positive_heat_field": 0.44999999999999996,
+      "identity": "u=log(w), w_t=w_xx -> u_t=u_xx+u_x^2"
+    },
+    {
+      "trajectory_id": 5,
+      "analytic_w_lower_bound_for_t_nonnegative": 0.45000000000000007,
+      "minimum_sampled_positive_heat_field": 0.6727174818153095,
+      "identity": "u=log(w), w_t=w_xx -> u_t=u_xx+u_x^2"
+    }
+  ],
+  "frequency_diagnostics": {
+    "heat": {
+      "case": "heat",
+      "test_function_power": 8,
+      "weak_time_centers_first_last": [
+        0.005,
+        0.075
+      ],
+      "spatial_half_width": 0.0625,
+      "temporal_half_width": 0.005,
+      "rows": [
+        {
+          "trajectory_id": 0,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_amplitude": 0.49214383436853393,
+              "center_decay_first_last": [
+                0.9518498073692735,
+                0.47700880455302586
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.4680019569434195,
+                0.23453390680096034
+              ],
+              "spatial_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_amplitude": 0.259619625716642,
+              "center_decay_first_last": [
+                0.8208687174155399,
+                0.05177326822633526
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.21246808588730995,
+                0.013400641255782242
+              ],
+              "spatial_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_amplitude": 0.41074973413375226,
+              "center_decay_first_last": [
+                0.6413806259551538,
+                0.0012786084118045185
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.2624095705404418,
+                0.000523120079798731
+              ],
+              "spatial_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_amplitude": 0.4791816446224854,
+              "center_decay_first_last": [
+                0.45404073872724504,
+                7.184926405327625e-06
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.217600078312793,
+                3.4433926630758765e-06
+              ],
+              "spatial_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_amplitude": 0.4222920338386386,
+              "center_decay_first_last": [
+                0.29121293321402086,
+                9.18670734004831e-09
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.1247833430172825,
+                3.936459966117477e-09
+              ],
+              "spatial_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_amplitude": 0.35207634606685256,
+              "center_decay_first_last": [
+                0.16922454248244995,
+                2.672700095080527e-12
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.062393443589623974,
+                9.854301283260024e-13
+              ],
+              "spatial_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 1,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_amplitude": 0.963223353409757,
+              "center_decay_first_last": [
+                0.9518498073692735,
+                0.47700880455302586
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.9159728983454096,
+                0.45902949589315484
+              ],
+              "spatial_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_amplitude": 0.634475721795106,
+              "center_decay_first_last": [
+                0.8208687174155399,
+                0.05177326822633526
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.5192436503198237,
+                0.032749379057188506
+              ],
+              "spatial_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_amplitude": 0.20308543662885578,
+              "center_decay_first_last": [
+                0.6413806259551538,
+                0.0012786084118045185
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.12974217091384127,
+                0.00025864428138778274
+              ],
+              "spatial_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_amplitude": 0.43477390200418153,
+              "center_decay_first_last": [
+                0.45404073872724504,
+                7.184926405327625e-06
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.19743418009886995,
+                3.1242792395304074e-06
+              ],
+              "spatial_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_amplitude": 0.41769004436097834,
+              "center_decay_first_last": [
+                0.29121293321402086,
+                9.18670734004831e-09
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.12342349820483635,
+                3.8935618153315545e-09
+              ],
+              "spatial_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_amplitude": 0.18182301929280228,
+              "center_decay_first_last": [
+                0.16922454248244995,
+                2.672700095080527e-12
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.03222188716814976,
+                5.089063302205075e-13
+              ],
+              "spatial_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 2,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_amplitude": 0.884194167339341,
+              "center_decay_first_last": [
+                0.9518498073692735,
+                0.47700880455302586
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.8408204507198968,
+                0.4213676936597146
+              ],
+              "spatial_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_amplitude": 0.4034625976081391,
+              "center_decay_first_last": [
+                0.8208687174155399,
+                0.05177326822633526
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.33018661668699995,
+                0.020825303617738492
+              ],
+              "spatial_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_amplitude": 0.42276717013457144,
+              "center_decay_first_last": [
+                0.6413806259551538,
+                0.0012786084118045185
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.27008697105446217,
+                0.0005384251708488388
+              ],
+              "spatial_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_amplitude": 0.221318622670537,
+              "center_decay_first_last": [
+                0.45404073872724504,
+                7.184926405327625e-06
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.1005024924590538,
+                1.590392557933186e-06
+              ],
+              "spatial_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_amplitude": 0.35273068689470366,
+              "center_decay_first_last": [
+                0.29121293321402086,
+                9.18670734004831e-09
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.10422861614368495,
+                3.2880332010067727e-09
+              ],
+              "spatial_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_amplitude": 0.3593845195791355,
+              "center_decay_first_last": [
+                0.16922454248244995,
+                2.672700095080527e-12
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.06368856641419234,
+                1.0058850507952052e-12
+              ],
+              "spatial_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 3,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_amplitude": 0.6183312695239556,
+              "center_decay_first_last": [
+                0.9518498073692735,
+                0.47700880455302586
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.5879993285861679,
+                0.2946692373475013
+              ],
+              "spatial_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_amplitude": 0.3295496006843058,
+              "center_decay_first_last": [
+                0.8208687174155399,
+                0.05177326822633526
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.26969753410993175,
+                0.0170101777266124
+              ],
+              "spatial_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_amplitude": 0.32535801695588007,
+              "center_decay_first_last": [
+                0.6413806259551538,
+                0.0012786084118045185
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.20785663484685538,
+                0.000414367430211639
+              ],
+              "spatial_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_amplitude": 0.48036746960961313,
+              "center_decay_first_last": [
+                0.45404073872724504,
+                7.184926405327625e-06
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.21813857057968178,
+                3.4519139850133735e-06
+              ],
+              "spatial_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_amplitude": 0.4251785754009628,
+              "center_decay_first_last": [
+                0.29121293321402086,
+                9.18670734004831e-09
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.1256362890286742,
+                3.963367306038943e-09
+              ],
+              "spatial_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_amplitude": 0.22880662793618867,
+              "center_decay_first_last": [
+                0.16922454248244995,
+                2.672700095080527e-12
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.04054811859004559,
+                6.404092386433291e-13
+              ],
+              "spatial_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 4,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_amplitude": 0.9478926105319648,
+              "center_decay_first_last": [
+                0.9518498073692735,
+                0.47700880455302586
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.9013941976340432,
+                0.4517235443192556
+              ],
+              "spatial_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_amplitude": 0.6613008331761149,
+              "center_decay_first_last": [
+                0.8208687174155399,
+                0.05177326822633526
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.541196844548127,
+                0.03413399585289887
+              ],
+              "spatial_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_amplitude": 0.26364875158614964,
+              "center_decay_first_last": [
+                0.6413806259551538,
+                0.0012786084118045185
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.16843335473643134,
+                0.0003357761296168523
+              ],
+              "spatial_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_amplitude": 0.1863026999512276,
+              "center_decay_first_last": [
+                0.45404073872724504,
+                7.184926405327625e-06
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.08460149205258102,
+                1.338768622134281e-06
+              ],
+              "spatial_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_amplitude": 0.26362003662548156,
+              "center_decay_first_last": [
+                0.29121293321402086,
+                9.18670734004831e-09
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.07789725313415609,
+                2.4573746064060407e-09
+              ],
+              "spatial_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_amplitude": 0.3998136097210059,
+              "center_decay_first_last": [
+                0.16922454248244995,
+                2.672700095080527e-12
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.07085323448498525,
+                1.1190424495573532e-12
+              ],
+              "spatial_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 5,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_amplitude": 0.7744088673540314,
+              "center_decay_first_last": [
+                0.9518498073692735,
+                0.47700880455302586
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.7364206154508637,
+                0.36904889269798435
+              ],
+              "spatial_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_amplitude": 0.5781843246598927,
+              "center_decay_first_last": [
+                0.8208687174155399,
+                0.05177326822633526
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.4731757717138554,
+                0.02984381744290948
+              ],
+              "spatial_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_amplitude": 0.24022943786716913,
+              "center_decay_first_last": [
+                0.6413806259551538,
+                0.0012786084118045185
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.15347180626870083,
+                0.00030594990638790366
+              ],
+              "spatial_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_amplitude": 0.23111901307921473,
+              "center_decay_first_last": [
+                0.45404073872724504,
+                7.184926405327625e-06
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.10495292528417656,
+                1.660818027704898e-06
+              ],
+              "spatial_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_amplitude": 0.21289818918374345,
+              "center_decay_first_last": [
+                0.29121293321402086,
+                9.18670734004831e-09
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.06290942201108277,
+                1.984563125576133e-09
+              ],
+              "spatial_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_amplitude": 0.3853199441261076,
+              "center_decay_first_last": [
+                0.16922454248244995,
+                2.672700095080527e-12
+              ],
+              "weak_field_amplitude_proxy_first_last": [
+                0.06828472990691725,
+                1.0784759789419633e-12
+              ],
+              "spatial_window_transfer": 0.9640734213803596
+            }
+          ]
+        }
+      ],
+      "interpretation": "field-average Fourier transfer proxy; does not measure full design rank, noise SNR, or unique recoverability"
+    },
+    "wave": {
+      "case": "wave",
+      "test_function_power": 8,
+      "weak_time_centers_first_last": [
+        0.0625,
+        0.9375
+      ],
+      "spatial_half_width": 0.0625,
+      "temporal_half_width": 0.0625,
+      "rows": [
+        {
+          "trajectory_id": 0,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_temporal_envelope": 0.7701000601589082,
+              "weak_field_envelope_proxy": 0.7685389492541931,
+              "spatial_window_transfer": 0.998985909142704,
+              "temporal_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_temporal_envelope": 0.7620444869382532,
+              "weak_field_envelope_proxy": 0.7558832367935979,
+              "spatial_window_transfer": 0.9959492165341849,
+              "temporal_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_temporal_envelope": 0.29378433046011854,
+              "weak_field_envelope_proxy": 0.2884656355451685,
+              "spatial_window_transfer": 0.99090661535905,
+              "temporal_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_temporal_envelope": 0.39219115531545246,
+              "weak_field_envelope_proxy": 0.37965327986706127,
+              "spatial_window_transfer": 0.9838857724100275,
+              "temporal_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_temporal_envelope": 0.5559990808915403,
+              "weak_field_envelope_proxy": 0.5284654197704646,
+              "spatial_window_transfer": 0.9749250970709225,
+              "temporal_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_temporal_envelope": 0.23333537561129045,
+              "weak_field_envelope_proxy": 0.21687066259265253,
+              "spatial_window_transfer": 0.9640734213803596,
+              "temporal_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 1,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_temporal_envelope": 0.6302952225741892,
+              "weak_field_envelope_proxy": 0.6290175175121387,
+              "spatial_window_transfer": 0.998985909142704,
+              "temporal_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_temporal_envelope": 0.4246239849923525,
+              "weak_field_envelope_proxy": 0.42119083294703075,
+              "spatial_window_transfer": 0.9959492165341849,
+              "temporal_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_temporal_envelope": 0.4157914414396353,
+              "weak_field_envelope_proxy": 0.40826392007114987,
+              "spatial_window_transfer": 0.99090661535905,
+              "temporal_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_temporal_envelope": 0.5820092473257222,
+              "weak_field_envelope_proxy": 0.5634031177537474,
+              "spatial_window_transfer": 0.9838857724100275,
+              "temporal_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_temporal_envelope": 0.6200949589867796,
+              "weak_field_envelope_proxy": 0.5893872023547864,
+              "spatial_window_transfer": 0.9749250970709225,
+              "temporal_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_temporal_envelope": 0.38724961184956075,
+              "weak_field_envelope_proxy": 0.3599243350501116,
+              "spatial_window_transfer": 0.9640734213803596,
+              "temporal_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 2,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_temporal_envelope": 1.0204740064338753,
+              "weak_field_envelope_proxy": 1.0184053491491407,
+              "spatial_window_transfer": 0.998985909142704,
+              "temporal_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_temporal_envelope": 0.3713445190504942,
+              "weak_field_envelope_proxy": 0.3683421399099937,
+              "spatial_window_transfer": 0.9959492165341849,
+              "temporal_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_temporal_envelope": 0.6869170435432018,
+              "weak_field_envelope_proxy": 0.6744810426824217,
+              "spatial_window_transfer": 0.99090661535905,
+              "temporal_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_temporal_envelope": 0.6011413892238655,
+              "weak_field_envelope_proxy": 0.5819236282855818,
+              "spatial_window_transfer": 0.9838857724100275,
+              "temporal_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_temporal_envelope": 0.5066288754563297,
+              "weak_field_envelope_proxy": 0.4815400789989713,
+              "spatial_window_transfer": 0.9749250970709225,
+              "temporal_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_temporal_envelope": 0.42728562069455966,
+              "weak_field_envelope_proxy": 0.39713530549569237,
+              "spatial_window_transfer": 0.9640734213803596,
+              "temporal_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 3,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_temporal_envelope": 0.9913343917439316,
+              "weak_field_envelope_proxy": 0.9893248049262767,
+              "spatial_window_transfer": 0.998985909142704,
+              "temporal_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_temporal_envelope": 0.7608567488621489,
+              "weak_field_envelope_proxy": 0.7547051017676024,
+              "spatial_window_transfer": 0.9959492165341849,
+              "temporal_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_temporal_envelope": 0.5477454112490926,
+              "weak_field_envelope_proxy": 0.5378289847026698,
+              "spatial_window_transfer": 0.99090661535905,
+              "temporal_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_temporal_envelope": 0.4510276198630043,
+              "weak_field_envelope_proxy": 0.4366088140205364,
+              "spatial_window_transfer": 0.9838857724100275,
+              "temporal_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_temporal_envelope": 0.28869990402853274,
+              "weak_field_envelope_proxy": 0.2744031801734095,
+              "spatial_window_transfer": 0.9749250970709225,
+              "temporal_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_temporal_envelope": 0.47850305825134765,
+              "weak_field_envelope_proxy": 0.44473871578073343,
+              "spatial_window_transfer": 0.9640734213803596,
+              "temporal_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 4,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_temporal_envelope": 0.9188488864521882,
+              "weak_field_envelope_proxy": 0.9169862388682758,
+              "spatial_window_transfer": 0.998985909142704,
+              "temporal_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_temporal_envelope": 0.749478094782134,
+              "weak_field_envelope_proxy": 0.7434184459046184,
+              "spatial_window_transfer": 0.9959492165341849,
+              "temporal_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_temporal_envelope": 0.6251135989610943,
+              "weak_field_envelope_proxy": 0.6137964925829111,
+              "spatial_window_transfer": 0.99090661535905,
+              "temporal_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_temporal_envelope": 0.3807874150120529,
+              "weak_field_envelope_proxy": 0.36861410330670386,
+              "spatial_window_transfer": 0.9838857724100275,
+              "temporal_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_temporal_envelope": 0.28398002350865725,
+              "weak_field_envelope_proxy": 0.2699170331168301,
+              "spatial_window_transfer": 0.9749250970709225,
+              "temporal_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_temporal_envelope": 0.3348023810866682,
+              "weak_field_envelope_proxy": 0.3111779087660558,
+              "spatial_window_transfer": 0.9640734213803596,
+              "temporal_window_transfer": 0.9640734213803596
+            }
+          ]
+        },
+        {
+          "trajectory_id": 5,
+          "modes": [
+            {
+              "mode": 1,
+              "initial_temporal_envelope": 0.5644396464367628,
+              "weak_field_envelope_proxy": 0.5632954407254632,
+              "spatial_window_transfer": 0.998985909142704,
+              "temporal_window_transfer": 0.998985909142704
+            },
+            {
+              "mode": 2,
+              "initial_temporal_envelope": 0.6358213569433344,
+              "weak_field_envelope_proxy": 0.6306806407586644,
+              "spatial_window_transfer": 0.9959492165341849,
+              "temporal_window_transfer": 0.9959492165341849
+            },
+            {
+              "mode": 3,
+              "initial_temporal_envelope": 0.3427473945889397,
+              "weak_field_envelope_proxy": 0.3365422684616971,
+              "spatial_window_transfer": 0.99090661535905,
+              "temporal_window_transfer": 0.99090661535905
+            },
+            {
+              "mode": 4,
+              "initial_temporal_envelope": 0.40921304136427916,
+              "weak_field_envelope_proxy": 0.396130996869023,
+              "spatial_window_transfer": 0.9838857724100275,
+              "temporal_window_transfer": 0.9838857724100275
+            },
+            {
+              "mode": 5,
+              "initial_temporal_envelope": 0.34128064744270176,
+              "weak_field_envelope_proxy": 0.3243800696957006,
+              "spatial_window_transfer": 0.9749250970709225,
+              "temporal_window_transfer": 0.9749250970709225
+            },
+            {
+              "mode": 6,
+              "initial_temporal_envelope": 0.3364248376054624,
+              "weak_field_envelope_proxy": 0.31268588079702986,
+              "spatial_window_transfer": 0.9640734213803596,
+              "temporal_window_transfer": 0.9640734213803596
+            }
+          ]
+        }
+      ],
+      "interpretation": "field-average Fourier transfer proxy; does not measure full design rank, noise SNR, or unique recoverability"
+    }
+  },
+  "source_hashes": {
+    "stage2_field_check.py": "b9973cc7e9f37e92716ca8221bac2185767b300601f3c151efeb49285c5339e5",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "redo_two.py": "0923afdf5a4e73f6461c9b3da60e7f97c96f0af2fd677a7e9df2d86ba4df6ab7",
+    "inverse_irl1.py": "b6c42667fd8c23ebfb42320fe0c88e36b0b50e1695129c0836d29bbe13923396",
+    "stage2_field_check_refined.py": "0b56af37067c1b37b143646ef2f7f3fbb3b27d67af5cfde3acab79ad80ce3922"
+  },
+  "test_data_generated": false,
+  "derivatives_used_for_regression": false,
+  "limitations": [
+    "Finite-difference consistency is a numerical diagnostic, not a proof for every point.",
+    "Distinct initial fields or six Fourier modes do not prove sparse identifiability.",
+    "No noisy field derivatives, method selection, or test results are evaluated here."
+  ],
+  "elapsed_seconds": 0.018723499961197376,
+  "previous_result": {
+    "file": "stage2_field_check_result.json",
+    "sha256": "420ccedc80d55ab8afacc6bcc7c123ab0284da81a5c88a8f1fa742fa3f4d9c4c",
+    "original_failed_checks": [
+      {
+        "case": "kdv",
+        "trajectory_id": 0,
+        "finest_residual": 0.00010104136320909969
+      },
+      {
+        "case": "kdv",
+        "trajectory_id": 1,
+        "finest_residual": 0.0001843311312215593
+      },
+      {
+        "case": "kdv",
+        "trajectory_id": 5,
+        "finest_residual": 0.00015877717329101522
+      }
+    ]
+  },
+  "refinement": {
+    "case": "kdv",
+    "trajectory_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "additional_step_factors": [
+      0.125,
+      0.0625
+    ],
+    "unchanged_acceptance_tolerance": 0.0001,
+    "reason": "Three original KdV checks exceeded tolerance while converging at the expected third-derivative stencil truncation order.",
+    "generator_modified": false
+  }
+}

@@ -414,3 +414,71 @@ outlier 代码实际沿固定相对权重 `rho=gamma/lambda` 搜索；`gamma_wei
 具体改法根据诊断决定，可研究有限正权重、IRL1 迭代稳定性、噪声加权及后续鲁棒损失加 L1。保持 L1 稀疏化核心、`1e-5` 支撑阈值和旧脚本不改等约束。原始 L1、IRL1 必须保留为对照，不能利用测试真支撑调权重或通过事后最小二乘删项。
 
 已将此要求纳入 `RESEARCH_PLAN_DRAFT.md`。用户随后明确要求先上传 GitHub，本次将方案修订及交接记录同步到已有研究分支；新的方法实验尚未启动。
+
+## 17. 2026-11-06 用户授权按阶段执行
+
+用户已明确要求依次执行各阶段并及时反馈问题，因此第 15、16 节中“暂不启动”的状态已结束。当前执行状态和边界见 `EXECUTION_STATUS.md`，结果以各新脚本的对应 JSON 及其具体检查范围为准。
+
+阶段 0 的 `stage0_gate_result.json` 已通过；阶段 1 已完整枚举 1158 个有限 jet 多项式并完成基本重建检查。全部旧脚本保留。新数据包含六类 PDE（新增 `u_t=u_xx+u_x^2` 的 logheat 案例），每例 4 条训练、2 条验证轨迹；最终测试数据未生成。
+
+目前发现的关键前置问题是高阶重建噪声放大和弱积分离散误差。分部积分降阶的符号身份已核对，但第一版弱降阶实现的形式检查通过不等于高阶数值精度充分；待新积分核检查后再开始矩阵审计和真实 L1/IRL1 开发基线。此处不更新旧论文/PPT，也不将开发检查称为正式耐噪声结论。
+
+阶段更新：`stage1_weak_reduction_v2_result.json` 完成离散矩校正及无噪声精度检查；`stage2_review_result.json` 独立验收全部 72 对开发矩阵/目标，已进入阶段 2a。第一版求积和差分检查的失败记录保留，不能只读早期 `all_checks_passed` 判断当前研究门槛。
+
+用户随后选择“每批不超过 2 小时，保存后续跑”。heat 开发实验暴露弱残差评分偏好不适定高阶项的问题，因此将动态预测和适定性诊断提前到方法冻结前。120 秒内未完成的普通 L1 路径按计算未完成处理；后续补算保留原超时和全部额外成本。详见最新执行记录，不提前生成正式论文结果。
+
+本批收尾：72 组开发试验全部执行，合并补算后 71 组路径数值完整；剩余 advection-diffusion、5%、J1158、L1 的两个 λ 比例 `1.823348e-6` 与 `1e-6` 相对对偶间隙约 `1.13e-9/3.04e-9`，尚未达到原 `1e-9` 门槛。最新候选与失败详情在 `stage2a_retry_remaining_v3_result.json`，不得放松支撑阈值或将其算作统计耐噪失败。
+
+下一位智能体先读 `stage2a_batch_checkpoint_result.json`、`stage2a_final_diagnosis_result.json` 和 `EXECUTION_STATUS.md`。最终基线来源为 `stage2a_heat_pilot_result.json`、`stage2a_heat_reconciled_result.json`、`stage2a_other_cases_reconciled_result.json`；不要将原始/修复后的同一实验重复计入汇总。下一批先处理数值尾项，再进入阶段 2b。统计 L1 变体尚未测试，最终测试数据未生成；本批新结果保存于工作区，尚未同步到 GitHub。
+
+## 18. 2026-11-06 第二批续跑与收尾
+
+本节优先于第 17 节的第一批收尾状态。本批约从新加坡时间 18:49 开始，按用户约束最迟在 20:48 前保存收尾。`stage2a_retry_remaining_v4_result.json` 已解决两个尾部点：β 与支撑不变，仅改善合法对偶下界，对保存的双精度 A、b、β、q 做精确有理数全列可行性与间隙验证。旧残差缩放证书仍 false；新证书相对间隙 `6.75e-11/7.57e-11`，原精度门槛未变。
+
+当前阶段 2a 统一来源是 `stage2a_reconcile_complete_result.json`，检查点为 `stage2a_batch_checkpoint_v2_result.json`，诊断为 `stage2a_complete_diagnosis_result.json`。72/72 组、1728 个 λ 完整；48 组选中真支撑、6 组评分折中、18 组路径未产生真支撑。历史所有求解与补算成本保留，不将纯数值证书修复作为统计方法贡献。
+
+阶段 2b 协议已在任何真实 PDE 新变体结果之前冻结于 `stage2b_protocol_result.json`。唯一统计改动是 IRL1 的 `epsilon=max(1e-8,0.01*max(abs(beta)))`，其余原设置保留。先检查 heat 1%、Burgers 5%、logheat 5%，J18/J1158 两库；保留 L1、原 IRL1 对照。新开发复验使用轨迹 12..17、seed 1，训练 12..15、验证 16..17；最终测试轨迹 6..11 与 seeds>=1000 均未生成。新数据与矩阵检查见 `stage2b_data_result.json`，变体合成数值检查见 `stage2b_smoothed_irl1_result.json`。
+
+全频谱热方程评价器 `stage2b_heat_full_spectrum.py` 保留全部 255 个网格可解析模式，提供原始初值及统一冻结平滑两个方案，使用对数域避免溢出。它仅支持常系数线性偶阶项，并明确采用 Dirichlet Laplacian 的多项式谱边界实现；不支持的结构不能被悄悄过滤或记为失败。此时对比运行仍在进行，最终结果须以新增 JSON 与最新执行记录为准。当前新增结果仍在本地，未同步 GitHub。
+
+第二批后续更新：阶段 2b 的 36 条对照记录已全部数值完整，统一来源为 `stage2b_reconcile_complete_result.json`；`stage2b_complete_diagnosis_result.json` 表明相对 ε 变体在全部 12 个 cohort×case×library 设置中，与原 IRL1 的主选支撑相同。不得把权重比例受到约束或合成检查通过当成实际改善。两个新开发普通 L1 大库路径原本各有 2 个尾部 λ 超时，已在 `stage2b_numerical_retry_result.json` 用原数值门槛补齐，所有原失败与补算成本保留。
+
+`stage2b_heat_dynamic_compare_v2_result.json` 对完整 heat 模型做 36 个全频谱/初值方案诊断；原 IRL1 与平滑 IRL1 的相同主选支撑具有相同 LS 系数和动态结果，仍有高频增长。`stage2b_heat_noise_mechanism_result.json` 解释纯线性模型弱残差的噪声增益差异：这是冻结已选算子后独立重抽噪声的期望，分母用 clean target，仅作诊断，不是给定原选择事件的条件期望，也未引入修正选模规则。
+
+用户已明确选择后续优先“先补齐最大候选库，再做系统耐噪实验”，因此暂不继续增加统计 L1 变体。已补实现原计划 54 个非多项式弱列（`stage1_nonpolynomial.py`），通过 affine 和非线性曲率场的独立链式导数验算（`stage1_nonpolynomial_curved_check_result.json`）。全部 18 组旧开发数据已追加 54 列并核对原多项式区块与 b 位值不变，见 `stage2c_extended_matrices_result.json`。扩展仅对原声明有限语法完整，不等于无边界“全部可能方程”。新最大库 L1/原 IRL1 pilot 正在准备，最终测试尚未生成。
+
+最大库后续完成：`stage2c_reconcile_complete_result.json` 为 36/36 条完整开发路径的唯一合并来源，`stage2c_review_v2_result.json` 已独立验收 864 个 λ 及外层、数据、支撑和评分。原 4 个 5% 普通 L1 路径共有 9 个数值尾项，已补齐；adv 的最后 2 点与 logheat 最后 1 点用合法保存 q 的精确对偶证书，其他使用原证书。原失败和补算成本均保留，求解累计约 1040.06 秒。不得重复计入原 pilot 与合并报告。
+
+`stage2c_paired_complete_diagnosis_result.json` 给出相同原始观测下 J1158→J1212 的成对诊断：本轮 17 组选真、3 组评分折中、16 组路径缺真支撑，13 个主选模型带非多项式干扰项。这不是正式恢复概率或算法排名，且所有真方程都已属于多项式库，不能声称本轮验证了真非多项式项恢复。
+
+下一步阶段 3 的 `stage3_protocol_draft.json` 仍未冻结。`stage3_data.py` 与更严格绑定来源的 `stage3_data_v2.py` 已做合成预检，未生成正式噪声种子或测试轨迹。运行器 `stage3_campaign.py` 仍在独立检查中。正式计划为 606 个数据组、3636 个方法任务，每个非零噪声水平 20 个配对种子，按照用户两小时上限分批。每组必须先完成三个库×两方法的全部数值认证并封存选模，才能开放该组 test IDs6..11；不得用测试数据决定 λ/α/ε 或后续统计方法。最终状态以本批收尾时的执行记录为准。
+
+第二批收尾更新（优先于上一段的准备状态）：`stage3_campaign_preflight_result.json` 已通过 16 项合成契约检查；`stage3_freeze.py` 完成当前接口、已有数值门槛与历史保全的 68 项检查，生成不可覆盖的 `stage3_protocol_result.json` 和 `stage3_freeze_result.json`，冻结 43 个本地脚本。协议 SHA256 为 `1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb`。旧草案和第一版预检较早的草案哈希均保留，当前配置重新验证通过。
+
+阶段 3 已完成配置冻结，正式任务仍为 0：没有正式 seed 1000..1019 原始场，也没有 test IDs6..11。本批接近两小时截止，因此不启动新计算。下一批直接使用 `EXECUTION_STATUS.md` 中的有界命令；它按已存索引续跑，并通过独立 Windows 进程树监督器限制时长。不要重新执行会覆盖历史报告的旧预检，也不要重跑只允许一次的冻结脚本。
+
+正式协议明确：暂停后可能缺少早先未落盘的原始数据生成耗时，不能据此作端到端速度优势结论。支撑、数据一致性、噪声比较和数值门槛未改。后续统计绘图代码必须服从已经冻结的统计定义，不能用正式结果修改选模规则。第二批整体保全、语法与有限 JSON 审计另存 `stage_execution_audit_v2_result.json`；具体通过状态以该文件为准。本批新增代码/结果仍在本地，未再次上传 GitHub。
+
+## 19. 2026-11-06 第三批：首批正式实验
+
+本节优先于第 18 节的“正式任务为 0”。本批从 UTC 12:52:22（新加坡 20:52:22）开始，保守收尾截止 UTC 14:51。冻结协议及 43 个源脚本均未改。实际执行了 1500 秒和 3600 秒调度段，之后单独数值补算，再用 900 秒、450 秒有界段合并并评价；各段实际状态均为正常检查点保存，单数值工作进程。
+
+统一索引：`stage3_campaign_result.json`。完成数据组为 seed 1000、六类 PDE 的 0/1/3/5%，另有 heat 7%，合计 **25/606 组**；共 **150 条完整方法路径**。每组均完成三库×两方法封存，才开放该组 test IDs6..11，不按测试结果重选。wave 7% 仅启动了第一条 L1 路径，另外 5 条尚未运行；其外部补算请求已认证完整，但未合并，所以索引仍有 1 条待续跑记录，wave 7% 无测试数据。seed 1001..1019 和其余 7/10% 任务均待后续批次。
+
+数值补算统一报告为 `stage3_numeric_continuation_20261106T140942378192Z_result.json`：20 条原不完整路径、32 个尾点全部认证，32 次尝试均成功；累计补算求解墙钟约 609.22 秒，适配器总计约 620.78 秒。原始路径、旧超时和之前认证点未修改。运行器已合并其中 19 条，剩下 wave 7% 的 1 条请求由下一批运行器自动合并。不要把未合并候选重复计入正式路径数。
+
+注意补算版本：初版 `stage3_numeric_continuation.py` 多一次 C-order 复制改变了列范数的末位舍入，输入哈希守卫在求解前中止。失败脚本和报告保留。使用 **`stage3_numeric_continuation_v2.py`**；其预检对全部 20 个任务验证原归一化与 solver A/b 哈希逐位相同。它调用早已冻结的固定权重救援函数，外部续算格式已在原运行器中预先定义；方法、λ、正权重、阈值和原认证门槛均未变。新增适配器来源哈希写入每次尝试和续算证据。先运行正式运行器合并已有请求，之后才能对仍不完整路径安排新补算；同一用户批次每点最多 2 次 120 秒尝试，批 token 应标记本批开始时间。
+
+`stage3_statistics.py/_result.json` 按已冻结规则完成统计函数及合成验算，不读取正式结果，不产生正式区间。没有完整 20 个配对种子的噪声档，不做正式恢复率区间或算法排名。零噪声是每例一次，不算 20 次重复。
+
+复核使用 `stage3_checkpoint_review_v2.py`：封存不可变索引快照，再调用原只读数值/评分/留出误差复核。首段 `stage3_checkpoint_review_20261106T131219Z_result.json` 的历史索引已按其原哈希精确归档于 `stage3_review_snapshots/`，后续索引更新不会使证据丢失。最终复核及整体门槛见最新 v2 复核结果和 `stage_execution_audit_v3_result.json`；其通过只表示对应范围，不代表整个研究完成。
+
+下一批续跑命令在 `EXECUTION_STATUS.md`。示例调度预算改用 6000 秒，为批末审计预留时间；还需按实际剩余时间下调，不能因接到“继续”就重置同一批两小时计时。不要重跑会覆盖结果的旧预检/审计，也不要改冻结脚本。所有本批新增文件仍在本地，未再次上传 GitHub。
+
+第三批收尾：新加坡时间约 22:30，累计约 98 分钟。最终复核为 `stage3_checkpoint_review_v2_20261106T142615204003Z_result.json`，对应完整数值复核为 `stage3_checkpoint_review_20261106T142657Z_result.json`；150 条完整路径及部分路径共 3621 个已认证最终 λ 点重新核验通过。`stage_execution_audit_v3_result.json` 整体检查通过、无错误：26 组已启动、25 组完成、151 条方法记录中 150 条完整，剩余 1 条有待合并的续算请求。冻结 43 源文件哈希仍一致。没有后台计算任务继续运行。
+
+## 20. 2026-11-07 GitHub 上传检查点
+
+用户明确要求推送 GitHub，沿用 `codex/research-checkpoint-20261106` 分支。代码、冻结方案、主要报告、任务索引及逐任务 JSON 进入 Git；原始场、矩阵与超过 2 MB 的报告连同全部相关文件打包到同仓库的 `research-checkpoint-20261107-batch3` Release。详见 `UPLOAD_CHECKPOINT.md`，文件清单为 `GITHUB_CHECKPOINT_MANIFEST.json`，压缩包 SHA256 为 `github_checkpoint_result.json`。Git 属性保持 Python/JSON 字节，冻结脚本和历史实验结果没有为上传而改写。
+
+恢复时先检出该研究分支，再核对并解压 Release 的完整快照，避免为了补齐缓存重新运行会覆盖证据的旧脚本。上述“未上传”是各计算批次结束时的历史状态；本次发布成功状态以 GitHub 远端分支、Release 与 `_github_upload/upload_receipt_result.json` 的实际核验为准。本次只做上传与打包，正式实验进度仍为 25/606，未启动新的计算。

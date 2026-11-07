@@ -1,0 +1,3838 @@
+{
+  "stage": "1_extended_evaluation_and_symbolic_catalog_audit",
+  "all_checks_passed": true,
+  "checks": {
+    "all1158_polynomial_keys_scales_costs_unchanged": true,
+    "all1212_unique_column_keys": true,
+    "unlisted_functions_compositions_and_aliases_rejected": true,
+    "fixed_predeclared_cost_examples": true,
+    "constrained_derivative_not_split": true,
+    "polynomial_scalar_absorption_retained": true,
+    "false_np_physical_coefficient_counted_on_union": true,
+    "empty_support_conventions_unchanged": true,
+    "nonfinite_coefficients_rejected": true,
+    "fixed_threshold_and_LS_does_not_delete_support": true,
+    "zero_LS_false_term_still_support_error": true,
+    "truth_absent_during_selection": true,
+    "uncertified_path_not_primary_rankable": true,
+    "all54_expression_checks_passed": true,
+    "no_np_pair_proportional": true,
+    "no_np_column_proportional_to_any_jet_polynomial": true,
+    "upstream_numerical_gates_passed": true,
+    "old_sources_and_results_unchanged_during_audit": true
+  },
+  "all_checks_passed_semantics": "Enables integration of frozen54 into development libraries; not a support-recovery, noise-robustness, full-rank, or publication gate.",
+  "source_sha256": {
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_nonpolynomial_result.json": "d37e494c678b3b1c1f6a399dea9f9effe027fe52f033bf0e8130cb591dea22d4",
+    "stage1_nonpolynomial_curved_check.py": "57d30a4d44e3d7cc5255d9094711d0e1f3bf93567432e2c311e02dfe292837d6",
+    "stage1_nonpolynomial_curved_check_result.json": "510cbbba87ebdacc531cb8383989171b1a6eaaf82ccd7ebf80d04858a73e832e",
+    "stage2a_baseline.py": "d7c8ef9c2fc8f75161e268d69c43001b8da8065ea65837f9f9df6e6a2ba6b3f8",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f"
+  },
+  "complexity_rule_frozen_before_any_expanded_library_fit": {
+    "polynomial": "unchanged stage0 and stage1 grammar; all1158 checked",
+    "sin_cos_exp": "2 + derivative_order",
+    "inverse_quadratic": "4 + parameter_m + derivative_order",
+    "argument_parameter_cost": "fixed shape identifier; no extra cost for signed scalar",
+    "rational_reason": "old cost(1+u^2)=4, then m inverse/power operation costs",
+    "scope": "fixed expression accounting, not invariant under all alternative representations",
+    "depends_on_data_truth_or_library_size": false
+  },
+  "support_tol": 1e-05,
+  "threshold_applied_to": "normalized L1 coefficients only",
+  "coefficient_error_coordinates": "physical coefficients on canonical support union",
+  "canonical_key_policy": "NP output keys identify exact recipes and are not expression inputs; exact whitelist source names only, scalar1; chain-rule summands remain bound.",
+  "symbolic_audit": {
+    "sympy_version": "1.14.0",
+    "columns": [
+      {
+        "name": "sin(1u)",
+        "canonical_key": "NP:sin:1:Dx0",
+        "family": "sin",
+        "parameter": 1,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "sin(u0)",
+        "leading_jet_coefficient": "sin(u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(sin(1u))",
+        "canonical_key": "NP:sin:1:Dx1",
+        "family": "sin",
+        "parameter": 1,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "u1*cos(u0)",
+        "leading_jet_coefficient": "cos(u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(sin(1u))",
+        "canonical_key": "NP:sin:1:Dx2",
+        "family": "sin",
+        "parameter": 1,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "-u1**2*sin(u0) + u2*cos(u0)",
+        "leading_jet_coefficient": "cos(u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(sin(1u))",
+        "canonical_key": "NP:sin:1:Dx3",
+        "family": "sin",
+        "parameter": 1,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "-u1**3*cos(u0) - 3*u1*u2*sin(u0) + u3*cos(u0)",
+        "leading_jet_coefficient": "cos(u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^4(sin(1u))",
+        "canonical_key": "NP:sin:1:Dx4",
+        "family": "sin",
+        "parameter": 1,
+        "derivative_order": 4,
+        "complexity": 6,
+        "jet_expansion": "u1**4*sin(u0) - 6*u1**2*u2*cos(u0) - 4*u1*u3*sin(u0) - 3*u2**2*sin(u0) + u4*cos(u0)",
+        "leading_jet_coefficient": "cos(u0)",
+        "maximum_jet_order": 4,
+        "weighted_derivative_orders": [
+          4
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "sin(2u)",
+        "canonical_key": "NP:sin:2:Dx0",
+        "family": "sin",
+        "parameter": 2,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "sin(2*u0)",
+        "leading_jet_coefficient": "sin(2*u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(sin(2u))",
+        "canonical_key": "NP:sin:2:Dx1",
+        "family": "sin",
+        "parameter": 2,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "2*u1*cos(2*u0)",
+        "leading_jet_coefficient": "2*cos(2*u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(sin(2u))",
+        "canonical_key": "NP:sin:2:Dx2",
+        "family": "sin",
+        "parameter": 2,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "-4*u1**2*sin(2*u0) + 2*u2*cos(2*u0)",
+        "leading_jet_coefficient": "2*cos(2*u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(sin(2u))",
+        "canonical_key": "NP:sin:2:Dx3",
+        "family": "sin",
+        "parameter": 2,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "-8*u1**3*cos(2*u0) - 12*u1*u2*sin(2*u0) + 2*u3*cos(2*u0)",
+        "leading_jet_coefficient": "2*cos(2*u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^4(sin(2u))",
+        "canonical_key": "NP:sin:2:Dx4",
+        "family": "sin",
+        "parameter": 2,
+        "derivative_order": 4,
+        "complexity": 6,
+        "jet_expansion": "16*u1**4*sin(2*u0) - 48*u1**2*u2*cos(2*u0) - 16*u1*u3*sin(2*u0) - 12*u2**2*sin(2*u0) + 2*u4*cos(2*u0)",
+        "leading_jet_coefficient": "2*cos(2*u0)",
+        "maximum_jet_order": 4,
+        "weighted_derivative_orders": [
+          4
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "sin(3u)",
+        "canonical_key": "NP:sin:3:Dx0",
+        "family": "sin",
+        "parameter": 3,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "sin(3*u0)",
+        "leading_jet_coefficient": "sin(3*u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(sin(3u))",
+        "canonical_key": "NP:sin:3:Dx1",
+        "family": "sin",
+        "parameter": 3,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "3*u1*cos(3*u0)",
+        "leading_jet_coefficient": "3*cos(3*u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(sin(3u))",
+        "canonical_key": "NP:sin:3:Dx2",
+        "family": "sin",
+        "parameter": 3,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "-9*u1**2*sin(3*u0) + 3*u2*cos(3*u0)",
+        "leading_jet_coefficient": "3*cos(3*u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(sin(3u))",
+        "canonical_key": "NP:sin:3:Dx3",
+        "family": "sin",
+        "parameter": 3,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "-27*u1**3*cos(3*u0) - 27*u1*u2*sin(3*u0) + 3*u3*cos(3*u0)",
+        "leading_jet_coefficient": "3*cos(3*u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^4(sin(3u))",
+        "canonical_key": "NP:sin:3:Dx4",
+        "family": "sin",
+        "parameter": 3,
+        "derivative_order": 4,
+        "complexity": 6,
+        "jet_expansion": "81*u1**4*sin(3*u0) - 162*u1**2*u2*cos(3*u0) - 36*u1*u3*sin(3*u0) - 27*u2**2*sin(3*u0) + 3*u4*cos(3*u0)",
+        "leading_jet_coefficient": "3*cos(3*u0)",
+        "maximum_jet_order": 4,
+        "weighted_derivative_orders": [
+          4
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "cos(1u)",
+        "canonical_key": "NP:cos:1:Dx0",
+        "family": "cos",
+        "parameter": 1,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "cos(u0)",
+        "leading_jet_coefficient": "cos(u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(cos(1u))",
+        "canonical_key": "NP:cos:1:Dx1",
+        "family": "cos",
+        "parameter": 1,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "-u1*sin(u0)",
+        "leading_jet_coefficient": "-sin(u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(cos(1u))",
+        "canonical_key": "NP:cos:1:Dx2",
+        "family": "cos",
+        "parameter": 1,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "-u1**2*cos(u0) - u2*sin(u0)",
+        "leading_jet_coefficient": "-sin(u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(cos(1u))",
+        "canonical_key": "NP:cos:1:Dx3",
+        "family": "cos",
+        "parameter": 1,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "u1**3*sin(u0) - 3*u1*u2*cos(u0) - u3*sin(u0)",
+        "leading_jet_coefficient": "-sin(u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^4(cos(1u))",
+        "canonical_key": "NP:cos:1:Dx4",
+        "family": "cos",
+        "parameter": 1,
+        "derivative_order": 4,
+        "complexity": 6,
+        "jet_expansion": "u1**4*cos(u0) + 6*u1**2*u2*sin(u0) - 4*u1*u3*cos(u0) - 3*u2**2*cos(u0) - u4*sin(u0)",
+        "leading_jet_coefficient": "-sin(u0)",
+        "maximum_jet_order": 4,
+        "weighted_derivative_orders": [
+          4
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "cos(2u)",
+        "canonical_key": "NP:cos:2:Dx0",
+        "family": "cos",
+        "parameter": 2,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "cos(2*u0)",
+        "leading_jet_coefficient": "cos(2*u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(cos(2u))",
+        "canonical_key": "NP:cos:2:Dx1",
+        "family": "cos",
+        "parameter": 2,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "-2*u1*sin(2*u0)",
+        "leading_jet_coefficient": "-2*sin(2*u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(cos(2u))",
+        "canonical_key": "NP:cos:2:Dx2",
+        "family": "cos",
+        "parameter": 2,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "-4*u1**2*cos(2*u0) - 2*u2*sin(2*u0)",
+        "leading_jet_coefficient": "-2*sin(2*u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(cos(2u))",
+        "canonical_key": "NP:cos:2:Dx3",
+        "family": "cos",
+        "parameter": 2,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "8*u1**3*sin(2*u0) - 12*u1*u2*cos(2*u0) - 2*u3*sin(2*u0)",
+        "leading_jet_coefficient": "-2*sin(2*u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^4(cos(2u))",
+        "canonical_key": "NP:cos:2:Dx4",
+        "family": "cos",
+        "parameter": 2,
+        "derivative_order": 4,
+        "complexity": 6,
+        "jet_expansion": "16*u1**4*cos(2*u0) + 48*u1**2*u2*sin(2*u0) - 16*u1*u3*cos(2*u0) - 12*u2**2*cos(2*u0) - 2*u4*sin(2*u0)",
+        "leading_jet_coefficient": "-2*sin(2*u0)",
+        "maximum_jet_order": 4,
+        "weighted_derivative_orders": [
+          4
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "cos(3u)",
+        "canonical_key": "NP:cos:3:Dx0",
+        "family": "cos",
+        "parameter": 3,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "cos(3*u0)",
+        "leading_jet_coefficient": "cos(3*u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(cos(3u))",
+        "canonical_key": "NP:cos:3:Dx1",
+        "family": "cos",
+        "parameter": 3,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "-3*u1*sin(3*u0)",
+        "leading_jet_coefficient": "-3*sin(3*u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(cos(3u))",
+        "canonical_key": "NP:cos:3:Dx2",
+        "family": "cos",
+        "parameter": 3,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "-9*u1**2*cos(3*u0) - 3*u2*sin(3*u0)",
+        "leading_jet_coefficient": "-3*sin(3*u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(cos(3u))",
+        "canonical_key": "NP:cos:3:Dx3",
+        "family": "cos",
+        "parameter": 3,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "27*u1**3*sin(3*u0) - 27*u1*u2*cos(3*u0) - 3*u3*sin(3*u0)",
+        "leading_jet_coefficient": "-3*sin(3*u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^4(cos(3u))",
+        "canonical_key": "NP:cos:3:Dx4",
+        "family": "cos",
+        "parameter": 3,
+        "derivative_order": 4,
+        "complexity": 6,
+        "jet_expansion": "81*u1**4*cos(3*u0) + 162*u1**2*u2*sin(3*u0) - 36*u1*u3*cos(3*u0) - 27*u2**2*cos(3*u0) - 3*u4*sin(3*u0)",
+        "leading_jet_coefficient": "-3*sin(3*u0)",
+        "maximum_jet_order": 4,
+        "weighted_derivative_orders": [
+          4
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "exp(-2u)",
+        "canonical_key": "NP:exp:-2:Dx0",
+        "family": "exp",
+        "parameter": -2,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "exp(-2*u0)",
+        "leading_jet_coefficient": "exp(-2*u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(exp(-2u))",
+        "canonical_key": "NP:exp:-2:Dx1",
+        "family": "exp",
+        "parameter": -2,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "-2*u1*exp(-2*u0)",
+        "leading_jet_coefficient": "-2*exp(-2*u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(exp(-2u))",
+        "canonical_key": "NP:exp:-2:Dx2",
+        "family": "exp",
+        "parameter": -2,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "4*u1**2*exp(-2*u0) - 2*u2*exp(-2*u0)",
+        "leading_jet_coefficient": "-2*exp(-2*u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(exp(-2u))",
+        "canonical_key": "NP:exp:-2:Dx3",
+        "family": "exp",
+        "parameter": -2,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "-8*u1**3*exp(-2*u0) + 12*u1*u2*exp(-2*u0) - 2*u3*exp(-2*u0)",
+        "leading_jet_coefficient": "-2*exp(-2*u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "exp(-1u)",
+        "canonical_key": "NP:exp:-1:Dx0",
+        "family": "exp",
+        "parameter": -1,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "exp(-u0)",
+        "leading_jet_coefficient": "exp(-u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(exp(-1u))",
+        "canonical_key": "NP:exp:-1:Dx1",
+        "family": "exp",
+        "parameter": -1,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "-u1*exp(-u0)",
+        "leading_jet_coefficient": "-exp(-u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(exp(-1u))",
+        "canonical_key": "NP:exp:-1:Dx2",
+        "family": "exp",
+        "parameter": -1,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "u1**2*exp(-u0) - u2*exp(-u0)",
+        "leading_jet_coefficient": "-exp(-u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(exp(-1u))",
+        "canonical_key": "NP:exp:-1:Dx3",
+        "family": "exp",
+        "parameter": -1,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "-u1**3*exp(-u0) + 3*u1*u2*exp(-u0) - u3*exp(-u0)",
+        "leading_jet_coefficient": "-exp(-u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "exp(1u)",
+        "canonical_key": "NP:exp:1:Dx0",
+        "family": "exp",
+        "parameter": 1,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "exp(u0)",
+        "leading_jet_coefficient": "exp(u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(exp(1u))",
+        "canonical_key": "NP:exp:1:Dx1",
+        "family": "exp",
+        "parameter": 1,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "u1*exp(u0)",
+        "leading_jet_coefficient": "exp(u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(exp(1u))",
+        "canonical_key": "NP:exp:1:Dx2",
+        "family": "exp",
+        "parameter": 1,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "u1**2*exp(u0) + u2*exp(u0)",
+        "leading_jet_coefficient": "exp(u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(exp(1u))",
+        "canonical_key": "NP:exp:1:Dx3",
+        "family": "exp",
+        "parameter": 1,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "u1**3*exp(u0) + 3*u1*u2*exp(u0) + u3*exp(u0)",
+        "leading_jet_coefficient": "exp(u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "exp(2u)",
+        "canonical_key": "NP:exp:2:Dx0",
+        "family": "exp",
+        "parameter": 2,
+        "derivative_order": 0,
+        "complexity": 2,
+        "jet_expansion": "exp(2*u0)",
+        "leading_jet_coefficient": "exp(2*u0)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1(exp(2u))",
+        "canonical_key": "NP:exp:2:Dx1",
+        "family": "exp",
+        "parameter": 2,
+        "derivative_order": 1,
+        "complexity": 3,
+        "jet_expansion": "2*u1*exp(2*u0)",
+        "leading_jet_coefficient": "2*exp(2*u0)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2(exp(2u))",
+        "canonical_key": "NP:exp:2:Dx2",
+        "family": "exp",
+        "parameter": 2,
+        "derivative_order": 2,
+        "complexity": 4,
+        "jet_expansion": "4*u1**2*exp(2*u0) + 2*u2*exp(2*u0)",
+        "leading_jet_coefficient": "2*exp(2*u0)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3(exp(2u))",
+        "canonical_key": "NP:exp:2:Dx3",
+        "family": "exp",
+        "parameter": 2,
+        "derivative_order": 3,
+        "complexity": 5,
+        "jet_expansion": "8*u1**3*exp(2*u0) + 12*u1*u2*exp(2*u0) + 2*u3*exp(2*u0)",
+        "leading_jet_coefficient": "2*exp(2*u0)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "sin/cos/exp and their real derivatives are defined for every real u0.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "(1+u^2)^(-1)",
+        "canonical_key": "NP:inverse_quadratic:1:Dx0",
+        "family": "inverse_quadratic",
+        "parameter": 1,
+        "derivative_order": 0,
+        "complexity": 5,
+        "jet_expansion": "1/(u0**2 + 1)",
+        "leading_jet_coefficient": "1/(u0**2 + 1)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1((1+u^2)^(-1))",
+        "canonical_key": "NP:inverse_quadratic:1:Dx1",
+        "family": "inverse_quadratic",
+        "parameter": 1,
+        "derivative_order": 1,
+        "complexity": 6,
+        "jet_expansion": "-2*u0*u1/(u0**4 + 2*u0**2 + 1)",
+        "leading_jet_coefficient": "-2*u0/(u0**4 + 2*u0**2 + 1)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2((1+u^2)^(-1))",
+        "canonical_key": "NP:inverse_quadratic:1:Dx2",
+        "family": "inverse_quadratic",
+        "parameter": 1,
+        "derivative_order": 2,
+        "complexity": 7,
+        "jet_expansion": "8*u0**4*u1**2/(u0**8 + 4*u0**6 + 6*u0**4 + 4*u0**2 + 1) + 8*u0**2*u1**2/(u0**8 + 4*u0**6 + 6*u0**4 + 4*u0**2 + 1) - 2*u0*u2/(u0**4 + 2*u0**2 + 1) - 2*u1**2/(u0**4 + 2*u0**2 + 1)",
+        "leading_jet_coefficient": "-2*u0/(u0**4 + 2*u0**2 + 1)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3((1+u^2)^(-1))",
+        "canonical_key": "NP:inverse_quadratic:1:Dx3",
+        "family": "inverse_quadratic",
+        "parameter": 1,
+        "derivative_order": 3,
+        "complexity": 8,
+        "jet_expansion": "-64*u0**11*u1**3/(u0**16 + 8*u0**14 + 28*u0**12 + 56*u0**10 + 70*u0**8 + 56*u0**6 + 28*u0**4 + 8*u0**2 + 1) - 256*u0**9*u1**3/(u0**16 + 8*u0**14 + 28*u0**12 + 56*u0**10 + 70*u0**8 + 56*u0**6 + 28*u0**4 + 8*u0**2 + 1) - 384*u0**7*u1**3/(u0**16 + 8*u0**14 + 28*u0**12 + 56*u0**10 + 70*u0**8 + 56*u0**6 + 28*u0**4 + 8*u0**2 + 1) - 256*u0**5*u1**3/(u0**16 + 8*u0**14 + 28*u0**12 + 56*u0**10 + 70*u0**8 + 56*u0**6 + 28*u0**4 + 8*u0**2 + 1) + 24*u0**4*u1*u2/(u0**8 + 4*u0**6 + 6*u0**4 + 4*u0**2 + 1) - 64*u0**3*u1**3/(u0**16 + 8*u0**14 + 28*u0**12 + 56*u0**10 + 70*u0**8 + 56*u0**6 + 28*u0**4 + 8*u0**2 + 1) + 40*u0**3*u1**3/(u0**8 + 4*u0**6 + 6*u0**4 + 4*u0**2 + 1) + 24*u0**2*u1*u2/(u0**8 + 4*u0**6 + 6*u0**4 + 4*u0**2 + 1) + 24*u0*u1**3/(u0**8 + 4*u0**6 + 6*u0**4 + 4*u0**2 + 1) - 2*u0*u3/(u0**4 + 2*u0**2 + 1) - 6*u1*u2/(u0**4 + 2*u0**2 + 1)",
+        "leading_jet_coefficient": "-2*u0/(u0**4 + 2*u0**2 + 1)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "(1+u^2)^(-2)",
+        "canonical_key": "NP:inverse_quadratic:2:Dx0",
+        "family": "inverse_quadratic",
+        "parameter": 2,
+        "derivative_order": 0,
+        "complexity": 6,
+        "jet_expansion": "(u0**2 + 1)**(-2)",
+        "leading_jet_coefficient": "(u0**2 + 1)**(-2)",
+        "maximum_jet_order": 0,
+        "weighted_derivative_orders": [
+          0
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^1((1+u^2)^(-2))",
+        "canonical_key": "NP:inverse_quadratic:2:Dx1",
+        "family": "inverse_quadratic",
+        "parameter": 2,
+        "derivative_order": 1,
+        "complexity": 7,
+        "jet_expansion": "-4*u0*u1/(u0**6 + 3*u0**4 + 3*u0**2 + 1)",
+        "leading_jet_coefficient": "-4*u0/(u0**6 + 3*u0**4 + 3*u0**2 + 1)",
+        "maximum_jet_order": 1,
+        "weighted_derivative_orders": [
+          1
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^2((1+u^2)^(-2))",
+        "canonical_key": "NP:inverse_quadratic:2:Dx2",
+        "family": "inverse_quadratic",
+        "parameter": 2,
+        "derivative_order": 2,
+        "complexity": 8,
+        "jet_expansion": "24*u0**6*u1**2/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) + 48*u0**4*u1**2/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) + 24*u0**2*u1**2/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) - 4*u0*u2/(u0**6 + 3*u0**4 + 3*u0**2 + 1) - 4*u1**2/(u0**6 + 3*u0**4 + 3*u0**2 + 1)",
+        "leading_jet_coefficient": "-4*u0/(u0**6 + 3*u0**4 + 3*u0**2 + 1)",
+        "maximum_jet_order": 2,
+        "weighted_derivative_orders": [
+          2
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      },
+      {
+        "name": "D_x^3((1+u^2)^(-2))",
+        "canonical_key": "NP:inverse_quadratic:2:Dx3",
+        "family": "inverse_quadratic",
+        "parameter": 2,
+        "derivative_order": 3,
+        "complexity": 9,
+        "jet_expansion": "-288*u0**17*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) - 2016*u0**15*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) - 6048*u0**13*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) - 10080*u0**11*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) - 10080*u0**9*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) - 6048*u0**7*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) + 72*u0**6*u1*u2/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) - 2016*u0**5*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) + 168*u0**5*u1**3/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) + 144*u0**4*u1*u2/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) - 288*u0**3*u1**3/(u0**24 + 12*u0**22 + 66*u0**20 + 220*u0**18 + 495*u0**16 + 792*u0**14 + 924*u0**12 + 792*u0**10 + 495*u0**8 + 220*u0**6 + 66*u0**4 + 12*u0**2 + 1) + 240*u0**3*u1**3/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) + 72*u0**2*u1*u2/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) + 72*u0*u1**3/(u0**12 + 6*u0**10 + 15*u0**8 + 20*u0**6 + 15*u0**4 + 6*u0**2 + 1) - 4*u0*u3/(u0**6 + 3*u0**4 + 3*u0**2 + 1) - 12*u1*u2/(u0**6 + 3*u0**4 + 3*u0**2 + 1)",
+        "leading_jet_coefficient": "-4*u0/(u0**6 + 3*u0**4 + 3*u0**2 + 1)",
+        "maximum_jet_order": 3,
+        "weighted_derivative_orders": [
+          3
+        ],
+        "independent_full_derivative_agrees": true,
+        "leading_coefficient_agrees": true,
+        "all_real_domain": true,
+        "domain_reason": "1+u0^2 is strictly positive for real u0; all chain-rule denominators are its powers.",
+        "nonpolynomial_leading_coefficient": true,
+        "single_constrained_column": true,
+        "all_checks_passed": true
+      }
+    ],
+    "total_np_pairs": 1431,
+    "pairs_proved_by_distinct_maximum_jet_order": 1152,
+    "same_order_pairs_proved_by_exact_taylor_minors": 279,
+    "same_order_witnesses": [
+      {
+        "left": "sin(1u)",
+        "right": "sin(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "sin(3u)",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-24"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "cos(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "cos(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "cos(3u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "exp(-2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "exp(-1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "sin(1u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(sin(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-24"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-9"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1(sin(1u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(sin(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-24"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-9"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^2(sin(1u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(sin(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-24"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-9"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^3(sin(1u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^4(sin(1u))",
+        "right": "D_x^4(sin(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^4(sin(1u))",
+        "right": "D_x^4(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-24"
+      },
+      {
+        "left": "D_x^4(sin(1u))",
+        "right": "D_x^4(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^4(sin(1u))",
+        "right": "D_x^4(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^4(sin(1u))",
+        "right": "D_x^4(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-9"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "sin(3u)",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-30"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "cos(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "cos(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "cos(3u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "exp(-2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "exp(-1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "sin(2u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-30"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-18"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^1(sin(2u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-30"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-18"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^2(sin(2u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-30"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-18"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^3(sin(2u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^4(sin(2u))",
+        "right": "D_x^4(sin(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-30"
+      },
+      {
+        "left": "D_x^4(sin(2u))",
+        "right": "D_x^4(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^4(sin(2u))",
+        "right": "D_x^4(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^4(sin(2u))",
+        "right": "D_x^4(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-18"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "cos(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "cos(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "cos(3u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "exp(-2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "exp(-1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "sin(3u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-27"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "12"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "12"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^1(sin(3u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-27"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "12"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "12"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^2(sin(3u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-27"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "12"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "12"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^3(sin(3u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^4(sin(3u))",
+        "right": "D_x^4(cos(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "D_x^4(sin(3u))",
+        "right": "D_x^4(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^4(sin(3u))",
+        "right": "D_x^4(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-27"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "cos(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "cos(3u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "exp(-2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "exp(-1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "cos(1u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-3"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-72"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-22"
+      },
+      {
+        "left": "D_x^1(cos(1u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-68"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-72"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-22"
+      },
+      {
+        "left": "D_x^2(cos(1u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-68"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-72"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-22"
+      },
+      {
+        "left": "D_x^3(cos(1u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-68"
+      },
+      {
+        "left": "D_x^4(cos(1u))",
+        "right": "D_x^4(cos(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-12"
+      },
+      {
+        "left": "D_x^4(cos(1u))",
+        "right": "D_x^4(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-72"
+      },
+      {
+        "left": "cos(2u)",
+        "right": "cos(3u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-5"
+      },
+      {
+        "left": "cos(2u)",
+        "right": "exp(-2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "cos(2u)",
+        "right": "exp(-1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "cos(2u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "cos(2u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "cos(2u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "cos(2u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          4
+        ],
+        "exact_nonzero_determinant": "56"
+      },
+      {
+        "left": "D_x^1(cos(2u))",
+        "right": "D_x^1(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-180"
+      },
+      {
+        "left": "D_x^1(cos(2u))",
+        "right": "D_x^1(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^1(cos(2u))",
+        "right": "D_x^1(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^1(cos(2u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^1(cos(2u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^1(cos(2u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-64"
+      },
+      {
+        "left": "D_x^1(cos(2u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-224"
+      },
+      {
+        "left": "D_x^2(cos(2u))",
+        "right": "D_x^2(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-180"
+      },
+      {
+        "left": "D_x^2(cos(2u))",
+        "right": "D_x^2(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^2(cos(2u))",
+        "right": "D_x^2(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^2(cos(2u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^2(cos(2u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^2(cos(2u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-64"
+      },
+      {
+        "left": "D_x^2(cos(2u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-224"
+      },
+      {
+        "left": "D_x^3(cos(2u))",
+        "right": "D_x^3(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-180"
+      },
+      {
+        "left": "D_x^3(cos(2u))",
+        "right": "D_x^3(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^3(cos(2u))",
+        "right": "D_x^3(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^3(cos(2u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^3(cos(2u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^3(cos(2u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-64"
+      },
+      {
+        "left": "D_x^3(cos(2u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-224"
+      },
+      {
+        "left": "D_x^4(cos(2u))",
+        "right": "D_x^4(cos(3u))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-180"
+      },
+      {
+        "left": "cos(3u)",
+        "right": "exp(-2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "cos(3u)",
+        "right": "exp(-1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "cos(3u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "cos(3u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "cos(3u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "7"
+      },
+      {
+        "left": "cos(3u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "5"
+      },
+      {
+        "left": "D_x^1(cos(3u))",
+        "right": "D_x^1(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-18"
+      },
+      {
+        "left": "D_x^1(cos(3u))",
+        "right": "D_x^1(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-9"
+      },
+      {
+        "left": "D_x^1(cos(3u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "9"
+      },
+      {
+        "left": "D_x^1(cos(3u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "18"
+      },
+      {
+        "left": "D_x^1(cos(3u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-54"
+      },
+      {
+        "left": "D_x^1(cos(3u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-324"
+      },
+      {
+        "left": "D_x^2(cos(3u))",
+        "right": "D_x^2(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-18"
+      },
+      {
+        "left": "D_x^2(cos(3u))",
+        "right": "D_x^2(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-9"
+      },
+      {
+        "left": "D_x^2(cos(3u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "9"
+      },
+      {
+        "left": "D_x^2(cos(3u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "18"
+      },
+      {
+        "left": "D_x^2(cos(3u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-54"
+      },
+      {
+        "left": "D_x^2(cos(3u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-324"
+      },
+      {
+        "left": "D_x^3(cos(3u))",
+        "right": "D_x^3(exp(-2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-18"
+      },
+      {
+        "left": "D_x^3(cos(3u))",
+        "right": "D_x^3(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-9"
+      },
+      {
+        "left": "D_x^3(cos(3u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "9"
+      },
+      {
+        "left": "D_x^3(cos(3u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "18"
+      },
+      {
+        "left": "D_x^3(cos(3u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-54"
+      },
+      {
+        "left": "D_x^3(cos(3u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-324"
+      },
+      {
+        "left": "exp(-2u)",
+        "right": "exp(-1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "exp(-2u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "exp(-2u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "exp(-2u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "exp(-2u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^1(exp(-2u))",
+        "right": "D_x^1(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^1(exp(-2u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^1(exp(-2u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-16"
+      },
+      {
+        "left": "D_x^1(exp(-2u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^1(exp(-2u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^2(exp(-2u))",
+        "right": "D_x^2(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^2(exp(-2u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^2(exp(-2u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-16"
+      },
+      {
+        "left": "D_x^2(exp(-2u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^2(exp(-2u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "D_x^3(exp(-2u))",
+        "right": "D_x^3(exp(-1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^3(exp(-2u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^3(exp(-2u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-16"
+      },
+      {
+        "left": "D_x^3(exp(-2u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^3(exp(-2u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "8"
+      },
+      {
+        "left": "exp(-1u)",
+        "right": "exp(1u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "exp(-1u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "3"
+      },
+      {
+        "left": "exp(-1u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "exp(-1u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "D_x^1(exp(-1u))",
+        "right": "D_x^1(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1(exp(-1u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^1(exp(-1u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^1(exp(-1u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^2(exp(-1u))",
+        "right": "D_x^2(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^2(exp(-1u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^2(exp(-1u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^2(exp(-1u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "D_x^3(exp(-1u))",
+        "right": "D_x^3(exp(1u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^3(exp(-1u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-6"
+      },
+      {
+        "left": "D_x^3(exp(-1u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^3(exp(-1u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "4"
+      },
+      {
+        "left": "exp(1u)",
+        "right": "exp(2u)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "1"
+      },
+      {
+        "left": "exp(1u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "exp(1u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-1"
+      },
+      {
+        "left": "D_x^1(exp(1u))",
+        "right": "D_x^1(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^1(exp(1u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1(exp(1u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^2(exp(1u))",
+        "right": "D_x^2(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^2(exp(1u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^2(exp(1u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^3(exp(1u))",
+        "right": "D_x^3(exp(2u))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "2"
+      },
+      {
+        "left": "D_x^3(exp(1u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^3(exp(1u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "exp(2u)",
+        "right": "(1+u^2)^(-1)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "exp(2u)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1(exp(2u))",
+        "right": "D_x^1((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^1(exp(2u))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^2(exp(2u))",
+        "right": "D_x^2((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^2(exp(2u))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "D_x^3(exp(2u))",
+        "right": "D_x^3((1+u^2)^(-1))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-4"
+      },
+      {
+        "left": "D_x^3(exp(2u))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          1
+        ],
+        "exact_nonzero_determinant": "-8"
+      },
+      {
+        "left": "(1+u^2)^(-1)",
+        "right": "(1+u^2)^(-2)",
+        "leading_function_derivative_indices_at_zero": [
+          0,
+          2
+        ],
+        "exact_nonzero_determinant": "-2"
+      },
+      {
+        "left": "D_x^1((1+u^2)^(-1))",
+        "right": "D_x^1((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-48"
+      },
+      {
+        "left": "D_x^2((1+u^2)^(-1))",
+        "right": "D_x^2((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-48"
+      },
+      {
+        "left": "D_x^3((1+u^2)^(-1))",
+        "right": "D_x^3((1+u^2)^(-2))",
+        "leading_function_derivative_indices_at_zero": [
+          1,
+          3
+        ],
+        "exact_nonzero_determinant": "-48"
+      }
+    ],
+    "all54_expression_checks_passed": true,
+    "no_np_pair_proportional": true,
+    "no_np_column_proportional_to_any_jet_polynomial": true,
+    "polynomial_separation_argument": "A polynomial jet column has polynomial coefficients in u0. For k>0 each NP column has nonpolynomial f'(u0) multiplying its unique highest jet u_k; for k=0 its value f(u0) is nonpolynomial. Coordinate powers cannot change this, since NP columns have no x or t dependence. Rational coefficients have uncancelled complex poles; nonzero-frequency trig and nonzero-scale exp are nonpolynomial.",
+    "scope": "No pairwise proportional columns; this is not full linear independence or numerical identifiability."
+  },
+  "evaluation_examples": {
+    "evaluation_before_truth": {
+      "candidates": [
+        {
+          "support_indices": [
+            0,
+            1
+          ],
+          "coefficients": [
+            1.0,
+            0.0
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.0,
+          "validation_equation_relative_error": 0.0,
+          "support": [
+            "u",
+            "sin(1u)"
+          ],
+          "complexity": 3,
+          "validation_error": 0.0,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.0
+            }
+          ],
+          "dataset_id": "synthetic_common_validation",
+          "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+          "support_source": "normalized_L1_beta_only",
+          "ls_readout_changes_support": false,
+          "candidate_id": 0
+        }
+      ],
+      "point_to_candidate": [
+        {
+          "point_index": 0,
+          "lambda": 0.1,
+          "ratio": 0.1,
+          "candidate_id": 0
+        }
+      ],
+      "primary_selected_candidate_id": 0,
+      "exploratory_best_available_candidate_id": 0,
+      "selection_eligible": true,
+      "pareto_candidate_ids": [
+        0
+      ],
+      "sensitivity": [
+        {
+          "alpha": 0.0,
+          "candidate_id": 0,
+          "score": 0.0
+        },
+        {
+          "alpha": 0.001,
+          "candidate_id": 0,
+          "score": 0.003
+        },
+        {
+          "alpha": 0.005,
+          "candidate_id": 0,
+          "score": 0.015
+        },
+        {
+          "alpha": 0.01,
+          "candidate_id": 0,
+          "score": 0.03
+        },
+        {
+          "alpha": 0.05,
+          "candidate_id": 0,
+          "score": 0.15000000000000002
+        }
+      ],
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "partial_path_policy": "No primary model or ranking when any requested lambda is unfinished/uncertified."
+    },
+    "truth_after_selection_only": {
+      "exact": false,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "extra": [
+        "NP:sin:1:Dx0"
+      ],
+      "missed": [],
+      "support_canonical": [
+        "NP:sin:1:Dx0",
+        "u"
+      ],
+      "true_support_canonical": [
+        "u"
+      ]
+    },
+    "invalid_name_fixtures": [
+      "sin(u)",
+      "sin(4u)",
+      "cos(0u)",
+      "exp(3u)",
+      "(1+u^2)^(-3)",
+      "D_x^5(sin(1u))",
+      "D_x^4(exp(1u))",
+      "sin(1u)+cos(1u)",
+      "2*sin(1u)",
+      " sin(1u)",
+      "np.sin(u)",
+      "__import__(\"os\")"
+    ]
+  },
+  "numerical_gate_files_checked_without_rerunning": [
+    "stage1_nonpolynomial_result.json",
+    "stage1_nonpolynomial_curved_check_result.json"
+  ],
+  "no_pde_fitting_run": true,
+  "test_trajectories_used": false,
+  "elapsed_s": 11.69485029997304,
+  "limitations": [
+    "Pairwise nonproportionality does not establish full linear independence or usable conditioning.",
+    "Only the declared 54 recipes are covered; no arbitrary nonpolynomial compositions are accepted.",
+    "All-real mathematical domain does not guarantee float64 representability; matrix builder rejects overflow.",
+    "Canonical coefficient errors compare recipe coordinates, not a basis-independent physical prediction metric.",
+    "A future complexity sensitivity study must be declared separately, without adjusting costs to true support.",
+    "This is a candidate-family extension, not a new L1 statistical method."
+  ]
+}

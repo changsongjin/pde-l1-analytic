@@ -1,0 +1,28 @@
+{
+  "stage": 1,
+  "component_checks": {
+    "stage0_gate": true,
+    "stage1_grammar": true,
+    "stage1_jet_preprocess": true
+  },
+  "all_checks_passed": true,
+  "max_library_pilot": {
+    "shape": [
+      81,
+      1158
+    ],
+    "build_seconds": 0.7226741999620572,
+    "matrix_bytes": 750384,
+    "gram_bytes_estimate": 10727712,
+    "available_memory_after": 1652326400,
+    "matrix_hash": "11f8ae96385b3ea6acca98d3fb8bb83eb6add1e7a296c44b4014e262927dadfa"
+  },
+  "main_grammar_status": "1158 finite polynomial jet columns ready for development diagnostics",
+  "nonpolynomial_supplement_status": "54 recipes declared; numerical extension pending",
+  "next_action": "multi-trajectory and matrix-perturbation diagnostics; exact weak reduction pilot",
+  "limits": [
+    "Preprocessing implementation checks are not noise robustness validation.",
+    "High-order reconstruction noise is a measured limitation requiring investigation.",
+    "No final test trajectories or final-test noise seeds used."
+  ]
+}

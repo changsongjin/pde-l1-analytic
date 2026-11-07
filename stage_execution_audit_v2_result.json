@@ -1,0 +1,474 @@
+{
+  "stage": "second_batch_integrity_checkpoint",
+  "completed_utc": "2026-11-06T12:42:14.344541+00:00",
+  "batch_start_utc_approximate": "2026-11-06T10:49:00+00:00",
+  "conservative_batch_deadline_utc": "2026-11-06T12:48:00+00:00",
+  "all_checks_passed": true,
+  "checks": {
+    "historical_scripts_unchanged": true,
+    "first_batch_scripts_unchanged": true,
+    "second_batch_start_scripts_unchanged": true,
+    "first_batch_results_unchanged": true,
+    "frozen_protocol_source_hashes_current": true,
+    "no_formal_observations_generated": true,
+    "formal_campaign_not_started": true,
+    "saved_before_second_batch_deadline": true,
+    "syntax_and_finite_serialization": true
+  },
+  "errors": [],
+  "new_scripts": {
+    "stage0_data_bundle.py": "18845ff7841868451b592c057e66c608a3ef38e01b5b062bd78a558b9dace2a3",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage0_gate.py": "2f32f1ca06dccaf4359ea5bd32c0a7465cded13197958a52887446555c861aa1",
+    "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f",
+    "stage1_gate.py": "d0b827cb9748af26e332c26e5c47936d1c8ce4e473c409f0561e3c9375124261",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_nonpolynomial_curved_check.py": "57d30a4d44e3d7cc5255d9094711d0e1f3bf93567432e2c311e02dfe292837d6",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage2_field_check.py": "b9973cc7e9f37e92716ca8221bac2185767b300601f3c151efeb49285c5339e5",
+    "stage2_field_check_refined.py": "0b56af37067c1b37b143646ef2f7f3fbb3b27d67af5cfde3acab79ad80ce3922",
+    "stage2_identifiability.py": "6df16402211adf8b2883135cf64273f8f82f0cdec7810f8f36fd95e605ef04f0",
+    "stage2_review.py": "aebad571b7c7b4e712cdbb68632cb267d81c6c57ab40dc232c68e30e9df8e19c",
+    "stage2a_baseline.py": "d7c8ef9c2fc8f75161e268d69c43001b8da8065ea65837f9f9df6e6a2ba6b3f8",
+    "stage2a_batch_checkpoint.py": "0d520bd92866c0d27c13ad8cb1ba11eec19015cfe95590b8299703ee11a0c5b2",
+    "stage2a_batch_checkpoint_v2.py": "cda55a5605adf3c1086c358d9f4dd486226593eebd998e2aa524e69a22fef339",
+    "stage2a_clarabel_probe.py": "a5ffb21ae8eb7480c456cf90d86fb3bb9eb468ec6ded3a1dfebf0a73217ecd7a",
+    "stage2a_diagnosis.py": "d70daa6817485ff72287fce9e340200a77807d65ebe289c64ef91f28d629165c",
+    "stage2a_heat_structure_diagnostic.py": "10f9bf504d74764cb7820773fbec31d2f1fd5b267429c92db1430fada9029e9c",
+    "stage2a_l1_paths.py": "f4c680117d14e4d5d5b2ac1ee43b660acaf2f660c244612448f5adbc6ab368a9",
+    "stage2a_reconcile.py": "bdd2bcd4b72af84839c8f507ee2aaf05e0ee2f910d721c255668734ee7da4025",
+    "stage2a_reconcile_complete.py": "6626ce4ecc3860eab55705b6393bfcb5710147786256592c75a21d11156940bc",
+    "stage2a_reconcile_remaining.py": "85d95e1ae2fc746830db10128f809d4f93d3b1c02516dc9d98420c741d481b86",
+    "stage2a_retry_other_cases.py": "01337308b6f1dfec041fad7d172a6e5d6adf0bd6643de2088b8f876d85144ef2",
+    "stage2a_retry_remaining_v2.py": "d2483807b83f09eb57d3ef5c2ab85c816bdebb57bd3b7936d413e76c443d50d3",
+    "stage2a_retry_remaining_v3.py": "8939024eb79db040704b75b2c2cd8be261c25776a870f23c5ab1bd069ce2ea8d",
+    "stage2a_retry_remaining_v4.py": "896b0e5d821c7e189ecf6e00c4fb13014e16b090ab3140bfaaccde72ee9ede0e",
+    "stage2a_solver_polish.py": "180575a91a4997dc32d4ad35e906d4e9d2de70ea1a205817f424c1f6e221e5cd",
+    "stage2a_solver_retry.py": "309e72ed3a5c509010b72fa25e93f069160295beacf56538bbe0aadc9125215c",
+    "stage2b_batch_checkpoint.py": "53eab4571cea6d9d25e9470e6f64c0cf38a99c7d497bf6cfa5d64e59909709e8",
+    "stage2b_compare.py": "2ff1b4d7e80891641e7bd762781a47d993b12966d1a4c38d52463f796692f3bc",
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_diagnosis.py": "64749bf35211d206ef92aab7f29aabf5e604ef128c340613ac4fd67670391373",
+    "stage2b_heat_dynamic_compare.py": "878e76064f4e074d29baf0a2d7532787465230d9553976aa82c655f79fe85802",
+    "stage2b_heat_dynamic_compare_v2.py": "030d013086424baa165ca35f32ea5c167cc7cdc1b73072fddab2ce6da16e052d",
+    "stage2b_heat_full_spectrum.py": "843a57fe89b7ee43a8075fcf9854452ed3eec79d488d4ee2eac1cf6877ff6226",
+    "stage2b_heat_noise_mechanism.py": "f69fea28b30e750d4078132623a676f5cd6527fa2a5e3df80f6281d9ddd030ea",
+    "stage2b_independent_review.py": "4822e9232d18934b0c77a54073dc82159d841e0c456996217d2776af9614495d",
+    "stage2b_independent_review_v2.py": "009c0385cc483b81eb142b0150afcc591df77e647cc45ca472e99a0de9b182d6",
+    "stage2b_numerical_retry.py": "39308c9a5e4f8e545a63a892b8673042eaf65d6d608f779ffea81decc7cd1298",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2b_reconcile_complete.py": "c5bc0e678342ad6623bf2d9dd7e0ccc006d39a4648f3ade8eb17b207fe7d11e6",
+    "stage2b_smoothed_irl1.py": "596b67be74539a8fe3fffbabca329e8239e9b9d8d0b6ad98fc57b2980e41987d",
+    "stage2c_diagnosis.py": "1b0dd368ba13642239a7d3d988e0bc86e926a0d8e72cbc96230a67c9c73914d7",
+    "stage2c_extended_matrices.py": "087dee6f0940dcaf3a6ddc641186382f8b1102135af05a534e7d64ff8e0ada33",
+    "stage2c_maximum_library_pilot.py": "a04e6c6343b71206f459fa56a7c7f8163aa3f4c3d7e18e66ed1e742d29452472",
+    "stage2c_numerical_retry.py": "1a822cda1184c493b58f0835cbf781a3193cb55ee0aa7871e8ef1cb746117c94",
+    "stage2c_reconcile_complete.py": "793f98d043554fa9dd7ba7437454cabf9bd9a6770050ab8a1303494968fdde61",
+    "stage2c_review.py": "ff0b0ea7ed05aea19192bafac885bcbe9f1f365bc2cc3253ea2ba2372b5fc922",
+    "stage2c_review_v2.py": "f25607a24bf59a4ecf7eeb117d32b5871d0828c6530c2dca9d01d81bf941e6cf",
+    "stage3_campaign.py": "1d85114a3d185cd000add6b217dc08a3f4fb90784100c95db0592cec3dfa6b58",
+    "stage3_campaign_preflight.py": "87d746ddb578d1dca0f94d49ca8a60407abfa402ae36d17848128e9308547a9f",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe",
+    "stage3_data_v2.py": "f12043f27dacae8746cef4879c7769ea11cdd037f26609e1749218df285b41d4",
+    "stage3_freeze.py": "fe38edde0ea0ef8bd31e1e0447d207f8190118168957e128a97ce67227ab512e",
+    "stage_execution_audit.py": "a2078edc5c84db80925e8878d9e6fedc1db2f44de3c12cb8d68d937f42f17a09",
+    "stage_execution_audit_v2.py": "4636c533e466e2a391724ec7a6037e9cba2545db098dea27635a83b5ce677f7b"
+  },
+  "result_manifests": {
+    "stage0_data_bundle_result.json": {
+      "sha256": "f0c52aa14bdedd344b4e6adfb793ce79c30b563f7d2c6f1de9e4b7c71a0181fd",
+      "size_bytes": 1848,
+      "reported_all_checks_passed": true
+    },
+    "stage0_evaluation_result.json": {
+      "sha256": "1b29ee63bcf8db6a720c8acf8266841cd4ca9ec0e207ae5b236847fc7d0ad8b6",
+      "size_bytes": 9325,
+      "reported_all_checks_passed": true
+    },
+    "stage0_gate_result.json": {
+      "sha256": "43271d998fba8eaad1c81aff66227159746548913d34d0bf9a4e9a41b3f0f199",
+      "size_bytes": 5117,
+      "reported_all_checks_passed": true
+    },
+    "stage0_l1_solver_result.json": {
+      "sha256": "a81518dfd9b8995ae81ac519a2b249fc0e3b7defb55f73b1a468f35c050d1e8d",
+      "size_bytes": 89379,
+      "reported_all_checks_passed": true
+    },
+    "stage1_extended_evaluation_result.json": {
+      "sha256": "f33e1eb5c404760f7a9f6a0fda7f7df643519f96b0d36ab576cb29c4b0f7e716",
+      "size_bytes": 117321,
+      "reported_all_checks_passed": true
+    },
+    "stage1_gate_result.json": {
+      "sha256": "374e0369cca4ea6427387ab9291855b07ff6c4da893d416cb4ecf636b4ed112b",
+      "size_bytes": 1037,
+      "reported_all_checks_passed": true
+    },
+    "stage1_grammar_result.json": {
+      "sha256": "2f875dc6a1f568ab39c982efd669ee6fba1cf892e4f4cd40942860db76c4facf",
+      "size_bytes": 912077,
+      "reported_all_checks_passed": true
+    },
+    "stage1_jet_preprocess_result.json": {
+      "sha256": "554635c72ce093a5e48808fbf305795a9a60218df77382770d8792e46297bb8a",
+      "size_bytes": 5140,
+      "reported_all_checks_passed": true
+    },
+    "stage1_nonpolynomial_curved_check_result.json": {
+      "sha256": "510cbbba87ebdacc531cb8383989171b1a6eaaf82ccd7ebf80d04858a73e832e",
+      "size_bytes": 116657,
+      "reported_all_checks_passed": true
+    },
+    "stage1_nonpolynomial_result.json": {
+      "sha256": "d37e494c678b3b1c1f6a399dea9f9effe027fe52f033bf0e8130cb591dea22d4",
+      "size_bytes": 410959,
+      "reported_all_checks_passed": true
+    },
+    "stage1_weak_reduction_result.json": {
+      "sha256": "722094f1ce1fc1c9447a305b0b5b8a6dba4a7f7647f3977be8f1e0b506a66fe6",
+      "size_bytes": 6001,
+      "reported_all_checks_passed": true
+    },
+    "stage1_weak_reduction_v2_result.json": {
+      "sha256": "565ee0df31ab3a06fff4409430e373bb17896b3d25be677c88c7f0742b52dbc2",
+      "size_bytes": 82484,
+      "reported_all_checks_passed": true
+    },
+    "stage2_data_result.json": {
+      "sha256": "0833b42b728ddec67027f655d86de08251eb96cf6b8915dfb3c266e22ef5601c",
+      "size_bytes": 4090,
+      "reported_all_checks_passed": true
+    },
+    "stage2_field_check_refined_result.json": {
+      "sha256": "d2b25a5a487838fe4c386e6811b0694a4e3df83ae43b3eaf8dbffcd46c156570",
+      "size_bytes": 104385,
+      "reported_all_checks_passed": true
+    },
+    "stage2_field_check_result.json": {
+      "sha256": "420ccedc80d55ab8afacc6bcc7c123ab0284da81a5c88a8f1fa742fa3f4d9c4c",
+      "size_bytes": 96159,
+      "reported_all_checks_passed": false
+    },
+    "stage2_identifiability_result.json": {
+      "sha256": "669391dcc6f573751ee664aaf341b9eaca541d1188ed524a4be35425a5445c68",
+      "size_bytes": 1890531,
+      "reported_all_checks_passed": true
+    },
+    "stage2_review_result.json": {
+      "sha256": "03fc7610bf44c9067d3e55c0370f74c75435a03aff6bac070df3d81cf1c02fed",
+      "size_bytes": 85613,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_baseline_check_result.json": {
+      "sha256": "4324dc8b7c09cbdd1c34859c5a92c15deea1cc49f5e8adb3fda57e556d2d55b6",
+      "size_bytes": 458,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_batch_checkpoint_result.json": {
+      "sha256": "2d56b5b81cb24994a52dcf5aac1c61dd3d281402d23e234f42cd8e54c7d792fb",
+      "size_bytes": 24614,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_batch_checkpoint_v2_result.json": {
+      "sha256": "7fd880957d528f553c5c8d7869ad49462012ebecc5929b8dfef61c6c2c908ed5",
+      "size_bytes": 25935,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_clarabel_probe_result.json": {
+      "sha256": "bdbf5a2c9c52aa8e8a78b069b02d56a8b1872d0719e52115994ac4d4c213ba8f",
+      "size_bytes": 76507,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_complete_diagnosis_result.json": {
+      "sha256": "e4d905577f32cfa99bcf1d010a8f9a916bed44e8b5a80b1205b8f99f935542d4",
+      "size_bytes": 330613,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_diagnosis_result.json": {
+      "sha256": "b0e16e37abddcbde9fb2c5a4d511ef24854ecd1df4719dc5d27e340d707970c5",
+      "size_bytes": 21761,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_final_diagnosis_result.json": {
+      "sha256": "6a8f41421d85eae4aac6a5bee60f5b7a6d5b9000aa6cde7d6b8faf519d184c38",
+      "size_bytes": 330107,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_heat_diagnosis_result.json": {
+      "sha256": "9ec33b8322e26de9dd9b9bf43b081d14e56f100a38f5f3bf13d1b4d3f28fd229",
+      "size_bytes": 59091,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_heat_noise_pilot_result.json": {
+      "sha256": "56c827eeb1cf9b8ef5af4c66eefe7f5cb51cb9a6fa583cff08b138a895d754fe",
+      "size_bytes": 9469405,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_heat_pilot_result.json": {
+      "sha256": "8bd2159f774b8c078b69e9a546832347b6ef3332d607f205a05c44e49989e241",
+      "size_bytes": 3974157,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_heat_reconciled_result.json": {
+      "sha256": "3daaf4bbfbda91dee1f18ee3271c89e5b5352a5e728712f9c3f188903e0634e3",
+      "size_bytes": 10837162,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_heat_structure_diagnostic_result.json": {
+      "sha256": "986efd5c526518a0d9d1e8ee1bc6c1f8e695f65c1b0fda4236aa5df672513cb0",
+      "size_bytes": 47256,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_initial_diagnosis_result.json": {
+      "sha256": "454bb787f74f7f6e3f78241637998d4d870a68d800750c66e0aece0188f0a27d",
+      "size_bytes": 326387,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_l1_paths_result.json": {
+      "sha256": "c4b011e47ace8a01f2b45b73bad0a0f033d5b53deda36da60f127c3e61811493",
+      "size_bytes": 82738,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_other_cases_pilot_result.json": {
+      "sha256": "e55037d0a01ff41a081750665e5ee89efb7d2af15648ed95173b89f9c2998c90",
+      "size_bytes": 67009800,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_other_cases_reconciled_result.json": {
+      "sha256": "09fc115b94f461ea57952e2ba6d81119793746552575b84534ef4d9bec453aa3",
+      "size_bytes": 68855281,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_reconcile_complete_result.json": {
+      "sha256": "3a9bad68f84ca9d09aa2d77bb3c8c6b8c7f932d526826d729587806f00ba5bda",
+      "size_bytes": 83990962,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_reconcile_remaining_result.json": {
+      "sha256": "274b94aa845e99487c475430b4a534542f7fcb499c9b105163a9df589c177270",
+      "size_bytes": 6851,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_reconcile_result.json": {
+      "sha256": "941fd7f257f2ce8c3a5a0bcdef87a2ad8a1e07e2ea71f821ec52af07ba19743e",
+      "size_bytes": 1304,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_retry_other_cases_result.json": {
+      "sha256": "64111cb754f9ab95f20b15c03fa457ce02d5e87d7cc54ba95419f862ffae25bb",
+      "size_bytes": 5085811,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_retry_remaining_v2_result.json": {
+      "sha256": "f5b4f74ab89e428c9e37d8fdc9aa075a9bef8828e45c228fff97c45773549e60",
+      "size_bytes": 5553473,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_retry_remaining_v3_result.json": {
+      "sha256": "a66e0b1fa85c693bfb6ddbb79c04c1ec876360d560200c03042c14c74bae8608",
+      "size_bytes": 5817846,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_retry_remaining_v4_result.json": {
+      "sha256": "a8857240a107e7446c86892501492694cd8e4439c58313e34bc750e2c1663f5f",
+      "size_bytes": 5846723,
+      "reported_all_checks_passed": true
+    },
+    "stage2a_solver_polish_progress_result.json": {
+      "sha256": "feaf2682e355f8371c78ef6bdd134b0718236da3b1782214ba1f7817f9506293",
+      "size_bytes": 584519,
+      "reported_all_checks_passed": null
+    },
+    "stage2a_solver_polish_result.json": {
+      "sha256": "80472af34972f6777f242db184d96af8b2761e2f717739db732faa16793fc4a8",
+      "size_bytes": 655135,
+      "reported_all_checks_passed": false
+    },
+    "stage2a_solver_retry_progress_result.json": {
+      "sha256": "426b96cae715e7836617ad97d88c9782aa95b4184df2c86bbb58818ca7c2a22f",
+      "size_bytes": 1263055,
+      "reported_all_checks_passed": null
+    },
+    "stage2a_solver_retry_result.json": {
+      "sha256": "227ad24ca98f06b66b0760f43467c84f0455983978dc5e06c50676e04b7b2e0d",
+      "size_bytes": 1368156,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_batch_checkpoint_result.json": {
+      "sha256": "a3bd819ad2b71179bb7e3d1442b6f4f95e98ca664ee99ed401d4f28d29626b7e",
+      "size_bytes": 18486,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_compare_result.json": {
+      "sha256": "72c04dcbb09dcb7155599519c9d40764c32e826656400750ebf5d363311aa385",
+      "size_bytes": 43951981,
+      "reported_all_checks_passed": false
+    },
+    "stage2b_complete_diagnosis_result.json": {
+      "sha256": "9d9d45f2cb221114aefbce369b85beefbe3fba989977d1adb6a59e79839527ac",
+      "size_bytes": 177079,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_data_result.json": {
+      "sha256": "20f4f61a8bf61d8266590d335427e97e82510041bba1b5739ca5eef697ed1bd5",
+      "size_bytes": 171084,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_diagnosis_result.json": {
+      "sha256": "bc04c11c214ad6fd1831c5bb106e3228b2f1fc9fae8ca8d55f5f46307205bd6a",
+      "size_bytes": 172275,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_heat_dynamic_compare_result.json": {
+      "sha256": "555c30e8d496860294c46fcb6130a7215f357ed1fcd0d9c857b64371101bb4c5",
+      "size_bytes": 304203,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_heat_dynamic_compare_v2_result.json": {
+      "sha256": "d2b02d5b829b43112ccc962dc7d1f60e76b4d29b0b09dc67ceed695f88bab288",
+      "size_bytes": 531378,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_heat_full_spectrum_result.json": {
+      "sha256": "106dfcada4ca7d1614f7b4b681e90e0a1db0d29b78cde95357ec763d4878b21d",
+      "size_bytes": 10135,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_heat_noise_mechanism_result.json": {
+      "sha256": "dac37b7d42a30a5d855b2693a08e9856f0a10c5ea9c05570f0d3b50333db6042",
+      "size_bytes": 6318,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_independent_preflight_result.json": {
+      "sha256": "d440325b6ac1418bd0e050798b01fa8f2f3e67bce575989d897ffd5cd4a7ab14",
+      "size_bytes": 10411,
+      "reported_all_checks_passed": false
+    },
+    "stage2b_independent_review_v2_result.json": {
+      "sha256": "112128686fb40aec87165716ec9533e672bbacc1b9cac1de4ec028027044a212",
+      "size_bytes": 49011,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_numerical_retry_result.json": {
+      "sha256": "bf3730dfaca9c44d4626fc3a012126fb6eb5d8744a94bc0242b88a1430a12833",
+      "size_bytes": 2160522,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_protocol_result.json": {
+      "sha256": "2a94272f3ed1e17dc28d8adb6b95bab4232b6a90bac8b9e30ffd742b752c6b0e",
+      "size_bytes": 9316,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_reconcile_complete_result.json": {
+      "sha256": "7971d21a0ec7b79a789ad10ecfd97c1806088c3b99bf6da7dae95be5b239223d",
+      "size_bytes": 45171385,
+      "reported_all_checks_passed": true
+    },
+    "stage2b_smoothed_irl1_result.json": {
+      "sha256": "cd51ff7fbfa4f61c070b699f49fe1bf518f1785cee950e332260dfc4b2759aa1",
+      "size_bytes": 354097,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_complete_diagnosis_result.json": {
+      "sha256": "a4512036bc6f9e96d91058109aad4a40855b40c8f6e7ccb23eae022d05c081d4",
+      "size_bytes": 143350,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_diagnosis_result.json": {
+      "sha256": "2da6dcc00e30525a6e1c9257a0a06ff10f7ebf260ec05c25e62dc0a4f4385a92",
+      "size_bytes": 228844,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_extended_matrices_result.json": {
+      "sha256": "54afa3628a27ae5e1c69f46a7afb994cf5dfbb079637d2c7bda58985657c09ab",
+      "size_bytes": 9427,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_maximum_library_pilot_result.json": {
+      "sha256": "376c484fe11d0f5a935560242c0e0e2283bfbe062240492884afd4f552b3dea6",
+      "size_bytes": 77167257,
+      "reported_all_checks_passed": false
+    },
+    "stage2c_numerical_retry_result.json": {
+      "sha256": "6406d07f7e04c8b22e40ab6d575d3e5fa9617706da5489f26afb1eeb276969d1",
+      "size_bytes": 6946399,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_paired_complete_diagnosis_result.json": {
+      "sha256": "920f11386d26ffc402febad889e90a746e42ed647a44d8b721c56fa27e2d41a0",
+      "size_bytes": 234477,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_preflight_result.json": {
+      "sha256": "008196035547f877904923ee12f2e81db64e2bff0ba875a20ef50b9eae192e99",
+      "size_bytes": 8582,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_reconcile_complete_result.json": {
+      "sha256": "1b47f04e1aa91d32515b83420af1d1581c7cdfd62cfbfc09a1aed4d3335abb96",
+      "size_bytes": 80075603,
+      "reported_all_checks_passed": true
+    },
+    "stage2c_review_v2_result.json": {
+      "sha256": "f77a8a227823ece577c67e17132566b2956652d23999f6167d2f12d84fe10884",
+      "size_bytes": 27106,
+      "reported_all_checks_passed": true
+    },
+    "stage3_campaign_preflight_result.json": {
+      "sha256": "88761a0baab5d847df0c53e7f49b232d348c08cdefee57ffb8a813cb085460bc",
+      "size_bytes": 2461,
+      "reported_all_checks_passed": true
+    },
+    "stage3_data_preflight_result.json": {
+      "sha256": "e468a947b239c931c294939c8e2c56ccbaae025e9b92240cda1af5ffe0bd5d2b",
+      "size_bytes": 6593,
+      "reported_all_checks_passed": true
+    },
+    "stage3_data_v2_preflight_result.json": {
+      "sha256": "4b2e9f36998cca07cf09ce5d5915f3d7f2fea327e1b77e5b31a674b9e7171d83",
+      "size_bytes": 1883,
+      "reported_all_checks_passed": true
+    },
+    "stage3_freeze_result.json": {
+      "sha256": "ce1c9d20d71621fb1246477cc83dedc98a54674dd5dd14690b4476bd171fe577",
+      "size_bytes": 9929,
+      "reported_all_checks_passed": true
+    },
+    "stage3_protocol_draft.json": {
+      "sha256": "4428fe9b77f6337f979965d93dd9dd2011c208b1c9f4e061e2b176e769128790",
+      "size_bytes": 26277,
+      "reported_all_checks_passed": null
+    },
+    "stage3_protocol_result.json": {
+      "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb",
+      "size_bytes": 32634,
+      "reported_all_checks_passed": null
+    },
+    "stage_execution_audit_result.json": {
+      "sha256": "3aa7b6e1d3f4f41e9a118d929855585fea1c6352544cd0728ea107d476fc461b",
+      "size_bytes": 12536,
+      "reported_all_checks_passed": true
+    }
+  },
+  "scope": "Preservation, syntax, finite JSON and frozen source provenance; not publication acceptance or formal outcomes.",
+  "numerical_status": {
+    "stage2a_complete_paths": 72,
+    "stage2b_complete_paths": 36,
+    "stage2c_complete_paths": 36,
+    "formal_complete_paths": 0
+  },
+  "formal_protocol_sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb",
+  "next_action": "Start an explicitly bounded stage3_campaign batch with the frozen protocol. No frozen source or method changes based on formal outcomes.",
+  "known_limits": [
+    "No observed improvement from the relative-epsilon IRL1 ablation.",
+    "All true PDEs are polynomial; extra functional families currently test distraction resistance.",
+    "Complete end-to-end timing is unavailable after some interruptions; no runtime superiority claim.",
+    "No formal multi-seed result, general nonlinear rollout or publication-ready claim."
+  ]
+}

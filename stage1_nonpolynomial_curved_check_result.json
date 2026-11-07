@@ -1,0 +1,2907 @@
+{
+  "stage": "1_nonpolynomial_curved_field_verification",
+  "all_checks_passed": true,
+  "checks": {
+    "both_grids_all54_accuracy": true,
+    "same_physical_radius": true,
+    "frozen_54_functions": true
+  },
+  "field_symbolic": "t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t)",
+  "protocol_frozen_before_first_run": {
+    "x": [
+      0.0,
+      1.0
+    ],
+    "t": [
+      0.0,
+      0.08,
+      129
+    ],
+    "grids": [
+      {
+        "nx": 257,
+        "hx": 16
+      },
+      {
+        "nx": 513,
+        "hx": 32
+      }
+    ],
+    "ht": 8,
+    "halo_x": 15,
+    "relative_tolerance_each_column_both_grids": 0.01,
+    "near_zero_reference_scale": 1e-12,
+    "near_zero_column_policy": "report absolute and relative errors; retain every column in the same gate",
+    "refinement_policy": "fixed physical spatial radius; no per-column monotonicity requirement"
+  },
+  "source_sha256": {
+    "stage1_nonpolynomial_curved_check.py": "57d30a4d44e3d7cc5255d9094711d0e1f3bf93567432e2c311e02dfe292837d6",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22"
+  },
+  "numpy_version": "2.2.5",
+  "sympy_version": "1.14.0",
+  "symbolic_derivative_expressions": [
+    {
+      "name": "sin(1u)",
+      "sympy_expression": "sin(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(sin(1u))",
+      "sympy_expression": "(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*cos(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(sin(1u))",
+      "sympy_expression": "-pi**2*(100*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/10000"
+    },
+    {
+      "name": "D_x^3(sin(1u))",
+      "sympy_expression": "pi**3*(300*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 10000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/1000000"
+    },
+    {
+      "name": "D_x^4(sin(1u))",
+      "sympy_expression": "pi**4*(-30000*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))**2*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 600*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-2*t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 1000000*(25*sin(pi*x) + 972*sin(3*pi*x) + 3888*cos(6*pi*x))*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 40000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**4*exp(-3*t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/100000000"
+    },
+    {
+      "name": "sin(2u)",
+      "sympy_expression": "sin(t/5 + 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(sin(2u))",
+      "sympy_expression": "2*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*cos(t/5 + 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(sin(2u))",
+      "sympy_expression": "-pi**2*(50*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50))*exp(-t)/2500"
+    },
+    {
+      "name": "D_x^3(sin(2u))",
+      "sympy_expression": "pi**3*(150*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) - 2500*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50))*exp(-t)/125000"
+    },
+    {
+      "name": "D_x^4(sin(2u))",
+      "sympy_expression": "pi**4*(-7500*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))**2*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + 300*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-2*t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + 125000*(25*sin(pi*x) + 972*sin(3*pi*x) + 3888*cos(6*pi*x))*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + 10000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**4*exp(-3*t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50))*exp(-t)/6250000"
+    },
+    {
+      "name": "sin(3u)",
+      "sympy_expression": "sin(3*t/10 + 3*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(sin(3u))",
+      "sympy_expression": "3*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*cos(3*t/10 + 3*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(sin(3u))",
+      "sympy_expression": "-3*pi**2*(100*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 3*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/10000"
+    },
+    {
+      "name": "D_x^3(sin(3u))",
+      "sympy_expression": "3*pi**3*(900*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 10000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 9*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/1000000"
+    },
+    {
+      "name": "D_x^4(sin(3u))",
+      "sympy_expression": "3*pi**4*(-90000*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))**2*exp(-t)*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 5400*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-2*t)*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 1000000*(25*sin(pi*x) + 972*sin(3*pi*x) + 3888*cos(6*pi*x))*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 120000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 27*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**4*exp(-3*t)*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/100000000"
+    },
+    {
+      "name": "cos(1u)",
+      "sympy_expression": "cos(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(cos(1u))",
+      "sympy_expression": "-(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*sin(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(cos(1u))",
+      "sympy_expression": "pi**2*(100*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/10000"
+    },
+    {
+      "name": "D_x^3(cos(1u))",
+      "sympy_expression": "pi**3*(300*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 10000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/1000000"
+    },
+    {
+      "name": "D_x^4(cos(1u))",
+      "sympy_expression": "pi**4*(-30000*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))**2*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 600*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-2*t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 1000000*(25*sin(pi*x) + 972*sin(3*pi*x) + 3888*cos(6*pi*x))*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 40000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**4*exp(-3*t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/100000000"
+    },
+    {
+      "name": "cos(2u)",
+      "sympy_expression": "cos(t/5 + 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(cos(2u))",
+      "sympy_expression": "-2*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*sin(t/5 + 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(cos(2u))",
+      "sympy_expression": "pi**2*(50*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50))*exp(-t)/2500"
+    },
+    {
+      "name": "D_x^3(cos(2u))",
+      "sympy_expression": "pi**3*(150*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + 2500*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50))*exp(-t)/125000"
+    },
+    {
+      "name": "D_x^4(cos(2u))",
+      "sympy_expression": "pi**4*(-7500*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))**2*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) - 300*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-2*t)*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) - 125000*(25*sin(pi*x) + 972*sin(3*pi*x) + 3888*cos(6*pi*x))*sin((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + 10000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**4*exp(-3*t)*cos((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/50))*exp(-t)/6250000"
+    },
+    {
+      "name": "cos(3u)",
+      "sympy_expression": "cos(3*t/10 + 3*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(cos(3u))",
+      "sympy_expression": "-3*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*sin(3*t/10 + 3*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(cos(3u))",
+      "sympy_expression": "3*pi**2*(100*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 3*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/10000"
+    },
+    {
+      "name": "D_x^3(cos(3u))",
+      "sympy_expression": "3*pi**3*(900*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 10000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 9*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/1000000"
+    },
+    {
+      "name": "D_x^4(cos(3u))",
+      "sympy_expression": "3*pi**4*(-90000*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))**2*exp(-t)*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 5400*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-2*t)*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) - 1000000*(25*sin(pi*x) + 972*sin(3*pi*x) + 3888*cos(6*pi*x))*sin(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 120000*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100) + 27*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**4*exp(-3*t)*cos(3*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))/100))*exp(-t)/100000000"
+    },
+    {
+      "name": "exp(-2u)",
+      "sympy_expression": "exp(-t/5 - 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(exp(-2u))",
+      "sympy_expression": "-2*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*exp(-t/5 - 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(exp(-2u))",
+      "sympy_expression": "pi**2*((-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t) + 1250*sin(pi*x) + 5400*sin(3*pi*x) + 5400*cos(6*pi*x))*exp(-t)*exp(-t/5 - (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/50)/2500"
+    },
+    {
+      "name": "D_x^3(exp(-2u))",
+      "sympy_expression": "pi**3*(-150*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t) - 1620000*sin(6*pi*x) + 62500*cos(pi*x) + 810000*cos(3*pi*x))*exp(-t)*exp(-t/5 - (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/50)/125000"
+    },
+    {
+      "name": "exp(-1u)",
+      "sympy_expression": "exp(-t/10 - (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(exp(-1u))",
+      "sympy_expression": "-(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*exp(-t/10 - (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(exp(-1u))",
+      "sympy_expression": "pi**2*((-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t) + 2500*sin(pi*x) + 10800*sin(3*pi*x) + 10800*cos(6*pi*x))*exp(-t)*exp(-t/10 - (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/100)/10000"
+    },
+    {
+      "name": "D_x^3(exp(-1u))",
+      "sympy_expression": "pi**3*(-300*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t) - 6480000*sin(6*pi*x) + 250000*cos(pi*x) + 3240000*cos(3*pi*x))*exp(-t)*exp(-t/10 - (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/100)/1000000"
+    },
+    {
+      "name": "exp(1u)",
+      "sympy_expression": "exp(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(exp(1u))",
+      "sympy_expression": "(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*exp(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(exp(1u))",
+      "sympy_expression": "pi**2*((-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t) - 2500*sin(pi*x) - 10800*sin(3*pi*x) - 10800*cos(6*pi*x))*exp(-t)*exp(t/10 + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/100)/10000"
+    },
+    {
+      "name": "D_x^3(exp(1u))",
+      "sympy_expression": "pi**3*(-300*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t) + 6480000*sin(6*pi*x) - 250000*cos(pi*x) - 3240000*cos(3*pi*x))*exp(-t)*exp(t/10 + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/100)/1000000"
+    },
+    {
+      "name": "exp(2u)",
+      "sympy_expression": "exp(t/5 + 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^1(exp(2u))",
+      "sympy_expression": "2*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)*exp(t/5 + 2*(sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))"
+    },
+    {
+      "name": "D_x^2(exp(2u))",
+      "sympy_expression": "pi**2*((-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t) - 1250*sin(pi*x) - 5400*sin(3*pi*x) - 5400*cos(6*pi*x))*exp(-t)*exp(t/5 + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/50)/2500"
+    },
+    {
+      "name": "D_x^3(exp(2u))",
+      "sympy_expression": "pi**3*(-150*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t) + (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t) + 1620000*sin(6*pi*x) - 62500*cos(pi*x) - 810000*cos(3*pi*x))*exp(-t)*exp(t/5 + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t)/50)/125000"
+    },
+    {
+      "name": "(1+u^2)^(-1)",
+      "sympy_expression": "1/((t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))**2 + 1)"
+    },
+    {
+      "name": "D_x^1((1+u^2)^(-1))",
+      "sympy_expression": "-2*(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)/((t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))**2 + 1)**2"
+    },
+    {
+      "name": "D_x^2((1+u^2)^(-1))",
+      "sympy_expression": "20000*pi**2*(4*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000) + (10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x)) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t))*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000)**2"
+    },
+    {
+      "name": "D_x^3((1+u^2)^(-1))",
+      "sympy_expression": "20000*pi**3*(-24*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**3*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000)**2 - 12*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000) + (10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x)) + 12*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000) + 3*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t))*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000)**2"
+    },
+    {
+      "name": "(1+u^2)^(-2)",
+      "sympy_expression": "((t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))**2 + 1)**(-2)"
+    },
+    {
+      "name": "D_x^1((1+u^2)^(-2))",
+      "sympy_expression": "-4*(t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))*(-9*pi*sin(6*pi*x)/50 + pi*cos(pi*x)/4 + 9*pi*cos(3*pi*x)/25)*exp(-t)/((t/10 + (sin(pi*x)/4 + 3*sin(3*pi*x)/25 + 3*cos(6*pi*x)/100)*exp(-t))**2 + 1)**3"
+    },
+    {
+      "name": "D_x^2((1+u^2)^(-2))",
+      "sympy_expression": "400000000*pi**2*(6*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000) + (10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x)) - (-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**2*exp(-t))*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000)**3"
+    },
+    {
+      "name": "D_x^3((1+u^2)^(-2))",
+      "sympy_expression": "400000000*pi**3*(-48*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**3*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000)**2 - 18*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000) + (10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))*(-648*sin(6*pi*x) + 25*cos(pi*x) + 324*cos(3*pi*x)) + 18*(10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))**3*exp(-2*t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000) + 3*(25*sin(pi*x) + 108*sin(3*pi*x) + 108*cos(6*pi*x))*(-18*sin(6*pi*x) + 25*cos(pi*x) + 36*cos(3*pi*x))*exp(-t))*exp(-t)/((10*t + (25*sin(pi*x) + 12*sin(3*pi*x) + 3*cos(6*pi*x))*exp(-t))**2 + 10000)**3"
+    }
+  ],
+  "rows": [
+    {
+      "nx": 257,
+      "nt": 129,
+      "half": [
+        16,
+        8
+      ],
+      "stride": [
+        16,
+        8
+      ],
+      "halo_x": 15,
+      "physical_radius_x": 0.0625,
+      "physical_radius_t": 0.005,
+      "maximum_relative_error": 1.4641834001878016e-11,
+      "worst_column": {
+        "name": "D_x^4(sin(3u))",
+        "family": "sin",
+        "parameter": 3,
+        "derivative_order": 4,
+        "reference_l2_norm": 10.980030073899922,
+        "absolute_l2_error": 1.6076777767767106e-10,
+        "maximum_absolute_error": 2.2026491741655718e-11,
+        "relative_l2_error": 1.4641834001878016e-11,
+        "near_zero_reference": false
+      },
+      "maximum_absolute_error": 2.2026491741655718e-11,
+      "near_zero_reference_threshold": 1e-12,
+      "near_zero_columns": [],
+      "columns": [
+        {
+          "name": "sin(1u)",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.00031937257185168043,
+          "absolute_l2_error": 5.389153519799257e-20,
+          "maximum_absolute_error": 1.3552527156068805e-20,
+          "relative_l2_error": 1.6874190192832306e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.001086036265809343,
+          "absolute_l2_error": 8.275455541215935e-19,
+          "maximum_absolute_error": 1.7618285302889447e-19,
+          "relative_l2_error": 7.619870350322829e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.014130255346189176,
+          "absolute_l2_error": 6.352167065904795e-17,
+          "maximum_absolute_error": 1.3986208025063007e-17,
+          "relative_l2_error": 4.4954368553700106e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.21322924057944623,
+          "absolute_l2_error": 3.661841889659476e-14,
+          "maximum_absolute_error": 5.495603971894525e-15,
+          "relative_l2_error": 1.717326329029027e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 4,
+          "reference_l2_norm": 3.7882014346694417,
+          "absolute_l2_error": 6.442697654742206e-12,
+          "maximum_absolute_error": 8.018308239599037e-13,
+          "relative_l2_error": 1.7007273150205106e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "sin(2u)",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.000622705665898963,
+          "absolute_l2_error": 1.1469714392534908e-19,
+          "maximum_absolute_error": 2.710505431213761e-20,
+          "relative_l2_error": 1.841915855378763e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0020543595499527656,
+          "absolute_l2_error": 1.681130597571725e-18,
+          "maximum_absolute_error": 2.710505431213761e-19,
+          "relative_l2_error": 8.183234515157671e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.02689215928387241,
+          "absolute_l2_error": 1.3081513637747426e-16,
+          "maximum_absolute_error": 2.883977778811442e-17,
+          "relative_l2_error": 4.8644340901225386e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.40919841675206164,
+          "absolute_l2_error": 2.8244764477005e-13,
+          "maximum_absolute_error": 4.7503667666148885e-14,
+          "relative_l2_error": 6.902461818203673e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 4,
+          "reference_l2_norm": 7.375720531477621,
+          "absolute_l2_error": 4.928262406736995e-11,
+          "maximum_absolute_error": 6.131206653492427e-12,
+          "relative_l2_error": 6.6817369038109245e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "sin(3u)",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0008949717392180661,
+          "absolute_l2_error": 2.0067352856139035e-19,
+          "maximum_absolute_error": 4.0657581468206416e-20,
+          "relative_l2_error": 2.2422331317044506e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0027986541469490855,
+          "absolute_l2_error": 2.293655116750473e-18,
+          "maximum_absolute_error": 4.336808689942018e-19,
+          "relative_l2_error": 8.195564711884352e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.03719594550857534,
+          "absolute_l2_error": 2.841084094202589e-16,
+          "maximum_absolute_error": 5.334274688628682e-17,
+          "relative_l2_error": 7.638155329450063e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.5804316230652696,
+          "absolute_l2_error": 1.1220289297258143e-12,
+          "maximum_absolute_error": 2.0122098431940572e-13,
+          "relative_l2_error": 1.9330940719603796e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 4,
+          "reference_l2_norm": 10.980030073899922,
+          "absolute_l2_error": 1.6076777767767106e-10,
+          "maximum_absolute_error": 2.2026491741655718e-11,
+          "relative_l2_error": 1.4641834001878016e-11,
+          "near_zero_reference": false
+        },
+        {
+          "name": "cos(1u)",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0015331531251822801,
+          "absolute_l2_error": 2.0907820587331386e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 1.3637137898307195e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.00020888597458412346,
+          "absolute_l2_error": 2.9972238602773424e-18,
+          "maximum_absolute_error": 6.157929526538763e-19,
+          "relative_l2_error": 1.4348612281148093e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.0027637407164325277,
+          "absolute_l2_error": 1.891772468073361e-16,
+          "maximum_absolute_error": 4.0007060164715114e-17,
+          "relative_l2_error": 6.844970864398905e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.046741754030298725,
+          "absolute_l2_error": 1.3894223901605678e-13,
+          "maximum_absolute_error": 1.812439087700568e-14,
+          "relative_l2_error": 2.9725508145456475e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 4,
+          "reference_l2_norm": 1.063680047977133,
+          "absolute_l2_error": 5.285668211522884e-12,
+          "maximum_absolute_error": 8.62469817786149e-13,
+          "relative_l2_error": 4.969227561967503e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "cos(2u)",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0014366722462289335,
+          "absolute_l2_error": 2.193668160565481e-19,
+          "maximum_absolute_error": 6.776263578034403e-20,
+          "relative_l2_error": 1.5269092629328347e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0008183157052251454,
+          "absolute_l2_error": 3.228680413015675e-18,
+          "maximum_absolute_error": 7.724940478959219e-19,
+          "relative_l2_error": 3.9455193055684536e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.01079678186093686,
+          "absolute_l2_error": 1.8995138388854563e-16,
+          "maximum_absolute_error": 3.5778671692021646e-17,
+          "relative_l2_error": 1.7593333489101644e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.1813967944825052,
+          "absolute_l2_error": 6.562455073212885e-13,
+          "maximum_absolute_error": 9.164544123585472e-14,
+          "relative_l2_error": 3.6177348623686957e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 4,
+          "reference_l2_norm": 4.096936360574147,
+          "absolute_l2_error": 1.9279381289444004e-11,
+          "maximum_absolute_error": 3.215316901616916e-12,
+          "relative_l2_error": 4.7058044335211935e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "cos(3u)",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0012843426817057781,
+          "absolute_l2_error": 2.7939250479261704e-19,
+          "maximum_absolute_error": 6.776263578034403e-20,
+          "relative_l2_error": 2.1753735102966959e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0017779544957736988,
+          "absolute_l2_error": 3.1137711111311716e-18,
+          "maximum_absolute_error": 6.2341624917916505e-19,
+          "relative_l2_error": 1.7513221618060454e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.02335419435754118,
+          "absolute_l2_error": 2.2521099833906306e-16,
+          "maximum_absolute_error": 3.946495907847236e-17,
+          "relative_l2_error": 9.643278414626251e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.3880931534144042,
+          "absolute_l2_error": 1.8770001191997145e-12,
+          "maximum_absolute_error": 2.8631957915692396e-13,
+          "relative_l2_error": 4.836468004359412e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 4,
+          "reference_l2_norm": 8.662886495840597,
+          "absolute_l2_error": 7.856495693822859e-11,
+          "maximum_absolute_error": 1.4170664641710573e-11,
+          "relative_l2_error": 9.069143059412219e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(-2u)",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0010613401281805881,
+          "absolute_l2_error": 2.04189410243842e-19,
+          "maximum_absolute_error": 4.0657581468206416e-20,
+          "relative_l2_error": 1.9238828799762386e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(-2u))",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0015309766611610249,
+          "absolute_l2_error": 2.87338446236463e-18,
+          "maximum_absolute_error": 5.421010862427522e-19,
+          "relative_l2_error": 1.876831002887779e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(-2u))",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.020434078123033855,
+          "absolute_l2_error": 1.5254046443830064e-16,
+          "maximum_absolute_error": 4.336808689942018e-17,
+          "relative_l2_error": 7.465003486815137e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(-2u))",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.3226489101322831,
+          "absolute_l2_error": 2.9789237731026377e-13,
+          "maximum_absolute_error": 4.216765825404423e-14,
+          "relative_l2_error": 9.232709857539287e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(-1u)",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0012859183402163404,
+          "absolute_l2_error": 2.2103502879872077e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 1.7188885319229077e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(-1u))",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.000918870108777736,
+          "absolute_l2_error": 3.4074672130882476e-18,
+          "maximum_absolute_error": 6.505213034913027e-19,
+          "relative_l2_error": 3.708323059524482e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(-1u))",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.012071330959380702,
+          "absolute_l2_error": 1.7344931100708617e-16,
+          "maximum_absolute_error": 3.361026734705064e-17,
+          "relative_l2_error": 1.436869816515947e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(-1u))",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.18504840181069082,
+          "absolute_l2_error": 1.0675623155816191e-13,
+          "maximum_absolute_error": 1.6056600493641326e-14,
+          "relative_l2_error": 5.769097734082363e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(1u)",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0019169101916853269,
+          "absolute_l2_error": 3.5444457781736764e-19,
+          "maximum_absolute_error": 8.131516293641283e-20,
+          "relative_l2_error": 1.8490411254256194e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(1u))",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0013349617507711392,
+          "absolute_l2_error": 3.161461487691269e-18,
+          "maximum_absolute_error": 5.963111948670274e-19,
+          "relative_l2_error": 2.368203797498358e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(1u))",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.017230742392323757,
+          "absolute_l2_error": 2.3931987710249623e-16,
+          "maximum_absolute_error": 4.992751004295748e-17,
+          "relative_l2_error": 1.3889121643946838e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(1u))",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.2586940352059175,
+          "absolute_l2_error": 1.35188834528384e-13,
+          "maximum_absolute_error": 1.8270107648987732e-14,
+          "relative_l2_error": 5.225819544728785e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(2u)",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.002357186415337097,
+          "absolute_l2_error": 4.2426120783034453e-19,
+          "maximum_absolute_error": 8.131516293641283e-20,
+          "relative_l2_error": 1.799862773134435e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(2u))",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.003231246782623976,
+          "absolute_l2_error": 4.442408012201437e-18,
+          "maximum_absolute_error": 1.0028870095490916e-18,
+          "relative_l2_error": 1.3748278330489883e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(2u))",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.04164756686018708,
+          "absolute_l2_error": 3.278600569184911e-16,
+          "maximum_absolute_error": 6.364266752489911e-17,
+          "relative_l2_error": 7.87224996886693e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(2u))",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.632031228348874,
+          "absolute_l2_error": 5.331417399124196e-13,
+          "maximum_absolute_error": 7.066569551739121e-14,
+          "relative_l2_error": 8.435370215886413e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "(1+u^2)^(-1)",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.001503174888251732,
+          "absolute_l2_error": 1.8729965171444565e-19,
+          "maximum_absolute_error": 4.0657581468206416e-20,
+          "relative_l2_error": 1.246027013744785e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1((1+u^2)^(-1))",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0003881345648881253,
+          "absolute_l2_error": 2.8926919393402253e-18,
+          "maximum_absolute_error": 6.539094352803199e-19,
+          "relative_l2_error": 7.452806838200575e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2((1+u^2)^(-1))",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.005089057930041457,
+          "absolute_l2_error": 1.9724942368754372e-16,
+          "maximum_absolute_error": 3.474867962816042e-17,
+          "relative_l2_error": 3.875951627965391e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3((1+u^2)^(-1))",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.08413307022484198,
+          "absolute_l2_error": 4.1754662470302675e-13,
+          "maximum_absolute_error": 7.034336221151127e-14,
+          "relative_l2_error": 4.962931028038695e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "(1+u^2)^(-2)",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.001443667642798427,
+          "absolute_l2_error": 2.431914051230971e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 1.6845387256286445e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1((1+u^2)^(-2))",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0007460007913639091,
+          "absolute_l2_error": 3.0351042072320046e-18,
+          "maximum_absolute_error": 5.963111948670274e-19,
+          "relative_l2_error": 4.068499983335058e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2((1+u^2)^(-2))",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.009740166109558702,
+          "absolute_l2_error": 2.0369987925788974e-16,
+          "maximum_absolute_error": 4.2825985813177425e-17,
+          "relative_l2_error": 2.091338863902792e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3((1+u^2)^(-2))",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.15911882551266301,
+          "absolute_l2_error": 9.519320221133165e-13,
+          "maximum_absolute_error": 1.782753632217915e-13,
+          "relative_l2_error": 5.982522929303294e-12,
+          "near_zero_reference": false
+        }
+      ],
+      "input_hash": "43a16ced873e8692315a2885836f567cd98442575838fd676cc5c34f1b223b31",
+      "reference_hash": "9c802f13d2c977f55a7b843a5ece349d4e95d44868a6c5c7ba0a5895c553d9a9",
+      "metadata": {
+        "preprocessing": "frozen54_raw_function_values_with_v2_moment_consistent_weak_derivatives",
+        "input_observation_hash": "43a16ced873e8692315a2885836f567cd98442575838fd676cc5c34f1b223b31",
+        "raw_shape": [
+          129,
+          257
+        ],
+        "rows": 195,
+        "columns": 54,
+        "recipes": [
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "sin(1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 4,
+            "name": "D_x^4(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "sin(2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 4,
+            "name": "D_x^4(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 0,
+            "name": "sin(3u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 1,
+            "name": "D_x^1(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 2,
+            "name": "D_x^2(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 3,
+            "name": "D_x^3(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 4,
+            "name": "D_x^4(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "cos(1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 4,
+            "name": "D_x^4(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "cos(2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 4,
+            "name": "D_x^4(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 0,
+            "name": "cos(3u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 1,
+            "name": "D_x^1(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 2,
+            "name": "D_x^2(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 3,
+            "name": "D_x^3(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 4,
+            "name": "D_x^4(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 0,
+            "name": "exp(-2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(-2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(-2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(-2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 0,
+            "name": "exp(-1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(-1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(-1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(-1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "exp(1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "exp(2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "(1+u^2)^(-1)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1((1+u^2)^(-1))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2((1+u^2)^(-1))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3((1+u^2)^(-1))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "(1+u^2)^(-2)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1((1+u^2)^(-2))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2((1+u^2)^(-2))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3((1+u^2)^(-2))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          }
+        ],
+        "names": [
+          "sin(1u)",
+          "D_x^1(sin(1u))",
+          "D_x^2(sin(1u))",
+          "D_x^3(sin(1u))",
+          "D_x^4(sin(1u))",
+          "sin(2u)",
+          "D_x^1(sin(2u))",
+          "D_x^2(sin(2u))",
+          "D_x^3(sin(2u))",
+          "D_x^4(sin(2u))",
+          "sin(3u)",
+          "D_x^1(sin(3u))",
+          "D_x^2(sin(3u))",
+          "D_x^3(sin(3u))",
+          "D_x^4(sin(3u))",
+          "cos(1u)",
+          "D_x^1(cos(1u))",
+          "D_x^2(cos(1u))",
+          "D_x^3(cos(1u))",
+          "D_x^4(cos(1u))",
+          "cos(2u)",
+          "D_x^1(cos(2u))",
+          "D_x^2(cos(2u))",
+          "D_x^3(cos(2u))",
+          "D_x^4(cos(2u))",
+          "cos(3u)",
+          "D_x^1(cos(3u))",
+          "D_x^2(cos(3u))",
+          "D_x^3(cos(3u))",
+          "D_x^4(cos(3u))",
+          "exp(-2u)",
+          "D_x^1(exp(-2u))",
+          "D_x^2(exp(-2u))",
+          "D_x^3(exp(-2u))",
+          "exp(-1u)",
+          "D_x^1(exp(-1u))",
+          "D_x^2(exp(-1u))",
+          "D_x^3(exp(-1u))",
+          "exp(1u)",
+          "D_x^1(exp(1u))",
+          "D_x^2(exp(1u))",
+          "D_x^3(exp(1u))",
+          "exp(2u)",
+          "D_x^1(exp(2u))",
+          "D_x^2(exp(2u))",
+          "D_x^3(exp(2u))",
+          "(1+u^2)^(-1)",
+          "D_x^1((1+u^2)^(-1))",
+          "D_x^2((1+u^2)^(-1))",
+          "D_x^3((1+u^2)^(-1))",
+          "(1+u^2)^(-2)",
+          "D_x^1((1+u^2)^(-2))",
+          "D_x^2((1+u^2)^(-2))",
+          "D_x^3((1+u^2)^(-2))"
+        ],
+        "target_order": 1,
+        "target_source": "original_observations_with_moment_consistent_weak_time_derivative",
+        "half": [
+          16,
+          8
+        ],
+        "stride": [
+          16,
+          8
+        ],
+        "test_power": 8,
+        "discarded_halo_x": 15,
+        "raw_footprint_half_x": 31,
+        "raw_footprint_half_t": 8,
+        "center_x_indices": [
+          31,
+          47,
+          63,
+          79,
+          95,
+          111,
+          127,
+          143,
+          159,
+          175,
+          191,
+          207,
+          223
+        ],
+        "center_t_indices": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64,
+          72,
+          80,
+          88,
+          96,
+          104,
+          112,
+          120
+        ],
+        "derivative_reconstruction": "none",
+        "all_function_fields_source": "raw_observations_only",
+        "max_test_function_derivative": 4,
+        "kernel_x": {
+          "moment_degree": 10,
+          "moment_design_condition": 2927.2364285959798,
+          "scaled_moment_residual_by_derivative": [
+            3.965362143996672e-16,
+            3.827544529965473e-15,
+            4.0794516202591335e-14,
+            1.5228096561514803e-13
+          ],
+          "weight_noise_gains": [
+            {
+              "order": 1,
+              "l2_continuous_samples": 7.808596938795858,
+              "l2_discrete_weights": 7.808596944839756,
+              "relative_weight_change": 1.7044539069861924e-08
+            },
+            {
+              "order": 2,
+              "l2_continuous_samples": 39.07300621756725,
+              "l2_discrete_weights": 39.07300592790963,
+              "relative_weight_change": 1.4942189028558314e-07
+            },
+            {
+              "order": 3,
+              "l2_continuous_samples": 245.711289880175,
+              "l2_discrete_weights": 245.71140125564565,
+              "relative_weight_change": 3.110121191984351e-06
+            },
+            {
+              "order": 4,
+              "l2_continuous_samples": 1780.347561053396,
+              "l2_discrete_weights": 1780.3456468543116,
+              "relative_weight_change": 3.055293286430609e-05
+            }
+          ],
+          "rule": "minimum_l2_correction_to_sampled_derivative_with_common_discrete_zeroth_bump_moments"
+        },
+        "kernel_t": {
+          "moment_degree": 10,
+          "moment_design_condition": 3879.3854959528776,
+          "scaled_moment_residual_by_derivative": [
+            3.8717960722288794e-16
+          ],
+          "weight_noise_gains": [
+            {
+              "order": 1,
+              "l2_continuous_samples": 5.521511833293094,
+              "l2_discrete_weights": 5.521508052128646,
+              "relative_weight_change": 4.47288933115883e-06
+            }
+          ],
+          "rule": "minimum_l2_correction_to_sampled_derivative_with_common_discrete_zeroth_bump_moments"
+        },
+        "function_value_ranges": [
+          {
+            "family": "sin",
+            "parameter": 1,
+            "minimum": 0.09983341664682815,
+            "maximum": 0.2633598610251801
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "minimum": 0.19866933079506122,
+            "maximum": 0.5081252856286412
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "minimum": 0.2955202066613396,
+            "maximum": 0.7170146914602585
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "minimum": 0.964697664349198,
+            "maximum": 0.9950041652780258
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "minimum": 0.8612831672015956,
+            "maximum": 0.9800665778412416
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "minimum": 0.6970580551361201,
+            "maximum": 0.955336489125606
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "minimum": 0.5868378476341571,
+            "maximum": 0.8187307530779818
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "minimum": 0.7660534234856974,
+            "maximum": 0.9048374180359595
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "minimum": 1.1051709180756477,
+            "maximum": 1.3053919861748005
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "minimum": 1.2214027581601699,
+            "maximum": 1.7040482375693904
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "minimum": 0.9336858536594989,
+            "maximum": 0.9900990099009901
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "minimum": 0.8717692733238671,
+            "maximum": 0.9802960494069208
+          }
+        ],
+        "overflow_policy": "reject entire construction; no clipping or column deletion",
+        "matrix_hash": "06b7b34c98311af69560a1dbf25b10f304f2d465a8946916c9b6cbf7e3760a7a",
+        "target_hash": "c54b04b75aed2b816c48dc7e0c97a6a9fd0dc43dc9bc8fbeda90cd7badca6759"
+      },
+      "checks": {
+        "all54_present": true,
+        "every_column_relative_accuracy": true,
+        "finite_matrix_target_reference": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "nx": 513,
+      "nt": 129,
+      "half": [
+        32,
+        8
+      ],
+      "stride": [
+        32,
+        8
+      ],
+      "halo_x": 15,
+      "physical_radius_x": 0.0625,
+      "physical_radius_t": 0.005,
+      "maximum_relative_error": 1.6016532278150243e-12,
+      "worst_column": {
+        "name": "D_x^4(cos(1u))",
+        "family": "cos",
+        "parameter": 1,
+        "derivative_order": 4,
+        "reference_l2_norm": 1.1159788458919282,
+        "absolute_l2_error": 1.7874111206960922e-12,
+        "maximum_absolute_error": 2.736899248900748e-13,
+        "relative_l2_error": 1.6016532278150243e-12,
+        "near_zero_reference": false
+      },
+      "maximum_absolute_error": 8.906209103543006e-13,
+      "near_zero_reference_threshold": 1e-12,
+      "near_zero_columns": [],
+      "columns": [
+        {
+          "name": "sin(1u)",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.000325250159459042,
+          "absolute_l2_error": 6.514999491981681e-20,
+          "maximum_absolute_error": 1.3552527156068805e-20,
+          "relative_l2_error": 2.0030734198001521e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.001165667057999244,
+          "absolute_l2_error": 8.629570616980992e-19,
+          "maximum_absolute_error": 1.8973538018496328e-19,
+          "relative_l2_error": 7.403117860937774e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.014583304977266271,
+          "absolute_l2_error": 6.684826298261532e-17,
+          "maximum_absolute_error": 1.1275702593849246e-17,
+          "relative_l2_error": 4.5838898032252796e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.2191340286928909,
+          "absolute_l2_error": 4.3702376650277255e-15,
+          "maximum_absolute_error": 8.881784197001252e-16,
+          "relative_l2_error": 1.9943217815579292e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(sin(1u))",
+          "family": "sin",
+          "parameter": 1,
+          "derivative_order": 4,
+          "reference_l2_norm": 3.7837230740711445,
+          "absolute_l2_error": 4.674659485648761e-13,
+          "maximum_absolute_error": 9.786615962070755e-14,
+          "relative_l2_error": 1.235465543893254e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "sin(2u)",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0006345220768536312,
+          "absolute_l2_error": 1.1041359569805403e-19,
+          "maximum_absolute_error": 2.710505431213761e-20,
+          "relative_l2_error": 1.7401064474471194e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0022120076062637443,
+          "absolute_l2_error": 1.7102841690913098e-18,
+          "maximum_absolute_error": 3.7947076036992655e-19,
+          "relative_l2_error": 7.731818662143368e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.027875361134700172,
+          "absolute_l2_error": 1.240422735748201e-16,
+          "maximum_absolute_error": 1.9949319973733282e-17,
+          "relative_l2_error": 4.449889383510378e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.4225386654135284,
+          "absolute_l2_error": 8.85943260375348e-15,
+          "maximum_absolute_error": 1.9012569296705806e-15,
+          "relative_l2_error": 2.0967152426353615e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(sin(2u))",
+          "family": "sin",
+          "parameter": 2,
+          "derivative_order": 4,
+          "reference_l2_norm": 7.342914509784351,
+          "absolute_l2_error": 9.753096523399595e-13,
+          "maximum_absolute_error": 1.4865886299730846e-13,
+          "relative_l2_error": 1.3282323402245393e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "sin(3u)",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0009128528695417727,
+          "absolute_l2_error": 1.5877293124260377e-19,
+          "maximum_absolute_error": 3.3881317890172014e-20,
+          "relative_l2_error": 1.73930472850793e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0030310912940837076,
+          "absolute_l2_error": 2.324308568114444e-18,
+          "maximum_absolute_error": 4.87890977618477e-19,
+          "relative_l2_error": 7.668223562421856e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.03887431924772665,
+          "absolute_l2_error": 1.7999694949905947e-16,
+          "maximum_absolute_error": 2.949029909160572e-17,
+          "relative_l2_error": 4.6302276922723374e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.6044729347679083,
+          "absolute_l2_error": 1.6280864904311942e-14,
+          "maximum_absolute_error": 3.0531133177191805e-15,
+          "relative_l2_error": 2.6933984911273315e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(sin(3u))",
+          "family": "sin",
+          "parameter": 3,
+          "derivative_order": 4,
+          "reference_l2_norm": 10.865183293329915,
+          "absolute_l2_error": 3.1858182301270137e-12,
+          "maximum_absolute_error": 5.420108806220014e-13,
+          "relative_l2_error": 2.9321348237933293e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "cos(1u)",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0015922970314852867,
+          "absolute_l2_error": 2.4693879696982847e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 1.5508337457583852e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.00021776385662781046,
+          "absolute_l2_error": 3.3320488116891795e-18,
+          "maximum_absolute_error": 7.250602028496811e-19,
+          "relative_l2_error": 1.5301202243970756e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.00276651413294875,
+          "absolute_l2_error": 2.6687834325711893e-16,
+          "maximum_absolute_error": 4.4994390158148434e-17,
+          "relative_l2_error": 9.646737028328887e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.046586290609969605,
+          "absolute_l2_error": 1.525865232923811e-14,
+          "maximum_absolute_error": 3.760013134179729e-15,
+          "relative_l2_error": 3.2753524973659767e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(cos(1u))",
+          "family": "cos",
+          "parameter": 1,
+          "derivative_order": 4,
+          "reference_l2_norm": 1.1159788458919282,
+          "absolute_l2_error": 1.7874111206960922e-12,
+          "maximum_absolute_error": 2.736899248900748e-13,
+          "relative_l2_error": 1.6016532278150243e-12,
+          "near_zero_reference": false
+        },
+        {
+          "name": "cos(2u)",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.001495893726430894,
+          "absolute_l2_error": 1.9309378923244639e-19,
+          "maximum_absolute_error": 4.0657581468206416e-20,
+          "relative_l2_error": 1.290825583533636e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0008538133307337021,
+          "absolute_l2_error": 3.3704638243507e-18,
+          "maximum_absolute_error": 6.369687763352339e-19,
+          "relative_l2_error": 3.947541813916609e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.010809930643051666,
+          "absolute_l2_error": 2.3994728480505007e-16,
+          "maximum_absolute_error": 3.350184712980209e-17,
+          "relative_l2_error": 2.2196931019097865e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.18067205021688054,
+          "absolute_l2_error": 1.35349629933948e-14,
+          "maximum_absolute_error": 2.426878142891553e-15,
+          "relative_l2_error": 7.491453701414964e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(cos(2u))",
+          "family": "cos",
+          "parameter": 2,
+          "derivative_order": 4,
+          "reference_l2_norm": 4.318059285455317,
+          "absolute_l2_error": 2.274372082285715e-12,
+          "maximum_absolute_error": 3.451128272047299e-13,
+          "relative_l2_error": 5.267116387092157e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "cos(3u)",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0013437069002266617,
+          "absolute_l2_error": 3.1812374442362255e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 2.367508452698726e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0018577757785924612,
+          "absolute_l2_error": 3.228820100598381e-18,
+          "maximum_absolute_error": 8.402566836762659e-19,
+          "relative_l2_error": 1.738003120615927e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.02339142451305447,
+          "absolute_l2_error": 2.2981364883571315e-16,
+          "maximum_absolute_error": 4.206704429243757e-17,
+          "relative_l2_error": 9.824696597997138e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.38617091973385853,
+          "absolute_l2_error": 1.5773879530058798e-14,
+          "maximum_absolute_error": 3.948230631323213e-15,
+          "relative_l2_error": 4.084688598750483e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^4(cos(3u))",
+          "family": "cos",
+          "parameter": 3,
+          "derivative_order": 4,
+          "reference_l2_norm": 9.195430894076733,
+          "absolute_l2_error": 5.2311064431450604e-12,
+          "maximum_absolute_error": 8.906209103543006e-13,
+          "relative_l2_error": 5.688810566250566e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(-2u)",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0011103363155522204,
+          "absolute_l2_error": 2.8717290183768404e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 2.5863596264962294e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(-2u))",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0016594699292176262,
+          "absolute_l2_error": 2.6851201943446627e-18,
+          "maximum_absolute_error": 4.87890977618477e-19,
+          "relative_l2_error": 1.6180589639310847e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(-2u))",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.02146572967568245,
+          "absolute_l2_error": 2.1493916817921042e-16,
+          "maximum_absolute_error": 3.122502256758253e-17,
+          "relative_l2_error": 1.0013131229482743e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(-2u))",
+          "family": "exp",
+          "parameter": -2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.34101703415664547,
+          "absolute_l2_error": 1.3215943959729238e-14,
+          "maximum_absolute_error": 2.8935187579293142e-15,
+          "relative_l2_error": 3.875449797519065e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(-1u)",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0013398917184119334,
+          "absolute_l2_error": 2.574980159653073e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 1.9217822785747128e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(-1u))",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0009906264622151137,
+          "absolute_l2_error": 2.991275244096399e-18,
+          "maximum_absolute_error": 6.505213034913027e-19,
+          "relative_l2_error": 3.0195793855614226e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(-1u))",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.012555144956448173,
+          "absolute_l2_error": 2.277386134294148e-16,
+          "maximum_absolute_error": 3.5019730171281793e-17,
+          "relative_l2_error": 1.8139066830323687e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(-1u))",
+          "family": "exp",
+          "parameter": -1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.19254404409233228,
+          "absolute_l2_error": 1.3776147820947403e-14,
+          "maximum_absolute_error": 2.8345381597461028e-15,
+          "relative_l2_error": 7.154803404015557e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(1u)",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0019813151735323426,
+          "absolute_l2_error": 3.286313184737536e-19,
+          "maximum_absolute_error": 8.131516293641283e-20,
+          "relative_l2_error": 1.658652408581017e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(1u))",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0014236554552315849,
+          "absolute_l2_error": 5.016517746644097e-18,
+          "maximum_absolute_error": 1.1926223897340549e-18,
+          "relative_l2_error": 3.5236880722857653e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(1u))",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.0176183735441779,
+          "absolute_l2_error": 3.4588895109700055e-16,
+          "maximum_absolute_error": 5.2475385148298415e-17,
+          "relative_l2_error": 1.963228616022287e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(1u))",
+          "family": "exp",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.2624793872119522,
+          "absolute_l2_error": 2.1414322887655893e-14,
+          "maximum_absolute_error": 4.7531423241764514e-15,
+          "relative_l2_error": 8.158477934255395e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "exp(2u)",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.002426981815959239,
+          "absolute_l2_error": 4.101739008779568e-19,
+          "maximum_absolute_error": 8.131516293641283e-20,
+          "relative_l2_error": 1.6900575776083425e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1(exp(2u))",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0034275507756380344,
+          "absolute_l2_error": 5.643080280381048e-18,
+          "maximum_absolute_error": 1.734723475976807e-18,
+          "relative_l2_error": 1.6463885292350177e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2(exp(2u))",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.04230119665943921,
+          "absolute_l2_error": 4.4408221101974916e-16,
+          "maximum_absolute_error": 8.239936510889834e-17,
+          "relative_l2_error": 1.0498100434249899e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3(exp(2u))",
+          "family": "exp",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.6361894570087139,
+          "absolute_l2_error": 3.0940650975075215e-14,
+          "maximum_absolute_error": 7.098488463697095e-15,
+          "relative_l2_error": 4.863433468475637e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "(1+u^2)^(-1)",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.0015622850332001669,
+          "absolute_l2_error": 2.2718175287815495e-19,
+          "maximum_absolute_error": 5.421010862427522e-20,
+          "relative_l2_error": 1.4541632803893567e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1((1+u^2)^(-1))",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.00040583850721569333,
+          "absolute_l2_error": 3.982724391709974e-18,
+          "maximum_absolute_error": 8.267041565201971e-19,
+          "relative_l2_error": 9.813569488597722e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2((1+u^2)^(-1))",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.005097908171214696,
+          "absolute_l2_error": 2.757396334687225e-16,
+          "maximum_absolute_error": 4.8951728087720525e-17,
+          "relative_l2_error": 5.4088779987384724e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3((1+u^2)^(-1))",
+          "family": "inverse_quadratic",
+          "parameter": 1,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.08371857417187048,
+          "absolute_l2_error": 1.5556318069131036e-14,
+          "maximum_absolute_error": 3.247402347028583e-15,
+          "relative_l2_error": 1.8581680616292643e-13,
+          "near_zero_reference": false
+        },
+        {
+          "name": "(1+u^2)^(-2)",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 0,
+          "reference_l2_norm": 0.001502726557532322,
+          "absolute_l2_error": 1.843342984321061e-19,
+          "maximum_absolute_error": 4.0657581468206416e-20,
+          "relative_l2_error": 1.2266656066477435e-16,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^1((1+u^2)^(-2))",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 1,
+          "reference_l2_norm": 0.0007813403723712879,
+          "absolute_l2_error": 3.4146399803620824e-18,
+          "maximum_absolute_error": 8.673617379884035e-19,
+          "relative_l2_error": 4.3702336409406316e-15,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^2((1+u^2)^(-2))",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 2,
+          "reference_l2_norm": 0.009761151730057241,
+          "absolute_l2_error": 2.5623571687651903e-16,
+          "maximum_absolute_error": 4.640385298237959e-17,
+          "relative_l2_error": 2.625056181510831e-14,
+          "near_zero_reference": false
+        },
+        {
+          "name": "D_x^3((1+u^2)^(-2))",
+          "family": "inverse_quadratic",
+          "parameter": 2,
+          "derivative_order": 3,
+          "reference_l2_norm": 0.15830612190204071,
+          "absolute_l2_error": 1.8717678398967078e-14,
+          "maximum_absolute_error": 4.8416132214512686e-15,
+          "relative_l2_error": 1.1823723665310628e-13,
+          "near_zero_reference": false
+        }
+      ],
+      "input_hash": "3ef032198552e4d5f799d3aa10b349a3ed724ae2aa28bef3cbd8fc7d42944e5e",
+      "reference_hash": "b2811adbe9b76f10bc61d18a3c76bd1472898e752ad695bd1dd7598e0e930bb7",
+      "metadata": {
+        "preprocessing": "frozen54_raw_function_values_with_v2_moment_consistent_weak_derivatives",
+        "input_observation_hash": "3ef032198552e4d5f799d3aa10b349a3ed724ae2aa28bef3cbd8fc7d42944e5e",
+        "raw_shape": [
+          129,
+          513
+        ],
+        "rows": 210,
+        "columns": 54,
+        "recipes": [
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "sin(1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 1,
+            "derivative_order": 4,
+            "name": "D_x^4(sin(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "sin(2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "derivative_order": 4,
+            "name": "D_x^4(sin(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 0,
+            "name": "sin(3u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 1,
+            "name": "D_x^1(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 2,
+            "name": "D_x^2(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 3,
+            "name": "D_x^3(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "derivative_order": 4,
+            "name": "D_x^4(sin(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "cos(1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "derivative_order": 4,
+            "name": "D_x^4(cos(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "cos(2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "derivative_order": 4,
+            "name": "D_x^4(cos(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 0,
+            "name": "cos(3u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 1,
+            "name": "D_x^1(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 2,
+            "name": "D_x^2(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 3,
+            "name": "D_x^3(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "derivative_order": 4,
+            "name": "D_x^4(cos(3u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 0,
+            "name": "exp(-2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(-2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(-2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(-2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 0,
+            "name": "exp(-1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(-1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(-1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(-1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "exp(1u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(1u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "exp(2u)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1(exp(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2(exp(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3(exp(2u))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 0,
+            "name": "(1+u^2)^(-1)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 1,
+            "name": "D_x^1((1+u^2)^(-1))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 2,
+            "name": "D_x^2((1+u^2)^(-1))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "derivative_order": 3,
+            "name": "D_x^3((1+u^2)^(-1))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 0,
+            "name": "(1+u^2)^(-2)",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 1,
+            "name": "D_x^1((1+u^2)^(-2))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 2,
+            "name": "D_x^2((1+u^2)^(-2))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "derivative_order": 3,
+            "name": "D_x^3((1+u^2)^(-2))",
+            "domain": "all real u; reject numerical overflow",
+            "rule": "nonpolynomial-supplement-v1"
+          }
+        ],
+        "names": [
+          "sin(1u)",
+          "D_x^1(sin(1u))",
+          "D_x^2(sin(1u))",
+          "D_x^3(sin(1u))",
+          "D_x^4(sin(1u))",
+          "sin(2u)",
+          "D_x^1(sin(2u))",
+          "D_x^2(sin(2u))",
+          "D_x^3(sin(2u))",
+          "D_x^4(sin(2u))",
+          "sin(3u)",
+          "D_x^1(sin(3u))",
+          "D_x^2(sin(3u))",
+          "D_x^3(sin(3u))",
+          "D_x^4(sin(3u))",
+          "cos(1u)",
+          "D_x^1(cos(1u))",
+          "D_x^2(cos(1u))",
+          "D_x^3(cos(1u))",
+          "D_x^4(cos(1u))",
+          "cos(2u)",
+          "D_x^1(cos(2u))",
+          "D_x^2(cos(2u))",
+          "D_x^3(cos(2u))",
+          "D_x^4(cos(2u))",
+          "cos(3u)",
+          "D_x^1(cos(3u))",
+          "D_x^2(cos(3u))",
+          "D_x^3(cos(3u))",
+          "D_x^4(cos(3u))",
+          "exp(-2u)",
+          "D_x^1(exp(-2u))",
+          "D_x^2(exp(-2u))",
+          "D_x^3(exp(-2u))",
+          "exp(-1u)",
+          "D_x^1(exp(-1u))",
+          "D_x^2(exp(-1u))",
+          "D_x^3(exp(-1u))",
+          "exp(1u)",
+          "D_x^1(exp(1u))",
+          "D_x^2(exp(1u))",
+          "D_x^3(exp(1u))",
+          "exp(2u)",
+          "D_x^1(exp(2u))",
+          "D_x^2(exp(2u))",
+          "D_x^3(exp(2u))",
+          "(1+u^2)^(-1)",
+          "D_x^1((1+u^2)^(-1))",
+          "D_x^2((1+u^2)^(-1))",
+          "D_x^3((1+u^2)^(-1))",
+          "(1+u^2)^(-2)",
+          "D_x^1((1+u^2)^(-2))",
+          "D_x^2((1+u^2)^(-2))",
+          "D_x^3((1+u^2)^(-2))"
+        ],
+        "target_order": 1,
+        "target_source": "original_observations_with_moment_consistent_weak_time_derivative",
+        "half": [
+          32,
+          8
+        ],
+        "stride": [
+          32,
+          8
+        ],
+        "test_power": 8,
+        "discarded_halo_x": 15,
+        "raw_footprint_half_x": 47,
+        "raw_footprint_half_t": 8,
+        "center_x_indices": [
+          47,
+          79,
+          111,
+          143,
+          175,
+          207,
+          239,
+          271,
+          303,
+          335,
+          367,
+          399,
+          431,
+          463
+        ],
+        "center_t_indices": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64,
+          72,
+          80,
+          88,
+          96,
+          104,
+          112,
+          120
+        ],
+        "derivative_reconstruction": "none",
+        "all_function_fields_source": "raw_observations_only",
+        "max_test_function_derivative": 4,
+        "kernel_x": {
+          "moment_degree": 10,
+          "moment_design_condition": 2889.4430251930344,
+          "scaled_moment_residual_by_derivative": [
+            3.2083364126914745e-15,
+            2.0009107794315226e-14,
+            4.704190172572257e-14,
+            6.071788037631531e-13
+          ],
+          "weight_noise_gains": [
+            {
+              "order": 1,
+              "l2_continuous_samples": 11.043023693952053,
+              "l2_discrete_weights": 11.043023693965015,
+              "relative_weight_change": 2.3605710667721317e-11
+            },
+            {
+              "order": 2,
+              "l2_continuous_samples": 55.257575314534094,
+              "l2_discrete_weights": 55.25757531623332,
+              "relative_weight_change": 1.5173026999877143e-09
+            },
+            {
+              "order": 3,
+              "l2_continuous_samples": 347.4882390283087,
+              "l2_discrete_weights": 347.48823962611243,
+              "relative_weight_change": 2.7646615597062383e-08
+            },
+            {
+              "order": 4,
+              "l2_continuous_samples": 2517.7914935278236,
+              "l2_discrete_weights": 2517.7915937781095,
+              "relative_weight_change": 1.0750318958888565e-06
+            }
+          ],
+          "rule": "minimum_l2_correction_to_sampled_derivative_with_common_discrete_zeroth_bump_moments"
+        },
+        "kernel_t": {
+          "moment_degree": 10,
+          "moment_design_condition": 3879.3854959528776,
+          "scaled_moment_residual_by_derivative": [
+            3.8717960722288794e-16
+          ],
+          "weight_noise_gains": [
+            {
+              "order": 1,
+              "l2_continuous_samples": 5.521511833293094,
+              "l2_discrete_weights": 5.521508052128646,
+              "relative_weight_change": 4.47288933115883e-06
+            }
+          ],
+          "rule": "minimum_l2_correction_to_sampled_derivative_with_common_discrete_zeroth_bump_moments"
+        },
+        "function_value_ranges": [
+          {
+            "family": "sin",
+            "parameter": 1,
+            "minimum": 0.08114314877504429,
+            "maximum": 0.26337546583399396
+          },
+          {
+            "family": "sin",
+            "parameter": 2,
+            "minimum": 0.1617511516372517,
+            "maximum": 0.5081531494062108
+          },
+          {
+            "family": "sin",
+            "parameter": 3,
+            "minimum": 0.24129239200623492,
+            "maximum": 0.717048517219185
+          },
+          {
+            "family": "cos",
+            "parameter": 1,
+            "minimum": 0.9646934041428534,
+            "maximum": 0.996702457811192
+          },
+          {
+            "family": "cos",
+            "parameter": 2,
+            "minimum": 0.8612667279934534,
+            "maximum": 0.9868315788137421
+          },
+          {
+            "family": "cos",
+            "parameter": 3,
+            "minimum": 0.6970232592631096,
+            "maximum": 0.9704524622875195
+          },
+          {
+            "family": "exp",
+            "parameter": -2,
+            "minimum": 0.5868188626923537,
+            "maximum": 0.8500459134416505
+          },
+          {
+            "family": "exp",
+            "parameter": -1,
+            "minimum": 0.7660410319900323,
+            "maximum": 0.9219793454528418
+          },
+          {
+            "family": "exp",
+            "parameter": 1,
+            "minimum": 1.0846229960919975,
+            "maximum": 1.3054131022227173
+          },
+          {
+            "family": "exp",
+            "parameter": 2,
+            "minimum": 1.1764070436515812,
+            "maximum": 1.704103367454739
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 1,
+            "minimum": 0.9336783372207396,
+            "maximum": 0.993444545394942
+          },
+          {
+            "family": "inverse_quadratic",
+            "parameter": 2,
+            "minimum": 0.871755237395285,
+            "maximum": 0.9869320647749629
+          }
+        ],
+        "overflow_policy": "reject entire construction; no clipping or column deletion",
+        "matrix_hash": "936f38857df3c7b4522258a94f49444d0b5852ab79df4bde61fa34ea2103c35f",
+        "target_hash": "51bd91339da54c7de5e2c4b97a08b13beb30dd8f9003097538e41b0461685b58"
+      },
+      "checks": {
+        "all54_present": true,
+        "every_column_relative_accuracy": true,
+        "finite_matrix_target_reference": true
+      },
+      "all_checks_passed": true
+    }
+  ],
+  "symbolic_reference_setup_s": 2.393873400054872,
+  "elapsed_s": 3.5157746000913903,
+  "no_pde_fitting_run": true,
+  "no_analytic_derivatives_in_production_api": true,
+  "test_data_used": false,
+  "no_function_or_kernel_change": true,
+  "limitations": [
+    "A curved synthetic fixture tests composed derivatives, not all real PDE trajectories or noise levels.",
+    "The independent strong-form reference uses the same zeroth sampled quadrature; continuous integral accuracy is not claimed.",
+    "Spatial refinement retains 15 discarded samples, so sampled centers differ; errors refer to each grid's own aligned reference.",
+    "Every one of the54 columns remains in the gate, including any near-zero reference column.",
+    "No L1 fitting, support selection, complexity change, or noise-robustness claim is made."
+  ]
+}

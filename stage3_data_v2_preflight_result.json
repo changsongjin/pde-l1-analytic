@@ -1,0 +1,42 @@
+{
+  "stage": "3_data_binding_v2_preflight_only",
+  "all_checks_passed": true,
+  "checks": {
+    "positive_synthetic_binding_only": true,
+    "all11_wrong_binding_fixtures_rejected": true,
+    "v1_data_gateway_unchanged": true,
+    "formal_bundle_inventory_unchanged": true
+  },
+  "source_sha256": {
+    "stage3_data_v2.py": "f12043f27dacae8746cef4879c7769ea11cdd037f26609e1749218df285b41d4",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage2_identifiability.py": "6df16402211adf8b2883135cf64273f8f82f0cdec7810f8f36fd95e605ef04f0"
+  },
+  "rejected_binding_fixtures": [
+    "wrong_case",
+    "wrong_sigma",
+    "wrong_seed",
+    "wrong_layer",
+    "wrong_method",
+    "wrong_matrix_raw",
+    "wrong_matrix_role",
+    "wrong_matrix_protocol",
+    "wrong_matrix_source",
+    "wrong_path_with_same_support",
+    "wrong_job_solver_inputs"
+  ],
+  "new_L1_solver_calls": 0,
+  "formal_or_test_observations_generated": false,
+  "test_parameters_instantiated": false,
+  "formal_bundles_before": [],
+  "formal_bundles_after": [],
+  "scope": "Closes cross-dataset/layer/raw/path provenance binding before delegating to the unchanged v1 strict release gate.",
+  "limits": [
+    "Synthetic positive fixture tests binding only; it is not a certified model or a valid six-model release.",
+    "No frozen protocol is created and no test-release API is exercised by preflight.",
+    "Numerical certification remains the frozen runner/reviewer responsibility; this layer binds its saved inputs and evidence."
+  ]
+}

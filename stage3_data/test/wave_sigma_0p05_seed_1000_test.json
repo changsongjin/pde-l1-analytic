@@ -1,0 +1,273 @@
+{
+  "stage": "3_formal_observations",
+  "case": "wave",
+  "sigma": 0.05,
+  "seed": 1000,
+  "role": "test",
+  "trajectory_ids": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "source_sha256": {
+    "gml1_maxlib_compare.py": "2b3fcfb623e3e2888a83c87dd1443816e921f93ecb75be101ffd1c5c0a730f1d",
+    "inverse_burgers.py": "8681efadb4444d5a7ff507651c2c7833d6f2ecfe7f7af198d985b239902f8880",
+    "inverse_irl1.py": "b6c42667fd8c23ebfb42320fe0c88e36b0b50e1695129c0836d29bbe13923396",
+    "lasso_exact.py": "714a4fb3f4192d13654a44a93eeac003302b85610a3b715a3da6830a86889093",
+    "library_effect_audit.py": "49662a4cd52a858c1edc6495e4fba84ff48ba753c19afc39244b3d07590e06ca",
+    "maxlib_first.py": "1bac4409850cfcd2fef98acfd2d751be058da5c5cf0eb06e2128723e5cc6b4a4",
+    "maxlib_irl1.py": "3dffd3a2db384805405e4508071f455460cc3ec6aca0cfb773622c63589b36d5",
+    "noise_inverse.py": "d7041dab4ec38dd2e00f135635f0761c62e3011391355bf5a29d34ec06b4c195",
+    "noise_inverse_biglib.py": "ae09b180c0b086ba8ac43f1abbe90a9cd0de7425c99071c72b5365c46d48b219",
+    "redo_two.py": "0923afdf5a4e73f6461c9b3da60e7f97c96f0af2fd677a7e9df2d86ba4df6ab7",
+    "stage0_data_bundle.py": "18845ff7841868451b592c057e66c608a3ef38e01b5b062bd78a558b9dace2a3",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage2_field_check.py": "b9973cc7e9f37e92716ca8221bac2185767b300601f3c151efeb49285c5339e5",
+    "stage2_identifiability.py": "6df16402211adf8b2883135cf64273f8f82f0cdec7810f8f36fd95e605ef04f0",
+    "stage2a_baseline.py": "d7c8ef9c2fc8f75161e268d69c43001b8da8065ea65837f9f9df6e6a2ba6b3f8",
+    "stage2a_clarabel_probe.py": "a5ffb21ae8eb7480c456cf90d86fb3bb9eb468ec6ded3a1dfebf0a73217ecd7a",
+    "stage2a_l1_paths.py": "f4c680117d14e4d5d5b2ac1ee43b660acaf2f660c244612448f5adbc6ab368a9",
+    "stage2a_reconcile_remaining.py": "85d95e1ae2fc746830db10128f809d4f93d3b1c02516dc9d98420c741d481b86",
+    "stage2a_retry_remaining_v3.py": "8939024eb79db040704b75b2c2cd8be261c25776a870f23c5ab1bd069ce2ea8d",
+    "stage2a_retry_remaining_v4.py": "896b0e5d821c7e189ecf6e00c4fb13014e16b090ab3140bfaaccde72ee9ede0e",
+    "stage2a_solver_polish.py": "180575a91a4997dc32d4ad35e906d4e9d2de70ea1a205817f424c1f6e221e5cd",
+    "stage2b_compare.py": "2ff1b4d7e80891641e7bd762781a47d993b12966d1a4c38d52463f796692f3bc",
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_heat_dynamic_compare.py": "878e76064f4e074d29baf0a2d7532787465230d9553976aa82c655f79fe85802",
+    "stage2b_heat_full_spectrum.py": "843a57fe89b7ee43a8075fcf9854452ed3eec79d488d4ee2eac1cf6877ff6226",
+    "stage2b_numerical_retry.py": "39308c9a5e4f8e545a63a892b8673042eaf65d6d608f779ffea81decc7cd1298",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2b_smoothed_irl1.py": "596b67be74539a8fe3fffbabca329e8239e9b9d8d0b6ad98fc57b2980e41987d",
+    "stage2c_extended_matrices.py": "087dee6f0940dcaf3a6ddc641186382f8b1102135af05a534e7d64ff8e0ada33",
+    "stage2c_numerical_retry.py": "1a822cda1184c493b58f0835cbf781a3193cb55ee0aa7871e8ef1cb746117c94",
+    "stage3_campaign.py": "1d85114a3d185cd000add6b217dc08a3f4fb90784100c95db0592cec3dfa6b58",
+    "stage3_campaign_preflight.py": "87d746ddb578d1dca0f94d49ca8a60407abfa402ae36d17848128e9308547a9f",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe",
+    "stage3_data_v2.py": "f12043f27dacae8746cef4879c7769ea11cdd037f26609e1749218df285b41d4",
+    "stage3_freeze.py": "fe38edde0ea0ef8bd31e1e0447d207f8190118168957e128a97ce67227ab512e"
+  },
+  "target": "u_tt",
+  "selection_manifest": {
+    "file": "stage3_campaign\\wave_sigma_0p05_seed_1000\\selection_manifest.json",
+    "sha256": "16ada33f839dd11db6a6d0c56f670943bcfe7c088ba638cf52eedc7e7b0c4ea5"
+  },
+  "numpy_version": "2.2.5",
+  "trajectories": [
+    {
+      "trajectory_id": 6,
+      "split": "test",
+      "parameters": {
+        "cos_coefficients": [
+          -0.36642899096928516,
+          -0.625207982314467,
+          -0.5191355226983038,
+          0.418556778787191,
+          -0.41456647720011475,
+          -0.22452843689269658
+        ],
+        "sin_coefficients": [
+          -0.04883365505726156,
+          0.16346815662728909,
+          -0.14692724696153459,
+          0.009905412821762272,
+          -0.45496932557950776,
+          0.045243308720011366
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.6011306657575434
+    },
+    {
+      "trajectory_id": 7,
+      "split": "test",
+      "parameters": {
+        "cos_coefficients": [
+          0.8042205653118387,
+          -0.5753456443949845,
+          -0.3315261344211181,
+          -0.41351951551106975,
+          -0.26576519581976477,
+          0.33701355205903344
+        ],
+        "sin_coefficients": [
+          -0.27474782344735227,
+          -0.1412125933856,
+          -0.10597985085613737,
+          0.23988919747784454,
+          0.2523413780300895,
+          -0.24071537860943193
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.6475081809015848
+    },
+    {
+      "trajectory_id": 8,
+      "split": "test",
+      "parameters": {
+        "cos_coefficients": [
+          -0.6735868151359631,
+          -0.4330336108663768,
+          0.411639496572109,
+          0.21993324365382158,
+          0.26353413045557267,
+          -0.3709425966767674
+        ],
+        "sin_coefficients": [
+          -0.47144402697668664,
+          0.3351364448641383,
+          0.05517065661296827,
+          -0.394134607255189,
+          0.051789387698818024,
+          -0.0844226117330319
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.5971071811383993
+    },
+    {
+      "trajectory_id": 9,
+      "split": "test",
+      "parameters": {
+        "cos_coefficients": [
+          -0.6370451673071822,
+          -0.6852904382971152,
+          0.2669952116429119,
+          0.45677641336926367,
+          0.4313928160349035,
+          -0.18214885386903765
+        ],
+        "sin_coefficients": [
+          0.3889360574199765,
+          0.31739967370504685,
+          -0.4671543823899842,
+          0.19895833357014736,
+          0.27085704511058806,
+          0.2587861670907776
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.6966849434588986
+    },
+    {
+      "trajectory_id": 10,
+      "split": "test",
+      "parameters": {
+        "cos_coefficients": [
+          0.9216441956193695,
+          0.5929150420148229,
+          -0.28399310781052756,
+          0.42858694180060836,
+          0.317652823643691,
+          -0.30099393622127324
+        ],
+        "sin_coefficients": [
+          0.3896994678205482,
+          0.19777763053209318,
+          -0.017512785184614854,
+          -0.09730530146984773,
+          -0.033386096467252546,
+          -0.05608680774890484
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.664008980033682
+    },
+    {
+      "trajectory_id": 11,
+      "split": "test",
+      "parameters": {
+        "cos_coefficients": [
+          0.6927939581387315,
+          -0.6261644686279667,
+          -0.263897929547246,
+          0.2595388874199,
+          -0.19831422504492346,
+          -0.24610201448193184
+        ],
+        "sin_coefficients": [
+          0.35508568574593946,
+          -0.43438266227807465,
+          0.28321991119360035,
+          -0.49700674378808296,
+          -0.18653818303225667,
+          -0.23998523917056747
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.6604278008636867
+    }
+  ],
+  "noise_model": "additive Gaussian sigma*std(clean trajectory), paired standard noise across sigma",
+  "noise_seed_sequence": "[20261106, frozen case index, noise seed, trajectory_id]",
+  "normalization": "none; fit normalization from training matrices only",
+  "clean_values_saved": false,
+  "analytical_derivatives_returned": false,
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        257
+      ],
+      "sha256": "7c2da848e1a65232b381a0ab7027160ef8a69a27b4db90535d6a0d98b9a9aabe"
+    },
+    "t": {
+      "shape": [
+        257
+      ],
+      "sha256": "7c2da848e1a65232b381a0ab7027160ef8a69a27b4db90535d6a0d98b9a9aabe"
+    },
+    "u_0": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "60c065fd33c7f9341a7969e33557d9236317989bac2d6692afa72f836ed5f8c1"
+    },
+    "u_1": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "658c93c587bf3cf7f643b16199c8fa538a63cc48b937b31f17452393285581fe"
+    },
+    "u_2": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "65d0b4bb9fea17524880484479340402bfb65719d3c7dd3989782b5988b69b01"
+    },
+    "u_3": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "f8354521da9dee3b0b640b4e22b7ad455fecd89e9d3a46ac9cf2c8df3ab696f7"
+    },
+    "u_4": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "f146ca0ab90b06b66c4dfbcc2edff099a9f0873c18143d3ab17a89d4f32b44b4"
+    },
+    "u_5": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "aee698af28a279bc77ed24e23b6c44cbf1341fc7b26543e8831e60d4d7f039e7"
+    }
+  },
+  "npz_sha256": "e3a2d4c4f9b111bcb558b0b36c087490b9102010e06083fc4a66f159f7e1f788"
+}

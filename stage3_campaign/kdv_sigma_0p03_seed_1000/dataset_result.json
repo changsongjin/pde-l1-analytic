@@ -1,0 +1,695 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "kdv",
+    "sigma": 0.03,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/selection_manifest.json",
+    "sha256": "3826f70ba9c931b7a131bc9a6a1a5166563ab6728259fe23e8e2ff0186e5e7a8"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_L1/method_result.json",
+      "sha256": "3da3993bb9aa9e51c584b02f210e635f76da34599c8734908b6c06a924d364d6"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "5f660afad2e9f616fd3400c75f1f319384547c6b725cb590bfde5b841cb3f325"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "adb537afca7f69d0e350fa7364d7c821baa068e5743f7a3f061e07d840d89092"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "cf3f31c909bd68347cd5b2f9f29b895bc35a100ae161ae160e366992a5b083fe"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_L1/method_result.json",
+      "sha256": "abdab034b53b3ecf6df2d69d09e0f261e19e13538bc3e01350ac80a5b1ddd009"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "27cd23f40981006f5c1ec0e477e4376bd9cc748f1a318dcc0bfeceee5b55dc9c"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/test_evaluation_result.json",
+    "sha256": "41dbdf73cecd21c47e8400bb5390667f20de9eab6e65c5c9bea80b9937a43f4b"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x",
+        "D_x^1(cos(1u))"
+      ],
+      "complexity": 5,
+      "validation_error": 0.17436474138529467
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 15,
+      "support": [
+        "1",
+        "u_xxxxxx",
+        "u_xxxxx",
+        "u_xxx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u_x^4 u_xx",
+        "u u_x",
+        "t u_xxxx",
+        "t u_xxx",
+        "t u u_x",
+        "t u^2 u_x",
+        "t^2",
+        "t^2 u_xxxxx",
+        "t^2 u_xxxx",
+        "t^2 u_xxx",
+        "t^2 u_xx",
+        "t^2 u_xx u_xxxx",
+        "t^2 u_x u_xxxx",
+        "t^2 u_x^2",
+        "t^2 u_x^4 u_xx",
+        "t^2 u",
+        "t^2 u u_xx",
+        "t^2 u u_x u_xx",
+        "t^2 u^4 u_x^2 u_xxxx",
+        "t^2 u^6",
+        "t^2 u^7",
+        "t^2 u^7 u_x",
+        "x u_xxxxxx",
+        "x u_xxxxx",
+        "x u_xxx",
+        "x u_x",
+        "x u_x u_xxxx",
+        "x u",
+        "x t",
+        "x t u_xxxxxx",
+        "x t u_xxxxx",
+        "x t u_xxx",
+        "x t u_xx",
+        "x t u_x u_xxxx",
+        "x t u_x u_xx u_xxx",
+        "x t u^6 u_xx u_xxx",
+        "x t u^6 u_x u_xxxx",
+        "x t u^7 u_xxxxx",
+        "x^2 u_xxxxx",
+        "x^2 u_xx",
+        "x^2 u_x u_xxxxx",
+        "x^2 u_x u_xxxx",
+        "x^2 u_x u_xx",
+        "x^2 u_x^2 u_xx^2",
+        "sin(1u)",
+        "sin(2u)",
+        "D_x^3(sin(3u))",
+        "D_x^4(sin(3u))",
+        "D_x^3(cos(1u))",
+        "D_x^4(cos(3u))",
+        "D_x^1(exp(-2u))",
+        "D_x^2(exp(-2u))",
+        "D_x^2(exp(-1u))",
+        "D_x^3(exp(-1u))",
+        "D_x^1(exp(1u))",
+        "D_x^3((1+u^2)^(-1))"
+      ],
+      "complexity": 508,
+      "validation_error": 0.017501771888017693
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "D_x^1(cos(1u))"
+      ],
+      "complexity": 3,
+      "validation_error": 0.24165401001972808
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 5,
+      "support": [
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "complexity": 21,
+      "validation_error": 0.03557655811713851
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 6,
+      "support": [
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u u_x",
+        "u u_x u_xx",
+        "u^2 u_x"
+      ],
+      "complexity": 27,
+      "validation_error": 0.035561175289302124
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 8,
+      "support": [
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u",
+        "u u_x",
+        "u u_x u_xx",
+        "u^2 u_x"
+      ],
+      "complexity": 32,
+      "validation_error": 0.035515779604030684
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 9,
+      "support": [
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u_x^3",
+        "u",
+        "u u_x",
+        "u u_x u_xx",
+        "u^2 u_xx",
+        "u^2 u_x"
+      ],
+      "complexity": 43,
+      "validation_error": 0.034414514656939274
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 11,
+      "support": [
+        "1",
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u_x^3",
+        "u",
+        "u u_xxx",
+        "u u_xx",
+        "u u_x",
+        "u u_x u_xx",
+        "u u_x^2",
+        "u^2 u_xxx",
+        "u^2 u_x"
+      ],
+      "complexity": 59,
+      "validation_error": 0.03325605619038956
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 12,
+      "support": [
+        "1",
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u_x^3",
+        "u",
+        "u u_xxx",
+        "u u_x",
+        "u u_x u_xx",
+        "u u_x^2",
+        "u^2",
+        "u^2 u_xxx",
+        "u^2 u_x"
+      ],
+      "complexity": 57,
+      "validation_error": 0.033302863527358346
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 14,
+      "support": [
+        "1",
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u_x^3",
+        "u",
+        "u u_xxx",
+        "u u_xx",
+        "u u_x",
+        "u u_x u_xx",
+        "u u_x^2",
+        "u^2",
+        "u^2 u_xxx",
+        "u^2 u_xx",
+        "u^2 u_x",
+        "u^3"
+      ],
+      "complexity": 69,
+      "validation_error": 0.03312401896593331
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "complexity": 7,
+      "validation_error": 0.03672401449765915
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 11,
+      "support": [
+        "1",
+        "u_xxxxx",
+        "u_xxxx",
+        "u_xxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u",
+        "u u_x",
+        "u^2 u_x",
+        "u^3 u_x u_xxxx",
+        "t u_xxxxx",
+        "t u_xxxx",
+        "t u_xxx",
+        "t u",
+        "t u u_x",
+        "t u^2 u_x",
+        "t^2 u_xxxxxx",
+        "t^2 u_xx",
+        "t^2 u_x u_xx",
+        "x",
+        "x u_x",
+        "x u",
+        "x t u_xxx",
+        "x t u^7 u_xxxxx",
+        "x^2",
+        "x^2 u u_x^4 u_xx"
+      ],
+      "complexity": 177,
+      "validation_error": 0.019081766560601687
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 13,
+      "support": [
+        "1",
+        "u_xxxxx",
+        "u_xxxx",
+        "u_xxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u",
+        "u u_x",
+        "u^2 u_x",
+        "u^4 u_x u_xxxx",
+        "t u_xxxxx",
+        "t u_xxxx",
+        "t u_xxx",
+        "t u_x u_xx",
+        "t u",
+        "t u u_x",
+        "t u^2 u_x",
+        "t^2 u_xxxx",
+        "t^2 u_xxx",
+        "t^2 u_xx",
+        "t^2 u_x u_xx",
+        "t^2 u_x^4",
+        "t^2 u u_x^3 u_xx",
+        "t^2 u^5 u_x^2 u_xxxx",
+        "x",
+        "x u_xxx",
+        "x u_xxx^2",
+        "x u_x",
+        "x u",
+        "x t u_xxxxx",
+        "x t u_xxxx",
+        "x t u_xxx",
+        "x t u_x u_xxxx",
+        "x t u_x^2 u_xx",
+        "x t u^7 u_xxxxx",
+        "x^2",
+        "x^2 u_xxxxx",
+        "x^2 u_xx"
+      ],
+      "complexity": 293,
+      "validation_error": 0.019041644451738747
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 14,
+      "support": [
+        "1",
+        "u_xxxxx",
+        "u_xxxx",
+        "u_xxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u",
+        "u u_x",
+        "u^2 u_x",
+        "u^6 u_x u_xxxx",
+        "u^7 u_xxxxxx",
+        "t u_xxxxx",
+        "t u_xxxx",
+        "t u_xxx",
+        "t u_x u_xx",
+        "t u u_x",
+        "t u^2 u_x",
+        "t^2 u_xxxxx",
+        "t^2 u_xxxx",
+        "t^2 u_xxx",
+        "t^2 u_xx",
+        "t^2 u_x^2",
+        "t^2 u_x^4",
+        "t^2 u",
+        "t^2 u u_x^3 u_xx",
+        "t^2 u^5 u_x^2 u_xxxx",
+        "t^2 u^7 u_xxxxx",
+        "x",
+        "x u_xxxxxx",
+        "x u_xxxxx",
+        "x u_xxx",
+        "x u_x",
+        "x u",
+        "x t u_xxxxx",
+        "x t u_xxxx",
+        "x t u_xxx",
+        "x t u_x u_xxxx",
+        "x t u_x^2 u_xx",
+        "x t u^7 u_xxxxx",
+        "x^2",
+        "x^2 u_xxxxxx",
+        "x^2 u_xxxxx",
+        "x^2 u_xx",
+        "x^2 u_x u_xxxx"
+      ],
+      "complexity": 358,
+      "validation_error": 0.018323329377754726
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 15,
+      "support": [
+        "1",
+        "u_xxxxxx",
+        "u_xxxxx",
+        "u_xxxx",
+        "u_xxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u",
+        "u u_x",
+        "u^2 u_x",
+        "u^4 u_x^3 u_xx",
+        "u^6 u_x u_xxxx",
+        "u^7 u_xxxxx",
+        "t u_xxx",
+        "t u_xx u_xxxx",
+        "t u",
+        "t u u_x",
+        "t u^2 u_x",
+        "t u^3 u_x^4 u_xx",
+        "t^2 u_xxxxx",
+        "t^2 u_xxxx",
+        "t^2 u_xxx",
+        "t^2 u_xx",
+        "t^2 u_x^2",
+        "t^2 u_x^2 u_xx",
+        "t^2 u",
+        "t^2 u u_x u_xx",
+        "t^2 u^2 u_x^3 u_xx",
+        "t^2 u^3 u_x^2 u_xxxx",
+        "t^2 u^4 u_x^2 u_xxxx",
+        "t^2 u^5 u_xxxxx",
+        "t^2 u^8",
+        "x",
+        "x u_xxxxxx",
+        "x u_xxxxx",
+        "x u_xxx",
+        "x u_x",
+        "x u",
+        "x u^6 u_x u_xxxx",
+        "x t",
+        "x t u_xxxxxx",
+        "x t u_xxxxx",
+        "x t u_xxxx",
+        "x t u_x u_xxxx",
+        "x t u_x u_xx",
+        "x t u_x^2 u_xx",
+        "x t u^7 u_xxxxx",
+        "x^2",
+        "x^2 u_xxxxxx",
+        "x^2 u_xxxxx",
+        "x^2 u_xx",
+        "x^2 u_x u_xx",
+        "x^2 u u_xxxxxx",
+        "x^2 u^2 u_x^2 u_xxxx"
+      ],
+      "complexity": 476,
+      "validation_error": 0.017754624122834215
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "complexity": 7,
+      "validation_error": 0.03672401449765915
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/selection_manifest.json",
+      "sha256": "3826f70ba9c931b7a131bc9a6a1a5166563ab6728259fe23e8e2ff0186e5e7a8"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/test_evaluation_result.json",
+      "sha256": "41dbdf73cecd21c47e8400bb5390667f20de9eab6e65c5c9bea80b9937a43f4b"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/fit_matrices.json",
+      "sha256": "0481dcf467b6e044aab15d4ccdcfd79b701853e862354f70f618bb606338937f"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/fit_matrices.npz",
+      "sha256": "0b63a4e931e06c579562cf8ba21a13255b6b315f830f7801826d3724e69f249e"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/test_matrices.json",
+      "sha256": "2111208dfb13ae754756a6181072353c2e42642f0ea259ea57115511967628d5"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/test_matrices.npz",
+      "sha256": "127a3b755ba15697a17f392efaa8592f5fb2d3e2f8cf51241b6cd22c57088b0f"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_L1/method_result.json",
+      "sha256": "3da3993bb9aa9e51c584b02f210e635f76da34599c8734908b6c06a924d364d6"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "5f660afad2e9f616fd3400c75f1f319384547c6b725cb590bfde5b841cb3f325"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "adb537afca7f69d0e350fa7364d7c821baa068e5743f7a3f061e07d840d89092"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "cf3f31c909bd68347cd5b2f9f29b895bc35a100ae161ae160e366992a5b083fe"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_L1/method_result.json",
+      "sha256": "abdab034b53b3ecf6df2d69d09e0f261e19e13538bc3e01350ac80a5b1ddd009"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "27cd23f40981006f5c1ec0e477e4376bd9cc748f1a318dcc0bfeceee5b55dc9c"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_L1/job.json",
+      "sha256": "c7c5eb30b78f181e8fdde483070f788f7222f245981ae9d78bfab3d42207cda7"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "10443ac823c091d6189e7280f7be850c7839537303a7c83e722e97af97f39a27"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_L1/job.json",
+      "sha256": "9ff35853ac486dae2eb49a4c7a65ee89ee75f6af0b7b3c2f4fb57690f1429e1a"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "cf82c945f8c708891e66031188f956dad62d23414cb2e565915d53f6f4bcb6b4"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_L1/job.json",
+      "sha256": "698f7a439d72b60b40adfa69e136ecfb1d4c4853d63e9ec858828012b2228af7"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "fc76bfeb403495e2827a09c5f84b9c00dfe91fbe78e1c7b4358ad1a53d99ad02"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_L1/path_result.json",
+      "sha256": "ad4ba1c08b4b3ed497717296a185d76bdb0a92ba3d1b897a6205f24df38fd25d"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "08cb0d956101d1a51b3d3c0f1402ee22e9af2cde82ea53a03227f1734059e3fc"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_L1/path_result.json",
+      "sha256": "7a919d0165bce446441bb4ac289d7f123be0a75abb1007cee8c48aa4b56352b6"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "ff5fd1a099d9772248742f731ba71496e526c1f6e693d761af839fe965b35080"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_L1/path_result.json",
+      "sha256": "6c1baf8f8f01439da01a2bc09b0884f9c7f934a94f7c8c0d671f8e7a6f3fb375"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "ab77aac51a9fa2156f7d3689d03044590d92c3fffce89ac73afcefa0035404c4"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.37786970008164644,
+    "fit_matrix": {
+      "action": "build",
+      "seconds": 47.14528990001418,
+      "metadata": {
+        "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/fit_matrices.json",
+        "sha256": "0481dcf467b6e044aab15d4ccdcfd79b701853e862354f70f618bb606338937f"
+      },
+      "npz": {
+        "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/fit_matrices.npz",
+        "sha256": "0b63a4e931e06c579562cf8ba21a13255b6b315f830f7801826d3724e69f249e"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 0.7516866000369191,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 47.71776419994421,
+      "metadata": {
+        "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/test_matrices.json",
+        "sha256": "2111208dfb13ae754756a6181072353c2e42642f0ea259ea57115511967628d5"
+      },
+      "npz": {
+        "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/test_matrices.npz",
+        "sha256": "127a3b755ba15697a17f392efaa8592f5fb2d3e2f8cf51241b6cd22c57088b0f"
+      }
+    },
+    "test_evaluation": 0.025424899999052286
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

@@ -1,0 +1,4791 @@
+{
+  "stage": "3_systematic_noise_campaign",
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "source_sha256": {
+    "gml1_maxlib_compare.py": "2b3fcfb623e3e2888a83c87dd1443816e921f93ecb75be101ffd1c5c0a730f1d",
+    "inverse_burgers.py": "8681efadb4444d5a7ff507651c2c7833d6f2ecfe7f7af198d985b239902f8880",
+    "inverse_irl1.py": "b6c42667fd8c23ebfb42320fe0c88e36b0b50e1695129c0836d29bbe13923396",
+    "lasso_exact.py": "714a4fb3f4192d13654a44a93eeac003302b85610a3b715a3da6830a86889093",
+    "library_effect_audit.py": "49662a4cd52a858c1edc6495e4fba84ff48ba753c19afc39244b3d07590e06ca",
+    "maxlib_first.py": "1bac4409850cfcd2fef98acfd2d751be058da5c5cf0eb06e2128723e5cc6b4a4",
+    "maxlib_irl1.py": "3dffd3a2db384805405e4508071f455460cc3ec6aca0cfb773622c63589b36d5",
+    "noise_inverse.py": "d7041dab4ec38dd2e00f135635f0761c62e3011391355bf5a29d34ec06b4c195",
+    "noise_inverse_biglib.py": "ae09b180c0b086ba8ac43f1abbe90a9cd0de7425c99071c72b5365c46d48b219",
+    "redo_two.py": "0923afdf5a4e73f6461c9b3da60e7f97c96f0af2fd677a7e9df2d86ba4df6ab7",
+    "stage0_data_bundle.py": "18845ff7841868451b592c057e66c608a3ef38e01b5b062bd78a558b9dace2a3",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage2_field_check.py": "b9973cc7e9f37e92716ca8221bac2185767b300601f3c151efeb49285c5339e5",
+    "stage2_identifiability.py": "6df16402211adf8b2883135cf64273f8f82f0cdec7810f8f36fd95e605ef04f0",
+    "stage2a_baseline.py": "d7c8ef9c2fc8f75161e268d69c43001b8da8065ea65837f9f9df6e6a2ba6b3f8",
+    "stage2a_clarabel_probe.py": "a5ffb21ae8eb7480c456cf90d86fb3bb9eb468ec6ded3a1dfebf0a73217ecd7a",
+    "stage2a_l1_paths.py": "f4c680117d14e4d5d5b2ac1ee43b660acaf2f660c244612448f5adbc6ab368a9",
+    "stage2a_reconcile_remaining.py": "85d95e1ae2fc746830db10128f809d4f93d3b1c02516dc9d98420c741d481b86",
+    "stage2a_retry_remaining_v3.py": "8939024eb79db040704b75b2c2cd8be261c25776a870f23c5ab1bd069ce2ea8d",
+    "stage2a_retry_remaining_v4.py": "896b0e5d821c7e189ecf6e00c4fb13014e16b090ab3140bfaaccde72ee9ede0e",
+    "stage2a_solver_polish.py": "180575a91a4997dc32d4ad35e906d4e9d2de70ea1a205817f424c1f6e221e5cd",
+    "stage2b_compare.py": "2ff1b4d7e80891641e7bd762781a47d993b12966d1a4c38d52463f796692f3bc",
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_heat_dynamic_compare.py": "878e76064f4e074d29baf0a2d7532787465230d9553976aa82c655f79fe85802",
+    "stage2b_heat_full_spectrum.py": "843a57fe89b7ee43a8075fcf9854452ed3eec79d488d4ee2eac1cf6877ff6226",
+    "stage2b_numerical_retry.py": "39308c9a5e4f8e545a63a892b8673042eaf65d6d608f779ffea81decc7cd1298",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2b_smoothed_irl1.py": "596b67be74539a8fe3fffbabca329e8239e9b9d8d0b6ad98fc57b2980e41987d",
+    "stage2c_extended_matrices.py": "087dee6f0940dcaf3a6ddc641186382f8b1102135af05a534e7d64ff8e0ada33",
+    "stage2c_numerical_retry.py": "1a822cda1184c493b58f0835cbf781a3193cb55ee0aa7871e8ef1cb746117c94",
+    "stage3_campaign.py": "1d85114a3d185cd000add6b217dc08a3f4fb90784100c95db0592cec3dfa6b58",
+    "stage3_campaign_preflight.py": "87d746ddb578d1dca0f94d49ca8a60407abfa402ae36d17848128e9308547a9f",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe",
+    "stage3_data_v2.py": "f12043f27dacae8746cef4879c7769ea11cdd037f26609e1749218df285b41d4",
+    "stage3_freeze.py": "fe38edde0ea0ef8bd31e1e0447d207f8190118168957e128a97ce67227ab512e"
+  },
+  "datasets": {
+    "heat_sigma_0p0_seed_1000": {
+      "dataset": {
+        "case": "heat",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+            "sha256": "51463d17449772807762022256cd02a080e823da67e37606b1bdb8e9db7315c4"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "3fe66264d192387c438b0d4c413873a4adfb9f7817781cdf9ed50a371127547a"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p0_seed_1000/J18_L1/method_result.json",
+            "sha256": "d77c8379d306162183357ac700e0c31766e13de3543c43ed75fe4ba743074d3c"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "05fa06e25d530def44e9919044420b229211c49c9306ee75475706d530d59a1f"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+            "sha256": "f688c9efc72e35f854c5a2bfc9b2c70ecfa4576aa16383d9ec70d4cd63d7e562"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "daf718089ea6a2723abee20e150de93dd878ac2ef9b1b4ad7b2a90298de6f7ee"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/heat_sigma_0p0_seed_1000/dataset_result.json",
+        "sha256": "6a7a6ebff94b6dcee489ea42ecc217c4e27477cecad39419de6a9becf02217e4"
+      }
+    },
+    "wave_sigma_0p0_seed_1000": {
+      "dataset": {
+        "case": "wave",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+            "sha256": "0469b9e5f74dad62a191aeb56137c608aa5b251650273e410df81bdc2363305a"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "7059be253486b13cca68a1a5f6de2f53ce09a4993c5dea565fe8f2c70f918822"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p0_seed_1000/J18_L1/method_result.json",
+            "sha256": "8307c84d2a2df05f1dc88d5c3854102a2d70bde4aa324e95d892db0181fe7eba"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "58d1a4370de992d5616a5cede5844d990bd5f3d248183403b60fcf630e94080d"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+            "sha256": "373ea3f0ac3059aebad88799b68816ff3fce19cbf0f65ad06ee495e2a523221e"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "74e95ceae3b7bcfb99d261bd8d513e1a2d9724880daeb0ec6ccfca5f099cbc2f"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/wave_sigma_0p0_seed_1000/dataset_result.json",
+        "sha256": "38724b18da7eaa33688b4956315a8a4d5f14399d0479feb5e7780bd1034a1b87"
+      }
+    },
+    "advection_diffusion_sigma_0p0_seed_1000": {
+      "dataset": {
+        "case": "advection_diffusion",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+            "sha256": "a34261d67c7a990fb167950efd38595d901fec9ff3eb0d4d5544721e5a15f31e"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "fbca0e004a1e8f9272f14cf4f7c1f5f97e346451c69a0717f920bff88e167fcb"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p0_seed_1000/J18_L1/method_result.json",
+            "sha256": "0c4095e774e5d571b370c56de141c61b1ccb68b80c6d544d16fd7ccc93b3e0f9"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "6091a875ea5e346f6fc2dd2c382fe69954e59ba62b63e1e2aa84b85ab238c09d"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+            "sha256": "5678319810c1a26d49e05dcb91c466d2f4a4b15449f457148b78ad6ceb0f56e4"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "3643127a0206c661219e6299c95ecd136ebd2a48153a58e458b6e0fd90b7fe51"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/advection_diffusion_sigma_0p0_seed_1000/dataset_result.json",
+        "sha256": "dd329867778b5eb09430ee47838616efd55fae50d019366520e6fb3218870878"
+      }
+    },
+    "burgers_sigma_0p0_seed_1000": {
+      "dataset": {
+        "case": "burgers",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+            "sha256": "ba1a2201c30e06605318d8fa8b415d6eff25183e0d0f3e9c721fd15e47df6128"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "d95efcc129de403968191b1f6b6e64918b260699c016495033ab890d24d0cc3b"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_L1/method_result.json",
+            "sha256": "6046e7d0ae48de18e43562fa4320e3048715dd3d672c4dce6270a7b9fd8d732f"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "d9cceb23f2db53f039470643eb80d6003ab0fd04c16bca7f8d3b2f02a736a4a0"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+            "sha256": "dee17439914548cd81687771771aaca06385856764c9b82782b116fa30586fa6"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "a43bd0d447fd6bf6d5ed32847771b705f280ed47fa4a61a34ab9055c4abe6cc7"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/dataset_result.json",
+        "sha256": "8059b4813b3f5b6584cda0822848c782a9acc890311de9f79c59841650f8f440"
+      }
+    },
+    "kdv_sigma_0p0_seed_1000": {
+      "dataset": {
+        "case": "kdv",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+            "sha256": "ddb5b61875695db5ec1cc5e225a59047e8046cb6e7136e148ebdf4b5def52c6e"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "b34fd7de0678ae9b1c6d9fcc940c7608e2311f647fc63ad9b1314412522f7442"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_L1/method_result.json",
+            "sha256": "f5dab24c17c5b2333d6afe45c4d7603d22dde7e8f7601eb7d03cace9b179c16a"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "2fa82a1143f531cffd7455769826de5e1fab3b115841718bab7cb1d22caa731d"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+            "sha256": "66f94e6f3ab96c6648c00f1347ac64b600f836117873c49c5a81747bf9164f8b"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "2e38b05c1ae9a70f0bc39d0928aff0aa223ecbda308a2e4fae39a0fe9d83f392"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/dataset_result.json",
+        "sha256": "40602997b7965e4134bc07fc8cbfc3ad6a13438aaf669555466e5bfadd044754"
+      }
+    },
+    "logheat_sigma_0p0_seed_1000": {
+      "dataset": {
+        "case": "logheat",
+        "sigma": 0.0,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+            "sha256": "e32cd3d3a6916456d76eddcce0cb72f2d3da636529a4fa4d2df8b2dd1f60bee0"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "73c89f97f0acf7e8d59f3e2e264137e010a5c0abe9b9dba932cd306c058787a3"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p0_seed_1000/J18_L1/method_result.json",
+            "sha256": "6fbafe7cabc818894446e24b8cfc153c91fc7bc87182c3cd51e110ba17af2e63"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "15a4019990313164e46e8418275984366dca6168a957904e6c39e10a1e82c6f5"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+            "sha256": "c3b178797b42b90dee3a1ae2e01bcb2c19a167b47d5525dca50b76bfb5b8fde6"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "cd6c1d1f8f619b9529d6f9951fb5e385415945db79b89a61ed1d17711b41553c"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/logheat_sigma_0p0_seed_1000/dataset_result.json",
+        "sha256": "18166bca40b2cb8545e8a0a8149cd2476445e89dfeb713e2926fd146cbe2b8a6"
+      }
+    },
+    "heat_sigma_0p01_seed_1000": {
+      "dataset": {
+        "case": "heat",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+            "sha256": "c441317394cab6de5218404431e2a534ac1fe87212c5b373db5047b0b2f16172"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "9bbd3599cfa6f8e81cbde5e4f42e0815f2b6ae7720e370f7294e37ef2ed23523"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p01_seed_1000/J18_L1/method_result.json",
+            "sha256": "2e7303bd9af7f9c8a71e3962ec5f067f959d6ea028a21a60d6ae15a447d220cb"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "2287df8f664dba7a387bd67b3aa77c759b9669142e873fe19a9810a437bbf1fb"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+            "sha256": "1636959145d8d38412428b0af09d115e9d0e23745ae0bfa8e8a0dac29162aa4e"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "13873459eb0998206351d8d76ef9c468f4847c641ceebebd48495f064d5fe06a"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/heat_sigma_0p01_seed_1000/dataset_result.json",
+        "sha256": "6508dba350dc4e126c808d07a8b35875895df75d296b20693721591653777536"
+      }
+    },
+    "wave_sigma_0p01_seed_1000": {
+      "dataset": {
+        "case": "wave",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+            "sha256": "b3472a5c9331ee0bc6f0c77d772fc41fb4bad99bd0d6f2a80fc80f9deba92792"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "ba88eee06a4c6f9be90273d895a0d4c416c8567a4c4a8931ea4c2904f744bbda"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_L1/method_result.json",
+            "sha256": "8f5fe479e3791d2c1b137afe7c31a5b21217f8fa17176b9bf888510e81e830b9"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "08ccc6ff13438a04aa3f861e2d20a15f77fb8ac3245e4b3f4282d88c6d682a4b"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+            "sha256": "13c92a37b5662afda3cd52063b0f3d4c162b64c8655be62637d1aa4bfec858a3"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "8e3938e2f106e4e1c45744f7b2c2929ac226cae74aec06add8b344570362a885"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/wave_sigma_0p01_seed_1000/dataset_result.json",
+        "sha256": "c42af5cea5281ab4d51005b1ad575d1d36628162a907d1b8b71678e074f2a07b"
+      }
+    },
+    "advection_diffusion_sigma_0p01_seed_1000": {
+      "dataset": {
+        "case": "advection_diffusion",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+            "sha256": "f05a0f6ae926c92558c29945dac1eeb26365fd14395a8aef9671f6aee3870186"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "59292b3d33e0a73bce8e854f2e85061d177ee811d02ddcda6e22aaf6c6ad8c97"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p01_seed_1000/J18_L1/method_result.json",
+            "sha256": "a141ae1681807aec9f7aa9543d004d409a9686537f726c156c61b486928e086a"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "5a860af8dd6e85d3294fe1264dd4d4c038c678706a56920615f8fed448c8c068"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+            "sha256": "b505d81ba5c80aec64b55bfe811b68e29fd32ff7e9f5d7957d69dd451d7baa6f"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "c26684b690490ea07a504e14583a3cb5690f8aa71fa11b018777023bc972a232"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/advection_diffusion_sigma_0p01_seed_1000/dataset_result.json",
+        "sha256": "69729b5c6d1876c11a0e73036369d21908288cc3301d2d99936c92225e0dd130"
+      }
+    },
+    "burgers_sigma_0p01_seed_1000": {
+      "dataset": {
+        "case": "burgers",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+            "sha256": "a9f6107850928cccba3d11ddda3cf85a25515be9b0babef08ad8230e97bcd856"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "487a3c958c04d74c308505068b3d443478757ca2f9a795ab6e6e74efe5f5af96"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p01_seed_1000/J18_L1/method_result.json",
+            "sha256": "fbabd3153f016f82e2e1910c079eea8b396a6ef0a420dbb47ef748f7acb8c34a"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "0d8b00e29d63498bf7550f9cc6b18f5535b3df0ea4fb3f8c57506de6c29b44a0"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+            "sha256": "a39fe480b3e7ecb4c0a192225c26935450ec9ab5997fe77fae16ff9f0e29be01"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "af1f05160b1548c7ffaa872a2ee772dea1289371e6220def066db02c3fe1cb28"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/burgers_sigma_0p01_seed_1000/dataset_result.json",
+        "sha256": "0b64a6d57250678d85d7bc2d39327480b7186108384fb09012004f966ac2cbaf"
+      }
+    },
+    "kdv_sigma_0p01_seed_1000": {
+      "dataset": {
+        "case": "kdv",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+            "sha256": "f7bba75117aa513e9f77ac9e9c89245ce3c1a6f9962e84b05a67a338e8dddb41"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "a89f2c7042b6f69b581181674ac0cd5c3123ac9636b8096d24bacc9f9e62e795"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p01_seed_1000/J18_L1/method_result.json",
+            "sha256": "628a56410d562a9995771c9fa0993a0a7962c6bb5dc94f8c0eb60cd45c7cb313"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "789b5e328bcbdd85dce687a310f7f2bc709b6422cf8fc248de4e6c5c28c0f243"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+            "sha256": "419c0268cd9877091a11be72babde213724c572d259d1890b7d565449e12468b"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "0e1949b57c8b3ca4c90d27ff90ec46f719a0148d415d9e7bef49aac148f3412a"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/kdv_sigma_0p01_seed_1000/dataset_result.json",
+        "sha256": "e61c5c1065dca0207a26399deffe633cf2b460a281cae5fce51ea1c2fc357676"
+      }
+    },
+    "logheat_sigma_0p01_seed_1000": {
+      "dataset": {
+        "case": "logheat",
+        "sigma": 0.01,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+            "sha256": "e6747bf0e3127a23b3be4cc7c42e10005bf6c854aea8fa19223a26dcf47b2807"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "84af70d384f4167ef85154e9fca768649c3d3109ff3b35a132836bd11a3cb718"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p01_seed_1000/J18_L1/method_result.json",
+            "sha256": "30f12c2b05b0f156891fb4cdd46c0e3e346e21470c5b05f61ad1a89f7fb2e072"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "a73244a0bb4801c75adcd9b1aa68e778e55c435ac33bf027af2b5ce5c812be31"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+            "sha256": "5212145700f196446e434d9d3c54bf3e882f6a0f2ef9e536f622f854aae1764d"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "213c425b14a5c5d96769a59542e8856494bb0bcf83b8d3f4343be444861b014b"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/logheat_sigma_0p01_seed_1000/dataset_result.json",
+        "sha256": "2a76504239682ae54ea13501f7cc7eff6bf204977dcbabef33e3a0acae62c12a"
+      }
+    },
+    "heat_sigma_0p03_seed_1000": {
+      "dataset": {
+        "case": "heat",
+        "sigma": 0.03,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "45853cfb4ff36ae3e1a30545881b81f5acd810974db4746dadc64a1219bdc47e"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "efe249b554f11fc7767efcc6f92993e8f555bcd06785dc76f60a2565e96a63af"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_L1/method_result.json",
+            "sha256": "4f2b7e0ee9c782cf4e9de52f0f106b717b716f00195501b4a1c675f6c4b949a8"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "f2b28da605c6f1f4884b2446e15bfabd0e0d47b71d4cce8b752c6d4835663f4b"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "4ce8732b6dcfc3e014f3bc2d219a2395b91623811addbc5ab2d81c911ec77ac0"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "523973debc6a7498f495b4fdee84b52ec79698369faea225cd8090735fd29b6d"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/heat_sigma_0p03_seed_1000/dataset_result.json",
+        "sha256": "5f82133fb4a13e327824d1476ecdfb935f6dec11e3d96ee56f67a1d0ccabb11f"
+      }
+    },
+    "wave_sigma_0p03_seed_1000": {
+      "dataset": {
+        "case": "wave",
+        "sigma": 0.03,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "391d982664609667252d8e9bdb284a4cfd07cc4bfb4f2f5e7b2f746101e6af22"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "7dce03e2d44a9a1cdb790039dee5263cbe1edee230743417cbca506ea91724df"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p03_seed_1000/J18_L1/method_result.json",
+            "sha256": "d0c727db26af78b46e4e555448979cbf0183227bdc44ee43a9293855eef6487c"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "a8e04919de8acb88ab13a3d66616a02578701d6ab5a890934bfc79a586bbaf80"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "bbd7767d22e25da7b903e102598fda276435881b1e18c610eb3399e6849a7230"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "d2a988ca459faa2b9a51ef81c78a2a268ce6b9eb59ed4c167e78e8b461ed293b"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/wave_sigma_0p03_seed_1000/dataset_result.json",
+        "sha256": "c363a9065bc0043d4c3d441461a5569b610eb92abaeee612a8494c09de7b3d52"
+      }
+    },
+    "advection_diffusion_sigma_0p03_seed_1000": {
+      "dataset": {
+        "case": "advection_diffusion",
+        "sigma": 0.03,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "58e22cbbaf9523161c1f4030e3f71a7fd725dea977c3980ee2c2784db024fb3d"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "095b7fe4a9fe8ffb539ceef9cd9b6c1ff0da3023563c027247b16e299029c205"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p03_seed_1000/J18_L1/method_result.json",
+            "sha256": "9dd97277c005dd25fa8ed2fa1e979e30685f6aba6f1bf5eb28d683cbb4415b9e"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "92154acb280e4714895ba1b4a351568b556b28b6147b2b15f65a1a14d2883e04"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "13862dff26c9999adbc382d00aaa13639af7b1f4df01090671e92635b742e207"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "e142a131be05c19da3379630d4855320ff740294688629d120f72091cb955673"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/advection_diffusion_sigma_0p03_seed_1000/dataset_result.json",
+        "sha256": "4cea76f6f9aa713f10c9e190bc635c60a93fa30b0e2a8ced7f04dbc2b3fbd495"
+      }
+    },
+    "burgers_sigma_0p03_seed_1000": {
+      "dataset": {
+        "case": "burgers",
+        "sigma": 0.03,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_L1/method_result.json",
+            "sha256": "e2a21fc489c679d9876cc843a219ff36fb2e36f48c30cf8e3d51b6e175906f2d"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "1ad0c21f9fbee7bef27c84ef9071772d32df51f93aa61bd6ca314e0d48449cfc"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_L1/method_result.json",
+            "sha256": "a8e2f097d22223766d619d32764a8640046959d738f378bc46900949e87fa0cf"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "53c8d76b7951792c214b6dd51334f05192d15bd5694b36f278fc845eeb83cf83"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_L1/method_result.json",
+            "sha256": "bc2578ef9c0a740cd0f96bca947dbeeb043067f4dbfe51bffa3d73054bf8b0bb"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "4f35fdb8c987baeca68e17860b3285dcd3006c232800b0abdca42817dd3cf066"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/dataset_result.json",
+        "sha256": "7a87cb929920468b1634e3ac42fded8566dbd5aac703a09a7fee4cac85cca391"
+      }
+    },
+    "kdv_sigma_0p03_seed_1000": {
+      "dataset": {
+        "case": "kdv",
+        "sigma": 0.03,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_L1/method_result.json",
+            "sha256": "3da3993bb9aa9e51c584b02f210e635f76da34599c8734908b6c06a924d364d6"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "5f660afad2e9f616fd3400c75f1f319384547c6b725cb590bfde5b841cb3f325"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_L1/method_result.json",
+            "sha256": "adb537afca7f69d0e350fa7364d7c821baa068e5743f7a3f061e07d840d89092"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "cf3f31c909bd68347cd5b2f9f29b895bc35a100ae161ae160e366992a5b083fe"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_L1/method_result.json",
+            "sha256": "abdab034b53b3ecf6df2d69d09e0f261e19e13538bc3e01350ac80a5b1ddd009"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "27cd23f40981006f5c1ec0e477e4376bd9cc748f1a318dcc0bfeceee5b55dc9c"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/kdv_sigma_0p03_seed_1000/dataset_result.json",
+        "sha256": "61bbd5830ea52971a82d90b5ebc2a5df6392ff86fc76a889739f02194158b27d"
+      }
+    },
+    "logheat_sigma_0p03_seed_1000": {
+      "dataset": {
+        "case": "logheat",
+        "sigma": 0.03,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "729fa415525b1daa1f3394c174982ff8a26e2c213e373b352d8e151ff1538720"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "47e566e26ca6cc5e0e746ce78f7d66157a3c3ccf6bf669239ff445389cdec445"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_L1/method_result.json",
+            "sha256": "57bc62d5d7685e24ed0fef5e38a65d5663ab8daef3d7fde4ceb4ca2c93c2e17d"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "5c8e973be337df343e7f5cf4934ad38519796c08c597647cb4031f19b3247329"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "d65f6013fbd3d001a67e5ef6695a935196d74359e519aa2afeb489c03bd10eae"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "030f49f3d3bf0c1f45c70561de3af389af10c79e48d189bb0e41977c7d1ffbda"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/dataset_result.json",
+        "sha256": "84375756d09222a701d8d289037020f9d7a78f56e5e4230dfd1c0c61d64c98d0"
+      }
+    },
+    "heat_sigma_0p05_seed_1000": {
+      "dataset": {
+        "case": "heat",
+        "sigma": 0.05,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p05_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "32dbc27c29a5bef93ce26547007c97ab55f65db3087574eeab32da52e5fefecd"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "d570fbe8f473748a1a966cbaea02fd91f4ee80e6cc622fadf3a3cdd8b6504eac"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p05_seed_1000/J18_L1/method_result.json",
+            "sha256": "bcac5142b200d6a83b2664e658c6c117ff7120ff21a4592b99d53c7a1de84327"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "0013d22f089c9a24612bcee6ce90cfbd1d38790032392f9ed697e2f13bfd53fa"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p05_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "77e9dc43dee3a692216927fbcff27cce921c52596732d15a034c9c4173d843c2"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "ea1eba5b20dc658d6ec176b1f2a3e1e7fd830d7afd2b96d504da4921e6e20857"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/heat_sigma_0p05_seed_1000/dataset_result.json",
+        "sha256": "eb68d5d98c98257eac6bd62cc3cc55a6bd2f61d5019c268f00f886d3a4d36524"
+      }
+    },
+    "wave_sigma_0p05_seed_1000": {
+      "dataset": {
+        "case": "wave",
+        "sigma": 0.05,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "a4b45d9649b7f670bda665eaea6f8c66071b1c641c17d26b46bb1296ea249bfa"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "ca1e32cd849cb7abebebd6b5750d187f2cbb866b97999b56640914dabd03af49"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_L1/method_result.json",
+            "sha256": "bfe6807bef5a0bbf9bb216f58311ae2b9351ac78d6a6b0cde367248fcecc4c71"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "0aa9a08a47beba888e7b1dffcf8c8495e0a0f317e019d64df7e2428f5c33b8b5"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "1081464cedca3350189f24c599934c1c83bc0035b8a08877fca815f4fac5f18a"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "63aeed5599ce64e9b9e306a655eb07aa77b23e7cc21c8b5eefec34c6b1a54626"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/wave_sigma_0p05_seed_1000/dataset_result.json",
+        "sha256": "4fadf5de32d973f00323e257c1985ee3066fc47ca93f6e97b261a84f2cc8f6ff"
+      }
+    },
+    "advection_diffusion_sigma_0p05_seed_1000": {
+      "dataset": {
+        "case": "advection_diffusion",
+        "sigma": 0.05,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p05_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "3b1684e516febf30ea055bb2eace2b0008a967ebda2b100312d043bc6d1c02d4"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "0b09a5c0262de979b430cdc49202796e9d7860a1fda2c16d49e215127989fa68"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p05_seed_1000/J18_L1/method_result.json",
+            "sha256": "a5d81ab27100cd452f964331df786702d1bc48c8c0b45c6469167cbb9735253d"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "3fbd538c02313711c6e6e99d4f1d7fdb04658007e219a31a0e032346e3559b6a"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p05_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "f458e67f99c19112171b1e54d09128cf7062f2ac43ae3f47f70f57a7fa4ecdd9"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/advection_diffusion_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "5521ee129e26ae8f2be3cb8751fe304454a8fd2f2c9d8e8124a183aede4f3fb6"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/advection_diffusion_sigma_0p05_seed_1000/dataset_result.json",
+        "sha256": "180ef483b1b05fb6b1421082cba57600dbc43dbb084f20299ada9540fea10a56"
+      }
+    },
+    "burgers_sigma_0p05_seed_1000": {
+      "dataset": {
+        "case": "burgers",
+        "sigma": 0.05,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p05_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "21d961499b4e73ff5ee75358acefc576559d7b662edba32b53e1cc19f0b49e6a"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "483eed8c11bbe757c1577a3d8049e7741b94c407357d0ce6ec02d895529bc003"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p05_seed_1000/J18_L1/method_result.json",
+            "sha256": "178d619b2e1bbf20fe55eb1960443febf2f22410d885e6f85a312800f3fb9db9"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "a35d53994072276cb5b41a19f8d826e194b20217771db505bbfdffe9aff50f51"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p05_seed_1000/J1158_L1/method_result.json",
+            "sha256": "89cb16521483df9e6a08f9a29cb59c063023fcaf39a5969c9148a8f1fd927907"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/burgers_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "b5902e976cea0ce60fb909fbe4ea67e5fca2b5625c6e8a982429cf32d8253ffb"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/burgers_sigma_0p05_seed_1000/dataset_result.json",
+        "sha256": "2a153a5d5efa9130ed6c0c35d07d3c111aed1344f5d0b087cb424b844ff9f67b"
+      }
+    },
+    "kdv_sigma_0p05_seed_1000": {
+      "dataset": {
+        "case": "kdv",
+        "sigma": 0.05,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p05_seed_1000/J1212_L1/method_result.json",
+            "sha256": "8a81898db7492ae432e3ffb209372269a7207eec51a4946b25ee46da76e1c7e0"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "9eae5e9769d0d9b2e706a61d7c0d759ad6f16957edac4e3a71ba857b360b7a34"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p05_seed_1000/J18_L1/method_result.json",
+            "sha256": "e4d686846b6394d7665553c4f48fd85329944830ed448a572f278e91eba1e23c"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "d56efe332dc864ad0fb96550d2f0e25d0c5d63d7e799f3d87fa38027b33c5aa3"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p05_seed_1000/J1158_L1/method_result.json",
+            "sha256": "a2d2aeee45256ac64e10ee56f7f02037ce2cbce966bdc7d6ffb0744ec93bb950"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/kdv_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "3432831a6b6360d94f3c08c49f9c049db4b99c01a91ef050c0b7345ca74ae273"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/kdv_sigma_0p05_seed_1000/dataset_result.json",
+        "sha256": "b8b2f01e0011b1f5feeae4c04d4980f42e026fa56873e8a6a05596281f81f413"
+      }
+    },
+    "logheat_sigma_0p05_seed_1000": {
+      "dataset": {
+        "case": "logheat",
+        "sigma": 0.05,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p05_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "465c59c06ac49bb5dad29f2e5958190140a6aac52f480ebd96308f65f9bf8df7"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p05_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "4ab30bc2a2972c7007908c665d778ff1a212485c9a5e4e26d468b3276205ca6b"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p05_seed_1000/J18_L1/method_result.json",
+            "sha256": "9d2f8563d95f6bf7eb12423c6bed9902b7377e1a97f2107192ad8fe95d2cbf53"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p05_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "85d01276779e9c3d37f6c6732459ffe52080d3b760d9ae092b131b2b4377dc60"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p05_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "75080f55ae19a78b96c7bb0832a916796716ce0f28bb99ec5528d6a668b63a24"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/logheat_sigma_0p05_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "1380c50386edaf8134e6b0592292bb357c816f6c831797fc10e1702b2a96ea81"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/logheat_sigma_0p05_seed_1000/dataset_result.json",
+        "sha256": "959b6804b46d225e7396c906a764387e363c5676bded9f15bbfc12bca8ac6937"
+      }
+    },
+    "heat_sigma_0p07_seed_1000": {
+      "dataset": {
+        "case": "heat",
+        "sigma": 0.07,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p07_seed_1000/J1212_L1/reconciled_0001_result.json",
+            "sha256": "5417bff9fd789cd014937859b373088dcbd58f2e30f66a35c2614b963fd65272"
+          },
+          "numerically_complete": true
+        },
+        "J1212/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p07_seed_1000/J1212_IRL1_original/method_result.json",
+            "sha256": "caed9fd3fc8e89bd610738863a23520c976892dd51ad10e079c46e74c8f031cc"
+          },
+          "numerically_complete": true
+        },
+        "J18/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p07_seed_1000/J18_L1/method_result.json",
+            "sha256": "8f572e4761d2372d482bde5d2f16d117a77cc6f0db237fb5cb7e2568c1bfa827"
+          },
+          "numerically_complete": true
+        },
+        "J18/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p07_seed_1000/J18_IRL1_original/method_result.json",
+            "sha256": "611e899f61c2ea853f3bad2c8a0fd0199f8fd69315428b7ba97b537f86ab2606"
+          },
+          "numerically_complete": true
+        },
+        "J1158/L1": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p07_seed_1000/J1158_L1/reconciled_0001_result.json",
+            "sha256": "a54ebc15c7d07571c6471787404a9b40e901c3112d6b0eefb5b6ccb03639085a"
+          },
+          "numerically_complete": true
+        },
+        "J1158/IRL1_original": {
+          "result": {
+            "file": "stage3_campaign/heat_sigma_0p07_seed_1000/J1158_IRL1_original/method_result.json",
+            "sha256": "59a371830b2a9161e1dc1e56d6cd8d02aff4f54fc76e524f874541a40c4ba4a1"
+          },
+          "numerically_complete": true
+        }
+      },
+      "status": "complete",
+      "result": {
+        "file": "stage3_campaign/heat_sigma_0p07_seed_1000/dataset_result.json",
+        "sha256": "4665c01cbcc0c608d94de5726c5e5bb83f0cbec70753ac7f944d1daf52860d46"
+      }
+    },
+    "wave_sigma_0p07_seed_1000": {
+      "dataset": {
+        "case": "wave",
+        "sigma": 0.07,
+        "noise_seed": 1000
+      },
+      "methods": {
+        "J1212/L1": {
+          "result": {
+            "file": "stage3_campaign/wave_sigma_0p07_seed_1000/J1212_L1/method_result.json",
+            "sha256": "01550a9213381289af52dca7323ed4797e18b9ec62c2812015d71c7e5450c011"
+          },
+          "numerically_complete": false
+        }
+      },
+      "status": "batch_budget_checkpoint",
+      "result": null
+    }
+  },
+  "batches": [
+    {
+      "started_utc": "2026-11-06T12:52:53.897324+00:00",
+      "scheduler_budget_s": 1500.0,
+      "requested_datasets": [
+        {
+          "case": "heat",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1001
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1001
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1001
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1001
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1001
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1001
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1001
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1001
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1001
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1001
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1001
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1001
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1001
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1001
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1001
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1001
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1001
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1001
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1001
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1001
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1001
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1001
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1001
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1001
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1001
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1001
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1001
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1001
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1001
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1001
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1002
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1002
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1002
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1002
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1002
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1002
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1002
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1002
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1002
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1002
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1002
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1002
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1002
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1002
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1002
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1002
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1002
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1002
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1002
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1002
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1002
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1002
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1002
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1002
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1002
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1002
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1002
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1002
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1002
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1002
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1003
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1003
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1003
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1003
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1003
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1003
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1003
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1003
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1003
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1003
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1003
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1003
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1003
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1003
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1003
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1003
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1003
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1003
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1003
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1003
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1003
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1003
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1003
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1003
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1003
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1003
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1003
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1003
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1003
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1003
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1004
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1004
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1004
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1004
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1004
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1004
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1004
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1004
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1004
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1004
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1004
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1004
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1004
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1004
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1004
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1004
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1004
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1004
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1004
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1004
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1004
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1004
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1004
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1004
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1004
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1004
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1004
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1004
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1004
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1004
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1005
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1005
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1005
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1005
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1005
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1005
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1005
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1005
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1005
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1005
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1005
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1005
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1005
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1005
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1005
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1005
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1005
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1005
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1005
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1005
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1005
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1005
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1005
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1005
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1005
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1005
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1005
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1005
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1005
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1005
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1006
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1006
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1006
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1006
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1006
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1006
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1006
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1006
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1006
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1006
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1006
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1006
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1006
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1006
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1006
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1006
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1006
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1006
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1006
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1006
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1006
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1006
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1006
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1006
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1006
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1006
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1006
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1006
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1006
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1006
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1007
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1007
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1007
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1007
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1007
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1007
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1007
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1007
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1007
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1007
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1007
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1007
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1007
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1007
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1007
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1007
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1007
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1007
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1007
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1007
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1007
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1007
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1007
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1007
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1007
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1007
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1007
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1007
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1007
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1007
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1008
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1008
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1008
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1008
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1008
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1008
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1008
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1008
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1008
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1008
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1008
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1008
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1008
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1008
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1008
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1008
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1008
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1008
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1008
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1008
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1008
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1008
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1008
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1008
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1008
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1008
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1008
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1008
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1008
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1008
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1009
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1009
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1009
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1009
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1009
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1009
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1009
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1009
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1009
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1009
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1009
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1009
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1009
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1009
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1009
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1009
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1009
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1009
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1009
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1009
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1009
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1009
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1009
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1009
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1009
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1009
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1009
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1009
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1009
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1009
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1010
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1010
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1010
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1010
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1010
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1010
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1010
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1010
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1010
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1010
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1010
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1010
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1010
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1010
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1010
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1010
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1010
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1010
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1010
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1010
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1010
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1010
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1010
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1010
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1010
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1010
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1010
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1010
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1010
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1010
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1011
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1011
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1011
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1011
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1011
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1011
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1011
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1011
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1011
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1011
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1011
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1011
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1011
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1011
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1011
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1011
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1011
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1011
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1011
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1011
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1011
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1011
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1011
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1011
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1011
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1011
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1011
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1011
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1011
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1011
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1012
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1012
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1012
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1012
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1012
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1012
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1012
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1012
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1012
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1012
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1012
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1012
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1012
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1012
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1012
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1012
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1012
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1012
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1012
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1012
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1012
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1012
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1012
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1012
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1012
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1012
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1012
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1012
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1012
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1012
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1013
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1013
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1013
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1013
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1013
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1013
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1013
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1013
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1013
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1013
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1013
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1013
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1013
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1013
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1013
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1013
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1013
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1013
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1013
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1013
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1013
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1013
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1013
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1013
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1013
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1013
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1013
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1013
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1013
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1013
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1014
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1014
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1014
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1014
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1014
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1014
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1014
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1014
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1014
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1014
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1014
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1014
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1014
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1014
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1014
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1014
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1014
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1014
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1014
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1014
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1014
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1014
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1014
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1014
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1014
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1014
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1014
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1014
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1014
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1014
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1015
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1015
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1015
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1015
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1015
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1015
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1015
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1015
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1015
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1015
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1015
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1015
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1015
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1015
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1015
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1015
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1015
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1015
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1015
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1015
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1015
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1015
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1015
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1015
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1015
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1015
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1015
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1015
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1015
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1015
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1016
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1016
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1016
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1016
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1016
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1016
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1016
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1016
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1016
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1016
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1016
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1016
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1016
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1016
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1016
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1016
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1016
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1016
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1016
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1016
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1016
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1016
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1016
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1016
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1016
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1016
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1016
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1016
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1016
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1016
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1017
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1017
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1017
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1017
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1017
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1017
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1017
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1017
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1017
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1017
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1017
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1017
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1017
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1017
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1017
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1017
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1017
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1017
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1017
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1017
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1017
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1017
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1017
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1017
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1017
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1017
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1017
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1017
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1017
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1017
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1018
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1018
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1018
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1018
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1018
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1018
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1018
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1018
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1018
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1018
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1018
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1018
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1018
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1018
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1018
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1018
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1018
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1018
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1018
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1018
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1018
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1018
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1018
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1018
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1018
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1018
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1018
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1018
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1018
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1018
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1019
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1019
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1019
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1019
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1019
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1019
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1019
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1019
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1019
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1019
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1019
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1019
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1019
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1019
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1019
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1019
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1019
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1019
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1019
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1019
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1019
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1019
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1019
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1019
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1019
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1019
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1019
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1019
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1019
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1019
+        }
+      ],
+      "status": "checkpoint_saved",
+      "single_numerical_worker": true,
+      "elapsed_s": 1133.2629791999934
+    },
+    {
+      "started_utc": "2026-11-06T13:12:49.009288+00:00",
+      "scheduler_budget_s": 3600.0,
+      "requested_datasets": [
+        {
+          "case": "heat",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.0,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.01,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.1,
+          "noise_seed": 1000
+        }
+      ],
+      "status": "checkpoint_saved",
+      "single_numerical_worker": true,
+      "elapsed_s": 3267.636559000006
+    },
+    {
+      "started_utc": "2026-11-06T14:20:47.821412+00:00",
+      "scheduler_budget_s": 900.0,
+      "requested_datasets": [
+        {
+          "case": "heat",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.03,
+          "noise_seed": 1000
+        },
+        {
+          "case": "heat",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "wave",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "advection_diffusion",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "kdv",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "noise_seed": 1000
+        }
+      ],
+      "status": "checkpoint_saved",
+      "single_numerical_worker": true,
+      "elapsed_s": 216.526668000035
+    },
+    {
+      "started_utc": "2026-11-06T14:25:02.656234+00:00",
+      "scheduler_budget_s": 450.0,
+      "requested_datasets": [
+        {
+          "case": "heat",
+          "sigma": 0.07,
+          "noise_seed": 1000
+        }
+      ],
+      "status": "checkpoint_saved",
+      "single_numerical_worker": true,
+      "elapsed_s": 17.513178799999878
+    }
+  ],
+  "planned_dataset_count": 606,
+  "planned_method_count": 3636,
+  "scope": "A resumable index; all statistical claims require complete frozen-grid review.",
+  "execution_complete": false,
+  "all_checks_passed": false,
+  "all_checks_passed_semantics": "All planned methods certified and heldout evaluations recorded; not all supports correct or publication-ready."
+}

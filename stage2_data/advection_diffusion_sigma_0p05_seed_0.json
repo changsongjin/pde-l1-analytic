@@ -1,0 +1,203 @@
+{
+  "case": "advection_diffusion",
+  "sigma": 0.05,
+  "seed": 0,
+  "target": "u_t",
+  "generator_source_sha256": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+  "trajectories": [
+    {
+      "trajectory_id": "advection_diffusion/development/0",
+      "split": "train",
+      "parameters": {
+        "widths": [
+          0.5120967100007778,
+          0.6019742147614273,
+          0.441147670858432
+        ],
+        "centers": [
+          0.25548252067477195,
+          0.39521539811383244,
+          -0.5822361269093053
+        ],
+        "amplitudes": [
+          0.46296139205061193,
+          0.5165703135528207,
+          0.6521301797658601
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.3026479862610206
+    },
+    {
+      "trajectory_id": "advection_diffusion/development/1",
+      "split": "train",
+      "parameters": {
+        "widths": [
+          0.3826047640471645,
+          1.0329668717660054,
+          0.43838894197471845
+        ],
+        "centers": [
+          -0.19804716657369847,
+          -0.24195608151611414,
+          -0.4218725517471249
+        ],
+        "amplitudes": [
+          0.9308745948699827,
+          0.8333354479349484,
+          0.819349653997102
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.5408160547269366
+    },
+    {
+      "trajectory_id": "advection_diffusion/development/2",
+      "split": "train",
+      "parameters": {
+        "widths": [
+          0.9108550840408304,
+          0.8669753873981307,
+          0.8448198752926496
+        ],
+        "centers": [
+          -0.48962890521711344,
+          0.9366471552099656,
+          0.9434478045171022
+        ],
+        "amplitudes": [
+          0.8282333576836332,
+          0.4643269576710825,
+          1.087976739766532
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.2930659328356513
+    },
+    {
+      "trajectory_id": "advection_diffusion/development/3",
+      "split": "train",
+      "parameters": {
+        "widths": [
+          0.715771596551024,
+          0.7508578114270282,
+          0.5435892681242637
+        ],
+        "centers": [
+          -0.1886633317778701,
+          0.41652124925941814,
+          -0.6815103034976584
+        ],
+        "amplitudes": [
+          0.9417593058996632,
+          0.8815249330858144,
+          0.4543023806163903
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.3745102656031997
+    },
+    {
+      "trajectory_id": "advection_diffusion/development/4",
+      "split": "validation",
+      "parameters": {
+        "widths": [
+          0.37367847773333723,
+          0.9899250509236469,
+          0.7010958725706733
+        ],
+        "centers": [
+          0.625623811006548,
+          -0.3558594383484486,
+          0.8555383966176926
+        ],
+        "amplitudes": [
+          0.6394462527666399,
+          1.020189468723107,
+          0.6777950360786078
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.366016761674737
+    },
+    {
+      "trajectory_id": "advection_diffusion/development/5",
+      "split": "validation",
+      "parameters": {
+        "widths": [
+          0.8246762623690324,
+          0.5740879388429843,
+          0.7205476616036164
+        ],
+        "centers": [
+          0.010522094557997352,
+          -0.18755699330245212,
+          -0.7156814140080197
+        ],
+        "amplitudes": [
+          1.0820280611702744,
+          0.5801983664241772,
+          0.40922636437414195
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.35433016153290564
+    }
+  ],
+  "role": "development_only",
+  "test_status": "not generated or inspected; IDs 6..11 and noise seeds >=1000 reserved",
+  "noise_model": "additive Gaussian sigma*std(clean trajectory), applied to observed u",
+  "normalization": "none in raw observations; fit scaling using training matrices only",
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        281
+      ],
+      "sha256": "e6f3f2343af5cb91f870b1a769ad6ff370f92da701bb9262af531057490e6a76"
+    },
+    "t": {
+      "shape": [
+        101
+      ],
+      "sha256": "afb3b07bcbe3f0a991a2c447666ac3d15e1d3846a1671ad7ab46834565b53e49"
+    },
+    "u_0": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "a57ed0f6af9eea7bf6e1ebfcdec5d0243e0fcfd95bb36aa3cd2a0dff332ef825"
+    },
+    "u_1": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "ca18e5a9c2e84de0b28827f91e3dbb9296f0fe0303a91a269e2362d44a5fdc00"
+    },
+    "u_2": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "08a9391f89163eba00011fcd52ebffe6b4622636fe1f1ad95e40ef1061e0b16b"
+    },
+    "u_3": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "102d5ef3649785483722cf4f18150a24b7b6f9688cabc953132bc9cf3fb0cded"
+    },
+    "u_4": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "beb60c20eecfffcfcca6d86e0f520625f0c6b3f0c4fe370b401220a743fe9ee7"
+    },
+    "u_5": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "7b4eda4a3c19807af2db0afcd21b9910f0539901bddce2f7a45c27b56aa19cba"
+    }
+  },
+  "npz_sha256": "f8c2546e8790006ffd5711f05b75e1b4af9d28742fcb8fa8294c02f5127fb087"
+}

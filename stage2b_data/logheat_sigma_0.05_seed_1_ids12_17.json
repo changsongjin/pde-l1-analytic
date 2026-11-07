@@ -1,0 +1,174 @@
+{
+  "case": "logheat",
+  "sigma": 0.05,
+  "seed": 1,
+  "source_hashes": {
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966"
+  },
+  "target": "u_t",
+  "trajectories": [
+    {
+      "trajectory_id": 12,
+      "split": "train",
+      "parameters": {
+        "coefficients": [
+          -0.12504813147726013,
+          -0.004576992717449253,
+          0.13228058300230147,
+          -0.0705233433124612,
+          -0.12530084533523092,
+          -0.0922701041552971
+        ],
+        "positive_heat_field_lower_bound": 0.45
+      },
+      "clean_std_for_synthetic_noise": 0.07170530495225258
+    },
+    {
+      "trajectory_id": 13,
+      "split": "train",
+      "parameters": {
+        "coefficients": [
+          0.03857007827303551,
+          0.07438752710170031,
+          0.1809836501211852,
+          0.11629512335195732,
+          -0.10046030990239897,
+          0.039303311249722674
+        ],
+        "positive_heat_field_lower_bound": 0.45
+      },
+      "clean_std_for_synthetic_noise": 0.04945378109837218
+    },
+    {
+      "trajectory_id": 14,
+      "split": "train",
+      "parameters": {
+        "coefficients": [
+          -0.11021395554124763,
+          0.04272613256671606,
+          -0.10382581770148296,
+          -0.1410411793618381,
+          0.09374325686138975,
+          -0.05844965796732562
+        ],
+        "positive_heat_field_lower_bound": 0.45
+      },
+      "clean_std_for_synthetic_noise": 0.06475279235036373
+    },
+    {
+      "trajectory_id": 15,
+      "split": "train",
+      "parameters": {
+        "coefficients": [
+          -0.15363267747733222,
+          0.103882529436432,
+          -0.0598065041733007,
+          0.09166568539866292,
+          -0.0659678921749586,
+          0.07504471133931367
+        ],
+        "positive_heat_field_lower_bound": 0.45
+      },
+      "clean_std_for_synthetic_noise": 0.08194266595640881
+    },
+    {
+      "trajectory_id": 16,
+      "split": "validation",
+      "parameters": {
+        "coefficients": [
+          -0.13388791502859188,
+          -0.03868142386534121,
+          -0.12367856619976776,
+          -0.1351146655767788,
+          -0.07801004874881236,
+          -0.04062738058070806
+        ],
+        "positive_heat_field_lower_bound": 0.45
+      },
+      "clean_std_for_synthetic_noise": 0.08111716883201583
+    },
+    {
+      "trajectory_id": 17,
+      "split": "validation",
+      "parameters": {
+        "coefficients": [
+          -0.10953774590751504,
+          -0.1251912507889814,
+          0.06345487945747262,
+          -0.03688555597260686,
+          0.12421957587867177,
+          -0.09071099199475234
+        ],
+        "positive_heat_field_lower_bound": 0.45
+      },
+      "clean_std_for_synthetic_noise": 0.07059280084599863
+    }
+  ],
+  "role": "independent_development_replication",
+  "noise_model": "Gaussian sigma*std(clean trajectory) added to observed u",
+  "test_data_generated_or_used": false,
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        257
+      ],
+      "sha256": "7c2da848e1a65232b381a0ab7027160ef8a69a27b4db90535d6a0d98b9a9aabe"
+    },
+    "t": {
+      "shape": [
+        129
+      ],
+      "sha256": "480e2c3cbf595bcb1d4334f21c9594e9cb46328a103f29c3b9c2bddd9d57bb78"
+    },
+    "u_0": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "a12de0df4e827fe4ab695f1c6f1b7a1d3824379b006c95a4eb7a6ff6e8b42f32"
+    },
+    "u_1": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "a1a6df4e03b6fd7f8a84d2f0bd585b3df31a12883a588305a3e12a4178350fab"
+    },
+    "u_2": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "8984263b5c1d118e715bcabd060510cf96c21e2724bc209ef4196595732f76ec"
+    },
+    "u_3": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "e7096ee5109e7e06ac0da6afde2fa3ff1720c897e0d5a98cf51e53abaadf7701"
+    },
+    "u_4": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "007a487ec3632b466a18a3f57e485b36f1e0c14dc1bd630b49abe9e477c3b8d5"
+    },
+    "u_5": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "a96bb39247743a4ae59fb01585b3c36c5340010f1ab2b2a21e447d7501275770"
+    }
+  },
+  "npz_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036"
+}

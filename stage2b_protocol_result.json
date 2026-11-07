@@ -1,0 +1,176 @@
+{
+  "stage": "2b_single_factor_development",
+  "cases_and_noise": [
+    [
+      "heat",
+      0.01
+    ],
+    [
+      "burgers",
+      0.05
+    ],
+    [
+      "logheat",
+      0.05
+    ]
+  ],
+  "layers": [
+    "J18",
+    "J1158"
+  ],
+  "methods": [
+    "L1",
+    "IRL1_original",
+    "IRL1_smoothed"
+  ],
+  "only_statistical_change": "IRL1 epsilon=max(1e-8,0.01*max(abs(beta))) instead of fixed 1e-8",
+  "epsilon_relative": 0.01,
+  "epsilon_floor": 1e-08,
+  "outer_lambda_ratio": 0.001,
+  "outer_max_iterations": 8,
+  "outer_stopping": "historical unchanged support; not a convergence certificate",
+  "lambda_ratios": {
+    "count": 24,
+    "start": 1.0,
+    "stop": 1e-06,
+    "spacing": "geometric"
+  },
+  "support_tolerance": 1e-05,
+  "selection_alpha": 0.005,
+  "selection_metric": "validation weak residual plus alpha times fixed grammar complexity",
+  "first_diagnostic": {
+    "trajectory_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "noise_seed": 0,
+    "controls": "reuse hash-verified completed stage2a results"
+  },
+  "independent_development_replication": {
+    "trajectory_ids": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "train_ids": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "validation_ids": [
+      16,
+      17
+    ],
+    "noise_seed": 1,
+    "parameter_seed": "50000+100*case_index+trajectory_id",
+    "noise_seed_sequence": "[20261106,case_index,noise_seed,trajectory_id]",
+    "status": "development replication; not the reserved final test"
+  },
+  "final_test": {
+    "trajectory_ids": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "noise_seeds": ">=1000",
+    "generate_or_inspect": false
+  },
+  "per_method_initial_wall_budget_s": 120.0,
+  "batch_wall_limit_s": 7200,
+  "numerical_retries": "same objective and thresholds, all failure evidence and extra cost retained",
+  "dynamic_diagnostic": {
+    "does_not_change_primary_selection": true,
+    "scope": "supported constant-coefficient even linear heat operators only",
+    "boundary_realization": "polynomial of Dirichlet Laplacian; additional high-order BC implicit",
+    "modes": "all nx-2 resolvable interior sine modes",
+    "initializations": [
+      "raw observed t0",
+      "fixed g(k)=1/(1+(2*dx*k)^4) spatial smoothing"
+    ],
+    "unsupported_models": "report unsupported; do not count as failed or silently remove from ranking"
+  },
+  "prohibited_tuning": "No epsilon/alpha/noise/trajectory choice after inspecting new variant outcomes",
+  "frozen_at_utc": "2026-11-06T10:58:44.125741+00:00",
+  "previous_script_sha256": {
+    "_diag_kb_ks.py": "1a278e46fabee8df9fc180e2a64a9e7475719afde8870d69009324f5aad54aa1",
+    "batch5.py": "382999b7353503a59005f7d660c00820249c08e3c269dbec1b49a4595dac6122",
+    "benchmark_compare.py": "835a19d40e4aec45604c783c7698f6ff42563ced45fbf6086426b35e0f7fbc7a",
+    "chafee_infante.py": "b287d783353565640ac3554e16736c35f78bb364eba3570e1790da7d216b07f9",
+    "dlga_compare.py": "a760f6e0c37b292d45cadd40b535f92ac0f24b700015735665464af941dd856f",
+    "dlga_same_data_compare.py": "2b7b787b82d438a335474b1d8b800a3b6609a1a7bae8205b7b0c3c6f363ab76c",
+    "forward_biglib.py": "c5f2c4c743e51ddc74ac70d0fc68fc0f07e36fe518ae835269fe44ffceb321ac",
+    "forward_generic.py": "9eb6282e2c475eb7d6dbfea7dc4bc713d378e5af3e296d113380d8e76d7d825f",
+    "forward_generic_v2.py": "a589a8c62a7a0c7b8e6ffa965663d058038d4cc6cc84dc387fe857ecd770242e",
+    "gml1_maxlib_compare.py": "2b3fcfb623e3e2888a83c87dd1443816e921f93ecb75be101ffd1c5c0a730f1d",
+    "inverse_burgers.py": "8681efadb4444d5a7ff507651c2c7833d6f2ecfe7f7af198d985b239902f8880",
+    "inverse_irl1.py": "b6c42667fd8c23ebfb42320fe0c88e36b0b50e1695129c0836d29bbe13923396",
+    "kdv_forward_blind.py": "608bc947ae29ac2321ba938d0d62d5c120fcd2a066401b3d87610049d4a194c2",
+    "lasso_exact.py": "714a4fb3f4192d13654a44a93eeac003302b85610a3b715a3da6830a86889093",
+    "library_effect_audit.py": "49662a4cd52a858c1edc6495e4fba84ff48ba753c19afc39244b3d07590e06ca",
+    "maxlib_first.py": "1bac4409850cfcd2fef98acfd2d751be058da5c5cf0eb06e2128723e5cc6b4a4",
+    "maxlib_irl1.py": "3dffd3a2db384805405e4508071f455460cc3ec6aca0cfb773622c63589b36d5",
+    "noise_figures.py": "b583bfaeffcf45ed3ddcdda46f59f3a01a7530bbfc6be33891ea9050a06540b6",
+    "noise_forward.py": "1243f4ce202f999ac31e0fc25c73bf8988c12201826da1c82c3a9be3b0f946ab",
+    "noise_inverse.py": "d7041dab4ec38dd2e00f135635f0761c62e3011391355bf5a29d34ec06b4c195",
+    "noise_inverse_biglib.py": "ae09b180c0b086ba8ac43f1abbe90a9cd0de7425c99071c72b5365c46d48b219",
+    "optimize_ux.py": "47378d1126c47fb04cb24634ae8c6d31fa406addfd0aab3f6b0771a2e0c0752e",
+    "outlier_gamma_sensitivity.py": "22bedb1bb19e69abc25dc8d19aeaf1a4cbfaa61ea6e8857886f2351ae7177eb0",
+    "outlier_l1_compare.py": "df78bff55ae14a5f72a27b8cfd10dda169225ad646fd2bfbeba801129cf0031e",
+    "paper/make_figures.py": "8accad151da56d3d5244d956683821089283782e73dbc1e20c531ad655dd2098",
+    "point_outlier_probe.py": "427426f24aeb55eb4caa9067d7a0291d7e2b5cbf4f989e86e0823e5d64b362cb",
+    "publication_checkpoint_audit.py": "8532a1b824509713aaac401c69b92d878b1d63ba55ffe5249cefdd4fb1ff36d9",
+    "redo_two.py": "0923afdf5a4e73f6461c9b3da60e7f97c96f0af2fd677a7e9df2d86ba4df6ab7",
+    "same_data_compare.py": "8c65552f5ab548384a323ecf3f317f8521a15d1a601e8889038d19bf54a65184",
+    "sga_compare.py": "a1e0515461b6d9d42ba2307b15402774aba0182c05221593dd103869909e929d",
+    "sga_compare_extra.py": "3b3dc62ea0d1e7d21318f2204183a771eff888fbad1ecc1c7f83590cc987cf4b",
+    "slides/make_deck2_figures_zh.py": "de7986bafb83924d49b7005f382739157524b1b5f2bdd36105d1f2f7809ce98d",
+    "slides/make_figures_zh.py": "86ab90808b709458040512aa1c1d399c93841a3bbd2546e88e0997b929150493",
+    "slides/make_noise_figures_zh.py": "01072f1462cb042a2dd95549dce3ae3a36c4d1d211d4256bcd2f820610a5da71",
+    "stability_pareto_summary.py": "9ef5ea06da20ed4b5dd2e091ae58a83ec3eef3765071a3994e138341879211b0",
+    "tier1_heat.py": "c4d53753a0e9f93780676bb29244a86952b84eed881c84fa8562ed0c3df51e7b",
+    "tier2_burgers.py": "f9bf3719805baed2928fef2bc560b556dc639a45ffe92045be6b4b92844b79d8",
+    "tier3_kdv.py": "510bca5ab95a8388c1cff633c730a80a7c86fe19c37f3ff764d557dc8276dbc1",
+    "stage0_data_bundle.py": "18845ff7841868451b592c057e66c608a3ef38e01b5b062bd78a558b9dace2a3",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage0_gate.py": "2f32f1ca06dccaf4359ea5bd32c0a7465cded13197958a52887446555c861aa1",
+    "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+    "stage1_gate.py": "d0b827cb9748af26e332c26e5c47936d1c8ce4e473c409f0561e3c9375124261",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage2_field_check.py": "b9973cc7e9f37e92716ca8221bac2185767b300601f3c151efeb49285c5339e5",
+    "stage2_field_check_refined.py": "0b56af37067c1b37b143646ef2f7f3fbb3b27d67af5cfde3acab79ad80ce3922",
+    "stage2_identifiability.py": "6df16402211adf8b2883135cf64273f8f82f0cdec7810f8f36fd95e605ef04f0",
+    "stage2_review.py": "aebad571b7c7b4e712cdbb68632cb267d81c6c57ab40dc232c68e30e9df8e19c",
+    "stage2a_baseline.py": "d7c8ef9c2fc8f75161e268d69c43001b8da8065ea65837f9f9df6e6a2ba6b3f8",
+    "stage2a_batch_checkpoint.py": "0d520bd92866c0d27c13ad8cb1ba11eec19015cfe95590b8299703ee11a0c5b2",
+    "stage2a_clarabel_probe.py": "a5ffb21ae8eb7480c456cf90d86fb3bb9eb468ec6ded3a1dfebf0a73217ecd7a",
+    "stage2a_diagnosis.py": "d70daa6817485ff72287fce9e340200a77807d65ebe289c64ef91f28d629165c",
+    "stage2a_heat_structure_diagnostic.py": "10f9bf504d74764cb7820773fbec31d2f1fd5b267429c92db1430fada9029e9c",
+    "stage2a_l1_paths.py": "f4c680117d14e4d5d5b2ac1ee43b660acaf2f660c244612448f5adbc6ab368a9",
+    "stage2a_reconcile.py": "bdd2bcd4b72af84839c8f507ee2aaf05e0ee2f910d721c255668734ee7da4025",
+    "stage2a_reconcile_remaining.py": "85d95e1ae2fc746830db10128f809d4f93d3b1c02516dc9d98420c741d481b86",
+    "stage2a_retry_other_cases.py": "01337308b6f1dfec041fad7d172a6e5d6adf0bd6643de2088b8f876d85144ef2",
+    "stage2a_retry_remaining_v2.py": "d2483807b83f09eb57d3ef5c2ab85c816bdebb57bd3b7936d413e76c443d50d3",
+    "stage2a_retry_remaining_v3.py": "8939024eb79db040704b75b2c2cd8be261c25776a870f23c5ab1bd069ce2ea8d",
+    "stage2a_solver_polish.py": "180575a91a4997dc32d4ad35e906d4e9d2de70ea1a205817f424c1f6e221e5cd",
+    "stage2a_solver_retry.py": "309e72ed3a5c509010b72fa25e93f069160295beacf56538bbe0aadc9125215c",
+    "stage_execution_audit.py": "a2078edc5c84db80925e8878d9e6fedc1db2f44de3c12cb8d68d937f42f17a09"
+  },
+  "source_sha256": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+  "all_checks_passed": true,
+  "new_method_PDE_outcomes_seen": false
+}

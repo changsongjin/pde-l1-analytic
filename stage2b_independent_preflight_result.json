@@ -1,0 +1,270 @@
+{
+  "stage": "2b_independent_read_only_review",
+  "preflight": {
+    "all_checks_passed": true,
+    "checks": {
+      "variant_checked_source_matches": true,
+      "same_fixed_weight_solver_function": true,
+      "same_outer_lambda_iterations_floor_support": true,
+      "same_24_lambda_grid": true,
+      "frozen_single_epsilon_and_alpha": true,
+      "full_spectrum_checked_source_matches": true,
+      "independent_epsilon_formula_and_ratio_examples": true,
+      "future_observations_do_not_change_forecast": true,
+      "future_observations_change_score_only": true,
+      "all_resolved_modes_retained": true,
+      "unsupported_zero_LS_term_not_deleted": true,
+      "finite_grid_and_continuum_classifications_separate": true,
+      "independent_data_hash_split_review": true,
+      "historical_original_IRL1_controls_finished_under_new_initial_budget": true
+    },
+    "source_sha256": {
+      "stage2b_smoothed_irl1.py": "596b67be74539a8fe3fffbabca329e8239e9b9d8d0b6ad98fc57b2980e41987d",
+      "stage2a_l1_paths.py": "f4c680117d14e4d5d5b2ac1ee43b660acaf2f660c244612448f5adbc6ab368a9",
+      "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+      "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+      "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+      "stage2b_heat_full_spectrum.py": "843a57fe89b7ee43a8075fcf9854452ed3eec79d488d4ee2eac1cf6877ff6226",
+      "stage2b_heat_dynamic_compare.py": "878e76064f4e074d29baf0a2d7532787465230d9553976aa82c655f79fe85802",
+      "stage2b_heat_noise_mechanism.py": "f69fea28b30e750d4078132623a676f5cd6527fa2a5e3df80f6281d9ddd030ea"
+    },
+    "protocol_sha256": "2a94272f3ed1e17dc28d8adb6b95bab4232b6a90bac8b9e30ffd742b752c6b0e",
+    "formula_examples": [
+      {
+        "beta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "epsilon": 1e-08,
+        "weight_ratio": 1.0,
+        "passed": true
+      },
+      {
+        "beta": [
+          2.0,
+          -0.02,
+          0.0,
+          1e-12,
+          0.1
+        ],
+        "epsilon": 0.02,
+        "weight_ratio": 101.0,
+        "passed": true
+      },
+      {
+        "beta": [
+          1e-09,
+          0.0,
+          -2e-10
+        ],
+        "epsilon": 1e-08,
+        "weight_ratio": 1.1,
+        "passed": true
+      }
+    ],
+    "data_review": {
+      "all_checks_passed": true,
+      "rows": [
+        {
+          "case": "heat",
+          "sigma": 0.01,
+          "ids": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "seed": 1,
+          "splits": [
+            "train",
+            "train",
+            "train",
+            "train",
+            "validation",
+            "validation"
+          ],
+          "old_new_raw_hashes_disjoint": true,
+          "verified_matrix_target_pairs": 6,
+          "raw_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a",
+          "matrix_sha256": "b99fb987e125d82af16008d79e0d201e4c6cb82e7c2f8912cf46c725e0ca07d2"
+        },
+        {
+          "case": "burgers",
+          "sigma": 0.05,
+          "ids": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "seed": 1,
+          "splits": [
+            "train",
+            "train",
+            "train",
+            "train",
+            "validation",
+            "validation"
+          ],
+          "old_new_raw_hashes_disjoint": true,
+          "verified_matrix_target_pairs": 6,
+          "raw_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce",
+          "matrix_sha256": "7ded866dc49679020a80bb6ea1f9dca4ba34fffdd8df919c79ab8f12cf193bae"
+        },
+        {
+          "case": "logheat",
+          "sigma": 0.05,
+          "ids": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "seed": 1,
+          "splits": [
+            "train",
+            "train",
+            "train",
+            "train",
+            "validation",
+            "validation"
+          ],
+          "old_new_raw_hashes_disjoint": true,
+          "verified_matrix_target_pairs": 6,
+          "raw_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036",
+          "matrix_sha256": "cbf4da79a238d4e7d886eb34be8f359e9813fcd255bf67f54050cbf9cde2c04b"
+        }
+      ],
+      "reserved_final_test_not_loaded": true,
+      "independence_scope": "disjoint generated development trajectories/noise seed, not independent proof of broad method superiority"
+    },
+    "statistical_difference_review": {
+      "only_factor": "epsilon update",
+      "unchanged": "unweighted first solve; outer lambda 1e-3; 8 iterations; historical support stop after update; final weights include last update; 24-point final path; fixed solver; support 1e-5; selection alpha .005",
+      "weight_ratio_proof": "For M=max|beta|, m=min|beta| and epsilon>=.01 M, max(w)/min(w)=(M+epsilon)/(m+epsilon)<=1+M/epsilon<=101.",
+      "no_convergence_or_novelty_claim": true
+    },
+    "operational_budget_audit": [
+      {
+        "case": "heat",
+        "layer": "J18",
+        "method": "L1",
+        "historical_declared_initial_budget_s": 120.0,
+        "historical_all_attempts_s": 4.039897800073959
+      },
+      {
+        "case": "heat",
+        "layer": "J18",
+        "method": "IRL1_original",
+        "historical_declared_initial_budget_s": 300.0,
+        "historical_all_attempts_s": 4.0499477999983355
+      },
+      {
+        "case": "heat",
+        "layer": "J1158",
+        "method": "L1",
+        "historical_declared_initial_budget_s": 120.0,
+        "historical_all_attempts_s": 23.55230580002535
+      },
+      {
+        "case": "heat",
+        "layer": "J1158",
+        "method": "IRL1_original",
+        "historical_declared_initial_budget_s": 300.0,
+        "historical_all_attempts_s": 5.5974392999196425
+      },
+      {
+        "case": "burgers",
+        "layer": "J18",
+        "method": "L1",
+        "historical_declared_initial_budget_s": 120.0,
+        "historical_all_attempts_s": 3.5973777999170125
+      },
+      {
+        "case": "burgers",
+        "layer": "J18",
+        "method": "IRL1_original",
+        "historical_declared_initial_budget_s": 300.0,
+        "historical_all_attempts_s": 4.043445999966934
+      },
+      {
+        "case": "burgers",
+        "layer": "J1158",
+        "method": "L1",
+        "historical_declared_initial_budget_s": 120.0,
+        "historical_all_attempts_s": 137.61163439997472
+      },
+      {
+        "case": "burgers",
+        "layer": "J1158",
+        "method": "IRL1_original",
+        "historical_declared_initial_budget_s": 300.0,
+        "historical_all_attempts_s": 4.773881700006314
+      },
+      {
+        "case": "logheat",
+        "layer": "J18",
+        "method": "L1",
+        "historical_declared_initial_budget_s": 120.0,
+        "historical_all_attempts_s": 4.248775999993086
+      },
+      {
+        "case": "logheat",
+        "layer": "J18",
+        "method": "IRL1_original",
+        "historical_declared_initial_budget_s": 300.0,
+        "historical_all_attempts_s": 4.919008000055328
+      },
+      {
+        "case": "logheat",
+        "layer": "J1158",
+        "method": "L1",
+        "historical_declared_initial_budget_s": 120.0,
+        "historical_all_attempts_s": 145.56875310000032
+      },
+      {
+        "case": "logheat",
+        "layer": "J1158",
+        "method": "IRL1_original",
+        "historical_declared_initial_budget_s": 300.0,
+        "historical_all_attempts_s": 5.525627100025304
+      }
+    ],
+    "boundary_notes": [
+      "Full-spectrum forecasting is only for declared constant-coefficient even linear heat operators and optional constant forcing.",
+      "Higher-order boundary realization is a polynomial of the Dirichlet Laplacian, not implied by u=0 alone for every PDE.",
+      "Unsupported structures remain visible; they cannot be silently removed or counted as forecasting failures.",
+      "Raw versus fixed-smoothed initial states are separate common initialization diagnostics; neither changes primary model selection.",
+      "Noise/trajectory replication is developmental; reserved test IDs6..11 and seeds>=1000 are not read."
+    ],
+    "noise_mechanism_mathematical_review": {
+      "identity": "For frozen linear residual operator L and fresh independent eta with E eta=0, Cov eta=sigma^2 I, E||L(u+eta)||^2=||Lu||^2+sigma^2||L||_F^2.",
+      "correct_interpretation": "Counterfactual expectation under fresh independent noise redraws AFTER freezing the original selected operator.",
+      "not_claimed": "It is not the conditional expectation of the original noise given the event that this model was selected.",
+      "overlap": "Overlapping weak windows do not invalidate the trace identity; they do invalidate treating rows as independent repetitions.",
+      "MC_SE": "128 independent whole-field noise draws justify the sample SE of their total squared residual energies.",
+      "impulse_scope": "One pixel center impulse checks indexing only. The Frobenius identity follows mathematically from translated equal stencils and is corroborated by whole-field MC.",
+      "normalization": "Clean target norm is held fixed for this diagnostic; this is not the expectation of the original noisy ratio selection score.",
+      "independent_formula_reviewer": "evaluation_contract reported independent IBP sign and trace-variance verification; this review confirms the same algebra and scope."
+    }
+  },
+  "runner_review": null,
+  "all_preflight_checks_passed": true,
+  "runner_scan_complete": false,
+  "all_checks_passed": false,
+  "source_script_sha256": "4822e9232d18934b0c77a54073dc82159d841e0c456996217d2776af9614495d",
+  "new_solver_calls": 0,
+  "new_data_generated": false,
+  "test_data_used": false,
+  "statistical_parameters_changed": false,
+  "completion_meaning": "Preflight alone is not a completed method comparison; complete runner audit requires all declared runs and fixed-rule checks."
+}

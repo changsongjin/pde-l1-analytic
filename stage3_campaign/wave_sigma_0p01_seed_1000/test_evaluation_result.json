@@ -1,0 +1,553 @@
+{
+  "stage": "3_frozen_model_test_evaluation",
+  "dataset": {
+    "case": "wave",
+    "sigma": 0.01,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "test_bundle_sha256": "3d754aabc9cace38a6e91a9fc019b615bc36b203175aa7713d0e57a762ba3167",
+  "test_trajectory_ids": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "rows": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "selected_model_sha256": "a7f1106eb45642ecc2ddb959e6833f726c8ccc5b0d99e9ff427e52459a33b794",
+      "support": [
+        "u_xx"
+      ],
+      "physical_coefficients": {
+        "u_xx": 1.000522892216163
+      },
+      "heldout_weak": {
+        "trajectory_errors": [
+          {
+            "trajectory_id": 6,
+            "residual_norm": 0.041581642119280664,
+            "target_norm": 1.7869376763700295,
+            "relative_error": 0.023269777490924737,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 7,
+            "residual_norm": 0.039722946968588864,
+            "target_norm": 1.7450995916790857,
+            "relative_error": 0.022762567338846584,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 8,
+            "residual_norm": 0.03473959995809667,
+            "target_norm": 1.5607423700878176,
+            "relative_error": 0.022258382051960304,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 9,
+            "residual_norm": 0.04596926687641276,
+            "target_norm": 1.8245439914224877,
+            "relative_error": 0.025194934785087462,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 10,
+            "residual_norm": 0.04417834779083946,
+            "target_norm": 1.3959763679185204,
+            "relative_error": 0.03164691667145617,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 11,
+            "residual_norm": 0.04156089921037725,
+            "target_norm": 1.6083389970484891,
+            "relative_error": 0.0258408826041319,
+            "status": "relative"
+          }
+        ],
+        "rms_relative_error": 0.02536111155325258,
+        "aggregation": "equal test-trajectory RMS of raw weak relative residuals",
+        "coefficient_refit": false,
+        "support_unchanged": [
+          "u_xx"
+        ]
+      },
+      "dynamics": [
+        {
+          "status": "unsupported_case",
+          "reason": "Only declared heat spectral realization is implemented.",
+          "not_counted_as_statistical_failure": true,
+          "selection_action": "none"
+        }
+      ],
+      "truth_evaluation_after_selection": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0005228922161630845,
+        "physical_coef_rel_error_true_only": 0.0005228922161630845
+      }
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "selected_model_sha256": "5f19c490d4fd1d3207e28db1369a49e5dd30bace0228b79e7d29a31711250fbf",
+      "support": [
+        "u_xx"
+      ],
+      "physical_coefficients": {
+        "u_xx": 1.000522892216163
+      },
+      "heldout_weak": {
+        "trajectory_errors": [
+          {
+            "trajectory_id": 6,
+            "residual_norm": 0.041581642119280664,
+            "target_norm": 1.7869376763700295,
+            "relative_error": 0.023269777490924737,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 7,
+            "residual_norm": 0.039722946968588864,
+            "target_norm": 1.7450995916790857,
+            "relative_error": 0.022762567338846584,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 8,
+            "residual_norm": 0.03473959995809667,
+            "target_norm": 1.5607423700878176,
+            "relative_error": 0.022258382051960304,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 9,
+            "residual_norm": 0.04596926687641276,
+            "target_norm": 1.8245439914224877,
+            "relative_error": 0.025194934785087462,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 10,
+            "residual_norm": 0.04417834779083946,
+            "target_norm": 1.3959763679185204,
+            "relative_error": 0.03164691667145617,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 11,
+            "residual_norm": 0.04156089921037725,
+            "target_norm": 1.6083389970484891,
+            "relative_error": 0.0258408826041319,
+            "status": "relative"
+          }
+        ],
+        "rms_relative_error": 0.02536111155325258,
+        "aggregation": "equal test-trajectory RMS of raw weak relative residuals",
+        "coefficient_refit": false,
+        "support_unchanged": [
+          "u_xx"
+        ]
+      },
+      "dynamics": [
+        {
+          "status": "unsupported_case",
+          "reason": "Only declared heat spectral realization is implemented.",
+          "not_counted_as_statistical_failure": true,
+          "selection_action": "none"
+        }
+      ],
+      "truth_evaluation_after_selection": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0005228922161630845,
+        "physical_coef_rel_error_true_only": 0.0005228922161630845
+      }
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "selected_model_sha256": "cd83c853a0473ff58b7982cd84c7adabe9d6f955ab5bbf9b8596d465fe0c57ca",
+      "support": [
+        "u_xx"
+      ],
+      "physical_coefficients": {
+        "u_xx": 1.000522892216163
+      },
+      "heldout_weak": {
+        "trajectory_errors": [
+          {
+            "trajectory_id": 6,
+            "residual_norm": 0.041581642119280664,
+            "target_norm": 1.7869376763700295,
+            "relative_error": 0.023269777490924737,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 7,
+            "residual_norm": 0.039722946968588864,
+            "target_norm": 1.7450995916790857,
+            "relative_error": 0.022762567338846584,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 8,
+            "residual_norm": 0.03473959995809667,
+            "target_norm": 1.5607423700878176,
+            "relative_error": 0.022258382051960304,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 9,
+            "residual_norm": 0.04596926687641276,
+            "target_norm": 1.8245439914224877,
+            "relative_error": 0.025194934785087462,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 10,
+            "residual_norm": 0.04417834779083946,
+            "target_norm": 1.3959763679185204,
+            "relative_error": 0.03164691667145617,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 11,
+            "residual_norm": 0.04156089921037725,
+            "target_norm": 1.6083389970484891,
+            "relative_error": 0.0258408826041319,
+            "status": "relative"
+          }
+        ],
+        "rms_relative_error": 0.02536111155325258,
+        "aggregation": "equal test-trajectory RMS of raw weak relative residuals",
+        "coefficient_refit": false,
+        "support_unchanged": [
+          "u_xx"
+        ]
+      },
+      "dynamics": [
+        {
+          "status": "unsupported_case",
+          "reason": "Only declared heat spectral realization is implemented.",
+          "not_counted_as_statistical_failure": true,
+          "selection_action": "none"
+        }
+      ],
+      "truth_evaluation_after_selection": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0005228922161630845,
+        "physical_coef_rel_error_true_only": 0.0005228922161630845
+      }
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "selected_model_sha256": "3e9798b2e9033b564afe6ed846f046f2b6be9f5bde5946e1bb93e857bb074043",
+      "support": [
+        "u_xx"
+      ],
+      "physical_coefficients": {
+        "u_xx": 1.000522892216163
+      },
+      "heldout_weak": {
+        "trajectory_errors": [
+          {
+            "trajectory_id": 6,
+            "residual_norm": 0.041581642119280664,
+            "target_norm": 1.7869376763700295,
+            "relative_error": 0.023269777490924737,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 7,
+            "residual_norm": 0.039722946968588864,
+            "target_norm": 1.7450995916790857,
+            "relative_error": 0.022762567338846584,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 8,
+            "residual_norm": 0.03473959995809667,
+            "target_norm": 1.5607423700878176,
+            "relative_error": 0.022258382051960304,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 9,
+            "residual_norm": 0.04596926687641276,
+            "target_norm": 1.8245439914224877,
+            "relative_error": 0.025194934785087462,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 10,
+            "residual_norm": 0.04417834779083946,
+            "target_norm": 1.3959763679185204,
+            "relative_error": 0.03164691667145617,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 11,
+            "residual_norm": 0.04156089921037725,
+            "target_norm": 1.6083389970484891,
+            "relative_error": 0.0258408826041319,
+            "status": "relative"
+          }
+        ],
+        "rms_relative_error": 0.02536111155325258,
+        "aggregation": "equal test-trajectory RMS of raw weak relative residuals",
+        "coefficient_refit": false,
+        "support_unchanged": [
+          "u_xx"
+        ]
+      },
+      "dynamics": [
+        {
+          "status": "unsupported_case",
+          "reason": "Only declared heat spectral realization is implemented.",
+          "not_counted_as_statistical_failure": true,
+          "selection_action": "none"
+        }
+      ],
+      "truth_evaluation_after_selection": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0005228922161630845,
+        "physical_coef_rel_error_true_only": 0.0005228922161630845
+      }
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "selected_model_sha256": "4694bc36eeabd321d917394f233b2cc2e400e43c5d4e3d8c14bb88febebecdf2",
+      "support": [
+        "u_xx"
+      ],
+      "physical_coefficients": {
+        "u_xx": 1.000522892216163
+      },
+      "heldout_weak": {
+        "trajectory_errors": [
+          {
+            "trajectory_id": 6,
+            "residual_norm": 0.041581642119280664,
+            "target_norm": 1.7869376763700295,
+            "relative_error": 0.023269777490924737,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 7,
+            "residual_norm": 0.039722946968588864,
+            "target_norm": 1.7450995916790857,
+            "relative_error": 0.022762567338846584,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 8,
+            "residual_norm": 0.03473959995809667,
+            "target_norm": 1.5607423700878176,
+            "relative_error": 0.022258382051960304,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 9,
+            "residual_norm": 0.04596926687641276,
+            "target_norm": 1.8245439914224877,
+            "relative_error": 0.025194934785087462,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 10,
+            "residual_norm": 0.04417834779083946,
+            "target_norm": 1.3959763679185204,
+            "relative_error": 0.03164691667145617,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 11,
+            "residual_norm": 0.04156089921037725,
+            "target_norm": 1.6083389970484891,
+            "relative_error": 0.0258408826041319,
+            "status": "relative"
+          }
+        ],
+        "rms_relative_error": 0.02536111155325258,
+        "aggregation": "equal test-trajectory RMS of raw weak relative residuals",
+        "coefficient_refit": false,
+        "support_unchanged": [
+          "u_xx"
+        ]
+      },
+      "dynamics": [
+        {
+          "status": "unsupported_case",
+          "reason": "Only declared heat spectral realization is implemented.",
+          "not_counted_as_statistical_failure": true,
+          "selection_action": "none"
+        }
+      ],
+      "truth_evaluation_after_selection": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0005228922161630845,
+        "physical_coef_rel_error_true_only": 0.0005228922161630845
+      }
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "selected_model_sha256": "3bfe745c78a36abf526522de3176069ecff8d7ee7beccae0c7fade672bb0c2d0",
+      "support": [
+        "u_xx"
+      ],
+      "physical_coefficients": {
+        "u_xx": 1.000522892216163
+      },
+      "heldout_weak": {
+        "trajectory_errors": [
+          {
+            "trajectory_id": 6,
+            "residual_norm": 0.041581642119280664,
+            "target_norm": 1.7869376763700295,
+            "relative_error": 0.023269777490924737,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 7,
+            "residual_norm": 0.039722946968588864,
+            "target_norm": 1.7450995916790857,
+            "relative_error": 0.022762567338846584,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 8,
+            "residual_norm": 0.03473959995809667,
+            "target_norm": 1.5607423700878176,
+            "relative_error": 0.022258382051960304,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 9,
+            "residual_norm": 0.04596926687641276,
+            "target_norm": 1.8245439914224877,
+            "relative_error": 0.025194934785087462,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 10,
+            "residual_norm": 0.04417834779083946,
+            "target_norm": 1.3959763679185204,
+            "relative_error": 0.03164691667145617,
+            "status": "relative"
+          },
+          {
+            "trajectory_id": 11,
+            "residual_norm": 0.04156089921037725,
+            "target_norm": 1.6083389970484891,
+            "relative_error": 0.0258408826041319,
+            "status": "relative"
+          }
+        ],
+        "rms_relative_error": 0.02536111155325258,
+        "aggregation": "equal test-trajectory RMS of raw weak relative residuals",
+        "coefficient_refit": false,
+        "support_unchanged": [
+          "u_xx"
+        ]
+      },
+      "dynamics": [
+        {
+          "status": "unsupported_case",
+          "reason": "Only declared heat spectral realization is implemented.",
+          "not_counted_as_statistical_failure": true,
+          "selection_action": "none"
+        }
+      ],
+      "truth_evaluation_after_selection": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0005228922161630845,
+        "physical_coef_rel_error_true_only": 0.0005228922161630845
+      }
+    }
+  ],
+  "no_test_refit_or_selection": true,
+  "all_selected_supports_preserved": true,
+  "uncertainty_scope": "One noise-seed bundle, conditional on fixed train/validation and six test ICs.",
+  "dynamic_scope": "Subset-specific all-resolved-mode diagnostic, not a general PDE rollout ranking.",
+  "selection_manifest": {
+    "file": "stage3_campaign/wave_sigma_0p01_seed_1000/selection_manifest.json",
+    "sha256": "57fc3d3cb8b5e87289e87a394f53a4a6d27a334219bc34b8cd73f99977d11aa0"
+  }
+}

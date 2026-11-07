@@ -1,0 +1,3240 @@
+{
+  "stage": 2,
+  "component": "independent artifact and evaluation review",
+  "all_checks_passed": true,
+  "checks": {
+    "six_expected_cases": true,
+    "stage2_execution_complete": true,
+    "test_data_not_used": true,
+    "heat_noise_grid": true,
+    "wave_noise_grid": true,
+    "advection_diffusion_noise_grid": true,
+    "burgers_noise_grid": true,
+    "kdv_noise_grid": true,
+    "logheat_noise_grid": true,
+    "all_72_matrix_target_pairs_verified": true,
+    "original_report_unchanged": true
+  },
+  "errors": [],
+  "rows": [
+    {
+      "case": "heat",
+      "sigma": 0.0,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "709a807aac83a60fdbc2d77febe5958de5aeb479b8b2997c9c19ca0e7b291f53",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 2.4728258274102765e-13,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1312,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 0
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            6,
+            30
+          ],
+          "coefficients": [
+            1.0000000000000613,
+            7.235876622383873e-13
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.5498336959899302e-13,
+          "validation_equation_relative_error": 2.2830011141095857e-13,
+          "support": [
+            "u_xx",
+            "u"
+          ],
+          "complexity": 4,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            30
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            90
+          ],
+          "coefficients": [
+            1.000000000000074,
+            2.0880548936227272e-12
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.517865494708929e-13,
+          "validation_equation_relative_error": 2.310937669358432e-13,
+          "support": [
+            "u_xx",
+            "u^3"
+          ],
+          "complexity": 6,
+          "original_rank": 2,
+          "support_set_indices": [
+            6,
+            90
+          ]
+        },
+        {
+          "support_indices": [
+            0,
+            6
+          ],
+          "coefficients": [
+            1.1851953827096083e-13,
+            1.0000000000000495
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.5621702583001757e-13,
+          "validation_equation_relative_error": 2.332386084405071e-13,
+          "support": [
+            "1",
+            "u_xx"
+          ],
+          "complexity": 4,
+          "original_rank": 3,
+          "support_set_indices": [
+            0,
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6
+          ],
+          "coefficients": [
+            1.0000000000000469
+          ],
+          "rank": 1,
+          "train_equation_relative_error": 1.5650060647627728e-13,
+          "validation_equation_relative_error": 2.3348687159359477e-13,
+          "support": [
+            "u_xx"
+          ],
+          "complexity": 3,
+          "original_rank": 4,
+          "support_set_indices": [
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            11
+          ],
+          "coefficients": [
+            1.0000000000000469,
+            -2.5126104778174283e-14
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.5647597565597458e-13,
+          "validation_equation_relative_error": 2.3415931737791607e-13,
+          "support": [
+            "u_xx",
+            "u_x"
+          ],
+          "complexity": 5,
+          "original_rank": 5,
+          "support_set_indices": [
+            6,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            41
+          ],
+          "coefficients": [
+            1.0000000000000455,
+            -2.0275032672357132e-13
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.5596045066904652e-13,
+          "validation_equation_relative_error": 2.3541218040593307e-13,
+          "support": [
+            "u_xx",
+            "u u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 6,
+          "support_set_indices": [
+            6,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            71
+          ],
+          "coefficients": [
+            1.0000000000000462,
+            -9.909162396083012e-14
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.5642582562245812e-13,
+          "validation_equation_relative_error": 2.3571840274625757e-13,
+          "support": [
+            "u_xx",
+            "u^2 u_x"
+          ],
+          "complexity": 7,
+          "original_rank": 7,
+          "support_set_indices": [
+            6,
+            71
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            36
+          ],
+          "coefficients": [
+            1.000000000000081,
+            -6.448603165015964e-14
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.539386980791721e-13,
+          "validation_equation_relative_error": 2.3625817480212213e-13,
+          "support": [
+            "u_xx",
+            "u u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 8,
+          "support_set_indices": [
+            6,
+            36
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            23
+          ],
+          "coefficients": [
+            1.0000000000000464,
+            -6.575724700207734e-15
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.5571921883765918e-13,
+          "validation_equation_relative_error": 2.363047544283943e-13,
+          "support": [
+            "u_xx",
+            "u_x^3"
+          ],
+          "complexity": 9,
+          "original_rank": 9,
+          "support_set_indices": [
+            6,
+            23
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            18
+          ],
+          "coefficients": [
+            1.0000000000000444,
+            -3.8901991198369745e-14
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 1.5561299147320366e-13,
+          "validation_equation_relative_error": 2.3767371255202686e-13,
+          "support": [
+            "u_xx",
+            "u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 10,
+          "support_set_indices": [
+            6,
+            18
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 0.11427368031572072,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1312,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 0
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            6,
+            60
+          ],
+          "coefficients": [
+            0.9947544061498096,
+            -0.12627031533134112
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08330476739682413,
+          "validation_equation_relative_error": 0.11374535473957863,
+          "support": [
+            "u_xx",
+            "u^2"
+          ],
+          "complexity": 5,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            60
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            90
+          ],
+          "coefficients": [
+            0.9941080732048787,
+            -0.1924769024327471
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08326820831865475,
+          "validation_equation_relative_error": 0.11375345308985615,
+          "support": [
+            "u_xx",
+            "u^3"
+          ],
+          "complexity": 6,
+          "original_rank": 2,
+          "support_set_indices": [
+            6,
+            90
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            34
+          ],
+          "coefficients": [
+            0.9969406720656634,
+            0.00036801833964967797
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08330241059699663,
+          "validation_equation_relative_error": 0.11380088239133598,
+          "support": [
+            "u_xx",
+            "u u_xxx"
+          ],
+          "complexity": 8,
+          "original_rank": 3,
+          "support_set_indices": [
+            6,
+            34
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            66
+          ],
+          "coefficients": [
+            0.9952749823674629,
+            0.0027946262008235047
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.0833317941196041,
+          "validation_equation_relative_error": 0.11380725313057374,
+          "support": [
+            "u_xx",
+            "u^2 u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 4,
+          "support_set_indices": [
+            6,
+            66
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            71
+          ],
+          "coefficients": [
+            0.9965054875703367,
+            -0.01792859509227627
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08333735390599703,
+          "validation_equation_relative_error": 0.11384527099913737,
+          "support": [
+            "u_xx",
+            "u^2 u_x"
+          ],
+          "complexity": 7,
+          "original_rank": 5,
+          "support_set_indices": [
+            6,
+            71
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            11
+          ],
+          "coefficients": [
+            0.9965653446894404,
+            -0.009723685622041272
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.0833341719537662,
+          "validation_equation_relative_error": 0.113845511197061,
+          "support": [
+            "u_xx",
+            "u_x"
+          ],
+          "complexity": 5,
+          "original_rank": 6,
+          "support_set_indices": [
+            6,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            18
+          ],
+          "coefficients": [
+            0.9970417436930148,
+            0.00721076828396325
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08328680641424027,
+          "validation_equation_relative_error": 0.11385311404282297,
+          "support": [
+            "u_xx",
+            "u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 7,
+          "support_set_indices": [
+            6,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            30
+          ],
+          "coefficients": [
+            0.9958671308387786,
+            -0.03710954465128532
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08333476346476229,
+          "validation_equation_relative_error": 0.11385336860795178,
+          "support": [
+            "u_xx",
+            "u"
+          ],
+          "complexity": 4,
+          "original_rank": 8,
+          "support_set_indices": [
+            6,
+            30
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            45
+          ],
+          "coefficients": [
+            0.9965298367895125,
+            0.00022395505134273987
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08334129753540223,
+          "validation_equation_relative_error": 0.11388211367371577,
+          "support": [
+            "u_xx",
+            "u u_x u_xx"
+          ],
+          "complexity": 9,
+          "original_rank": 9,
+          "support_set_indices": [
+            6,
+            45
+          ]
+        },
+        {
+          "support_indices": [
+            0,
+            6
+          ],
+          "coefficients": [
+            0.031147349134941025,
+            0.9973677327206656
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.08330740243707424,
+          "validation_equation_relative_error": 0.11389478777801272,
+          "support": [
+            "1",
+            "u_xx"
+          ],
+          "complexity": 4,
+          "original_rank": 10,
+          "support_set_indices": [
+            0,
+            6
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "wave",
+      "sigma": 0.0,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "e630640d266ef2b102bfb33264b593fcd83d5dc5deccd9a2c7efd1bade9458bd",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 3.4035779443502314e-15,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1331,
+        "unique_support_sets": 1331,
+        "duplicates_removed": 0
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            6,
+            30
+          ],
+          "coefficients": [
+            0.9999999999999998,
+            -5.039603897674251e-14
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.8473097054587086e-15,
+          "validation_equation_relative_error": 3.3493377630097076e-15,
+          "support": [
+            "u_xx",
+            "u"
+          ],
+          "complexity": 4,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            30
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            90
+          ],
+          "coefficients": [
+            0.9999999999999998,
+            -2.574839979437391e-14
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.8493790883821645e-15,
+          "validation_equation_relative_error": 3.36609821718564e-15,
+          "support": [
+            "u_xx",
+            "u^3"
+          ],
+          "complexity": 6,
+          "original_rank": 2,
+          "support_set_indices": [
+            6,
+            90
+          ]
+        },
+        {
+          "support_indices": [
+            4,
+            6
+          ],
+          "coefficients": [
+            3.497927226133687e-17,
+            0.9999999999999996
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.8697743650175984e-15,
+          "validation_equation_relative_error": 3.367265889689755e-15,
+          "support": [
+            "u_xxx",
+            "u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 3,
+          "support_set_indices": [
+            4,
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            23
+          ],
+          "coefficients": [
+            1.0,
+            -3.5703833229345054e-17
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.847675897086892e-15,
+          "validation_equation_relative_error": 3.37059859813802e-15,
+          "support": [
+            "u_xx",
+            "u_x^3"
+          ],
+          "complexity": 9,
+          "original_rank": 4,
+          "support_set_indices": [
+            6,
+            23
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            11
+          ],
+          "coefficients": [
+            1.0,
+            -4.186424394571477e-15
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.8497101286835417e-15,
+          "validation_equation_relative_error": 3.379182075024302e-15,
+          "support": [
+            "u_xx",
+            "u_x"
+          ],
+          "complexity": 5,
+          "original_rank": 5,
+          "support_set_indices": [
+            6,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            48
+          ],
+          "coefficients": [
+            0.9999999999999997,
+            -6.834336005628458e-16
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.869304341832392e-15,
+          "validation_equation_relative_error": 3.3873001710161235e-15,
+          "support": [
+            "u_xx",
+            "u u_x^2"
+          ],
+          "complexity": 8,
+          "original_rank": 6,
+          "support_set_indices": [
+            6,
+            48
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            66
+          ],
+          "coefficients": [
+            1.0,
+            2.3515449421368664e-16
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.876114822160037e-15,
+          "validation_equation_relative_error": 3.3893236309611305e-15,
+          "support": [
+            "u_xx",
+            "u^2 u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 7,
+          "support_set_indices": [
+            6,
+            66
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            71
+          ],
+          "coefficients": [
+            1.0,
+            -2.2378680532869426e-15
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.868412414692181e-15,
+          "validation_equation_relative_error": 3.392478376402833e-15,
+          "support": [
+            "u_xx",
+            "u^2 u_x"
+          ],
+          "complexity": 7,
+          "original_rank": 8,
+          "support_set_indices": [
+            6,
+            71
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            18
+          ],
+          "coefficients": [
+            0.9999999999999999,
+            1.783335092567412e-16
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.865267145256951e-15,
+          "validation_equation_relative_error": 3.3943873115254014e-15,
+          "support": [
+            "u_xx",
+            "u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 9,
+          "support_set_indices": [
+            6,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            64
+          ],
+          "coefficients": [
+            1.0,
+            6.419970686938088e-18
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.8665645968786566e-15,
+          "validation_equation_relative_error": 3.3962618313109533e-15,
+          "support": [
+            "u_xx",
+            "u^2 u_xxx"
+          ],
+          "complexity": 9,
+          "original_rank": 10,
+          "support_set_indices": [
+            6,
+            64
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "wave",
+      "sigma": 0.01,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "fa9ed684a9f3dd567a4514e889384997d6951c1f353896f01d2877e8684bfd41",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 0.027632437416915342,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1331,
+        "unique_support_sets": 1331,
+        "duplicates_removed": 0
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            4,
+            6
+          ],
+          "coefficients": [
+            6.823529857780494e-05,
+            1.0011661891802737
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.021582151653131956,
+          "validation_equation_relative_error": 0.027507204813772425,
+          "support": [
+            "u_xxx",
+            "u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 1,
+          "support_set_indices": [
+            4,
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            34
+          ],
+          "coefficients": [
+            1.0011910277914446,
+            -7.31493357828226e-05
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.02159619180637614,
+          "validation_equation_relative_error": 0.027524245827799894,
+          "support": [
+            "u_xx",
+            "u u_xxx"
+          ],
+          "complexity": 8,
+          "original_rank": 2,
+          "support_set_indices": [
+            6,
+            34
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            45
+          ],
+          "coefficients": [
+            1.0011556752439685,
+            9.972628348737032e-05
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.021605117076144938,
+          "validation_equation_relative_error": 0.027534622441449334,
+          "support": [
+            "u_xx",
+            "u u_x u_xx"
+          ],
+          "complexity": 9,
+          "original_rank": 3,
+          "support_set_indices": [
+            6,
+            45
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            11
+          ],
+          "coefficients": [
+            1.0011783002089696,
+            -0.007010898462414352
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.021606130854968,
+          "validation_equation_relative_error": 0.027534694301907005,
+          "support": [
+            "u_xx",
+            "u_x"
+          ],
+          "complexity": 5,
+          "original_rank": 4,
+          "support_set_indices": [
+            6,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            15
+          ],
+          "coefficients": [
+            1.0011786335057737,
+            -2.2163212141541924e-05
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.02161074397921889,
+          "validation_equation_relative_error": 0.027535384634099665,
+          "support": [
+            "u_xx",
+            "u_x u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 5,
+          "support_set_indices": [
+            6,
+            15
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            60
+          ],
+          "coefficients": [
+            1.0011689133336739,
+            0.009690396473369289
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.021610981361821737,
+          "validation_equation_relative_error": 0.027538022044467335,
+          "support": [
+            "u_xx",
+            "u^2"
+          ],
+          "complexity": 5,
+          "original_rank": 6,
+          "support_set_indices": [
+            6,
+            60
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            41
+          ],
+          "coefficients": [
+            1.0011791947304938,
+            0.009535155353362326
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.02160724420276831,
+          "validation_equation_relative_error": 0.027538719629534286,
+          "support": [
+            "u_xx",
+            "u u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 7,
+          "support_set_indices": [
+            6,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            6
+          ],
+          "coefficients": [
+            1.001176956532599
+          ],
+          "rank": 1,
+          "train_equation_relative_error": 0.02161114136800938,
+          "validation_equation_relative_error": 0.027540224498108664,
+          "support": [
+            "u_xx"
+          ],
+          "complexity": 3,
+          "original_rank": 8,
+          "support_set_indices": [
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            66
+          ],
+          "coefficients": [
+            1.000856713128716,
+            0.0003519562897083592
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.021609142951095534,
+          "validation_equation_relative_error": 0.02754026509837794,
+          "support": [
+            "u_xx",
+            "u^2 u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 9,
+          "support_set_indices": [
+            6,
+            66
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            71
+          ],
+          "coefficients": [
+            1.0011807236760304,
+            0.0029244013470306513
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.021610740421600078,
+          "validation_equation_relative_error": 0.027540518337775172,
+          "support": [
+            "u_xx",
+            "u^2 u_x"
+          ],
+          "complexity": 7,
+          "original_rank": 10,
+          "support_set_indices": [
+            6,
+            71
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.0,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "d329a39d7d12aa0726983faeeae11a6abcf48bf2d593b7c96fca057fc690362f",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 6.4085923660239066e-15,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1313,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 1
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            6,
+            11
+          ],
+          "coefficients": [
+            0.0499999999999998,
+            -0.3999999999999987
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 4.581086250161877e-15,
+          "validation_equation_relative_error": 5.164003179651343e-15,
+          "support": [
+            "u_xx",
+            "u_x"
+          ],
+          "complexity": 5,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            36
+          ],
+          "coefficients": [
+            -0.3996645683069776,
+            0.036052834529209356
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.11107690826212414,
+          "validation_equation_relative_error": 0.09400244214317742,
+          "support": [
+            "u_x",
+            "u u_xx"
+          ],
+          "complexity": 6,
+          "original_rank": 3,
+          "support_set_indices": [
+            11,
+            36
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            66
+          ],
+          "coefficients": [
+            -0.40021786779528334,
+            0.01905653878252333
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.14361477578573198,
+          "validation_equation_relative_error": 0.14984338523758642,
+          "support": [
+            "u_x",
+            "u^2 u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 4,
+          "support_set_indices": [
+            11,
+            66
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            90
+          ],
+          "coefficients": [
+            -0.3999175942462053,
+            -0.053983754826923656
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.13744124286186693,
+          "validation_equation_relative_error": 0.15278570424284754,
+          "support": [
+            "u_x",
+            "u^3"
+          ],
+          "complexity": 5,
+          "original_rank": 5,
+          "support_set_indices": [
+            11,
+            90
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            60
+          ],
+          "coefficients": [
+            -0.39981605090636185,
+            -0.055341641803169805
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1525957991236791,
+          "validation_equation_relative_error": 0.1689669529717339,
+          "support": [
+            "u_x",
+            "u^2"
+          ],
+          "complexity": 4,
+          "original_rank": 6,
+          "support_set_indices": [
+            11,
+            60
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            30
+          ],
+          "coefficients": [
+            -0.3997909484077295,
+            -0.03393036425507792
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1825220741112682,
+          "validation_equation_relative_error": 0.20091190813363688,
+          "support": [
+            "u_x",
+            "u"
+          ],
+          "complexity": 3,
+          "original_rank": 7,
+          "support_set_indices": [
+            11,
+            30
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            45
+          ],
+          "coefficients": [
+            -0.4013657060863983,
+            -0.008212314964872942
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.20745143487876663,
+          "validation_equation_relative_error": 0.22335238617455672,
+          "support": [
+            "u_x",
+            "u u_x u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 8,
+          "support_set_indices": [
+            11,
+            45
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            48
+          ],
+          "coefficients": [
+            -0.39956976728716903,
+            -0.014672028094167351
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.20559868507715157,
+          "validation_equation_relative_error": 0.2239333480555348,
+          "support": [
+            "u_x",
+            "u u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 9,
+          "support_set_indices": [
+            11,
+            48
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            15
+          ],
+          "coefficients": [
+            -0.39965266853159753,
+            -0.001802683055491695
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.2085951890370815,
+          "validation_equation_relative_error": 0.2271542059386318,
+          "support": [
+            "u_x",
+            "u_x u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 10,
+          "support_set_indices": [
+            11,
+            15
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [
+        {
+          "original_rank": 2,
+          "support": [
+            "u_x",
+            "u_xx"
+          ],
+          "support_set_indices": [
+            6,
+            11
+          ]
+        }
+      ],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "advection_diffusion",
+      "sigma": 0.01,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "98baafeb1b86f70309703ca2e48662e787e88f3137df5aa4be87fbe9b6c3ebc9",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 0.0498035695514553,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1313,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 1
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            11,
+            6
+          ],
+          "coefficients": [
+            -0.39999786964063433,
+            0.049594123052170716
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.04857312620562944,
+          "validation_equation_relative_error": 0.049734062097338994,
+          "support": [
+            "u_x",
+            "u_xx"
+          ],
+          "complexity": 5,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            36
+          ],
+          "coefficients": [
+            -0.39963618183825933,
+            0.03593910096044345
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.11887145718191472,
+          "validation_equation_relative_error": 0.101806660300521,
+          "support": [
+            "u_x",
+            "u u_xx"
+          ],
+          "complexity": 6,
+          "original_rank": 3,
+          "support_set_indices": [
+            11,
+            36
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            66
+          ],
+          "coefficients": [
+            -0.4001607617798597,
+            0.01900147764674677
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.14953456646137392,
+          "validation_equation_relative_error": 0.1538023295431543,
+          "support": [
+            "u_x",
+            "u^2 u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 4,
+          "support_set_indices": [
+            11,
+            66
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            90
+          ],
+          "coefficients": [
+            -0.39980285806876636,
+            -0.05462143339625069
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.14185017935535701,
+          "validation_equation_relative_error": 0.1554819430414753,
+          "support": [
+            "u_x",
+            "u^3"
+          ],
+          "complexity": 5,
+          "original_rank": 5,
+          "support_set_indices": [
+            11,
+            90
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            60
+          ],
+          "coefficients": [
+            -0.399698247639373,
+            -0.0561993961102295
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1564850875621922,
+          "validation_equation_relative_error": 0.17116604324158896,
+          "support": [
+            "u_x",
+            "u^2"
+          ],
+          "complexity": 4,
+          "original_rank": 6,
+          "support_set_indices": [
+            11,
+            60
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            30
+          ],
+          "coefficients": [
+            -0.3996720675787096,
+            -0.03467462752507118
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.18621459776023347,
+          "validation_equation_relative_error": 0.20256103818218102,
+          "support": [
+            "u_x",
+            "u"
+          ],
+          "complexity": 3,
+          "original_rank": 7,
+          "support_set_indices": [
+            11,
+            30
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            45
+          ],
+          "coefficients": [
+            -0.40135797250951477,
+            -0.00871936520215679
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.21159729796709004,
+          "validation_equation_relative_error": 0.2256525456534941,
+          "support": [
+            "u_x",
+            "u u_x u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 8,
+          "support_set_indices": [
+            11,
+            45
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            48
+          ],
+          "coefficients": [
+            -0.39942888514185637,
+            -0.01664167574633867
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.20908446096528566,
+          "validation_equation_relative_error": 0.2257979609798725,
+          "support": [
+            "u_x",
+            "u u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 9,
+          "support_set_indices": [
+            11,
+            48
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            15
+          ],
+          "coefficients": [
+            -0.399479544715148,
+            -0.0024732009873547726
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.2128364438902964,
+          "validation_equation_relative_error": 0.22946873767875384,
+          "support": [
+            "u_x",
+            "u_x u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 10,
+          "support_set_indices": [
+            11,
+            15
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [
+        {
+          "original_rank": 2,
+          "support": [
+            "u_xx",
+            "u_x"
+          ],
+          "support_set_indices": [
+            6,
+            11
+          ]
+        }
+      ],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.0,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "87d2807c2b24808052c506048acbc9ffe67bc08577cc7fb1f0a7a9b6837ff02d",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 5.7005201656066744e-12,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1313,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 1
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            41,
+            6
+          ],
+          "coefficients": [
+            -0.9999999999997683,
+            0.10000000000001583
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 4.927614403732588e-12,
+          "validation_equation_relative_error": 5.704127469077773e-12,
+          "support": [
+            "u u_x",
+            "u_xx"
+          ],
+          "complexity": 6,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            23
+          ],
+          "coefficients": [
+            -1.0482091828355793,
+            -0.004558199687054133
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1899288977748345,
+          "validation_equation_relative_error": 0.06764130353264805,
+          "support": [
+            "u_x",
+            "u_x^3"
+          ],
+          "complexity": 8,
+          "original_rank": 3,
+          "support_set_indices": [
+            11,
+            23
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            18
+          ],
+          "coefficients": [
+            -1.0096810822439894,
+            0.035911239488577
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.202397754832028,
+          "validation_equation_relative_error": 0.07118817863561373,
+          "support": [
+            "u_x",
+            "u_x^2"
+          ],
+          "complexity": 6,
+          "original_rank": 4,
+          "support_set_indices": [
+            11,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            48
+          ],
+          "coefficients": [
+            -1.0229218877179922,
+            0.027175817332235012
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.19145006948616042,
+          "validation_equation_relative_error": 0.07809965104122138,
+          "support": [
+            "u_x",
+            "u u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 5,
+          "support_set_indices": [
+            11,
+            48
+          ]
+        },
+        {
+          "support_indices": [
+            4,
+            18
+          ],
+          "coefficients": [
+            -0.008437562176599914,
+            0.24762248679421156
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.30507397347880616,
+          "validation_equation_relative_error": 0.09052477502876775,
+          "support": [
+            "u_xxx",
+            "u_x^2"
+          ],
+          "complexity": 8,
+          "original_rank": 6,
+          "support_set_indices": [
+            4,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            34
+          ],
+          "coefficients": [
+            -1.1885858729930692,
+            0.0002911800602770899
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.2108754268447093,
+          "validation_equation_relative_error": 0.1020956329834545,
+          "support": [
+            "u_x",
+            "u u_xxx"
+          ],
+          "complexity": 7,
+          "original_rank": 7,
+          "support_set_indices": [
+            11,
+            34
+          ]
+        },
+        {
+          "support_indices": [
+            4,
+            11
+          ],
+          "coefficients": [
+            0.00012664047061094688,
+            -1.19338331027326
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.2111930193054297,
+          "validation_equation_relative_error": 0.10285796723397336,
+          "support": [
+            "u_xxx",
+            "u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 8,
+          "support_set_indices": [
+            4,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            36
+          ],
+          "coefficients": [
+            -1.1807624552855152,
+            -0.005132237940643474
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.2096289008357884,
+          "validation_equation_relative_error": 0.10310949044482398,
+          "support": [
+            "u_x",
+            "u u_xx"
+          ],
+          "complexity": 6,
+          "original_rank": 9,
+          "support_set_indices": [
+            11,
+            36
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            64
+          ],
+          "coefficients": [
+            -1.1948701331408953,
+            5.215545956412996e-05
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.21117543704225317,
+          "validation_equation_relative_error": 0.10315447382044603,
+          "support": [
+            "u_x",
+            "u^2 u_xxx"
+          ],
+          "complexity": 8,
+          "original_rank": 10,
+          "support_set_indices": [
+            11,
+            64
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [
+        {
+          "original_rank": 2,
+          "support": [
+            "u_xx",
+            "u u_x"
+          ],
+          "support_set_indices": [
+            6,
+            41
+          ]
+        }
+      ],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "burgers",
+      "sigma": 0.01,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "a56536c5b1a5a3a3df570d720f07235f470884df837fea9562841fa887507a90",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 0.01914808645188122,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1313,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 1
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            41,
+            6
+          ],
+          "coefficients": [
+            -1.0010982230587036,
+            0.09979152965803896
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.023448056603220958,
+          "validation_equation_relative_error": 0.019223990111238976,
+          "support": [
+            "u u_x",
+            "u_xx"
+          ],
+          "complexity": 6,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            23
+          ],
+          "coefficients": [
+            -1.0491532198216649,
+            -0.004554592232985692
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.19051146171590969,
+          "validation_equation_relative_error": 0.06740923732337535,
+          "support": [
+            "u_x",
+            "u_x^3"
+          ],
+          "complexity": 8,
+          "original_rank": 3,
+          "support_set_indices": [
+            11,
+            23
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            18
+          ],
+          "coefficients": [
+            -1.009777773078955,
+            0.036064314277724094
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.20284186740949814,
+          "validation_equation_relative_error": 0.07097810640358602,
+          "support": [
+            "u_x",
+            "u_x^2"
+          ],
+          "complexity": 6,
+          "original_rank": 4,
+          "support_set_indices": [
+            11,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            48
+          ],
+          "coefficients": [
+            -1.0236947159530003,
+            0.0271873756558684
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.19194185081454343,
+          "validation_equation_relative_error": 0.07836355822916395,
+          "support": [
+            "u_x",
+            "u u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 5,
+          "support_set_indices": [
+            11,
+            48
+          ]
+        },
+        {
+          "support_indices": [
+            4,
+            18
+          ],
+          "coefficients": [
+            -0.00790495250499041,
+            0.24490253604965315
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.3096283338196059,
+          "validation_equation_relative_error": 0.09372639468477521,
+          "support": [
+            "u_xxx",
+            "u_x^2"
+          ],
+          "complexity": 8,
+          "original_rank": 6,
+          "support_set_indices": [
+            4,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            34
+          ],
+          "coefficients": [
+            -1.1891803434210009,
+            0.00030801330194677406
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.2112835106384704,
+          "validation_equation_relative_error": 0.1018522245455449,
+          "support": [
+            "u_x",
+            "u u_xxx"
+          ],
+          "complexity": 7,
+          "original_rank": 7,
+          "support_set_indices": [
+            11,
+            34
+          ]
+        },
+        {
+          "support_indices": [
+            4,
+            11
+          ],
+          "coefficients": [
+            0.0001354303974869344,
+            -1.1942056949245587
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.21164889381279486,
+          "validation_equation_relative_error": 0.10267680195043367,
+          "support": [
+            "u_xxx",
+            "u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 8,
+          "support_set_indices": [
+            4,
+            11
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            64
+          ],
+          "coefficients": [
+            -1.1954519559353702,
+            7.086734212873192e-05
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.21159120468945944,
+          "validation_equation_relative_error": 0.10296817286353137,
+          "support": [
+            "u_x",
+            "u^2 u_xxx"
+          ],
+          "complexity": 8,
+          "original_rank": 9,
+          "support_set_indices": [
+            11,
+            64
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            36
+          ],
+          "coefficients": [
+            -1.1820249456434417,
+            -0.00501003990918414
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.2101585623399395,
+          "validation_equation_relative_error": 0.10317028307886547,
+          "support": [
+            "u_x",
+            "u u_xx"
+          ],
+          "complexity": 6,
+          "original_rank": 10,
+          "support_set_indices": [
+            11,
+            36
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [
+        {
+          "original_rank": 2,
+          "support": [
+            "u_xx",
+            "u u_x"
+          ],
+          "support_set_indices": [
+            6,
+            41
+          ]
+        }
+      ],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.0,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "be7b214f517f238249cbece17478e03a4912ded4ebc091cdfe3ff8baa0addf2b",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 2.519312735498125e-10,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1313,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 1
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            41,
+            4
+          ],
+          "coefficients": [
+            -5.999999999707889,
+            -0.9999999998614281
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 2.7716872883074765e-10,
+          "validation_equation_relative_error": 2.5236798813004275e-10,
+          "support": [
+            "u u_x",
+            "u_xxx"
+          ],
+          "complexity": 7,
+          "original_rank": 1,
+          "support_set_indices": [
+            4,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            23
+          ],
+          "coefficients": [
+            -3.1795873976133247,
+            -0.5814258227282141
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.14447925124513836,
+          "validation_equation_relative_error": 0.13574746713272678,
+          "support": [
+            "u_x",
+            "u_x^3"
+          ],
+          "complexity": 8,
+          "original_rank": 3,
+          "support_set_indices": [
+            11,
+            23
+          ]
+        },
+        {
+          "support_indices": [
+            15,
+            41
+          ],
+          "coefficients": [
+            -1.2521222474515281,
+            -3.4601873723377836
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.15071535381122178,
+          "validation_equation_relative_error": 0.1502833845376089,
+          "support": [
+            "u_x u_xx",
+            "u u_x"
+          ],
+          "complexity": 8,
+          "original_rank": 4,
+          "support_set_indices": [
+            15,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            41
+          ],
+          "coefficients": [
+            -3.453056806356724,
+            -0.7538354000542988
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.16805459542728496,
+          "validation_equation_relative_error": 0.16840041499302802,
+          "support": [
+            "u_x",
+            "u u_x"
+          ],
+          "complexity": 5,
+          "original_rank": 5,
+          "support_set_indices": [
+            11,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            71
+          ],
+          "coefficients": [
+            -3.8258940986590595,
+            -0.30835696848384814
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.17042822948720052,
+          "validation_equation_relative_error": 0.16855059879231518,
+          "support": [
+            "u_x",
+            "u^2 u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 6,
+          "support_set_indices": [
+            11,
+            71
+          ]
+        },
+        {
+          "support_indices": [
+            34,
+            41
+          ],
+          "coefficients": [
+            -0.5847290113408787,
+            -5.995999160803384
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1597696181918246,
+          "validation_equation_relative_error": 0.16873253367542923,
+          "support": [
+            "u u_xxx",
+            "u u_x"
+          ],
+          "complexity": 8,
+          "original_rank": 7,
+          "support_set_indices": [
+            34,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            64
+          ],
+          "coefficients": [
+            -4.068998364891189,
+            0.032492068085295624
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.17597960482829533,
+          "validation_equation_relative_error": 0.173325451234874,
+          "support": [
+            "u_x",
+            "u^2 u_xxx"
+          ],
+          "complexity": 8,
+          "original_rank": 8,
+          "support_set_indices": [
+            11,
+            64
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            34
+          ],
+          "coefficients": [
+            -4.087066703758552,
+            0.05184812431443362
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.17811957756839514,
+          "validation_equation_relative_error": 0.17737824010736544,
+          "support": [
+            "u_x",
+            "u u_xxx"
+          ],
+          "complexity": 7,
+          "original_rank": 9,
+          "support_set_indices": [
+            11,
+            34
+          ]
+        },
+        {
+          "support_indices": [
+            4,
+            11
+          ],
+          "coefficients": [
+            0.03327129613348101,
+            -4.235354873118655
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1826889350225261,
+          "validation_equation_relative_error": 0.18328718132490932,
+          "support": [
+            "u_xxx",
+            "u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 10,
+          "support_set_indices": [
+            4,
+            11
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [
+        {
+          "original_rank": 2,
+          "support": [
+            "u_xxx",
+            "u u_x"
+          ],
+          "support_set_indices": [
+            4,
+            41
+          ]
+        }
+      ],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "kdv",
+      "sigma": 0.01,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "4cb4d8022b20738a44a85cc2e384f0c5b141d6d1c28ce5cdff3d3402aebf7df7",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 0.01331309734700007,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1313,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 1
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            41,
+            4
+          ],
+          "coefficients": [
+            -5.996874233406635,
+            -0.9986374966528808
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.01334047198397972,
+          "validation_equation_relative_error": 0.013311174226619754,
+          "support": [
+            "u u_x",
+            "u_xxx"
+          ],
+          "complexity": 7,
+          "original_rank": 1,
+          "support_set_indices": [
+            4,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            23
+          ],
+          "coefficients": [
+            -3.1787047368516106,
+            -0.5818058988391158
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.14465339304181843,
+          "validation_equation_relative_error": 0.13580722321138525,
+          "support": [
+            "u_x",
+            "u_x^3"
+          ],
+          "complexity": 8,
+          "original_rank": 3,
+          "support_set_indices": [
+            11,
+            23
+          ]
+        },
+        {
+          "support_indices": [
+            15,
+            41
+          ],
+          "coefficients": [
+            -1.2543851399042152,
+            -3.4602777672778555
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.15056240332876622,
+          "validation_equation_relative_error": 0.15034058858725513,
+          "support": [
+            "u_x u_xx",
+            "u u_x"
+          ],
+          "complexity": 8,
+          "original_rank": 4,
+          "support_set_indices": [
+            15,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            41
+          ],
+          "coefficients": [
+            -3.454551587894483,
+            -0.7524983544273796
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.16828869559299223,
+          "validation_equation_relative_error": 0.16848031328367613,
+          "support": [
+            "u_x",
+            "u u_x"
+          ],
+          "complexity": 5,
+          "original_rank": 5,
+          "support_set_indices": [
+            11,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            71
+          ],
+          "coefficients": [
+            -3.8269832578905065,
+            -0.30765613010038695
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.17066125549728703,
+          "validation_equation_relative_error": 0.1686222844327572,
+          "support": [
+            "u_x",
+            "u^2 u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 6,
+          "support_set_indices": [
+            11,
+            71
+          ]
+        },
+        {
+          "support_indices": [
+            34,
+            41
+          ],
+          "coefficients": [
+            -0.5841410175482245,
+            -5.993782881788761
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.16003906273329144,
+          "validation_equation_relative_error": 0.16899983119181042,
+          "support": [
+            "u u_xxx",
+            "u u_x"
+          ],
+          "complexity": 8,
+          "original_rank": 7,
+          "support_set_indices": [
+            34,
+            41
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            64
+          ],
+          "coefficients": [
+            -4.070364817176024,
+            0.0323075370680138
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1762159663127555,
+          "validation_equation_relative_error": 0.1734146211750311,
+          "support": [
+            "u_x",
+            "u^2 u_xxx"
+          ],
+          "complexity": 8,
+          "original_rank": 8,
+          "support_set_indices": [
+            11,
+            64
+          ]
+        },
+        {
+          "support_indices": [
+            11,
+            34
+          ],
+          "coefficients": [
+            -4.088125285601263,
+            0.05160125053428443
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.17832797541969198,
+          "validation_equation_relative_error": 0.17745868138725987,
+          "support": [
+            "u_x",
+            "u u_xxx"
+          ],
+          "complexity": 7,
+          "original_rank": 9,
+          "support_set_indices": [
+            11,
+            34
+          ]
+        },
+        {
+          "support_indices": [
+            4,
+            11
+          ],
+          "coefficients": [
+            0.033465553050910174,
+            -4.234835772405409
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1828360076907094,
+          "validation_equation_relative_error": 0.1833567592433558,
+          "support": [
+            "u_xxx",
+            "u_x"
+          ],
+          "complexity": 6,
+          "original_rank": 10,
+          "support_set_indices": [
+            4,
+            11
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [
+        {
+          "original_rank": 2,
+          "support": [
+            "u_xxx",
+            "u u_x"
+          ],
+          "support_set_indices": [
+            4,
+            41
+          ]
+        }
+      ],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.0,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "aa199713aec4c80ab3d1f0bef32a92fc7f0cc6401059e95729e656059eebb6cd",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 8.92361661477933e-08,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1312,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 0
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            6,
+            18
+          ],
+          "coefficients": [
+            1.0000000284392556,
+            0.9999999204846428
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 6.540770799924998e-08,
+          "validation_equation_relative_error": 7.857934892829165e-08,
+          "support": [
+            "u_xx",
+            "u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            48
+          ],
+          "coefficients": [
+            0.9578445786288594,
+            -4.619663494389313
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.11680388797323782,
+          "validation_equation_relative_error": 0.11644157599948043,
+          "support": [
+            "u_xx",
+            "u u_x^2"
+          ],
+          "complexity": 8,
+          "original_rank": 2,
+          "support_set_indices": [
+            6,
+            48
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            45
+          ],
+          "coefficients": [
+            0.9731004219353971,
+            0.45580454473512777
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1291053774915743,
+          "validation_equation_relative_error": 0.12887006640900778,
+          "support": [
+            "u_xx",
+            "u u_x u_xx"
+          ],
+          "complexity": 9,
+          "original_rank": 3,
+          "support_set_indices": [
+            6,
+            45
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            60
+          ],
+          "coefficients": [
+            0.9720166343245106,
+            17.57256102493245
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.12421668144519137,
+          "validation_equation_relative_error": 0.1328001501318032,
+          "support": [
+            "u_xx",
+            "u^2"
+          ],
+          "complexity": 5,
+          "original_rank": 4,
+          "support_set_indices": [
+            6,
+            60
+          ]
+        },
+        {
+          "support_indices": [
+            0,
+            6
+          ],
+          "coefficients": [
+            0.11714315081020629,
+            0.9827302863686453
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1311957365632328,
+          "validation_equation_relative_error": 0.13519589130921755,
+          "support": [
+            "1",
+            "u_xx"
+          ],
+          "complexity": 4,
+          "original_rank": 5,
+          "support_set_indices": [
+            0,
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            90
+          ],
+          "coefficients": [
+            0.9583658695208216,
+            -74.56481265332883
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.12684615723632764,
+          "validation_equation_relative_error": 0.13555556537019472,
+          "support": [
+            "u_xx",
+            "u^3"
+          ],
+          "complexity": 6,
+          "original_rank": 6,
+          "support_set_indices": [
+            6,
+            90
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            30
+          ],
+          "coefficients": [
+            0.9583618318036089,
+            -2.136586655065724
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.13080735799237783,
+          "validation_equation_relative_error": 0.13600475644483268,
+          "support": [
+            "u_xx",
+            "u"
+          ],
+          "complexity": 4,
+          "original_rank": 7,
+          "support_set_indices": [
+            6,
+            30
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            66
+          ],
+          "coefficients": [
+            0.9541573868900654,
+            1.7483219482851646
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.13158202374172207,
+          "validation_equation_relative_error": 0.1382501128756276,
+          "support": [
+            "u_xx",
+            "u^2 u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 8,
+          "support_set_indices": [
+            6,
+            66
+          ]
+        },
+        {
+          "support_indices": [
+            6
+          ],
+          "coefficients": [
+            0.9796110353706675
+          ],
+          "rank": 1,
+          "train_equation_relative_error": 0.13787174245148143,
+          "validation_equation_relative_error": 0.1407850434784943,
+          "support": [
+            "u_xx"
+          ],
+          "complexity": 3,
+          "original_rank": 9,
+          "support_set_indices": [
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            36
+          ],
+          "coefficients": [
+            0.9849818096304453,
+            -0.37764463263338743
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.13036229155180218,
+          "validation_equation_relative_error": 0.14233464203414783,
+          "support": [
+            "u_xx",
+            "u u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 10,
+          "support_set_indices": [
+            6,
+            36
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    },
+    {
+      "case": "logheat",
+      "sigma": 0.01,
+      "seed": 0,
+      "all_checks_passed": true,
+      "matrix_target_pairs_verified": 6,
+      "raw_arrays_verified": 8,
+      "source_files_verified": [
+        "stage1_grammar.py",
+        "stage1_jet_preprocess.py",
+        "stage1_weak_reduction.py",
+        "stage1_weak_reduction_v2.py",
+        "stage2_data.py"
+      ],
+      "raw_bundle_sha256": "33bfb9a02a56942bcfa0c42acef7b77af081de995f88adb804abd348976078e0",
+      "split": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "validation": [
+          4,
+          5
+        ],
+        "test_used": false
+      },
+      "geometry_checks": {
+        "geometry_full_train": true,
+        "geometry_small_train": true,
+        "geometry_single_train_small": true
+      },
+      "known_coefficients_validation_residual": 0.10141895589061405,
+      "corrected_candidate_counts": {
+        "original_order_sensitive": 1312,
+        "unique_support_sets": 1312,
+        "duplicates_removed": 0
+      },
+      "top_validation_unique_by_support_set": [
+        {
+          "support_indices": [
+            6,
+            18
+          ],
+          "coefficients": [
+            0.9889964661368714,
+            1.0039550603916527
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1111901738653579,
+          "validation_equation_relative_error": 0.10130838057405679,
+          "support": [
+            "u_xx",
+            "u_x^2"
+          ],
+          "complexity": 7,
+          "original_rank": 1,
+          "support_set_indices": [
+            6,
+            18
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            48
+          ],
+          "coefficients": [
+            0.9444971294190847,
+            -5.222158443345203
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1568756818260052,
+          "validation_equation_relative_error": 0.1386754040092061,
+          "support": [
+            "u_xx",
+            "u u_x^2"
+          ],
+          "complexity": 8,
+          "original_rank": 2,
+          "support_set_indices": [
+            6,
+            48
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            45
+          ],
+          "coefficients": [
+            0.9615890134544401,
+            0.5184680197140105
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.16887419302898413,
+          "validation_equation_relative_error": 0.15012572030749455,
+          "support": [
+            "u_xx",
+            "u u_x u_xx"
+          ],
+          "complexity": 9,
+          "original_rank": 3,
+          "support_set_indices": [
+            6,
+            45
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            60
+          ],
+          "coefficients": [
+            0.9603038903307369,
+            19.15374201272142
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1648592723901227,
+          "validation_equation_relative_error": 0.15193352687075923,
+          "support": [
+            "u_xx",
+            "u^2"
+          ],
+          "complexity": 5,
+          "original_rank": 4,
+          "support_set_indices": [
+            6,
+            60
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            30
+          ],
+          "coefficients": [
+            0.9483991032176711,
+            -1.9767296704153443
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.17267646812728946,
+          "validation_equation_relative_error": 0.15444655707809135,
+          "support": [
+            "u_xx",
+            "u"
+          ],
+          "complexity": 4,
+          "original_rank": 5,
+          "support_set_indices": [
+            6,
+            30
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            90
+          ],
+          "coefficients": [
+            0.9440962137353752,
+            -86.57959163762715
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.165774713603167,
+          "validation_equation_relative_error": 0.1548078994463422,
+          "support": [
+            "u_xx",
+            "u^3"
+          ],
+          "complexity": 6,
+          "original_rank": 6,
+          "support_set_indices": [
+            6,
+            90
+          ]
+        },
+        {
+          "support_indices": [
+            0,
+            6
+          ],
+          "coefficients": [
+            0.12094263631513232,
+            0.9714722106518165
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.17180786939193066,
+          "validation_equation_relative_error": 0.15662648394990253,
+          "support": [
+            "1",
+            "u_xx"
+          ],
+          "complexity": 4,
+          "original_rank": 7,
+          "support_set_indices": [
+            0,
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            66
+          ],
+          "coefficients": [
+            0.9361271910483575,
+            2.274989031922326
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.16938532871021914,
+          "validation_equation_relative_error": 0.15863661715803462,
+          "support": [
+            "u_xx",
+            "u^2 u_xx"
+          ],
+          "complexity": 8,
+          "original_rank": 8,
+          "support_set_indices": [
+            6,
+            66
+          ]
+        },
+        {
+          "support_indices": [
+            6
+          ],
+          "coefficients": [
+            0.9681829783252133
+          ],
+          "rank": 1,
+          "train_equation_relative_error": 0.17728488691777955,
+          "validation_equation_relative_error": 0.15992234324931334,
+          "support": [
+            "u_xx"
+          ],
+          "complexity": 3,
+          "original_rank": 9,
+          "support_set_indices": [
+            6
+          ]
+        },
+        {
+          "support_indices": [
+            6,
+            36
+          ],
+          "coefficients": [
+            0.9747030853356418,
+            -0.4174721643165436
+          ],
+          "rank": 2,
+          "train_equation_relative_error": 0.1703872528233406,
+          "validation_equation_relative_error": 0.16267336381076877,
+          "support": [
+            "u_xx",
+            "u u_xx"
+          ],
+          "complexity": 7,
+          "original_rank": 10,
+          "support_set_indices": [
+            6,
+            36
+          ]
+        }
+      ],
+      "top_validation_duplicates_removed": [],
+      "deduplicated_top_scope": "deduplicated saved top ten only; no unsaved candidate was recomputed"
+    }
+  ],
+  "matrix_target_pairs_verified": 72,
+  "original_stage2_result_sha256": "669391dcc6f573751ee664aaf341b9eaca541d1188ed524a4be35425a5445c68",
+  "allowed_next_step": "stage2a development L1/IRL1 baseline",
+  "pass_meaning": "artifacts and declared diagnostics are consistent enough to run a development baseline; not publication acceptance or exact support recovery",
+  "support_order_issue": "Some original true-support tuples were appended in a different order from the same enumerated pair. Counts and saved top candidates are deduplicated here; original report unchanged.",
+  "scope_limits": [
+    "No field, matrix, or solver was rerun.",
+    "Competition is all full-library singletons plus J18 pairs and true-support diagnostics, not a global oracle.",
+    "Rank/small singular values do not alone prove sparse non-identifiability.",
+    "Validation errors are weak equation residuals, not learned-PDE trajectory rollout errors.",
+    "One development noise seed and two noise levels do not establish an algorithm robustness ranking.",
+    "No requirement that L1 recover the true structure in every noisy or large-library case."
+  ]
+}

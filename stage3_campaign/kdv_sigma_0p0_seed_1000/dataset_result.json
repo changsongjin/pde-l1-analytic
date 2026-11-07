@@ -1,0 +1,406 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "kdv",
+    "sigma": 0.0,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/selection_manifest.json",
+    "sha256": "f8be69ada2f508d4a8f68f822b0259b4fe59603bb0e488d878c7bb5ba0166bb1"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+      "sha256": "ddb5b61875695db5ec1cc5e225a59047e8046cb6e7136e148ebdf4b5def52c6e"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "b34fd7de0678ae9b1c6d9fcc940c7608e2311f647fc63ad9b1314412522f7442"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_L1/method_result.json",
+      "sha256": "f5dab24c17c5b2333d6afe45c4d7603d22dde7e8f7601eb7d03cace9b179c16a"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "2fa82a1143f531cffd7455769826de5e1fab3b115841718bab7cb1d22caa731d"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+      "sha256": "66f94e6f3ab96c6648c00f1347ac64b600f836117873c49c5a81747bf9164f8b"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "2e38b05c1ae9a70f0bc39d0928aff0aa223ecbda308a2e4fae39a0fe9d83f392"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/test_evaluation_result.json",
+    "sha256": "906ba1f72f255fcd782cc6c7c709429906abe9b6309851a9796f73d2cc2c713c"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x",
+        "D_x^1(cos(1u))"
+      ],
+      "complexity": 5,
+      "validation_error": 0.17403496159127055
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 17,
+      "support": [
+        "u_xxx",
+        "u_x u_xxx",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u u_x",
+        "u u_x^4 u_xx",
+        "u^7 u_x",
+        "u^8",
+        "t u u_xx",
+        "t u u_x u_xx",
+        "t u^2 u_x",
+        "t u^3 u_x u_xxxx",
+        "t u^5",
+        "t u^8",
+        "t^2",
+        "t^2 u_xxxx",
+        "t^2 u_xxx",
+        "t^2 u_xx",
+        "t^2 u_x",
+        "t^2 u_x u_xxx",
+        "t^2 u_x^2 u_xxx",
+        "t^2 u",
+        "t^2 u u_xx",
+        "t^2 u u_x^6",
+        "t^2 u^3 u_x",
+        "t^2 u^3 u_x u_xxxx",
+        "t^2 u^7 u_x",
+        "x t",
+        "x t u_xxxx",
+        "x t u_x",
+        "x t u_x u_xxxxx",
+        "x t u_x u_xxxx",
+        "x t u_x u_xx u_xxx",
+        "x t u_x^6",
+        "x^2 u u_x^3 u_xx",
+        "sin(2u)",
+        "D_x^1(sin(3u))",
+        "D_x^3(sin(3u))",
+        "D_x^4(sin(3u))",
+        "D_x^1(cos(1u))",
+        "D_x^3(cos(1u))",
+        "cos(3u)",
+        "D_x^4(cos(3u))",
+        "D_x^3(exp(-1u))",
+        "D_x^1((1+u^2)^(-1))",
+        "D_x^3((1+u^2)^(-1))"
+      ],
+      "complexity": 364,
+      "validation_error": 8.319688371958031e-11
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 21,
+      "support": [
+        "u_xxx",
+        "u_x u_xxx",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u u_x",
+        "u^7 u_x",
+        "u^8",
+        "t u u_xx",
+        "t u u_x u_xx",
+        "t u^2 u_x",
+        "t u^3 u_x u_xxxx",
+        "t u^5",
+        "t u^8",
+        "t^2 u_xxxx",
+        "t^2 u_xxx",
+        "t^2 u_xx",
+        "t^2 u_x",
+        "t^2 u_x u_xxx",
+        "t^2 u_x^2 u_xxx",
+        "t^2 u",
+        "t^2 u u_xx",
+        "t^2 u^3 u_x",
+        "t^2 u^3 u_x u_xxxx",
+        "t^2 u^7 u_x",
+        "x t u_xxxx",
+        "x t u_x",
+        "x t u_x u_xxxx",
+        "x t u_x u_xx u_xxx",
+        "x^2 u u_x^3 u_xx",
+        "D_x^1(sin(3u))",
+        "D_x^3(sin(3u))",
+        "D_x^1(cos(1u))",
+        "D_x^3(cos(1u))",
+        "D_x^4(cos(3u))",
+        "D_x^3(exp(-1u))",
+        "D_x^1((1+u^2)^(-1))",
+        "D_x^3((1+u^2)^(-1))"
+      ],
+      "complexity": 287,
+      "validation_error": 8.334200131672649e-11
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "D_x^1(cos(1u))"
+      ],
+      "complexity": 3,
+      "validation_error": 0.24171046066207097
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 6,
+      "support": [
+        "u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "complexity": 18,
+      "validation_error": 2.3311890474604635e-10
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "complexity": 7,
+      "validation_error": 2.523679928291005e-10
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 17,
+      "support": [
+        "u_xxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u u_x",
+        "u^2 u_x u_xxxx",
+        "t u_xxx",
+        "t u u_x",
+        "t u^2 u_x",
+        "t^2 u^2 u_x",
+        "x u_x"
+      ],
+      "complexity": 62,
+      "validation_error": 1.3566145256600165e-10
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxx",
+        "u u_x"
+      ],
+      "complexity": 7,
+      "validation_error": 2.523679928291005e-10
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/selection_manifest.json",
+      "sha256": "f8be69ada2f508d4a8f68f822b0259b4fe59603bb0e488d878c7bb5ba0166bb1"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/test_evaluation_result.json",
+      "sha256": "906ba1f72f255fcd782cc6c7c709429906abe9b6309851a9796f73d2cc2c713c"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/fit_matrices.json",
+      "sha256": "819c1c42a1ba7fc14457afcde269b28735ba15d702adbf147b1aff97c9ab8db3"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/fit_matrices.npz",
+      "sha256": "c324b4a1acde3536b17642716db278430c8ecce3569d3dc134a2b16d88d96d4f"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/test_matrices.json",
+      "sha256": "8e29ead521841e11e9fedebda7ff29641f47198b4bf557408e42ca699e9cb96d"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/test_matrices.npz",
+      "sha256": "2e15057536cd2fce88342ec134c1b97cd56a540cf111c0ee69857dd743abbac7"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+      "sha256": "ddb5b61875695db5ec1cc5e225a59047e8046cb6e7136e148ebdf4b5def52c6e"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "b34fd7de0678ae9b1c6d9fcc940c7608e2311f647fc63ad9b1314412522f7442"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_L1/method_result.json",
+      "sha256": "f5dab24c17c5b2333d6afe45c4d7603d22dde7e8f7601eb7d03cace9b179c16a"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "2fa82a1143f531cffd7455769826de5e1fab3b115841718bab7cb1d22caa731d"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+      "sha256": "66f94e6f3ab96c6648c00f1347ac64b600f836117873c49c5a81747bf9164f8b"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "2e38b05c1ae9a70f0bc39d0928aff0aa223ecbda308a2e4fae39a0fe9d83f392"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_L1/job.json",
+      "sha256": "de55f9e265af164785dbe5131e0f0a6c2ee706b384f1e681ba7e87b39d1b2839"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "5785c331425667f5998a56b36257522ead5dd41638862128609709f38bc02799"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_L1/job.json",
+      "sha256": "acfab58f4cc68e764e1cdd0afd46985887bd5dd00f54c2bcde41a892d7708ba2"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "7c82f658dd687a025df7f3d76ac2153b2ddbe6cea9eab4ea89ef26511d16f3e6"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_L1/job.json",
+      "sha256": "1761af4d0ae5958c88ba0d8746981762ace69f9d2ceeb48f6cb3d2f4677a721c"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "769b9dbf5d149d2d1cfff8e81e0a525c5a61c0a35c1a7cdcdc175f0fb1f4babe"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_L1/path_result.json",
+      "sha256": "e01c5e7b44d6c702a4235fc5f9daa847f0c91415910c5ed78775636ca0e028d3"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "0a58d3dc6dcab81a3222eca729e7bd17fd898a09abae487072c141dd2b621112"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_L1/path_result.json",
+      "sha256": "5bbf514cc12a878a1b7e8b6d0e13f92c0a730ac38f9f01290d179be395b79a8a"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "0679c12fe4375748dee9fb494c35773fd9a6f826bf0201b0c63262cdd60c1f33"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_L1/path_result.json",
+      "sha256": "00b314d522e824a64bed110be4b2147d679a5d3a85bcef4562c41abfebcccd96"
+    },
+    {
+      "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "4629622263c7f3697769f94fb8946e2253c90da5308445e1aed5b0af1c193bd0"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.8768230000277981,
+    "fit_matrix": {
+      "action": "build",
+      "seconds": 72.33553110004868,
+      "metadata": {
+        "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/fit_matrices.json",
+        "sha256": "819c1c42a1ba7fc14457afcde269b28735ba15d702adbf147b1aff97c9ab8db3"
+      },
+      "npz": {
+        "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/fit_matrices.npz",
+        "sha256": "c324b4a1acde3536b17642716db278430c8ecce3569d3dc134a2b16d88d96d4f"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 1.1628072001039982,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 57.872077899985015,
+      "metadata": {
+        "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/test_matrices.json",
+        "sha256": "8e29ead521841e11e9fedebda7ff29641f47198b4bf557408e42ca699e9cb96d"
+      },
+      "npz": {
+        "file": "stage3_campaign/kdv_sigma_0p0_seed_1000/test_matrices.npz",
+        "sha256": "2e15057536cd2fce88342ec134c1b97cd56a540cf111c0ee69857dd743abbac7"
+      }
+    },
+    "test_evaluation": 0.02987660001963377
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

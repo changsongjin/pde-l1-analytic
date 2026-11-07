@@ -1,0 +1,1274 @@
+{
+  "stage": "2a_post_selection_conditional_diagnostic",
+  "all_checks_passed": true,
+  "checks": {
+    "all_eight_method_layer_noise_records_present": true,
+    "diffusion_modes_non_growing": true,
+    "positive_fourth_order_unbounded": true,
+    "sixth_order_can_have_bounded_unstable_band": true,
+    "incomplete_model_not_substituted": true,
+    "source_report_unchanged": true
+  },
+  "source_report": "stage2a_heat_noise_pilot_result.json",
+  "source_sha256": "56c827eeb1cf9b8ef5af4c66eefe7f5cb51cb9a6fa583cff08b138a895d754fe",
+  "alpha_unchanged": 0.005,
+  "no_model_or_parameter_reselection": true,
+  "test_data_used": false,
+  "rows": [
+    {
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "path_status": "complete",
+      "primary_selected_candidate_id": 1,
+      "raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "selected_support": [
+        "u_xx"
+      ],
+      "frozen_physical_coefficients": {
+        "u_xx": 0.996609870973223
+      },
+      "weak_validation_error": 0.11390933506446624,
+      "complexity": 3,
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "existing_post_selection_truth_diagnostic": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "status": "diagnosed_without_refitting_or_reselection",
+      "spectrum": {
+        "growth_polynomial_in_k_squared": [
+          0.0,
+          -0.996609870973223
+        ],
+        "formula": "s(k)=-c2*k^2+c4*k^4-c6*k^6; physical fitted coefficients",
+        "continuum": {
+          "leading_power_of_k": 2,
+          "leading_coefficient": -0.996609870973223,
+          "classification": "all_nonzero_frequencies_non_growing",
+          "positive_growth_bands": [],
+          "max_growth_rate": 0.0,
+          "max_growth_status": "finite"
+        },
+        "observed_grid_sine_spectrum": {
+          "dx": 0.00390625,
+          "domain_length": 1.0,
+          "sampling_nyquist_wavenumber": 804.247719318987,
+          "nonzero_resolvable_sine_modes": [
+            1,
+            255
+          ],
+          "largest_nonzero_resolvable_sine_wavenumber": 801.1061266653973,
+          "nyquist_note": "mode nx-1 vanishes at every grid point for endpoint-including Dirichlet sine samples; excluded",
+          "positive_growth_mode_indices": [],
+          "positive_growth_mode_count": 0,
+          "mode_of_maximum_growth": 1,
+          "maximum_growth_rate": -9.836145168726418,
+          "minimum_growth_rate": -639595.3395964354,
+          "horizon": 0.08,
+          "largest_modal_log_amplification": -0.7868916134981134,
+          "largest_modal_amplification": 0.4552577151308119,
+          "amplification_status": "finite_float64",
+          "interpretation": "finite grid has finitely many bounded rates even when the continuous operator has unbounded high-frequency growth"
+        }
+      },
+      "conditional_six_mode_prediction": {
+        "status": "computed_under_explicit_spectral_assumptions",
+        "modes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "wavenumbers": [
+          3.141592653589793,
+          6.283185307179586,
+          9.42477796076938,
+          12.566370614359172,
+          15.707963267948966,
+          18.84955592153876
+        ],
+        "growth_rates": [
+          -9.836145168726418,
+          -39.34458067490567,
+          -88.52530651853777,
+          -157.3783226996227,
+          -245.90362921816046,
+          -354.1012260741511
+        ],
+        "future_time_rows_scored": 128,
+        "initial_time_excluded_from_score": true,
+        "relative_error_to_full_future_observations_pooled": 0.006444062321331971,
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_six_mode_coefficients": [
+              -0.9475679986521158,
+              -0.6610086901516901,
+              0.2634936157997256,
+              -0.18654834124421873,
+              0.26323107033007026,
+              -0.3996076337388401
+            ],
+            "initial_observation_hash": "13d9a7cd3b55af3a84fda386c82e1a042a8cb33ac98fe0757820c3b037597fcd",
+            "prediction_hash": "a8ce147c1d861fec18a51d51db6fb60bedcafe1becb9a2127cc82daf0b291053",
+            "relative_error_to_full_future_observations": 0.0063749801831786395,
+            "relative_error_to_projected_future_observations": 0.0015980748864726022,
+            "future_observation_energy_outside_six_modes_fraction": 3.808662626042279e-05
+          },
+          {
+            "trajectory": 5,
+            "initial_six_mode_coefficients": [
+              0.7742699135006738,
+              0.5780700314248999,
+              -0.23974386295473277,
+              -0.2309853985949168,
+              -0.21292470559645812,
+              0.3852678373303461
+            ],
+            "initial_observation_hash": "a9de53576518c9f645b4dc21d84478d0df125c17d555636cc78a24ca1995a7e6",
+            "prediction_hash": "b3e9b1e2bc24b2e5f0c5a975fd116d725982d5221b2a47d12e3c222ae3314abd",
+            "relative_error_to_full_future_observations": 0.0065436761838573165,
+            "relative_error_to_projected_future_observations": 0.0016738357876063092,
+            "future_observation_energy_outside_six_modes_fraction": 4.0018083875025505e-05
+          }
+        ],
+        "initialization": "least-squares projection of validation t0 observations onto fixed six sine modes",
+        "coefficient_source": "frozen training-only LS readout on the selected L1 support",
+        "boundary_realization": "polynomial of the Dirichlet Laplacian; higher-order powers implicitly impose corresponding even-derivative endpoint conditions",
+        "not_general_PDE_rollout": true,
+        "future_observations_used_for_parameter_fit": false
+      },
+      "all_resolved_initial_spectrum_risk": {
+        "modes": [
+          1,
+          255
+        ],
+        "computed_in_log_domain_only": true,
+        "positive_rate_interpretation": "positive growth at the stated wavenumbers; growth alone is not a universal physical-invalidity test",
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.1762746099156946e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": -0.8407481917112956,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": null,
+            "mode_of_first_modal_overflow": null,
+            "first_observed_time_at_or_after_modal_overflow": null
+          },
+          {
+            "trajectory": 5,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.0276398593523852e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": -1.0427263542280452,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": null,
+            "mode_of_first_modal_overflow": null,
+            "first_observed_time_at_or_after_modal_overflow": null
+          }
+        ],
+        "caveat": "Six-mode projection filters initial high-frequency observation noise; these unresolved-in-the-six-mode-test disturbances can grow in the full resolved spectral realization."
+      }
+    },
+    {
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "path_status": "complete",
+      "primary_selected_candidate_id": 1,
+      "raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "selected_support": [
+        "u_xx"
+      ],
+      "frozen_physical_coefficients": {
+        "u_xx": 0.996609870973223
+      },
+      "weak_validation_error": 0.11390933506446624,
+      "complexity": 3,
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "existing_post_selection_truth_diagnostic": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "status": "diagnosed_without_refitting_or_reselection",
+      "spectrum": {
+        "growth_polynomial_in_k_squared": [
+          0.0,
+          -0.996609870973223
+        ],
+        "formula": "s(k)=-c2*k^2+c4*k^4-c6*k^6; physical fitted coefficients",
+        "continuum": {
+          "leading_power_of_k": 2,
+          "leading_coefficient": -0.996609870973223,
+          "classification": "all_nonzero_frequencies_non_growing",
+          "positive_growth_bands": [],
+          "max_growth_rate": 0.0,
+          "max_growth_status": "finite"
+        },
+        "observed_grid_sine_spectrum": {
+          "dx": 0.00390625,
+          "domain_length": 1.0,
+          "sampling_nyquist_wavenumber": 804.247719318987,
+          "nonzero_resolvable_sine_modes": [
+            1,
+            255
+          ],
+          "largest_nonzero_resolvable_sine_wavenumber": 801.1061266653973,
+          "nyquist_note": "mode nx-1 vanishes at every grid point for endpoint-including Dirichlet sine samples; excluded",
+          "positive_growth_mode_indices": [],
+          "positive_growth_mode_count": 0,
+          "mode_of_maximum_growth": 1,
+          "maximum_growth_rate": -9.836145168726418,
+          "minimum_growth_rate": -639595.3395964354,
+          "horizon": 0.08,
+          "largest_modal_log_amplification": -0.7868916134981134,
+          "largest_modal_amplification": 0.4552577151308119,
+          "amplification_status": "finite_float64",
+          "interpretation": "finite grid has finitely many bounded rates even when the continuous operator has unbounded high-frequency growth"
+        }
+      },
+      "conditional_six_mode_prediction": {
+        "status": "computed_under_explicit_spectral_assumptions",
+        "modes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "wavenumbers": [
+          3.141592653589793,
+          6.283185307179586,
+          9.42477796076938,
+          12.566370614359172,
+          15.707963267948966,
+          18.84955592153876
+        ],
+        "growth_rates": [
+          -9.836145168726418,
+          -39.34458067490567,
+          -88.52530651853777,
+          -157.3783226996227,
+          -245.90362921816046,
+          -354.1012260741511
+        ],
+        "future_time_rows_scored": 128,
+        "initial_time_excluded_from_score": true,
+        "relative_error_to_full_future_observations_pooled": 0.006444062321331971,
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_six_mode_coefficients": [
+              -0.9475679986521158,
+              -0.6610086901516901,
+              0.2634936157997256,
+              -0.18654834124421873,
+              0.26323107033007026,
+              -0.3996076337388401
+            ],
+            "initial_observation_hash": "13d9a7cd3b55af3a84fda386c82e1a042a8cb33ac98fe0757820c3b037597fcd",
+            "prediction_hash": "a8ce147c1d861fec18a51d51db6fb60bedcafe1becb9a2127cc82daf0b291053",
+            "relative_error_to_full_future_observations": 0.0063749801831786395,
+            "relative_error_to_projected_future_observations": 0.0015980748864726022,
+            "future_observation_energy_outside_six_modes_fraction": 3.808662626042279e-05
+          },
+          {
+            "trajectory": 5,
+            "initial_six_mode_coefficients": [
+              0.7742699135006738,
+              0.5780700314248999,
+              -0.23974386295473277,
+              -0.2309853985949168,
+              -0.21292470559645812,
+              0.3852678373303461
+            ],
+            "initial_observation_hash": "a9de53576518c9f645b4dc21d84478d0df125c17d555636cc78a24ca1995a7e6",
+            "prediction_hash": "b3e9b1e2bc24b2e5f0c5a975fd116d725982d5221b2a47d12e3c222ae3314abd",
+            "relative_error_to_full_future_observations": 0.0065436761838573165,
+            "relative_error_to_projected_future_observations": 0.0016738357876063092,
+            "future_observation_energy_outside_six_modes_fraction": 4.0018083875025505e-05
+          }
+        ],
+        "initialization": "least-squares projection of validation t0 observations onto fixed six sine modes",
+        "coefficient_source": "frozen training-only LS readout on the selected L1 support",
+        "boundary_realization": "polynomial of the Dirichlet Laplacian; higher-order powers implicitly impose corresponding even-derivative endpoint conditions",
+        "not_general_PDE_rollout": true,
+        "future_observations_used_for_parameter_fit": false
+      },
+      "all_resolved_initial_spectrum_risk": {
+        "modes": [
+          1,
+          255
+        ],
+        "computed_in_log_domain_only": true,
+        "positive_rate_interpretation": "positive growth at the stated wavenumbers; growth alone is not a universal physical-invalidity test",
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.1762746099156946e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": -0.8407481917112956,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": null,
+            "mode_of_first_modal_overflow": null,
+            "first_observed_time_at_or_after_modal_overflow": null
+          },
+          {
+            "trajectory": 5,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.0276398593523852e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": -1.0427263542280452,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": null,
+            "mode_of_first_modal_overflow": null,
+            "first_observed_time_at_or_after_modal_overflow": null
+          }
+        ],
+        "caveat": "Six-mode projection filters initial high-frequency observation noise; these unresolved-in-the-six-mode-test disturbances can grow in the full resolved spectral realization."
+      }
+    },
+    {
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "path_status": "complete",
+      "primary_selected_candidate_id": 1,
+      "raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "selected_support": [
+        "u_xx"
+      ],
+      "frozen_physical_coefficients": {
+        "u_xx": 0.996609870973223
+      },
+      "weak_validation_error": 0.11390933506446624,
+      "complexity": 3,
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "existing_post_selection_truth_diagnostic": {
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "extra": [],
+        "missed": [],
+        "support_canonical": [
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "status": "diagnosed_without_refitting_or_reselection",
+      "spectrum": {
+        "growth_polynomial_in_k_squared": [
+          0.0,
+          -0.996609870973223
+        ],
+        "formula": "s(k)=-c2*k^2+c4*k^4-c6*k^6; physical fitted coefficients",
+        "continuum": {
+          "leading_power_of_k": 2,
+          "leading_coefficient": -0.996609870973223,
+          "classification": "all_nonzero_frequencies_non_growing",
+          "positive_growth_bands": [],
+          "max_growth_rate": 0.0,
+          "max_growth_status": "finite"
+        },
+        "observed_grid_sine_spectrum": {
+          "dx": 0.00390625,
+          "domain_length": 1.0,
+          "sampling_nyquist_wavenumber": 804.247719318987,
+          "nonzero_resolvable_sine_modes": [
+            1,
+            255
+          ],
+          "largest_nonzero_resolvable_sine_wavenumber": 801.1061266653973,
+          "nyquist_note": "mode nx-1 vanishes at every grid point for endpoint-including Dirichlet sine samples; excluded",
+          "positive_growth_mode_indices": [],
+          "positive_growth_mode_count": 0,
+          "mode_of_maximum_growth": 1,
+          "maximum_growth_rate": -9.836145168726418,
+          "minimum_growth_rate": -639595.3395964354,
+          "horizon": 0.08,
+          "largest_modal_log_amplification": -0.7868916134981134,
+          "largest_modal_amplification": 0.4552577151308119,
+          "amplification_status": "finite_float64",
+          "interpretation": "finite grid has finitely many bounded rates even when the continuous operator has unbounded high-frequency growth"
+        }
+      },
+      "conditional_six_mode_prediction": {
+        "status": "computed_under_explicit_spectral_assumptions",
+        "modes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "wavenumbers": [
+          3.141592653589793,
+          6.283185307179586,
+          9.42477796076938,
+          12.566370614359172,
+          15.707963267948966,
+          18.84955592153876
+        ],
+        "growth_rates": [
+          -9.836145168726418,
+          -39.34458067490567,
+          -88.52530651853777,
+          -157.3783226996227,
+          -245.90362921816046,
+          -354.1012260741511
+        ],
+        "future_time_rows_scored": 128,
+        "initial_time_excluded_from_score": true,
+        "relative_error_to_full_future_observations_pooled": 0.006444062321331971,
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_six_mode_coefficients": [
+              -0.9475679986521158,
+              -0.6610086901516901,
+              0.2634936157997256,
+              -0.18654834124421873,
+              0.26323107033007026,
+              -0.3996076337388401
+            ],
+            "initial_observation_hash": "13d9a7cd3b55af3a84fda386c82e1a042a8cb33ac98fe0757820c3b037597fcd",
+            "prediction_hash": "a8ce147c1d861fec18a51d51db6fb60bedcafe1becb9a2127cc82daf0b291053",
+            "relative_error_to_full_future_observations": 0.0063749801831786395,
+            "relative_error_to_projected_future_observations": 0.0015980748864726022,
+            "future_observation_energy_outside_six_modes_fraction": 3.808662626042279e-05
+          },
+          {
+            "trajectory": 5,
+            "initial_six_mode_coefficients": [
+              0.7742699135006738,
+              0.5780700314248999,
+              -0.23974386295473277,
+              -0.2309853985949168,
+              -0.21292470559645812,
+              0.3852678373303461
+            ],
+            "initial_observation_hash": "a9de53576518c9f645b4dc21d84478d0df125c17d555636cc78a24ca1995a7e6",
+            "prediction_hash": "b3e9b1e2bc24b2e5f0c5a975fd116d725982d5221b2a47d12e3c222ae3314abd",
+            "relative_error_to_full_future_observations": 0.0065436761838573165,
+            "relative_error_to_projected_future_observations": 0.0016738357876063092,
+            "future_observation_energy_outside_six_modes_fraction": 4.0018083875025505e-05
+          }
+        ],
+        "initialization": "least-squares projection of validation t0 observations onto fixed six sine modes",
+        "coefficient_source": "frozen training-only LS readout on the selected L1 support",
+        "boundary_realization": "polynomial of the Dirichlet Laplacian; higher-order powers implicitly impose corresponding even-derivative endpoint conditions",
+        "not_general_PDE_rollout": true,
+        "future_observations_used_for_parameter_fit": false
+      },
+      "all_resolved_initial_spectrum_risk": {
+        "modes": [
+          1,
+          255
+        ],
+        "computed_in_log_domain_only": true,
+        "positive_rate_interpretation": "positive growth at the stated wavenumbers; growth alone is not a universal physical-invalidity test",
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.1762746099156946e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": -0.8407481917112956,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": null,
+            "mode_of_first_modal_overflow": null,
+            "first_observed_time_at_or_after_modal_overflow": null
+          },
+          {
+            "trajectory": 5,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.0276398593523852e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": -1.0427263542280452,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": null,
+            "mode_of_first_modal_overflow": null,
+            "first_observed_time_at_or_after_modal_overflow": null
+          }
+        ],
+        "caveat": "Six-mode projection filters initial high-frequency observation noise; these unresolved-in-the-six-mode-test disturbances can grow in the full resolved spectral realization."
+      }
+    },
+    {
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "path_status": "complete",
+      "primary_selected_candidate_id": 2,
+      "raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "selected_support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "frozen_physical_coefficients": {
+        "u_xxxx": 7.523326953619905e-05,
+        "u_xx": 1.0097628104664669
+      },
+      "weak_validation_error": 0.06169735754828016,
+      "complexity": 8,
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "existing_post_selection_truth_diagnostic": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u_xx",
+          "u_xxxx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.00976310034000472,
+        "physical_coef_rel_error_true_only": 0.009762810466466876
+      },
+      "status": "diagnosed_without_refitting_or_reselection",
+      "spectrum": {
+        "growth_polynomial_in_k_squared": [
+          0.0,
+          -1.0097628104664669,
+          7.523326953619905e-05
+        ],
+        "formula": "s(k)=-c2*k^2+c4*k^4-c6*k^6; physical fitted coefficients",
+        "continuum": {
+          "leading_power_of_k": 4,
+          "leading_coefficient": 7.523326953619905e-05,
+          "classification": "unbounded_positive_high_frequency_growth",
+          "positive_growth_bands": [
+            {
+              "k_lower_exclusive": 115.85231535455571,
+              "k_upper_exclusive": null,
+              "upper_status": "unbounded"
+            }
+          ],
+          "max_growth_rate": null,
+          "max_growth_status": "unbounded"
+        },
+        "observed_grid_sine_spectrum": {
+          "dx": 0.00390625,
+          "domain_length": 1.0,
+          "sampling_nyquist_wavenumber": 804.247719318987,
+          "nonzero_resolvable_sine_modes": [
+            1,
+            255
+          ],
+          "largest_nonzero_resolvable_sine_wavenumber": 801.1061266653973,
+          "nyquist_note": "mode nx-1 vanishes at every grid point for endpoint-including Dirichlet sine samples; excluded",
+          "positive_growth_mode_indices": [
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255
+          ],
+          "positive_growth_mode_count": 219,
+          "mode_of_maximum_growth": 255,
+          "maximum_growth_rate": 30338293.97386622,
+          "minimum_growth_rate": -3388.0836777192712,
+          "horizon": 0.08,
+          "largest_modal_log_amplification": 2427063.5179092977,
+          "largest_modal_amplification": null,
+          "amplification_status": "exceeds_float64_range_use_log",
+          "interpretation": "finite grid has finitely many bounded rates even when the continuous operator has unbounded high-frequency growth"
+        }
+      },
+      "conditional_six_mode_prediction": {
+        "status": "computed_under_explicit_spectral_assumptions",
+        "modes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "wavenumbers": [
+          3.141592653589793,
+          6.283185307179586,
+          9.42477796076938,
+          12.566370614359172,
+          15.707963267948966,
+          18.84955592153876
+        ],
+        "growth_rates": [
+          -9.958631073835164,
+          -39.746583442528205,
+          -89.10003454764178,
+          -157.57928012511368,
+          -244.56873420525676,
+          -349.2769291127589
+        ],
+        "future_time_rows_scored": 128,
+        "initial_time_excluded_from_score": true,
+        "relative_error_to_full_future_observations_pooled": 0.0073689118312256375,
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_six_mode_coefficients": [
+              -0.9475679986521158,
+              -0.6610086901516901,
+              0.2634936157997256,
+              -0.18654834124421873,
+              0.26323107033007026,
+              -0.3996076337388401
+            ],
+            "initial_observation_hash": "13d9a7cd3b55af3a84fda386c82e1a042a8cb33ac98fe0757820c3b037597fcd",
+            "prediction_hash": "2ab3d8a85347f5dbd15f633463989c054755b5aa417de6d249d4c1dcce5db814",
+            "relative_error_to_full_future_observations": 0.0073230855066841755,
+            "relative_error_to_projected_future_observations": 0.003942276880544702,
+            "future_observation_energy_outside_six_modes_fraction": 3.808662626042279e-05
+          },
+          {
+            "trajectory": 5,
+            "initial_six_mode_coefficients": [
+              0.7742699135006738,
+              0.5780700314248999,
+              -0.23974386295473277,
+              -0.2309853985949168,
+              -0.21292470559645812,
+              0.3852678373303461
+            ],
+            "initial_observation_hash": "a9de53576518c9f645b4dc21d84478d0df125c17d555636cc78a24ca1995a7e6",
+            "prediction_hash": "05f93d62aac931227028e9ae9f130cceae130260164fb919358a47dab36bcc43",
+            "relative_error_to_full_future_observations": 0.0074353535659669595,
+            "relative_error_to_projected_future_observations": 0.00390730210405956,
+            "future_observation_energy_outside_six_modes_fraction": 4.0018083875025505e-05
+          }
+        ],
+        "initialization": "least-squares projection of validation t0 observations onto fixed six sine modes",
+        "coefficient_source": "frozen training-only LS readout on the selected L1 support",
+        "boundary_realization": "polynomial of the Dirichlet Laplacian; higher-order powers implicitly impose corresponding even-derivative endpoint conditions",
+        "not_general_PDE_rollout": true,
+        "future_observations_used_for_parameter_fit": false
+      },
+      "all_resolved_initial_spectrum_risk": {
+        "modes": [
+          1,
+          255
+        ],
+        "computed_in_log_domain_only": true,
+        "positive_rate_interpretation": "positive growth at the stated wavenumbers; growth alone is not a universal physical-invalidity test",
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.1762746099156946e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": 2427053.469686074,
+            "any_modal_amplitude_exceeds_float64_at_horizon": true,
+            "first_modal_float64_overflow_time_from_t0": 2.372680997608265e-05,
+            "mode_of_first_modal_overflow": 255,
+            "first_observed_time_at_or_after_modal_overflow": 0.000625
+          },
+          {
+            "trajectory": 5,
+            "initial_observed_energy_in_modes_above_six_fraction": 1.0276398593523852e-05,
+            "maximum_modal_log_absolute_amplitude_at_horizon": 2427054.3864358817,
+            "any_modal_amplitude_exceeds_float64_at_horizon": true,
+            "first_modal_float64_overflow_time_from_t0": 2.3696592396661478e-05,
+            "mode_of_first_modal_overflow": 255,
+            "first_observed_time_at_or_after_modal_overflow": 0.000625
+          }
+        ],
+        "caveat": "Six-mode projection filters initial high-frequency observation noise; these unresolved-in-the-six-mode-test disturbances can grow in the full resolved spectral realization."
+      }
+    },
+    {
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "path_status": "complete",
+      "primary_selected_candidate_id": 3,
+      "raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "selected_support": [
+        "u_xx",
+        "u^2",
+        "u^3"
+      ],
+      "frozen_physical_coefficients": {
+        "u_xx": 0.8032085046516073,
+        "u^2": -2.207168808991379,
+        "u^3": -2.9713884513054687
+      },
+      "weak_validation_error": 0.4827206118677436,
+      "complexity": 8,
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "existing_post_selection_truth_diagnostic": {
+        "exact": false,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "extra": [
+          "u^2",
+          "u^3"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u^2",
+          "u^3",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 3.706679156951326,
+        "physical_coef_rel_error_true_only": 0.1967914953483927
+      },
+      "status": "outside_even_spatial_derivative_only_diagnostic_scope"
+    },
+    {
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "path_status": "complete",
+      "primary_selected_candidate_id": 2,
+      "raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "selected_support": [
+        "u_xx",
+        "u"
+      ],
+      "frozen_physical_coefficients": {
+        "u_xx": 0.8173026735710973,
+        "u": -2.7170984413448522
+      },
+      "weak_validation_error": 0.48758838686775885,
+      "complexity": 4,
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "existing_post_selection_truth_diagnostic": {
+        "exact": false,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "extra": [
+          "u"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u",
+          "u_xx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 2.723233785968971,
+        "physical_coef_rel_error_true_only": 0.18269732642890268
+      },
+      "status": "outside_even_spatial_derivative_only_diagnostic_scope"
+    },
+    {
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "path_status": "budget_exhausted",
+      "primary_selected_candidate_id": null,
+      "raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "status": "ineligible_incomplete_path_no_primary_model"
+    },
+    {
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "path_status": "complete",
+      "primary_selected_candidate_id": 3,
+      "raw_bundle_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584",
+      "selected_support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx"
+      ],
+      "frozen_physical_coefficients": {
+        "u_xxxxxx": 4.323662401899191e-09,
+        "u_xxxx": 0.00014719489857436554,
+        "u_xx": 1.0046534122886577
+      },
+      "weak_validation_error": 0.21331777542825633,
+      "complexity": 15,
+      "selection_rule": {
+        "validation_error_coefficient": 1.0,
+        "complexity_coefficient": 0.005,
+        "alpha_frozen_before_true_support_evaluation": true,
+        "complexity_independent_of_library_size": true
+      },
+      "existing_post_selection_truth_diagnostic": {
+        "exact": false,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "extra": [
+          "u_xxxx",
+          "u_xxxxxx"
+        ],
+        "missed": [],
+        "support_canonical": [
+          "u_xx",
+          "u_xxxx",
+          "u_xxxxxx"
+        ],
+        "true_support_canonical": [
+          "u_xx"
+        ],
+        "physical_coef_rel_error_union": 0.004655739712056001,
+        "physical_coef_rel_error_true_only": 0.004653412288657677
+      },
+      "status": "diagnosed_without_refitting_or_reselection",
+      "spectrum": {
+        "growth_polynomial_in_k_squared": [
+          0.0,
+          -1.0046534122886577,
+          0.00014719489857436554,
+          -4.323662401899191e-09
+        ],
+        "formula": "s(k)=-c2*k^2+c4*k^4-c6*k^6; physical fitted coefficients",
+        "continuum": {
+          "leading_power_of_k": 6,
+          "leading_coefficient": -4.323662401899191e-09,
+          "classification": "high_frequency_damped_with_finite_unstable_band",
+          "positive_growth_bands": [
+            {
+              "k_lower_exclusive": 97.19347641695956,
+              "k_upper_exclusive": 156.83577252094838,
+              "upper_status": "finite"
+            }
+          ],
+          "max_growth_rate": 4415.5704379869185,
+          "max_growth_status": "finite"
+        },
+        "observed_grid_sine_spectrum": {
+          "dx": 0.00390625,
+          "domain_length": 1.0,
+          "sampling_nyquist_wavenumber": 804.247719318987,
+          "nonzero_resolvable_sine_modes": [
+            1,
+            255
+          ],
+          "largest_nonzero_resolvable_sine_wavenumber": 801.1061266653973,
+          "nyquist_note": "mode nx-1 vanishes at every grid point for endpoint-including Dirichlet sine samples; excluded",
+          "positive_growth_mode_indices": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "positive_growth_mode_count": 19,
+          "mode_of_maximum_growth": 43,
+          "maximum_growth_rate": 4409.214352205666,
+          "minimum_growth_rate": -1082877119.6001332,
+          "horizon": 0.08,
+          "largest_modal_log_amplification": 352.7371481764533,
+          "largest_modal_amplification": 1.5552385595473265e+153,
+          "amplification_status": "finite_float64",
+          "interpretation": "finite grid has finitely many bounded rates even when the continuous operator has unbounded high-frequency growth"
+        }
+      },
+      "conditional_six_mode_prediction": {
+        "status": "computed_under_explicit_spectral_assumptions",
+        "modes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "wavenumbers": [
+          3.141592653589793,
+          6.283185307179586,
+          9.42477796076938,
+          12.566370614359172,
+          15.707963267948966,
+          18.84955592153876
+        ],
+        "growth_rates": [
+          -9.901197774940917,
+          -39.4329830478026,
+          -88.08142808273341,
+          -154.9949747200858,
+          -238.99191647657395,
+          -338.5708734854947
+        ],
+        "future_time_rows_scored": 128,
+        "initial_time_excluded_from_score": true,
+        "relative_error_to_full_future_observations_pooled": 0.03172676415664102,
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_six_mode_coefficients": [
+              -0.9462695511327197,
+              -0.6598401180539888,
+              0.26287307265402915,
+              -0.18753090641618322,
+              0.2616752051484253,
+              -0.3987837298101774
+            ],
+            "initial_observation_hash": "f6cd9e0944aa519e0335b747ced603314c0711004e6695afbcfe758348ab7f03",
+            "prediction_hash": "35ce2d7fffbca9faddc679185b69e8c8a9cee9b066d55b8d61f473cae6a7ee9e",
+            "relative_error_to_full_future_observations": 0.03141866195096292,
+            "relative_error_to_projected_future_observations": 0.005951939507280745,
+            "future_observation_energy_outside_six_modes_fraction": 0.0009517404508517466
+          },
+          {
+            "trajectory": 5,
+            "initial_six_mode_coefficients": [
+              0.7737140980872426,
+              0.5776128584849265,
+              -0.23780156330498678,
+              -0.2304509406577257,
+              -0.21303077124731698,
+              0.38505941014730055
+            ],
+            "initial_observation_hash": "f7916c18ae528d9165ddd9e8a9961cfb8ce10c503db9472b2f7e383fa4648cda",
+            "prediction_hash": "901307cc292a56a49f9f1e0c28dfefcf8e520e84c6d75a5ad316b5c719be39c0",
+            "relative_error_to_full_future_observations": 0.032171435974845064,
+            "relative_error_to_projected_future_observations": 0.005945974589743754,
+            "future_observation_energy_outside_six_modes_fraction": 0.0009996820222335171
+          }
+        ],
+        "initialization": "least-squares projection of validation t0 observations onto fixed six sine modes",
+        "coefficient_source": "frozen training-only LS readout on the selected L1 support",
+        "boundary_realization": "polynomial of the Dirichlet Laplacian; higher-order powers implicitly impose corresponding even-derivative endpoint conditions",
+        "not_general_PDE_rollout": true,
+        "future_observations_used_for_parameter_fit": false
+      },
+      "all_resolved_initial_spectrum_risk": {
+        "modes": [
+          1,
+          255
+        ],
+        "computed_in_log_domain_only": true,
+        "positive_rate_interpretation": "positive growth at the stated wavenumbers; growth alone is not a universal physical-invalidity test",
+        "per_validation_trajectory": [
+          {
+            "trajectory": 4,
+            "initial_observed_energy_in_modes_above_six_fraction": 0.000294946611235568,
+            "maximum_modal_log_absolute_amplitude_at_horizon": 345.80905269940644,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": 0.16254841591266786,
+            "mode_of_first_modal_overflow": 43,
+            "first_observed_time_at_or_after_modal_overflow": null
+          },
+          {
+            "trajectory": 5,
+            "initial_observed_energy_in_modes_above_six_fraction": 0.000257403221331459,
+            "maximum_modal_log_absolute_amplitude_at_horizon": 345.7417368657978,
+            "any_modal_amplitude_exceeds_float64_at_horizon": false,
+            "first_modal_float64_overflow_time_from_t0": 0.16256368299388266,
+            "mode_of_first_modal_overflow": 43,
+            "first_observed_time_at_or_after_modal_overflow": null
+          }
+        ],
+        "caveat": "Six-mode projection filters initial high-frequency observation noise; these unresolved-in-the-six-mode-test disturbances can grow in the full resolved spectral realization."
+      }
+    }
+  ],
+  "diagnostic_only": "A lower weak validation residual does not establish better trajectory prediction or a well-posed continuum operator.",
+  "assumptions_and_limits": [
+    "Only certified selected models composed of u_xx/u_xxxx/u_xxxxxx are analyzed.",
+    "Fourier growth is exact for the stated constant-coefficient spectral realization; no claim is made for unsupported nonlinear structures.",
+    "A fourth/sixth order PDE generally needs additional boundary conditions: u=0 alone does not define the complete problem.",
+    "Sine predictions assume the operator is a polynomial of the Dirichlet Laplacian, imposing the corresponding spectral boundary realization.",
+    "Restricting to six modes discards possible unstable unresolved modes; a good conditional score does not make the full continuous PDE stable.",
+    "Six-mode initialization filters most high-frequency observation noise, whereas the full resolved initial-spectrum risk retains it and is evaluated only in the log domain.",
+    "The initial condition comes from noisy validation t0 observations; future validation values are used only for evaluation.",
+    "This is a post-selection development diagnostic, not independent final-test evidence or a general PDE rollout.",
+    "The validation observations are noisy, so their discrepancy also includes measurement noise."
+  ]
+}

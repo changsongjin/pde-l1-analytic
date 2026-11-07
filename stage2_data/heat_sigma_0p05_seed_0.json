@@ -1,0 +1,209 @@
+{
+  "case": "heat",
+  "sigma": 0.05,
+  "seed": 0,
+  "target": "u_t",
+  "generator_source_sha256": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+  "trajectories": [
+    {
+      "trajectory_id": "heat/development/0",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.49214383436853393,
+          -0.259619625716642,
+          -0.41074973413375226,
+          -0.4791816446224854,
+          0.4222920338386386,
+          0.35207634606685256
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.19655662792944387
+    },
+    {
+      "trajectory_id": "heat/development/1",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.963223353409757,
+          -0.634475721795106,
+          -0.20308543662885578,
+          0.43477390200418153,
+          0.41769004436097834,
+          0.18182301929280228
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.31241759111112755
+    },
+    {
+      "trajectory_id": "heat/development/2",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.884194167339341,
+          0.4034625976081391,
+          0.42276717013457144,
+          0.221318622670537,
+          -0.35273068689470366,
+          0.3593845195791355
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.24758749819096643
+    },
+    {
+      "trajectory_id": "heat/development/3",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.6183312695239556,
+          0.3295496006843058,
+          -0.32535801695588007,
+          0.48036746960961313,
+          0.4251785754009628,
+          0.22880662793618867
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.21627126745105288
+    },
+    {
+      "trajectory_id": "heat/development/4",
+      "split": "validation",
+      "parameters": {
+        "cos_coefficients": [
+          -0.9478926105319648,
+          -0.6613008331761149,
+          0.26364875158614964,
+          -0.1863026999512276,
+          0.26362003662548156,
+          -0.3998136097210059
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.31862503433574313
+    },
+    {
+      "trajectory_id": "heat/development/5",
+      "split": "validation",
+      "parameters": {
+        "cos_coefficients": [
+          0.7744088673540314,
+          0.5781843246598927,
+          -0.24022943786716913,
+          -0.23111901307921473,
+          -0.21289818918374345,
+          0.3853199441261076
+        ],
+        "sin_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.27045419716565144
+    }
+  ],
+  "role": "development_only",
+  "test_status": "not generated or inspected; IDs 6..11 and noise seeds >=1000 reserved",
+  "noise_model": "additive Gaussian sigma*std(clean trajectory), applied to observed u",
+  "normalization": "none in raw observations; fit scaling using training matrices only",
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        257
+      ],
+      "sha256": "7c2da848e1a65232b381a0ab7027160ef8a69a27b4db90535d6a0d98b9a9aabe"
+    },
+    "t": {
+      "shape": [
+        129
+      ],
+      "sha256": "480e2c3cbf595bcb1d4334f21c9594e9cb46328a103f29c3b9c2bddd9d57bb78"
+    },
+    "u_0": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "b98515509e7e7d1bdae37b72c5324fecaf975b9f6a3a02f35cb03aa05d820848"
+    },
+    "u_1": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "234e8a8219ea16a0491c1ec4b075ed6f1206b28fc9836f2762993b9d253dbce7"
+    },
+    "u_2": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "e71bef9f64f68df5a2727c4c5f82f2725a5969fbe8e8782bc788c67432d1124f"
+    },
+    "u_3": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "ed426d6593da502044d6b7279f29e0eea92985f56cbde73061da6587239b0876"
+    },
+    "u_4": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "9357e0530f2e9702d9fc7c6502d8f1106fa7caf83cffb5bc30d94f082745616c"
+    },
+    "u_5": {
+      "shape": [
+        129,
+        257
+      ],
+      "sha256": "c6da26f483b3a284f787ee96ce90e0437b93e861d181e78eaf82ed67b67c2f94"
+    }
+  },
+  "npz_sha256": "787734bb9962700beb4321b457c5ebdc1dedaeb3339551e6be8fc3b395e1b584"
+}

@@ -1,0 +1,191 @@
+{
+  "case": "burgers",
+  "sigma": 0.05,
+  "seed": 0,
+  "target": "u_t",
+  "generator_source_sha256": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+  "trajectories": [
+    {
+      "trajectory_id": "burgers/development/0",
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -11.520629925834491,
+          -12.35554244098246,
+          -15.211401224680365
+        ],
+        "x0s": [
+          0.0,
+          0.6032179909593964,
+          0.27586468876565506,
+          0.18970559321559516
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.326871475234875
+    },
+    {
+      "trajectory_id": "burgers/development/1",
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -8.95659452945432,
+          -9.82426563495771,
+          -14.182712194108445
+        ],
+        "x0s": [
+          0.0,
+          0.962021844132512,
+          1.1941278256388432,
+          0.2544787745671132
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 0.9779702039146653
+    },
+    {
+      "trajectory_id": "burgers/development/2",
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -5.545416531654343,
+          -6.247893509892388,
+          -15.144427873816792
+        ],
+        "x0s": [
+          0.0,
+          0.42314372946267365,
+          0.9516971912598952,
+          1.0496826428817212
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.3267103271056437
+    },
+    {
+      "trajectory_id": "burgers/development/3",
+      "split": "train",
+      "parameters": {
+        "ks": [
+          0.0,
+          -5.878994807438493,
+          -8.905207255958597,
+          -11.397786968746912
+        ],
+        "x0s": [
+          0.0,
+          0.25105141285941496,
+          0.8195924357173567,
+          1.1185719889574954
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.0147320785331782
+    },
+    {
+      "trajectory_id": "burgers/development/4",
+      "split": "validation",
+      "parameters": {
+        "ks": [
+          0.0,
+          -4.619250821723227,
+          -9.345306806215302,
+          -13.543492457372139
+        ],
+        "x0s": [
+          0.0,
+          0.31158268533197075,
+          0.2171654730976333,
+          0.9004392792965297
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.2431665161553782
+    },
+    {
+      "trajectory_id": "burgers/development/5",
+      "split": "validation",
+      "parameters": {
+        "ks": [
+          0.0,
+          -9.392627797068599,
+          -13.087728904355021,
+          -13.397827135013031
+        ],
+        "x0s": [
+          0.0,
+          0.351672347543742,
+          0.5771502216607217,
+          0.4028430183101348
+        ],
+        "nu": 0.1
+      },
+      "clean_std_for_synthetic_noise": 1.2515399888102445
+    }
+  ],
+  "role": "development_only",
+  "test_status": "not generated or inspected; IDs 6..11 and noise seeds >=1000 reserved",
+  "noise_model": "additive Gaussian sigma*std(clean trajectory), applied to observed u",
+  "normalization": "none in raw observations; fit scaling using training matrices only",
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        321
+      ],
+      "sha256": "78cb2757a51478b594a6deb0a39b2bacc3c084609b336d35ea0ff3f7ac9eeab7"
+    },
+    "t": {
+      "shape": [
+        161
+      ],
+      "sha256": "f81cbe1b11630c98dd7803b40d5fa922d21c62294923c0388217e80151085376"
+    },
+    "u_0": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "ada64b13de57cc76e6d44410529a06d3ed5492a61177eb445bd80e983cbe5f08"
+    },
+    "u_1": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "361ecbc7a4ff71cb11f18cc222106d40b7d2030d4633080e0ba445185b9f3c61"
+    },
+    "u_2": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "3e82e740de52a0169995009f70e20f2d2a364f22d089838022286cc365a72342"
+    },
+    "u_3": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "8121fa5e37af7812dcd667a484add000f63f5db31739f49a6f8f8b932ecd2ee9"
+    },
+    "u_4": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "4250fcc2d9073adeb54d9d999dcf757517881aaea6db95f1f4659d2d7ee98e45"
+    },
+    "u_5": {
+      "shape": [
+        161,
+        321
+      ],
+      "sha256": "17ad3c2a5004899b2647f211110b4d0b89e2e863ccb5ccf9caf854243af48e80"
+    }
+  },
+  "npz_sha256": "eefc254a06857ac3748dc7d22019bd5390c1c592025fe29ee1097c6d5ce35171"
+}

@@ -1,0 +1,209 @@
+{
+  "case": "wave",
+  "sigma": 0.0,
+  "seed": 0,
+  "target": "u_tt",
+  "generator_source_sha256": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+  "trajectories": [
+    {
+      "trajectory_id": "wave/development/0",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          -0.6734775925862795,
+          0.6737075386737942,
+          -0.28326302687349997,
+          -0.3472448730828124,
+          0.3051709614000651,
+          0.22618974305541006
+        ],
+        "sin_coefficients": [
+          -0.37347293736085274,
+          0.35613193118152675,
+          -0.07791848580640526,
+          -0.18230441691130495,
+          -0.4647640931380107,
+          -0.05730268447629283
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.6460485500738471
+    },
+    {
+      "trajectory_id": "wave/development/1",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.5768113509247499,
+          0.2827002176094431,
+          -0.2524227288464941,
+          0.47021879403869293,
+          0.4167855774344927,
+          0.3786881701430968
+        ],
+        "sin_coefficients": [
+          -0.25408804191502554,
+          0.3168376801997501,
+          -0.33040170813138814,
+          0.34297091670497504,
+          0.4591378231026195,
+          -0.08097858773347699
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.6266817262358796
+    },
+    {
+      "trajectory_id": "wave/development/2",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.9547669099777893,
+          -0.3691474225890743,
+          0.5181180868229178,
+          0.43845789726741147,
+          0.1781251427461718,
+          -0.30376762065118174
+        ],
+        "sin_coefficients": [
+          -0.360260108003466,
+          0.040335247918988126,
+          -0.4510085063688848,
+          -0.4112488810463063,
+          -0.47428288074502667,
+          -0.3004966460649018
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.7625823796095795
+    },
+    {
+      "trajectory_id": "wave/development/3",
+      "split": "train",
+      "parameters": {
+        "cos_coefficients": [
+          0.9608519283313652,
+          -0.6297667353849414,
+          -0.24321675488115563,
+          0.3809514065906837,
+          0.24627044956505698,
+          0.25948775790239925
+        ],
+        "sin_coefficients": [
+          0.24394148494302414,
+          -0.4269623534829182,
+          0.49078574316041157,
+          0.2414579460193147,
+          0.15066021457939305,
+          0.40203392923319103
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.7602276630685662
+    },
+    {
+      "trajectory_id": "wave/development/4",
+      "split": "validation",
+      "parameters": {
+        "cos_coefficients": [
+          -0.8008927907301949,
+          0.7051696917791032,
+          0.4150802071832143,
+          -0.3709864989653773,
+          -0.2696292236475418,
+          0.3346663143548522
+        ],
+        "sin_coefficients": [
+          0.45039317700296755,
+          0.2538761909955758,
+          -0.46741355693949627,
+          -0.08583748025759785,
+          -0.08913324580200932,
+          0.009544234775079263
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.7123401864039356
+    },
+    {
+      "trajectory_id": "wave/development/5",
+      "split": "validation",
+      "parameters": {
+        "cos_coefficients": [
+          -0.48354073765612354,
+          -0.46023569098825823,
+          -0.2043561130817398,
+          0.3944722257079781,
+          0.17951553438017395,
+          0.32688579993244643
+        ],
+        "sin_coefficients": [
+          -0.2911708596282082,
+          0.4386934085278962,
+          -0.2751624166626495,
+          -0.10884381639577534,
+          0.29025274027149217,
+          0.07954461113354161
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.541221646045435
+    }
+  ],
+  "role": "development_only",
+  "test_status": "not generated or inspected; IDs 6..11 and noise seeds >=1000 reserved",
+  "noise_model": "additive Gaussian sigma*std(clean trajectory), applied to observed u",
+  "normalization": "none in raw observations; fit scaling using training matrices only",
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        257
+      ],
+      "sha256": "7c2da848e1a65232b381a0ab7027160ef8a69a27b4db90535d6a0d98b9a9aabe"
+    },
+    "t": {
+      "shape": [
+        257
+      ],
+      "sha256": "7c2da848e1a65232b381a0ab7027160ef8a69a27b4db90535d6a0d98b9a9aabe"
+    },
+    "u_0": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "5727345411b9129054fc14991c6f31815ea4f20ff46d6152796c6580b2d96761"
+    },
+    "u_1": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "22637540a1246b24b93e0a86025e3b441e998f38201650dcea13311cd730085b"
+    },
+    "u_2": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "e14890816bf4dff3bbadbac8be43cb29d9b77d87016da0ba6df5e262adf56e72"
+    },
+    "u_3": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "74db3753453a276ab25df13976437f0fe0b1cd6fc7db10c649522f2e5dd29299"
+    },
+    "u_4": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "6c7f7fd3e08c7d6acaaae3cc900e5f679c399110e90818ab5309ab2874c54e86"
+    },
+    "u_5": {
+      "shape": [
+        257,
+        257
+      ],
+      "sha256": "11fc6ff3e41e956d57eabf25aefd755187d6da64da5866b95476206a9fc4278e"
+    }
+  },
+  "npz_sha256": "e630640d266ef2b102bfb33264b593fcd83d5dc5deccd9a2c7efd1bade9458bd"
+}

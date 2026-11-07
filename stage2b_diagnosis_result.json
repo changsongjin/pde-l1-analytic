@@ -1,0 +1,4584 @@
+{
+  "stage": "2b_single_factor_diagnosis",
+  "all_checks_passed": true,
+  "source_file": "stage2b_compare_result.json",
+  "source_sha256": "72c04dcbb09dcb7155599519c9d40764c32e826656400750ebf5d363311aa385",
+  "source_script_sha256": "64749bf35211d206ef92aab7f29aabf5e604ef128c340613ac4fd67670391373",
+  "read_only_solver_runs": 0,
+  "records": [
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "2815da436abf46386598ae94d676b05a22a93f5773dfbff2e91049e22e5b213f",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 12,
+      "time_s": {
+        "solver_with_worker_startup": 4.039897800073959,
+        "fixed_support_validation": 0.0024228000547736883
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 3.2530864999862388,
+        "matrix_build_recorded_source_sum": 14.835848399903625
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.685311006110764e-10,
+        "max_relative_dual_gap_among_returned_points": 1.3321064176899688e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.11390933506446624,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12518038340698331
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.10139302165207595
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.12890933506446622,
+        "ls_physical_coefficients": {
+          "u_xx": 0.996609870973223
+        },
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 4.039897800073959,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "2815da436abf46386598ae94d676b05a22a93f5773dfbff2e91049e22e5b213f",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 2,
+      "time_s": {
+        "solver_with_worker_startup": 4.0499477999983355,
+        "fixed_support_validation": 0.0006905000191181898
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 3.2530864999862388,
+        "matrix_build_recorded_source_sum": 14.835848399903625
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.415490158738746e-10,
+        "max_relative_dual_gap_among_returned_points": 6.685932399119107e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.11390933506446624,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12518038340698331
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.10139302165207595
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.12890933506446622,
+        "ls_physical_coefficients": {
+          "u_xx": 0.996609870973223
+        },
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05,
+        3.674661940736688e-05,
+        2.0153376859417352e-05,
+        1.105295141126022e-05,
+        6.061898993497572e-06,
+        3.324597932270945e-06,
+        1.8233480008684424e-06,
+        1e-06
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 4.0499477999983355,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "2815da436abf46386598ae94d676b05a22a93f5773dfbff2e91049e22e5b213f",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 9,
+      "time_s": {
+        "solver_with_worker_startup": 5.060261099948548,
+        "fixed_support_validation": 0.0029444999527186155
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 3.2530864999862388,
+        "matrix_build_recorded_source_sum": 14.835848399903625
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.920316260273489e-10,
+        "max_relative_dual_gap_among_returned_points": 2.1635159341169433e-12,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.11390933506446624,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12518038340698331
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.10139302165207595
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.12890933506446622,
+        "ls_physical_coefficients": {
+          "u_xx": 0.996609870973223
+        },
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 5.060261099948548,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "0f9086f60dd6aabe69cf3a9a0ea1b364abf66491900849905ea36a2eedcdf2d0",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 20,
+      "time_s": {
+        "solver_with_worker_startup": 23.55230580002535,
+        "fixed_support_validation": 0.20089969993568957
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 3.2530864999862388,
+        "matrix_build_recorded_source_sum": 14.835848399903625
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 3.0903084673639816e-09,
+        "max_relative_dual_gap_among_returned_points": 8.020312844162575e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.11390933506446624,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12518038340698331
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.10139302165207595
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.12890933506446622,
+        "ls_physical_coefficients": {
+          "u_xx": 0.996609870973223
+        },
+        "physical_coef_rel_error_union": 0.0033901290267770445,
+        "physical_coef_rel_error_true_only": 0.0033901290267770445
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 23.55230580002535,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "0f9086f60dd6aabe69cf3a9a0ea1b364abf66491900849905ea36a2eedcdf2d0",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 3,
+      "time_s": {
+        "solver_with_worker_startup": 5.5974392999196425,
+        "fixed_support_validation": 0.0017948000459000468
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 3.2530864999862388,
+        "matrix_build_recorded_source_sum": 14.835848399903625
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.1478452859423085e-10,
+        "max_relative_dual_gap_among_returned_points": 1.0009650200282575e-12,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xxxx",
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.06169735754828016,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.06753200781169988
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.055249939165587805
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.10169735754828016,
+        "ls_physical_coefficients": {
+          "u_xxxx": 7.523326953619905e-05,
+          "u_xx": 1.0097628104664669
+        },
+        "physical_coef_rel_error_union": 0.00976310034000472,
+        "physical_coef_rel_error_true_only": 0.009762810466466876
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.05221197751618608,
+        "selected_minus_true_complexity": 5,
+        "selected_minus_true_fixed_score": -0.027211977516186064,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 5.5974392999196425,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "heat:sigma=0.01:seed=0:validation=10625ffdb81515403bc91ad835fb6896440eeaafcaaa4537b034defd0caf8c21",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "5f1c1f901808fb368f5c6119b566b127df000d560fcb89248975be4927bd12c7",
+      "solver_input_hashes": {
+        "A": "0f9086f60dd6aabe69cf3a9a0ea1b364abf66491900849905ea36a2eedcdf2d0",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 11,
+      "time_s": {
+        "solver_with_worker_startup": 7.426524500013329,
+        "fixed_support_validation": 0.025451999972574413
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 3.2530864999862388,
+        "matrix_build_recorded_source_sum": 14.835848399903625
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 7.855705962731976e-10,
+        "max_relative_dual_gap_among_returned_points": 1.8553180849784676e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xxxx",
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.06169735754828016,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.06753200781169988
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.055249939165587805
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.10169735754828016,
+        "ls_physical_coefficients": {
+          "u_xxxx": 7.523326953619905e-05,
+          "u_xx": 1.0097628104664669
+        },
+        "physical_coef_rel_error_union": 0.00976310034000472,
+        "physical_coef_rel_error_true_only": 0.009762810466466876
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.11390933506446624,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.12518038340698331
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.10139302165207595
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.12890933506446622,
+          "ls_physical_coefficients": {
+            "u_xx": 0.996609870973223
+          },
+          "physical_coef_rel_error_union": 0.0033901290267770445,
+          "physical_coef_rel_error_true_only": 0.0033901290267770445
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.05221197751618608,
+        "selected_minus_true_complexity": 5,
+        "selected_minus_true_fixed_score": -0.027211977516186064,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 7.426524500013329,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "burgers:sigma=0.05:seed=0:validation=4366646c2dc883feba2f7b799e0baec82af4290ff9378edbd1f106f16817a157",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "eefc254a06857ac3748dc7d22019bd5390c1c592025fe29ee1097c6d5ce35171",
+      "solver_input_hashes": {
+        "A": "c6a12402cef82b068de121297f0162617b18886a11356cdd9e5f201f251525d8",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 18,
+      "time_s": {
+        "solver_with_worker_startup": 3.5973777999170125,
+        "fixed_support_validation": 0.0027800999814644456
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.12627849995624274,
+        "matrix_build_recorded_source_sum": 13.867744100047275
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 3.987420944702552e-10,
+        "max_relative_dual_gap_among_returned_points": 4.776669867353765e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_x"
+        ],
+        "exact": false,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "extra": [
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "validation_error": 0.1146710387730199,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12953721487880077
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.097565384373815
+          }
+        ],
+        "complexity": 2,
+        "fixed_score": 0.1246710387730199,
+        "ls_physical_coefficients": {
+          "u_x": -1.1999865072683407
+        },
+        "physical_coef_rel_error_union": 1.5574692653471724,
+        "physical_coef_rel_error_true_only": 1.0
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 3.5973777999170125,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "burgers:sigma=0.05:seed=0:validation=4366646c2dc883feba2f7b799e0baec82af4290ff9378edbd1f106f16817a157",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "eefc254a06857ac3748dc7d22019bd5390c1c592025fe29ee1097c6d5ce35171",
+      "solver_input_hashes": {
+        "A": "c6a12402cef82b068de121297f0162617b18886a11356cdd9e5f201f251525d8",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 6,
+      "time_s": {
+        "solver_with_worker_startup": 4.043445999966934,
+        "fixed_support_validation": 0.0030762000242248178
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.12627849995624274,
+        "matrix_build_recorded_source_sum": 13.867744100047275
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 7.736245492675018e-10,
+        "max_relative_dual_gap_among_returned_points": 1.3597672420073953e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_x"
+        ],
+        "exact": false,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "extra": [
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "validation_error": 0.1146710387730199,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12953721487880077
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.097565384373815
+          }
+        ],
+        "complexity": 2,
+        "fixed_score": 0.1246710387730199,
+        "ls_physical_coefficients": {
+          "u_x": -1.1999865072683407
+        },
+        "physical_coef_rel_error_union": 1.5574692653471724,
+        "physical_coef_rel_error_true_only": 1.0
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 4.043445999966934,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "burgers:sigma=0.05:seed=0:validation=4366646c2dc883feba2f7b799e0baec82af4290ff9378edbd1f106f16817a157",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "eefc254a06857ac3748dc7d22019bd5390c1c592025fe29ee1097c6d5ce35171",
+      "solver_input_hashes": {
+        "A": "c6a12402cef82b068de121297f0162617b18886a11356cdd9e5f201f251525d8",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 13,
+      "time_s": {
+        "solver_with_worker_startup": 5.70106799993664,
+        "fixed_support_validation": 0.003324399935081601
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.12627849995624274,
+        "matrix_build_recorded_source_sum": 13.867744100047275
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 6.412618774872418e-10,
+        "max_relative_dual_gap_among_returned_points": 4.958165473094976e-12,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_x"
+        ],
+        "exact": false,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "extra": [
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "validation_error": 0.1146710387730199,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12953721487880077
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.097565384373815
+          }
+        ],
+        "complexity": 2,
+        "fixed_score": 0.1246710387730199,
+        "ls_physical_coefficients": {
+          "u_x": -1.1999865072683407
+        },
+        "physical_coef_rel_error_union": 1.5574692653471724,
+        "physical_coef_rel_error_true_only": 1.0
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 5.70106799993664,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "burgers:sigma=0.05:seed=0:validation=4366646c2dc883feba2f7b799e0baec82af4290ff9378edbd1f106f16817a157",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "eefc254a06857ac3748dc7d22019bd5390c1c592025fe29ee1097c6d5ce35171",
+      "solver_input_hashes": {
+        "A": "0e4445c4c08702d653e38b635663f3bc0461e285464e44360901c154970bad09",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 23,
+      "time_s": {
+        "solver_with_worker_startup": 137.61163439997472,
+        "fixed_support_validation": 0.1586578000569716,
+        "original_fixed_support_validation": 0.17000600008759648
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.12627849995624274,
+        "matrix_build_recorded_source_sum": 13.867744100047275
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.2373206787402758e-09,
+        "max_relative_dual_gap_among_returned_points": 3.091262018231551e-10,
+        "fallback_points": 1,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_x"
+        ],
+        "exact": false,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "extra": [
+          "u_x"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "validation_error": 0.1146710387730199,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.12953721487880077
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.097565384373815
+          }
+        ],
+        "complexity": 2,
+        "fixed_score": 0.1246710387730199,
+        "ls_physical_coefficients": {
+          "u_x": -1.1999865072683407
+        },
+        "physical_coef_rel_error_union": 1.5574692653471724,
+        "physical_coef_rel_error_true_only": 1.0
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 137.61163439997472,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "burgers:sigma=0.05:seed=0:validation=4366646c2dc883feba2f7b799e0baec82af4290ff9378edbd1f106f16817a157",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "eefc254a06857ac3748dc7d22019bd5390c1c592025fe29ee1097c6d5ce35171",
+      "solver_input_hashes": {
+        "A": "0e4445c4c08702d653e38b635663f3bc0461e285464e44360901c154970bad09",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 4,
+      "time_s": {
+        "solver_with_worker_startup": 4.773881700006314,
+        "fixed_support_validation": 0.004044500063173473
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.12627849995624274,
+        "matrix_build_recorded_source_sum": 13.867744100047275
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.913188194954749e-10,
+        "max_relative_dual_gap_among_returned_points": 2.523699975929062e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 5,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xx",
+          "u u_x"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.09502136172778172,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.09997273825596509
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.0897973828950943
+          }
+        ],
+        "complexity": 6,
+        "fixed_score": 0.12502136172778172,
+        "ls_physical_coefficients": {
+          "u_xx": 0.09487678494023424,
+          "u u_x": -0.997437515338247
+        },
+        "physical_coef_rel_error_union": 0.005699892320533208,
+        "physical_coef_rel_error_true_only": 0.005699892320533208
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 2,
+          "support": [
+            "u_xx",
+            "u u_x"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.09502136172778172,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.09997273825596509
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.0897973828950943
+            }
+          ],
+          "complexity": 6,
+          "fixed_score": 0.12502136172778172,
+          "ls_physical_coefficients": {
+            "u_xx": 0.09487678494023424,
+            "u u_x": -0.997437515338247
+          },
+          "physical_coef_rel_error_union": 0.005699892320533208,
+          "physical_coef_rel_error_true_only": 0.005699892320533208
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 4.773881700006314,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "burgers:sigma=0.05:seed=0:validation=4366646c2dc883feba2f7b799e0baec82af4290ff9378edbd1f106f16817a157",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "eefc254a06857ac3748dc7d22019bd5390c1c592025fe29ee1097c6d5ce35171",
+      "solver_input_hashes": {
+        "A": "0e4445c4c08702d653e38b635663f3bc0461e285464e44360901c154970bad09",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 14,
+      "time_s": {
+        "solver_with_worker_startup": 7.967184599954635,
+        "fixed_support_validation": 0.02477080002427101
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.12627849995624274,
+        "matrix_build_recorded_source_sum": 13.867744100047275
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.5836166945462714e-09,
+        "max_relative_dual_gap_among_returned_points": 2.6313015200095646e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 5,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xx",
+          "u u_x"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.09502136172778172,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.09997273825596509
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.0897973828950943
+          }
+        ],
+        "complexity": 6,
+        "fixed_score": 0.12502136172778172,
+        "ls_physical_coefficients": {
+          "u_xx": 0.09487678494023424,
+          "u u_x": -0.997437515338247
+        },
+        "physical_coef_rel_error_union": 0.005699892320533208,
+        "physical_coef_rel_error_true_only": 0.005699892320533208
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 2,
+          "support": [
+            "u_xx",
+            "u u_x"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.09502136172778172,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 4,
+              "relative_error": 0.09997273825596509
+            },
+            {
+              "trajectory": 5,
+              "relative_error": 0.0897973828950943
+            }
+          ],
+          "complexity": 6,
+          "fixed_score": 0.12502136172778172,
+          "ls_physical_coefficients": {
+            "u_xx": 0.09487678494023424,
+            "u u_x": -0.997437515338247
+          },
+          "physical_coef_rel_error_union": 0.005699892320533208,
+          "physical_coef_rel_error_true_only": 0.005699892320533208
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 7.967184599954635,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "logheat:sigma=0.05:seed=0:validation=dda37a86d3c93e1c170649bed21e9d5b8a28da2e5dd2f2a232efa43233544320",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "e1628fdd4b96fbec10988926bad58c67dd140b9ca40ed12c9bb40849f4624974",
+      "solver_input_hashes": {
+        "A": "82ed7acd93d7c7b282753e2768a244d20f99d2c3b7960540e0c4eb867791a5a8",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 11,
+      "time_s": {
+        "solver_with_worker_startup": 4.248775999993086,
+        "fixed_support_validation": 0.002723700017668307
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.14043609995860606,
+        "matrix_build_recorded_source_sum": 9.022030599997379
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 7.198207224123463e-10,
+        "max_relative_dual_gap_among_returned_points": 8.853335776260614e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 0.5,
+        "extra": [],
+        "missed": [
+          "u_x^2"
+        ],
+        "validation_error": 0.4508236168182407,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.3851048615827046
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.5081123030861641
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.4658236168182407,
+        "ls_physical_coefficients": {
+          "u_xx": 0.7574293950493676
+        },
+        "physical_coef_rel_error_union": 0.7276127054917731,
+        "physical_coef_rel_error_true_only": 0.7276127054917731
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 4.248775999993086,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "logheat:sigma=0.05:seed=0:validation=dda37a86d3c93e1c170649bed21e9d5b8a28da2e5dd2f2a232efa43233544320",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "e1628fdd4b96fbec10988926bad58c67dd140b9ca40ed12c9bb40849f4624974",
+      "solver_input_hashes": {
+        "A": "82ed7acd93d7c7b282753e2768a244d20f99d2c3b7960540e0c4eb867791a5a8",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 8,
+      "time_s": {
+        "solver_with_worker_startup": 4.919008000055328,
+        "fixed_support_validation": 0.002245199983008206
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.14043609995860606,
+        "matrix_build_recorded_source_sum": 9.022030599997379
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.3797514118584686e-10,
+        "max_relative_dual_gap_among_returned_points": 1.727123407201901e-14,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 0.5,
+        "extra": [],
+        "missed": [
+          "u_x^2"
+        ],
+        "validation_error": 0.4508236168182407,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.3851048615827046
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.5081123030861641
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.4658236168182407,
+        "ls_physical_coefficients": {
+          "u_xx": 0.7574293950493676
+        },
+        "physical_coef_rel_error_union": 0.7276127054917731,
+        "physical_coef_rel_error_true_only": 0.7276127054917731
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 4.919008000055328,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "logheat:sigma=0.05:seed=0:validation=dda37a86d3c93e1c170649bed21e9d5b8a28da2e5dd2f2a232efa43233544320",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J18",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "e1628fdd4b96fbec10988926bad58c67dd140b9ca40ed12c9bb40849f4624974",
+      "solver_input_hashes": {
+        "A": "82ed7acd93d7c7b282753e2768a244d20f99d2c3b7960540e0c4eb867791a5a8",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 11,
+      "time_s": {
+        "solver_with_worker_startup": 5.1285749999806285,
+        "fixed_support_validation": 0.003232100047171116
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.14043609995860606,
+        "matrix_build_recorded_source_sum": 9.022030599997379
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.806926474365269e-10,
+        "max_relative_dual_gap_among_returned_points": 2.3094899536740267e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 0.5,
+        "extra": [],
+        "missed": [
+          "u_x^2"
+        ],
+        "validation_error": 0.4508236168182407,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.3851048615827046
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.5081123030861641
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.4658236168182407,
+        "ls_physical_coefficients": {
+          "u_xx": 0.7574293950493676
+        },
+        "physical_coef_rel_error_union": 0.7276127054917731,
+        "physical_coef_rel_error_true_only": 0.7276127054917731
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 5.1285749999806285,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "logheat:sigma=0.05:seed=0:validation=dda37a86d3c93e1c170649bed21e9d5b8a28da2e5dd2f2a232efa43233544320",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "e1628fdd4b96fbec10988926bad58c67dd140b9ca40ed12c9bb40849f4624974",
+      "solver_input_hashes": {
+        "A": "9f6392df89781f9fb96f7d50841feddec709030ed3c1444ddeaf4401dbce3695",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 24,
+      "time_s": {
+        "solver_with_worker_startup": 145.56875310000032,
+        "fixed_support_validation": 0.3065942000830546,
+        "original_fixed_support_validation": 0.3087511999765411
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.14043609995860606,
+        "matrix_build_recorded_source_sum": 9.022030599997379
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.982481393246555e-09,
+        "max_relative_dual_gap_among_returned_points": 9.971469790058956e-10,
+        "fallback_points": 2,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 3,
+        "support": [
+          "u_xxxx",
+          "u_xx",
+          "u_x u_xxxx",
+          "u u_x^2 u_xx^2",
+          "u^2 u_xx",
+          "t^2 u_xx",
+          "x u"
+        ],
+        "exact": false,
+        "f1": 0.2222222222222222,
+        "precision": 0.14285714285714285,
+        "recall": 0.5,
+        "extra": [
+          "t^2*u_xx",
+          "u*u_x^2*u_xx^2",
+          "u*x",
+          "u^2*u_xx",
+          "u_x*u_xxxx",
+          "u_xxxx"
+        ],
+        "missed": [
+          "u_x^2"
+        ],
+        "validation_error": 0.23004179195095442,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.2146872130658702
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.24443373873919713
+          }
+        ],
+        "complexity": 41,
+        "fixed_score": 0.43504179195095444,
+        "ls_physical_coefficients": {
+          "u_xxxx": 4.034962471056172e-05,
+          "u_xx": 0.9196519189478979,
+          "u_x u_xxxx": -3.6903617368581966e-05,
+          "u u_x^2 u_xx^2": -0.00433674253287677,
+          "u^2 u_xx": -0.8073634085991698,
+          "t^2 u_xx": -129.2699761794631,
+          "x u": -5.040051111690944
+        },
+        "physical_coef_rel_error_union": 91.4816570874878,
+        "physical_coef_rel_error_true_only": 0.7093855841954907
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 145.56875310000032,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "logheat:sigma=0.05:seed=0:validation=dda37a86d3c93e1c170649bed21e9d5b8a28da2e5dd2f2a232efa43233544320",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "e1628fdd4b96fbec10988926bad58c67dd140b9ca40ed12c9bb40849f4624974",
+      "solver_input_hashes": {
+        "A": "9f6392df89781f9fb96f7d50841feddec709030ed3c1444ddeaf4401dbce3695",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 6,
+      "time_s": {
+        "solver_with_worker_startup": 5.525627100025304,
+        "fixed_support_validation": 0.005250000045634806
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.14043609995860606,
+        "matrix_build_recorded_source_sum": 9.022030599997379
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.5346693240044006e-10,
+        "max_relative_dual_gap_among_returned_points": 2.683992620129959e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 4,
+        "support": [
+          "u_xxxxxx",
+          "u_xxxx",
+          "u_xx",
+          "u_x^2",
+          "t u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5714285714285714,
+        "precision": 0.4,
+        "recall": 1.0,
+        "extra": [
+          "t*u_xx",
+          "u_xxxx",
+          "u_xxxxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.1733452748856311,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.14421887923979243
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.19823744227861742
+          }
+        ],
+        "complexity": 24,
+        "fixed_score": 0.2933452748856311,
+        "ls_physical_coefficients": {
+          "u_xxxxxx": 3.567923184362433e-09,
+          "u_xxxx": 0.0001158602931971604,
+          "u_xx": 1.0404171030297193,
+          "u_x^2": 0.9214614346502619,
+          "t u_xx": -6.541427968538924
+        },
+        "physical_coef_rel_error_union": 4.625909733742726,
+        "physical_coef_rel_error_true_only": 0.06245737932586524
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 5.525627100025304,
+      "origin": "reused_stage2a_control"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "logheat:sigma=0.05:seed=0:validation=dda37a86d3c93e1c170649bed21e9d5b8a28da2e5dd2f2a232efa43233544320",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 0,
+      "layer": "J1158",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "e1628fdd4b96fbec10988926bad58c67dd140b9ca40ed12c9bb40849f4624974",
+      "solver_input_hashes": {
+        "A": "9f6392df89781f9fb96f7d50841feddec709030ed3c1444ddeaf4401dbce3695",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 16,
+      "time_s": {
+        "solver_with_worker_startup": 9.575575900031254,
+        "fixed_support_validation": 0.048865800024941564
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.14043609995860606,
+        "matrix_build_recorded_source_sum": 9.022030599997379
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 9.163573093978658e-10,
+        "max_relative_dual_gap_among_returned_points": 2.2012179898854176e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 4,
+        "support": [
+          "u_xxxxxx",
+          "u_xxxx",
+          "u_xx",
+          "u_x^2",
+          "t u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5714285714285714,
+        "precision": 0.4,
+        "recall": 1.0,
+        "extra": [
+          "t*u_xx",
+          "u_xxxx",
+          "u_xxxxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.1733452748856311,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 4,
+            "relative_error": 0.14421887923979243
+          },
+          {
+            "trajectory": 5,
+            "relative_error": 0.19823744227861742
+          }
+        ],
+        "complexity": 24,
+        "fixed_score": 0.2933452748856311,
+        "ls_physical_coefficients": {
+          "u_xxxxxx": 3.567923184362433e-09,
+          "u_xxxx": 0.0001158602931971604,
+          "u_xx": 1.0404171030297193,
+          "u_x^2": 0.9214614346502619,
+          "t u_xx": -6.541427968538924
+        },
+        "physical_coef_rel_error_union": 4.625909733742726,
+        "physical_coef_rel_error_true_only": 0.06245737932586524
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "development_ids0_5_seed0",
+      "historical_cost_retained": 9.575575900031254,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:heat:sigma=0.01:validation=ccd1341676f3f94854da2c35719ab7fbcc31be1f8ce389cac9dee3e407ef61c1",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 1,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a",
+      "solver_input_hashes": {
+        "A": "1db0a276410893f2ddf5e650b32506154f3a574079743622f07c6651bd9ede6c",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 12,
+      "time_s": {
+        "solver_with_worker_startup": 5.373608599998988,
+        "fixed_support_validation": 0.0037434000987559557
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15705809998326004,
+        "matrix_build_recorded_source_sum": 8.721703099901788
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.8195101177997662e-10,
+        "max_relative_dual_gap_among_returned_points": 1.3125984869721167e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.08057255367739147,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.07378719919387519
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.08682926953116468
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.09557255367739147,
+        "ls_physical_coefficients": {
+          "u_xx": 0.9902124142596098
+        },
+        "physical_coef_rel_error_union": 0.009787585740390181,
+        "physical_coef_rel_error_true_only": 0.009787585740390181
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.08057255367739147,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 16,
+              "relative_error": 0.07378719919387519
+            },
+            {
+              "trajectory": 17,
+              "relative_error": 0.08682926953116468
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.09557255367739147,
+          "ls_physical_coefficients": {
+            "u_xx": 0.9902124142596098
+          },
+          "physical_coef_rel_error_union": 0.009787585740390181,
+          "physical_coef_rel_error_true_only": 0.009787585740390181
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 5.373608599998988,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:heat:sigma=0.01:validation=ccd1341676f3f94854da2c35719ab7fbcc31be1f8ce389cac9dee3e407ef61c1",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 1,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a",
+      "solver_input_hashes": {
+        "A": "1db0a276410893f2ddf5e650b32506154f3a574079743622f07c6651bd9ede6c",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 2,
+      "time_s": {
+        "solver_with_worker_startup": 6.5382138000568375,
+        "fixed_support_validation": 0.0010210999753326178
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15705809998326004,
+        "matrix_build_recorded_source_sum": 8.721703099901788
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.9088892378471394e-11,
+        "max_relative_dual_gap_among_returned_points": 7.980378309842544e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.08057255367739147,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.07378719919387519
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.08682926953116468
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.09557255367739147,
+        "ls_physical_coefficients": {
+          "u_xx": 0.9902124142596098
+        },
+        "physical_coef_rel_error_union": 0.009787585740390181,
+        "physical_coef_rel_error_true_only": 0.009787585740390181
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05,
+        3.674661940736688e-05,
+        2.0153376859417352e-05,
+        1.105295141126022e-05,
+        6.061898993497572e-06,
+        3.324597932270945e-06,
+        1.8233480008684424e-06,
+        1e-06
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.08057255367739147,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 16,
+              "relative_error": 0.07378719919387519
+            },
+            {
+              "trajectory": 17,
+              "relative_error": 0.08682926953116468
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.09557255367739147,
+          "ls_physical_coefficients": {
+            "u_xx": 0.9902124142596098
+          },
+          "physical_coef_rel_error_union": 0.009787585740390181,
+          "physical_coef_rel_error_true_only": 0.009787585740390181
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 6.5382138000568375,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:heat:sigma=0.01:validation=ccd1341676f3f94854da2c35719ab7fbcc31be1f8ce389cac9dee3e407ef61c1",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 1,
+      "layer": "J18",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a",
+      "solver_input_hashes": {
+        "A": "1db0a276410893f2ddf5e650b32506154f3a574079743622f07c6651bd9ede6c",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 8,
+      "time_s": {
+        "solver_with_worker_startup": 6.2468140999553725,
+        "fixed_support_validation": 0.005748899886384606
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15705809998326004,
+        "matrix_build_recorded_source_sum": 8.721703099901788
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.355882022145957e-10,
+        "max_relative_dual_gap_among_returned_points": 8.034762511033509e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.08057255367739147,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.07378719919387519
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.08682926953116468
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.09557255367739147,
+        "ls_physical_coefficients": {
+          "u_xx": 0.9902124142596098
+        },
+        "physical_coef_rel_error_union": 0.009787585740390181,
+        "physical_coef_rel_error_true_only": 0.009787585740390181
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608,
+        0.0024620924014946257,
+        0.0013503140378698735,
+        0.0007405684692262443,
+        0.00040615859883769796,
+        0.00022275429519995587,
+        0.00012216773489967918,
+        6.70018750350959e-05
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.08057255367739147,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 16,
+              "relative_error": 0.07378719919387519
+            },
+            {
+              "trajectory": 17,
+              "relative_error": 0.08682926953116468
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.09557255367739147,
+          "ls_physical_coefficients": {
+            "u_xx": 0.9902124142596098
+          },
+          "physical_coef_rel_error_union": 0.009787585740390181,
+          "physical_coef_rel_error_true_only": 0.009787585740390181
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 6.2468140999553725,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:heat:sigma=0.01:validation=ccd1341676f3f94854da2c35719ab7fbcc31be1f8ce389cac9dee3e407ef61c1",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a",
+      "solver_input_hashes": {
+        "A": "09df58d382c87a08d9292ce8fd696ade2d63f0f04d9a98c8d21c15ea88fa7bd7",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 21,
+      "time_s": {
+        "solver_with_worker_startup": 24.64842989994213,
+        "fixed_support_validation": 0.2362106000073254
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15705809998326004,
+        "matrix_build_recorded_source_sum": 8.721703099901788
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.006590608970735e-09,
+        "max_relative_dual_gap_among_returned_points": 7.616220841734714e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_xx"
+        ],
+        "exact": true,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "extra": [],
+        "missed": [],
+        "validation_error": 0.08057255367739147,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.07378719919387519
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.08682926953116468
+          }
+        ],
+        "complexity": 3,
+        "fixed_score": 0.09557255367739147,
+        "ls_physical_coefficients": {
+          "u_xx": 0.9902124142596098
+        },
+        "physical_coef_rel_error_union": 0.009787585740390181,
+        "physical_coef_rel_error_true_only": 0.009787585740390181
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.08057255367739147,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 16,
+              "relative_error": 0.07378719919387519
+            },
+            {
+              "trajectory": 17,
+              "relative_error": 0.08682926953116468
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.09557255367739147,
+          "ls_physical_coefficients": {
+            "u_xx": 0.9902124142596098
+          },
+          "physical_coef_rel_error_union": 0.009787585740390181,
+          "physical_coef_rel_error_true_only": 0.009787585740390181
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": 0.0,
+        "selected_minus_true_complexity": 0,
+        "selected_minus_true_fixed_score": 0.0,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "selected_true_support",
+      "classification_meaning": "The frozen validation-complexity score selected the known support in this development observation.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 24.64842989994213,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:heat:sigma=0.01:validation=ccd1341676f3f94854da2c35719ab7fbcc31be1f8ce389cac9dee3e407ef61c1",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a",
+      "solver_input_hashes": {
+        "A": "09df58d382c87a08d9292ce8fd696ade2d63f0f04d9a98c8d21c15ea88fa7bd7",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 3,
+      "time_s": {
+        "solver_with_worker_startup": 6.626135400030762,
+        "fixed_support_validation": 0.0064749999437481165
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15705809998326004,
+        "matrix_build_recorded_source_sum": 8.721703099901788
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.827792166168007e-10,
+        "max_relative_dual_gap_among_returned_points": 8.874643724064982e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xxxx",
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.046406258156780233,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.039175292488261695
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.05265337644146488
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.08640625815678024,
+        "ls_physical_coefficients": {
+          "u_xxxx": 7.071188798603836e-05,
+          "u_xx": 1.0067242829905008
+        },
+        "physical_coef_rel_error_union": 0.006724654779796538,
+        "physical_coef_rel_error_true_only": 0.006724282990500763
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.08057255367739147,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 16,
+              "relative_error": 0.07378719919387519
+            },
+            {
+              "trajectory": 17,
+              "relative_error": 0.08682926953116468
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.09557255367739147,
+          "ls_physical_coefficients": {
+            "u_xx": 0.9902124142596098
+          },
+          "physical_coef_rel_error_union": 0.009787585740390181,
+          "physical_coef_rel_error_true_only": 0.009787585740390181
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.034166295520611234,
+        "selected_minus_true_complexity": 5,
+        "selected_minus_true_fixed_score": -0.009166295520611226,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 6.626135400030762,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:heat:sigma=0.01:validation=ccd1341676f3f94854da2c35719ab7fbcc31be1f8ce389cac9dee3e407ef61c1",
+      "case": "heat",
+      "sigma": 0.01,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "a1ab5ae99227da3d711d29c2666a225c2e23712afe3bf04d7ec74b585257fe5a",
+      "solver_input_hashes": {
+        "A": "09df58d382c87a08d9292ce8fd696ade2d63f0f04d9a98c8d21c15ea88fa7bd7",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 11,
+      "time_s": {
+        "solver_with_worker_startup": 7.598659500014037,
+        "fixed_support_validation": 0.026239800034090877
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15705809998326004,
+        "matrix_build_recorded_source_sum": 8.721703099901788
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 3.7336547545444127e-10,
+        "max_relative_dual_gap_among_returned_points": 2.967391851310236e-11,
+        "fallback_points": 0,
+        "outer_iteration_count": 3,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xxxx",
+          "u_xx"
+        ],
+        "exact": false,
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "extra": [
+          "u_xxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.046406258156780233,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.039175292488261695
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.05265337644146488
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.08640625815678024,
+        "ls_physical_coefficients": {
+          "u_xxxx": 7.071188798603836e-05,
+          "u_xx": 1.0067242829905008
+        },
+        "physical_coef_rel_error_union": 0.006724654779796538,
+        "physical_coef_rel_error_true_only": 0.006724282990500763
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": true,
+      "true_support_candidate_lambda_ratios": [
+        0.5484416576121018,
+        0.30078825180430996,
+        0.16496480740980207,
+        0.09047357242349298,
+        0.04961947603002903,
+        0.027213387683753087,
+        0.014924955450518298,
+        0.008185467307069028,
+        0.004489251258218608
+      ],
+      "true_support_candidates": [
+        {
+          "candidate_id": 1,
+          "support": [
+            "u_xx"
+          ],
+          "exact": true,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "extra": [],
+          "missed": [],
+          "validation_error": 0.08057255367739147,
+          "validation_by_trajectory": [
+            {
+              "trajectory": 16,
+              "relative_error": 0.07378719919387519
+            },
+            {
+              "trajectory": 17,
+              "relative_error": 0.08682926953116468
+            }
+          ],
+          "complexity": 3,
+          "fixed_score": 0.09557255367739147,
+          "ls_physical_coefficients": {
+            "u_xx": 0.9902124142596098
+          },
+          "physical_coef_rel_error_union": 0.009787585740390181,
+          "physical_coef_rel_error_true_only": 0.009787585740390181
+        }
+      ],
+      "selected_vs_best_true_support_candidate": {
+        "selected_minus_true_validation_error": -0.034166295520611234,
+        "selected_minus_true_complexity": 5,
+        "selected_minus_true_fixed_score": -0.009166295520611226,
+        "interpretation": "Diagnostic only; do not change alpha using this comparison."
+      },
+      "classification": "validation_complexity_tradeoff",
+      "classification_meaning": "The path contains the known support, but the frozen score selected another support.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 7.598659500014037,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:burgers:sigma=0.05:validation=17ee0142e772fef37fc4ce32aca72bd879742f8d3e63aaf5ecd3973da9c637f4",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce",
+      "solver_input_hashes": {
+        "A": "137b81cef36b7642a4c6a6d0cad3447f23fcb6b32478900a3596cd6230a718da",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 12,
+      "time_s": {
+        "solver_with_worker_startup": 6.113656700006686,
+        "fixed_support_validation": 0.0039051000494509935
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15408260002732277,
+        "matrix_build_recorded_source_sum": 16.654530599946156
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.722362601776481e-10,
+        "max_relative_dual_gap_among_returned_points": 1.5306162149287016e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 1,
+        "support": [
+          "u_x",
+          "u_x^2",
+          "u u_x"
+        ],
+        "exact": false,
+        "f1": 0.4,
+        "precision": 0.3333333333333333,
+        "recall": 0.5,
+        "extra": [
+          "u_x",
+          "u_x^2"
+        ],
+        "missed": [
+          "u_xx"
+        ],
+        "validation_error": 0.16865242734584865,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.16822143512028978
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.16908232097225206
+          }
+        ],
+        "complexity": 9,
+        "fixed_score": 0.21365242734584866,
+        "ls_physical_coefficients": {
+          "u_x": -0.31607340554964186,
+          "u_x^2": 0.0924859527879301,
+          "u u_x": -0.3114729399000955
+        },
+        "physical_coef_rel_error_union": 0.7659366631317263,
+        "physical_coef_rel_error_true_only": 0.692298161950054
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 6.113656700006686,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:burgers:sigma=0.05:validation=17ee0142e772fef37fc4ce32aca72bd879742f8d3e63aaf5ecd3973da9c637f4",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce",
+      "solver_input_hashes": {
+        "A": "137b81cef36b7642a4c6a6d0cad3447f23fcb6b32478900a3596cd6230a718da",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 6,
+      "time_s": {
+        "solver_with_worker_startup": 5.313095399993472,
+        "fixed_support_validation": 0.002617600024677813
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15408260002732277,
+        "matrix_build_recorded_source_sum": 16.654530599946156
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.738514279822529e-10,
+        "max_relative_dual_gap_among_returned_points": 8.342262136407374e-14,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 3,
+        "support": [
+          "u_x",
+          "u_x u_xx",
+          "u_x^2",
+          "u^2 u_x"
+        ],
+        "exact": false,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "extra": [
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx",
+          "u_x^2"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "validation_error": 0.14746565523270116,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.12519777810300517
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.16678655612635707
+          }
+        ],
+        "complexity": 15,
+        "fixed_score": 0.22246565523270118,
+        "ls_physical_coefficients": {
+          "u_x": -0.42485522451638674,
+          "u_x u_xx": -0.01521182935885705,
+          "u_x^2": 0.05686006562953435,
+          "u^2 u_x": -0.25458258313473
+        },
+        "physical_coef_rel_error_union": 1.1163850431657605,
+        "physical_coef_rel_error_true_only": 1.0
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 5.313095399993472,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:burgers:sigma=0.05:validation=17ee0142e772fef37fc4ce32aca72bd879742f8d3e63aaf5ecd3973da9c637f4",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J18",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce",
+      "solver_input_hashes": {
+        "A": "137b81cef36b7642a4c6a6d0cad3447f23fcb6b32478900a3596cd6230a718da",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 12,
+      "time_s": {
+        "solver_with_worker_startup": 5.686766500002705,
+        "fixed_support_validation": 0.0030622000340372324
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15408260002732277,
+        "matrix_build_recorded_source_sum": 16.654530599946156
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 4.4803777398066874e-10,
+        "max_relative_dual_gap_among_returned_points": 9.688134219335804e-12,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 3,
+        "support": [
+          "u_x",
+          "u_x u_xx",
+          "u_x^2",
+          "u^2 u_x"
+        ],
+        "exact": false,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "extra": [
+          "u^2*u_x",
+          "u_x",
+          "u_x*u_xx",
+          "u_x^2"
+        ],
+        "missed": [
+          "u*u_x",
+          "u_xx"
+        ],
+        "validation_error": 0.14746565523270116,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.12519777810300517
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.16678655612635707
+          }
+        ],
+        "complexity": 15,
+        "fixed_score": 0.22246565523270118,
+        "ls_physical_coefficients": {
+          "u_x": -0.42485522451638674,
+          "u_x u_xx": -0.01521182935885705,
+          "u_x^2": 0.05686006562953435,
+          "u^2 u_x": -0.25458258313473
+        },
+        "physical_coef_rel_error_union": 1.1163850431657605,
+        "physical_coef_rel_error_true_only": 1.0
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 5.686766500002705,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:burgers:sigma=0.05:validation=17ee0142e772fef37fc4ce32aca72bd879742f8d3e63aaf5ecd3973da9c637f4",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce",
+      "solver_input_hashes": {
+        "A": "59d98fc55c5b143adba7a92e9665532261a2a425c855152a1e7e4035a2d70469",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "n_columns": 1158,
+      "path_status": "budget_exhausted",
+      "all_requested_solutions_certified": false,
+      "path_point_status_counts": {
+        "certified": 22,
+        "budget_exhausted": 2
+      },
+      "n_candidates": 21,
+      "time_s": {
+        "solver_with_worker_startup": 120.03715810005087,
+        "fixed_support_validation": 0.16992119990754873
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15408260002732277,
+        "matrix_build_recorded_source_sum": 16.654530599946156
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 7.402432238464599e-10,
+        "max_relative_dual_gap_among_returned_points": 1.5926310582264198e-10,
+        "fallback_points": 1,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": null,
+      "partial_path_exploratory_best_only": {
+        "candidate_id": 1,
+        "support": [
+          "u_x",
+          "u_x^2",
+          "u u_x"
+        ],
+        "exact": false,
+        "f1": 0.4,
+        "precision": 0.3333333333333333,
+        "recall": 0.5,
+        "extra": [
+          "u_x",
+          "u_x^2"
+        ],
+        "missed": [
+          "u_xx"
+        ],
+        "validation_error": 0.16865242734584865,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.16822143512028978
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.16908232097225206
+          }
+        ],
+        "complexity": 9,
+        "fixed_score": 0.21365242734584866,
+        "ls_physical_coefficients": {
+          "u_x": -0.31607340554964186,
+          "u_x^2": 0.0924859527879301,
+          "u u_x": -0.3114729399000955
+        },
+        "physical_coef_rel_error_union": 0.7659366631317263,
+        "physical_coef_rel_error_true_only": 0.692298161950054
+      },
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "numerical_or_budget_incomplete",
+      "classification_meaning": "At least one requested lambda is unfinished or uncertified; no primary selection.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 120.03715810005087,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:burgers:sigma=0.05:validation=17ee0142e772fef37fc4ce32aca72bd879742f8d3e63aaf5ecd3973da9c637f4",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce",
+      "solver_input_hashes": {
+        "A": "59d98fc55c5b143adba7a92e9665532261a2a425c855152a1e7e4035a2d70469",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 7,
+      "time_s": {
+        "solver_with_worker_startup": 6.874790100031532,
+        "fixed_support_validation": 0.008044099900871515
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15408260002732277,
+        "matrix_build_recorded_source_sum": 16.654530599946156
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.7341897804669559e-10,
+        "max_relative_dual_gap_among_returned_points": 1.258826586876156e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 5,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u u_x",
+          "x u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5,
+        "precision": 0.5,
+        "recall": 0.5,
+        "extra": [
+          "u_xx*x"
+        ],
+        "missed": [
+          "u_xx"
+        ],
+        "validation_error": 0.13009426648246974,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.14446277245614061
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.11392780045936572
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.17009426648246975,
+        "ls_physical_coefficients": {
+          "u u_x": -0.9386162680000795,
+          "x u_xx": 0.05137971982175622
+        },
+        "physical_coef_rel_error_union": 0.1274573823675986,
+        "physical_coef_rel_error_true_only": 0.11675464056432627
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 6.874790100031532,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:burgers:sigma=0.05:validation=17ee0142e772fef37fc4ce32aca72bd879742f8d3e63aaf5ecd3973da9c637f4",
+      "case": "burgers",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "13daf361d1a2aecbdf89712af3734d7e1a5427e0cba82cfc8ece6c1dbaf1b7ce",
+      "solver_input_hashes": {
+        "A": "59d98fc55c5b143adba7a92e9665532261a2a425c855152a1e7e4035a2d70469",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 16,
+      "time_s": {
+        "solver_with_worker_startup": 8.823548099957407,
+        "fixed_support_validation": 0.03254739998374134
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15408260002732277,
+        "matrix_build_recorded_source_sum": 16.654530599946156
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 6.568299498690073e-10,
+        "max_relative_dual_gap_among_returned_points": 6.7169225524870206e-12,
+        "fallback_points": 0,
+        "outer_iteration_count": 5,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u u_x",
+          "x u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5,
+        "precision": 0.5,
+        "recall": 0.5,
+        "extra": [
+          "u_xx*x"
+        ],
+        "missed": [
+          "u_xx"
+        ],
+        "validation_error": 0.13009426648246974,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.14446277245614061
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.11392780045936572
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.17009426648246975,
+        "ls_physical_coefficients": {
+          "u u_x": -0.9386162680000795,
+          "x u_xx": 0.05137971982175622
+        },
+        "physical_coef_rel_error_union": 0.1274573823675986,
+        "physical_coef_rel_error_true_only": 0.11675464056432627
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 8.823548099957407,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:logheat:sigma=0.05:validation=fd9c7607b0735286e0dfb04dd26c06a063b021e8927347088b26f8a06b190c0e",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J18",
+      "method": "L1",
+      "input_raw_bundle_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036",
+      "solver_input_hashes": {
+        "A": "8f8324e8c2e7761f1b18c6ba5706a2ffbdc1b14ef92c28e5fed88dccb9f02c2d",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 11,
+      "time_s": {
+        "solver_with_worker_startup": 5.921289999969304,
+        "fixed_support_validation": 0.0033369000302627683
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15600109996739775,
+        "matrix_build_recorded_source_sum": 8.25241560023278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.5917038765882076e-10,
+        "max_relative_dual_gap_among_returned_points": 5.022216911360036e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xx",
+          "u^2 u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5,
+        "precision": 0.5,
+        "recall": 0.5,
+        "extra": [
+          "u^2*u_xx"
+        ],
+        "missed": [
+          "u_x^2"
+        ],
+        "validation_error": 0.568638649368341,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.5982552642798641
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.5373922830412922
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.608638649368341,
+        "ls_physical_coefficients": {
+          "u_xx": 0.601332449456211,
+          "u^2 u_xx": 14.583660918003257
+        },
+        "physical_coef_rel_error_union": 10.340263574666562,
+        "physical_coef_rel_error_true_only": 0.7612278948700529
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 5.921289999969304,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:logheat:sigma=0.05:validation=fd9c7607b0735286e0dfb04dd26c06a063b021e8927347088b26f8a06b190c0e",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J18",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036",
+      "solver_input_hashes": {
+        "A": "8f8324e8c2e7761f1b18c6ba5706a2ffbdc1b14ef92c28e5fed88dccb9f02c2d",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 9,
+      "time_s": {
+        "solver_with_worker_startup": 6.364142799982801,
+        "fixed_support_validation": 0.002228099969215691
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15600109996739775,
+        "matrix_build_recorded_source_sum": 8.25241560023278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 2.8473313944221183e-10,
+        "max_relative_dual_gap_among_returned_points": 3.900351294628215e-15,
+        "fallback_points": 0,
+        "outer_iteration_count": 6,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xx",
+          "u^2 u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5,
+        "precision": 0.5,
+        "recall": 0.5,
+        "extra": [
+          "u^2*u_xx"
+        ],
+        "missed": [
+          "u_x^2"
+        ],
+        "validation_error": 0.568638649368341,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.5982552642798641
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.5373922830412922
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.608638649368341,
+        "ls_physical_coefficients": {
+          "u_xx": 0.601332449456211,
+          "u^2 u_xx": 14.583660918003257
+        },
+        "physical_coef_rel_error_union": 10.340263574666562,
+        "physical_coef_rel_error_true_only": 0.7612278948700529
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 6.364142799982801,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:logheat:sigma=0.05:validation=fd9c7607b0735286e0dfb04dd26c06a063b021e8927347088b26f8a06b190c0e",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J18",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036",
+      "solver_input_hashes": {
+        "A": "8f8324e8c2e7761f1b18c6ba5706a2ffbdc1b14ef92c28e5fed88dccb9f02c2d",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "n_columns": 18,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 13,
+      "time_s": {
+        "solver_with_worker_startup": 5.6677857000613585,
+        "fixed_support_validation": 0.0037760999985039234
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15600109996739775,
+        "matrix_build_recorded_source_sum": 8.25241560023278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 3.920790499762317e-10,
+        "max_relative_dual_gap_among_returned_points": 2.127693009357284e-13,
+        "fallback_points": 0,
+        "outer_iteration_count": 5,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 2,
+        "support": [
+          "u_xx",
+          "u^2 u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5,
+        "precision": 0.5,
+        "recall": 0.5,
+        "extra": [
+          "u^2*u_xx"
+        ],
+        "missed": [
+          "u_x^2"
+        ],
+        "validation_error": 0.568638649368341,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.5982552642798641
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.5373922830412922
+          }
+        ],
+        "complexity": 8,
+        "fixed_score": 0.608638649368341,
+        "ls_physical_coefficients": {
+          "u_xx": 0.601332449456211,
+          "u^2 u_xx": 14.583660918003257
+        },
+        "physical_coef_rel_error_union": 10.340263574666562,
+        "physical_coef_rel_error_true_only": 0.7612278948700529
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 5.6677857000613585,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:logheat:sigma=0.05:validation=fd9c7607b0735286e0dfb04dd26c06a063b021e8927347088b26f8a06b190c0e",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "L1",
+      "input_raw_bundle_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036",
+      "solver_input_hashes": {
+        "A": "2df14ce5391110a4266e59d893a231b66f65dff7c1700b9f91fefdb6e38ab880",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "n_columns": 1158,
+      "path_status": "budget_exhausted",
+      "all_requested_solutions_certified": false,
+      "path_point_status_counts": {
+        "certified": 22,
+        "budget_exhausted": 2
+      },
+      "n_candidates": 22,
+      "time_s": {
+        "solver_with_worker_startup": 120.02488410007209,
+        "fixed_support_validation": 0.21340989996679127
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15600109996739775,
+        "matrix_build_recorded_source_sum": 8.25241560023278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.441669733917666e-09,
+        "max_relative_dual_gap_among_returned_points": 4.422694786237574e-10,
+        "fallback_points": 1,
+        "outer_iteration_count": 0,
+        "outer_stop": null
+      },
+      "frozen_alpha": 0.005,
+      "selected": null,
+      "partial_path_exploratory_best_only": {
+        "candidate_id": 4,
+        "support": [
+          "u_xxxx",
+          "u_xx",
+          "u_x u_xxxx",
+          "u_x^2",
+          "u_x^2 u_xx",
+          "u",
+          "u^2 u_xx",
+          "t^2 u_xx",
+          "x u_xx"
+        ],
+        "exact": false,
+        "f1": 0.36363636363636365,
+        "precision": 0.2222222222222222,
+        "recall": 1.0,
+        "extra": [
+          "t^2*u_xx",
+          "u",
+          "u^2*u_xx",
+          "u_x*u_xxxx",
+          "u_x^2*u_xx",
+          "u_xx*x",
+          "u_xxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.33572162011349843,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.3649506441032331
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.30369234397972494
+          }
+        ],
+        "complexity": 44,
+        "fixed_score": 0.5557216201134985,
+        "ls_physical_coefficients": {
+          "u_xxxx": 4.460707280108394e-05,
+          "u_xx": 0.8110054694276293,
+          "u_x u_xxxx": 5.077405750346401e-05,
+          "u_x^2": 0.9193107861322293,
+          "u_x^2 u_xx": 0.08866458732658362,
+          "u": -3.320116182476835,
+          "u^2 u_xx": 1.3229762834796421,
+          "t^2 u_xx": -95.17283724473269,
+          "x u_xx": 0.10529016601615895
+        },
+        "physical_coef_rel_error_union": 67.34502046936605,
+        "physical_coef_rel_error_true_only": 0.14530946600423114
+      },
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "numerical_or_budget_incomplete",
+      "classification_meaning": "At least one requested lambda is unfinished or uncertified; no primary selection.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 120.02488410007209,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:logheat:sigma=0.05:validation=fd9c7607b0735286e0dfb04dd26c06a063b021e8927347088b26f8a06b190c0e",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "input_raw_bundle_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036",
+      "solver_input_hashes": {
+        "A": "2df14ce5391110a4266e59d893a231b66f65dff7c1700b9f91fefdb6e38ab880",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 6,
+      "time_s": {
+        "solver_with_worker_startup": 4.8355952999554574,
+        "fixed_support_validation": 0.005220299935899675
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15600109996739775,
+        "matrix_build_recorded_source_sum": 8.25241560023278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 1.508021018392694e-10,
+        "max_relative_dual_gap_among_returned_points": 3.710517314465767e-14,
+        "fallback_points": 0,
+        "outer_iteration_count": 6,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 4,
+        "support": [
+          "u_xxxxxx",
+          "u_xxxx",
+          "u_xx",
+          "u_x^2",
+          "t u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5714285714285714,
+        "precision": 0.4,
+        "recall": 1.0,
+        "extra": [
+          "t*u_xx",
+          "u_xxxx",
+          "u_xxxxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.2393649645746101,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.2601403573969862
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.21660601788726225
+          }
+        ],
+        "complexity": 24,
+        "fixed_score": 0.3593649645746101,
+        "ls_physical_coefficients": {
+          "u_xxxxxx": 3.6752259805573123e-09,
+          "u_xxxx": 0.00012487948339090805,
+          "u_xx": 1.027357475608377,
+          "u_x^2": 0.9116841563420894,
+          "t u_xx": -4.4854022480197875
+        },
+        "physical_coef_rel_error_union": 3.172332065046826,
+        "physical_coef_rel_error_true_only": 0.06537629429950677
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 4.8355952999554574,
+      "origin": "stage2b_new_method_run"
+    },
+    {
+      "source": "stage2b_compare_result.json",
+      "dataset_id": "independent_development_ids12_17_seed1:logheat:sigma=0.05:validation=fd9c7607b0735286e0dfb04dd26c06a063b021e8927347088b26f8a06b190c0e",
+      "case": "logheat",
+      "sigma": 0.05,
+      "seed": 1,
+      "layer": "J1158",
+      "method": "IRL1_smoothed",
+      "input_raw_bundle_sha256": "98c07a93143133b2f964bdf64cf335cda9604bb99afeac33942f425f066ac036",
+      "solver_input_hashes": {
+        "A": "2df14ce5391110a4266e59d893a231b66f65dff7c1700b9f91fefdb6e38ab880",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "n_columns": 1158,
+      "path_status": "complete",
+      "all_requested_solutions_certified": true,
+      "path_point_status_counts": {
+        "certified": 24
+      },
+      "n_candidates": 19,
+      "time_s": {
+        "solver_with_worker_startup": 7.154178700060584,
+        "fixed_support_validation": 0.05001999996602535
+      },
+      "dataset_time_s": {
+        "matrix_load_and_metadata_this_run": 0.15600109996739775,
+        "matrix_build_recorded_source_sum": 8.25241560023278
+      },
+      "numerical_diagnostics": {
+        "max_kkt_relative_to_penalty_among_returned_points": 3.351347808393637e-09,
+        "max_relative_dual_gap_among_returned_points": 2.108642197775998e-10,
+        "fallback_points": 0,
+        "outer_iteration_count": 4,
+        "outer_stop": "support_unchanged_original_rule"
+      },
+      "frozen_alpha": 0.005,
+      "selected": {
+        "candidate_id": 5,
+        "support": [
+          "u_xxxxxx",
+          "u_xxxx",
+          "u_xx",
+          "u_x^2",
+          "t u_xx"
+        ],
+        "exact": false,
+        "f1": 0.5714285714285714,
+        "precision": 0.4,
+        "recall": 1.0,
+        "extra": [
+          "t*u_xx",
+          "u_xxxx",
+          "u_xxxxxx"
+        ],
+        "missed": [],
+        "validation_error": 0.2393649645746101,
+        "validation_by_trajectory": [
+          {
+            "trajectory": 16,
+            "relative_error": 0.2601403573969862
+          },
+          {
+            "trajectory": 17,
+            "relative_error": 0.21660601788726225
+          }
+        ],
+        "complexity": 24,
+        "fixed_score": 0.3593649645746101,
+        "ls_physical_coefficients": {
+          "u_xxxxxx": 3.6752259805573123e-09,
+          "u_xxxx": 0.00012487948339090805,
+          "u_xx": 1.027357475608377,
+          "u_x^2": 0.9116841563420894,
+          "t u_xx": -4.4854022480197875
+        },
+        "physical_coef_rel_error_union": 3.172332065046826,
+        "physical_coef_rel_error_true_only": 0.06537629429950677
+      },
+      "partial_path_exploratory_best_only": null,
+      "true_support_appears_any_certified_candidate": false,
+      "true_support_candidate_lambda_ratios": [],
+      "true_support_candidates": [],
+      "selected_vs_best_true_support_candidate": null,
+      "classification": "path_did_not_generate_true_support",
+      "classification_meaning": "No certified path candidate has the known support; this does not establish universal non-identifiability.",
+      "validation_metric": "held_out_weak_equation_residual_not_trajectory_rollout",
+      "noise_ranking_eligible": false,
+      "support_definition": "L1 normalized coefficients at 1e-5; LS readout never changes support",
+      "cohort": "independent_development_ids12_17_seed1",
+      "historical_cost_retained": 7.154178700060584,
+      "origin": "stage2b_new_method_run"
+    }
+  ],
+  "paired_records": [
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "2815da436abf46386598ae94d676b05a22a93f5773dfbff2e91049e22e5b213f",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "candidate_support": [
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": true,
+      "reference_exact_support": true,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.060261099948548,
+      "reference_solver_seconds": 4.039897800073959,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "2815da436abf46386598ae94d676b05a22a93f5773dfbff2e91049e22e5b213f",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "candidate_support": [
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": true,
+      "reference_exact_support": true,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.060261099948548,
+      "reference_solver_seconds": 4.0499477999983355,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "0f9086f60dd6aabe69cf3a9a0ea1b364abf66491900849905ea36a2eedcdf2d0",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "candidate_support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": true,
+      "candidate_minus_reference_f1": -0.33333333333333337,
+      "candidate_minus_reference_validation_error": -0.05221197751618608,
+      "candidate_minus_reference_complexity": 5,
+      "candidate_minus_reference_fixed_score": -0.027211977516186064,
+      "candidate_solver_seconds": 7.426524500013329,
+      "reference_solver_seconds": 23.55230580002535,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "0f9086f60dd6aabe69cf3a9a0ea1b364abf66491900849905ea36a2eedcdf2d0",
+        "b": "09335f0d897014c0194e4dd07bb53930c81b6a909bcac08fbcb08ad308c24dd3"
+      },
+      "candidate_support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 7.426524500013329,
+      "reference_solver_seconds": 5.5974392999196425,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "c6a12402cef82b068de121297f0162617b18886a11356cdd9e5f201f251525d8",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "candidate_support": [
+        "u_x"
+      ],
+      "reference_support": [
+        "u_x"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.70106799993664,
+      "reference_solver_seconds": 3.5973777999170125,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "c6a12402cef82b068de121297f0162617b18886a11356cdd9e5f201f251525d8",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "candidate_support": [
+        "u_x"
+      ],
+      "reference_support": [
+        "u_x"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.70106799993664,
+      "reference_solver_seconds": 4.043445999966934,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "0e4445c4c08702d653e38b635663f3bc0461e285464e44360901c154970bad09",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "candidate_support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "reference_support": [
+        "u_x"
+      ],
+      "candidate_exact_support": true,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 1.0,
+      "candidate_minus_reference_validation_error": -0.01964967704523818,
+      "candidate_minus_reference_complexity": 4,
+      "candidate_minus_reference_fixed_score": 0.0003503229547618253,
+      "candidate_solver_seconds": 7.967184599954635,
+      "reference_solver_seconds": 137.61163439997472,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "0e4445c4c08702d653e38b635663f3bc0461e285464e44360901c154970bad09",
+        "b": "918b960f6817e339c5478848714add9c6ef4fdcc87593cffa638c5ae4ee4473e"
+      },
+      "candidate_support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "reference_support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "candidate_exact_support": true,
+      "reference_exact_support": true,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 7.967184599954635,
+      "reference_solver_seconds": 4.773881700006314,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "82ed7acd93d7c7b282753e2768a244d20f99d2c3b7960540e0c4eb867791a5a8",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "candidate_support": [
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.1285749999806285,
+      "reference_solver_seconds": 4.248775999993086,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "82ed7acd93d7c7b282753e2768a244d20f99d2c3b7960540e0c4eb867791a5a8",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "candidate_support": [
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.1285749999806285,
+      "reference_solver_seconds": 4.919008000055328,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "9f6392df89781f9fb96f7d50841feddec709030ed3c1444ddeaf4401dbce3695",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "candidate_support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_x^2",
+        "t u_xx"
+      ],
+      "reference_support": [
+        "u_xxxx",
+        "u_xx",
+        "u_x u_xxxx",
+        "u u_x^2 u_xx^2",
+        "u^2 u_xx",
+        "t^2 u_xx",
+        "x u"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.3492063492063492,
+      "candidate_minus_reference_validation_error": -0.05669651706532333,
+      "candidate_minus_reference_complexity": -17,
+      "candidate_minus_reference_fixed_score": -0.14169651706532332,
+      "candidate_solver_seconds": 9.575575900031254,
+      "reference_solver_seconds": 145.56875310000032,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "9f6392df89781f9fb96f7d50841feddec709030ed3c1444ddeaf4401dbce3695",
+        "b": "522a92cf632756e39fbfbb57d0d72334a1dad833605671d92c12ca4b225db625"
+      },
+      "candidate_support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_x^2",
+        "t u_xx"
+      ],
+      "reference_support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_x^2",
+        "t u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 9.575575900031254,
+      "reference_solver_seconds": 5.525627100025304,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "1db0a276410893f2ddf5e650b32506154f3a574079743622f07c6651bd9ede6c",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "candidate_support": [
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": true,
+      "reference_exact_support": true,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 6.2468140999553725,
+      "reference_solver_seconds": 5.373608599998988,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "1db0a276410893f2ddf5e650b32506154f3a574079743622f07c6651bd9ede6c",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "candidate_support": [
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": true,
+      "reference_exact_support": true,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 6.2468140999553725,
+      "reference_solver_seconds": 6.5382138000568375,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "09df58d382c87a08d9292ce8fd696ade2d63f0f04d9a98c8d21c15ea88fa7bd7",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "candidate_support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": true,
+      "candidate_minus_reference_f1": -0.33333333333333337,
+      "candidate_minus_reference_validation_error": -0.034166295520611234,
+      "candidate_minus_reference_complexity": 5,
+      "candidate_minus_reference_fixed_score": -0.009166295520611226,
+      "candidate_solver_seconds": 7.598659500014037,
+      "reference_solver_seconds": 24.64842989994213,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "heat",
+      "sigma": 0.01,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "09df58d382c87a08d9292ce8fd696ade2d63f0f04d9a98c8d21c15ea88fa7bd7",
+        "b": "a3fd1efb9d6878cac33a3f2fdf7fdf8f0e3fe268a2126c1a48455bfb8ea998c5"
+      },
+      "candidate_support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "reference_support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 7.598659500014037,
+      "reference_solver_seconds": 6.626135400030762,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "137b81cef36b7642a4c6a6d0cad3447f23fcb6b32478900a3596cd6230a718da",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "candidate_support": [
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u^2 u_x"
+      ],
+      "reference_support": [
+        "u_x",
+        "u_x^2",
+        "u u_x"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": -0.4,
+      "candidate_minus_reference_validation_error": -0.021186772113147484,
+      "candidate_minus_reference_complexity": 6,
+      "candidate_minus_reference_fixed_score": 0.008813227886852515,
+      "candidate_solver_seconds": 5.686766500002705,
+      "reference_solver_seconds": 6.113656700006686,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "137b81cef36b7642a4c6a6d0cad3447f23fcb6b32478900a3596cd6230a718da",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "candidate_support": [
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u^2 u_x"
+      ],
+      "reference_support": [
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u^2 u_x"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.686766500002705,
+      "reference_solver_seconds": 5.313095399993472,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": false,
+      "identical_input_hashes": {
+        "A": "59d98fc55c5b143adba7a92e9665532261a2a425c855152a1e7e4035a2d70469",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      }
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "burgers",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "59d98fc55c5b143adba7a92e9665532261a2a425c855152a1e7e4035a2d70469",
+        "b": "aafe70b921ff69a3652ed8a0cabedd58d93555c87d13f8e2956cd81005d32988"
+      },
+      "candidate_support": [
+        "u u_x",
+        "x u_xx"
+      ],
+      "reference_support": [
+        "u u_x",
+        "x u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 8.823548099957407,
+      "reference_solver_seconds": 6.874790100031532,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "8f8324e8c2e7761f1b18c6ba5706a2ffbdc1b14ef92c28e5fed88dccb9f02c2d",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "candidate_support": [
+        "u_xx",
+        "u^2 u_xx"
+      ],
+      "reference_support": [
+        "u_xx",
+        "u^2 u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.6677857000613585,
+      "reference_solver_seconds": 5.921289999969304,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J18",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "8f8324e8c2e7761f1b18c6ba5706a2ffbdc1b14ef92c28e5fed88dccb9f02c2d",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "candidate_support": [
+        "u_xx",
+        "u^2 u_xx"
+      ],
+      "reference_support": [
+        "u_xx",
+        "u^2 u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 5.6677857000613585,
+      "reference_solver_seconds": 6.364142799982801,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "L1",
+      "both_numerically_complete": false,
+      "identical_input_hashes": {
+        "A": "2df14ce5391110a4266e59d893a231b66f65dff7c1700b9f91fefdb6e38ab880",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      }
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "case": "logheat",
+      "sigma": 0.05,
+      "layer": "J1158",
+      "candidate": "IRL1_smoothed",
+      "reference": "IRL1_original",
+      "both_numerically_complete": true,
+      "identical_input_hashes": {
+        "A": "2df14ce5391110a4266e59d893a231b66f65dff7c1700b9f91fefdb6e38ab880",
+        "b": "9585bba62b56b1cd68e1f7a7711787b8fd44064342f87eae410c36f083b3fe3e"
+      },
+      "candidate_support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_x^2",
+        "t u_xx"
+      ],
+      "reference_support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_x^2",
+        "t u_xx"
+      ],
+      "candidate_exact_support": false,
+      "reference_exact_support": false,
+      "candidate_minus_reference_f1": 0.0,
+      "candidate_minus_reference_validation_error": 0.0,
+      "candidate_minus_reference_complexity": 0,
+      "candidate_minus_reference_fixed_score": 0.0,
+      "candidate_solver_seconds": 7.154178700060584,
+      "reference_solver_seconds": 4.8355952999554574,
+      "runtime_ranking_eligible": false,
+      "runtime_note": "Reported recorded costs; cached preprocessing and repeated numerical repair require separate accounting."
+    }
+  ],
+  "descriptive_groups": [
+    {
+      "cohort": "development_ids0_5_seed0",
+      "method": "L1",
+      "declared_cases_and_libraries": 6,
+      "classification_counts": {
+        "selected_true_support": 2,
+        "path_did_not_generate_true_support": 4
+      },
+      "exact_support_count_descriptive_only": 2,
+      "numerically_incomplete_count": 0
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "method": "IRL1_original",
+      "declared_cases_and_libraries": 6,
+      "classification_counts": {
+        "selected_true_support": 2,
+        "validation_complexity_tradeoff": 1,
+        "path_did_not_generate_true_support": 3
+      },
+      "exact_support_count_descriptive_only": 2,
+      "numerically_incomplete_count": 0
+    },
+    {
+      "cohort": "development_ids0_5_seed0",
+      "method": "IRL1_smoothed",
+      "declared_cases_and_libraries": 6,
+      "classification_counts": {
+        "selected_true_support": 2,
+        "validation_complexity_tradeoff": 1,
+        "path_did_not_generate_true_support": 3
+      },
+      "exact_support_count_descriptive_only": 2,
+      "numerically_incomplete_count": 0
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "method": "L1",
+      "declared_cases_and_libraries": 6,
+      "classification_counts": {
+        "selected_true_support": 2,
+        "path_did_not_generate_true_support": 2,
+        "numerical_or_budget_incomplete": 2
+      },
+      "exact_support_count_descriptive_only": 2,
+      "numerically_incomplete_count": 2
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "method": "IRL1_original",
+      "declared_cases_and_libraries": 6,
+      "classification_counts": {
+        "selected_true_support": 1,
+        "validation_complexity_tradeoff": 1,
+        "path_did_not_generate_true_support": 4
+      },
+      "exact_support_count_descriptive_only": 1,
+      "numerically_incomplete_count": 0
+    },
+    {
+      "cohort": "independent_development_ids12_17_seed1",
+      "method": "IRL1_smoothed",
+      "declared_cases_and_libraries": 6,
+      "classification_counts": {
+        "selected_true_support": 1,
+        "validation_complexity_tradeoff": 1,
+        "path_did_not_generate_true_support": 4
+      },
+      "exact_support_count_descriptive_only": 1,
+      "numerically_incomplete_count": 0
+    }
+  ],
+  "numerically_complete_runs": 34,
+  "diagnostic_rows": 36,
+  "new_true_support_tuning": false,
+  "formal_test_data_used": false,
+  "limits": [
+    "These three deliberately selected development PDE/noise pairs and two library sizes are not iid repetitions.",
+    "Different initial conditions AND a new noise seed change together in replication; do not attribute differences solely to one factor.",
+    "Per-group counts are descriptive, not general recovery probabilities or a statistically established algorithm ranking.",
+    "No primary comparison is made for a numerically incomplete path.",
+    "A lower weak-residual score does not imply more accurate dynamics; use separate spectral diagnostics.",
+    "Relative epsilon remains fixed at .01; these diagnostic truth metrics do not tune any hyperparameter."
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "burgers",
+    "sigma": 0.0,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/selection_manifest.json",
+    "sha256": "1b85634eca586feaa3cea5e7931cea6e2e73759c5cd874bdcbe84b8ac6c7f157"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+      "sha256": "ba1a2201c30e06605318d8fa8b415d6eff25183e0d0f3e9c721fd15e47df6128"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "d95efcc129de403968191b1f6b6e64918b260699c016495033ab890d24d0cc3b"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_L1/method_result.json",
+      "sha256": "6046e7d0ae48de18e43562fa4320e3048715dd3d672c4dce6270a7b9fd8d732f"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "d9cceb23f2db53f039470643eb80d6003ab0fd04c16bca7f8d3b2f02a736a4a0"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+      "sha256": "dee17439914548cd81687771771aaca06385856764c9b82782b116fa30586fa6"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "a43bd0d447fd6bf6d5ed32847771b705f280ed47fa4a61a34ab9055c4abe6cc7"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/test_evaluation_result.json",
+    "sha256": "30e8aa50a9e1220c82f53d0276fa605618fff7a75b2c803988142fe1f085e197"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x"
+      ],
+      "complexity": 2,
+      "validation_error": 0.10340540527143025
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 10,
+      "support": [
+        "u_xx",
+        "u_xx^3",
+        "u_x",
+        "u_x u_xx",
+        "u u_x",
+        "D_x^1(exp(1u))",
+        "D_x^2(exp(1u))"
+      ],
+      "complexity": 29,
+      "validation_error": 5.283750026628276e-12
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 12,
+      "support": [
+        "u_xx",
+        "u_x",
+        "u u_x",
+        "D_x^1(exp(1u))",
+        "D_x^2(exp(1u))"
+      ],
+      "complexity": 15,
+      "validation_error": 5.6564436107567715e-12
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "complexity": 6,
+      "validation_error": 5.7041808352200694e-12
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x"
+      ],
+      "complexity": 2,
+      "validation_error": 0.10340540527143025
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 8,
+      "support": [
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^3",
+        "u u_xxx",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "complexity": 28,
+      "validation_error": 5.56761103506608e-12
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "complexity": 6,
+      "validation_error": 5.7041808352200694e-12
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x"
+      ],
+      "complexity": 2,
+      "validation_error": 0.10340540527143025
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 9,
+      "support": [
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^3",
+        "u u_xxx",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "complexity": 28,
+      "validation_error": 5.56761103506608e-12
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 10,
+      "support": [
+        "u_xx",
+        "u_x",
+        "u_x^3",
+        "u u_xxx",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "complexity": 23,
+      "validation_error": 5.607469783536065e-12
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "complexity": 6,
+      "validation_error": 5.7041808352200694e-12
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/selection_manifest.json",
+      "sha256": "1b85634eca586feaa3cea5e7931cea6e2e73759c5cd874bdcbe84b8ac6c7f157"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/test_evaluation_result.json",
+      "sha256": "30e8aa50a9e1220c82f53d0276fa605618fff7a75b2c803988142fe1f085e197"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/fit_matrices.json",
+      "sha256": "322b3233b24ad4ce7c5de80293f03aeab1b2b316e5443c80d18d701e2da9d6eb"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/fit_matrices.npz",
+      "sha256": "c8a2d40f454045c82fa2b98d93c05a1306ae6f25b1d9df3de815b23af3d2b7e2"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/test_matrices.json",
+      "sha256": "f26836c6d5fd7d3b29bad03f9e8321fe77265d1275d53535fe93e5eccd3aac62"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/test_matrices.npz",
+      "sha256": "dd480cec5a8389cbfc742892e725e37875ea2597b357673f0b1f826d1e358716"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_L1/method_result.json",
+      "sha256": "ba1a2201c30e06605318d8fa8b415d6eff25183e0d0f3e9c721fd15e47df6128"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "d95efcc129de403968191b1f6b6e64918b260699c016495033ab890d24d0cc3b"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_L1/method_result.json",
+      "sha256": "6046e7d0ae48de18e43562fa4320e3048715dd3d672c4dce6270a7b9fd8d732f"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "d9cceb23f2db53f039470643eb80d6003ab0fd04c16bca7f8d3b2f02a736a4a0"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_L1/method_result.json",
+      "sha256": "dee17439914548cd81687771771aaca06385856764c9b82782b116fa30586fa6"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "a43bd0d447fd6bf6d5ed32847771b705f280ed47fa4a61a34ab9055c4abe6cc7"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_L1/job.json",
+      "sha256": "937ddf9e632f85272554ef6dc8e2c222db8628fa4dab5e74d57f26ef8d9da89c"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "19a7aa6995460bd08939152b1c8837d6c733dae955c94150115116747a367d79"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_L1/job.json",
+      "sha256": "38023579a981823796fb538e613e7fd390b34e505523e4df6ad07d7be3ac0b87"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "d3a2c1013c4eb95eb56eba3b1a8ef8282c4fc52f26b787d18065e3d324991ec4"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_L1/job.json",
+      "sha256": "fc3ae14d38957872031e953581ab846d89f429d7037ca0164861547227059fb1"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "82eb6a6e4d2da59466f0c773287b668553b71126c5036f143e8e08509bb27804"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_L1/path_result.json",
+      "sha256": "f6a5a03a36cfbd49dafb662130b4365621f6162af6f1bd221cd215152e9a8efe"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "cb0dd19fa04841352408a461a3c08bd63525e4f1f4affa1998caf6b8c663174f"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_L1/path_result.json",
+      "sha256": "7a0a0b6154899e093b4fc0b6862e7a918e4ee18789c7b9d646c3b38876886e5c"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "a62b4525879da46727dbdb176649a47c392c3cb4f2e275f73f697c67841df188"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_L1/path_result.json",
+      "sha256": "28f951f7a12a009308d08632aa3d2a3f59ad6f1c459b0ea561c2e623e70786ab"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "b318d83063e3e9616c21c9a09df6bd30d9e46618f428d3552d587fc8a9dd1566"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.3971268000314012,
+    "fit_matrix": {
+      "action": "build",
+      "seconds": 22.937898900010623,
+      "metadata": {
+        "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/fit_matrices.json",
+        "sha256": "322b3233b24ad4ce7c5de80293f03aeab1b2b316e5443c80d18d701e2da9d6eb"
+      },
+      "npz": {
+        "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/fit_matrices.npz",
+        "sha256": "c8a2d40f454045c82fa2b98d93c05a1306ae6f25b1d9df3de815b23af3d2b7e2"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 1.3032241000328213,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 31.093494500033557,
+      "metadata": {
+        "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/test_matrices.json",
+        "sha256": "f26836c6d5fd7d3b29bad03f9e8321fe77265d1275d53535fe93e5eccd3aac62"
+      },
+      "npz": {
+        "file": "stage3_campaign/burgers_sigma_0p0_seed_1000/test_matrices.npz",
+        "sha256": "dd480cec5a8389cbfc742892e725e37875ea2597b357673f0b1f826d1e358716"
+      }
+    },
+    "test_evaluation": 0.04182829998899251
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

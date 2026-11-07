@@ -1,0 +1,575 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "burgers",
+    "sigma": 0.03,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/selection_manifest.json",
+    "sha256": "68ea0ef682de8c42cf8b966e5c6f2e13b6350ef632d7738d614faef5a1ab3f8e"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_L1/method_result.json",
+      "sha256": "e2a21fc489c679d9876cc843a219ff36fb2e36f48c30cf8e3d51b6e175906f2d"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "1ad0c21f9fbee7bef27c84ef9071772d32df51f93aa61bd6ca314e0d48449cfc"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "a8e2f097d22223766d619d32764a8640046959d738f378bc46900949e87fa0cf"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "53c8d76b7951792c214b6dd51334f05192d15bd5694b36f278fc845eeb83cf83"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_L1/method_result.json",
+      "sha256": "bc2578ef9c0a740cd0f96bca947dbeeb043067f4dbfe51bffa3d73054bf8b0bb"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "4f35fdb8c987baeca68e17860b3285dcd3006c232800b0abdca42817dd3cf066"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/test_evaluation_result.json",
+    "sha256": "c888e4893fcfe5cbcef2de736516dcf4781be8d64e64e8aca7198f20485b7db9"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x"
+      ],
+      "complexity": 2,
+      "validation_error": 0.11315687297370056
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 7,
+      "support": [
+        "u_xx",
+        "u_xx^2",
+        "u_xx^3",
+        "u_x",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u^3 u_xxxx",
+        "t u^3 u_x",
+        "x u_xx",
+        "D_x^1(exp(1u))",
+        "D_x^2(exp(1u))",
+        "D_x^3(exp(1u))",
+        "D_x^3(exp(2u))"
+      ],
+      "complexity": 70,
+      "validation_error": 0.05008334717456333
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 9,
+      "support": [
+        "u_xxxxxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_xx^3",
+        "u_x",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u u_x",
+        "u^2 u_xxxx",
+        "u^2 u_x",
+        "t u u_xxxxx",
+        "t u^2 u_x",
+        "t^2 u u_xxxxx",
+        "t^2 u^3 u_xxx",
+        "x u_x u_xx",
+        "x^2 u_xxxxxx",
+        "D_x^2(cos(1u))",
+        "cos(3u)",
+        "D_x^1(exp(1u))",
+        "D_x^2(exp(1u))",
+        "D_x^3(exp(1u))"
+      ],
+      "complexity": 128,
+      "validation_error": 0.043422145488225455
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 10,
+      "support": [
+        "u_xxxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u_x u_xx^2",
+        "u u_xxxxx",
+        "u u_x",
+        "u^2 u_xxxx",
+        "u^2 u_x",
+        "t u_xx",
+        "t u_x",
+        "t u_x u_xx",
+        "t u^2 u_x",
+        "t^2",
+        "t^2 u^3 u_xxx",
+        "t^2 u^7 u_xxxxxx",
+        "x u_xxxx",
+        "x u_xx",
+        "x u_x u_xx",
+        "x u^2",
+        "x^2 u^7 u_xxxxx",
+        "D_x^1(sin(3u))",
+        "D_x^2(cos(1u))",
+        "cos(3u)",
+        "D_x^2(exp(1u))",
+        "D_x^3(exp(1u))"
+      ],
+      "complexity": 165,
+      "validation_error": 0.041243067526427396
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 11,
+      "support": [
+        "u_xxxx",
+        "u_xxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xx",
+        "u u_xxxxxx",
+        "u u_xxxx",
+        "u u_x",
+        "u^2 u_xxxx",
+        "u^2 u_xxx",
+        "u^2 u_x",
+        "u^3 u_xxx",
+        "t u_x u_xx",
+        "t u^2 u_x",
+        "t^2",
+        "t^2 u_xxxxx",
+        "t^2 u",
+        "t^2 u^3 u_xxx",
+        "t^2 u^7 u_xxxxxx",
+        "x u_xxxx",
+        "x u_xx",
+        "x u",
+        "x u^5 u_xxxx",
+        "x^2 u_xxxx",
+        "x^2 u^7 u_xxxxx",
+        "D_x^1(sin(3u))",
+        "D_x^2(cos(1u))",
+        "D_x^2(exp(1u))",
+        "D_x^3(exp(1u))"
+      ],
+      "complexity": 198,
+      "validation_error": 0.03985472534397548
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 12,
+      "support": [
+        "u_xxxxx",
+        "u_xxxx",
+        "u_xxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_x",
+        "u_x u_xxxxx",
+        "u_x u_xx",
+        "u u_xxxxxx",
+        "u u_xxxx",
+        "u u_x",
+        "u^2 u_xxxx",
+        "u^2 u_xxx",
+        "u^2 u_x",
+        "u^4 u_x u_xxxxx",
+        "u^7 u_xxxxx",
+        "t u_xxxxx",
+        "t u_x u_xx",
+        "t^2",
+        "t^2 u",
+        "t^2 u u_xxxx",
+        "t^2 u^3 u_xxx",
+        "t^2 u^7 u_xxxxxx",
+        "x u_xxxxxx",
+        "x u_xx",
+        "x u",
+        "x u u_xxxx",
+        "x u^3 u_x",
+        "x t u_xxxxxx",
+        "x t u^3 u_x",
+        "x t u^8",
+        "x^2 u_xxxx",
+        "x^2 u_x u_xx u_xxx",
+        "x^2 u_x^4 u_xx",
+        "x^2 u^7 u_xxxxxx",
+        "x^2 u^7 u_xxxxx",
+        "sin(3u)",
+        "D_x^1(sin(3u))",
+        "D_x^2(cos(1u))",
+        "D_x^3(exp(-2u))",
+        "D_x^2(exp(1u))",
+        "D_x^3(exp(1u))"
+      ],
+      "complexity": 322,
+      "validation_error": 0.03723158702709941
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "complexity": 6,
+      "validation_error": 0.05810706123728838
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x"
+      ],
+      "complexity": 2,
+      "validation_error": 0.11315687297370056
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 6,
+      "support": [
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^3",
+        "u",
+        "u u_x",
+        "u^2 u_x"
+      ],
+      "complexity": 24,
+      "validation_error": 0.05529443455272313
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 7,
+      "support": [
+        "1",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^3",
+        "u",
+        "u u_xx",
+        "u u_x",
+        "u^2 u_xxx",
+        "u^2 u_x"
+      ],
+      "complexity": 35,
+      "validation_error": 0.05515802092789699
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 9,
+      "support": [
+        "1",
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^2",
+        "u_x^3",
+        "u u_xx",
+        "u u_x",
+        "u^2 u_xxx",
+        "u^2 u_x"
+      ],
+      "complexity": 42,
+      "validation_error": 0.05310723123634141
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 12,
+      "support": [
+        "1",
+        "u_xxx",
+        "u_xx",
+        "u_x",
+        "u_x u_xx",
+        "u_x^3",
+        "u u_xxx",
+        "u u_xx",
+        "u u_x",
+        "u u_x u_xx",
+        "u u_x^2",
+        "u^2",
+        "u^2 u_xxx",
+        "u^2 u_xx",
+        "u^2 u_x",
+        "u^3"
+      ],
+      "complexity": 64,
+      "validation_error": 0.053096028230213824
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "complexity": 6,
+      "validation_error": 0.05810706123728838
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_x"
+      ],
+      "complexity": 2,
+      "validation_error": 0.11315687297370056
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 8,
+      "support": [
+        "u_xxxxxx",
+        "u_xx",
+        "u_xx^3",
+        "u_x",
+        "u_x u_xx",
+        "u_x^3",
+        "u u_x",
+        "u u_x u_xxx",
+        "u^2 u_xxxxx",
+        "u^2 u_xxxx",
+        "u^2 u_x",
+        "t u u_xxxxx",
+        "t u^2 u_xxxxx",
+        "t u^3 u_x",
+        "x u_xxxxxx",
+        "x u_x u_xx",
+        "x u u_xxx",
+        "x u^2 u_xxx"
+      ],
+      "complexity": 118,
+      "validation_error": 0.04565136160929566
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u u_x"
+      ],
+      "complexity": 6,
+      "validation_error": 0.05810706123728838
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/selection_manifest.json",
+      "sha256": "68ea0ef682de8c42cf8b966e5c6f2e13b6350ef632d7738d614faef5a1ab3f8e"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/test_evaluation_result.json",
+      "sha256": "c888e4893fcfe5cbcef2de736516dcf4781be8d64e64e8aca7198f20485b7db9"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/fit_matrices.json",
+      "sha256": "336024eeaa5ad1aab6c64e492c90472867be37d81aca0f12d6d2a921b140e163"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/fit_matrices.npz",
+      "sha256": "06bc0226dbbda7b281398b72fe81821f05c1cf43a73ec2b0d49bfc503284e8e0"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/test_matrices.json",
+      "sha256": "9fc1cd9f2395f6b347cd646f865465fbc0b47473dcb73fb2aa4354ea556adbe4"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/test_matrices.npz",
+      "sha256": "897f4ab851c5f337b0227362abb031f351b878ccbd2dbd09ee319badf908de8f"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_L1/method_result.json",
+      "sha256": "e2a21fc489c679d9876cc843a219ff36fb2e36f48c30cf8e3d51b6e175906f2d"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "1ad0c21f9fbee7bef27c84ef9071772d32df51f93aa61bd6ca314e0d48449cfc"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "a8e2f097d22223766d619d32764a8640046959d738f378bc46900949e87fa0cf"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "53c8d76b7951792c214b6dd51334f05192d15bd5694b36f278fc845eeb83cf83"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_L1/method_result.json",
+      "sha256": "bc2578ef9c0a740cd0f96bca947dbeeb043067f4dbfe51bffa3d73054bf8b0bb"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "4f35fdb8c987baeca68e17860b3285dcd3006c232800b0abdca42817dd3cf066"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_L1/job.json",
+      "sha256": "8da02d4b8ae726543ccf5a3db27526dead44888a1ef8e5e376fe3c9722b142dc"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "2eae7a88ea56ad5db831e1c3ddc7ef15fb877d8a2f519ae3fc2648e63974df42"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_L1/job.json",
+      "sha256": "275f308a5721981a86f9bda377fbcbabd34c934a4ae5214adea7dfb644cfcec2"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "2adde8a85e718486b095921a0848245b22c1f3f49e310e2f28449ef7a22bea4f"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_L1/job.json",
+      "sha256": "8a5e86e768d49d773a165c8557e79fe7ac6cf40663dcc23855ebcb0cd33ea99f"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "30c47b43261505ea5ce5bb047c039694f3069523e0212f49858f5edd6cd14e11"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_L1/path_result.json",
+      "sha256": "fe868923ad160fdafb4365c178349c2f996d12899a7957ef3547ba152cd776c0"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "2ed3182c55b8fd0fd4c5cc07ad40292b8703d0949fa26179d57f3e9180c35fa5"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_L1/path_result.json",
+      "sha256": "cebd7c889532cac4ea93f0eadca8e2a6303985ed10b6e325282076549e718973"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "c28678346f47a6ffbfcc9671d6caba9acbdcdd34a1bf8e355637a3049c221815"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_L1/path_result.json",
+      "sha256": "62d1501ee005aad7679a8208130a26263b8682bac2f3856b6af4f037f7628c4a"
+    },
+    {
+      "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "e4174883653cf3f06f7338c01ef987f396864b5ce08743157941984e5e9571c6"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.34973390004597604,
+    "fit_matrix": {
+      "action": "build",
+      "seconds": 13.645905000041239,
+      "metadata": {
+        "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/fit_matrices.json",
+        "sha256": "336024eeaa5ad1aab6c64e492c90472867be37d81aca0f12d6d2a921b140e163"
+      },
+      "npz": {
+        "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/fit_matrices.npz",
+        "sha256": "06bc0226dbbda7b281398b72fe81821f05c1cf43a73ec2b0d49bfc503284e8e0"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 0.5938098999904469,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 13.8389377000276,
+      "metadata": {
+        "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/test_matrices.json",
+        "sha256": "9fc1cd9f2395f6b347cd646f865465fbc0b47473dcb73fb2aa4354ea556adbe4"
+      },
+      "npz": {
+        "file": "stage3_campaign/burgers_sigma_0p03_seed_1000/test_matrices.npz",
+        "sha256": "897f4ab851c5f337b0227362abb031f351b878ccbd2dbd09ee319badf908de8f"
+      }
+    },
+    "test_evaluation": 0.027928899973630905
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

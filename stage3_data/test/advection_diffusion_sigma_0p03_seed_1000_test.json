@@ -1,0 +1,267 @@
+{
+  "stage": "3_formal_observations",
+  "case": "advection_diffusion",
+  "sigma": 0.03,
+  "seed": 1000,
+  "role": "test",
+  "trajectory_ids": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "source_sha256": {
+    "gml1_maxlib_compare.py": "2b3fcfb623e3e2888a83c87dd1443816e921f93ecb75be101ffd1c5c0a730f1d",
+    "inverse_burgers.py": "8681efadb4444d5a7ff507651c2c7833d6f2ecfe7f7af198d985b239902f8880",
+    "inverse_irl1.py": "b6c42667fd8c23ebfb42320fe0c88e36b0b50e1695129c0836d29bbe13923396",
+    "lasso_exact.py": "714a4fb3f4192d13654a44a93eeac003302b85610a3b715a3da6830a86889093",
+    "library_effect_audit.py": "49662a4cd52a858c1edc6495e4fba84ff48ba753c19afc39244b3d07590e06ca",
+    "maxlib_first.py": "1bac4409850cfcd2fef98acfd2d751be058da5c5cf0eb06e2128723e5cc6b4a4",
+    "maxlib_irl1.py": "3dffd3a2db384805405e4508071f455460cc3ec6aca0cfb773622c63589b36d5",
+    "noise_inverse.py": "d7041dab4ec38dd2e00f135635f0761c62e3011391355bf5a29d34ec06b4c195",
+    "noise_inverse_biglib.py": "ae09b180c0b086ba8ac43f1abbe90a9cd0de7425c99071c72b5365c46d48b219",
+    "redo_two.py": "0923afdf5a4e73f6461c9b3da60e7f97c96f0af2fd677a7e9df2d86ba4df6ab7",
+    "stage0_data_bundle.py": "18845ff7841868451b592c057e66c608a3ef38e01b5b062bd78a558b9dace2a3",
+    "stage0_evaluation.py": "b2904554eee542dcdd6bea464f0d660331238b433df72a3dd85053c5cb5fdf22",
+    "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+    "stage1_extended_evaluation.py": "ed47fd2ae7cf6bfc1e854abf95bf62777120f631f73e8fb9ff6578162a18a01f",
+    "stage1_grammar.py": "6fe36d9271500e73d1dbe6bbf84e92225c9c3603b7fb73177eea906d4178f349",
+    "stage1_jet_preprocess.py": "6efdf86c80bf5c1640b6e2e6c8a21a017752ea37817d246b34d8aea2b9e6a533",
+    "stage1_nonpolynomial.py": "bfd19f2ecb37e9c70dcc64a1faaac23c23a7079879929f8b096a5fb38093e02f",
+    "stage1_weak_reduction.py": "7c6ad129efc6045435113a365d8e505ce2116d53dd4794ae3b6c743a3e5856bc",
+    "stage1_weak_reduction_v2.py": "8c96a7114bce906403591f55d8fa9006ccdbda2844ebc1f9d6ddca1edcc41966",
+    "stage2_data.py": "e523a4be04f662066556ca02ebc2246376ddbaf4858ad4853f944c9f1f07c6b8",
+    "stage2_field_check.py": "b9973cc7e9f37e92716ca8221bac2185767b300601f3c151efeb49285c5339e5",
+    "stage2_identifiability.py": "6df16402211adf8b2883135cf64273f8f82f0cdec7810f8f36fd95e605ef04f0",
+    "stage2a_baseline.py": "d7c8ef9c2fc8f75161e268d69c43001b8da8065ea65837f9f9df6e6a2ba6b3f8",
+    "stage2a_clarabel_probe.py": "a5ffb21ae8eb7480c456cf90d86fb3bb9eb468ec6ded3a1dfebf0a73217ecd7a",
+    "stage2a_l1_paths.py": "f4c680117d14e4d5d5b2ac1ee43b660acaf2f660c244612448f5adbc6ab368a9",
+    "stage2a_reconcile_remaining.py": "85d95e1ae2fc746830db10128f809d4f93d3b1c02516dc9d98420c741d481b86",
+    "stage2a_retry_remaining_v3.py": "8939024eb79db040704b75b2c2cd8be261c25776a870f23c5ab1bd069ce2ea8d",
+    "stage2a_retry_remaining_v4.py": "896b0e5d821c7e189ecf6e00c4fb13014e16b090ab3140bfaaccde72ee9ede0e",
+    "stage2a_solver_polish.py": "180575a91a4997dc32d4ad35e906d4e9d2de70ea1a205817f424c1f6e221e5cd",
+    "stage2b_compare.py": "2ff1b4d7e80891641e7bd762781a47d993b12966d1a4c38d52463f796692f3bc",
+    "stage2b_data.py": "3b7c635b4c3d8de5ec70444601f980a2f539f7d9b3d05aeaa1afb7e3aefe4d59",
+    "stage2b_heat_dynamic_compare.py": "878e76064f4e074d29baf0a2d7532787465230d9553976aa82c655f79fe85802",
+    "stage2b_heat_full_spectrum.py": "843a57fe89b7ee43a8075fcf9854452ed3eec79d488d4ee2eac1cf6877ff6226",
+    "stage2b_numerical_retry.py": "39308c9a5e4f8e545a63a892b8673042eaf65d6d608f779ffea81decc7cd1298",
+    "stage2b_protocol.py": "ff6caab8f96d4e858a4e6c1258599c0d109b0c190517fc53605f4f662175aa1f",
+    "stage2b_smoothed_irl1.py": "596b67be74539a8fe3fffbabca329e8239e9b9d8d0b6ad98fc57b2980e41987d",
+    "stage2c_extended_matrices.py": "087dee6f0940dcaf3a6ddc641186382f8b1102135af05a534e7d64ff8e0ada33",
+    "stage2c_numerical_retry.py": "1a822cda1184c493b58f0835cbf781a3193cb55ee0aa7871e8ef1cb746117c94",
+    "stage3_campaign.py": "1d85114a3d185cd000add6b217dc08a3f4fb90784100c95db0592cec3dfa6b58",
+    "stage3_campaign_preflight.py": "87d746ddb578d1dca0f94d49ca8a60407abfa402ae36d17848128e9308547a9f",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe",
+    "stage3_data_v2.py": "f12043f27dacae8746cef4879c7769ea11cdd037f26609e1749218df285b41d4",
+    "stage3_freeze.py": "fe38edde0ea0ef8bd31e1e0447d207f8190118168957e128a97ce67227ab512e"
+  },
+  "target": "u_t",
+  "selection_manifest": {
+    "file": "stage3_campaign\\advection_diffusion_sigma_0p03_seed_1000\\selection_manifest.json",
+    "sha256": "da1fb6a3a2ec0c19a3c199323ee428ad36247e28064be3f5415ce7f0083b3d46"
+  },
+  "numpy_version": "2.2.5",
+  "trajectories": [
+    {
+      "trajectory_id": 6,
+      "split": "test",
+      "parameters": {
+        "widths": [
+          0.7007206424254617,
+          0.6805158968614617,
+          0.35634551706878176
+        ],
+        "centers": [
+          0.7468976390950111,
+          -0.5930475168768092,
+          0.8052969303581561
+        ],
+        "amplitudes": [
+          0.7664519625608336,
+          0.5047491789070039,
+          0.707279289266909
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.3435441369917845
+    },
+    {
+      "trajectory_id": 7,
+      "split": "test",
+      "parameters": {
+        "widths": [
+          0.457032745111459,
+          0.49077126994167464,
+          0.44248555181197524
+        ],
+        "centers": [
+          -0.47987387991142105,
+          0.7162862853861394,
+          0.12297460856773657
+        ],
+        "amplitudes": [
+          1.169196838209341,
+          0.885641574281362,
+          0.46784229388565574
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.453745432724901
+    },
+    {
+      "trajectory_id": 8,
+      "split": "test",
+      "parameters": {
+        "widths": [
+          0.6439675951846303,
+          0.7670532080928711,
+          0.41690016285792386
+        ],
+        "centers": [
+          0.17739225990287455,
+          0.7896306555883523,
+          -0.5270943545983973
+        ],
+        "amplitudes": [
+          0.8323196316961192,
+          1.1594357369338628,
+          1.0423528713281724
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.4894445554224152
+    },
+    {
+      "trajectory_id": 9,
+      "split": "test",
+      "parameters": {
+        "widths": [
+          0.5568761470664783,
+          0.5577614185692394,
+          1.0146395366774041
+        ],
+        "centers": [
+          -0.5261933840230728,
+          -0.03617893894618596,
+          -0.3940130718984758
+        ],
+        "amplitudes": [
+          0.5388145617067878,
+          0.6433307265275967,
+          0.6153199679279872
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.3207363330787628
+    },
+    {
+      "trajectory_id": 10,
+      "split": "test",
+      "parameters": {
+        "widths": [
+          0.6877332740068489,
+          0.919968437587903,
+          0.4497758767330017
+        ],
+        "centers": [
+          0.7070756406864005,
+          -0.33115280920973156,
+          -0.6850973348472562
+        ],
+        "amplitudes": [
+          0.46370932859554853,
+          0.7837256433786679,
+          1.0234568747166275
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.37348493085948153
+    },
+    {
+      "trajectory_id": 11,
+      "split": "test",
+      "parameters": {
+        "widths": [
+          0.3761438447809266,
+          1.0023407598420182,
+          0.8258417783156752
+        ],
+        "centers": [
+          0.5763948659772409,
+          -0.12703652444576896,
+          -0.6524938569105676
+        ],
+        "amplitudes": [
+          1.0563289777409848,
+          0.48254179082401083,
+          0.966854103303529
+        ]
+      },
+      "clean_std_for_synthetic_noise": 0.4021460851485818
+    }
+  ],
+  "noise_model": "additive Gaussian sigma*std(clean trajectory), paired standard noise across sigma",
+  "noise_seed_sequence": "[20261106, frozen case index, noise seed, trajectory_id]",
+  "normalization": "none; fit normalization from training matrices only",
+  "clean_values_saved": false,
+  "analytical_derivatives_returned": false,
+  "trajectory_count": 6,
+  "arrays": {
+    "x": {
+      "shape": [
+        281
+      ],
+      "sha256": "e6f3f2343af5cb91f870b1a769ad6ff370f92da701bb9262af531057490e6a76"
+    },
+    "t": {
+      "shape": [
+        101
+      ],
+      "sha256": "afb3b07bcbe3f0a991a2c447666ac3d15e1d3846a1671ad7ab46834565b53e49"
+    },
+    "u_0": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "18e7fd944194c3364fd6f3ffd50f2ecca6931991fccd5cc6a1d93104b665d992"
+    },
+    "u_1": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "0e8429a52a10256226502c6f269131d31f7fa6c57f3056225ed23f8506e0305c"
+    },
+    "u_2": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "edabdf1cb0e926ac86c96cde0d59d56221976235740085c9903c8dc8318d0ede"
+    },
+    "u_3": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "7d820a211cecb190146c6e19dbf1830dbdcebf98c0497464a81a3eb359afd1fc"
+    },
+    "u_4": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "4a42ad14c7b1ee8cdb7bdc130a184fa43c3da545941b993658872e4a764f113e"
+    },
+    "u_5": {
+      "shape": [
+        101,
+        281
+      ],
+      "sha256": "a028532c7eb54f4e7e680143ed31484cff05c58965ec654369b58d4cb19bf80a"
+    }
+  },
+  "npz_sha256": "ec0922dc6186b138c10931927982c381d36904f9ab10a6dc46617c72908abcea"
+}

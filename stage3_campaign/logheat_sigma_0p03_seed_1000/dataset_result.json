@@ -1,0 +1,410 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "logheat",
+    "sigma": 0.03,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/selection_manifest.json",
+    "sha256": "0df81d29e86c50da576814abd90a1fc39560473b306a44eef4fe206f12fc4d6c"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+      "sha256": "729fa415525b1daa1f3394c174982ff8a26e2c213e373b352d8e151ff1538720"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "47e566e26ca6cc5e0e746ce78f7d66157a3c3ccf6bf669239ff445389cdec445"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "57bc62d5d7685e24ed0fef5e38a65d5663ab8daef3d7fde4ceb4ca2c93c2e17d"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "5c8e973be337df343e7f5cf4934ad38519796c08c597647cb4031f19b3247329"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+      "sha256": "d65f6013fbd3d001a67e5ef6695a935196d74359e519aa2afeb489c03bd10eae"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "030f49f3d3bf0c1f45c70561de3af389af10c79e48d189bb0e41977c7d1ffbda"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/test_evaluation_result.json",
+    "sha256": "0ee655ec0456f6ccdcc7c094fc6e8e3801a15cc7967ed1511cabc286bd2917a9"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 7,
+      "support": [
+        "u_x u_xxxx",
+        "u_x^2 u_xx",
+        "u",
+        "u u_xxxx",
+        "u u_xx",
+        "u u_xx^3",
+        "u u_x u_xx u_xxx",
+        "u^2 u_xxxx",
+        "u^2 u_x^2 u_xx",
+        "u^3 u_x u_xxx",
+        "u^3 u_x^4 u_xx",
+        "t u_xxxxxx",
+        "t u_xx",
+        "t u^2 u_xxxx",
+        "t^2 u_xxxxxx",
+        "t^2 u_xx",
+        "t^2 u_x u_xx",
+        "t^2 u",
+        "x u_xxxxxx",
+        "x u",
+        "D_x^2(sin(2u))",
+        "D_x^4(sin(2u))",
+        "D_x^2(sin(3u))",
+        "D_x^4(sin(3u))",
+        "D_x^2(exp(1u))"
+      ],
+      "complexity": 175,
+      "validation_error": 0.09878882900918852
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.31423668483460404
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.31423668483460404
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xx",
+        "u_x^2"
+      ],
+      "complexity": 7,
+      "validation_error": 0.29721857148548186
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.31423668483460404
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 6,
+      "support": [
+        "u_xxxx",
+        "u_xx",
+        "u_x u_xxxx",
+        "u_x^2",
+        "u_x^3 u_xxx",
+        "u",
+        "u u_xx^2",
+        "u u_x^4 u_xx",
+        "u^2 u_xxxx",
+        "u^2 u_x^4 u_xx",
+        "t u_xxxxxx",
+        "t u_xx",
+        "t u_x u_xx",
+        "t^2 u_xxxxxx",
+        "t^2 u_xx",
+        "t^2 u_x u_xx",
+        "t^2 u",
+        "x u_xxxxxx",
+        "x u"
+      ],
+      "complexity": 134,
+      "validation_error": 0.10294371428414967
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 7,
+      "support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_x u_xxxx",
+        "u_x^2",
+        "u_x^3 u_xxx",
+        "u",
+        "u^2 u_xxxx",
+        "u^2 u_x^2 u_xx",
+        "u^2 u_x^4 u_xx",
+        "u^3 u_x^4 u_xx",
+        "t u_xxxxxx",
+        "t u_xx",
+        "t u_x u_xx",
+        "t u",
+        "t^2 u_xx",
+        "t^2 u_x u_xx",
+        "t^2 u_x^2 u_xx",
+        "t^2 u_x^3",
+        "t^2 u_x^3 u_xxx",
+        "t^2 u^2 u_xxxxxx",
+        "t^2 u^3",
+        "x u_xxxxxx",
+        "x u",
+        "x t u"
+      ],
+      "complexity": 192,
+      "validation_error": 0.09030046688581028
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.31423668483460404
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 2,
+      "support": [
+        "u_xxxx",
+        "u_xx"
+      ],
+      "complexity": 8,
+      "validation_error": 0.19291743895967217
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 3,
+      "support": [
+        "u_xxxx",
+        "u_xx",
+        "u_x^2"
+      ],
+      "complexity": 12,
+      "validation_error": 0.1530169972647706
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 4,
+      "support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_x^2"
+      ],
+      "complexity": 19,
+      "validation_error": 0.10708034363884694
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/selection_manifest.json",
+      "sha256": "0df81d29e86c50da576814abd90a1fc39560473b306a44eef4fe206f12fc4d6c"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/test_evaluation_result.json",
+      "sha256": "0ee655ec0456f6ccdcc7c094fc6e8e3801a15cc7967ed1511cabc286bd2917a9"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/fit_matrices.json",
+      "sha256": "16a96b4c24cd6d28f0834f471159726b1564940685512797c8be96189ad2efd4"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/fit_matrices.npz",
+      "sha256": "81750683aa7ab03e5f3ba2aadd4ba378f61d6273b705a3bef7fea42ded2be516"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/test_matrices.json",
+      "sha256": "c8ca6846aea7eae0c4d88ab835dfa11dbe118153a06f2e856e1d7267fe7bb7e0"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/test_matrices.npz",
+      "sha256": "fdd791d82064e8caa347f470bc445200ff0a6be1fa1b03be67d4b74f22d9fb17"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_L1/reconciled_0001_result.json",
+      "sha256": "729fa415525b1daa1f3394c174982ff8a26e2c213e373b352d8e151ff1538720"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "47e566e26ca6cc5e0e746ce78f7d66157a3c3ccf6bf669239ff445389cdec445"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_L1/method_result.json",
+      "sha256": "57bc62d5d7685e24ed0fef5e38a65d5663ab8daef3d7fde4ceb4ca2c93c2e17d"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "5c8e973be337df343e7f5cf4934ad38519796c08c597647cb4031f19b3247329"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_L1/reconciled_0001_result.json",
+      "sha256": "d65f6013fbd3d001a67e5ef6695a935196d74359e519aa2afeb489c03bd10eae"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "030f49f3d3bf0c1f45c70561de3af389af10c79e48d189bb0e41977c7d1ffbda"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_L1/job.json",
+      "sha256": "8dd858c5c31f207ac925764e79437d7c3113ad4a169f0745a27784ce138b0f5a"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "c8c887888a42130b96c408a6ea251c38a8752870aa0881e75b4dfbe62558a695"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_L1/job.json",
+      "sha256": "4357d199d07ccefbbed7feee6b2b2dd69c8f99320b03b3a9b02770cfc671d52f"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "e1a045e1977be82bb8457c11b87a44b197bd942211ffe021b0926ae1a452336d"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_L1/job.json",
+      "sha256": "22cc3e799ba3e54dd76ba5ebf119a6f0b314bcd1faa664fbab0b4e32c47cebf1"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "b0a6c6af75a9b201fa3f1170226825e60317d24aa40b3ca007ba8ad7491891f9"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_L1/numeric_evidence/20261106T140942378192Z/continued_path_result.json",
+      "sha256": "dc128897e57c17e218429b22b2bd50bf6cc96f51d979557b490832526242a086"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "00f5b1a14ff557425bf2a3e5e5c7d06eba1984c92e32e31c3312351cb2216f6c"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_L1/path_result.json",
+      "sha256": "c0a8d9f21f91b9a77f19bf5ca50093d84ba0048fe3633fe1a30a7a4324d00f9f"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "d8f4612f25d8b7e2247849bcd1cdb91429db3ea620cad21696f0b1cfcd17fdbb"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_L1/numeric_evidence/20261106T140942378192Z/continued_path_result.json",
+      "sha256": "27ed56f2dd695ad7af8891c98418d705c64c59cc845735607c73a1503d03fe2e"
+    },
+    {
+      "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "e8cc3bbbb62e091ab890daa7587730a64d27bf571d1592d3c82aca931ea2ba30"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.11632350005675107,
+    "fit_matrix": {
+      "action": "cache_load",
+      "seconds": 0.10589519992936403,
+      "metadata": {
+        "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/fit_matrices.json",
+        "sha256": "16a96b4c24cd6d28f0834f471159726b1564940685512797c8be96189ad2efd4"
+      },
+      "npz": {
+        "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/fit_matrices.npz",
+        "sha256": "81750683aa7ab03e5f3ba2aadd4ba378f61d6273b705a3bef7fea42ded2be516"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 0.9229576999787241,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 13.80984050000552,
+      "metadata": {
+        "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/test_matrices.json",
+        "sha256": "c8ca6846aea7eae0c4d88ab835dfa11dbe118153a06f2e856e1d7267fe7bb7e0"
+      },
+      "npz": {
+        "file": "stage3_campaign/logheat_sigma_0p03_seed_1000/test_matrices.npz",
+        "sha256": "fdd791d82064e8caa347f470bc445200ff0a6be1fa1b03be67d4b74f22d9fb17"
+      }
+    },
+    "test_evaluation": 0.037861399934627116
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

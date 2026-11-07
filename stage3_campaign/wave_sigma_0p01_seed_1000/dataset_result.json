@@ -1,0 +1,420 @@
+{
+  "stage": "3_completed_dataset",
+  "dataset": {
+    "case": "wave",
+    "sigma": 0.01,
+    "noise_seed": 1000
+  },
+  "protocol": {
+    "file": "stage3_protocol_result.json",
+    "sha256": "1c5b11961e327a2f1b92605ad5e3bdea7e5663bf6cd6ce8a7a0c11ab15b85feb"
+  },
+  "status": "complete",
+  "selection_manifest": {
+    "file": "stage3_campaign/wave_sigma_0p01_seed_1000/selection_manifest.json",
+    "sha256": "57fc3d3cb8b5e87289e87a394f53a4a6d27a334219bc34b8cd73f99977d11aa0"
+  },
+  "method_results": [
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+      "sha256": "b3472a5c9331ee0bc6f0c77d772fc41fb4bad99bd0d6f2a80fc80f9deba92792"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "ba88eee06a4c6f9be90273d895a0d4c416c8567a4c4a8931ea4c2904f744bbda"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_L1/method_result.json",
+      "sha256": "8f5fe479e3791d2c1b137afe7c31a5b21217f8fa17176b9bf888510e81e830b9"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "08ccc6ff13438a04aa3f861e2d20a15f77fb8ac3245e4b3f4282d88c6d682a4b"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+      "sha256": "13c92a37b5662afda3cd52063b0f3d4c162b64c8655be62637d1aa4bfec858a3"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "8e3938e2f106e4e1c45744f7b2c2929ac226cae74aec06add8b344570362a885"
+    }
+  ],
+  "test_evaluation": {
+    "file": "stage3_campaign/wave_sigma_0p01_seed_1000/test_evaluation_result.json",
+    "sha256": "30b57c9a65ed0d0acbd8a938ddd12b7e220b1500b24862e573254d31c78d7ab4"
+  },
+  "common_validation_pareto": [
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.0295410984348498
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 2,
+      "support": [
+        "u_xxxxxx",
+        "u_xx"
+      ],
+      "complexity": 10,
+      "validation_error": 0.026332737224855955
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 3,
+      "support": [
+        "u_xxxxxx",
+        "u_xx",
+        "t u_xx",
+        "x u_xxxxxx"
+      ],
+      "complexity": 24,
+      "validation_error": 0.026130865273319592
+    },
+    {
+      "layer": "J1212",
+      "method": "L1",
+      "candidate_id": 5,
+      "support": [
+        "u_xxxxxx",
+        "u_xx",
+        "u_xx u_xxxx",
+        "u_xx^2",
+        "u_x u_xx u_xxx",
+        "u u_xxx",
+        "u^2 u_xxxxxx",
+        "t u_xx",
+        "x u_xxxx",
+        "x u^2 u_xxxxxx",
+        "x^2 u u_xxx",
+        "D_x^2(sin(1u))"
+      ],
+      "complexity": 83,
+      "validation_error": 0.02581406281322252
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1212",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.0295410984348498
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.0295410984348498
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J18",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.0295410984348498
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.0295410984348498
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 2,
+      "support": [
+        "u_xxxxxx",
+        "u_xx"
+      ],
+      "complexity": 10,
+      "validation_error": 0.026332737224855955
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 3,
+      "support": [
+        "u_xxxxxx",
+        "u_xx",
+        "t u_xx",
+        "x u_xxxxxx"
+      ],
+      "complexity": 24,
+      "validation_error": 0.026130865273319592
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 4,
+      "support": [
+        "u_xxxxxx",
+        "u_xx",
+        "u^2 u_xxxxxx",
+        "t u_xx",
+        "x u_xxxxxx",
+        "x u^2 u_xxxxxx"
+      ],
+      "complexity": 44,
+      "validation_error": 0.026022404419791357
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 5,
+      "support": [
+        "u_xxxxxx",
+        "u_xx",
+        "u_xx u_xxxx",
+        "u_xx^2",
+        "u_x u_xx u_xxx",
+        "u u_xxx",
+        "u^2 u_xxxxxx",
+        "t u_xx",
+        "t u u_x^2",
+        "x u_xxxx",
+        "x u^2 u_xxxxxx",
+        "x^2 u u_xxx"
+      ],
+      "complexity": 86,
+      "validation_error": 0.02578040076609479
+    },
+    {
+      "layer": "J1158",
+      "method": "L1",
+      "candidate_id": 6,
+      "support": [
+        "u_xxxxxx",
+        "u_xxxx",
+        "u_xx",
+        "u_xx u_xxx",
+        "u_xx^2",
+        "u_x u_xx u_xxx",
+        "u_x^2 u_xx^2",
+        "u u_xxx",
+        "u^2 u_xxxxxx",
+        "t u_xx",
+        "t^2 u u_xxxxx",
+        "t^2 u^7 u_xxxx",
+        "x u_xxxxx",
+        "x u_xxxx",
+        "x u_xx u_xxxx",
+        "x u^2 u_xxxxxx",
+        "x^2 u_xxxx",
+        "x^2 u_xx u_xxxx",
+        "x^2 u u_xxx"
+      ],
+      "complexity": 159,
+      "validation_error": 0.0255325002315226
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 0,
+      "support": [],
+      "complexity": 0,
+      "validation_error": 1.0
+    },
+    {
+      "layer": "J1158",
+      "method": "IRL1_original",
+      "candidate_id": 1,
+      "support": [
+        "u_xx"
+      ],
+      "complexity": 3,
+      "validation_error": 0.0295410984348498
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/selection_manifest.json",
+      "sha256": "57fc3d3cb8b5e87289e87a394f53a4a6d27a334219bc34b8cd73f99977d11aa0"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/test_evaluation_result.json",
+      "sha256": "30b57c9a65ed0d0acbd8a938ddd12b7e220b1500b24862e573254d31c78d7ab4"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/fit_matrices.json",
+      "sha256": "41b6099e95e170592398648deb5ea1dcfcccaa0e412f9165c4d0178df9fb975a"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/fit_matrices.npz",
+      "sha256": "732c5a81fad700df514e8120f40c7b68d38031fbccc1b383e06134d7b4b9cac4"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/test_matrices.json",
+      "sha256": "dce911632c3b6b7d9ecb8846c2282a60896e8c8639169fb238befba6ab039833"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/test_matrices.npz",
+      "sha256": "f14d8354b75debbcc8c335afc97ae44dfb38a98e1fa37a708de517a42639639d"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_L1/method_result.json",
+      "sha256": "b3472a5c9331ee0bc6f0c77d772fc41fb4bad99bd0d6f2a80fc80f9deba92792"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_IRL1_original/method_result.json",
+      "sha256": "ba88eee06a4c6f9be90273d895a0d4c416c8567a4c4a8931ea4c2904f744bbda"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_L1/method_result.json",
+      "sha256": "8f5fe479e3791d2c1b137afe7c31a5b21217f8fa17176b9bf888510e81e830b9"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_IRL1_original/method_result.json",
+      "sha256": "08ccc6ff13438a04aa3f861e2d20a15f77fb8ac3245e4b3f4282d88c6d682a4b"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_L1/method_result.json",
+      "sha256": "13c92a37b5662afda3cd52063b0f3d4c162b64c8655be62637d1aa4bfec858a3"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_IRL1_original/method_result.json",
+      "sha256": "8e3938e2f106e4e1c45744f7b2c2929ac226cae74aec06add8b344570362a885"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_L1/job.json",
+      "sha256": "77f915e2f512e2baea8dfb69e4c12278f8a4ae7b75ce9153b926524489698df9"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_IRL1_original/job.json",
+      "sha256": "bc0ebda9d3c24ebf078a8808aa37294e1b7f16b3875b130395b25ca18c664360"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_L1/job.json",
+      "sha256": "80d892271bb150705319b7e1478e31da541077f127302a1916aa3c02cf8495e4"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_IRL1_original/job.json",
+      "sha256": "c18ceedccf13efe791a2700e062fd63fb1c1a30846215db8048ee02198480993"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_L1/job.json",
+      "sha256": "e33f619da83a4509f61a570863dc5656c452ddf02e959a23ca386400b137b75c"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_IRL1_original/job.json",
+      "sha256": "e49e8d3a8dad9dcc0b964dab49a2c1c8c9b22b289cd90a2f35e70d5f8632443b"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_L1/path_result.json",
+      "sha256": "b9c574071b9cd4b568850e3927b7478fc9c93b54a5d70a913b93044cf98da45b"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1212_IRL1_original/path_result.json",
+      "sha256": "1956264827e60a4cb12dd3854af9d6083c7d653585844b9c147ad6936f7df230"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_L1/path_result.json",
+      "sha256": "5ed9f6198b2ccbc63d6275b15ef75b3423c777fb6ff8cb78c9e3feafe9d12b85"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J18_IRL1_original/path_result.json",
+      "sha256": "cc1913f778dc8957e810d609085e37a9fb04d887ed3fbb3934139f2934d7a5c9"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_L1/path_result.json",
+      "sha256": "294784268e007ff9395414b2be029c7c4d3e68f286c44a45a6665509dc119524"
+    },
+    {
+      "file": "stage3_campaign/wave_sigma_0p01_seed_1000/J1158_IRL1_original/path_result.json",
+      "sha256": "760f400a66c94b96ef8341c4787d9fbe8d7c14d12dbdefbce7fcd1fe94cd67f8"
+    }
+  ],
+  "time_s": {
+    "fit_raw_generate_or_load_this_call": 0.4921180000528693,
+    "fit_matrix": {
+      "action": "build",
+      "seconds": 32.96810870000627,
+      "metadata": {
+        "file": "stage3_campaign/wave_sigma_0p01_seed_1000/fit_matrices.json",
+        "sha256": "41b6099e95e170592398648deb5ea1dcfcccaa0e412f9165c4d0178df9fb975a"
+      },
+      "npz": {
+        "file": "stage3_campaign/wave_sigma_0p01_seed_1000/fit_matrices.npz",
+        "sha256": "732c5a81fad700df514e8120f40c7b68d38031fbccc1b383e06134d7b4b9cac4"
+      }
+    },
+    "test_raw_generate_or_load_this_call": 0.9053645000094548,
+    "test_matrix": {
+      "action": "build",
+      "seconds": 25.729844099958427,
+      "metadata": {
+        "file": "stage3_campaign/wave_sigma_0p01_seed_1000/test_matrices.json",
+        "sha256": "dce911632c3b6b7d9ecb8846c2282a60896e8c8639169fb238befba6ab039833"
+      },
+      "npz": {
+        "file": "stage3_campaign/wave_sigma_0p01_seed_1000/test_matrices.npz",
+        "sha256": "f14d8354b75debbcc8c335afc97ae44dfb38a98e1fa37a708de517a42639639d"
+      }
+    },
+    "test_evaluation": 0.030084299971349537
+  },
+  "all_six_paths_certified_before_test": true,
+  "test_never_changed_models": true,
+  "support_recovery_is_not_a_runtime_pass_condition": true
+}

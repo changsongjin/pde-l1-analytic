@@ -1,0 +1,44 @@
+{
+  "stage": "3_campaign_preparation_contract_check",
+  "all_checks_passed": true,
+  "checks": {
+    "protocol_is_still_draft": true,
+    "grid606_clean_once_and_seed_major": true,
+    "undeclared_request_rejected": true,
+    "clean_duplicate_seed_rejected": true,
+    "all24_original_L1_certificates_rechecked": true,
+    "original_IRL1_chain_and_stop_rechecked": true,
+    "changed_final_IRL1_weights_rejected": true,
+    "saved_dual_exactly_rechecked": true,
+    "claimed_success_with_infeasible_q_rejected": true,
+    "relabelled_previous_certificate_rejected": true,
+    "forged_saved_exact_gap_rejected": true,
+    "every_previously_certified_point_preserved_verbatim": true,
+    "partial_unranked_then_same_rule_reconciled": true,
+    "continuation_resume_without_resolve_or_refit": true,
+    "new_continuation_after_seal_rejected": true,
+    "no_formal_or_test_bundle_generated": true
+  },
+  "all_checks_passed_semantics": "Small synthetic runner/provenance contracts only; not formal execution authorization.",
+  "source_sha256": {
+    "stage3_campaign.py": "1d85114a3d185cd000add6b217dc08a3f4fb90784100c95db0592cec3dfa6b58",
+    "stage3_campaign_preflight.py": "87d746ddb578d1dca0f94d49ca8a60407abfa402ae36d17848128e9308547a9f",
+    "stage3_data.py": "76628972a2e6254ef7c196ba77429ff2055147fa381693e4fe2a0a4c9cfabdfe",
+    "stage3_data_v2.py": "f12043f27dacae8746cef4879c7769ea11cdd037f26609e1749218df285b41d4",
+    "stage0_l1_solver.py": "3b0c30c9c55168eb18ab7294a2204a7fcf811584b52b8db116d08096ea37de18",
+    "stage2a_retry_remaining_v4.py": "896b0e5d821c7e189ecf6e00c4fb13014e16b090ab3140bfaaccde72ee9ede0e",
+    "stage3_protocol_draft.json": "4428fe9b77f6337f979965d93dd9dd2011c208b1c9f4e061e2b176e769128790"
+  },
+  "new_solver_calls": 0,
+  "formal_or_test_data_generated": false,
+  "frozen_protocol_created": false,
+  "formal_execution_ready": false,
+  "watchdog_status": "Windows process-tree deadline implementation reviewed; no formal child launched by this preflight.",
+  "runtime_fixture": "3x3 orthogonal closed-form coefficients only; temporary files stay inside workspace.",
+  "elapsed_s": 0.2554738000035286,
+  "outstanding_before_formal_execution": [
+    "Root independent review and immutable protocol/source freeze.",
+    "Final maximum-library development audit and source/version inventory.",
+    "No statistical or publication conclusion follows from these infrastructure checks."
+  ]
+}
